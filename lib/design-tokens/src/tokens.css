@@ -1,0 +1,52 @@
+/* Raw brand tokens */
+:root {
+  --brand-weiss: #fafafa;
+  --brand-schwarz: #06060d;
+  --brand-babyblau-hell: #82c4f5;
+  --brand-himmelblau-dunkel: #74afdb;
+  --brand-koenigsblau: #1c2b36;
+  --brand-hellgrau: #b0c4d4;
+  --brand-mittelgrau: #9dafbd;
+  --brand-dunkelgrau: #8595a1;
+  --brand-textgrau: #7a7a7a;
+  --brand-nature-gruen: #8bcca9;
+  --brand-neon-gelb: #ffdf56;
+  --brand-rot: #ff3c4b;
+  --brand-orange: #ffd000;
+  --brand-dunkel-sekundaer: #2d4354;
+
+  /* Font roles. Design.zip fonts (Plus Jakarta Sans, Catamaran, Mukta) were NOT supplied;
+     names are listed first so locally installed copies are used, then honest system fallbacks.
+     No web font files are loaded. */
+  --font-heading: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-ui: "Catamaran", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Catamaran", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-accent: "Mukta", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --weight-heading: 600;
+  --weight-ui: 400;
+  /* Catamaran Light is intended; system fallbacks render 300 too thin, so 400 is used until the real file exists. */
+  --weight-body: 400;
+  --weight-accent: 400;
+
+  /* Semantic tokens (light) */
+  --color-background: var(--brand-weiss);
+  --color-surface: #eef2f5;
+  --color-surface-dark: var(--brand-koenigsblau);
+  --color-text: var(--brand-schwarz);           /* 19.35:1 */
+  --color-text-muted: var(--brand-dunkel-sekundaer); /* 9.85:1 */
+  --color-heading: var(--brand-koenigsblau);    /* 13.89:1 */
+  --color-link: var(--brand-koenigsblau);
+  --color-action-bg: var(--brand-himmelblau-dunkel);
+  --color-action-text: var(--brand-koenigsblau); /* 6.14:1 */
+  --color-border-decorative: var(--brand-hellgrau);
+  --color-border-control: var(--brand-dunkel-sekundaer);
+  --color-focus: var(--brand-koenigsblau);
+  --color-on-dark: var(--brand-weiss);
+  --color-on-dark-accent: var(--brand-babyblau-hell); /* 7.71:1 on Königsblau */
+  --color-focus-on-dark: var(--brand-babyblau-hell);
+  --color-highlight: var(--brand-neon-gelb);
+  --color-warning-bg: var(--brand-orange);
+  --color-success-bg: var(--brand-nature-gruen);
+  --color-error-bg: var(--brand-rot);
+}

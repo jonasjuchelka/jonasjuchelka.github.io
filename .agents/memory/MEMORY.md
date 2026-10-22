@@ -1,0 +1,1 @@
+- [Hosting und Sicherheitsgrenzen](hosting-boundaries.md) — statische öffentliche Site, separate Passkey-Runtime; Vaultwarden erst nach bestandener Zugangsabnahme.

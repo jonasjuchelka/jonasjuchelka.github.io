@@ -1,0 +1,28 @@
+{
+  "name": "@workspace/jonas-website",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0 -p ${PORT:-3000}",
+    "build": "next build && node scripts/postbuild.mjs",
+    "serve": "npx --yes serve out -l ${PORT:-3000}",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@workspace/design-tokens": "workspace:*",
+    "@workspace/site-ui": "workspace:*",
+    "next": "^15.5.28",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-markdown": "^10.1.0",
+    "yaml": "^2.9.1",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "typescript": "~5.9.3"
+  }
+}

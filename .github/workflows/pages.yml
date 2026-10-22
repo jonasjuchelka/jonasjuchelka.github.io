@@ -1,0 +1,45 @@
+name: Public website checks and Pages
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  public:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @workspace/jonas-website build
+      - run: pnpm --filter @workspace/jonas-website typecheck
+      - run: pnpm --filter @workspace/private-dashboard typecheck
+      - run: pnpm --filter @workspace/private-dashboard build
+      - run: pnpm --filter @workspace/scripts exec tsx --test ../tests/policy.test.ts
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: artifacts/jonas-website/out
+  deploy:
+    if: github.event_name == 'workflow_dispatch' && github.repository == 'jonasjuchelka/jonasjuchelka.github.io'
+    needs: public
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment

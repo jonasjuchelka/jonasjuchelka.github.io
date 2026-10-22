@@ -1,6 +1,17 @@
-# [Project name]
+# Persönliche Website und privater Bereich
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+Öffentliche statische Next.js-Website und separate private Next.js-Runtime mit Passkey-Zugang. Maßgeblich sind WEBSITE_SPEC.md und docs/. Kein Produktionsdeployment aktiviert.
+
+## Aktuelle Anwendungen
+
+- `artifacts/jonas-website`: öffentlicher Next-Export, Workflow am Root, Ausgabe `out`.
+- `artifacts/private-dashboard`: Next-Serverruntime, Vorschau unter `/private`; Produktionsbetrieb muss separat eingerichtet werden.
+- `lib/design-tokens` und `lib/site-ui`: gemeinsame Darstellung.
+- Öffentliche/private Builds sind unabhängig; keine privaten Daten in öffentliche Ausgabe aufnehmen.
+- Marken-ZIP fehlt. Keine Ersatzlogos oder erfundenen Schriftdateien.
+- Passkey-only ist explizit vorgegeben; keine anderen Loginverfahren ergänzen.
+- Vaultwarden erst nach erfolgreicher Zugangs-/Berechtigungsabnahme.
+- Befehle und offene Abnahme in README.md und docs/verification.md. Unten stehen noch die ursprünglichen allgemeinen Monorepo-Konventionen; die privaten APIs liegen in Next, nicht im Beispiel-Express-Server.
 
 ## Run & Operate
 
