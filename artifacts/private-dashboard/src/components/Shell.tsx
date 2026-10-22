@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState, type ReactNode } from "react";
+import { BrandLogo } from "./BrandLogo";
 import { api } from "@/lib/client";
 
 const NAV = [
@@ -28,6 +29,7 @@ export function Shell({ children }: { children: ReactNode }) {
       <header className="topbar">
         <div className="topbar__inner">
           <Link href={bare ? "/login" : "/tools"} className="mark" aria-label="Privater Bereich, Startseite">
+            <BrandLogo className="mark__logo" />
             <span className="mark__text">Privater Bereich</span>
           </Link>
           {!bare ? (

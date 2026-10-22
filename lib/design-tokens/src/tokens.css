@@ -15,18 +15,16 @@
   --brand-orange: #ffd000;
   --brand-dunkel-sekundaer: #2d4354;
 
-  /* Font roles. Design.zip fonts (Plus Jakarta Sans, Catamaran, Mukta) were NOT supplied;
-     names are listed first so locally installed copies are used, then honest system fallbacks.
-     No web font files are loaded. */
-  --font-heading: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-ui: "Catamaran", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-body: "Catamaran", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-accent: "Mukta", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* Font roles: original brand TTFs (lib/design-tokens/fonts) loaded locally via next/font/local,
+     exposed as --font-brand-* on <html>. System fallbacks only apply if loading fails. */
+  --font-heading: var(--font-brand-heading, "Plus Jakarta Sans"), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-ui: var(--font-brand-ui, "Catamaran"), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: var(--font-brand-body, "Catamaran"), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-accent: var(--font-brand-accent, "Mukta"), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   --weight-heading: 600;
   --weight-ui: 400;
-  /* Catamaran Light is intended; system fallbacks render 300 too thin, so 400 is used until the real file exists. */
-  --weight-body: 400;
+  --weight-body: 300; /* Catamaran Light (original file) */
   --weight-accent: 400;
 
   /* Semantic tokens (light) */
@@ -45,6 +43,9 @@
   --color-on-dark: var(--brand-weiss);
   --color-on-dark-accent: var(--brand-babyblau-hell); /* 7.71:1 on Königsblau */
   --color-focus-on-dark: var(--brand-babyblau-hell);
+  --color-brand-blue: var(--brand-babyblau-hell);   /* fill; pair with Königsblau text, 8.06:1 */
+  --color-brand-blue-deep: var(--brand-himmelblau-dunkel); /* fill; pair with Königsblau text, 6.14:1 */
+  --brand-stripe: linear-gradient(90deg, var(--brand-koenigsblau) 0 18%, var(--brand-himmelblau-dunkel) 18% 58%, var(--brand-babyblau-hell) 58% 100%);
   --color-highlight: var(--brand-neon-gelb);
   --color-warning-bg: var(--brand-orange);
   --color-success-bg: var(--brand-nature-gruen);

@@ -90,3 +90,10 @@ th{font-family:var(--font-accent);font-weight:400;color:var(--color-text-muted);
 .steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:1.5rem}
 .steps>li{counter-increment:s;position:relative;padding-left:3.5rem}
 .steps>li::before{content:counter(s);position:absolute;left:0;top:0;width:2.4rem;height:2.4rem;border-radius:50%;display:grid;place-items:center;background:var(--color-surface-dark);color:var(--color-on-dark-accent);font-family:var(--font-heading);font-weight:600}
+
+/* Brand integration: original logo, brand blues, local brand fonts */
+.topbar{border-bottom:4px solid transparent;border-image:var(--brand-stripe) 1}
+.mark__logo{width:2.6rem;height:auto;flex:none}
+.mark__text{font-family:var(--font-heading);font-weight:600;letter-spacing:-.01em}
+.foot{border-top:4px solid transparent;border-image:var(--brand-stripe) 1}
+.page-head{border-bottom-color:var(--brand-himmelblau-dunkel)}

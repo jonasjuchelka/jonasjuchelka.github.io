@@ -1,5 +1,16 @@
 # Prüfnachweis, 22.10.2026
 
+## Nachgeliefertes Branding
+
+- Vier eingebundene TTF-Dateien und das SVG bytegenau mit dem Originalarchiv verglichen.
+- Lokale Schriften, Original-Logo und Favicon in öffentlicher und privater Anwendung eingebunden; Lizenztexte im öffentlichen Export enthalten.
+- Beide Produktionsbuilds einschließlich TypeScript-Prüfung erfolgreich.
+- Öffentliche Startseite bei 1280 und 390 Pixeln sowie private Login-Seite bei 390 Pixeln visuell geprüft; keine Überläufe in den geprüften Ansichten.
+- Öffentliche Vorschau ohne Browserfehler; private Vorschau meldet weiterhin die bekannte Entwicklungs-WebSocket-Warnung, lädt Oberfläche und Status-API aber erfolgreich. Authentifizierungslogik unverändert.
+- Zentrale Farbkontraste rechnerisch bestätigt (6,14:1 für dunklen Buttontext auf Himmelblau; 7,71:1 für Hellblau auf Dunkelblau). Keine vollständige Accessibility-Abnahme.
+
+## Vorherige Funktionsprüfungen
+
 Erfolgreich:
 - Beide Next.js-Produktionsbuilds einschließlich TypeScript-Prüfung.
 - Öffentlicher Postbuild-Check: kein CNAME, kein altes Domainziel, keine erkannten Secret-Muster; Blogentwurf ausgeschlossen.

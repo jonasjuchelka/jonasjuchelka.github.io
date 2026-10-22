@@ -1,6 +1,7 @@
 import "@workspace/design-tokens/tokens.css";
 import "@workspace/site-ui/site-ui.css";
 import "./globals.css";
+import { fontVariables } from "./fonts";
 import type { Metadata, Viewport } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -18,7 +19,7 @@ export const viewport: Viewport = { themeColor: "#1C2B36", colorScheme: "light" 
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="de">
+    <html lang="de" className={fontVariables}>
       <body>
         <a href="#inhalt" className="skip-link">Zum Inhalt springen</a>
         <Header />

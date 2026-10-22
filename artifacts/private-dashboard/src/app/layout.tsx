@@ -1,3 +1,4 @@
+import { fontVariables } from "./fonts";
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import "@workspace/design-tokens/tokens.css";
@@ -14,7 +15,7 @@ export const viewport: Viewport = { themeColor: "#1c2b36" };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="de">
+    <html lang="de" className={fontVariables}>
       <body><Shell>{children}</Shell></body>
     </html>
   );

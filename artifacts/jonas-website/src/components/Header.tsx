@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandLogo } from "./BrandLogo";
 import { NAV } from "@/lib/site";
 
 export function Header() {
@@ -6,6 +7,7 @@ export function Header() {
     <header className="site-header">
       <div className="wrap site-header__inner">
         <Link href="/" className="wordmark" aria-label="Jonas Juchelka, zur Startseite">
+          <BrandLogo className="wordmark__logo" />
           <span className="wordmark__name">Jonas Juchelka</span>
         </Link>
         <nav aria-label="Hauptnavigation">

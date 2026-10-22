@@ -8,4 +8,4 @@ Privater Build: `BASE_PATH='' pnpm --filter @workspace/private-dashboard build`;
 
 Entwicklungsdatenbank: `cd artifacts/private-dashboard && node scripts/migrate-dev.mjs`. Keine Startup-Migrationen. Replit Publish verwaltet die Schemaübernahme der verwalteten Datenbank; vor Publish Schema-Diff einschließlich private_area prüfen. Bootstrap erst nach fester Origin: `node scripts/bootstrap.mjs 'Adminname'` im privaten App-Verzeichnis. Ausgabe ist eine vertrauliche Einmaleinladung; nicht in Chat/Logs/Repository kopieren. Noch nicht ausgeführt.
 
-Produktionsblocker: fehlende Markenassets, Rechtsangaben, reales Passkey-Gerät, vollständige Sicherheitsabnahme, Repository-Zugriff und getrennte private Produktionskonfiguration. Keine kostenpflichtige Ressource gebucht.
+Produktionsblocker: Rechtsangaben, reales Passkey-Gerät, vollständige Sicherheitsabnahme, Repository-Zugriff und getrennte private Produktionskonfiguration. Markenassets wurden inzwischen geliefert, siehe branding.md. Keine kostenpflichtige Ressource gebucht.

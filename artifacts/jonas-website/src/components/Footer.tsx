@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandLogo } from "./BrandLogo";
 import { EMAIL, GITHUB } from "@/lib/site";
 
 export function Footer() {
@@ -6,6 +7,7 @@ export function Footer() {
     <footer className="site-footer dark">
       <div className="wrap site-footer__grid">
         <div>
+          <BrandLogo className="site-footer__logo" />
           <p className="site-footer__name">Jonas Juchelka</p>
           <p className="site-footer__line">Management &amp; Technology, TU München.</p>
         </div>
