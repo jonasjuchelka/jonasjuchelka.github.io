@@ -1,1 +1,2 @@
 - [Hosting und Sicherheitsgrenzen](hosting-boundaries.md) — statische öffentliche Site, separate Passkey-Runtime; Vaultwarden erst nach bestandener Zugangsabnahme.
+- [Next-Vorschau-Origin](next-preview-origin.md) — Next-Wildcards erfassen nur eine Subdomain-Ebene; Preview-Assets benötigen die exakte Workspace-Origin.

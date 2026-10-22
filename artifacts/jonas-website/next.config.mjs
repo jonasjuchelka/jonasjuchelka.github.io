@@ -8,6 +8,12 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   transpilePackages: ["@workspace/site-ui", "@workspace/design-tokens"],
-  allowedDevOrigins: ["*.replit.dev", "*.repl.co", "*.riker.replit.dev", "*.pike.replit.dev"],
+  // Next's "*" matches one hostname label, not nested Replit preview hosts.
+  // Allow this workspace explicitly; this affects development assets only.
+  allowedDevOrigins: [
+    "localhost",
+    "127.0.0.1",
+    ...(process.env.REPLIT_DEV_DOMAIN ? [process.env.REPLIT_DEV_DOMAIN] : []),
+  ],
 };
 export default nextConfig;
