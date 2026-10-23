@@ -32,4 +32,4 @@ Der Runner (`scripts/migrate-production.mjs`) führt `migrations/*.sql` in Reihe
 
 **Passworttresor-Button:** Optional `VAULTWARDEN_ORIGIN` (nur `https://`-Origin, z. B. die Vaultwarden-Adresse) in Vercel setzen; dann zeigt `/tools` einen aktiven Link "Tresor öffnen". Nur ein Link, keine Anmeldung und keine Zugangsdaten.
 
-**Tool-Dokumentation (Seitenfenster):** Migration `0002_tool_details.sql` ergänzt `plan`, `price` und `details` je Tool. Reihenfolge: PR mergen, Vercel-Deploy abwarten, dann `migrate:production` ausführen (additiv, `IF NOT EXISTS`). Die Tool-Seite funktioniert auch vor der Migration; Speichern im Admin braucht sie.
+**Tool-Dokumentation (Seitenfenster):** Migration `0002_tool_details.sql` ergänzt `plan`, `price` und `details` je Tool, `0003_tool_logo.sql` ein optionales `logo_url`. Wichtig: Der Admin-Bereich liest diese Spalten, er zeigt ohne Migration eine Fehlermeldung. Reihenfolge: PR mergen, Vercel-Deploy abwarten, dann `migrate:production` ausführen (additiv, `IF NOT EXISTS`). Die Tool-Seite funktioniert auch vor der Migration; Speichern im Admin braucht sie.

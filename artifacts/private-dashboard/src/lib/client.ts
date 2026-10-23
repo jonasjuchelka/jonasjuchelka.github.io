@@ -96,7 +96,7 @@ export function fmt(d: string | null | undefined) {
   return isNaN(x.getTime()) ? d : x.toLocaleString("de-DE", { dateStyle: "medium", timeStyle: "short" });
 }
 
-export type Tool = { id: string; name: string; provider: string; description: string; url: string; access_type: AccessType; instructions: string; plan?: string; price?: string; details?: string };
+export type Tool = { id: string; name: string; provider: string; description: string; url: string; access_type: AccessType; instructions: string; plan?: string; price?: string; details?: string; logo_url?: string };
 export type AccessType = "own_account" | "team_seat" | "permitted_shared";
 export const ACCESS_LABEL: Record<AccessType, string> = {
   own_account: "Eigenes Konto",

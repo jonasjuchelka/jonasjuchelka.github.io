@@ -11,16 +11,20 @@ const SHORT_LABEL: Record<AccessType, string> = {
   permitted_shared: "Gemeinsamer Login",
 };
 
-/** Logo from the tool's own site; falls back to the first letter if it cannot be loaded. */
+/** Logo: own logo address, else the tool's favicon, else the first letter. */
 function Logo({ tool }: { tool: Tool }) {
-  const [failed, setFailed] = useState(false);
-  let src = "";
-  try { src = new URL("/favicon.ico", tool.url).href; } catch { src = ""; }
-  return failed || !src ? (
-    <span className="logo logo--letter" aria-hidden="true">{tool.name.slice(0, 1).toUpperCase()}</span>
-  ) : (
+  const candidates: string[] = [];
+  if (tool.logo_url) candidates.push(tool.logo_url);
+  try {
+    candidates.push(new URL("/favicon.ico", tool.url).href, new URL("/apple-touch-icon.png", tool.url).href);
+  } catch { /* invalid URL: letter fallback */ }
+  const [index, setIndex] = useState(0);
+  const src = candidates[index];
+  return src ? (
     // eslint-disable-next-line @next/next/no-img-element
-    <img className="logo" src={src} alt="" width={40} height={40} loading="lazy" referrerPolicy="no-referrer" onError={() => setFailed(true)} />
+    <img className="logo" src={src} alt="" width={40} height={40} loading="lazy" referrerPolicy="no-referrer" onError={() => setIndex((i) => i + 1)} />
+  ) : (
+    <span className="logo logo--letter" aria-hidden="true">{tool.name.slice(0, 1).toUpperCase()}</span>
   );
 }
 
