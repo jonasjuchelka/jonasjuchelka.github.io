@@ -9,7 +9,7 @@ export function Footer() {
         <div>
           <BrandLogo className="site-footer__logo" />
           <p className="site-footer__name">Jonas Juchelka</p>
-          <p className="site-footer__line">Management &amp; Technology, TU München.</p>
+          <p className="site-footer__line">Deep Learning · Management &amp; Technology, TU München.</p>
         </div>
         <ul className="site-footer__links" aria-label="Kontakt">
           <li><a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>

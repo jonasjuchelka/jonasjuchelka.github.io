@@ -5,7 +5,7 @@ summary: Engagement in einer Initiative rund um Unternehmertum, inzwischen im Be
 role: Beirat (zuvor aktive Rollen)
 context: Studium an der TU München
 tags: [Unternehmertum, Ehrenamt]
-order: 2
+order: 3
 published: true
 ---
 
