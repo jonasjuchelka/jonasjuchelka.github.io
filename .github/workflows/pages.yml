@@ -23,6 +23,9 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm --filter @workspace/jonas-website build
+        env:
+          # Public, non-secret: fixed HTTPS origin of the private area (Vercel).
+          NEXT_PUBLIC_PRIVATE_APP_ORIGIN: https://jonas-private.vercel.app
       - run: pnpm --filter @workspace/jonas-website typecheck
       - run: node --test artifacts/jonas-website/scripts/dev-origins.test.mjs tests/pages-export.test.mjs
       - run: node scripts/verify-pages-export.mjs --manifest
