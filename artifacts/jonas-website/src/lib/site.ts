@@ -1,7 +1,7 @@
 export const SITE_URL = "https://jonasjuchelka.github.io/";
 export const SITE_NAME = "Jonas Juchelka";
 export const SITE_DESCRIPTION =
-  "Jonas Juchelka studiert Management & Technology an der TU München. Projekte und Gedanken zu Technologie, Unternehmertum und Operations Research.";
+  "Jonas Juchelka studiert Management & Technology an der TU München. Schwerpunkt Deep Learning: rekursives Schließen mit kleinen Netzen, effiziente Modelle, Projekte und Gedanken.";
 export const EMAIL = "jonas.juchelka@gmail.com";
 export const GITHUB = "https://github.com/jonasjuchelka";
 

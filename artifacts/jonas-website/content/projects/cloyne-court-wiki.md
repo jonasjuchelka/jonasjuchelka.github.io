@@ -5,7 +5,7 @@ summary: Ein Wiki für das Wohnprojekt Cloyne Court, aufgebaut in Notion unter d
 role: Ersteller
 context: Studienaufenthalt an der UC Berkeley, Herbst 2026
 tags: [Notion, Wissensstruktur]
-order: 1
+order: 2
 published: true
 ---
 
