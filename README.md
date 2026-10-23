@@ -19,7 +19,7 @@ node scripts/verify-pages-export.mjs --manifest
 
 Mit der eingerichteten Entwicklungsdatenbank: `cd artifacts/private-dashboard && node --test scripts/test-database.mjs`. Alle Testdatensätze werden zurückgerollt.
 
-Entwicklung über die vorhandenen Replit-Workflows. Außerhalb Replit: pro Anwendung PORT setzen und `pnpm --filter @workspace/<name> dev`; öffentliche Site an `/`, private mit `BASE_PATH=/private`. Separate Produktionsanwendung mit leerem BASE_PATH bauen.
+Entwicklung: pro Anwendung PORT setzen und `pnpm --filter @workspace/<name> dev`; öffentliche Site an `/`, private mit `BASE_PATH=/private`. Separate Produktionsanwendung mit leerem BASE_PATH bauen.
 
 Migration/Bootstrap, Konfiguration und Veröffentlichung siehe docs/deployment.md; API in docs/private-api.md. `.env.example` ist ausschließlich Dokumentation, keine produktive Konfiguration. Niemals Secrets einchecken.
 
