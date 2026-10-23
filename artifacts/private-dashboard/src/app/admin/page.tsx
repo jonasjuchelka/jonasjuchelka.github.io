@@ -178,7 +178,7 @@ function Groups({ d, a }: P) {
   );
 }
 
-const EMPTY: Omit<Tool, "id"> = { name: "", provider: "", description: "", url: "https://", access_type: "own_account", instructions: "" };
+const EMPTY: Omit<Tool, "id"> = { name: "", provider: "", description: "", url: "https://", access_type: "own_account", instructions: "", plan: "", price: "", details: "" };
 
 function validUrl(s: string) {
   try { const u = new URL(s); return u.protocol === "https:" && !u.username && !u.password; } catch { return false; }
@@ -217,7 +217,7 @@ function Tools({ d, a }: P) {
                   <div className="row" style={{ justifyContent: "space-between" }}>
                     <div><h3 style={{ margin: 0 }}>{t.name}</h3><div className="meta">{t.provider} · {ACCESS_LABEL[t.access_type]}</div></div>
                     <div className="row">
-                      <button className="btn btn--small btn--ghost" onClick={() => { setEditId(t.id); setForm({ name: t.name, provider: t.provider, description: t.description, url: t.url, access_type: t.access_type, instructions: t.instructions }); }}>Bearbeiten</button>
+                      <button className="btn btn--small btn--ghost" onClick={() => { setEditId(t.id); setForm({ name: t.name, provider: t.provider, description: t.description, url: t.url, access_type: t.access_type, instructions: t.instructions, plan: t.plan ?? "", price: t.price ?? "", details: t.details ?? "" }); }}>Bearbeiten</button>
                       <button className="btn btn--small btn--danger" disabled={a.busy} onClick={() => confirm(`Tool ${t.name} löschen?`) && a.run(() => api(`/admin/tools/${enc(t.id)}`, { method: "DELETE" }), "Tool gelöscht.")}>Löschen</button>
                     </div>
                   </div>
@@ -267,6 +267,11 @@ function Tools({ d, a }: P) {
         <Field id="t-desc" label="Beschreibung"><textarea id="t-desc" value={form.description} onChange={set("description")} maxLength={500} /></Field>
         <Field id="t-ins" label="Kurze Anleitung" hint="Keine Passwörter, Schlüssel oder Codes eintragen.">
           <textarea id="t-ins" value={form.instructions} onChange={set("instructions")} maxLength={2000} aria-describedby="t-ins-hint" />
+        </Field>
+        <Field id="t-plan" label="Plan / Tarif" hint="z. B. Creator. Erscheint im Seitenfenster."><input id="t-plan" value={form.plan ?? ""} onChange={set("plan")} maxLength={80} /></Field>
+        <Field id="t-price" label="Preis bei Neukauf" hint="z. B. 22 $ pro Monat, Stand Datum."><input id="t-price" value={form.price ?? ""} onChange={set("price")} maxLength={160} /></Field>
+        <Field id="t-det" label="Dokumentation" hint="Für das Seitenfenster. &#8222;## Titel&#8220; für Überschriften, &#8222;- &#8220; für Listen. Keine Passwörter oder Codes.">
+          <textarea id="t-det" rows={10} value={form.details ?? ""} onChange={set("details")} maxLength={8000} />
         </Field>
         <div className="row">
           <button className="btn" disabled={a.busy}>{editId ? "Änderungen speichern" : "Tool anlegen"}</button>

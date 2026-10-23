@@ -10,7 +10,8 @@ import { tools as toolsTable } from "./schema";
 const id=z.string().uuid();
 const name=z.string().trim().min(1).max(100);
 const toolSchema=z.object({name,provider:name,description:z.string().max(2000),url:z.string().max(2000).transform(safeExternalUrl),
-  access_type:z.enum(["own_account","team_seat","permitted_shared"]),instructions:z.string().max(4000)});
+  access_type:z.enum(["own_account","team_seat","permitted_shared"]),instructions:z.string().max(4000),
+  plan:z.string().trim().max(80).default(""),price:z.string().trim().max(160).default(""),details:z.string().max(8000).default("")});
 export async function adminGet() {
   await currentSession(false,true);
   const [users,groups,memberships,tools,grants,invitations]=await Promise.all([
@@ -53,9 +54,9 @@ export async function adminMutation(parts:string[],method:string,body:Record<str
       if(method==="POST") await c.query("INSERT INTO private_area.memberships(user_id,group_id) VALUES($1,$2) ON CONFLICT DO NOTHING",[user,group]);
       else await c.query("DELETE FROM private_area.memberships WHERE user_id=$1 AND group_id=$2",[user,group]);
     } else if(entity==="tools" && ["POST","PATCH"].includes(method)) {
-      const t=toolSchema.parse(body), values=[t.name,t.provider,t.description,t.url,t.access_type,t.instructions];
-      if(method==="POST" && !target) await c.query("INSERT INTO private_area.tools(id,name,provider,description,url,access_type,instructions) VALUES($1,$2,$3,$4,$5,$6,$7)",[randomUUID(),...values]);
-      else if(method==="PATCH" && target) await c.query("UPDATE private_area.tools SET name=$2,provider=$3,description=$4,url=$5,access_type=$6,instructions=$7 WHERE id=$1",[target,...values]);
+      const t=toolSchema.parse(body), values=[t.name,t.provider,t.description,t.url,t.access_type,t.instructions,t.plan,t.price,t.details];
+      if(method==="POST" && !target) await c.query("INSERT INTO private_area.tools(id,name,provider,description,url,access_type,instructions,plan,price,details) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)",[randomUUID(),...values]);
+      else if(method==="PATCH" && target) await c.query("UPDATE private_area.tools SET name=$2,provider=$3,description=$4,url=$5,access_type=$6,instructions=$7,plan=$8,price=$9,details=$10 WHERE id=$1",[target,...values]);
       else throw new AccessError(400,"Ungültiger Aufruf.");
     } else if(entity==="tools" && method==="DELETE" && target) {
       await c.query("DELETE FROM private_area.tools WHERE id=$1",[target]);
