@@ -9,6 +9,7 @@ export const metadata: Metadata = { title: { absolute: "Jonas Juchelka" }, descr
 
 const fields = [
   { k: "Fokus", v: "Deep Learning: wie Netze aufgebaut sind, warum Rekursion mit wenigen Parametern funktioniert und wie sich KI effizienter machen lässt." },
+  { k: "Interessen", v: "Struktur tiefer Schichten, Wiederverwendung von Gewichten durch Rekursion, die Mathematik der Gewichtsmatrizen und die Frage, welche Daten Modelle besser machen." },
   { k: "Aktuell", v: "Reimplementierung des Papers „Less is More: Recursive Reasoning with Tiny Networks“ (TRM) in Keras." },
   { k: "Studium", v: "Management & Technology, Technische Universität München. Technische Vertiefung: Computer Engineering. Austausch an der UC Berkeley." },
   { k: "Lehre", v: "Tutor für Operations Research bei Prof. Rainer Kolisch (TUM): lineare Optimierung, Simplex, Netzwerkflüsse." },

@@ -1,7 +1,7 @@
 ---
 title: Recursive Reasoning mit kleinen Netzen (TRM in Keras)
 slug: trm-keras
-summary: Eigene Implementierung des TRM-Papers „Less is More: Recursive Reasoning with Tiny Networks“ in Keras.
+summary: "Eigene Implementierung des TRM-Papers „Less is More: Recursive Reasoning with Tiny Networks“ in Keras."
 role: Eigenprojekt
 context: Selbststudium neben dem Studium, Vorbereitung einer Bachelorarbeit
 tags: [Deep Learning, Rekursion, Keras]
