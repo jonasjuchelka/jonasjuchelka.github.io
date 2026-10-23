@@ -67,7 +67,10 @@ async function handle(request:NextRequest, context:{params:Promise<{path:string[
       const s=await currentSession();
       const tools=await query(`SELECT DISTINCT t.* FROM private_area.tools t JOIN private_area.grants g ON g.tool_id=t.id
         WHERE g.user_id=$1 OR g.group_id IN (SELECT group_id FROM private_area.memberships WHERE user_id=$1) ORDER BY t.name`,[s.user_id]);
-      result={tools,vaultConfigured:false};
+      // Optional link to the separate password vault. Only a plain https origin is accepted.
+      let vaultUrl:string|null=null;
+      try { const u=new URL(process.env.VAULTWARDEN_ORIGIN?.trim()??""); if(u.protocol==="https:" && !u.username && !u.password) vaultUrl=u.origin; } catch { vaultUrl=null; }
+      result={tools,vaultUrl};
     } else if(route==="admin" && method==="GET") result=await adminGet();
     else if(path[0]==="admin" && method!=="GET") result=await adminMutation(path.slice(1),method,body);
     else throw new AccessError(404,"Nicht gefunden.");
