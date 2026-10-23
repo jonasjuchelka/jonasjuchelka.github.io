@@ -1,0 +1,53 @@
+/* Raw brand tokens */
+:root {
+  --brand-weiss: #fafafa;
+  --brand-schwarz: #06060d;
+  --brand-babyblau-hell: #82c4f5;
+  --brand-himmelblau-dunkel: #74afdb;
+  --brand-koenigsblau: #1c2b36;
+  --brand-hellgrau: #b0c4d4;
+  --brand-mittelgrau: #9dafbd;
+  --brand-dunkelgrau: #8595a1;
+  --brand-textgrau: #7a7a7a;
+  --brand-nature-gruen: #8bcca9;
+  --brand-neon-gelb: #ffdf56;
+  --brand-rot: #ff3c4b;
+  --brand-orange: #ffd000;
+  --brand-dunkel-sekundaer: #2d4354;
+
+  /* Font roles: original brand TTFs (lib/design-tokens/fonts) loaded locally via next/font/local,
+     exposed as --font-brand-* on <html>. System fallbacks only apply if loading fails. */
+  --font-heading: var(--font-brand-heading, "Plus Jakarta Sans"), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-ui: var(--font-brand-ui, "Catamaran"), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: var(--font-brand-body, "Catamaran"), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-accent: var(--font-brand-accent, "Mukta"), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --weight-heading: 600;
+  --weight-ui: 400;
+  --weight-body: 300; /* Catamaran Light (original file) */
+  --weight-accent: 400;
+
+  /* Semantic tokens (light) */
+  --color-background: var(--brand-weiss);
+  --color-surface: #eef2f5;
+  --color-surface-dark: var(--brand-koenigsblau);
+  --color-text: var(--brand-schwarz);           /* 19.35:1 */
+  --color-text-muted: var(--brand-dunkel-sekundaer); /* 9.85:1 */
+  --color-heading: var(--brand-koenigsblau);    /* 13.89:1 */
+  --color-link: var(--brand-koenigsblau);
+  --color-action-bg: var(--brand-himmelblau-dunkel);
+  --color-action-text: var(--brand-koenigsblau); /* 6.14:1 */
+  --color-border-decorative: var(--brand-hellgrau);
+  --color-border-control: var(--brand-dunkel-sekundaer);
+  --color-focus: var(--brand-koenigsblau);
+  --color-on-dark: var(--brand-weiss);
+  --color-on-dark-accent: var(--brand-babyblau-hell); /* 7.71:1 on Königsblau */
+  --color-focus-on-dark: var(--brand-babyblau-hell);
+  --color-brand-blue: var(--brand-babyblau-hell);   /* fill; pair with Königsblau text, 8.06:1 */
+  --color-brand-blue-deep: var(--brand-himmelblau-dunkel); /* fill; pair with Königsblau text, 6.14:1 */
+  --brand-stripe: linear-gradient(90deg, var(--brand-koenigsblau) 0 18%, var(--brand-himmelblau-dunkel) 18% 58%, var(--brand-babyblau-hell) 58% 100%);
+  --color-highlight: var(--brand-neon-gelb);
+  --color-warning-bg: var(--brand-orange);
+  --color-success-bg: var(--brand-nature-gruen);
+  --color-error-bg: var(--brand-rot);
+}

@@ -1,0 +1,11 @@
+# Veröffentlichung
+
+Stand 22.10.2026: Repository `jonasjuchelka/jonasjuchelka.github.io` ist inzwischen erreichbar. Vor dem Quellcode-Abgleich enthielt main nur README.md, index.html und einen Static-HTML-Workflow. Der vollständige Replit-Quellcode wird ausschließlich über `replit-website-sync` und einen Pull Request gegen main übertragen, nicht direkt nach main. Kein Force-Push und kein automatisches Merge.
+
+Öffentlicher Build: `pnpm --filter @workspace/jonas-website build`; Ausgabe `artifacts/jonas-website/out`. `node scripts/verify-pages-export.mjs --manifest` prüft erlaubte öffentliche Pfade, Dateitypen und private Code-/Konfigurationsmarker. Der Workflow lädt ausschließlich diesen Ordner hoch, niemals das Repository. Deploy nur explizit via workflow_dispatch auf main im erwarteten Repository; Pushes und PRs führen nur Prüfungen aus. Der alte Root-Upload-Workflow wird erst nach erfolgreichem lokalem Next-Build und Exportprüfung entfernt. Kein CNAME. GitHub Pages steuert MIME-/Response-Header; nach einem separat freigegebenen Livegang feed.xml Content-Type prüfen.
+
+Privater Build: `BASE_PATH='' pnpm --filter @workspace/private-dashboard build`; Start mit leerem BASE_PATH und PORT via `pnpm --filter @workspace/private-dashboard start`. Separates Replit-Deployment noch einzurichten. Produktionsmetadatenabfrage ergab kein bestehendes Deployment. Danach PRIVATE_APP_ORIGIN und AUTH_ENVIRONMENT=production im Secret-/Konfigurationssystem setzen; public NEXT_PUBLIC_PRIVATE_APP_ORIGIN erst danach setzen und Public neu bauen.
+
+Entwicklungsdatenbank: `cd artifacts/private-dashboard && node scripts/migrate-dev.mjs`. Keine Startup-Migrationen. Replit Publish verwaltet die Schemaübernahme der verwalteten Datenbank; vor Publish Schema-Diff einschließlich private_area prüfen. Bootstrap erst nach fester Origin: `node scripts/bootstrap.mjs 'Adminname'` im privaten App-Verzeichnis. Ausgabe ist eine vertrauliche Einmaleinladung; nicht in Chat/Logs/Repository kopieren. Noch nicht ausgeführt.
+
+Produktionsblocker: Rechtsangaben, reales Passkey-Gerät, vollständige Sicherheitsabnahme, Repository-Zugriff und getrennte private Produktionskonfiguration. Markenassets wurden inzwischen geliefert, siehe branding.md. Keine kostenpflichtige Ressource gebucht.

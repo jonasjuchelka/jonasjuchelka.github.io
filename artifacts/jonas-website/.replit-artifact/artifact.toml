@@ -1,0 +1,25 @@
+kind = "web"
+previewPath = "/"
+title = "Jonas Juchelka"
+description = "Eine persönliche Website für Jonas Juchelka, als statische Seite für die spätere Veröffentlichung auf jonasjuchelka.github.io."
+version = "1.0.0"
+id = "artifacts/jonas-website"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19311
+
+[services.development]
+run = "pnpm --filter @workspace/jonas-website run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/jonas-website", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/jonas-website/out"
+
+
+[services.env]
+PORT = "19311"
+BASE_PATH = "/"
