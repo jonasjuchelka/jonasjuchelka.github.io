@@ -9,3 +9,23 @@ Privater Build: `BASE_PATH='' pnpm --filter @workspace/private-dashboard build`;
 Entwicklungsdatenbank: `cd artifacts/private-dashboard && node scripts/migrate-dev.mjs`. Keine Startup-Migrationen. Replit Publish verwaltet die Schemaübernahme der verwalteten Datenbank; vor Publish Schema-Diff einschließlich private_area prüfen. Bootstrap erst nach fester Origin: `node scripts/bootstrap.mjs 'Adminname'` im privaten App-Verzeichnis. Ausgabe ist eine vertrauliche Einmaleinladung; nicht in Chat/Logs/Repository kopieren. Noch nicht ausgeführt.
 
 Produktionsblocker: Rechtsangaben, reales Passkey-Gerät, vollständige Sicherheitsabnahme, Repository-Zugriff und getrennte private Produktionskonfiguration. Markenassets wurden inzwischen geliefert, siehe branding.md. Keine kostenpflichtige Ressource gebucht.
+
+## Vercel Hobby + Neon (privater Bereich)
+
+Nur für persönliche, nichtkommerzielle Nutzung (Vercel Hobby). Keine Secrets im Repository; Werte nur in den Vercel-/Neon-Einstellungen setzen.
+
+**Vercel-Projekt:** Root Directory `artifacts/private-dashboard`; „Include source files outside of the Root Directory in the Build Step“ aktivieren; Node.js 24; pnpm 10. Install/Build stehen in `artifacts/private-dashboard/vercel.json` (`pnpm install --frozen-lockfile`, `pnpm run build:production`). Das Build setzt `BASE_PATH` leer.
+
+**Variablen (Production):** `DATABASE_URL` (Neon, gepoolte Verbindung, Runtime-Rolle ohne Schemarechte), `AUTH_ENVIRONMENT=production`, `PRIVATE_APP_ORIGIN` (feste HTTPS-Origin, z. B. die stabile `…vercel.app`-Adresse oder eigene Domain; Passkeys sind daran gebunden). Preview-Deployments bekommen keine Produktionszugangsdaten. `DATABASE_URL_UNPOOLED` wird nur lokal/manuell für Migrationen genutzt und gehört nicht in die Vercel-Runtime.
+
+**Migrationen (manuell, nie automatisch):** Mit einer direkten (nicht gepoolten) Neon-Verbindung und einer eigenen Migrationsrolle:
+
+```
+DATABASE_URL_UNPOOLED='…' CONFIRM_PRODUCTION_MIGRATION=yes pnpm --filter @workspace/private-dashboard migrate:production
+```
+
+Der Runner (`scripts/migrate-production.mjs`) führt `migrations/*.sql` in Reihenfolge aus, protokolliert sie samt SHA-256-Prüfsumme in `private_area.schema_migrations`, lehnt geänderte bereits angewendete Dateien ab und verhindert parallele Läufe per Advisory-Lock. Jede Migration läuft in einer Transaktion. Vorher auf einer isolierten Neon-Branch/Testdatenbank prüfen und Backup/Restore-Möglichkeit sicherstellen. `migrate-dev.mjs` bleibt für Produktion gesperrt.
+
+**Reihenfolge:** Neon-Projekt anlegen → Migration → Vercel-Projekt mit Variablen → Deploy → feste Origin prüfen → `node scripts/bootstrap.mjs 'Adminname'` selbst ausführen (Ausgabe vertraulich) → Passkey auf realem Gerät testen → erst danach `NEXT_PUBLIC_PRIVATE_APP_ORIGIN` setzen und die öffentliche Seite per PR + manuellem Workflow neu veröffentlichen.
+
+**Hinweis:** Neon (Free) fährt im Leerlauf herunter; die erste Anfrage danach kann einige Sekunden dauern (Pool-Timeout 15 s). Replit-Dateien (`.replit`, `artifacts/*/.replit-artifact`, `scripts/post-merge.sh`) werden für den Vercel-Betrieb nicht benötigt.

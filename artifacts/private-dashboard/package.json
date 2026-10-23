@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "next dev -H 0.0.0.0 -p ${PORT:-3000}",
     "build": "next build",
+    "build:production": "BASE_PATH= next build",
+    "migrate:production": "node scripts/migrate-production.mjs",
     "start": "next start -H 0.0.0.0 -p ${PORT:-3000}",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
