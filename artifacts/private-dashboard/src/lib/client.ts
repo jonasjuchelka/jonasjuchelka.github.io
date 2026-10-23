@@ -103,6 +103,11 @@ export const ACCESS_LABEL: Record<AccessType, string> = {
   team_seat: "Offizieller Teamplatz",
   permitted_shared: "Ausdrücklich erlaubter geteilter Zugang",
 };
+export const ACCESS_HINT: Record<AccessType, string> = {
+  own_account: "Du meldest dich mit deinem eigenen Konto beim Anbieter an.",
+  team_seat: "Du bekommst einen Platz im Team-Abo des Anbieters und meldest dich mit eigenem Login an.",
+  permitted_shared: "Ein gemeinsamer Login. Die Zugangsdaten stehen im Passworttresor.",
+};
 export type Account = { user: { id: string; name: string; role: string }; passkeys: { id: string; name: string; created_at: string }[]; sessions: { id: string; created_at: string; expires_at: string; current: boolean }[] };
 export type AdminData = {
   users: { id: string; name: string; role: string; blocked: boolean }[];

@@ -29,3 +29,5 @@ Der Runner (`scripts/migrate-production.mjs`) führt `migrations/*.sql` in Reihe
 **Reihenfolge:** Neon-Projekt anlegen → Migration → Vercel-Projekt mit Variablen → Deploy → feste Origin prüfen → `node scripts/bootstrap.mjs 'Adminname'` selbst ausführen (Ausgabe vertraulich) → Passkey auf realem Gerät testen → erst danach `NEXT_PUBLIC_PRIVATE_APP_ORIGIN` setzen und die öffentliche Seite per PR + manuellem Workflow neu veröffentlichen.
 
 **Hinweis:** Neon (Free) fährt im Leerlauf herunter; die erste Anfrage danach kann einige Sekunden dauern (Pool-Timeout 15 s). Replit-Dateien (`.replit`, `artifacts/*/.replit-artifact`, `scripts/post-merge.sh`) werden für den Vercel-Betrieb nicht benötigt.
+
+**Passworttresor-Button:** Optional `VAULTWARDEN_ORIGIN` (nur `https://`-Origin, z. B. die Vaultwarden-Adresse) in Vercel setzen; dann zeigt `/tools` einen aktiven Link "Tresor öffnen". Nur ein Link, keine Anmeldung und keine Zugangsdaten.
