@@ -31,3 +31,5 @@ Der Runner (`scripts/migrate-production.mjs`) führt `migrations/*.sql` in Reihe
 **Hinweis:** Neon (Free) fährt im Leerlauf herunter; die erste Anfrage danach kann einige Sekunden dauern (Pool-Timeout 15 s). Replit-Dateien (`.replit`, `artifacts/*/.replit-artifact`, `scripts/post-merge.sh`) werden für den Vercel-Betrieb nicht benötigt.
 
 **Passworttresor-Button:** Optional `VAULTWARDEN_ORIGIN` (nur `https://`-Origin, z. B. die Vaultwarden-Adresse) in Vercel setzen; dann zeigt `/tools` einen aktiven Link "Tresor öffnen". Nur ein Link, keine Anmeldung und keine Zugangsdaten.
+
+**Tool-Dokumentation (Seitenfenster):** Migration `0002_tool_details.sql` ergänzt `plan`, `price` und `details` je Tool. Reihenfolge: PR mergen, Vercel-Deploy abwarten, dann `migrate:production` ausführen (additiv, `IF NOT EXISTS`). Die Tool-Seite funktioniert auch vor der Migration; Speichern im Admin braucht sie.
