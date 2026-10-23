@@ -1,20 +1,50 @@
 "use client";
 import Link from "next/link";
-import { ACCESS_HINT, ACCESS_LABEL, type Tool } from "@/lib/client";
+import { useState } from "react";
+import type { AccessType, Tool } from "@/lib/client";
 import { LoadError, PageHead, Skeleton, useResource } from "@/components/ui";
+
+
+const SHORT_LABEL: Record<AccessType, string> = {
+  own_account: "Eigenes Konto",
+  team_seat: "Team-Platz",
+  permitted_shared: "Gemeinsamer Login",
+};
+
+/** Logo from the tool's own site; falls back to the first letter if it cannot be loaded. */
+function Logo({ tool }: { tool: Tool }) {
+  const [failed, setFailed] = useState(false);
+  let src = "";
+  try { src = new URL("/favicon.ico", tool.url).href; } catch { src = ""; }
+  return failed || !src ? (
+    <span className="logo logo--letter" aria-hidden="true">{tool.name.slice(0, 1).toUpperCase()}</span>
+  ) : (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img className="logo" src={src} alt="" width={40} height={40} loading="lazy" referrerPolicy="no-referrer" onError={() => setFailed(true)} />
+  );
+}
+
+/** Instructions: one step per line; leading numbers or bullets are removed. */
+function Steps({ text }: { text: string }) {
+  const lines = text.split(/\r?\n/).map((l) => l.replace(/^\s*(?:\d+[.)]|[-*•])\s*/, "").trim()).filter(Boolean);
+  if (lines.length === 0) return null;
+  if (lines.length === 1) return <p className="tool-text">{lines[0]}</p>;
+  return <ol className="tool-steps">{lines.map((l, i) => <li key={i}>{l}</li>)}</ol>;
+}
 
 export default function ToolsPage() {
   const { data, error, loading, reload } = useResource<{ tools: Tool[]; vaultUrl: string | null }>("/tools");
   return (
     <>
       <PageHead eyebrow="Dashboard" title="Deine Tools">
-        <p>Hier siehst du nur Tools, die für dich freigegeben sind. Die Anmeldung beim Anbieter erfolgt separat, mit deinem eigenen Zugang.</p>
+        <p>Deine freigegebenen Tools. Die Anmeldung läuft beim Anbieter.</p>
       </PageHead>
       {data ? (
-        <section className="panel" aria-labelledby="vault-h" style={{ marginBottom: "2rem" }}>
-          <h2 id="vault-h">Passworttresor</h2>
-          <p><span className={data.vaultUrl ? "pill pill--ok" : "pill pill--warn"}>{data.vaultUrl ? "Aktiv" : "Noch nicht verbunden"}</span></p>
-          <p>Hier liegen Zugangsdaten und 2FA-Codes für gemeinsame Tools. Der Tresor ist ein eigener Dienst mit eigenem Master-Passwort und 2FA. Der Passkey dieser Seite öffnet ihn nicht. Auf dieser Website werden keine Zugangsdaten gespeichert.</p>
+        <section className="vault" aria-labelledby="vault-h">
+          <div>
+            <h2 id="vault-h">Passworttresor <span className={data.vaultUrl ? "pill pill--ok" : "pill pill--warn"}>{data.vaultUrl ? "Aktiv" : "Nicht verbunden"}</span></h2>
+            <p className="meta">Logins und 2FA-Codes. Eigenes Master-Passwort, nicht dein Passkey.</p>
+          </div>
           {data.vaultUrl ? (
             <a className="btn" href={data.vaultUrl} target="_blank" rel="noopener noreferrer">Tresor öffnen<span className="sr-only"> (neues Fenster)</span></a>
           ) : (
@@ -35,14 +65,17 @@ export default function ToolsPage() {
           <ul className="tools" style={{ listStyle: "none", padding: 0 }}>
             {data.tools.map((t) => (
               <li key={t.id} className="tool">
-                <p className="meta">{t.provider}</p>
-                <h2>{t.name}</h2>
-                <p><span className="pill">{ACCESS_LABEL[t.access_type] ?? t.access_type}</span></p>
-                {ACCESS_HINT[t.access_type] ? <p className="meta">{ACCESS_HINT[t.access_type]}</p> : null}
-                {t.description ? <p>{t.description}</p> : null}
-                {t.instructions ? <div><p className="meta">So geht&apos;s</p><p style={{ whiteSpace: "pre-wrap", margin: 0 }}>{t.instructions}</p></div> : null}
+                <div className="tool-head">
+                  <Logo tool={t} />
+                  <div>
+                    <h2>{t.name}</h2>
+                    <p className="meta">{t.provider} · {SHORT_LABEL[t.access_type] ?? t.access_type}</p>
+                  </div>
+                </div>
+                {t.description ? <p className="tool-text">{t.description}</p> : null}
+                {t.instructions ? <Steps text={t.instructions} /> : null}
                 <div style={{ marginTop: "auto" }}>
-                  <a className="btn" href={t.url} target="_blank" rel="noopener noreferrer">{t.name} öffnen<span className="sr-only"> (neues Fenster)</span></a>
+                  <a className="btn" href={t.url} target="_blank" rel="noopener noreferrer">Öffnen<span className="sr-only">: {t.name} (neues Fenster)</span></a>
                 </div>
               </li>
             ))}
