@@ -84,6 +84,11 @@ export async function registrationVerify(body: Record<string,unknown>, invite:bo
       const i=r.rows[0];
       if(!i) throw new AccessError(400,"Einladung bereits verwendet oder abgelaufen.");
       await c.query("INSERT INTO private_area.users(id,name,role) VALUES($1,$2,$3)",[flow.user_id,i.name,i.role]);
+      if(i.role==="member") {
+        // New friends land in the "Freunde" group, which holds the team-seat tools.
+        await c.query("INSERT INTO private_area.groups(id,name) VALUES(gen_random_uuid(),'Freunde') ON CONFLICT DO NOTHING");
+        await c.query("INSERT INTO private_area.memberships(user_id,group_id) SELECT $1::uuid,id FROM private_area.groups WHERE name='Freunde' ON CONFLICT DO NOTHING",[flow.user_id]);
+      }
     } else {
       const r=await c.query(`SELECT u.id FROM private_area.users u JOIN private_area.sessions s ON s.user_id=u.id
         WHERE u.id=$1 AND NOT u.blocked AND s.id=$2 AND s.expires_at>now()

@@ -4,7 +4,7 @@ Keine öffentliche Registrierung. Einladungen: 256-Bit-Zufall, SHA-256-Hash in D
 
 WebAuthn: SimpleWebAuthn, UV und resident credentials erforderlich; Challenge an HttpOnly-Flow-Cookie, Zweck und bei Reauth/Kontoergänzung Sitzung gebunden. Fünf Minuten, DELETE RETURNING vor Verifikation verhindert Replay auch bei Fehlern. Origin und RP-ID aus expliziter Konfiguration, nicht Host-Header. Kein Produktionslogin auf Vorschau-Domain.
 
-Sitzungen: gehashte 256-Bit-Tokens, __Host-Cookie, Secure/HttpOnly/SameSite=Strict, 12 Stunden Ablauf, Rotation bei Login. Sperren widerruft Sitzungen; jede API prüft Konto und Berechtigung. Sicherheitskritische Änderungen erfordern Bestätigung innerhalb fünf Minuten. Letzten Passkey schützt serverseitige Nutzersperre in Transaktion.
+Sitzungen: gehashte 256-Bit-Tokens, __Host-Cookie, Secure/HttpOnly/SameSite=Strict, 365 Tage Ablauf (auf Wunsch des Betreibers; Sicherheitsänderungen verlangen weiter eine Bestätigung innerhalb fünf Minuten), Rotation bei Login. Sperren widerruft Sitzungen; jede API prüft Konto und Berechtigung. Sicherheitskritische Änderungen erfordern Bestätigung innerhalb fünf Minuten. Letzten Passkey schützt serverseitige Nutzersperre in Transaktion.
 
 Origin-Abgleich auf jeder Mutation; HTTPS-URL-Validierung; Parametrisierung; no-store, noindex, no-referrer, nosniff und frame denial auf privater Runtime. Globale persistente Ratenlimits (60/min pro feste Kategorie) vertrauen keinen Client-IP-Headern, sind aber durch fremde Anfragen erschöpfbar. Vor größerem Betrieb vorgelagertes vertrauenswürdiges Rate Limiting ergänzen. Keine Drittanbieter-Secrets oder Tresorinhalte.
 

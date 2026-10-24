@@ -60,9 +60,15 @@ export async function adminMutation(parts:string[],method:string,body:Record<str
       else await c.query("DELETE FROM private_area.memberships WHERE user_id=$1 AND group_id=$2",[user,group]);
     } else if(entity==="tools" && ["POST","PATCH"].includes(method)) {
       const t=toolSchema.parse(body), values=[t.name,t.provider,t.description,t.url,t.access_type,t.instructions,t.plan,t.price,t.details,t.logo_url];
-      if(method==="POST" && !target) await c.query("INSERT INTO private_area.tools(id,name,provider,description,url,access_type,instructions,plan,price,details,logo_url) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)",[randomUUID(),...values]);
+      let toolId=target;
+      if(method==="POST" && !target) { toolId=randomUUID(); await c.query("INSERT INTO private_area.tools(id,name,provider,description,url,access_type,instructions,plan,price,details,logo_url) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)",[toolId,...values]); }
       else if(method==="PATCH" && target) await c.query("UPDATE private_area.tools SET name=$2,provider=$3,description=$4,url=$5,access_type=$6,instructions=$7,plan=$8,price=$9,details=$10,logo_url=$11 WHERE id=$1",[target,...values]);
       else throw new AccessError(400,"Ungültiger Aufruf.");
+      if(t.access_type==="team_seat") {
+        // Team-seat tools are shared with the "Freunde" group automatically.
+        await c.query("INSERT INTO private_area.groups(id,name) VALUES(gen_random_uuid(),'Freunde') ON CONFLICT DO NOTHING");
+        await c.query("INSERT INTO private_area.grants(id,tool_id,group_id) SELECT gen_random_uuid(),$1::uuid,id FROM private_area.groups WHERE name='Freunde' ON CONFLICT DO NOTHING",[toolId]);
+      }
     } else if(entity==="tools" && method==="DELETE" && target) {
       await c.query("DELETE FROM private_area.tools WHERE id=$1",[target]);
     } else if(entity==="grants" && method==="POST" && !target) {
