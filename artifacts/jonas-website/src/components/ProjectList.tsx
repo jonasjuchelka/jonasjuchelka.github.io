@@ -1,15 +1,16 @@
 import Link from "next/link";
 import { Tag } from "@workspace/site-ui";
 import type { Project } from "@/lib/content";
+import { localePath } from "@/lib/i18n";
 
-export function ProjectList({ projects }: { projects: Project[] }) {
+export function ProjectList({ projects, lang }: { projects: Project[]; lang: string }) {
   return (
     <ol className="index-list">
       {projects.map((p, i) => (
         <li key={p.slug} className="index-item">
           <span className="index-item__no" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
           <div className="index-item__main">
-            <h3><Link href={`/projects/${p.slug}/`} className="stretched" data-testid={`link-project-${p.slug}`}>{p.title}</Link></h3>
+            <h3><Link href={localePath(lang, `/projects/${p.slug}/`)} className="stretched" data-testid={`link-project-${p.slug}`}>{p.title}</Link></h3>
             <p>{p.summary}</p>
           </div>
           <div className="index-item__meta">

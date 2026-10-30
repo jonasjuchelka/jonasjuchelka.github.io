@@ -4,8 +4,8 @@ export function Eyebrow({ children }: { children: ReactNode }) {
   return <p className="ui-eyebrow">{children}</p>;
 }
 
-export function Notice({ tone = "info", title, children }: { tone?: "info" | "warning" | "success" | "error"; title: string; children?: ReactNode }) {
-  const label = { info: "Hinweis", warning: "Offen", success: "Erledigt", error: "Fehler" }[tone];
+export function Notice({ tone = "info", title, badge, children }: { tone?: "info" | "warning" | "success" | "error"; title: string; badge?: string; children?: ReactNode }) {
+  const label = badge ?? { info: "Hinweis", warning: "Offen", success: "Erledigt", error: "Fehler" }[tone];
   return (
     <div className={`ui-notice ui-notice--${tone}`} role={tone === "error" ? "alert" : "note"}>
       <span className="ui-notice__badge">{label}</span>

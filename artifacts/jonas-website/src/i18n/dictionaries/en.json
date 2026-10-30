@@ -1,0 +1,145 @@
+{
+  "meta": {
+    "description": "Jonas Juchelka studies Management & Technology at TU Munich. Focus on deep learning: recursive reasoning with tiny networks, efficient models, projects and thoughts."
+  },
+  "ui": {
+    "skip": "Skip to content",
+    "homeAria": "Jonas Juchelka, go to home page",
+    "mainNav": "Main navigation",
+    "contactAria": "Contact",
+    "legalAria": "Legal",
+    "crumbsAria": "Breadcrumbs",
+    "readingTime": "{n} min read",
+    "badgeInfo": "Note",
+    "badgeWarning": "Open"
+  },
+  "nav": { "projects": "Projects", "blog": "Blog", "contact": "Contact", "private": "Private area" },
+  "lang": {
+    "label": "Language",
+    "more": "More languages (live translation)",
+    "choose": "Choose language",
+    "translating": "Translating …",
+    "showOriginal": "Show original",
+    "notice": "Machine-translated with Claude (Anthropic). The text of this page was sent to a translation service for this. The German version is authoritative.",
+    "error": "Translation is not available right now. Please try again later."
+  },
+  "footer": {
+    "line": "Deep learning · Management & Technology, TU Munich.",
+    "base": "Static website. No tracking, no cookies.",
+    "rss": "RSS feed",
+    "imprint": "Legal notice",
+    "privacy": "Privacy"
+  },
+  "home": {
+    "eyebrow": "Munich / Berkeley",
+    "title": "Tiny networks. Recursive thinking.",
+    "intro": "Deep learning with few parameters: I rebuild architectures that apply the same network several times.",
+    "ctaProject": "TRM project",
+    "ctaMail": "Email",
+    "spec": [
+      { "k": "Currently", "v": "Rebuilding TRM in Keras" },
+      { "k": "Studies", "v": "Management & Technology, TU Munich" },
+      { "k": "Focus", "v": "Computer Engineering" },
+      { "k": "Exchange", "v": "UC Berkeley, 2026/27" }
+    ],
+    "figcaption": "One network, applied T times.",
+    "workEyebrow": "Work",
+    "projectsTitle": "Projects",
+    "notesEyebrow": "Notes",
+    "blogTitle": "Blog",
+    "contactTitle": "Contact"
+  },
+  "diagram": {
+    "title": "Recursion with shared weights",
+    "desc": "An input x goes into a network f with weights theta. The output h is fed back into the same network T times, followed by the output.",
+    "shared": "shared θ",
+    "layers": "3 layers → 1 layer ×T"
+  },
+  "projects": {
+    "metaTitle": "Projects",
+    "metaDesc": "Projects by Jonas Juchelka with short, verifiable context.",
+    "eyebrow": "Overview",
+    "title": "Projects",
+    "lede": "Few projects, and only with claims that can be verified. Where results are not cleared for release, they are left out on purpose.",
+    "detailEyebrow": "Project",
+    "asideAria": "Project details",
+    "role": "Role",
+    "context": "Context",
+    "topics": "Topics",
+    "back": "Back to all projects"
+  },
+  "blog": {
+    "metaTitle": "Blog",
+    "metaDesc": "Articles and notes by Jonas Juchelka.",
+    "eyebrow": "Notes",
+    "title": "Blog",
+    "emptyTitle": "Nothing published yet.",
+    "emptyBefore": "Texts from studies and practice will appear here once they are finished, not earlier. To not miss anything, subscribe to the",
+    "emptyLink": "RSS feed",
+    "emptyAfter": ".",
+    "articleEyebrow": "Article",
+    "toc": "Contents"
+  },
+  "contact": {
+    "metaTitle": "Contact",
+    "metaDesc": "Contact Jonas Juchelka by email or via GitHub.",
+    "eyebrow": "Contact",
+    "title": "Write to me.",
+    "lede": "No form, no detour. An email reaches me directly.",
+    "email": "Email",
+    "github": "GitHub"
+  },
+  "login": {
+    "metaTitle": "Private area",
+    "metaDesc": "Entry to the private area protected by passkey.",
+    "eyebrow": "Access",
+    "title": "Private area",
+    "lede": "The private area is a separate application at its own address. This public page does not sign anyone in and stores nothing.",
+    "continue": "Continue to sign-in",
+    "button": "Sign in with passkey",
+    "notReadyTitle": "Not set up yet",
+    "notReady": "The private application does not have a fixed production address yet. Once it does, this page will lead straight there.",
+    "fact1Bold": "Passkey only.",
+    "fact1": "No password, no social login, no link by email.",
+    "fact2Bold": "Invitation only.",
+    "fact2": "There is no public registration.",
+    "fact3Bold": "Separate.",
+    "fact3": "Sign-in and data live exclusively on the private application, not on GitHub Pages."
+  },
+  "legal": {
+    "eyebrow": "Legal",
+    "authoritative": "The German version of this page is the legally binding one.",
+    "imprint": {
+      "metaTitle": "Legal notice",
+      "metaDesc": "Provider identification, currently incomplete.",
+      "noticeTitle": "Incomplete: open production item",
+      "notice": "A postal address suitable for service is not available yet and will not be invented here. This legal notice is therefore not complete yet.",
+      "responsible": "Responsible",
+      "contact": "Contact",
+      "email": "Email:"
+    },
+    "privacy": {
+      "metaTitle": "Privacy",
+      "metaDesc": "Which data arises when visiting this website.",
+      "noticeTitle": "Draft: legal review pending",
+      "notice": "This information describes the technology actually set up. A complete, legally reviewed statement including the controller's address is still pending.",
+      "hostingTitle": "Hosting",
+      "hosting": "The website is delivered as static files via GitHub Pages. When you visit it, GitHub processes technically necessary connection data such as the IP address. I have no influence on this processing beyond the configuration.",
+      "notTitle": "What this website does not do",
+      "not1": "No cookies, no tracking, no analytics or marketing services.",
+      "not2": "No fonts or scripts loaded from third parties.",
+      "not3": "No contact form. An email is processed by your and my email provider.",
+      "translationTitle": "Translation",
+      "translation1": "The languages in the language menu are translated in advance and delivered as static files. No data is sent to third parties for this.",
+      "translation2": "Only if you actively trigger a live translation under “More languages”, the visible text of the current page is sent to a translation service, which translates it with Anthropic's Claude API. The operator of the service also processes technically necessary connection data such as the IP address. No cookies are set and no data is stored permanently. Without your action, no request takes place.",
+      "privateTitle": "Private area",
+      "private": "The passkey-protected area is a separate application with its own privacy statement. This public website does not transmit any data there."
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "heading": "This page does not exist here.",
+    "lede": "Maybe it was moved, maybe the address was never right. From here you can continue:",
+    "home": "Home"
+  }
+}

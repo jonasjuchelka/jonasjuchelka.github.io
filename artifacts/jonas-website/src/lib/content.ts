@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { parse as parseYaml } from "yaml";
 import { z } from "zod";
+import { DEFAULT_LOCALE, LANGUAGES } from "@/i18n/config";
 
 const ROOT = path.join(process.cwd(), "content");
 const slugRe = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
@@ -30,8 +31,7 @@ const postSchema = z.object({
 export type Project = z.infer<typeof projectSchema> & { body: string };
 export type Post = z.infer<typeof postSchema> & { body: string; readingMinutes: number; headings: { id: string; text: string }[] };
 
-function readDir(dir: string) {
-  const full = path.join(ROOT, dir);
+function readFiles(full: string) {
   if (!fs.existsSync(full)) return [];
   return fs.readdirSync(full).filter((f) => f.endsWith(".md")).map((file) => {
     const raw = fs.readFileSync(path.join(full, file), "utf8");
@@ -39,6 +39,14 @@ function readDir(dir: string) {
     if (!m) throw new Error(`Kein Frontmatter in ${file}`);
     return { file, data: parseYaml(m[1]) as unknown, content: m[2] };
   });
+}
+
+/** German files are the source. content/<lang>/<dir>/<same file> overrides them per file; missing files fall back to German. */
+function readDir(dir: string, lang: string = DEFAULT_LOCALE) {
+  const base = readFiles(path.join(ROOT, dir));
+  if (lang === DEFAULT_LOCALE) return base;
+  const over = new Map(readFiles(path.join(ROOT, lang, dir)).map((d) => [d.file, d]));
+  return base.map((d) => over.get(d.file) ?? d);
 }
 
 function parse<T extends z.ZodTypeAny>(schema: T, data: unknown, file: string): z.infer<T> {
@@ -52,18 +60,18 @@ export function slugify(s: string) {
     .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 }
 
-export function getProjects(): Project[] {
-  return readDir("projects")
+export function getProjects(lang: string = DEFAULT_LOCALE): Project[] {
+  return readDir("projects", lang)
     .map((d) => ({ ...parse(projectSchema, d.data, d.file), body: d.content }))
     .filter((p) => p.published)
     .sort((a, b) => a.order - b.order);
 }
-export function getProject(slug: string) {
-  return getProjects().find((p) => p.slug === slug);
+export function getProject(slug: string, lang: string = DEFAULT_LOCALE) {
+  return getProjects(lang).find((p) => p.slug === slug);
 }
 
-export function getPosts(): Post[] {
-  return readDir("blog")
+export function getPosts(lang: string = DEFAULT_LOCALE): Post[] {
+  return readDir("blog", lang)
     .map((d) => {
       const meta = parse(postSchema, d.data, d.file);
       const words = d.content.trim().split(/\s+/).filter(Boolean).length;
@@ -73,9 +81,15 @@ export function getPosts(): Post[] {
     .filter((p) => !p.draft)
     .sort((a, b) => b.date.getTime() - a.date.getTime());
 }
-export function getPost(slug: string) {
-  return getPosts().find((p) => p.slug === slug);
+export function getPost(slug: string, lang: string = DEFAULT_LOCALE) {
+  return getPosts(lang).find((p) => p.slug === slug);
 }
 
-export const formatDate = (d: Date) =>
-  new Intl.DateTimeFormat("de-DE", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(d);
+export const formatDate = (d: Date, lang: string = DEFAULT_LOCALE) => {
+  const tag = (LANGUAGES[lang]?.og ?? "de_DE").replace("_", "-");
+  try {
+    return new Intl.DateTimeFormat(tag, { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(d);
+  } catch {
+    return new Intl.DateTimeFormat("de-DE", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(d);
+  }
+};

@@ -1,0 +1,15 @@
+name = "jonas-translate"
+main = "index.js"
+compatibility_date = "2026-10-01"
+
+# Optional model override, default is claude-haiku-5-5:
+# [vars]
+# MODEL = "claude-sonnet-5-5"
+
+# Rate limit per IP: 5 requests per 60 seconds. Check the current Cloudflare docs for the exact binding syntax,
+# it has changed between versions. Without this binding the Worker still runs, but only the Anthropic spend limit protects it.
+[[unsafe.bindings]]
+name = "RATE_LIMITER"
+type = "ratelimit"
+namespace_id = "1001"
+simple = { limit = 5, period = 60 }
