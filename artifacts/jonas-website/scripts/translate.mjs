@@ -15,9 +15,11 @@ const CONTENT = path.join(root, "content");
 const CACHE_FILE = path.join(root, "src/i18n/.translation-cache.json");
 const MODEL = process.env.TRANSLATE_MODEL || "claude-sonnet-5-5";
 
-// Keep in sync with PREBUILT_CODES in src/i18n/config.ts (everything except de and the hand-written en).
+// Every language except German (the source). Keep in sync with LANGUAGES in src/i18n/config.ts.
+// English started as a hand-written translation: an existing file without a cache entry is "adopted" as up to date
+// (not overwritten), and from then on it is re-translated whenever the German source changes, like all other languages.
 const NAMES = {
-  es: "Spanish", fr: "French", it: "Italian", pt: "Portuguese", nl: "Dutch", pl: "Polish", tr: "Turkish", ru: "Russian",
+  en: "English", es: "Spanish", fr: "French", it: "Italian", pt: "Portuguese", nl: "Dutch", pl: "Polish", tr: "Turkish", ru: "Russian",
   uk: "Ukrainian", zh: "Chinese (Simplified)", ja: "Japanese", ko: "Korean", ar: "Arabic", hi: "Hindi",
 };
 
@@ -81,6 +83,11 @@ async function translateDict(lang) {
   const h = sha(srcText + MODEL);
   const file = path.join(DICT_DIR, `${lang}.json`);
   if (!flag("force") && cache[lang]?.dict === h && fs.existsSync(file)) return console.log(`  ui: up to date`);
+  if (!flag("force") && !cache[lang]?.dict && fs.existsSync(file)) {
+    if (flag("dry")) return console.log(`  ui: would adopt existing file`);
+    (cache[lang] ??= {}).dict = h; saveCache();
+    return console.log(`  ui: adopted existing file as up to date`);
+  }
   if (flag("dry")) return console.log(`  ui: would translate`);
   const out = JSON.parse(stripFence(await claude(NAMES[lang], `Translate all string values of this JSON from German. Keep every key unchanged. Return valid JSON only.\n\n${srcText}`)));
   sameShape(JSON.parse(srcText), out);
@@ -108,6 +115,12 @@ async function translateContent(lang) {
       const h = sha(raw + MODEL);
       const outFile = path.join(CONTENT, lang, dir, file);
       if (!flag("force") && cache[lang]?.[key] === h && fs.existsSync(outFile)) { console.log(`  ${key}: up to date`); continue; }
+      if (!flag("force") && !cache[lang]?.[key] && fs.existsSync(outFile)) {
+        if (flag("dry")) { console.log(`  ${key}: would adopt existing file`); continue; }
+        (cache[lang] ??= {})[key] = h; saveCache();
+        console.log(`  ${key}: adopted existing file as up to date`);
+        continue;
+      }
       if (flag("dry")) { console.log(`  ${key}: would translate`); continue; }
       const text = stripFence(await claude(NAMES[lang],
         `Translate this Markdown file from German. Translate the frontmatter values of title, summary, role, context and every entry of tags, and the whole body. Keep all other frontmatter keys and values (slug, order, published, date, updated, draft) byte-identical. Return the complete file, starting with the --- frontmatter.\n\n${raw}`));
