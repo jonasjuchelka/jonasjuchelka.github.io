@@ -26,9 +26,9 @@ export function LoginView({ lang }: { lang: string }) {
           </Notice>
         )}
         <ul className="gateway__facts">
-          <li><strong>{t.fact1Bold}</strong> {t.fact1}</li>
-          <li><strong>{t.fact2Bold}</strong> {t.fact2}</li>
-          <li><strong>{t.fact3Bold}</strong> {t.fact3}</li>
+          <li><span><strong>{t.fact1Bold}</strong> {t.fact1}</span></li>
+          <li><span><strong>{t.fact2Bold}</strong> {t.fact2}</span></li>
+          <li><span><strong>{t.fact3Bold}</strong> {t.fact3}</span></li>
         </ul>
       </div>
     </>
