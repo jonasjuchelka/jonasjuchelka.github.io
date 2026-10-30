@@ -31,7 +31,6 @@ function collectTextNodes(): Text[] {
 export function LanguageSwitcher({ lang, locales, t, endpoint }: Props) {
   const pathname = usePathname() || "/";
   const rest = stripLocale(pathname);
-  const current = locales.find((l) => l.code === lang)?.name ?? lang;
   const [status, setStatus] = useState<Status>("idle");
   const [target, setTarget] = useState("");
   const originals = useRef(new Map<Text, string>());
@@ -89,7 +88,11 @@ export function LanguageSwitcher({ lang, locales, t, endpoint }: Props) {
     <div className="lang" data-no-translate>
       <details className="lang__details">
         <summary className="lang__summary" aria-label={t.label}>
-          <span aria-hidden="true">🌐</span> {current}
+          <svg className="lang__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" /><path d="M3 12h18" /><path d="M12 3c2.6 2.4 4 5.5 4 9s-1.4 6.6-4 9c-2.6-2.4-4-5.5-4-9s1.4-6.6 4-9z" />
+          </svg>
+          <span>{lang.toUpperCase()}</span>
+          <svg className="lang__chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4" /></svg>
         </summary>
         <div className="lang__menu">
           <ul className="lang__list" lang="und">
