@@ -132,7 +132,8 @@ a:hover{text-decoration-thickness:2px}
 .prose img{max-width:100%;height:auto}
 
 /* Gateway */
-.gateway{display:grid;gap:2rem;max-width:48rem;margin-left:0}
+.gateway{display:grid;gap:2rem}
+.gateway>*{max-width:48rem}
 .gateway__card{padding:2rem;border-radius:8px}
 .gateway__origin{font-family:var(--font-mono);font-size:1.1rem;margin:0 0 1.5rem;overflow-wrap:anywhere}
 .gateway__facts{list-style:none;margin:0;padding:0;border-top:2px solid var(--color-heading)}
