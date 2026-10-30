@@ -59,6 +59,16 @@ async function claude(language, user) {
   throw new Error("Claude API: retries exhausted");
 }
 
+// The model occasionally answers with something that is not the requested format (e.g. tool-call-like markup).
+// Ask again (up to 3 attempts) instead of failing the whole language; only the last error is reported.
+async function attempt(label, fn) {
+  let last;
+  for (let i = 1; i <= 3; i++) {
+    try { return await fn(); } catch (e) { last = e; console.log(`  ${label}: attempt ${i} invalid (${e.message.slice(0, 80)})${i < 3 ? ", retrying" : ""}`); }
+  }
+  throw last;
+}
+const extractJson = (s) => { const a = s.indexOf("{"), b = s.lastIndexOf("}"); if (a < 0 || b < a) throw new Error("no JSON object in response"); return JSON.parse(s.slice(a, b + 1)); };
 const stripFence = (s) => s.replace(/^```(?:json|markdown|md)?\s*\n/, "").replace(/\n```\s*$/, "");
 
 /** Same keys, same array lengths, strings stay strings, placeholders {x} are preserved. */
@@ -89,8 +99,11 @@ async function translateDict(lang) {
     return console.log(`  ui: adopted existing file as up to date`);
   }
   if (flag("dry")) return console.log(`  ui: would translate`);
-  const out = JSON.parse(stripFence(await claude(NAMES[lang], `Translate all string values of this JSON from German. Keep every key unchanged. Return valid JSON only.\n\n${srcText}`)));
-  sameShape(JSON.parse(srcText), out);
+  const out = await attempt("ui", async () => {
+    const o = extractJson(await claude(NAMES[lang], `Translate all string values of this JSON from German. Keep every key unchanged. Return valid JSON only.\n\n${srcText}`));
+    sameShape(JSON.parse(srcText), o);
+    return o;
+  });
   fs.writeFileSync(file, JSON.stringify(out, null, 2) + "\n");
   (cache[lang] ??= {}).dict = h;
   saveCache();
@@ -122,12 +135,15 @@ async function translateContent(lang) {
         continue;
       }
       if (flag("dry")) { console.log(`  ${key}: would translate`); continue; }
-      const text = stripFence(await claude(NAMES[lang],
-        `Translate this Markdown file from German. Translate the frontmatter values of title, summary, role, context and every entry of tags, and the whole body. Keep all other frontmatter keys and values (slug, order, published, date, updated, draft) byte-identical. Return the complete file, starting with the --- frontmatter.\n\n${raw}`));
-      const { fm: out } = splitFile(text);
-      for (const k of ["slug", "order", "published", "date", "updated", "draft"]) {
-        if (JSON.stringify(out[k]) !== JSON.stringify(fm[k])) throw new Error(`${key}: frontmatter field "${k}" changed`);
-      }
+      const text = await attempt(key, async () => {
+        const t = stripFence(await claude(NAMES[lang],
+          `Translate this Markdown file from German. Translate the frontmatter values of title, summary, role, context and every entry of tags, and the whole body. Keep all other frontmatter keys and values (slug, order, published, date, updated, draft) byte-identical. Return the complete file, starting with the --- frontmatter.\n\n${raw}`));
+        const { fm: out } = splitFile(t);
+        for (const k of ["slug", "order", "published", "date", "updated", "draft"]) {
+          if (JSON.stringify(out[k]) !== JSON.stringify(fm[k])) throw new Error(`${key}: frontmatter field "${k}" changed`);
+        }
+        return t;
+      });
       fs.mkdirSync(path.dirname(outFile), { recursive: true });
       fs.writeFileSync(outFile, text.endsWith("\n") ? text : text + "\n");
       (cache[lang] ??= {})[key] = h;
