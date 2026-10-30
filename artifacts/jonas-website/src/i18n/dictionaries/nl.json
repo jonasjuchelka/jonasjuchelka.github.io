@@ -1,0 +1,162 @@
+{
+  "meta": {
+    "description": "Jonas Juchelka studeert Management & Technology aan de TU München. Focus op deep learning: recursief redeneren met kleine netwerken, efficiënte modellen, projecten en gedachten."
+  },
+  "ui": {
+    "skip": "Naar de inhoud springen",
+    "homeAria": "Jonas Juchelka, naar de startpagina",
+    "mainNav": "Hoofdnavigatie",
+    "contactAria": "Contact",
+    "legalAria": "Juridisch",
+    "crumbsAria": "Broodkruimelpad",
+    "readingTime": "{n} min. leestijd",
+    "badgeInfo": "Opmerking",
+    "badgeWarning": "Open"
+  },
+  "nav": {
+    "projects": "Projecten",
+    "blog": "Blog",
+    "contact": "Contact",
+    "private": "Privégedeelte"
+  },
+  "lang": {
+    "label": "Taal",
+    "more": "Meer talen (live vertaling)",
+    "choose": "Taal kiezen",
+    "translating": "Vertalen …",
+    "showOriginal": "Origineel tonen",
+    "notice": "Automatisch vertaald met Claude (Anthropic). Hiervoor is de tekst van deze pagina naar een vertaaldienst gestuurd. De Duitse versie is leidend.",
+    "error": "Vertalen is momenteel niet mogelijk. Probeer het later opnieuw."
+  },
+  "footer": {
+    "line": "Deep learning · Management & Technology, TU München.",
+    "base": "Statische website. Geen tracking, geen cookies.",
+    "rss": "RSS-feed",
+    "imprint": "Colofon",
+    "privacy": "Privacy"
+  },
+  "home": {
+    "eyebrow": "München / Berkeley",
+    "title": "Kleine netwerken. Recursief denken.",
+    "intro": "Deep learning met weinig parameters: ik bouw architecturen na die hetzelfde netwerk meerdere keren toepassen.",
+    "ctaProject": "TRM-project",
+    "ctaMail": "E-mail",
+    "spec": [
+      {
+        "k": "Actueel",
+        "v": "TRM nagebouwd in Keras"
+      },
+      {
+        "k": "Studie",
+        "v": "Management & Technology, TU München"
+      },
+      {
+        "k": "Specialisatie",
+        "v": "Computer Engineering"
+      },
+      {
+        "k": "Uitwisseling",
+        "v": "UC Berkeley, 2026/27"
+      }
+    ],
+    "figcaption": "Eén netwerk, T keer toegepast.",
+    "workEyebrow": "Werk",
+    "projectsTitle": "Projecten",
+    "notesEyebrow": "Notities",
+    "blogTitle": "Blog",
+    "contactTitle": "Contact"
+  },
+  "diagram": {
+    "title": "Recursie met gedeelde gewichten",
+    "desc": "Een invoer x gaat een netwerk f in met gewichten theta. De uitgang h wordt T keer teruggevoerd in hetzelfde netwerk, daarna volgt de uitvoer.",
+    "shared": "gedeelde θ",
+    "layers": "3 lagen → 1 laag ×T"
+  },
+  "projects": {
+    "metaTitle": "Projecten",
+    "metaDesc": "Projecten van Jonas Juchelka met korte, onderbouwde context.",
+    "eyebrow": "Overzicht",
+    "title": "Projecten",
+    "lede": "Weinig projecten, en alleen met gegevens die zich laten onderbouwen. Waar resultaten niet zijn vrijgegeven, ontbreken ze hier bewust.",
+    "detailEyebrow": "Project",
+    "asideAria": "Projectgegevens",
+    "role": "Rol",
+    "context": "Kader",
+    "topics": "Onderwerpen",
+    "back": "Terug naar alle projecten"
+  },
+  "blog": {
+    "metaTitle": "Blog",
+    "metaDesc": "Artikelen en notities van Jonas Juchelka.",
+    "eyebrow": "Notities",
+    "title": "Blog",
+    "emptyTitle": "Nog niets gepubliceerd.",
+    "emptyBefore": "Hier verschijnen teksten uit studie en praktijk zodra ze af zijn, niet eerder. Wie niets wil missen, abonneert zich op de",
+    "emptyLink": "RSS-feed",
+    "emptyAfter": ".",
+    "articleEyebrow": "Artikel",
+    "toc": "Inhoud"
+  },
+  "contact": {
+    "metaTitle": "Contact",
+    "metaDesc": "Contact met Jonas Juchelka via e-mail of via GitHub.",
+    "eyebrow": "Contact",
+    "title": "Schrijf me.",
+    "lede": "Geen formulier, geen omweg. Een e-mail bereikt me direct.",
+    "email": "E-mail",
+    "github": "GitHub"
+  },
+  "login": {
+    "metaTitle": "Privégedeelte",
+    "metaDesc": "Toegang tot het privégedeelte, beveiligd met een passkey.",
+    "eyebrow": "Toegang",
+    "title": "Privégedeelte",
+    "lede": "Het privégedeelte is een aparte applicatie op een eigen adres. Deze openbare pagina meldt niemand aan en slaat niets op.",
+    "continue": "Verder naar inloggen",
+    "button": "Inloggen met passkey",
+    "notReadyTitle": "Nog niet ingericht",
+    "notReady": "De privétoepassing heeft nog geen vast productieadres. Zodra dat er is, leidt deze pagina er direct naartoe.",
+    "fact1Bold": "Alleen met passkey.",
+    "fact1": "Geen wachtwoord, geen social login, geen link per e-mail.",
+    "fact2Bold": "Alleen met uitnodiging.",
+    "fact2": "Openbare registratie is er niet.",
+    "fact3Bold": "Gescheiden.",
+    "fact3": "Inloggen en gegevens staan uitsluitend in de privétoepassing, niet op GitHub Pages."
+  },
+  "legal": {
+    "eyebrow": "Juridisch",
+    "authoritative": "Juridisch leidend is de Duitse versie van deze pagina.",
+    "imprint": {
+      "metaTitle": "Colofon",
+      "metaDesc": "Aanbiedergegevens, momenteel onvolledig.",
+      "noticeTitle": "Onvolledig: openstaand productiepunt",
+      "notice": "Een oproepbaar adres is nog niet beschikbaar en wordt hier niet verzonnen. Dit colofon is daarom nog niet volledig.",
+      "responsible": "Verantwoordelijke",
+      "contact": "Contact",
+      "email": "E-mail:"
+    },
+    "privacy": {
+      "metaTitle": "Privacy",
+      "metaDesc": "Welke gegevens bij een bezoek aan deze website ontstaan.",
+      "noticeTitle": "Concept: juridische toetsing nog open",
+      "notice": "Deze gegevens beschrijven de daadwerkelijk ingerichte techniek. Een volledige, juridisch getoetste verklaring inclusief adres van de verantwoordelijke is nog niet beschikbaar.",
+      "hostingTitle": "Hosting",
+      "hosting": "De website wordt als statische bestanden via GitHub Pages geleverd. Bij het opvragen verwerkt GitHub technisch noodzakelijke verbindingsgegevens zoals het IP-adres. Op deze verwerking heb ik geen invloed buiten de configuratie om.",
+      "notTitle": "Wat deze website niet doet",
+      "not1": "Geen cookies, geen tracking, geen analyse- of marketingdiensten.",
+      "not2": "Geen extern geladen lettertypen of scripts van derden.",
+      "not3": "Geen contactformulier. Een e-mail wordt verwerkt door uw e-mailprovider en de mijne.",
+      "translationTitle": "Vertaling",
+      "translation1": "De talen in de taalkeuze zijn vooraf vertaald en worden als statische bestanden geleverd. Hierbij worden geen gegevens naar derden gestuurd.",
+      "translation2": "Alleen wanneer u onder „Meer talen” actief een live vertaling start, wordt de zichtbare tekst van de huidige pagina naar een vertaaldienst gestuurd, die deze met de Claude API van Anthropic vertaalt. Daarnaast verwerkt de beheerder van de dienst technisch noodzakelijke verbindingsgegevens zoals het IP-adres. Er worden geen cookies geplaatst en geen gegevens permanent opgeslagen. Zonder uw actie vindt er geen aanroep plaats.",
+      "privateTitle": "Privégedeelte",
+      "private": "Het met een passkey beveiligde gedeelte is een aparte applicatie met een eigen privacyverklaring. Deze openbare website stuurt daar geen gegevens naartoe."
+    }
+  },
+  "notFound": {
+    "title": "Pagina niet gevonden",
+    "heading": "Deze pagina bestaat hier niet.",
+    "lede": "Misschien is ze verplaatst, misschien klopte het adres nooit. Vanaf hier kunt u verder:",
+    "home": "Startpagina"
+  }
+}

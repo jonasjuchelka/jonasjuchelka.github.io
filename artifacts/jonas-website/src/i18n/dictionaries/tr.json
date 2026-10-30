@@ -1,0 +1,162 @@
+{
+  "meta": {
+    "description": "Jonas Juchelka, TU München'de Management & Technology okuyor. Odak noktası derin öğrenme: küçük ağlarla özyinelemeli akıl yürütme, verimli modeller, projeler ve düşünceler."
+  },
+  "ui": {
+    "skip": "İçeriğe geç",
+    "homeAria": "Jonas Juchelka, ana sayfaya git",
+    "mainNav": "Ana gezinme",
+    "contactAria": "İletişim",
+    "legalAria": "Yasal bilgiler",
+    "crumbsAria": "Gezinti yolu",
+    "readingTime": "{n} dk okuma süresi",
+    "badgeInfo": "Not",
+    "badgeWarning": "Açık"
+  },
+  "nav": {
+    "projects": "Projeler",
+    "blog": "Blog",
+    "contact": "İletişim",
+    "private": "Özel alan"
+  },
+  "lang": {
+    "label": "Dil",
+    "more": "Diğer diller (canlı çeviri)",
+    "choose": "Dil seç",
+    "translating": "Çevriliyor …",
+    "showOriginal": "Orijinali göster",
+    "notice": "Claude (Anthropic) ile makine çevirisi. Bunun için bu sayfanın metni bir çeviri hizmetine gönderildi. Almanca sürüm esas alınır.",
+    "error": "Çeviri şu anda mümkün değil. Lütfen daha sonra tekrar deneyin."
+  },
+  "footer": {
+    "line": "Derin öğrenme · Management & Technology, TU München.",
+    "base": "Statik web sitesi. İzleme yok, çerez yok.",
+    "rss": "RSS beslemesi",
+    "imprint": "Künye",
+    "privacy": "Gizlilik"
+  },
+  "home": {
+    "eyebrow": "Münih / Berkeley",
+    "title": "Küçük ağlar. Özyinelemeli düşünme.",
+    "intro": "Az parametreyle derin öğrenme: Aynı ağı defalarca uygulayan mimarileri yeniden inşa ediyorum.",
+    "ctaProject": "TRM projesi",
+    "ctaMail": "E-posta",
+    "spec": [
+      {
+        "k": "Güncel",
+        "v": "TRM, Keras ile yeniden inşa edildi"
+      },
+      {
+        "k": "Eğitim",
+        "v": "Management & Technology, TU München"
+      },
+      {
+        "k": "Uzmanlaşma",
+        "v": "Bilgisayar mühendisliği"
+      },
+      {
+        "k": "Değişim",
+        "v": "UC Berkeley, 2026/27"
+      }
+    ],
+    "figcaption": "Bir ağ, T kez uygulanır.",
+    "workEyebrow": "Çalışma",
+    "projectsTitle": "Projeler",
+    "notesEyebrow": "Notlar",
+    "blogTitle": "Blog",
+    "contactTitle": "İletişim"
+  },
+  "diagram": {
+    "title": "Paylaşılan ağırlıklarla özyineleme",
+    "desc": "Bir x girdisi, theta ağırlıklı bir f ağına girer. h çıkışı T kez aynı ağa geri beslenir, ardından çıktı gelir.",
+    "shared": "paylaşılan θ",
+    "layers": "3 katman → 1 katman ×T"
+  },
+  "projects": {
+    "metaTitle": "Projeler",
+    "metaDesc": "Jonas Juchelka'nın projeleri, kısa ve belgelenmiş bağlamla.",
+    "eyebrow": "Genel bakış",
+    "title": "Projeler",
+    "lede": "Az sayıda proje, yalnızca kanıtlanabilir bilgilerle. Sonuçların yayımlanmasına izin verilmediği yerlerde, bunlar bilinçli olarak burada yer almıyor.",
+    "detailEyebrow": "Proje",
+    "asideAria": "Proje bilgileri",
+    "role": "Rol",
+    "context": "Çerçeve",
+    "topics": "Konular",
+    "back": "Tüm projelere dön"
+  },
+  "blog": {
+    "metaTitle": "Blog",
+    "metaDesc": "Jonas Juchelka'dan makaleler ve notlar.",
+    "eyebrow": "Notlar",
+    "title": "Blog",
+    "emptyTitle": "Henüz bir şey yayımlanmadı.",
+    "emptyBefore": "Üniversite ve uygulamadan yazılar, hazır olduklarında burada yer alacak, daha önce değil. Hiçbir şeyi kaçırmak istemeyenler şuna abone olabilir:",
+    "emptyLink": "RSS beslemesi",
+    "emptyAfter": ".",
+    "articleEyebrow": "Makale",
+    "toc": "İçindekiler"
+  },
+  "contact": {
+    "metaTitle": "İletişim",
+    "metaDesc": "Jonas Juchelka ile e-posta veya GitHub üzerinden iletişim.",
+    "eyebrow": "İletişim",
+    "title": "Bana yaz.",
+    "lede": "Form yok, dolambaç yok. Bir e-posta bana doğrudan ulaşır.",
+    "email": "E-posta",
+    "github": "GitHub"
+  },
+  "login": {
+    "metaTitle": "Özel alan",
+    "metaDesc": "Passkey ile korunan özel alana giriş.",
+    "eyebrow": "Erişim",
+    "title": "Özel alan",
+    "lede": "Özel alan, kendi adresi altında ayrı bir uygulamadır. Bu herkese açık sayfa kimseyi oturum açtırmaz ve hiçbir şey saklamaz.",
+    "continue": "Girişe devam et",
+    "button": "Passkey ile giriş yap",
+    "notReadyTitle": "Henüz kurulmadı",
+    "notReady": "Özel uygulamanın henüz sabit bir üretim adresi yok. Adres hazır olduğunda bu sayfa doğrudan oraya yönlendirecek.",
+    "fact1Bold": "Yalnızca passkey ile.",
+    "fact1": "Parola yok, sosyal medya girişi yok, e-postayla bağlantı yok.",
+    "fact2Bold": "Yalnızca davetle.",
+    "fact2": "Herkese açık bir kayıt yok.",
+    "fact3Bold": "Ayrı.",
+    "fact3": "Giriş ve veriler yalnızca özel uygulamada bulunur, GitHub Pages'te değil."
+  },
+  "legal": {
+    "eyebrow": "Yasal bilgiler",
+    "authoritative": "Hukuken bağlayıcı olan, bu sayfanın Almanca sürümüdür.",
+    "imprint": {
+      "metaTitle": "Künye",
+      "metaDesc": "Sağlayıcı bilgileri, şu anda eksik.",
+      "noticeTitle": "Eksik: açık üretim maddesi",
+      "notice": "Tebligata elverişli bir adres henüz mevcut değil ve burada uydurulmuyor. Bu nedenle bu künye henüz tam değil.",
+      "responsible": "Sorumlu",
+      "contact": "İletişim",
+      "email": "E-posta:"
+    },
+    "privacy": {
+      "metaTitle": "Gizlilik",
+      "metaDesc": "Bu web sitesini ziyaret ederken hangi verilerin oluştuğu.",
+      "noticeTitle": "Taslak: hukuki inceleme bekleniyor",
+      "notice": "Bu bilgiler, fiilen kurulmuş olan tekniği açıklar. Sorumlunun adresini de içeren, tam ve hukuken incelenmiş bir beyan henüz hazır değil.",
+      "hostingTitle": "Barındırma",
+      "hosting": "Web sitesi, GitHub Pages üzerinden statik dosyalar olarak sunulur. Erişim sırasında GitHub, IP adresi gibi teknik olarak gerekli bağlantı verilerini işler. Yapılandırmanın ötesinde bu işleme üzerinde bir etkim yoktur.",
+      "notTitle": "Bu web sitesinin yapmadıkları",
+      "not1": "Çerez yok, izleme yok, analiz veya pazarlama hizmeti yok.",
+      "not2": "Üçüncü taraflardan harici olarak yüklenen yazı tipleri veya betikler yok.",
+      "not3": "İletişim formu yok. Bir e-postayı sizin e-posta sağlayıcınız ve benimki işler.",
+      "translationTitle": "Çeviri",
+      "translation1": "Dil seçimindeki diller önceden çevrilmiştir ve statik dosyalar olarak sunulur. Bu sırada üçüncü taraflara veri gönderilmez.",
+      "translation2": "Yalnızca „Diğer diller“ altında canlı çeviriyi kendiniz başlatırsanız, geçerli sayfanın görünen metni, onu Anthropic'in Claude API'si ile çeviren bir çeviri hizmetine gönderilir. Ayrıca hizmetin işletmecisi, IP adresi gibi teknik olarak gerekli bağlantı verilerini işler. Çerez yerleştirilmez ve veriler kalıcı olarak saklanmaz. Siz başlatmadıkça herhangi bir istek yapılmaz.",
+      "privateTitle": "Özel alan",
+      "private": "Passkey ile korunan alan, kendi gizlilik beyanına sahip ayrı bir uygulamadır. Bu herkese açık web sitesi oraya veri aktarmaz."
+    }
+  },
+  "notFound": {
+    "title": "Sayfa bulunamadı",
+    "heading": "Böyle bir sayfa burada yok.",
+    "lede": "Belki taşındı, belki adres hiç doğru değildi. Buradan devam edebilirsiniz:",
+    "home": "Ana sayfa"
+  }
+}
