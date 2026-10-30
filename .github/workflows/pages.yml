@@ -26,8 +26,10 @@ jobs:
         env:
           # Public, non-secret: fixed HTTPS origin of the private area (Vercel).
           NEXT_PUBLIC_PRIVATE_APP_ORIGIN: https://jonas-private.vercel.app
+          # Public, non-secret: HTTPS URL of the live-translation proxy. Unset repository variable hides the live option.
+          NEXT_PUBLIC_TRANSLATE_ENDPOINT: ${{ vars.TRANSLATE_ENDPOINT }}
       - run: pnpm --filter @workspace/jonas-website typecheck
-      - run: node --test artifacts/jonas-website/scripts/dev-origins.test.mjs tests/pages-export.test.mjs
+      - run: node --test artifacts/jonas-website/scripts/dev-origins.test.mjs tests/pages-export.test.mjs tests/translate-worker.test.mjs
       - run: node scripts/verify-pages-export.mjs --manifest
       - run: pnpm --filter @workspace/private-dashboard build
       - run: pnpm --filter @workspace/private-dashboard typecheck

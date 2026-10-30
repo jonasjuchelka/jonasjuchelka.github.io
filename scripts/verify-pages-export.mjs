@@ -11,6 +11,9 @@ const publicRoots = new Set([
 ]);
 const forbiddenContent = /DATABASE_URL|SESSION_SECRET|PRIVATE_APP_ORIGIN|PREVIEW_AUTH_ORIGIN|private_area\.|@simplewebauthn|artifacts\/private-dashboard|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----/;
 
+// Language folders: German lives at the root, every other language under a two- or three-letter code ("en", "fil").
+const isLanguageRoot = (name) => /^[a-z]{2,3}$/.test(name);
+
 export function verifyPagesExport(directory = pagesDirectory) {
   if (!fs.existsSync(path.join(directory, "index.html"))) throw new Error("Public index.html missing");
   const files = [];
@@ -19,7 +22,7 @@ export function verifyPagesExport(directory = pagesDirectory) {
       const nextParts = [...parts, entry.name];
       const relative = nextParts.join("/");
       const absolute = path.join(folder, entry.name);
-      if (!publicRoots.has(nextParts[0])) throw new Error(`Unexpected public root: ${relative}`);
+      if (!publicRoots.has(nextParts[0]) && !(isLanguageRoot(nextParts[0]) && (nextParts.length > 1 || entry.isDirectory()))) throw new Error(`Unexpected public root: ${relative}`);
       if (entry.isSymbolicLink()) throw new Error(`Symlinks cannot be published: ${relative}`);
       if (nextParts.some((part) => /^(?:\.env(?:\..*)?|\.git|node_modules|src|server|migrations)$/.test(part))) {
         throw new Error(`Private/source path in public export: ${relative}`);

@@ -6,6 +6,8 @@ const nextConfig = {
   images: { unoptimized: true },
   basePath: "",
   reactStrictMode: true,
+  // Two root layouts (German at "/", other languages under "/<lang>/") need a standalone 404 page.
+  experimental: { globalNotFound: true },
   poweredByHeader: false,
   transpilePackages: ["@workspace/site-ui", "@workspace/design-tokens"],
   // Next's "*" matches one hostname label, not nested Replit preview hosts.

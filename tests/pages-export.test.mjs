@@ -24,6 +24,14 @@ test("public pages, gateway, local fonts and licenses may be exported", () => fi
   assert.equal(verifyPagesExport(directory).length, 5);
 }));
 
+test("language folders such as /en/ may be exported, a stray root file named like a language may not", () => fixture((directory, write) => {
+  write("en/index.html", "<h1>English</h1>");
+  write("en/projects/trm-keras/index.html", "<h1>TRM</h1>");
+  assert.equal(verifyPagesExport(directory).length, 4);
+  write("xx", "not a folder");
+  assert.throws(() => verifyPagesExport(directory));
+}));
+
 for (const name of ["private/index.html", "artifacts/private-dashboard/page.js", ".env",
   "brand/.env.local", "brand/schema.sql", "brand/server/auth.js", "_next/static/source.map"]) {
   test(`reject unexpected/private/source file: ${name}`, () => fixture((directory, write) => {
