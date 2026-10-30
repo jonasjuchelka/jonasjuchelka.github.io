@@ -6,7 +6,9 @@ import { currentSession, digest, token } from "./auth";
 import { AccessError, authConfig, safeExternalUrl } from "./policy";
 import { database } from "./db";
 import { tools as toolsTable } from "./schema";
-
+import { inviteMail, sendMail } from "./mail";
+const INVITE_MAIL_HOURS=48;
+const emailSchema=z.string().trim().email().max(254);
 const id=z.string().uuid();
 const name=z.string().trim().min(1).max(100);
 const toolSchema=z.object({name,provider:name,description:z.string().max(2000),url:z.string().max(2000).transform(safeExternalUrl),
@@ -37,8 +39,10 @@ export async function adminMutation(parts:string[],method:string,body:Record<str
     let response:Record<string,unknown>={ok:true};
     if(entity==="invitations" && method==="POST" && !target) {
       const raw=token(); const uuid=randomUUID();
-      await c.query("INSERT INTO private_area.invitations(id,token_hash,name,expires_at) VALUES($1,$2,$3,now()+interval '1 hour')",[uuid,digest(raw),name.parse(body.name)]);
-      response={url:`${authConfig().origin}${(process.env.BASE_PATH??"").replace(/\/$/,"")}/invite#token=${raw}`};
+      if(body.email) emailSchema.parse(body.email); // validate before anything is written
+      const hours=body.email?INVITE_MAIL_HOURS:1;
+      await c.query("INSERT INTO private_area.invitations(id,token_hash,name,expires_at) VALUES($1,$2,$3,now()+make_interval(hours=>$4))",[uuid,digest(raw),name.parse(body.name),hours]);
+      response={hours,url:`${authConfig().origin}${(process.env.BASE_PATH??"").replace(/\/$/,"")}/invite#token=${raw}`};
     } else if(entity==="invitations" && method==="DELETE" && target) {
       await c.query("DELETE FROM private_area.invitations WHERE id=$1",[target]);
     } else if(entity==="users" && method==="PATCH" && target) {
@@ -56,9 +60,15 @@ export async function adminMutation(parts:string[],method:string,body:Record<str
       else await c.query("DELETE FROM private_area.memberships WHERE user_id=$1 AND group_id=$2",[user,group]);
     } else if(entity==="tools" && ["POST","PATCH"].includes(method)) {
       const t=toolSchema.parse(body), values=[t.name,t.provider,t.description,t.url,t.access_type,t.instructions,t.plan,t.price,t.details,t.logo_url];
-      if(method==="POST" && !target) await c.query("INSERT INTO private_area.tools(id,name,provider,description,url,access_type,instructions,plan,price,details,logo_url) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)",[randomUUID(),...values]);
+      let toolId=target;
+      if(method==="POST" && !target) { toolId=randomUUID(); await c.query("INSERT INTO private_area.tools(id,name,provider,description,url,access_type,instructions,plan,price,details,logo_url) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)",[toolId,...values]); }
       else if(method==="PATCH" && target) await c.query("UPDATE private_area.tools SET name=$2,provider=$3,description=$4,url=$5,access_type=$6,instructions=$7,plan=$8,price=$9,details=$10,logo_url=$11 WHERE id=$1",[target,...values]);
       else throw new AccessError(400,"Ungültiger Aufruf.");
+      if(t.access_type==="team_seat") {
+        // Team-seat tools are shared with the "Freunde" group automatically.
+        await c.query("INSERT INTO private_area.groups(id,name) VALUES(gen_random_uuid(),'Freunde') ON CONFLICT DO NOTHING");
+        await c.query("INSERT INTO private_area.grants(id,tool_id,group_id) SELECT gen_random_uuid(),$1::uuid,id FROM private_area.groups WHERE name='Freunde' ON CONFLICT DO NOTHING",[toolId]);
+      }
     } else if(entity==="tools" && method==="DELETE" && target) {
       await c.query("DELETE FROM private_area.tools WHERE id=$1",[target]);
     } else if(entity==="grants" && method==="POST" && !target) {
@@ -71,5 +81,12 @@ export async function adminMutation(parts:string[],method:string,body:Record<str
     await c.query("INSERT INTO private_area.audit(actor_id,event) VALUES($1,$2)",[s.user_id,`${method}:${entity}`]);
     return response;
   });
+  if(entity==="invitations" && method==="POST" && !target && body.email) {
+    // Sent after commit: a mail failure never rolls back the invitation; the admin still gets the link.
+    const to=emailSchema.parse(body.email);
+    const r=result as {url:string;hours:number};
+    const ok=await sendMail(to,inviteMail(name.parse(body.name),r.url,r.hours));
+    return {...r,mailed:ok};
+  }
   return result;
 }

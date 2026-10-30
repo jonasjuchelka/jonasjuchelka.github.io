@@ -42,13 +42,20 @@ type P = { d: AdminData; a: ReturnType<typeof useAction> };
 
 function Invitations({ d, a }: P) {
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [mailed, setMailed] = useState<boolean | null>(null);
+  const [hours, setHours] = useState(1);
   const [url, setUrl] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   async function create(e: FormEvent) {
     e.preventDefault();
     if (!name.trim()) { a.setMsg({ tone: "error", text: "Bitte einen Namen angeben." }); return; }
-    setUrl(null); setCopied(false);
-    await a.run(async () => { const r = await api<{ url: string }>("/admin/invitations", { method: "POST", body: { name: name.trim() } }); setUrl(r.url); setName(""); }, "Einladung erstellt.");
+    setUrl(null); setCopied(false); setMailed(null);
+    const to = email.trim();
+    await a.run(async () => {
+      const r = await api<{ url: string; hours?: number; mailed?: boolean }>("/admin/invitations", { method: "POST", body: { name: name.trim(), ...(to ? { email: to } : {}) } });
+      setUrl(r.url); setHours(r.hours ?? 1); setMailed(to ? !!r.mailed : null); setName(""); setEmail("");
+    }, "Einladung erstellt.");
   }
   const now = Date.now();
   return (
@@ -74,12 +81,14 @@ function Invitations({ d, a }: P) {
         <form className="form panel" onSubmit={create} noValidate>
           <h3>Neue Einladung</h3>
           <Field id="inv-name" label="Name der eingeladenen Person"><input id="inv-name" value={name} onChange={(e) => setName(e.target.value)} maxLength={80} /></Field>
-          <div><button className="btn" disabled={a.busy}>Einladung erstellen</button></div>
+          <Field id="inv-mail" label="E-Mail (optional)" hint="Wenn ausgefüllt, bekommt die Person die Einladung als Mail von Jonas Support. Die Adresse wird nicht gespeichert."><input id="inv-mail" type="email" value={email} onChange={(e) => setEmail(e.target.value)} maxLength={254} autoComplete="off" aria-describedby="inv-mail-hint" /></Field>
+          <div><button className="btn" disabled={a.busy}>{email.trim() ? "Einladung senden" : "Einladung erstellen"}</button></div>
         </form>
         {url ? (
           <div className="panel panel--dark" role="status">
-            <h3>Einladungslink, nur jetzt sichtbar</h3>
-            <p>Einmalig nutzbar, 1 Stunde gültig. Über einen vertrauenswürdigen Kanal weitergeben.</p>
+            <h3>{mailed === true ? "Mail ist raus 🎉" : "Einladungslink, nur jetzt sichtbar"}</h3>
+            {mailed === false ? <p><strong>Die Mail konnte nicht gesendet werden.</strong> Gib den Link selbst weiter oder prüfe die Mail-Einrichtung.</p> : null}
+            <p>Einmalig nutzbar, {hours === 1 ? "1 Stunde" : `${hours} Stunden`} gültig. {mailed === true ? "Der Link steht auch in der Mail." : "Über einen vertrauenswürdigen Kanal weitergeben."}</p>
             <div className="copy">
               <label className="sr-only" htmlFor="inv-url">Einladungslink</label>
               <input id="inv-url" readOnly value={url} onFocus={(e) => e.currentTarget.select()} />

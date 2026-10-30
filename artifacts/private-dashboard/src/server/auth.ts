@@ -25,10 +25,10 @@ export async function issueSession(c: PoolClient, userId: string) {
   const raw = token();
   const old = (await cookies()).get(SESSION)?.value;
   if (old) await c.query("DELETE FROM private_area.sessions WHERE token_hash=$1", [digest(old)]);
-  await c.query(`INSERT INTO private_area.sessions(id,token_hash,user_id,expires_at) VALUES($1,$2,$3,now()+interval '12 hours')`, [randomUUID(),digest(raw),userId]);
+  await c.query(`INSERT INTO private_area.sessions(id,token_hash,user_id,expires_at) VALUES($1,$2,$3,now()+interval '365 days')`, [randomUUID(),digest(raw),userId]);
   return raw;
 }
-export async function setSession(raw: string) { (await cookies()).set(SESSION, raw, {...options, maxAge:43200}); }
+export async function setSession(raw: string) { (await cookies()).set(SESSION, raw, {...options, maxAge:31536000}); }
 export async function clearSession() { (await cookies()).set(SESSION, "", {...options,maxAge:0}); }
 export async function putChallenge(challenge: string, purpose: string, userId?: string, invitationId?: string, sessionId?: string) {
   const raw = token();
