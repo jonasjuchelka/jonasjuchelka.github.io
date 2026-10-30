@@ -38,7 +38,7 @@ jobs:
         with:
           path: artifacts/jonas-website/out
   deploy:
-    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && github.repository == 'jonasjuchelka/jonasjuchelka.github.io'
+    if: (github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref == 'refs/heads/main' && github.repository == 'jonasjuchelka/jonasjuchelka.github.io'
     needs: public
     runs-on: ubuntu-latest
     permissions:
