@@ -78,7 +78,7 @@ async function handle(request:NextRequest, context:{params:Promise<{path:string[
       result={tools,vaultUrl,links};
     } else if(route==="access-links" && method==="POST") {
       const s=await currentSession();
-      const r=await openLink(s,z.string().uuid().parse(body.toolId),body.fresh===true);
+      const r=await openLink({id:String(s.id),user_id:String(s.user_id)},z.string().uuid().parse(body.toolId),body.fresh===true);
       result={id:r.id,url:`/zugang#t=${r.token}`,expires_at:r.expires_at,views:r.views};
     } else if(path[0]==="access-links" && path.length===2 && method==="DELETE") {
       const s=await currentSession();
@@ -87,7 +87,7 @@ async function handle(request:NextRequest, context:{params:Promise<{path:string[
     } else if(route==="access/view" && method==="POST") {
       // Token travels in the body, never in a URL, so it does not end up in request logs.
       const s=await currentSession();
-      result=await viewLink(s,z.string().min(20).max(100).parse(body.token),body.mode!=="totp");
+      result=await viewLink({id:String(s.id),user_id:String(s.user_id)},z.string().min(20).max(100).parse(body.token),body.mode!=="totp");
     } else if(route==="admin" && method==="GET") result=await adminGet();
     else if(path[0]==="admin" && method!=="GET") result=await adminMutation(path.slice(1),method,body);
     else throw new AccessError(404,"Nicht gefunden.");
