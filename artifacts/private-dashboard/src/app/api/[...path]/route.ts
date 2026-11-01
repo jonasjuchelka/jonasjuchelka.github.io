@@ -2,13 +2,14 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { query, transaction } from "../../../server/db";
 import { AccessError, authConfig, checkOrigin } from "../../../server/policy";
-import { currentSession, clearSession, rateLimit } from "../../../server/auth";
+import { currentSession, clearSession, digest, rateLimit } from "../../../server/auth";
 import { authenticationOptions, authenticationVerify, registrationOptions, registrationVerify } from "../../../server/webauthn";
 import { adminGet, adminMutation } from "../../../server/admin";
 import { openLink, viewLink } from "../../../server/vault";
 
 export const runtime="nodejs";
 export const dynamic="force-dynamic";
+const LIMITS:Record<string,{client:number;global:number}>={ auth:{client:20,global:300}, invite:{client:10,global:100}, private:{client:120,global:1200} };
 const headers={"Cache-Control":"no-store, max-age=0","Referrer-Policy":"no-referrer","X-Content-Type-Options":"nosniff","X-Robots-Tag":"noindex, nofollow"};
 async function handle(request:NextRequest, context:{params:Promise<{path:string[]}>}) {
   try {
@@ -26,8 +27,13 @@ async function handle(request:NextRequest, context:{params:Promise<{path:string[
       if(raw.length>32_768) throw new AccessError(413,"Anfrage zu groß.");
       if(raw) { if(!request.headers.get("content-type")?.startsWith("application/json")) throw new AccessError(415,"JSON erwartet."); body=z.record(z.string(),z.unknown()).parse(JSON.parse(raw)); }
     }
-    // Fixed bucket names avoid trusting spoofable forwarded IPs or unbounded keys.
-    await rateLimit(["auth","invite"].includes(path[0]??"") ? path[0]! : "private");
+    // Per-client limit plus a global backstop, so one client cannot lock everyone else out.
+    // Only on Vercel: its edge overwrites x-real-ip/x-forwarded-for, so they cannot be spoofed.
+    // The address is hashed and never stored in clear text.
+    const bucket=["auth","invite"].includes(path[0]??"") ? path[0]! : "private";
+    const ip=process.env.VERCEL==="1" ? (request.headers.get("x-real-ip") ?? request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "") : "";
+    if(ip) await rateLimit(`${bucket}:${digest(`rl:${ip}`).slice(0,24)}`, LIMITS[bucket].client);
+    await rateLimit(`${bucket}:all`, LIMITS[bucket].global);
     let result:unknown;
     if(route==="auth/options" && method==="POST") result=await authenticationOptions(body);
     else if(route==="auth/verify" && method==="POST") result=await authenticationVerify(body);
@@ -78,7 +84,8 @@ async function handle(request:NextRequest, context:{params:Promise<{path:string[
       result={tools,vaultUrl,links};
     } else if(route==="access-links" && method==="POST") {
       const s=await currentSession();
-      const r=await openLink({id:String(s.id),user_id:String(s.user_id)},z.string().uuid().parse(body.toolId),body.fresh===true);
+      const confirmed=Date.now()-new Date(s.confirmed_at).getTime()<=300_000;
+      const r=await openLink({id:String(s.id),user_id:String(s.user_id),confirmed},z.string().uuid().parse(body.toolId),body.fresh===true);
       result={id:r.id,url:`/zugang#t=${r.token}`,expires_at:r.expires_at,views:r.views};
     } else if(path[0]==="access-links" && path.length===2 && method==="DELETE") {
       const s=await currentSession();

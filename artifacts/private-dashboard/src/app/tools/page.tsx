@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { BASE, api, errText, type AccessLink, type AccessType, type Tool } from "@/lib/client";
+import { ApiError, BASE, api, authenticate, errText, type AccessLink, type AccessType, type Tool } from "@/lib/client";
 import { LoadError, PageHead, Skeleton, useResource } from "@/components/ui";
 import { ToolLogo } from "@/components/ToolLogo";
 import { CATEGORIES, categoryLabel, categoryShort } from "@/lib/categories";
@@ -210,7 +210,15 @@ export default function ToolsPage() {
     setLoginMsg(null); setLoginBusy(true);
     const w = window.open("about:blank", "_blank");
     try {
-      const r = await api<{ url: string }>("/access-links", { method: "POST", body: { toolId, fresh } });
+      const create = () => api<{ url: string }>("/access-links", { method: "POST", body: { toolId, fresh } });
+      let r: { url: string };
+      try { r = await create(); }
+      catch (e) {
+        // A new link needs a passkey confirmation from the last 5 minutes: confirm once, then retry.
+        if (!(e instanceof ApiError && e.status === 403 && /bestätigen/i.test(e.message))) throw e;
+        await authenticate("reauth");
+        r = await create();
+      }
       const target = `${BASE}${r.url}`;
       if (w) { w.opener = null; w.location.href = target; } else window.location.assign(target);
       await reload();
