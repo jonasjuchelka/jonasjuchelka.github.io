@@ -127,7 +127,7 @@ function Peek({ item, onClose, login }: { item: Item; onClose: () => void; login
             <div className="row">
               <a className="btn" href={item.offer.redeem} target="_blank" rel="noopener noreferrer">Zur Angebotsseite<span className="sr-only"> (neues Fenster)</span></a>
               {item.offer.source && item.offer.source !== item.offer.redeem ? (
-                <a href={item.offer.source} target="_blank" rel="noopener noreferrer">Anleitung des Anbieters</a>
+                <a href={item.offer.source} target="_blank" rel="noopener noreferrer">Anleitung ansehen</a>
               ) : null}
             </div>
             <p className="meta peek-src">Stand {GH_EDU_CHECKED}. Konditionen können sich ändern. Quelle: <a href={GH_EDU_PACK} target="_blank" rel="noopener noreferrer">education.github.com/pack</a></p>

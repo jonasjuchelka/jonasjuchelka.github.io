@@ -74,8 +74,8 @@ export async function adminMutation(parts:string[],method:string,body:Record<str
       if(method==="POST" && !target) { toolId=randomUUID(); await c.query("INSERT INTO private_area.tools(id,name,provider,description,url,access_type,instructions,plan,price,details,logo_url,category) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)",[toolId,...values]); }
       else if(method==="PATCH" && target) await c.query("UPDATE private_area.tools SET name=$2,provider=$3,description=$4,url=$5,access_type=$6,instructions=$7,plan=$8,price=$9,details=$10,logo_url=$11,category=$12 WHERE id=$1",[target,...values]);
       else throw new AccessError(400,"Ungültiger Aufruf.");
-      if(t.access_type==="team_seat") {
-        // Team-seat tools are shared with the "Freunde" group automatically.
+      if(method==="POST" || t.access_type==="team_seat") {
+        // Default: new tools are available to everyone (group "Freunde" holds all users).
         await c.query("INSERT INTO private_area.groups(id,name) VALUES(gen_random_uuid(),'Freunde') ON CONFLICT DO NOTHING");
         await c.query("INSERT INTO private_area.grants(id,tool_id,group_id) SELECT gen_random_uuid(),$1::uuid,id FROM private_area.groups WHERE name='Freunde' ON CONFLICT DO NOTHING",[toolId]);
       }

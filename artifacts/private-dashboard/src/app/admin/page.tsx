@@ -267,6 +267,7 @@ function Tools({ d, a }: P) {
       </section>
       <form className="form panel" onSubmit={save} noValidate>
         <h3>{editId ? "Tool bearbeiten" : "Neues Tool"}</h3>
+        {!editId ? <p className="hint" style={{ marginTop: "-.5rem" }}>Neue Tools sind automatisch für alle freigegeben (Gruppe „Freunde“). Einzelne Freigaben kannst du links entziehen.</p> : null}
         <Field id="t-name" label="Name"><input id="t-name" value={form.name} onChange={set("name")} maxLength={80} required /></Field>
         <Field id="t-prov" label="Anbieter"><input id="t-prov" value={form.provider} onChange={set("provider")} maxLength={80} required /></Field>
         <Field id="t-url" label="Externe URL" hint="Nur HTTPS, keine Zugangsdaten in der URL.">
