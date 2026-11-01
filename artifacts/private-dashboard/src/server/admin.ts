@@ -1,4 +1,5 @@
 import "server-only";
+import { CATEGORY_IDS } from "@/lib/categories";
 import { randomUUID } from "node:crypto";
 import { z } from "zod";
 import { query, transaction } from "./db";
@@ -14,7 +15,8 @@ const name=z.string().trim().min(1).max(100);
 const toolSchema=z.object({name,provider:name,description:z.string().max(2000),url:z.string().max(2000).transform(safeExternalUrl),
   access_type:z.enum(["own_account","team_seat","permitted_shared"]),instructions:z.string().max(4000),
   plan:z.string().trim().max(80).default(""),price:z.string().trim().max(160).default(""),details:z.string().max(8000).default(""),
-  logo_url:z.string().trim().max(2000).default("").transform((v)=>v===""||(v.startsWith("/")&&!v.startsWith("//"))?v:safeExternalUrl(v))});
+  logo_url:z.string().trim().max(2000).default("").transform((v)=>v===""||(v.startsWith("/")&&!v.startsWith("//"))?v:safeExternalUrl(v)),
+  category:z.string().trim().default("").refine((v)=>v===""||(CATEGORY_IDS as string[]).includes(v),"Unbekannte Kategorie")});
 export async function adminGet() {
   await currentSession(false,true);
   const [users,groups,memberships,tools,grants,invitations]=await Promise.all([
@@ -59,10 +61,10 @@ export async function adminMutation(parts:string[],method:string,body:Record<str
       if(method==="POST") await c.query("INSERT INTO private_area.memberships(user_id,group_id) VALUES($1,$2) ON CONFLICT DO NOTHING",[user,group]);
       else await c.query("DELETE FROM private_area.memberships WHERE user_id=$1 AND group_id=$2",[user,group]);
     } else if(entity==="tools" && ["POST","PATCH"].includes(method)) {
-      const t=toolSchema.parse(body), values=[t.name,t.provider,t.description,t.url,t.access_type,t.instructions,t.plan,t.price,t.details,t.logo_url];
+      const t=toolSchema.parse(body), values=[t.name,t.provider,t.description,t.url,t.access_type,t.instructions,t.plan,t.price,t.details,t.logo_url,t.category];
       let toolId=target;
-      if(method==="POST" && !target) { toolId=randomUUID(); await c.query("INSERT INTO private_area.tools(id,name,provider,description,url,access_type,instructions,plan,price,details,logo_url) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)",[toolId,...values]); }
-      else if(method==="PATCH" && target) await c.query("UPDATE private_area.tools SET name=$2,provider=$3,description=$4,url=$5,access_type=$6,instructions=$7,plan=$8,price=$9,details=$10,logo_url=$11 WHERE id=$1",[target,...values]);
+      if(method==="POST" && !target) { toolId=randomUUID(); await c.query("INSERT INTO private_area.tools(id,name,provider,description,url,access_type,instructions,plan,price,details,logo_url,category) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)",[toolId,...values]); }
+      else if(method==="PATCH" && target) await c.query("UPDATE private_area.tools SET name=$2,provider=$3,description=$4,url=$5,access_type=$6,instructions=$7,plan=$8,price=$9,details=$10,logo_url=$11,category=$12 WHERE id=$1",[target,...values]);
       else throw new AccessError(400,"Ungültiger Aufruf.");
       if(t.access_type==="team_seat") {
         // Team-seat tools are shared with the "Freunde" group automatically.

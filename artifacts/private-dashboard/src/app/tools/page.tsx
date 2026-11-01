@@ -1,10 +1,11 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import type { AccessType, Tool } from "@/lib/client";
 import { LoadError, PageHead, Skeleton, useResource } from "@/components/ui";
-import { GH_EDU_CHECKED, GH_EDU_OFFERS, GH_EDU_PACK, GH_EDU_REDEEM } from "@/lib/github-education";
-
+import { ToolLogo } from "@/components/ToolLogo";
+import { CATEGORIES, categoryLabel } from "@/lib/categories";
+import { GH_EDU_CHECKED, GH_EDU_OFFERS, GH_EDU_PACK, type EduOffer } from "@/lib/github-education";
 
 const SHORT_LABEL: Record<AccessType, string> = {
   own_account: "Eigenes Konto",
@@ -12,22 +13,21 @@ const SHORT_LABEL: Record<AccessType, string> = {
   permitted_shared: "Gemeinsamer Login",
 };
 
-/** Logo: own logo address, else the tool's favicon, else the first letter. */
-function Logo({ tool }: { tool: Tool }) {
-  const candidates: string[] = [];
-  if (tool.logo_url) candidates.push(tool.logo_url);
-  try {
-    candidates.push(new URL("/favicon.ico", tool.url).href, new URL("/apple-touch-icon.png", tool.url).href);
-  } catch { /* invalid URL: letter fallback */ }
-  const [index, setIndex] = useState(0);
-  const src = candidates[index];
-  return src ? (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img className="logo" src={src} alt="" width={40} height={40} loading="lazy" referrerPolicy="no-referrer" onError={() => setIndex((i) => i + 1)} />
-  ) : (
-    <span className="logo logo--letter" aria-hidden="true">{tool.name.slice(0, 1).toUpperCase()}</span>
-  );
-}
+/** Access filter: the three Shared Access kinds plus GitHub Education. */
+type Access = AccessType | "edu";
+const ACCESS_GROUPS: { label: string; items: { id: Access; label: string }[] }[] = [
+  { label: "Shared Access", items: [
+    { id: "permitted_shared", label: "Gemeinsamer Login" },
+    { id: "team_seat", label: "Team-Platz" },
+    { id: "own_account", label: "Eigenes Konto" },
+  ] },
+  { label: "GitHub Education", items: [{ id: "edu", label: "Gratis mit Studentenstatus" }] },
+];
+
+/** One card model for both sources, so every tool looks the same. */
+type Item =
+  | { kind: "shared"; key: string; name: string; logo?: string; category: string; access: Access; meta: string; text: string; tool: Tool }
+  | { kind: "edu"; key: string; name: string; logo?: string; category: string; access: Access; meta: string; text: string; offer: EduOffer };
 
 /** Instructions: one step per line; leading numbers or bullets are removed. */
 function Steps({ text }: { text: string }) {
@@ -55,8 +55,8 @@ function Doc({ text }: { text: string }) {
   return <div className="doc">{blocks}</div>;
 }
 
-/** Side panel (like a "peek" view) with the tool's documentation. */
-function ToolPanel({ tool, onClose }: { tool: Tool; onClose: () => void }) {
+/** Side panel ("peek") with the documentation of one item. */
+function Peek({ item, onClose }: { item: Item; onClose: () => void }) {
   const closeRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     const previous = document.activeElement as HTMLElement | null;
@@ -65,194 +65,248 @@ function ToolPanel({ tool, onClose }: { tool: Tool; onClose: () => void }) {
     document.addEventListener("keydown", onKey);
     return () => { document.removeEventListener("keydown", onKey); previous?.focus?.(); };
   }, [onClose]);
+  const href = item.kind === "shared" ? item.tool.url : item.offer.redeem;
   return (
     <div className="peek-backdrop" onClick={onClose}>
       <aside className="peek" role="dialog" aria-modal="true" aria-labelledby="peek-h" onClick={(e) => e.stopPropagation()}>
         <div className="peek-bar">
           <button ref={closeRef} className="btn btn--small btn--ghost" onClick={onClose}>Schließen</button>
-          <a className="btn btn--small" href={tool.url} target="_blank" rel="noopener noreferrer">Öffnen<span className="sr-only"> (neues Fenster)</span></a>
+          <a className="btn btn--small" href={href} target="_blank" rel="noopener noreferrer">{item.kind === "shared" ? "Öffnen" : "Einlösen"}<span className="sr-only"> (neues Fenster)</span></a>
         </div>
         <div className="tool-head">
-          <Logo tool={tool} />
+          <ToolLogo name={item.name} logo={item.logo} />
           <div>
-            <h2 id="peek-h">{tool.name}</h2>
-            <p className="meta">{tool.provider} · {SHORT_LABEL[tool.access_type] ?? tool.access_type}</p>
+            <h2 id="peek-h">{item.name}</h2>
+            <p className="meta">{item.meta}</p>
           </div>
         </div>
-        {tool.plan || tool.price ? (
-          <dl className="facts">
-            {tool.plan ? <div><dt>Plan</dt><dd>{tool.plan}</dd></div> : null}
-            {tool.price ? <div><dt>Neukauf</dt><dd>{tool.price}</dd></div> : null}
-          </dl>
-        ) : null}
-        {tool.description ? <p>{tool.description}</p> : null}
-        {tool.details ? <Doc text={tool.details} /> : <p className="meta">Noch keine ausführliche Dokumentation hinterlegt.</p>}
-        {tool.instructions ? <><h3>So geht&apos;s</h3><Steps text={tool.instructions} /></> : null}
+        {item.kind === "shared" ? (
+          <>
+            {item.tool.plan || item.tool.price ? (
+              <dl className="facts">
+                {item.tool.plan ? <div><dt>Plan</dt><dd>{item.tool.plan}</dd></div> : null}
+                {item.tool.price ? <div><dt>Neukauf</dt><dd>{item.tool.price}</dd></div> : null}
+              </dl>
+            ) : null}
+            {item.tool.description ? <p>{item.tool.description}</p> : null}
+            {item.tool.details ? <Doc text={item.tool.details} /> : <p className="meta">Noch keine ausführliche Dokumentation hinterlegt.</p>}
+            {item.tool.instructions ? <><h3>So geht&apos;s</h3><Steps text={item.tool.instructions} /></> : null}
+          </>
+        ) : (
+          <>
+            <dl className="facts">
+              <div><dt>Gratis</dt><dd>{item.offer.free}</dd></div>
+              <div><dt>Was</dt><dd>{item.offer.what}</dd></div>
+            </dl>
+            <h3>So löst du es ein</h3>
+            <ol className="tool-steps">{item.offer.steps.map((s, i) => <li key={i}>{s}</li>)}</ol>
+            <p className="meta">
+              {item.offer.generic ? "Allgemeine Schritte. Die genauen Bedingungen stehen auf der Angebotsseite. " : ""}
+              Voraussetzung: verifizierter Studentenstatus bei GitHub Education.
+            </p>
+            <div className="row">
+              <a className="btn" href={item.offer.redeem} target="_blank" rel="noopener noreferrer">Zur Angebotsseite<span className="sr-only"> (neues Fenster)</span></a>
+              {item.offer.source && item.offer.source !== item.offer.redeem ? (
+                <a href={item.offer.source} target="_blank" rel="noopener noreferrer">Anleitung des Anbieters</a>
+              ) : null}
+            </div>
+            <p className="meta peek-src">Stand {GH_EDU_CHECKED}. Konditionen können sich ändern. Quelle: <a href={GH_EDU_PACK} target="_blank" rel="noopener noreferrer">education.github.com/pack</a></p>
+          </>
+        )}
       </aside>
     </div>
   );
 }
 
-type Filter = "all" | "shared" | "edu";
-const FILTERS: { id: Filter; label: string; hash: string }[] = [
-  { id: "all", label: "Alle", hash: "" },
-  { id: "shared", label: "Shared Access", hash: "shared" },
-  { id: "edu", label: "GitHub Education", hash: "github-education" },
-];
-
-/** GitHub Education as one flat, compact keyword list (no categories) with search. */
-function EduList() {
-  const [q, setQ] = useState("");
-  const needle = q.trim().toLowerCase();
-  const offers = needle
-    ? GH_EDU_OFFERS.filter((o) => `${o.name} ${o.what} ${o.free}`.toLowerCase().includes(needle))
-    : GH_EDU_OFFERS;
+function Card({ item, onDetails }: { item: Item; onDetails: () => void }) {
+  const href = item.kind === "shared" ? item.tool.url : item.offer.redeem;
   return (
-    <section className="edu" aria-labelledby="edu-h">
-      <div className="edu-head">
+    <li className={`tool tool--${item.kind}`}>
+      <div className="tool-head">
+        <ToolLogo name={item.name} logo={item.logo} />
         <div>
-          <h2 id="edu-h">GitHub Education</h2>
-          <p className="meta">{GH_EDU_OFFERS.length} Angebote, gratis mit Studentenstatus. Stand {GH_EDU_CHECKED}.</p>
+          <h3>{item.name}</h3>
+          <p className="meta">{item.meta}</p>
         </div>
-        <a className="btn btn--small" href={GH_EDU_REDEEM} target="_blank" rel="noopener noreferrer">Benefits öffnen<span className="sr-only"> (neues Fenster)</span></a>
       </div>
-      <p className="meta edu-how">Einlösen: Benefits öffnen → Angebot wählen → Schritten des Anbieters folgen.</p>
-      <label className="sr-only" htmlFor="edu-q">Angebote durchsuchen</label>
-      <input id="edu-q" className="edu-search" type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Suchen, z. B. Domain, Cloud, IDE" autoComplete="off" />
-      {offers.length === 0 ? (
-        <p className="meta edu-none">Kein Treffer für „{q}“.</p>
-      ) : (
-        <ul className="edu-list">
-          {offers.map((o) => (
-            <li key={o.name}>
-              <strong className="edu-name">{o.name}</strong>
-              <span className="edu-kw"><span className="edu-what">{o.what}</span><span className="edu-free">{o.free}</span></span>
-              <a className="edu-link" href={GH_EDU_REDEEM} target="_blank" rel="noopener noreferrer">Einlösen<span className="sr-only">: {o.name} (neues Fenster)</span></a>
-            </li>
-          ))}
-        </ul>
-      )}
-      <p className="meta edu-src">Quelle: <a href={GH_EDU_PACK} target="_blank" rel="noopener noreferrer">education.github.com/pack</a>. Konditionen können sich ändern, maßgeblich ist die Angabe beim Einlösen.</p>
-    </section>
+      {item.text ? <p className="tool-text tool-clamp">{item.text}</p> : null}
+      <div className="row tool-actions">
+        <button className="btn btn--small btn--ghost" onClick={onDetails} aria-haspopup="dialog">Details<span className="sr-only">: {item.name}</span></button>
+        <a className="btn btn--small" href={href} target="_blank" rel="noopener noreferrer">{item.kind === "shared" ? "Öffnen" : "Einlösen"}<span className="sr-only">: {item.name} (neues Fenster)</span></a>
+      </div>
+    </li>
   );
 }
 
+const isTyping = (t: EventTarget | null) => t instanceof HTMLElement && (t.isContentEditable || ["INPUT", "TEXTAREA", "SELECT"].includes(t.tagName));
+
 export default function ToolsPage() {
   const { data, error, loading, reload } = useResource<{ tools: Tool[]; vaultUrl: string | null }>("/tools");
-  const [openId, setOpenId] = useState<string | null>(null);
-  const [filter, setFilterState] = useState<Filter>("all");
-  const openTool = data?.tools.find((t) => t.id === openId) ?? null;
+  const [q, setQ] = useState("");
+  const [cats, setCats] = useState<string[]>([]);
+  const [access, setAccess] = useState<Access[]>([]);
+  const [filterOpen, setFilterOpen] = useState(false);
+  const [openKey, setOpenKey] = useState<string | null>(null);
+  const searchRef = useRef<HTMLInputElement>(null);
+  const filterBtnRef = useRef<HTMLButtonElement>(null);
 
-  // Filter lives in the URL hash (#shared, #github-education) so reload and links keep the view.
+  const items = useMemo<Item[]>(() => {
+    const shared: Item[] = (data?.tools ?? []).map((t) => ({
+      kind: "shared", key: `s:${t.id}`, name: t.name, logo: t.logo_url, category: t.category ?? "", access: t.access_type,
+      meta: `${SHORT_LABEL[t.access_type] ?? t.access_type} · ${categoryLabel(t.category)}`, text: t.description, tool: t,
+    }));
+    const edu: Item[] = GH_EDU_OFFERS.map((o) => ({
+      kind: "edu", key: `e:${o.id}`, name: o.name, logo: o.logo, category: o.category, access: "edu",
+      meta: `GitHub Education · ${categoryLabel(o.category)}`, text: `${o.what} · ${o.free}`, offer: o,
+    }));
+    return [...shared, ...edu];
+  }, [data]);
+
+  const needle = q.trim().toLowerCase();
+  const matches = (it: Item, ignore?: "cat" | "access") =>
+    (ignore === "cat" || cats.length === 0 || cats.includes(it.category)) &&
+    (ignore === "access" || access.length === 0 || access.includes(it.access)) &&
+    (!needle || `${it.name} ${it.meta} ${it.text} ${it.kind === "shared" ? it.tool.provider : ""}`.toLowerCase().includes(needle));
+  const visible = items.filter((it) => matches(it));
+  const visibleShared = visible.filter((it) => it.kind === "shared");
+  const visibleEdu = visible.filter((it) => it.kind === "edu");
+  const catCount = (id: string) => items.filter((it) => it.category === id && matches(it, "cat")).length;
+  const accessCount = (id: Access) => items.filter((it) => it.access === id && matches(it, "access")).length;
+  const activeCount = cats.length + access.length;
+  const openItem = items.find((it) => it.key === openKey) ?? null;
+  const closePeek = useCallback(() => setOpenKey(null), []);
+
+  const toggle = <T,>(list: T[], v: T) => (list.includes(v) ? list.filter((x) => x !== v) : [...list, v]);
+  const reset = () => { setCats([]); setAccess([]); setQ(""); };
+
+  // F toggles the filter mask, "/" jumps to the search, Esc closes the mask. Ignored while typing.
+  const onKey = useCallback((e: KeyboardEvent) => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.key === "Escape" && filterOpen && !openKey) { setFilterOpen(false); filterBtnRef.current?.focus(); return; }
+    if (isTyping(e.target) || openKey) return;
+    if (e.key === "f" || e.key === "F") { e.preventDefault(); setFilterOpen((o) => !o); }
+    else if (e.key === "/") { e.preventDefault(); searchRef.current?.focus(); }
+  }, [filterOpen, openKey]);
   useEffect(() => {
-    const read = () => setFilterState(FILTERS.find((f) => f.hash && `#${f.hash}` === window.location.hash)?.id ?? "all");
-    read();
-    window.addEventListener("hashchange", read);
-    window.addEventListener("popstate", read);
-    return () => { window.removeEventListener("hashchange", read); window.removeEventListener("popstate", read); };
-  }, []);
-  const setFilter = (id: Filter) => {
-    if (id === filter) return;
-    setFilterState(id);
-    const hash = FILTERS.find((f) => f.id === id)?.hash;
-    // pushState so the browser's back button returns to the previous view.
-    window.history.pushState(null, "", hash ? `#${hash}` : window.location.pathname + window.location.search);
-  };
-  const count = (id: Filter) => (id === "shared" ? data?.tools.length : id === "edu" ? GH_EDU_OFFERS.length : undefined);
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [onKey]);
 
-  const vault = data ? (
-    <section className="vault" aria-labelledby="vault-h">
-      <div>
-        <h2 id="vault-h">Passworttresor <span className={data.vaultUrl ? "pill pill--ok" : "pill pill--warn"}>{data.vaultUrl ? "Aktiv" : "Nicht verbunden"}</span></h2>
-        <p className="meta">Logins und 2FA-Codes. Eigenes Master-Passwort, nicht dein Passkey.</p>
-      </div>
-      {data.vaultUrl ? (
-        <a className="btn" href={data.vaultUrl} target="_blank" rel="noopener noreferrer">Tresor öffnen<span className="sr-only"> (neues Fenster)</span></a>
-      ) : (
-        <button className="btn" disabled aria-disabled="true">Tresor öffnen</button>
-      )}
-    </section>
-  ) : null;
-
-  const toolCards = data?.tools.map((t) => (
-    <li key={t.id} className="tool">
-      <div className="tool-head">
-        <Logo tool={t} />
-        <div>
-          <h2>{t.name}</h2>
-          <p className="meta">{t.provider} · {SHORT_LABEL[t.access_type] ?? t.access_type}</p>
-        </div>
-      </div>
-      {t.description ? <p className="tool-text tool-clamp">{t.description}</p> : null}
-      <div className="row" style={{ marginTop: "auto" }}>
-        <button className="btn btn--ghost" onClick={() => setOpenId(t.id)} aria-haspopup="dialog">Details<span className="sr-only">: {t.name}</span></button>
-        <a className="btn" href={t.url} target="_blank" rel="noopener noreferrer">Öffnen<span className="sr-only">: {t.name} (neues Fenster)</span></a>
-      </div>
-    </li>
-  ));
-
-  const eduCard = (
-    <li className="tool tool--edu">
-      <div className="tool-head">
-        <span className="logo logo--letter" aria-hidden="true">GH</span>
-        <div>
-          <h2>GitHub Education</h2>
-          <p className="meta">Student Developer Pack · {GH_EDU_OFFERS.length} Angebote</p>
-        </div>
-      </div>
-      <p className="tool-text">Gratis mit Studentenstatus: Copilot, JetBrains, Domains, Cloud-Guthaben und mehr.</p>
-      <div className="row" style={{ marginTop: "auto" }}>
-        <button className="btn" onClick={() => setFilter("edu")}>Anzeigen</button>
-      </div>
-    </li>
-  );
-
-  const emptyShared = (
-    <div className="empty">
-      <h2>Noch keine Tools freigegeben</h2>
-      <p>Sobald Jonas ein Tool für dich oder eine deiner Gruppen freigibt, erscheint es hier mit Anleitung.</p>
-      <Link href="/access-guide">Wie Zugänge funktionieren</Link>
-    </div>
-  );
+  const chips = [
+    ...access.map((a) => ({ key: `a:${a}`, label: ACCESS_GROUPS.flatMap((g) => g.items).find((i) => i.id === a)?.label ?? a, remove: () => setAccess(access.filter((x) => x !== a)) })),
+    ...cats.map((c) => ({ key: `c:${c}`, label: categoryLabel(c), remove: () => setCats(cats.filter((x) => x !== c)) })),
+  ];
 
   return (
     <>
       <PageHead eyebrow="Dashboard" title="Deine Tools">
-        <p>Deine freigegebenen Tools. Die Anmeldung läuft beim Anbieter.</p>
+        <p>Deine freigegebenen Tools und alles, was du mit GitHub Education gratis bekommst.</p>
       </PageHead>
       {loading && !data ? <Skeleton rows={4} /> : null}
       {error ? <LoadError error={error} retry={reload} /> : null}
       {data ? (
-        <div className="tools-layout">
-          <nav className="filter" aria-label="Tools filtern">
-            <p className="filter__label">Filter</p>
-            <ul>
-              {FILTERS.map((f) => (
-                <li key={f.id}>
-                  <button className="filter__btn" aria-pressed={filter === f.id} onClick={() => setFilter(f.id)}>
-                    <span>{f.label}</span>
-                    {count(f.id) !== undefined ? <span className="filter__count">{count(f.id)}</span> : null}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <div className="tools-content">
-            {filter === "edu" ? <EduList /> : (
-              <>
-                {vault}
-                {filter === "shared" && data.tools.length === 0 ? emptyShared : (
-                  <ul className="tools" style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                    {toolCards}
-                    {filter === "all" ? eduCard : null}
-                  </ul>
-                )}
-              </>
+        <>
+          <section className="vault" aria-labelledby="vault-h">
+            <div>
+              <h2 id="vault-h">Passworttresor <span className={data.vaultUrl ? "pill pill--ok" : "pill pill--warn"}>{data.vaultUrl ? "Aktiv" : "Nicht verbunden"}</span></h2>
+              <p className="meta">Logins und 2FA-Codes. Eigenes Master-Passwort, nicht dein Passkey.</p>
+            </div>
+            {data.vaultUrl ? (
+              <a className="btn" href={data.vaultUrl} target="_blank" rel="noopener noreferrer">Tresor öffnen<span className="sr-only"> (neues Fenster)</span></a>
+            ) : (
+              <button className="btn" disabled aria-disabled="true">Tresor öffnen</button>
             )}
+          </section>
+
+          <div className="toolbar">
+            <button ref={filterBtnRef} className={`btn btn--ghost filter-toggle${filterOpen ? " is-open" : ""}`} aria-expanded={filterOpen} aria-controls="filter-mask" onClick={() => setFilterOpen((o) => !o)}>
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M4 6h16M7 12h10M10 18h4" /></svg>
+              Filter{activeCount ? <span className="filter-toggle__count">{activeCount}</span> : null}
+              <kbd aria-hidden="true">F</kbd>
+            </button>
+            <div className="search">
+              <svg className="search__icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+              <label className="sr-only" htmlFor="tool-q">Tools durchsuchen</label>
+              <input ref={searchRef} id="tool-q" type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Suchen, z. B. Domain, Cloud, KI" autoComplete="off" />
+              <kbd aria-hidden="true">/</kbd>
+            </div>
           </div>
-        </div>
+          {chips.length ? (
+            <div className="chips" aria-label="Aktive Filter">
+              {chips.map((c) => <button key={c.key} className="chip" onClick={c.remove}>{c.label}<span aria-hidden="true"> ×</span><span className="sr-only"> entfernen</span></button>)}
+              <button className="chip chip--reset" onClick={reset}>Alle zurücksetzen</button>
+            </div>
+          ) : null}
+
+          <div className={`tools-layout${filterOpen ? " has-filter" : ""}`}>
+            {filterOpen ? (
+              <>
+                <div className="filter-backdrop" onClick={() => setFilterOpen(false)} aria-hidden="true" />
+                <aside id="filter-mask" className="filter-mask" aria-label="Filter">
+                  <div className="filter-mask__head">
+                    <p className="filter__label">Filter</p>
+                    <button className="btn btn--small btn--ghost" onClick={() => setFilterOpen(false)}>Schließen</button>
+                  </div>
+                  <fieldset>
+                    <legend>Zugang</legend>
+                    {ACCESS_GROUPS.map((g) => (
+                      <div key={g.label} className="filter-group">
+                        <p className="filter-group__label">{g.label}</p>
+                        {g.items.map((i) => (
+                          <label key={i.id} className="check">
+                            <input type="checkbox" checked={access.includes(i.id)} onChange={() => setAccess(toggle(access, i.id))} />
+                            <span>{i.label}</span><span className="check__count">{accessCount(i.id)}</span>
+                          </label>
+                        ))}
+                      </div>
+                    ))}
+                  </fieldset>
+                  <fieldset>
+                    <legend>Kategorie</legend>
+                    {CATEGORIES.map((c) => (
+                      <label key={c.id} className="check">
+                        <input type="checkbox" checked={cats.includes(c.id)} onChange={() => setCats(toggle(cats, c.id))} />
+                        <span>{c.label}</span><span className="check__count">{catCount(c.id)}</span>
+                      </label>
+                    ))}
+                  </fieldset>
+                  {activeCount ? <button className="btn btn--small btn--ghost" onClick={() => { setCats([]); setAccess([]); }}>Filter zurücksetzen</button> : null}
+                </aside>
+              </>
+            ) : null}
+
+            <div className="tools-content">
+              <p className="meta result-count" role="status">{visible.length} {visible.length === 1 ? "Tool" : "Tools"}</p>
+              {visible.length === 0 ? (
+                <div className="empty">
+                  <h2>Nichts gefunden</h2>
+                  <p>Kein Tool passt zu Suche und Filter.</p>
+                  <button className="btn btn--ghost" onClick={reset}>Zurücksetzen</button>
+                </div>
+              ) : null}
+              {visibleShared.length ? (
+                <section aria-labelledby="sec-shared" className="tool-section">
+                  <h2 id="sec-shared" className="section-label">Shared Access <span>{visibleShared.length}</span></h2>
+                  <ul className="tools">{visibleShared.map((it) => <Card key={it.key} item={it} onDetails={() => setOpenKey(it.key)} />)}</ul>
+                </section>
+              ) : data.tools.length === 0 && access.every((a) => a !== "edu") && !needle && cats.length === 0 ? (
+                <div className="empty">
+                  <h2>Noch keine Tools freigegeben</h2>
+                  <p>Sobald Jonas ein Tool für dich oder eine deiner Gruppen freigibt, erscheint es hier mit Anleitung.</p>
+                  <Link href="/access-guide">Wie Zugänge funktionieren</Link>
+                </div>
+              ) : null}
+              {visibleEdu.length ? (
+                <section aria-labelledby="sec-edu" className="tool-section">
+                  <h2 id="sec-edu" className="section-label">GitHub Education <span>{visibleEdu.length}</span></h2>
+                  <ul className="tools">{visibleEdu.map((it) => <Card key={it.key} item={it} onDetails={() => setOpenKey(it.key)} />)}</ul>
+                </section>
+              ) : null}
+            </div>
+          </div>
+        </>
       ) : null}
-      {openTool ? <ToolPanel tool={openTool} onClose={() => setOpenId(null)} /> : null}
+      {openItem ? <Peek item={openItem} onClose={closePeek} /> : null}
     </>
   );
 }
