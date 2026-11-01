@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import type { AccessType, Tool } from "@/lib/client";
+import { BASE, api, errText, type AccessLink, type AccessType, type Tool } from "@/lib/client";
 import { LoadError, PageHead, Skeleton, useResource } from "@/components/ui";
 import { ToolLogo } from "@/components/ToolLogo";
 import { CATEGORIES, categoryLabel, categoryShort } from "@/lib/categories";
@@ -26,7 +26,7 @@ const ACCESS_GROUPS: { label: string; items: { id: Access; label: string }[] }[]
 
 /** One card model for both sources, so every tool looks the same. */
 type Item =
-  | { kind: "shared"; key: string; name: string; logo?: string; category: string; access: Access; meta: string; text: string; tool: Tool }
+  | { kind: "shared"; key: string; name: string; logo?: string; category: string; access: Access; meta: string; text: string; tool: Tool; link?: AccessLink }
   | { kind: "edu"; key: string; name: string; logo?: string; category: string; access: Access; meta: string; text: string; offer: EduOffer };
 
 /** Instructions: one step per line; leading numbers or bullets are removed. */
@@ -56,7 +56,11 @@ function Doc({ text }: { text: string }) {
 }
 
 /** Side panel ("peek") with the documentation of one item. */
-function Peek({ item, onClose }: { item: Item; onClose: () => void }) {
+type LoginActions = { open: (toolId: string, fresh?: boolean) => void; revoke: (linkId: string) => void; busy: boolean; msg: string | null };
+
+const untilTime = (d: string) => new Date(d).toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" });
+
+function Peek({ item, onClose, login }: { item: Item; onClose: () => void; login: LoginActions }) {
   const closeRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     const previous = document.activeElement as HTMLElement | null;
@@ -82,6 +86,22 @@ function Peek({ item, onClose }: { item: Item; onClose: () => void }) {
         </div>
         {item.kind === "shared" ? (
           <>
+            {item.tool.has_login ? (
+              <div className="login-box">
+                <h3>Login</h3>
+                <p className="meta">{item.link
+                  ? <>Dein Link ist gültig bis {untilTime(item.link.expires_at)} Uhr und wurde {item.link.views}× geöffnet.</>
+                  : <>Öffnet die Logindaten mit aktuellem 2FA-Code in einem neuen Fenster. 6 Stunden gültig, nur in diesem Browser.</>}</p>
+                <div className="row">
+                  <button className="btn btn--small" disabled={login.busy} onClick={() => login.open(item.tool.id)}>Login öffnen</button>
+                  {item.link ? <>
+                    <button className="btn btn--small btn--ghost" disabled={login.busy} onClick={() => login.open(item.tool.id, true)}>Neuer Link</button>
+                    <button className="btn btn--small btn--ghost" disabled={login.busy} onClick={() => login.revoke(item.link!.id)}>Widerrufen</button>
+                  </> : null}
+                </div>
+                {login.msg ? <p className="status" role="alert">{login.msg}</p> : null}
+              </div>
+            ) : null}
             {item.tool.plan || item.tool.price ? (
               <dl className="facts">
                 {item.tool.plan ? <div><dt>Plan</dt><dd>{item.tool.plan}</dd></div> : null}
@@ -118,8 +138,9 @@ function Peek({ item, onClose }: { item: Item; onClose: () => void }) {
   );
 }
 
-function Card({ item, onDetails }: { item: Item; onDetails: () => void }) {
+function Card({ item, onDetails, login }: { item: Item; onDetails: () => void; login: LoginActions }) {
   const href = item.kind === "shared" ? item.tool.url : item.offer.redeem;
+  const hasLogin = item.kind === "shared" && item.tool.has_login;
   return (
     <li className={`tool tool--${item.kind}`}>
       <div className="tool-head">
@@ -132,8 +153,13 @@ function Card({ item, onDetails }: { item: Item; onDetails: () => void }) {
       {item.text ? <p className="tool-text tool-clamp">{item.text}</p> : null}
       <div className="row tool-actions">
         <button className="btn btn--small btn--ghost" onClick={onDetails} aria-haspopup="dialog">Details<span className="sr-only">: {item.name}</span></button>
-        <a className="btn btn--small" href={href} target="_blank" rel="noopener noreferrer">{item.kind === "shared" ? "Öffnen" : "Einlösen"}<span className="sr-only">: {item.name} (neues Fenster)</span></a>
+        {hasLogin && item.kind === "shared" ? (
+          <button className="btn btn--small" disabled={login.busy} onClick={() => login.open(item.tool.id)}>Login öffnen<span className="sr-only">: {item.name} (neues Fenster)</span></button>
+        ) : (
+          <a className="btn btn--small" href={href} target="_blank" rel="noopener noreferrer">{item.kind === "shared" ? "Öffnen" : "Einlösen"}<span className="sr-only">: {item.name} (neues Fenster)</span></a>
+        )}
       </div>
+      {item.kind === "shared" && item.link ? <p className="meta tool-link">Link {item.link.views}× geöffnet · bis {untilTime(item.link.expires_at)} Uhr</p> : null}
     </li>
   );
 }
@@ -141,7 +167,9 @@ function Card({ item, onDetails }: { item: Item; onDetails: () => void }) {
 const isTyping = (t: EventTarget | null) => t instanceof HTMLElement && (t.isContentEditable || ["INPUT", "TEXTAREA", "SELECT"].includes(t.tagName));
 
 export default function ToolsPage() {
-  const { data, error, loading, reload } = useResource<{ tools: Tool[]; vaultUrl: string | null }>("/tools");
+  const { data, error, loading, reload } = useResource<{ tools: Tool[]; vaultUrl: string | null; links?: AccessLink[] }>("/tools");
+  const [loginBusy, setLoginBusy] = useState(false);
+  const [loginMsg, setLoginMsg] = useState<string | null>(null);
   const [q, setQ] = useState("");
   const [cats, setCats] = useState<string[]>([]);
   const [access, setAccess] = useState<Access[]>([]);
@@ -154,6 +182,7 @@ export default function ToolsPage() {
     const shared: Item[] = (data?.tools ?? []).map((t) => ({
       kind: "shared", key: `s:${t.id}`, name: t.name, logo: t.logo_url, category: t.category ?? "", access: t.access_type,
       meta: [SHORT_LABEL[t.access_type] ?? t.access_type, categoryShort(t.category)].filter(Boolean).join(" · "), text: t.description, tool: t,
+      link: data?.links?.find((l) => l.tool_id === t.id),
     }));
     const edu: Item[] = GH_EDU_OFFERS.map((o) => ({
       kind: "edu", key: `e:${o.id}`, name: o.name, logo: o.logo, category: o.category, access: "edu",
@@ -175,6 +204,26 @@ export default function ToolsPage() {
   const activeCount = cats.length + access.length;
   const openItem = items.find((it) => it.key === openKey) ?? null;
   const closePeek = useCallback(() => setOpenKey(null), []);
+
+  // "Login öffnen": open the window synchronously (popup blockers), then point it at this session's 6-hour link.
+  const openLogin = async (toolId: string, fresh = false) => {
+    setLoginMsg(null); setLoginBusy(true);
+    const w = window.open("about:blank", "_blank");
+    try {
+      const r = await api<{ url: string }>("/access-links", { method: "POST", body: { toolId, fresh } });
+      const target = `${BASE}${r.url}`;
+      if (w) { w.opener = null; w.location.href = target; } else window.location.assign(target);
+      await reload();
+    } catch (e) { w?.close(); setLoginMsg(errText(e)); }
+    finally { setLoginBusy(false); }
+  };
+  const revokeLink = async (linkId: string) => {
+    setLoginMsg(null); setLoginBusy(true);
+    try { await api(`/access-links/${encodeURIComponent(linkId)}`, { method: "DELETE" }); await reload(); }
+    catch (e) { setLoginMsg(errText(e)); }
+    finally { setLoginBusy(false); }
+  };
+  const login: LoginActions = { open: openLogin, revoke: revokeLink, busy: loginBusy, msg: loginMsg };
 
   const toggle = <T,>(list: T[], v: T) => (list.includes(v) ? list.filter((x) => x !== v) : [...list, v]);
   const reset = () => { setCats([]); setAccess([]); setQ(""); };
@@ -238,6 +287,7 @@ export default function ToolsPage() {
             </div>
           ) : null}
 
+          {loginMsg && !openItem ? <div className="status" role="alert"><p>{loginMsg}</p></div> : null}
           <div className={`tools-layout${filterOpen ? " has-filter" : ""}`}>
             {filterOpen ? (
               <>
@@ -287,7 +337,7 @@ export default function ToolsPage() {
               {visibleShared.length ? (
                 <section aria-labelledby="sec-shared" className="tool-section">
                   <h2 id="sec-shared" className="section-label">Shared Access <span>{visibleShared.length}</span></h2>
-                  <ul className="tools">{visibleShared.map((it) => <Card key={it.key} item={it} onDetails={() => setOpenKey(it.key)} />)}</ul>
+                  <ul className="tools">{visibleShared.map((it) => <Card key={it.key} item={it} onDetails={() => setOpenKey(it.key)} login={login} />)}</ul>
                 </section>
               ) : data.tools.length === 0 && access.every((a) => a !== "edu") && !needle && cats.length === 0 ? (
                 <div className="empty">
@@ -299,14 +349,14 @@ export default function ToolsPage() {
               {visibleEdu.length ? (
                 <section aria-labelledby="sec-edu" className="tool-section">
                   <h2 id="sec-edu" className="section-label">GitHub Education <span>{visibleEdu.length}</span></h2>
-                  <ul className="tools">{visibleEdu.map((it) => <Card key={it.key} item={it} onDetails={() => setOpenKey(it.key)} />)}</ul>
+                  <ul className="tools">{visibleEdu.map((it) => <Card key={it.key} item={it} onDetails={() => setOpenKey(it.key)} login={login} />)}</ul>
                 </section>
               ) : null}
             </div>
           </div>
         </>
       ) : null}
-      {openItem ? <Peek item={openItem} onClose={closePeek} /> : null}
+      {openItem ? <Peek item={openItem} onClose={closePeek} login={login} /> : null}
     </>
   );
 }

@@ -5,6 +5,7 @@ import { AccessError, authConfig, checkOrigin } from "../../../server/policy";
 import { currentSession, clearSession, rateLimit } from "../../../server/auth";
 import { authenticationOptions, authenticationVerify, registrationOptions, registrationVerify } from "../../../server/webauthn";
 import { adminGet, adminMutation } from "../../../server/admin";
+import { openLink, viewLink } from "../../../server/vault";
 
 export const runtime="nodejs";
 export const dynamic="force-dynamic";
@@ -65,12 +66,28 @@ async function handle(request:NextRequest, context:{params:Promise<{path:string[
       if(path[1]===s.id) await clearSession(); result={ok:true};
     } else if(route==="tools" && method==="GET") {
       const s=await currentSession();
-      const tools=await query(`SELECT DISTINCT t.* FROM private_area.tools t JOIN private_area.grants g ON g.tool_id=t.id
+      const tools=await query(`SELECT DISTINCT t.*, EXISTS(SELECT 1 FROM private_area.tool_credentials c WHERE c.tool_id=t.id) AS has_login
+        FROM private_area.tools t JOIN private_area.grants g ON g.tool_id=t.id
         WHERE g.user_id=$1 OR g.group_id IN (SELECT group_id FROM private_area.memberships WHERE user_id=$1) ORDER BY t.name`,[s.user_id]);
+      // Open access link of this browser session per tool (for the click counter on the card).
+      const links=await query(`SELECT DISTINCT ON (tool_id) tool_id,id,views,expires_at FROM private_area.access_links
+        WHERE session_id=$1 AND revoked_at IS NULL AND expires_at>now() ORDER BY tool_id,created_at DESC`,[s.id]);
       // Optional link to the separate password vault. Only a plain https origin is accepted.
       let vaultUrl:string|null=null;
       try { const u=new URL(process.env.VAULTWARDEN_ORIGIN?.trim()??""); if(u.protocol==="https:" && !u.username && !u.password) vaultUrl=u.origin; } catch { vaultUrl=null; }
-      result={tools,vaultUrl};
+      result={tools,vaultUrl,links};
+    } else if(route==="access-links" && method==="POST") {
+      const s=await currentSession();
+      const r=await openLink(s,z.string().uuid().parse(body.toolId),body.fresh===true);
+      result={id:r.id,url:`/zugang#t=${r.token}`,expires_at:r.expires_at,views:r.views};
+    } else if(path[0]==="access-links" && path.length===2 && method==="DELETE") {
+      const s=await currentSession();
+      await query("UPDATE private_area.access_links SET revoked_at=now() WHERE id=$1 AND user_id=$2 AND revoked_at IS NULL",[z.string().uuid().parse(path[1]),s.user_id]);
+      result={ok:true};
+    } else if(route==="access/view" && method==="POST") {
+      // Token travels in the body, never in a URL, so it does not end up in request logs.
+      const s=await currentSession();
+      result=await viewLink(s,z.string().min(20).max(100).parse(body.token),body.mode!=="totp");
     } else if(route==="admin" && method==="GET") result=await adminGet();
     else if(path[0]==="admin" && method!=="GET") result=await adminMutation(path.slice(1),method,body);
     else throw new AccessError(404,"Nicht gefunden.");

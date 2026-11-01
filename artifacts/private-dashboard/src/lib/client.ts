@@ -96,7 +96,9 @@ export function fmt(d: string | null | undefined) {
   return isNaN(x.getTime()) ? d : x.toLocaleString("de-DE", { dateStyle: "medium", timeStyle: "short" });
 }
 
-export type Tool = { id: string; name: string; provider: string; description: string; url: string; access_type: AccessType; instructions: string; plan?: string; price?: string; details?: string; logo_url?: string; category?: string };
+export type Tool = { id: string; name: string; provider: string; description: string; url: string; access_type: AccessType; instructions: string; plan?: string; price?: string; details?: string; logo_url?: string; category?: string; has_login?: boolean };
+export type AccessLink = { tool_id: string; id: string; views: number; expires_at: string };
+export type LoginField = "email" | "username" | "password" | "totp" | "website";
 export type AccessType = "own_account" | "team_seat" | "permitted_shared";
 export const ACCESS_LABEL: Record<AccessType, string> = {
   own_account: "Eigenes Konto",
@@ -116,4 +118,7 @@ export type AdminData = {
   tools: Tool[];
   grants: { id: string; tool_id: string; user_id: string | null; group_id: string | null }[];
   invitations: { id: string; name: string; expires_at: string; used_at: string | null }[];
+  credentials: { tool_id: string; fields: LoginField[]; updated_at: string }[];
+  links: { id: string; tool_id: string; user_id: string; user_name: string; tool_name: string; created_at: string; expires_at: string; views: number; last_viewed_at: string | null; revoked_at: string | null }[];
+  vaultReady: boolean;
 };

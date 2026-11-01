@@ -191,3 +191,43 @@ kbd{font-family:var(--font-mono);font-size:.75rem;line-height:1;padding:.2rem .4
 .invite-faq{border:1px solid var(--color-border-decorative);border-radius:8px;padding:.25rem 1rem;background:var(--color-surface)}
 .invite-faq summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-family:var(--font-ui);color:var(--color-heading)}
 .invite-faq p{font-size:1rem;margin:0 0 .75rem}
+
+/* Login on tool cards */
+.tool-link{margin:0;font-size:.8rem}
+.login-box{border:1px solid var(--color-border-decorative);border-left:4px solid var(--color-action-bg);border-radius:8px;padding:.85rem 1rem;background:var(--color-surface)}
+.login-box h3{margin:0 0 .2rem}
+.login-box .meta{margin:0 0 .6rem}
+.login-box .status{margin:.6rem 0 0}
+
+/* Shared access page (/zugang), layout inspired by password-manager share pages */
+.access{max-width:40rem;margin:0 auto}
+.access-note{font-family:var(--font-ui);text-align:center;background:var(--color-surface-dark);color:var(--color-on-dark);border-radius:12px;padding:1rem 1.25rem;margin:0 0 1.25rem}
+.access-note strong{color:var(--color-on-dark-accent);font-weight:600}
+.access-card{border:1px solid var(--color-border-decorative);border-top:4px solid var(--color-action-bg);border-radius:12px;background:var(--color-background);padding:1.25rem}
+.access-card__head{margin-bottom:1rem}
+.access-card__head h1{font-size:1.6rem;margin:0}
+.access-card--empty{text-align:center;padding:2rem 1.5rem}
+.access-card--empty h1{font-size:1.5rem}
+.acc-group{border:1px solid var(--color-border-decorative);border-radius:10px;overflow:hidden}
+.acc-group+.acc-group{margin-top:.85rem}
+.acc-row{display:flex;align-items:center;gap:.9rem;padding:.8rem 1rem;min-height:4rem}
+.acc-row+.acc-row{border-top:1px solid var(--color-border-decorative)}
+.acc-row__icon{color:var(--brand-himmelblau-dunkel);flex:none;display:grid}
+.acc-row__main{display:flex;flex-direction:column;min-width:0;flex:1}
+.acc-row__label{font-family:var(--font-ui);font-size:.85rem;color:var(--color-text-muted)}
+.acc-row__value{font-family:var(--font-ui);font-size:1.05rem;color:var(--color-text);overflow-wrap:anywhere}
+.acc-row__actions{display:flex;align-items:center;gap:.5rem;flex:none}
+.acc-mono{font-family:var(--font-mono);letter-spacing:.04em}
+.acc-code{font-size:1.35rem;font-weight:600;color:var(--color-heading)}
+.icon-btn{display:grid;place-items:center;width:36px;height:36px;border-radius:8px;border:1.5px solid var(--color-border-decorative);background:var(--color-background);color:var(--color-text-muted);cursor:pointer}
+.icon-btn.is-on{color:var(--color-heading);border-color:var(--color-action-text);background:var(--color-surface)}
+.ring{position:relative;display:grid;place-items:center;width:40px;height:40px}
+.ring svg{position:absolute;inset:0}
+.ring__bg{fill:none;stroke:var(--color-border-decorative);stroke-width:3}
+.ring__fg{fill:none;stroke:var(--brand-himmelblau-dunkel);stroke-width:3;stroke-linecap:round;transition:stroke-dashoffset 1s linear}
+.ring--low .ring__fg{stroke:var(--brand-rot)}
+.ring__num{font-family:var(--font-ui);font-size:.85rem;color:var(--color-heading)}
+.access-hint{text-align:center;margin-top:1rem}
+@media (max-width:520px){.acc-row{flex-wrap:wrap}.acc-row__actions{margin-left:auto}}
+.login-admin{margin-top:.75rem;padding:.6rem .75rem;border:1px dashed var(--color-border-decorative);border-radius:8px}
+.login-form{margin-top:.75rem}
