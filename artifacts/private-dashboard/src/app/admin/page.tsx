@@ -3,11 +3,11 @@ import { useState, type FormEvent } from "react";
 import { CATEGORIES, categoryLabel } from "@/lib/categories";
 import { LOCAL_LOGOS } from "@/lib/logos";
 import { ToolLogo } from "@/components/ToolLogo";
-import { ACCESS_LABEL, api, fmt, type AccessType, type AdminData, type Tool } from "@/lib/client";
+import { ACCESS_LABEL, api, fmt, type AccessType, type AdminData, type LoginField, type Tool } from "@/lib/client";
 import { ActionStatus, Field, LoadError, PageHead, Skeleton, useAction, useResource } from "@/components/ui";
 
-type Tab = "invitations" | "users" | "groups" | "tools";
-const TABS: [Tab, string][] = [["invitations", "Einladungen"], ["users", "Nutzer"], ["groups", "Gruppen"], ["tools", "Tools & Freigaben"]];
+type Tab = "invitations" | "users" | "groups" | "tools" | "links";
+const TABS: [Tab, string][] = [["invitations", "Einladungen"], ["users", "Nutzer"], ["groups", "Gruppen"], ["tools", "Tools & Freigaben"], ["links", "Zugangslinks"]];
 const enc = encodeURIComponent;
 
 export default function AdminPage() {
@@ -34,6 +34,7 @@ export default function AdminPage() {
             {tab === "users" ? <Users d={data} a={a} /> : null}
             {tab === "groups" ? <Groups d={data} a={a} /> : null}
             {tab === "tools" ? <Tools d={data} a={a} /> : null}
+            {tab === "links" ? <Links d={data} a={a} /> : null}
           </div>
         </>
       ) : null}
@@ -233,6 +234,7 @@ function Tools({ d, a }: P) {
                       <button className="btn btn--small btn--danger" disabled={a.busy} onClick={() => confirm(`Tool ${t.name} löschen?`) && a.run(() => api(`/admin/tools/${enc(t.id)}`, { method: "DELETE" }), "Tool gelöscht.")}>Löschen</button>
                     </div>
                   </div>
+                  <LoginEditor tool={t} d={d} a={a} />
                   <p className="meta" style={{ marginTop: ".75rem" }}>Freigaben</p>
                   <ul className="row" style={{ listStyle: "none", padding: 0, margin: "0 0 .75rem" }}>
                     {grants.length === 0 ? <li className="meta">Für niemanden freigegeben</li> : grants.map((g) => (
@@ -304,5 +306,83 @@ function Tools({ d, a }: P) {
         </div>
       </form>
     </div>
+  );
+}
+
+const FIELD_LABEL: Record<LoginField, string> = { email: "E-Mail", username: "Nutzername", password: "Passwort", totp: "2FA-Schlüssel", website: "Website" };
+
+/** Shared login of one tool. Write-only: stored values are never sent back to the browser. */
+function LoginEditor({ tool, d, a }: { tool: Tool; d: AdminData; a: P["a"] }) {
+  const stored = d.credentials.find((c) => c.tool_id === tool.id);
+  const [open, setOpen] = useState(false);
+  const empty = { email: "", username: "", password: "", totp: "", website: "" };
+  const [f, setF] = useState(empty);
+  const set = (k: keyof typeof empty) => (e: { target: { value: string } }) => setF({ ...f, [k]: e.target.value });
+  async function save(e: FormEvent) {
+    e.preventDefault();
+    const ok = await a.run(() => api(`/admin/credentials/${enc(tool.id)}`, { method: "PATCH", body: f }), "Logindaten gespeichert.");
+    if (ok) { setF(empty); setOpen(false); }
+  }
+  const has = (k: LoginField) => stored?.fields.includes(k);
+  const ph = (k: LoginField) => (has(k) ? "Hinterlegt. Leer lassen = unverändert" : "");
+  return (
+    <div className="login-admin">
+      <div className="row" style={{ justifyContent: "space-between" }}>
+        <p className="meta" style={{ margin: 0 }}>
+          Login: {stored ? stored.fields.map((k) => FIELD_LABEL[k]).join(", ") : "keine Logindaten"}
+          {stored ? ` · aktualisiert ${fmt(stored.updated_at)}` : ""}
+        </p>
+        <div className="row">
+          <button className="btn btn--small btn--ghost" onClick={() => setOpen((o) => !o)} aria-expanded={open}>{stored ? "Logindaten ändern" : "Logindaten hinterlegen"}</button>
+          {stored ? <button className="btn btn--small btn--danger" disabled={a.busy} onClick={() => confirm(`Logindaten von ${tool.name} löschen? Offene Links werden widerrufen.`) && a.run(() => api(`/admin/credentials/${enc(tool.id)}`, { method: "DELETE" }), "Logindaten gelöscht.")}>Löschen</button> : null}
+        </div>
+      </div>
+      {open ? (
+        <form className="form form--grid login-form" onSubmit={save} noValidate autoComplete="off">
+          {!d.vaultReady ? <p className="status full" role="alert">Auf dem Server fehlt noch CREDENTIALS_KEY. Speichern klappt erst danach.</p> : null}
+          <Field id={`l-mail-${tool.id}`} label="E-Mail"><input id={`l-mail-${tool.id}`} value={f.email} onChange={set("email")} placeholder={ph("email")} autoComplete="off" /></Field>
+          <Field id={`l-user-${tool.id}`} label="Nutzername"><input id={`l-user-${tool.id}`} value={f.username} onChange={set("username")} placeholder={ph("username")} autoComplete="off" /></Field>
+          <Field id={`l-pw-${tool.id}`} label="Passwort"><input id={`l-pw-${tool.id}`} type="password" value={f.password} onChange={set("password")} placeholder={ph("password")} autoComplete="new-password" /></Field>
+          <Field id={`l-totp-${tool.id}`} label="2FA-Schlüssel" hint="Base32-Code oder otpauth://-Link aus der 2FA-Einrichtung (nicht der 6-stellige Code).">
+            <input id={`l-totp-${tool.id}`} type="password" value={f.totp} onChange={set("totp")} placeholder={ph("totp")} autoComplete="off" aria-describedby={`l-totp-${tool.id}-hint`} />
+          </Field>
+          <Field id={`l-web-${tool.id}`} label="Login-Website" hint="Optional. Leer = Tool-URL."><input id={`l-web-${tool.id}`} value={f.website} onChange={set("website")} placeholder={ph("website") || tool.url} autoComplete="off" aria-describedby={`l-web-${tool.id}-hint`} /></Field>
+          <div className="row full">
+            <button className="btn btn--small" disabled={a.busy}>Speichern</button>
+            <button type="button" className="btn btn--small btn--ghost" onClick={() => { setOpen(false); setF(empty); }}>Abbrechen</button>
+          </div>
+          <p className="hint full">Wird verschlüsselt gespeichert und nie wieder angezeigt. Freunde sehen die Daten nur über „Login öffnen“.</p>
+        </form>
+      ) : null}
+    </div>
+  );
+}
+
+/** All access links with click counter; revoke any of them. */
+function Links({ d, a }: P) {
+  const now = Date.now();
+  const status = (l: AdminData["links"][number]) => l.revoked_at ? "Widerrufen" : new Date(l.expires_at).getTime() <= now ? "Abgelaufen" : "Aktiv";
+  return (
+    <section>
+      <h2>Zugangslinks</h2>
+      <p className="meta">Jeder Klick auf „Login öffnen“ nutzt den offenen Link des Browsers oder erstellt einen neuen. Gültig 6 Stunden, nur in dem Browser, in dem er erstellt wurde.</p>
+      {d.links.length === 0 ? <div className="empty"><h3>Noch keine Links</h3><p>Sobald jemand „Login öffnen“ nutzt, erscheint der Link hier.</p></div> : (
+        <div className="tablewrap">
+          <table>
+            <thead><tr><th>Tool</th><th>Person</th><th>Erstellt</th><th>Gültig bis</th><th>Aufrufe</th><th>Status</th><th><span className="sr-only">Aktion</span></th></tr></thead>
+            <tbody>
+              {d.links.map((l) => (
+                <tr key={l.id}>
+                  <td>{l.tool_name}</td><td>{l.user_name}</td><td>{fmt(l.created_at)}</td><td>{fmt(l.expires_at)}</td>
+                  <td><strong>{l.views}</strong>{l.last_viewed_at ? <span className="meta"> · zuletzt {fmt(l.last_viewed_at)}</span> : null}</td>
+                  <td><span className={`pill ${status(l) === "Aktiv" ? "pill--ok" : ""}`}>{status(l)}</span></td>
+                  <td>{status(l) === "Aktiv" ? <button className="btn btn--small btn--ghost" disabled={a.busy} onClick={() => a.run(() => api(`/admin/links/${enc(l.id)}`, { method: "DELETE" }), "Link widerrufen.")}>Widerrufen</button> : null}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </section>
   );
 }
