@@ -1,0 +1,84 @@
+# Tool logos
+
+Brand marks of third-party tools, used only to identify them. Trademarks belong to their owners.
+
+- github.svg: gilbarbara/logos (github-icon.svg), CC0
+- github-copilot.svg: gilbarbara/logos (github-copilot.svg), CC0
+- microsoft-azure.svg: gilbarbara/logos (microsoft-azure.svg), CC0
+- heroku.svg: gilbarbara/logos (heroku-icon.svg), CC0
+- appwrite.svg: gilbarbara/logos (appwrite-icon.svg), CC0
+- jetbrains.svg: gilbarbara/logos (jetbrains-icon.svg), CC0
+- visual-studio-code.svg: gilbarbara/logos (visual-studio-code.svg), CC0
+- visual-studio.svg: gilbarbara/logos (visual-studio.svg), CC0
+- mongodb.svg: gilbarbara/logos (mongodb-icon.svg), CC0
+- sentry.svg: gilbarbara/logos (sentry-icon.svg), CC0
+- datadog.svg: gilbarbara/logos (datadog-icon.svg), CC0
+- new-relic.svg: gilbarbara/logos (new-relic-icon.svg), CC0
+- codecov.svg: gilbarbara/logos (codecov-icon.svg), CC0
+- browserstack.svg: gilbarbara/logos (browserstack.svg), CC0
+- dashlane.svg: gilbarbara/logos (dashlane-icon.svg), CC0
+- clerk.svg: gilbarbara/logos (clerk-icon.svg), CC0
+- notion.svg: gilbarbara/logos (notion-icon.svg), CC0
+- microsoft.svg: gilbarbara/logos (microsoft-icon.svg), CC0
+- elevenlabs.svg: gilbarbara/logos (elevenlabs-icon.svg), CC0
+- cursor.svg: gilbarbara/logos (cursor-icon.svg), CC0
+- openai.svg: gilbarbara/logos (openai-icon.svg), CC0
+- supabase.svg: gilbarbara/logos (supabase-icon.svg), CC0
+- bootstrap.svg: gilbarbara/logos (bootstrap.svg), CC0
+- namecheap.svg: simple-icons (namecheap), CC0
+- arduino.svg: simple-icons (arduino), CC0; guidelines: https://www.arduino.cc/en/trademark
+- adafruit.svg: simple-icons (adafruit), CC0
+- zyte.svg: simple-icons (zyte), CC0
+- gitkraken.svg: simple-icons (gitkraken), CC0
+- tower.svg: simple-icons (tower), CC0; guidelines: https://www.git-tower.com/company/press
+- termius.svg: simple-icons (termius), CC0; guidelines: https://termius.com/terms-of-use
+- vaadin.svg: simple-icons (vaadin), CC0; guidelines: https://vaadin.com/trademark
+- travis-ci.svg: simple-icons (travisci), CC0
+- stripe.svg: simple-icons (stripe), CC0
+- deepnote.svg: simple-icons (deepnote), CC0
+- simpleanalytics.svg: simple-icons (simpleanalytics), CC0; guidelines: https://simpleanalytics.com/press
+- honeybadger.svg: simple-icons (honeybadger), CC0
+- 1password.svg: simple-icons (1password), CC0; guidelines: https://1password.com/press
+- datacamp.svg: simple-icons (datacamp), CC0
+- educative.svg: simple-icons (educative), CC0
+- scrimba.svg: simple-icons (scrimba), CC0
+- symfony.svg: simple-icons (symfony), CC0; guidelines: https://symfony.com/trademark
+- icons8.svg: simple-icons (icons8), CC0
+- doppler.svg: homarr-labs/dashboard-icons, Apache-2.0
+- requestly.svg: homarr-labs/dashboard-icons, Apache-2.0
+- carto.svg: glincker/thesvg
+- name-com.svg: glincker/thesvg
+- imgbot.svg: imgbot/Imgbot (official repo)
+- neve.svg: Codeinwp/neve (official repo)
+- devcycle.svg: DevCycleHQ/devcycle-docs (official repo)
+- configcat.svg: configcat/js-sdk (official repo) (PNG, embedded)
+- codescene.svg: codescene-oss/codescene-mcp-server (official repo) (PNG, embedded)
+- gitlens.svg: gitkraken/vscode-gitlens (official repo) (PNG, embedded)
+- localstack.svg: localstack/docs (official repo) (PNG, embedded)
+- algoexpert.svg: site icon of algoexpert.io (PNG, embedded)
+- appfigures.svg: site icon of appfigures.com (PNG, embedded)
+- astra.svg: site icon of getastra.com (PNG, embedded)
+- blackfire.svg: site icon of blackfire.io (PNG, embedded)
+- blockchair.svg: site icon of blockchair.com (PNG, embedded)
+- bootdev.svg: site icon of boot.dev (PNG, embedded)
+- camber.svg: site icon of cambercloud.com (PNG, embedded)
+- codedex.svg: site icon of codedex.io (PNG, embedded)
+- deepscan.svg: site icon of deepscan.io (PNG, embedded)
+- frontendmasters.svg: site icon of frontendmasters.com (PNG, embedded)
+- gorails.svg: site icon of gorails.com (PNG, embedded)
+- hazeover.svg: site icon of hazeover.com (PNG, embedded)
+- iconscout.svg: site icon of iconscout.com (PNG, embedded)
+- interviewcake.svg: site icon of interviewcake.com (PNG, embedded)
+- lambdatest.svg: site icon of lambdatest.com (PNG, embedded)
+- pageclip.svg: site icon of pageclip.co (PNG, embedded)
+- polypane.svg: site icon of polypane.app (PNG, embedded)
+- pomodone.svg: site icon of pomodoneapp.com (PNG, embedded)
+- popsql.svg: site icon of popsql.com (PNG, embedded)
+- sqlgate.svg: site icon of sqlgate.com (PNG, embedded)
+- tech.svg: site icon of get.tech (PNG, embedded)
+- testmail.svg: site icon of testmail.app (PNG, embedded)
+- todiagram.svg: site icon of todiagram.com (PNG, embedded)
+- visme.svg: site icon of visme.co (PNG, embedded)
+- workingcopy.svg: site icon of workingcopyapp.com (PNG, embedded)
+- xojo.svg: site icon of xojo.com (PNG, embedded)
+- freestyle.svg: site icon of freestyle.sh (PNG, embedded)
