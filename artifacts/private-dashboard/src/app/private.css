@@ -228,6 +228,7 @@ kbd{font-family:var(--font-mono);font-size:.75rem;line-height:1;padding:.2rem .4
 .ring--low .ring__fg{stroke:var(--brand-rot)}
 .ring__num{font-family:var(--font-ui);font-size:.85rem;color:var(--color-heading)}
 .access-hint{text-align:center;margin-top:1rem}
-@media (max-width:520px){.acc-row{flex-wrap:wrap}.acc-row__actions{margin-left:auto}}
+.acc-mono{white-space:nowrap}
+@media (max-width:520px){.acc-row{flex-wrap:wrap;row-gap:.4rem}.acc-row__main{flex-basis:calc(100% - 2.5rem)}.acc-row__actions{margin-left:auto}}
 .login-admin{margin-top:.75rem;padding:.6rem .75rem;border:1px dashed var(--color-border-decorative);border-radius:8px}
 .login-form{margin-top:.75rem}
