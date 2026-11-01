@@ -17,6 +17,6 @@ FROM (VALUES
   ('Cursor','Anysphere','KI-Code-Editor mit Agent und Autocomplete.','https://cursor.com','Logindaten im Passworttresor.','entwicklung','/logos/cursor.svg'),
   ('OpenAI Console','OpenAI','API-Schlüssel, Playground und Nutzung der OpenAI-API.','https://platform.openai.com','Logindaten im Passworttresor.','ki','/logos/openai.svg'),
   ('Supabase','Supabase','Postgres-Datenbank, Auth und Storage als Backend.','https://supabase.com/dashboard','Logindaten im Passworttresor.','daten','/logos/supabase.svg'),
-  ('Freestyle','Freestyle','Cloud-Infrastruktur für KI-generierte Apps.','https://freestyle.sh','Logindaten im Passworttresor.','cloud','')
+  ('Freestyle','Freestyle','Cloud-Infrastruktur für KI-generierte Apps.','https://freestyle.sh','Logindaten im Passworttresor.','cloud','/logos/freestyle.svg')
 ) AS v(name,provider,description,url,instructions,category,logo_url)
 WHERE NOT EXISTS (SELECT 1 FROM private_area.tools t WHERE lower(t.name)=lower(v.name));
