@@ -8,6 +8,7 @@ import { AccessError, authConfig, safeExternalUrl } from "./policy";
 import { database } from "./db";
 import { tools as toolsTable } from "./schema";
 import { inviteMail, sendMail } from "./mail";
+import { loginInput, mergeLogin, presentFields, seal, unseal, vaultConfigured, type Login } from "./vault";
 const INVITE_MAIL_HOURS=48;
 const emailSchema=z.string().trim().email().max(254);
 const id=z.string().uuid();
@@ -26,7 +27,14 @@ export async function adminGet() {
     database().select().from(toolsTable).orderBy(toolsTable.name),query("SELECT * FROM private_area.grants"),
     query("SELECT id,name,expires_at,used_at FROM private_area.invitations ORDER BY expires_at DESC LIMIT 100"),
   ]);
-  return {users,groups,memberships,tools,grants,invitations};
+  // Only metadata: which login fields are stored, never the values.
+  const [credentials,links]=await Promise.all([
+    query("SELECT tool_id,fields,updated_at FROM private_area.tool_credentials"),
+    query(`SELECT l.id,l.tool_id,l.user_id,u.name AS user_name,t.name AS tool_name,l.created_at,l.expires_at,l.views,l.last_viewed_at,l.revoked_at
+      FROM private_area.access_links l JOIN private_area.users u ON u.id=l.user_id JOIN private_area.tools t ON t.id=l.tool_id
+      ORDER BY l.created_at DESC LIMIT 200`),
+  ]);
+  return {users,groups,memberships,tools,grants,invitations,credentials,links,vaultReady:vaultConfigured()};
 }
 export async function adminMutation(parts:string[],method:string,body:Record<string,unknown>) {
   const s=await currentSession(true,true);
@@ -73,6 +81,20 @@ export async function adminMutation(parts:string[],method:string,body:Record<str
       }
     } else if(entity==="tools" && method==="DELETE" && target) {
       await c.query("DELETE FROM private_area.tools WHERE id=$1",[target]);
+    } else if(entity==="credentials" && method==="PATCH" && target) {
+      const input=loginInput.parse(body);
+      const [row]=(await c.query("SELECT secret_box FROM private_area.tool_credentials WHERE tool_id=$1",[target])).rows;
+      const next=mergeLogin(row?JSON.parse(unseal(row.secret_box,target)) as Login:null,input);
+      const fields=presentFields(next);
+      if(fields.length===0) await c.query("DELETE FROM private_area.tool_credentials WHERE tool_id=$1",[target]);
+      else await c.query(`INSERT INTO private_area.tool_credentials(tool_id,secret_box,fields,updated_at) VALUES($1,$2,$3,now())
+        ON CONFLICT(tool_id) DO UPDATE SET secret_box=EXCLUDED.secret_box,fields=EXCLUDED.fields,updated_at=now()`,[target,seal(JSON.stringify(next),target),fields]);
+      response={ok:true,fields};
+    } else if(entity==="credentials" && method==="DELETE" && target) {
+      await c.query("DELETE FROM private_area.tool_credentials WHERE tool_id=$1",[target]);
+      await c.query("UPDATE private_area.access_links SET revoked_at=now() WHERE tool_id=$1 AND revoked_at IS NULL",[target]);
+    } else if(entity==="links" && method==="DELETE" && target) {
+      await c.query("UPDATE private_area.access_links SET revoked_at=now() WHERE id=$1 AND revoked_at IS NULL",[target]);
     } else if(entity==="grants" && method==="POST" && !target) {
       const tool=id.parse(body.toolId), user=body.userId?id.parse(body.userId):null, group=body.groupId?id.parse(body.groupId):null;
       if(Boolean(user)===Boolean(group)) throw new AccessError(400,"Genau einen Nutzer oder eine Gruppe auswählen.");
