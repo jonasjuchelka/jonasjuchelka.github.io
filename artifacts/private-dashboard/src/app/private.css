@@ -160,7 +160,8 @@ kbd{font-family:var(--font-mono);font-size:.75rem;line-height:1;padding:.2rem .4
 .tool--edu{border-top-color:var(--brand-babyblau-hell)}
 .tool .tool-head{gap:.75rem}
 .tool h3{font-size:1.05rem;margin:0;line-height:1.25}
-.tool .meta{font-size:.82rem;line-height:1.35}
+.tool .meta{font-size:.82rem;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tool .tool-head>div{min-width:0}
 .tool .tool-text{font-family:var(--font-ui);font-size:.88rem;line-height:1.45;color:var(--color-text-muted)}
 .tool-clamp{-webkit-line-clamp:2}
 .tool-actions{margin-top:auto;padding-top:.25rem}

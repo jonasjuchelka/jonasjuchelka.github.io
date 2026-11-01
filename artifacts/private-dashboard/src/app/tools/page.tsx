@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } fro
 import type { AccessType, Tool } from "@/lib/client";
 import { LoadError, PageHead, Skeleton, useResource } from "@/components/ui";
 import { ToolLogo } from "@/components/ToolLogo";
-import { CATEGORIES, categoryLabel } from "@/lib/categories";
+import { CATEGORIES, categoryLabel, categoryShort } from "@/lib/categories";
 import { GH_EDU_CHECKED, GH_EDU_OFFERS, GH_EDU_PACK, type EduOffer } from "@/lib/github-education";
 
 const SHORT_LABEL: Record<AccessType, string> = {
@@ -21,7 +21,7 @@ const ACCESS_GROUPS: { label: string; items: { id: Access; label: string }[] }[]
     { id: "team_seat", label: "Team-Platz" },
     { id: "own_account", label: "Eigenes Konto" },
   ] },
-  { label: "GitHub Education", items: [{ id: "edu", label: "Gratis mit Studentenstatus" }] },
+  { label: "GitHub Education", items: [{ id: "edu", label: "Alle Angebote" }] },
 ];
 
 /** One card model for both sources, so every tool looks the same. */
@@ -153,11 +153,11 @@ export default function ToolsPage() {
   const items = useMemo<Item[]>(() => {
     const shared: Item[] = (data?.tools ?? []).map((t) => ({
       kind: "shared", key: `s:${t.id}`, name: t.name, logo: t.logo_url, category: t.category ?? "", access: t.access_type,
-      meta: `${SHORT_LABEL[t.access_type] ?? t.access_type} · ${categoryLabel(t.category)}`, text: t.description, tool: t,
+      meta: [SHORT_LABEL[t.access_type] ?? t.access_type, categoryShort(t.category)].filter(Boolean).join(" · "), text: t.description, tool: t,
     }));
     const edu: Item[] = GH_EDU_OFFERS.map((o) => ({
       kind: "edu", key: `e:${o.id}`, name: o.name, logo: o.logo, category: o.category, access: "edu",
-      meta: `GitHub Education · ${categoryLabel(o.category)}`, text: `${o.what} · ${o.free}`, offer: o,
+      meta: `GitHub Education · ${categoryShort(o.category)}`, text: `${o.what} · ${o.free}`, offer: o,
     }));
     return [...shared, ...edu];
   }, [data]);
@@ -249,10 +249,10 @@ export default function ToolsPage() {
                   </div>
                   <fieldset>
                     <legend>Zugang</legend>
-                    {ACCESS_GROUPS.map((g) => (
+                    {ACCESS_GROUPS.filter((g) => g.items.some((i) => items.some((it) => it.access === i.id))).map((g) => (
                       <div key={g.label} className="filter-group">
                         <p className="filter-group__label">{g.label}</p>
-                        {g.items.map((i) => (
+                        {g.items.filter((i) => items.some((it) => it.access === i.id)).map((i) => (
                           <label key={i.id} className="check">
                             <input type="checkbox" checked={access.includes(i.id)} onChange={() => setAccess(toggle(access, i.id))} />
                             <span>{i.label}</span><span className="check__count">{accessCount(i.id)}</span>
