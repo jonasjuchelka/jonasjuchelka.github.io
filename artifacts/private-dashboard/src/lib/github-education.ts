@@ -59,7 +59,7 @@ const OFFERS: EduOffer[] = [
   // Domains
   { id: "namecheap", name: "Namecheap", category: "domains", what: "Domain + SSL", free: ".me + SSL · 1 J.", logo: "namecheap",
     redeem: gh("namecheap-domain-student"), steps: ["Angebotsseite öffnen und zu nc.me weiterleiten lassen", "Mit GitHub autorisieren", "Domain suchen, in den Warenkorb, ohne Zahlung bestellen", "SSL separat über das zweite Namecheap-Angebot"] },
-  { id: "name-com", name: "Name.com", category: "domains", what: "Domain", free: ".dev, .app u. a. · 1 J.",
+  { id: "name-com", name: "Name.com", category: "domains", what: "Domain", free: ".dev, .app u. a. · 1 J.", logo: "name-com",
     redeem: "https://www.name.com/partner/github-students", source: "https://cs.name.com/hc/en-us/articles/360036364834-Signing-up-for-GitHub-Student-Developer-Pack",
     steps: ["Bei Name.com abgemeldet sein", "Name.com-Angebot öffnen → „Click to login to GitHub“", "Domain suchen, Promo-Code nicht ändern", "Beim Checkout bei Name.com anmelden und abschließen"] },
   { id: "tech", name: ".TECH", category: "domains", what: "Domain", free: ".tech · 1 J.",
@@ -76,7 +76,7 @@ const OFFERS: EduOffer[] = [
   { id: "appwrite", name: "Appwrite", category: "cloud", what: "Backend + Hosting", free: "Education-Plan · 6 Mon.", logo: "appwrite",
     redeem: "https://appwrite.io/students", source: "https://appwrite.io/students",
     steps: ["Education-Seite öffnen", "Appwrite-Cloud-Konto mit GitHub anlegen", "Plan wird automatisch gesetzt"] },
-  { id: "localstack", name: "LocalStack", category: "cloud", what: "AWS lokal", free: "Lizenz", ...viaBenefits },
+  { id: "localstack", name: "LocalStack", category: "cloud", what: "AWS lokal", free: "Lizenz", logo: "localstack", ...viaBenefits },
   { id: "camber", name: "Camber", category: "ki", what: "Daten-Agenten, GPU", free: "40 CPU-h + 5 GPU-h / Mon.", ...viaBenefits },
   { id: "pageclip", name: "Pageclip", category: "cloud", what: "Formular-Backend", free: "Basic · solange Student", ...viaGh("pageclip-student") },
   { id: "arduino", name: "Arduino Cloud", category: "cloud", what: "IoT-Cloud", free: "6 Mon. · Hardware-Rabatt", logo: "arduino", ...viaGh("arduino-student") },
@@ -90,7 +90,7 @@ const OFFERS: EduOffer[] = [
   { id: "vscode", name: "Visual Studio Code", category: "entwicklung", what: "Code-Editor", free: "Coding-Packs", logo: "visual-studio-code", ...viaGh("vscode-student") },
   { id: "vs-dev", name: "Visual Studio Dev Essentials", category: "entwicklung", what: "Microsoft-Dev-Tools", free: "VS Community + Azure", logo: "visual-studio", ...viaGh("microsoftvisualstudio-student") },
   { id: "gitkraken", name: "GitKraken", category: "entwicklung", what: "Git-GUI", free: "6 Mon. · danach -80 %", logo: "gitkraken", ...viaBenefits },
-  { id: "gitlens", name: "GitLens", category: "entwicklung", what: "Git in VS Code", free: "6 Mon. · danach -80 %", ...viaBenefits },
+  { id: "gitlens", name: "GitLens", category: "entwicklung", what: "Git in VS Code", free: "6 Mon. · danach -80 %", logo: "gitlens", ...viaBenefits },
   { id: "tower", name: "Tower", category: "entwicklung", what: "Git-GUI", free: "Pro · solange Student", logo: "tower", ...viaBenefits },
   { id: "workingcopy", name: "WorkingCopy", category: "entwicklung", what: "Git (iOS)", free: "Pro · solange Student", ...viaGh("workingcopy-student") },
   { id: "termius", name: "Termius", category: "entwicklung", what: "SSH-Client", free: "Pro + Team · solange Student", logo: "termius",
@@ -101,10 +101,10 @@ const OFFERS: EduOffer[] = [
   { id: "xojo", name: "Xojo", category: "entwicklung", what: "Cross-Platform-Apps", free: "Pro · solange Student", ...viaGh("xojo-student") },
   { id: "vaadin", name: "Vaadin", category: "entwicklung", what: "Java-Framework", free: "Pro-Lizenz", logo: "vaadin", ...viaGh("vaadin-student") },
   { id: "travis", name: "Travis CI", category: "entwicklung", what: "CI/CD", free: "Private Builds", logo: "travis-ci", ...viaGh("travis-student") },
-  { id: "imgbot", name: "Imgbot", category: "entwicklung", what: "Bildoptimierung", free: "Solange Student", ...viaGh("imgbot-student") },
+  { id: "imgbot", name: "Imgbot", category: "entwicklung", what: "Bildoptimierung", free: "Solange Student", logo: "imgbot", ...viaGh("imgbot-student") },
   { id: "stripe", name: "Stripe", category: "entwicklung", what: "Payments", free: "25 $ Gebühren-Guthaben", logo: "stripe", ...viaGh("stripe-student") },
-  { id: "devcycle", name: "DevCycle", category: "entwicklung", what: "Feature Flags", free: "Starter · 1 J.", ...viaBenefits },
-  { id: "configcat", name: "ConfigCat", category: "entwicklung", what: "Feature Flags", free: "1.000 Flags", ...viaGh("configcat-student") },
+  { id: "devcycle", name: "DevCycle", category: "entwicklung", what: "Feature Flags", free: "Starter · 1 J.", logo: "devcycle", ...viaBenefits },
+  { id: "configcat", name: "ConfigCat", category: "entwicklung", what: "Feature Flags", free: "1.000 Flags", logo: "configcat", ...viaGh("configcat-student") },
 
   // Daten & Datenbanken
   { id: "mongodb", name: "MongoDB", category: "daten", what: "Datenbank", free: "50 $ Atlas + Zertifikat", logo: "mongodb",
@@ -113,7 +113,7 @@ const OFFERS: EduOffer[] = [
   { id: "deepnote", name: "Deepnote", category: "daten", what: "Notebooks", free: "Team · solange Student", logo: "deepnote", ...viaBenefits },
   { id: "sqlgate", name: "SQLGate", category: "daten", what: "SQL-IDE", free: "Standard · 1 J.", ...viaGh("sqlgate-student") },
   { id: "popsql", name: "PopSQL", category: "daten", what: "SQL-Editor", free: "Premium · solange Student", ...viaBenefits },
-  { id: "carto", name: "CARTO", category: "daten", what: "Geodaten", free: "Upgrade · 2 J.", ...viaGh("cartodb-student") },
+  { id: "carto", name: "CARTO", category: "daten", what: "Geodaten", free: "Upgrade · 2 J.", logo: "carto", ...viaGh("cartodb-student") },
   { id: "blockchair", name: "Blockchair", category: "daten", what: "Blockchain-API", free: "100.000 Requests", ...viaGh("blockchair-student") },
   { id: "simpleanalytics", name: "SimpleAnalytics", category: "daten", what: "Web-Analytics", free: "100k Views / Mon. · 1 J.", logo: "simpleanalytics", ...viaGh("simpleanalytics-student") },
   { id: "appfigures", name: "Appfigures", category: "daten", what: "App-Store-Analytics", free: "1 J.", ...viaGh("appfigures-student") },
@@ -126,11 +126,11 @@ const OFFERS: EduOffer[] = [
   { id: "honeybadger", name: "Honeybadger", category: "testing", what: "Error-Monitoring", free: "Small · 1 J.", logo: "honeybadger", ...viaGh("honeybadger-student") },
   { id: "blackfire", name: "Blackfire", category: "testing", what: "Performance-Profiling", free: "Developer · solange Student", ...viaGh("blackfire-student") },
   { id: "codecov", name: "Codecov", category: "testing", what: "Code-Coverage", free: "Private Repos", logo: "codecov", ...viaGh("codecov-student") },
-  { id: "codescene", name: "CodeScene", category: "testing", what: "Code-Qualität", free: "Private Repos", ...viaGh("codescene-student") },
+  { id: "codescene", name: "CodeScene", category: "testing", what: "Code-Qualität", free: "Private Repos", logo: "codescene", ...viaGh("codescene-student") },
   { id: "deepscan", name: "DeepScan", category: "testing", what: "JS-Analyse", free: "6 Mon.", ...viaGh("deepscan-student") },
   { id: "browserstack", name: "BrowserStack", category: "testing", what: "Gerätetests", free: "Automate Mobile · 1 J.", logo: "browserstack", ...viaGh("browserstack-student") },
   { id: "lambdatest", name: "LambdaTest", category: "testing", what: "Browsertests", free: "Live · 1 J.", ...viaGh("lambdatest-student") },
-  { id: "requestly", name: "Requestly", category: "testing", what: "API-Mocking", free: "Professional · 1 J.", ...viaBenefits },
+  { id: "requestly", name: "Requestly", category: "testing", what: "API-Mocking", free: "Professional · 1 J.", logo: "requestly", ...viaBenefits },
   { id: "testmail", name: "Testmail", category: "testing", what: "E-Mail-Tests", free: "Essential · solange Student", ...viaBenefits },
 
   // Sicherheit & Passwörter
@@ -138,7 +138,7 @@ const OFFERS: EduOffer[] = [
     redeem: "https://1password.com/developers/students", source: "https://1password.com/developers/students",
     steps: ["Studentenseite öffnen", "„Sign in with GitHub“ klicken (Pack muss verifiziert sein)", "1Password-Konto anlegen, Aktion wird angewendet"] },
   { id: "dashlane", name: "Dashlane", category: "sicherheit", what: "Passwortmanager", free: "Premium · 6 Mon.", logo: "dashlane", ...viaGh("dashlane-student") },
-  { id: "doppler", name: "Doppler", category: "sicherheit", what: "Secrets", free: "Team · solange Student",
+  { id: "doppler", name: "Doppler", category: "sicherheit", what: "Secrets", free: "Team · solange Student", logo: "doppler",
     redeem: "https://www.doppler.com/secretsops-for-students", source: "https://www.doppler.com/secretsops-for-students",
     steps: ["Studentenseite öffnen", "Bei Doppler mit GitHub registrieren", "Team-Plan wird über GitHub Education freigeschaltet"] },
   { id: "clerk", name: "Clerk", category: "sicherheit", what: "Auth, User, Billing", free: "Pro · solange Student", logo: "clerk", ...viaBenefits },
@@ -167,7 +167,7 @@ const OFFERS: EduOffer[] = [
   { id: "todiagram", name: "ToDiagram", category: "design", what: "Daten → Diagramm", free: "Pro, ohne KI", ...viaBenefits },
   { id: "pomodone", name: "PomoDone", category: "design", what: "Pomodoro", free: "Lite · 2 J.", ...viaBenefits },
   { id: "hazeover", name: "HazeOver", category: "design", what: "Fokus-App (Mac)", free: "Lizenz", ...viaBenefits },
-  { id: "themeisle", name: "Themeisle Neve", category: "design", what: "WordPress-Theme", free: "Agency · 1 J.", ...viaGh("themeisle-student") },
+  { id: "themeisle", name: "Themeisle Neve", category: "design", what: "WordPress-Theme", free: "Agency · 1 J.", logo: "neve", ...viaGh("themeisle-student") },
 ];
 
 export const GH_EDU_OFFERS: EduOffer[] = OFFERS.sort((a, b) =>

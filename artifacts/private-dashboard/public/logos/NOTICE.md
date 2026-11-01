@@ -44,3 +44,14 @@ Brand marks of third-party tools, used only to identify them. Trademarks belong 
 - scrimba.svg: simple-icons (scrimba), CC0
 - symfony.svg: simple-icons (symfony), CC0; guidelines: https://symfony.com/trademark
 - icons8.svg: simple-icons (icons8), CC0
+- doppler.svg: homarr-labs/dashboard-icons, Apache-2.0
+- requestly.svg: homarr-labs/dashboard-icons, Apache-2.0
+- carto.svg: glincker/thesvg
+- name-com.svg: glincker/thesvg
+- imgbot.svg: imgbot/Imgbot (official repo)
+- neve.svg: Codeinwp/neve (official repo)
+- devcycle.svg: DevCycleHQ/devcycle-docs (official repo)
+- configcat.svg: configcat/js-sdk (official repo) (PNG, embedded)
+- codescene.svg: codescene-oss/codescene-mcp-server (official repo) (PNG, embedded)
+- gitlens.svg: gitkraken/vscode-gitlens (official repo) (PNG, embedded)
+- localstack.svg: localstack/docs (official repo) (PNG, embedded)
