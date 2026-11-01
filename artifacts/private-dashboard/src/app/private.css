@@ -122,3 +122,46 @@ th{font-family:var(--font-accent);font-weight:400;color:var(--color-text-muted);
 .facts dt{font-family:var(--font-ui);font-size:.85rem;color:var(--color-text-muted)}
 .facts dd{margin:.1rem 0 0;font-weight:600}
 @media (prefers-reduced-motion:no-preference){.peek{animation:peek-in .18s ease-out}@keyframes peek-in{from{transform:translateX(24px);opacity:0}to{transform:none;opacity:1}}}
+
+/* Tools: filter sidebar (Alle / Shared Access / GitHub Education) */
+.tools-layout{display:grid;grid-template-columns:12.5rem minmax(0,1fr);gap:2.5rem;align-items:start}
+.filter{position:sticky;top:1.5rem}
+.filter__label{font-family:var(--font-accent);text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;color:var(--color-text-muted);margin:0 0 .5rem}
+.filter ul{list-style:none;margin:0;padding:0;display:grid;gap:.25rem}
+.filter__btn{width:100%;display:flex;justify-content:space-between;align-items:center;gap:.5rem;min-height:44px;padding:.4rem .8rem;border:0;border-left:3px solid transparent;border-radius:0 6px 6px 0;background:none;color:var(--color-text-muted);font-family:var(--font-ui);font-size:1rem;text-align:left;cursor:pointer}
+.filter__btn:hover{background:var(--color-surface);color:var(--color-heading)}
+.filter__btn[aria-pressed=true]{border-left-color:var(--color-action-bg);background:var(--color-surface);color:var(--color-heading);font-weight:600}
+.filter__count{font-family:var(--font-accent);font-size:.8rem;font-weight:400;padding:0 .5rem;border-radius:999px;border:1px solid var(--color-border-decorative);background:var(--color-background)}
+.tools-content{min-width:0}
+.tool--edu{border-top-color:var(--brand-babyblau-hell)}
+@media (max-width:900px){
+  .tools-layout{grid-template-columns:minmax(0,1fr);gap:1.25rem}
+  .filter{position:static;min-width:0}
+  .filter__label{display:none}
+  .filter ul{display:flex;gap:.4rem;overflow-x:auto;padding-bottom:.25rem}
+  .filter__btn{width:auto;white-space:nowrap;border:1.5px solid var(--color-border-decorative);border-radius:999px;min-height:40px;padding:.2rem .65rem;font-size:.95rem}
+  .filter__btn[aria-pressed=true]{border-color:var(--color-action-text)}
+}
+
+/* GitHub Education: one compact keyword list */
+.edu-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:1rem}
+.edu-head h2{font-size:1.4rem;margin:0}
+.edu-head p{margin:.15rem 0 0}
+.edu-how{margin:.75rem 0 1rem}
+.edu-search{max-width:24rem;min-height:40px;font-size:1rem;margin-bottom:.75rem}
+.edu-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--color-border-decorative);font-family:var(--font-ui);font-size:.95rem}
+.edu-list li{display:grid;grid-template-columns:minmax(9rem,1.1fr) minmax(8rem,1fr) minmax(10rem,1.3fr) auto;gap:.25rem 1rem;align-items:baseline;padding:.3rem .25rem;line-height:1.45;border-bottom:1px solid var(--color-border-decorative)}
+.edu-list li:hover{background:var(--color-surface)}
+.edu-name{color:var(--color-heading);font-weight:600}
+.edu-kw{display:contents}
+.edu-what{color:var(--color-text-muted)}
+.edu-free{color:var(--color-text)}
+.edu-link{font-size:.88rem;white-space:nowrap}
+.edu-none{margin:1rem 0}
+.edu-src{margin-top:1rem;font-size:.85rem}
+@media (max-width:640px){
+  .edu-list li{grid-template-columns:minmax(0,1fr) auto;gap:0 .75rem;padding:.4rem .25rem}
+  .edu-kw{grid-column:1/-1;display:flex;flex-wrap:wrap;column-gap:.4rem;font-size:.9rem}
+  .edu-free::before{content:"·";margin-right:.4rem;color:var(--color-text-muted)}
+  .edu-link{grid-column:2;grid-row:1}
+}
