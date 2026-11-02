@@ -32,7 +32,7 @@ Die größeren Risiken liegen außerhalb des Codes: Konten (Vercel, Neon, GitHub
 ## Deine To-dos – Stand 2026-11-01
 1. ✅ **Eigene App-Rolle statt Owner.** `DATABASE_URL` in Vercel nutzt jetzt `private_app` (nur Zeilen lesen/schreiben in `private_area`, keine Tabellen anlegen/löschen). Per `pg_stat_activity` geprüft. Der Owner dient nur noch für Migrationen (lokal, nicht in Vercel).
 2. ✅ **Owner-Passwort erneuert** und `~/.zsh_history` gelöscht. Die alte Adresse aus dem Terminal-Verlauf ist wertlos. Hinweis: Ältere Vercel-Deployments behalten ihre alten Variablen; auch deshalb war der Reset nötig.
-3. ⬜ **Konten absichern:** Passkey oder 2FA bei GitHub, Vercel, Neon, Resend und Joker. Wer eines davon übernimmt, umgeht jeden Code-Schutz.
+3. ✅ **Konten abgesichert:** Passkey oder 2FA bei GitHub, Vercel, Neon, Resend und Joker. Alte Datenbank-Variablen in Vercel entfernt (nur `DATABASE_URL` mit `private_app` bleibt).
 4. ✅ **GitHub:** Ruleset `main` aktiv (nur per PR, Check „public“ muss grün sein, kein Force-Push, kein Löschen). Dependabot-Alerts, -Security-Updates, Secret Protection und Push Protection an.
 5. ✅ **DMARC** war bereits gesetzt: `v=DMARC1; p=quarantine; pct=100; adkim=s; aspf=s`. DKIM für Resend (`resend._domainkey`) und Proton (`dkim._domainkey`) vorhanden.
 6. **Resend:** Die Einladungsmails (mit Link) sind dort im Log sichtbar. Konto mit 2FA schützen; ggf. Mail-Einladungen auf 24 h verkürzen.
