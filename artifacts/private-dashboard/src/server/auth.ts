@@ -48,9 +48,11 @@ export async function consumeChallenge() {
   if (!flow) throw new AccessError(400,"Challenge abgelaufen oder bereits verwendet.");
   return flow;
 }
-export async function rateLimit(key: string) {
+export async function rateLimit(key: string, max = 60) {
   const [r]=await query(`INSERT INTO private_area.rate_limits(key,hits,expires_at) VALUES($1,1,now()+interval '1 minute')
     ON CONFLICT(key) DO UPDATE SET hits=CASE WHEN private_area.rate_limits.expires_at<now() THEN 1 ELSE private_area.rate_limits.hits+1 END,
     expires_at=CASE WHEN private_area.rate_limits.expires_at<now() THEN now()+interval '1 minute' ELSE private_area.rate_limits.expires_at END RETURNING hits`,[key]);
-  if (r.hits>60) throw new AccessError(429,"Zu viele Versuche. Bitte in einer Minute erneut versuchen.");
+  if (r.hits>max) throw new AccessError(429,"Zu viele Versuche. Bitte in einer Minute erneut versuchen.");
+  // Occasionally drop expired counters so hashed client keys do not pile up.
+  if (Math.random()<0.02) await query("DELETE FROM private_area.rate_limits WHERE expires_at<now()-interval '5 minutes'");
 }

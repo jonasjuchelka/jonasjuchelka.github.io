@@ -1,9 +1,11 @@
 import "server-only";
-import { createCipheriv, createDecipheriv, createHmac, randomBytes, randomUUID } from "node:crypto";
+import { randomUUID } from "node:crypto";
 import { z } from "zod";
 import { query } from "./db";
 import { digest, token } from "./auth";
 import { AccessError } from "./policy";
+import { parseTotp, seal, totpNow, unseal } from "./crypto";
+export { seal, unseal, parseTotp, totpNow, vaultConfigured } from "./crypto";
 
 /**
  * Shared logins per tool, encrypted at rest with AES-256-GCM.
@@ -13,76 +15,6 @@ import { AccessError } from "./policy";
 export type Login = { email: string; username: string; password: string; totp: string; website: string };
 export const LOGIN_FIELDS = ["email", "username", "password", "totp", "website"] as const;
 export const LINK_HOURS = 6;
-
-function key() {
-  const raw = process.env.CREDENTIALS_KEY?.trim();
-  if (!raw) throw new AccessError(503, "Logindaten sind noch nicht eingerichtet (CREDENTIALS_KEY fehlt).");
-  const k = Buffer.from(raw, "base64");
-  if (k.length !== 32) throw new AccessError(503, "CREDENTIALS_KEY muss 32 Byte (Base64) lang sein.");
-  return k;
-}
-export const vaultConfigured = () => { try { key(); return true; } catch { return false; } };
-
-export function seal(plain: string, aad: string) {
-  const iv = randomBytes(12);
-  const c = createCipheriv("aes-256-gcm", key(), iv);
-  c.setAAD(Buffer.from(aad));
-  const ct = Buffer.concat([c.update(plain, "utf8"), c.final()]);
-  return "v1." + Buffer.concat([iv, c.getAuthTag(), ct]).toString("base64");
-}
-export function unseal(box: string, aad: string) {
-  if (!box.startsWith("v1.")) throw new AccessError(500, "Unbekanntes Format.");
-  const b = Buffer.from(box.slice(3), "base64");
-  const d = createDecipheriv("aes-256-gcm", key(), b.subarray(0, 12));
-  d.setAAD(Buffer.from(aad));
-  d.setAuthTag(b.subarray(12, 28));
-  return Buffer.concat([d.update(b.subarray(28)), d.final()]).toString("utf8");
-}
-
-/* ---------- TOTP (RFC 6238), computed on the server; the secret never leaves it ---------- */
-type TotpSpec = { secret: Buffer; digits: number; period: number; algorithm: "sha1" | "sha256" | "sha512" };
-function base32(s: string) {
-  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
-  const clean = s.toUpperCase().replace(/[\s=-]/g, "");
-  let bits = "";
-  for (const ch of clean) {
-    const v = alphabet.indexOf(ch);
-    if (v < 0) throw new AccessError(400, "2FA-Schlüssel ist kein gültiger Base32-Code.");
-    bits += v.toString(2).padStart(5, "0");
-  }
-  const bytes: number[] = [];
-  for (let i = 0; i + 8 <= bits.length; i += 8) bytes.push(parseInt(bits.slice(i, i + 8), 2));
-  return Buffer.from(bytes);
-}
-/** Accepts a plain Base32 secret or an otpauth://totp/… URI (as shown under the QR code). */
-export function parseTotp(input: string): TotpSpec {
-  let secret = input.trim(), digits = 6, period = 30, algorithm: TotpSpec["algorithm"] = "sha1";
-  if (secret.toLowerCase().startsWith("otpauth://")) {
-    const u = new URL(secret);
-    if (u.host !== "totp") throw new AccessError(400, "Nur TOTP-Codes werden unterstützt.");
-    secret = u.searchParams.get("secret") ?? "";
-    digits = Number(u.searchParams.get("digits") ?? 6);
-    period = Number(u.searchParams.get("period") ?? 30);
-    const alg = (u.searchParams.get("algorithm") ?? "SHA1").toLowerCase();
-    if (alg !== "sha1" && alg !== "sha256" && alg !== "sha512") throw new AccessError(400, "Unbekannter 2FA-Algorithmus.");
-    algorithm = alg;
-  }
-  const bytes = base32(secret);
-  if (bytes.length < 10 || ![6, 7, 8].includes(digits) || !(period >= 15 && period <= 120)) throw new AccessError(400, "2FA-Schlüssel ist unvollständig.");
-  return { secret: bytes, digits, period, algorithm };
-}
-export function totpNow(input: string, now = Date.now()) {
-  const t = parseTotp(input);
-  const step = Math.floor(now / 1000 / t.period);
-  const msg = Buffer.alloc(8);
-  msg.writeBigUInt64BE(BigInt(step));
-  const h = createHmac(t.algorithm, t.secret).update(msg).digest();
-  const o = h[h.length - 1] & 0xf;
-  const bin = ((h[o] & 0x7f) << 24) | (h[o + 1] << 16) | (h[o + 2] << 8) | h[o + 3];
-  const code = String(bin % 10 ** t.digits).padStart(t.digits, "0");
-  const remaining = t.period - (Math.floor(now / 1000) % t.period);
-  return { code, period: t.period, remaining };
-}
 
 /* ---------- Stored logins ---------- */
 const field = (max: number) => z.string().trim().max(max).optional();
@@ -118,7 +50,9 @@ export async function hasGrant(userId: string, toolId: string) {
 }
 
 /** Returns the open link of this session for the tool, or creates a new one. */
-export async function openLink(session: { id: string; user_id: string }, toolId: string, fresh: boolean) {
+export const REAUTH_MESSAGE = "Bitte zuerst erneut mit Passkey bestätigen.";
+/** Reusing the open link only needs the session; a new link needs a passkey confirmation from the last 5 minutes. */
+export async function openLink(session: { id: string; user_id: string; confirmed: boolean }, toolId: string, fresh: boolean) {
   if (!(await hasGrant(session.user_id, toolId))) throw new AccessError(403, "Dieses Tool ist für dich nicht freigegeben.");
   const [cred] = await query("SELECT 1 FROM private_area.tool_credentials WHERE tool_id=$1", [toolId]);
   if (!cred) throw new AccessError(404, "Für dieses Tool sind noch keine Logindaten hinterlegt.");
@@ -128,6 +62,7 @@ export async function openLink(session: { id: string; user_id: string }, toolId:
       ORDER BY created_at DESC LIMIT 1`, [session.id, toolId]);
     if (cur) return { id: cur.id, token: unseal(cur.token_box, cur.id), expires_at: cur.expires_at, views: cur.views };
   }
+  if (!session.confirmed) throw new AccessError(403, REAUTH_MESSAGE);
   const id = randomUUID(), raw = token();
   const [row] = await query(`INSERT INTO private_area.access_links(id,token_hash,token_box,tool_id,user_id,session_id,expires_at)
     VALUES($1,$2,$3,$4,$5,$6,now()+make_interval(hours=>$7)) RETURNING expires_at`,
