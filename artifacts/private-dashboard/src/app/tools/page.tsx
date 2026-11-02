@@ -191,6 +191,23 @@ export default function ToolsPage() {
     return [...shared, ...edu];
   }, [data]);
 
+  // Deep link from the "new tool" mail: /tools?tool=<id> opens that tool's side panel once.
+  // Kept in sessionStorage so it survives a login in between.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const fromUrl = params.get("tool");
+    if (fromUrl) {
+      try { sessionStorage.setItem("jj-open-tool", fromUrl); } catch { /* storage blocked */ }
+      params.delete("tool");
+      const rest = params.toString();
+      history.replaceState(null, "", window.location.pathname + (rest ? `?${rest}` : "") + window.location.hash);
+    }
+    if (!data) return;
+    let id: string | null = fromUrl;
+    try { id = id ?? sessionStorage.getItem("jj-open-tool"); sessionStorage.removeItem("jj-open-tool"); } catch { /* storage blocked */ }
+    if (id && data.tools.some((t) => t.id === id)) setOpenKey(`s:${id}`);
+  }, [data]);
+
   const needle = q.trim().toLowerCase();
   const matches = (it: Item, ignore?: "cat" | "access") =>
     (ignore === "cat" || cats.length === 0 || cats.includes(it.category)) &&

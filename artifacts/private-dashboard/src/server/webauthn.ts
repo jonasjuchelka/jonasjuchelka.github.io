@@ -83,7 +83,11 @@ export async function registrationVerify(body: Record<string,unknown>, invite:bo
       const r=await c.query("UPDATE private_area.invitations SET used_at=now() WHERE id=$1 AND used_at IS NULL AND expires_at>now() RETURNING *",[flow.invitation_id]);
       const i=r.rows[0];
       if(!i) throw new AccessError(400,"Einladung bereits verwendet oder abgelaufen.");
-      await c.query("INSERT INTO private_area.users(id,name,role) VALUES($1,$2,$3)",[flow.user_id,i.name,i.role]);
+      // Carry first name, last name and e-mail over; skip the e-mail if someone else already uses it.
+      await c.query(`INSERT INTO private_area.users(id,name,role,first_name,last_name,email)
+        VALUES($1,$2,$3,$4,$5,CASE WHEN $6::text IS NULL OR EXISTS (SELECT 1 FROM private_area.users WHERE lower(email)=lower($6::text)) THEN NULL ELSE $6::text END)`,
+        [flow.user_id,i.name,i.role,i.first_name||String(i.name).split(" ")[0],i.last_name??"",i.email]);
+      await c.query("UPDATE private_area.invitations SET user_id=$2,email=NULL WHERE id=$1",[i.id,flow.user_id]);
       {
         // Everyone lands in the "Freunde" group, which holds all tools by default.
         await c.query("INSERT INTO private_area.groups(id,name) VALUES(gen_random_uuid(),'Freunde') ON CONFLICT DO NOTHING");

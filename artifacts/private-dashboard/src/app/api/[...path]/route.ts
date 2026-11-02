@@ -6,6 +6,7 @@ import { currentSession, clearSession, digest, rateLimit } from "../../../server
 import { authenticationOptions, authenticationVerify, registrationOptions, registrationVerify } from "../../../server/webauthn";
 import { adminGet, adminMutation } from "../../../server/admin";
 import { openLink, viewLink } from "../../../server/vault";
+import { tombstoneUser } from "../../../server/people";
 
 export const runtime="nodejs";
 export const dynamic="force-dynamic";
@@ -50,6 +51,19 @@ async function handle(request:NextRequest, context:{params:Promise<{path:string[
         query("SELECT id,created_at,expires_at,(id=$2) AS current FROM private_area.sessions WHERE user_id=$1 AND expires_at>now() ORDER BY created_at DESC",[s.user_id,s.id]),
       ]);
       result={user:{id:s.user_id,name:s.name,role:s.role},passkeys,sessions};
+    } else if(route==="account" && method==="DELETE") {
+      // Delete your own account: needs a passkey confirmation from the last 5 minutes. Admins cannot delete themselves.
+      const s=await currentSession(true);
+      await transaction(async c=>{
+        const r=await c.query(`SELECT u.id,u.role FROM private_area.users u JOIN private_area.sessions s ON s.user_id=u.id
+          WHERE u.id=$1 AND NOT u.blocked AND u.deleted_at IS NULL AND s.id=$2 AND s.expires_at>now()
+          AND s.confirmed_at>now()-interval '5 minutes' FOR UPDATE OF u,s`,[s.user_id,s.id]);
+        if(!r.rowCount) throw new AccessError(403,"Bitte zuerst erneut mit Passkey bestätigen.");
+        if(r.rows[0].role==="admin") throw new AccessError(400,"Administratorkonten können nicht selbst gelöscht werden.");
+        await c.query("INSERT INTO private_area.audit(actor_id,event) VALUES($1,'DELETE:own-account')",[s.user_id]);
+        await tombstoneUser(c,String(s.user_id));
+      });
+      await clearSession(); result={ok:true};
     } else if(path[0]==="passkeys" && path.length===2 && ["PATCH","DELETE"].includes(method)) {
       const s=await currentSession(true);
       await transaction(async c=>{

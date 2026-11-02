@@ -1,14 +1,41 @@
 "use client";
-import { useState, type FormEvent } from "react";
+import { Fragment, useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { CATEGORIES, categoryLabel } from "@/lib/categories";
 import { LOCAL_LOGOS } from "@/lib/logos";
 import { ToolLogo } from "@/components/ToolLogo";
-import { ACCESS_LABEL, api, fmt, type AccessType, type AdminData, type LoginField, type Tool } from "@/lib/client";
+import { ACCESS_LABEL, api, fmt, type Account, type AccessType, type AdminData, type AdminInvitation, type AdminUser, type LoginField, type NewToolMailResult, type Tool } from "@/lib/client";
 import { ActionStatus, Field, LoadError, PageHead, Skeleton, useAction, useResource } from "@/components/ui";
 
-type Tab = "invitations" | "users" | "groups" | "tools" | "links";
-const TABS: [Tab, string][] = [["invitations", "Einladungen"], ["users", "Nutzer"], ["groups", "Gruppen"], ["tools", "Tools & Freigaben"], ["links", "Zugangslinks"]];
+type Tab = "invitations" | "users" | "groups" | "tools" | "links" | "mails";
+const TABS: [Tab, string][] = [["invitations", "Einladungen"], ["users", "Nutzer"], ["groups", "Gruppen"], ["tools", "Tools & Freigaben"], ["links", "Zugangslinks"], ["mails", "Mails"]];
 const enc = encodeURIComponent;
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+type UserState = "active" | "paused" | "deleted";
+const userState = (u: AdminUser): UserState => (u.deleted_at ? "deleted" : u.blocked ? "paused" : "active");
+const STATE: Record<UserState, { pill: string; label: string }> = {
+  active: { pill: "pill--ok", label: "Aktiv" },
+  paused: { pill: "pill--warn", label: "Temporär gesperrt" },
+  deleted: { pill: "pill--muted", label: "Endgültig gelöscht" },
+};
+const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`;
+function mailSummary(m: NewToolMailResult) {
+  const parts = [m.notified ? `Info-Mail an ${plural(m.notified, "Person", "Personen")} gesendet.` : "Keine Info-Mail gesendet."];
+  if (m.failed) parts.push(`${m.failed} fehlgeschlagen.`);
+  if (m.without_email) parts.push(`${plural(m.without_email, "Person", "Personen")} ohne E-Mail.`);
+  return parts.join(" ");
+}
+
+/** Collapsed section for everything that is no longer active. */
+function Former({ count, label = "Ehemalige", children }: { count: number; label?: string; children: ReactNode }) {
+  if (!count) return null;
+  return (
+    <details className="former">
+      <summary>{label} <span className="former__count">{count}</span></summary>
+      <div className="former__body">{children}</div>
+    </details>
+  );
+}
 
 export default function AdminPage() {
   const { data, error, loading, reload } = useResource<AdminData>("/admin");
@@ -35,6 +62,7 @@ export default function AdminPage() {
             {tab === "groups" ? <Groups d={data} a={a} /> : null}
             {tab === "tools" ? <Tools d={data} a={a} /> : null}
             {tab === "links" ? <Links d={data} a={a} /> : null}
+            {tab === "mails" ? <Mails d={data} /> : null}
           </div>
         </>
       ) : null}
@@ -44,49 +72,72 @@ export default function AdminPage() {
 
 type P = { d: AdminData; a: ReturnType<typeof useAction> };
 
+function invitationState(i: AdminInvitation, now: number) {
+  if (!i.used_at) {
+    const expired = new Date(i.expires_at).getTime() < now;
+    return expired
+      ? { label: "Abgelaufen", pill: "pill--bad", former: true, meta: `Abgelaufen ${fmt(i.expires_at)}` }
+      : { label: "Offen", pill: "pill--warn", former: false, meta: `Gültig bis ${fmt(i.expires_at)}` };
+  }
+  if (i.user_deleted_at) return { label: STATE.deleted.label, pill: STATE.deleted.pill, former: true, meta: `Eingelöst ${fmt(i.used_at)} · gelöscht ${fmt(i.user_deleted_at)}` };
+  if (i.user_blocked) return { label: STATE.paused.label, pill: STATE.paused.pill, former: true, meta: `Eingelöst ${fmt(i.used_at)}` };
+  return { label: "Eingelöst", pill: "pill--ok", former: false, meta: `Eingelöst ${fmt(i.used_at)}` };
+}
+
 function Invitations({ d, a }: P) {
-  const [name, setName] = useState("");
+  const [first, setFirst] = useState("");
+  const [last, setLast] = useState("");
   const [email, setEmail] = useState("");
+  const [sendMail, setSendMail] = useState(true);
+  const [touched, setTouched] = useState(false);
   const [mailed, setMailed] = useState<boolean | null>(null);
   const [hours, setHours] = useState(1);
   const [url, setUrl] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+  const mailBad = touched && !EMAIL_RE.test(email.trim());
   async function create(e: FormEvent) {
-    e.preventDefault();
-    if (!name.trim()) { a.setMsg({ tone: "error", text: "Bitte einen Namen angeben." }); return; }
+    e.preventDefault(); setTouched(true);
+    if (!first.trim() || !last.trim() || !EMAIL_RE.test(email.trim())) { a.setMsg({ tone: "error", text: "Bitte Vorname, Nachname und eine gültige E-Mail angeben." }); return; }
     setUrl(null); setCopied(false); setMailed(null);
-    const to = email.trim();
     await a.run(async () => {
-      const r = await api<{ url: string; hours?: number; mailed?: boolean }>("/admin/invitations", { method: "POST", body: { name: name.trim(), ...(to ? { email: to } : {}) } });
-      setUrl(r.url); setHours(r.hours ?? 1); setMailed(to ? !!r.mailed : null); setName(""); setEmail("");
+      const r = await api<{ url: string; hours?: number; mailed?: boolean }>("/admin/invitations", { method: "POST", body: { first_name: first.trim(), last_name: last.trim(), email: email.trim(), send_mail: sendMail } });
+      setUrl(r.url); setHours(r.hours ?? 1); setMailed(sendMail ? !!r.mailed : null);
+      setFirst(""); setLast(""); setEmail(""); setTouched(false);
     }, "Einladung erstellt.");
   }
   const now = Date.now();
+  const rows = d.invitations.map((i) => ({ i, st: invitationState(i, now) }));
+  const active = rows.filter((r) => !r.st.former), former = rows.filter((r) => r.st.former);
+  const item = ({ i, st }: (typeof rows)[number]) => {
+    const person = d.users.find((u) => u.id === i.user_id);
+    const mail = person?.email ?? i.email;
+    return (
+      <li key={i.id}>
+        <div><strong>{i.name}</strong> {i.role === "admin" || person?.role === "admin" ? <span className="pill pill--admin">Admin</span> : null} <span className={`pill ${st.pill}`}>{st.label}</span>
+          <div className="meta">{[mail, st.meta].filter(Boolean).join(" · ")}</div></div>
+        {!i.used_at && st.label === "Offen" ? <button className="btn btn--small btn--danger" disabled={a.busy} onClick={() => confirm(`Einladung für ${i.name} widerrufen?`) && a.run(() => api(`/admin/invitations/${enc(i.id)}`, { method: "DELETE" }), "Einladung widerrufen.")}>Widerrufen</button> : null}
+      </li>
+    );
+  };
   return (
     <div className="split">
       <section>
-        <h2>Offene und vergangene Einladungen</h2>
-        {d.invitations.length === 0 ? <p className="empty">Noch keine Einladungen.</p> : (
-          <ul className="list">
-            {d.invitations.map((i) => {
-              const used = !!i.used_at; const expired = !used && new Date(i.expires_at).getTime() < now;
-              return (
-                <li key={i.id}>
-                  <div><strong>{i.name}</strong> <span className={`pill ${used ? "pill--ok" : expired ? "pill--bad" : "pill--warn"}`}>{used ? "Eingelöst" : expired ? "Abgelaufen" : "Offen"}</span>
-                    <div className="meta">{used ? `Eingelöst ${fmt(i.used_at)}` : `Gültig bis ${fmt(i.expires_at)}`}</div></div>
-                  {!used ? <button className="btn btn--small btn--danger" disabled={a.busy} onClick={() => confirm(`Einladung für ${i.name} widerrufen?`) && a.run(() => api(`/admin/invitations/${enc(i.id)}`, { method: "DELETE" }), "Einladung widerrufen.")}>Widerrufen</button> : null}
-                </li>
-              );
-            })}
-          </ul>
-        )}
+        <h2>Einladungen</h2>
+        {active.length === 0 ? <p className="empty">Keine offenen oder aktiven Einladungen.</p> : <ul className="list">{active.map(item)}</ul>}
+        <Former count={former.length} label="Ehemalige und abgelaufene"><ul className="list">{former.map(item)}</ul></Former>
       </section>
       <section className="stack">
-        <form className="form panel" onSubmit={create} noValidate>
-          <h3>Neue Einladung</h3>
-          <Field id="inv-name" label="Name der eingeladenen Person"><input id="inv-name" value={name} onChange={(e) => setName(e.target.value)} maxLength={80} /></Field>
-          <Field id="inv-mail" label="E-Mail (optional)" hint="Wenn ausgefüllt, bekommt die Person die Einladung als Mail von Jonas Support. Die Adresse wird nicht gespeichert."><input id="inv-mail" type="email" value={email} onChange={(e) => setEmail(e.target.value)} maxLength={254} autoComplete="off" aria-describedby="inv-mail-hint" /></Field>
-          <div><button className="btn" disabled={a.busy}>{email.trim() ? "Einladung senden" : "Einladung erstellen"}</button></div>
+        <form className="form form--grid panel" onSubmit={create} noValidate>
+          <h3 className="full">Neue Einladung</h3>
+          <Field id="inv-first" label="Vorname"><input id="inv-first" value={first} onChange={(e) => setFirst(e.target.value)} maxLength={60} autoComplete="off" aria-invalid={touched && !first.trim()} required /></Field>
+          <Field id="inv-last" label="Nachname"><input id="inv-last" value={last} onChange={(e) => setLast(e.target.value)} maxLength={60} autoComplete="off" aria-invalid={touched && !last.trim()} required /></Field>
+          <div className="full">
+            <Field id="inv-mail" label="E-Mail" hint="Wird gespeichert, damit die Person Infos zu neuen Tools bekommt.">
+              <input id="inv-mail" type="email" value={email} onChange={(e) => setEmail(e.target.value)} onBlur={() => email && setTouched(true)} maxLength={254} autoComplete="off" aria-invalid={mailBad} aria-describedby="inv-mail-hint" required />
+            </Field>
+          </div>
+          <label className="check full"><input type="checkbox" checked={sendMail} onChange={(e) => setSendMail(e.target.checked)} /> Einladung direkt per Mail senden (48 Stunden gültig)</label>
+          <div className="full"><button className="btn" disabled={a.busy}>{sendMail ? "Einladung senden" : "Link erstellen (1 Stunde)"}</button></div>
         </form>
         {url ? (
           <div className="panel panel--dark" role="status">
@@ -106,34 +157,158 @@ function Invitations({ d, a }: P) {
   );
 }
 
+type Open = { id: string; mode: "edit" | "block" | "delete" } | null;
+
 function Users({ d, a }: P) {
+  const [open, setOpen] = useState<Open>(null);
+  const [me, setMe] = useState<string | null>(null);
   const groupName = (id: string) => d.groups.find((g) => g.id === id)?.name ?? id;
+  const groupsOf = (u: AdminUser) => d.memberships.filter((m) => m.user_id === u.id).map((m) => groupName(m.group_id)).join(", ") || "–";
+  const active = d.users.filter((u) => userState(u) === "active");
+  const former = d.users.filter((u) => userState(u) !== "active");
+  const noMail = active.filter((u) => !u.email).length;
+  useEffect(() => { api<Account>("/account").then((r) => setMe(r.user.id)).catch(() => setMe(null)); }, []);
+  const toggle = (id: string, mode: NonNullable<Open>["mode"]) => setOpen((o) => (o && o.id === id && o.mode === mode ? null : { id, mode }));
+  const block = (u: AdminUser, blocked: boolean) =>
+    a.run(() => api(`/admin/users/${enc(u.id)}`, { method: "PATCH", body: { blocked } }), blocked ? `${u.name} ist temporär gesperrt.` : `${u.name} ist wieder aktiv.`).then((ok) => ok && setOpen(null));
+  const remove = (u: AdminUser) =>
+    a.run(() => api(`/admin/users/${enc(u.id)}`, { method: "DELETE" }), `${u.name} wurde endgültig gelöscht.`).then((ok) => ok && setOpen(null));
+  const panel = (u: AdminUser) => {
+    if (!open || open.id !== u.id) return null;
+    return (
+      <tr className="row-panel"><td colSpan={5}>
+        {open.mode === "edit" ? <EditUser u={u} a={a} done={() => setOpen(null)} /> : null}
+        {open.mode === "block" ? (
+          <div className="choice">
+            <p className="choice__q">Was soll mit <strong>{u.name}</strong> passieren?</p>
+            <div className="choice__grid">
+              <button className="choice__opt" disabled={a.busy} onClick={() => block(u, true)}>
+                <span className="choice__title">Temporär sperren</span>
+                <span className="choice__text">Anmelden geht nicht mehr, alle Sitzungen und Zugangslinks enden sofort. Jederzeit wieder entsperrbar.</span>
+              </button>
+              {u.role !== "admin" ? (
+                <button className="choice__opt choice__opt--danger" disabled={a.busy} onClick={() => setOpen({ id: u.id, mode: "delete" })}>
+                  <span className="choice__title">Endgültig löschen</span>
+                  <span className="choice__text">Passkeys, Sitzungen, Gruppen, Freigaben und E-Mail werden gelöscht. Nur der Name bleibt als „Endgültig gelöscht“ stehen.</span>
+                </button>
+              ) : null}
+            </div>
+            <button className="btn btn--small btn--ghost" onClick={() => setOpen(null)}>Abbrechen</button>
+          </div>
+        ) : null}
+        {open.mode === "delete" ? (
+          <div className="choice choice--danger" role="alertdialog" aria-label={`${u.name} endgültig löschen`}>
+            <p className="choice__q"><strong>{u.name}</strong> wirklich endgültig löschen? Das lässt sich nicht rückgängig machen.</p>
+            <div className="row">
+              <button className="btn btn--small btn--danger-solid" disabled={a.busy} onClick={() => remove(u)}>Ja, endgültig löschen</button>
+              <button className="btn btn--small btn--ghost" onClick={() => setOpen(null)}>Abbrechen</button>
+            </div>
+          </div>
+        ) : null}
+      </td></tr>
+    );
+  };
   return (
     <section>
       <h2>Nutzer</h2>
-      {d.users.length === 0 ? <p className="empty">Keine Nutzer.</p> : (
-        <div className="tablewrap"><table>
+      {noMail ? <p className="status status--warn" role="note">{plural(noMail, "aktive Person hat", "aktive Personen haben")} noch keine E-Mail und {noMail === 1 ? "bekommt" : "bekommen"} keine Infos zu neuen Tools. Über „Bearbeiten“ ergänzen.</p> : null}
+      {active.length === 0 ? <p className="empty">Keine aktiven Nutzer.</p> : (
+        <div className="tablewrap"><table className="users">
           <thead><tr><th scope="col">Name</th><th scope="col">Rolle</th><th scope="col">Gruppen</th><th scope="col">Status</th><th scope="col"><span className="sr-only">Aktionen</span></th></tr></thead>
           <tbody>
-            {d.users.map((u) => (
-              <tr key={u.id}>
-                <td>{u.name}</td>
-                <td>{u.role === "admin" ? "Administration" : "Mitglied"}</td>
-                <td>{d.memberships.filter((m) => m.user_id === u.id).map((m) => groupName(m.group_id)).join(", ") || "–"}</td>
-                <td><span className={`pill ${u.blocked ? "pill--bad" : "pill--ok"}`}>{u.blocked ? "Gesperrt" : "Aktiv"}</span></td>
-                <td>
-                  <button className={`btn btn--small ${u.blocked ? "" : "btn--danger"}`} disabled={a.busy}
-                    onClick={() => confirm(u.blocked ? `${u.name} entsperren?` : `${u.name} sperren? Alle Sitzungen werden widerrufen.`) &&
-                      a.run(() => api(`/admin/users/${enc(u.id)}`, { method: "PATCH", body: { blocked: !u.blocked } }), u.blocked ? "Nutzer entsperrt." : "Nutzer gesperrt.")}>
-                    {u.blocked ? "Entsperren" : "Sperren"}
-                  </button>
-                </td>
+            {active.map((u) => (
+              <Fragment key={u.id}>
+                <tr>
+                  <td><strong>{u.name}</strong>{u.role === "admin" ? <> <span className="pill pill--admin">Admin</span></> : null}<div className={`meta${u.email ? "" : " meta--warn"}`}>{u.email ?? "keine E-Mail"}</div></td>
+                  <td>{u.role === "admin" ? "Administration" : "Mitglied"}</td>
+                  <td>{groupsOf(u)}</td>
+                  <td><span className={`pill ${STATE.active.pill}`}>{STATE.active.label}</span></td>
+                  <td><div className="row row--end">
+                    <button className="btn btn--small btn--ghost" aria-expanded={open?.id === u.id && open.mode === "edit"} onClick={() => toggle(u.id, "edit")}>Bearbeiten</button>
+                    {u.id !== me ? <button className="btn btn--small btn--danger" aria-expanded={open?.id === u.id && open.mode !== "edit"} disabled={a.busy} onClick={() => toggle(u.id, "block")}>Sperren</button> : <span className="meta">Du</span>}
+                  </div></td>
+                </tr>
+                {panel(u)}
+              </Fragment>
+            ))}
+          </tbody>
+        </table></div>
+      )}
+      <Former count={former.length}>
+        <div className="tablewrap"><table className="users">
+          <thead><tr><th scope="col">Name</th><th scope="col">Status</th><th scope="col">Seit</th><th scope="col" colSpan={2}><span className="sr-only">Aktionen</span></th></tr></thead>
+          <tbody>
+            {former.map((u) => {
+              const st = userState(u);
+              return (
+                <Fragment key={u.id}>
+                  <tr className={st === "deleted" ? "is-deleted" : ""}>
+                    <td><strong>{u.name}</strong>{u.email ? <div className="meta">{u.email}</div> : null}</td>
+                    <td><span className={`pill ${STATE[st].pill}`}>{STATE[st].label}</span></td>
+                    <td>{st === "deleted" ? fmt(u.deleted_at) : ""}</td>
+                    <td colSpan={2}>{st === "paused" ? (
+                      <div className="row row--end">
+                        <button className="btn btn--small" disabled={a.busy} onClick={() => block(u, false)}>Entsperren</button>
+                        {u.role !== "admin" ? <button className="btn btn--small btn--danger" disabled={a.busy} onClick={() => toggle(u.id, "delete")}>Endgültig löschen</button> : null}
+                      </div>
+                    ) : null}</td>
+                  </tr>
+                  {panel(u)}
+                </Fragment>
+              );
+            })}
+          </tbody>
+        </table></div>
+      </Former>
+      <p className="hint" style={{ marginTop: "1rem" }}>Sperren und Löschen entziehen keine Konten beim Anbieter selbst (z. B. Team-Plätze). Diese separat widerrufen.</p>
+    </section>
+  );
+}
+
+function EditUser({ u, a, done }: { u: AdminUser; a: P["a"]; done: () => void }) {
+  const [f, setF] = useState({ first_name: u.first_name || u.name.split(" ")[0], last_name: u.last_name, email: u.email ?? "" });
+  const set = (k: keyof typeof f) => (e: { target: { value: string } }) => setF({ ...f, [k]: e.target.value });
+  const mailBad = f.email.trim() !== "" && !EMAIL_RE.test(f.email.trim());
+  async function save(e: FormEvent) {
+    e.preventDefault();
+    if (!f.first_name.trim() || !f.last_name.trim() || mailBad) { a.setMsg({ tone: "error", text: "Bitte Vorname, Nachname und eine gültige E-Mail angeben." }); return; }
+    const ok = await a.run(() => api(`/admin/users/${enc(u.id)}`, { method: "PATCH", body: { first_name: f.first_name.trim(), last_name: f.last_name.trim(), email: f.email.trim() } }), "Gespeichert.");
+    if (ok) done();
+  }
+  return (
+    <form className="form form--grid edit-user" onSubmit={save} noValidate>
+      <Field id={`u-first-${u.id}`} label="Vorname"><input id={`u-first-${u.id}`} value={f.first_name} onChange={set("first_name")} maxLength={60} required /></Field>
+      <Field id={`u-last-${u.id}`} label="Nachname"><input id={`u-last-${u.id}`} value={f.last_name} onChange={set("last_name")} maxLength={60} required /></Field>
+      <div className="full"><Field id={`u-mail-${u.id}`} label="E-Mail"><input id={`u-mail-${u.id}`} type="email" value={f.email} onChange={set("email")} maxLength={254} aria-invalid={mailBad} /></Field></div>
+      <div className="row full">
+        <button className="btn btn--small" disabled={a.busy}>Speichern</button>
+        <button type="button" className="btn btn--small btn--ghost" onClick={done}>Abbrechen</button>
+      </div>
+    </form>
+  );
+}
+
+/** Which mail went to whom. Addresses and contents are not stored. */
+function Mails({ d }: { d: AdminData }) {
+  return (
+    <section>
+      <h2>Mails</h2>
+      <p className="meta">Die letzten 100 Mails. „Gesendet“ heißt: Resend hat die Mail angenommen. Adressen und Inhalte werden hier nicht gespeichert.</p>
+      {d.mails.length === 0 ? <div className="empty"><h3>Noch keine Mails</h3><p>Einladungen und Infos zu neuen Tools erscheinen hier.</p></div> : (
+        <div className="tablewrap"><table>
+          <thead><tr><th scope="col">Datum</th><th scope="col">Art</th><th scope="col">An</th><th scope="col">Status</th></tr></thead>
+          <tbody>
+            {d.mails.map((m) => (
+              <tr key={m.id}>
+                <td>{fmt(m.created_at)}</td>
+                <td>{m.kind === "invite" ? "Einladung" : `Neues Tool: ${m.tool_name}`}</td>
+                <td>{m.recipient}</td>
+                <td><span className={`pill ${m.ok ? "pill--ok" : "pill--bad"}`}>{m.ok ? "Gesendet" : "Fehlgeschlagen"}</span></td>
               </tr>
             ))}
           </tbody>
         </table></div>
       )}
-      <p className="hint" style={{ marginTop: "1rem" }}>Eine Sperre hier entzieht keine Anbieterzugänge. Diese separat widerrufen.</p>
     </section>
   );
 }
@@ -150,7 +325,7 @@ function Groups({ d, a }: P) {
           <ul className="list">
             {d.groups.map((g) => {
               const members = d.memberships.filter((m) => m.group_id === g.id);
-              const candidates = d.users.filter((u) => !members.some((m) => m.user_id === u.id));
+              const candidates = d.users.filter((u) => !u.deleted_at && !members.some((m) => m.user_id === u.id));
               return (
                 <li key={g.id} style={{ display: "block" }}>
                   <div className="row" style={{ justifyContent: "space-between" }}>
@@ -202,16 +377,24 @@ function Tools({ d, a }: P) {
   const [form, setForm] = useState(EMPTY);
   const [touched, setTouched] = useState(false);
   const [grantTarget, setGrantTarget] = useState<Record<string, string>>({});
+  const [notify, setNotify] = useState(true);
+  // New tools are granted to the group "Freunde", so its active members are who gets the mail.
+  const friends = d.groups.find((g) => g.name === "Freunde");
+  const reach = d.users.filter((u) => userState(u) === "active" && (!friends || d.memberships.some((m) => m.group_id === friends.id && m.user_id === u.id)));
+  const reachMail = reach.filter((u) => u.email).length;
   const urlBad = touched && !validUrl(form.url);
   const set = (k: keyof typeof EMPTY) => (e: { target: { value: string } }) => setForm({ ...form, [k]: e.target.value });
 
   async function save(e: FormEvent) {
     e.preventDefault(); setTouched(true);
     if (!form.name.trim() || !form.provider.trim() || !validUrl(form.url)) { a.setMsg({ tone: "error", text: "Name, Anbieter und eine HTTPS-URL ohne Zugangsdaten sind Pflicht." }); return; }
-    const ok = await a.run(() => editId
-      ? api(`/admin/tools/${enc(editId)}`, { method: "PATCH", body: form })
-      : api("/admin/tools", { method: "POST", body: form }), editId ? "Tool aktualisiert." : "Tool angelegt.");
-    if (ok) { setForm(EMPTY); setEditId(null); setTouched(false); }
+    let mail = undefined as NewToolMailResult | undefined;
+    const ok = await a.run(async () => {
+      if (editId) await api(`/admin/tools/${enc(editId)}`, { method: "PATCH", body: form });
+      else mail = (await api<{ mail?: NewToolMailResult }>("/admin/tools", { method: "POST", body: { ...form, notify } })).mail;
+    }, editId ? "Tool aktualisiert." : "Tool angelegt.");
+    if (ok && mail) a.setMsg({ tone: mail.failed ? "error" : "success", text: `Tool angelegt. ${mailSummary(mail)}` });
+    if (ok) { setForm(EMPTY); setEditId(null); setTouched(false); setNotify(true); }
   }
   const label = (g: AdminData["grants"][number]) => g.user_id
     ? `Person: ${d.users.find((u) => u.id === g.user_id)?.name ?? g.user_id}`
@@ -254,7 +437,7 @@ function Tools({ d, a }: P) {
                     <label className="sr-only" htmlFor={`gr-${t.id}`}>Freigeben für</label>
                     <select id={`gr-${t.id}`} style={{ width: "auto", flex: 1 }} value={grantTarget[t.id] ?? ""} onChange={(e) => setGrantTarget({ ...grantTarget, [t.id]: e.target.value })}>
                       <option value="">Freigeben für...</option>
-                      <optgroup label="Personen">{d.users.filter((u) => !grants.some((g) => g.user_id === u.id)).map((u) => <option key={u.id} value={`u:${u.id}`}>{u.name}</option>)}</optgroup>
+                      <optgroup label="Personen">{d.users.filter((u) => !u.deleted_at && !grants.some((g) => g.user_id === u.id)).map((u) => <option key={u.id} value={`u:${u.id}`}>{u.name}</option>)}</optgroup>
                       <optgroup label="Gruppen">{d.groups.filter((x) => !grants.some((g) => g.group_id === x.id)).map((x) => <option key={x.id} value={`g:${x.id}`}>{x.name}</option>)}</optgroup>
                     </select>
                     <button className="btn btn--small" disabled={a.busy || !grantTarget[t.id]}>Freigeben</button>
@@ -301,8 +484,14 @@ function Tools({ d, a }: P) {
         <Field id="t-det" label="Dokumentation" hint="Für das Seitenfenster. &#8222;## Titel&#8220; für Überschriften, &#8222;- &#8220; für Listen. Keine Passwörter oder Codes.">
           <textarea id="t-det" rows={10} value={form.details ?? ""} onChange={set("details")} maxLength={8000} />
         </Field>
+        {!editId ? (
+          <div className="field">
+            <label className="check"><input type="checkbox" checked={notify} onChange={(e) => setNotify(e.target.checked)} /> Alle aktiven Nutzer per Mail informieren</label>
+            <p className="hint">{notify ? `Geht an ${plural(reachMail, "Person", "Personen")} mit Zugriff und E-Mail${reach.length > reachMail ? `, ${reach.length - reachMail} ohne E-Mail` : ""}. Logindaten stehen nie in der Mail.` : "Es wird keine Mail verschickt."}</p>
+          </div>
+        ) : null}
         <div className="row">
-          <button className="btn" disabled={a.busy}>{editId ? "Änderungen speichern" : "Tool anlegen"}</button>
+          <button className="btn" disabled={a.busy}>{editId ? "Änderungen speichern" : notify ? "Tool anlegen und informieren" : "Tool anlegen"}</button>
           {editId ? <button type="button" className="btn btn--ghost" onClick={() => { setEditId(null); setForm(EMPTY); setTouched(false); }}>Abbrechen</button> : null}
         </div>
       </form>
