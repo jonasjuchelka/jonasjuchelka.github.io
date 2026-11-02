@@ -1,7 +1,7 @@
 "use client";
 import { useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import { api, fmt, register, type Account } from "@/lib/client";
+import { api, authenticate, errText, fmt, register, type Account } from "@/lib/client";
 import { ActionStatus, Field, LoadError, PageHead, Skeleton, useAction, useResource } from "@/components/ui";
 
 export default function AccountPage() {
@@ -11,6 +11,9 @@ export default function AccountPage() {
   const [newName, setNewName] = useState("");
   const [editing, setEditing] = useState<string | null>(null);
   const [editName, setEditName] = useState("");
+  const [deleting, setDeleting] = useState(false);
+  const [delBusy, setDelBusy] = useState(false);
+  const [delErr, setDelErr] = useState<string | null>(null);
 
   async function addKey(e: FormEvent) {
     e.preventDefault();
@@ -26,6 +29,15 @@ export default function AccountPage() {
   async function removeKey(id: string, name: string) {
     if (!confirm(`Passkey „${name}“ wirklich löschen?`)) return;
     await a.run(() => api(`/passkeys/${encodeURIComponent(id)}`, { method: "DELETE" }), "Passkey gelöscht.");
+  }
+  /** Confirms with the passkey right away, then deletes. Not via useAction: its reload would show "logged out" first. */
+  async function deleteAccount() {
+    setDelBusy(true); setDelErr(null);
+    try {
+      await authenticate("reauth");
+      await api("/account", { method: "DELETE" });
+      router.replace("/login");
+    } catch (e) { setDelErr(errText(e)); setDelBusy(false); }
   }
   async function revoke(id: string, current: boolean) {
     if (!confirm(current ? "Diese Sitzung beenden? Du wirst abgemeldet." : "Diese Sitzung widerrufen?")) return;
@@ -68,6 +80,7 @@ export default function AccountPage() {
                 </li>
               ))}
             </ul>
+            <p className="hint">Löschen entfernt den Passkey hier im privaten Bereich. Auf deinem Gerät bleibt er gespeichert, bis du ihn dort in der Passwörter-App bzw. deinem Passwortmanager löschst.</p>
             <form className="form panel section" onSubmit={addKey} noValidate>
               <h3>Weiteren Passkey hinzufügen</h3>
               <Field id="pkname" label="Name des Passkeys" hint="Zum Beispiel „YubiKey Schlüsselbund“ oder „Laptop“.">
@@ -89,6 +102,26 @@ export default function AccountPage() {
                 </li>
               ))}
             </ul>
+            <div className="danger-zone section">
+              <h2>Konto löschen</h2>
+              {data.user.role === "admin" ? (
+                <p className="meta">Administratorkonten können nicht selbst gelöscht werden.</p>
+              ) : !deleting ? (
+                <>
+                  <p>Löscht deine Passkeys, Sitzungen, Freigaben und deine E-Mail-Adresse. Zurück kommst du danach nur mit einer neuen Einladung.</p>
+                  <button className="btn btn--danger" onClick={() => { setDeleting(true); setDelErr(null); }}>Konto löschen</button>
+                </>
+              ) : (
+                <div className="choice choice--danger" role="alertdialog" aria-label="Konto endgültig löschen">
+                  <p className="choice__q"><strong>Wirklich endgültig löschen?</strong> Das lässt sich nicht rückgängig machen. Zur Sicherheit bestätigst du gleich mit deinem Passkey.</p>
+                  {delErr ? <p className="status" role="alert">{delErr}</p> : null}
+                  <div className="row">
+                    <button className="btn btn--danger-solid" disabled={delBusy} onClick={deleteAccount}>{delBusy ? "Bitte warten..." : "Ja, Konto endgültig löschen"}</button>
+                    <button className="btn btn--ghost" disabled={delBusy} onClick={() => setDeleting(false)}>Abbrechen</button>
+                  </div>
+                </div>
+              )}
+            </div>
           </section>
         </div>
       ) : null}

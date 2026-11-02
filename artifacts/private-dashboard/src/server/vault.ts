@@ -4,7 +4,8 @@ import { z } from "zod";
 import { query } from "./db";
 import { digest, token } from "./auth";
 import { AccessError } from "./policy";
-import { parseTotp, seal, totpNow, unseal } from "./crypto";
+import { parseTotp, seal, unseal } from "./crypto";
+import { accessView, totpView, type Login } from "./access-view";
 export { seal, unseal, parseTotp, totpNow, vaultConfigured } from "./crypto";
 
 /**
@@ -12,7 +13,7 @@ export { seal, unseal, parseTotp, totpNow, vaultConfigured } from "./crypto";
  * Key: CREDENTIALS_KEY (32 random bytes, base64) in the server environment, never in the database.
  * The tool id is bound as additional data, so a box copied to another tool does not decrypt.
  */
-export type Login = { email: string; username: string; password: string; totp: string; website: string };
+export type { Login } from "./access-view";
 export const LOGIN_FIELDS = ["email", "username", "password", "totp", "website"] as const;
 export const LINK_HOURS = 6;
 
@@ -82,13 +83,9 @@ export async function viewLink(session: { id: string; user_id: string }, raw: st
   if (!(await hasGrant(session.user_id, l.tool_id))) throw new AccessError(403, "Dieses Tool ist für dich nicht mehr freigegeben.");
   const login = await readLogin(l.tool_id);
   if (!login) throw new AccessError(404, "Die Logindaten wurden entfernt.");
-  const totp = login.totp ? totpNow(login.totp) : null;
-  if (!count) return { totp };
+  // Only the current 2FA code ever leaves the server, never the secret (see access-view.ts and tests/access.test.ts).
+  if (!count) return { totp: totpView(login) };
   const [v] = await query("UPDATE private_area.access_links SET views=views+1,last_viewed_at=now() WHERE id=$1 RETURNING views", [l.id]);
   await query("INSERT INTO private_area.audit(actor_id,event) VALUES($1,$2)", [session.user_id, "VIEW:access-link"]);
-  return {
-    tool: { name: l.tool_name, logo_url: l.logo_url, url: login.website || l.tool_url },
-    email: login.email, username: login.username, password: login.password, totp,
-    expires_at: l.expires_at, views: v.views,
-  };
+  return accessView(login, l as { tool_name: string; logo_url: string | null; tool_url: string; expires_at: string }, v.views);
 }

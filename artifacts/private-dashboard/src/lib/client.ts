@@ -111,13 +111,20 @@ export const ACCESS_HINT: Record<AccessType, string> = {
   permitted_shared: "Ein gemeinsamer Login. Die Zugangsdaten stehen im Passworttresor.",
 };
 export type Account = { user: { id: string; name: string; role: string }; passkeys: { id: string; name: string; created_at: string }[]; sessions: { id: string; created_at: string; expires_at: string; current: boolean }[] };
+export type AdminUser = { id: string; name: string; first_name: string; last_name: string; email: string | null; role: string; blocked: boolean; deleted_at: string | null; created_at: string };
+export type AdminInvitation = {
+  id: string; name: string; first_name: string; last_name: string; email: string | null; role: string; expires_at: string; used_at: string | null; created_at: string;
+  user_id: string | null; user_blocked: boolean | null; user_deleted_at: string | null;
+};
+export type NewToolMailResult = { notified: number; failed: number; without_email: number };
 export type AdminData = {
-  users: { id: string; name: string; role: string; blocked: boolean }[];
+  users: AdminUser[];
   groups: { id: string; name: string }[];
   memberships: { user_id: string; group_id: string }[];
   tools: Tool[];
   grants: { id: string; tool_id: string; user_id: string | null; group_id: string | null }[];
-  invitations: { id: string; name: string; expires_at: string; used_at: string | null }[];
+  invitations: AdminInvitation[];
+  mails: { id: number; kind: "invite" | "new_tool"; ok: boolean; created_at: string; tool_name: string; recipient: string }[];
   credentials: { tool_id: string; fields: LoginField[]; updated_at: string }[];
   links: { id: string; tool_id: string; user_id: string; user_name: string; tool_name: string; created_at: string; expires_at: string; views: number; last_viewed_at: string | null; revoked_at: string | null }[];
   vaultReady: boolean;
