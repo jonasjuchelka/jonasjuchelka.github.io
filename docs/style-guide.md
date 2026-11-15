@@ -50,7 +50,7 @@ Alles Klickbare im Filter/Blog nutzt dieselbe Familie. **Ringlos**: kein Rand, Z
 |---|---|
 | Ruhe | Surface-Fläche (`#eef2f5`, dunkel `#2d4354`), Königsblau-Text, kein Rand |
 | Hover | Verlauf `135deg, Babyblau 38 % → 10 %` (dunkel: einfarbig Babyblau 24 %), **kein Übergang** |
-| Gewählt | Füllung `--active` (hell `#6295ba`, dunkel `#4f7797`, je 3:1 gegen den Seitengrund) **plus Häkchen** |
+| Gewählt | Füllung `--active` (hell `#cfe5f7`, dunkel `#3b5a72`) **plus Häkchen**; der Zustand hängt am Häkchen, nicht nur an der Farbe. Dunklere Füllungen (3:1) wirkten zu schwer und wurden verworfen |
 | Fokus (Tastatur) | 3px Glow `rgb(116 175 219 / .55)`, kein schwarzer Outline |
 | Deaktiviert | 50 % Deckkraft |
 
@@ -68,17 +68,23 @@ Suchfeld: Pille, 44px, 2px Himmelblau-Rand, Weiß-Hintergrund. Fokus: Rand Köni
 
 ## 6. Blog
 
-- **Überschrift**: „Blog“ (Plus Jakarta 600) mit **eckigem** Markenstrich darunter (Königsblau 0–18 %, Himmelblau 18–58 %, Babyblau 58–100 %, Höhe 8px, kein Radius). Dunkel: Strich beginnt mit `#4f7797`. Kein Verlauf in der Schrift (Kontrast).
+- **Überschrift**: „Blog“ (Plus Jakarta 600) mit **eckigem, einfarbigem** Himmelblau-Strich darunter (5,5rem × 8px, kein Radius). Kein Verlauf in der Schrift (Kontrast).
 - **Formate**: Essay (Titel, Vorschau 2–3 Zeilen, Lesezeit, optional Bild) und Gedanke (kein Titel, kein Bild, kein Icon, Himmelblau-Balken links, Abstand Balken–Text .9rem).
-- **Pillen („Tags“)**: immer rund. Höchstens drei Arten: **Neu** (≤ 7 Tage, Neon-Gelb mit Schwarz, 0,86rem), **Thema** (Kategorie) und **Tags**. Essay: Thema + Neu in der Kopfzeile, Tags darunter. Gedanke: „Gedanke“ + Neu + Thema, **keine freien Tags**.
-- **Gedanke-Vorschau**: 3 Zeilen, beim Hover 6, der Pfeil klappt den ganzen Text auf. Der Pfeil sitzt direkt am Ende der letzten sichtbaren Zeile; ein Spacer hält dort Platz frei, damit immer so viel Text abgeschnitten wird, dass der Pfeil sauber hineinpasst.
-- **Layout**: Mac: Filter links (16rem), Beiträge rechts. Handy: eine Spalte.
+- **Pillen**: Nur **Tags** (TRM …) und **Neu** sind rund. **Thema** und „Gedanke“ bleiben eckig (3px Radius), so unterscheidet man Einordnung von Schlagwort. Höchstens drei Arten: **Neu** (≤ 7 Tage, Neon-Gelb mit Schwarz, 0,86rem), **Thema** (Kategorie) und **Tags**. Essay: Thema + Neu in der Kopfzeile, Tags darunter. Gedanke: „Gedanke“ + Neu + Thema, **keine freien Tags**.
+- **Gedanke-Vorschau**: 3 Zeilen, beim Hover 6, der Pfeil klappt den ganzen Text auf. In der **Liste** nur 2 Zeilen und nur **ein** Schritt (kein Hover-Aufklappen), normaler Text (Catamaran 400, nicht fett, nicht unterstrichen).
+- **Ein-/Ausklapp-Pfeile bleiben an ihrem Platz** (Gedanke, Filter): Der Pfeil sitzt am Ende der letzten sichtbaren Zeile; ein Spacer hält dort Platz frei, und der Text läuft beim Aufklappen darum herum. Die Zeilenzahl wird beim Klick eingefroren (`--n`), damit der Pfeil sich nicht bewegt. Beim Filter bleibt der Pfeil unter der Vorschau, die weiteren Zeilen erscheinen darunter. **Abstand Text–Pfeil mindestens `--tgl-gap` (1,2rem)**, Pfeil `--tgl` 1,9rem.
+- **Layout**: Mac: Filter links (16rem), Beiträge rechts. Handy: eine Spalte. Filterspalte 14,5rem; Auswahlzeilen füllen die Spalte, ihr rechtes Ende fluchtet mit dem Ende der Lupe, Zahlen rechtsbündig.
 - **Filter**: „Filter“ ist die **Oberkategorie** (Plus Jakarta 600, 1,3rem, normale Schreibung, Zähler der aktiven Filter als Badge). „Format“, „Kategorie“, „Tags“, „Jahr“ sind **Unterkategorien** (Mukta, Großbuchstaben, gesperrt, 0,78rem). Gleiche Hierarchie auf dem Handy. Abstand innerhalb einer Gruppe 4px, zwischen Gruppen mehr (Nähe-Prinzip).
 - **Anzahl** („9 Beiträge“) steht auf einer Ebene mit der Lupe, nicht bei den Optionen. Suche hinter der Lupe.
 - **Eingeklappter Filter**: Format komplett, Mac erste 3 Kategorie-Zeilen, Handy erste Chip-Zeile; die letzte Zeile ausgegraut, **kein Verlauf**.
 - Auswahl umschalten: erneuter Klick hebt auf. Ansicht Vorschau | Liste; bei Filter/Suche automatisch Liste, Umschalter bleibt bedienbar.
 - Suchtreffer gelb. Laden: erste 3 Beiträge (Liste 10), weitere per Scroll.
 - **Nachtmodus**: Hintergrund Königsblau, **keine Verläufe oder Ausblendungen** (Hover-Fläche durchgehend gefüllt). Markenfarben: Babyblau für Labels, Gedanke-Balken, Hover-Titel und Zähler-Badge; Himmelblau für Tag-Ränder; Pillen mit Babyblau-Tönung.
+
+### Navigation
+- Aktuelle Seite: **3px Königsblau-Unterstrich** (dunkel Babyblau), Abstand .4em. Ein Himmelblau-Strich war auf dem Hover nicht lesbar.
+- Hover: Verlaufspille wie bei allen Buttons (kein einfarbiges Rechteck), kein Übergang.
+- Fokus: 3px Glow. Pillen-Radius 999px.
 
 ## 7. Bewegung
 
