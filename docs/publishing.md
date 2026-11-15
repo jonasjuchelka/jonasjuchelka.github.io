@@ -20,7 +20,7 @@ Zurücknehmen: Liste auf `/publish` löscht Beitrag und PDF per GitHub-API.
 `workers/post-mail` (Cloudflare Email Worker). Ablauf:
 1. Prüft der Reihe nach: Größe ≤ 100 KB, geheime Empfängeradresse, Umschlag- = Header-Absender auf der Liste, Authentifizierung, Tageslimit 10.
 2. Authentifizierung: Nur der `Authentication-Results`-Header von `mx.cloudflare.net` zählt. Alle `dmarc`-Ergebnisse müssen `pass` sein (für die Absender-Domain), alle `dkim`-Ergebnisse `pass`, eines davon mit `header.d=<Absender-Domain>`. `policy.dmarc=none` ist nur die Richtlinie des Absenders (bei Gmail `none`), kein Ergebnis. Kommentare oder Quotes mit `;`/`=` und unausgeglichene Klammern → abgelehnt (Versuch, ein echtes `fail` zu verstecken).
-3. Der Text wird als Entwurf im KV gespeichert (24 h) und **nicht** veröffentlicht. Antwort an den echten Absender mit zwei Links: „Veröffentlichen“ und „Später zurücknehmen“ (HMAC, Zweck ist Teil der Signatur).
+3. Der Text wird als Entwurf im KV gespeichert (24 h) und **nicht** veröffentlicht. Antwort an den echten Absender (von der geheimen Adresse, weil Cloudflare nur von der empfangenden Adresse/Domain und nur einmal pro Mail antworten lässt) mit zwei Links: „Veröffentlichen“ und „Später zurücknehmen“ (HMAC, Zweck ist Teil der Signatur).
 4. GET auf einen Link zeigt nur eine Seite mit Knopf (Mail-Scanner öffnen Links), erst POST handelt.
 Eine gefälschte Mail, die alle Header-Prüfungen überlistet, kommt trotzdem nie online: Der Bestätigungslink geht an das echte Postfach.
 Der Worker schreibt nur nach `artifacts/jonas-website/content/gedanken/` und kann nur das, was der Token darf.

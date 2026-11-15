@@ -12,7 +12,6 @@ BRANCH = "main"
 #   PUBLIC_URL        = https://<worker-name>.<konto>.workers.dev
 # Würden sie hier mit Platzhalter stehen, überschreibt jedes "wrangler deploy" die Dashboard-Werte.
 # Deploy immer mit: wrangler deploy --keep-vars
-REPLY_FROM = "antwort@post.jonasjuchelka.com"
 
 # KV für den Tageszähler. Die id ist kein Geheimnis (ohne Konto-Zugang nutzlos).
 [[kv_namespaces]]

@@ -3,24 +3,25 @@
 //         Entwurf im KV (24 h) → Antwort an den echten Absender mit Link "Veröffentlichen" (und "Zurücknehmen").
 // Veröffentlicht wird erst nach Klick + Bestätigung (POST). Eine gefälschte Mail kommt nie bis online,
 // weil die Antwort mit dem Link an das echte Postfach geht.
-// Secrets: GITHUB_TOKEN, UNPUBLISH_SECRET. Variablen: REPO, ALLOWED_SENDERS, SECRET_LOCAL_PART, PUBLIC_URL, REPLY_FROM. KV: STATE.
+// Secrets: GITHUB_TOKEN, UNPUBLISH_SECRET. Variablen: REPO, ALLOWED_SENDERS, SECRET_LOCAL_PART, PUBLIC_URL. KV: STATE.
 import PostalMime from "postal-mime";
 import { EmailMessage } from "cloudflare:email";
 import { checkEnvelope, cleanText, MAX_CHARS, makeSlug, frontmatter, sign, verify, underLimit, publishGedanke, unpublishGedanke,
   replyMime, validSlug, savePending, takePending } from "./core.js";
 
-/** Antwort an den Absender. Erst von REPLY_FROM, sonst von der Empfangsadresse (so steht es in Cloudflares Beispiel). */
+/**
+ * Antwort an den Absender. Cloudflare erlaubt genau EINEN Versuch pro Mail (auch ein gescheiterter zählt)
+ * und nur von der Adresse/Domain, die die Mail empfangen hat. Darum: Absender = message.to (wie in Cloudflares Beispiel).
+ */
 async function reply(message, env, subject, body) {
-  const inReplyTo = message.headers.get("message-id");
-  for (const from of [env.REPLY_FROM, message.to].filter(Boolean)) {
-    try {
-      const raw = replyMime({ from, to: message.from, subject, inReplyTo, body, messageId: `${crypto.randomUUID()}@${from.split("@")[1]}` });
-      await message.reply(new EmailMessage(from, message.from, raw));
-      console.log("antwort gesendet");
-      return true;
-    } catch (e) { console.log("antwort fehlgeschlagen:", String(e?.message ?? e).slice(0, 200)); }
-  }
-  return false;
+  const from = message.to;
+  try {
+    const raw = replyMime({ from, to: message.from, subject, inReplyTo: message.headers.get("message-id"), body,
+      messageId: `${crypto.randomUUID()}@${from.split("@")[1]}` });
+    await message.reply(new EmailMessage(from, message.from, raw));
+    console.log("antwort gesendet");
+    return true;
+  } catch (e) { console.log("antwort fehlgeschlagen:", String(e?.message ?? e).slice(0, 200)); return false; }
 }
 
 const page = (t, extra = "") => new Response(`<!doctype html><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content=noindex><title>${t}</title><body style="font:18px/1.5 system-ui;max-width:28rem;margin:4rem auto;padding:0 1rem;color:#1c2b36"><h1 style="font-size:1.3rem">${t}</h1>${extra}`,
@@ -52,7 +53,7 @@ export default {
     console.log("entwurf gespeichert");
     await reply(message, env, "Gedanke bestätigen",
       `Dein Gedanke wartet auf Bestätigung (24 Stunden gültig):\n\n${text.slice(0, 300)}${text.length > 300 ? " …" : ""}\n\n` +
-      `Veröffentlichen: ${ok}\n\nSpäter zurücknehmen: ${undo}\n\nWenn du das nicht geschickt hast: nichts tun. Ohne Klick wird nichts veröffentlicht.`);
+      `Veröffentlichen: ${ok}\n\nSpäter zurücknehmen: ${undo}\n\nWenn du das nicht geschickt hast: nichts tun. Ohne Klick wird nichts veröffentlicht.\nBitte nicht auf diese Mail antworten (eine Antwort wäre ein neuer Entwurf).`);
   },
 
   // GET zeigt nur eine Seite mit Knopf (Mail-Scanner öffnen Links), erst POST handelt.
