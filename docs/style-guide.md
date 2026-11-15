@@ -86,6 +86,12 @@ Suchfeld: Pille, 44px, 2px Himmelblau-Rand, Weiß-Hintergrund. Fokus: Rand Köni
 - Hover: Verlaufspille wie bei allen Buttons (kein einfarbiges Rechteck), kein Übergang.
 - Fokus: 3px Glow. Pillen-Radius 999px.
 
+### Handy-Web (iPhone/Android)
+- Filter **eingeklappt**: nur Kopfzeile „Filter ⌄ · 9 Beiträge · Lupe“; Badge zeigt aktive Filter. Aufgeklappt: alle Gruppen und Ansicht-Umschalter. (Mac bleibt: Vorschau mit Pfeil.)
+- **Weniger Text**: Datum `13.11.26`, Lesezeit `ca. 8 Min.`, bei Gedanken nur Gedanke + Neu (kein Thema), Essay-Vorschau 2 Zeilen.
+- **Kleinere Schrift**: Fließtext und Gedanke 1rem (Catamaran 400; Light erst ab 18px), Meta .82rem, Pillen .72rem, H1 2,1rem.
+- **iOS-Regeln**: Eingabefelder mind. 16px (sonst zoomt Safari), Zielgröße 44px, `viewport-fit=cover` mit `env(safe-area-inset-*)`, `100dvh`, `-webkit-tap-highlight-color: transparent`, `touch-action: manipulation`, Hover-Effekte nur unter `(hover:hover)`.
+
 ## 7. Bewegung
 
 Erlaubt: Einblenden von Beiträgen, Aufklappen des Filters (0,45s), Aufgleiten des Suchfelds (0,3s), gleitende Segment-Markierung. Verboten: Übergänge auf Buttons. Immer `prefers-reduced-motion` respektieren.
