@@ -23,6 +23,8 @@ export default {
       if (check.reason === "dmarc") {   // Diagnose: welche Header kommen an, welche Urteile stehen darin (keine Adressen, kein Text)?
         const verdicts = (h) => (String(message.headers.get(h) ?? "").toLowerCase().match(/\b(arc|spf|dkim|dmarc)=[a-z]+/g) ?? []).join(" ");
         console.log("header:", [...message.headers.keys()].join(","));
+        const mask = (h) => String(message.headers.get(h) ?? "").replace(/[\w.+-]+@[\w.-]+/g, "<adr>").replace(/\b\d{1,3}(\.\d{1,3}){3}\b|[0-9a-f:]{12,}/gi, "<ip>").replace(/\s+/g, " ").slice(0, 900);
+        console.log("auth roh:", mask("authentication-results"));
         console.log("urteile auth:", verdicts("authentication-results") || "-", "| arc:", verdicts("arc-authentication-results") || "-");
       }
       message.setReject("Nicht angenommen"); return;
