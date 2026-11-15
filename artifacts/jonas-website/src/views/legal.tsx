@@ -47,6 +47,8 @@ export function PrivacyView({ lang }: { lang: string }) {
         <h2>{t.translationTitle}</h2>
         <p>{t.translation1}</p>
         <p>{t.translation2}</p>
+        <h2>{t.themeTitle}</h2>
+        <p>{t.theme}</p>
         <h2>{t.privateTitle}</h2>
         <p>{t.private}</p>
       </div>
