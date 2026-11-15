@@ -85,11 +85,11 @@ const gh = (env, path, init = {}) => fetch(`https://api.github.com/repos/${env.R
 const b64 = (s) => { const b = enc.encode(s); let r = ""; for (const x of b) r += String.fromCharCode(x); return btoa(r); };
 
 export async function publishGedanke(env, slug, content) {
-  const r = await gh(env, `content/gedanken/${slug}.md`, { method: "PUT", body: JSON.stringify({ message: `Gedanke per Mail: ${slug}`, content: b64(content), branch: env.BRANCH ?? "main" }) });
+  const r = await gh(env, `artifacts/jonas-website/content/gedanken/${slug}.md`, { method: "PUT", body: JSON.stringify({ message: `Gedanke per Mail: ${slug}`, content: b64(content), branch: env.BRANCH ?? "main" }) });
   if (!r.ok) throw new Error(`github_put_${r.status}`);
 }
 export async function unpublishGedanke(env, slug) {
-  const path = `content/gedanken/${slug}.md`;
+  const path = `artifacts/jonas-website/content/gedanken/${slug}.md`;
   const g = await gh(env, `${path}?ref=${env.BRANCH ?? "main"}`);
   if (g.status === 404) return "gone";
   if (!g.ok) throw new Error(`github_get_${g.status}`);

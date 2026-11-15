@@ -2,7 +2,7 @@
 """Wandelt einen Upload (inbox/<slug>/) in einen Beitrag und ein PDF um.
 
 Eingabe:  inbox/<slug>/meta.json  +  inbox/<slug>/original.(docx|doc|md)
-Ausgabe:  content/blog/<slug>.md (Essay) oder content/gedanken/<slug>.md,
+Ausgabe:  artifacts/jonas-website/content/blog/<slug>.md (Essay) oder .../content/gedanken/<slug>.md,
           artifacts/jonas-website/public/blog/<slug>.pdf (nur Essays)
 
 Aufruf:   python3 scripts/publish/build_post.py inbox/<slug> [--root .]
@@ -126,10 +126,10 @@ def main():
     if meta["kind"] == "gedanke":
         if len(body) > MAX_GEDANKE:
             raise SystemExit(f"Gedanke zu lang ({len(body)} > {MAX_GEDANKE} Zeichen)")
-        dest = root / "content/gedanken" / f"{meta['slug']}.md"
+        dest = root / "artifacts/jonas-website/content/gedanken" / f"{meta['slug']}.md"
         meta["summary"] = meta["summary"] or body.strip().split("\n")[0][:160]
     else:
-        dest = root / "content/blog" / f"{meta['slug']}.md"
+        dest = root / "artifacts/jonas-website/content/blog" / f"{meta['slug']}.md"
         pdf = root / "artifacts/jonas-website/public/blog" / f"{meta['slug']}.pdf"
         make_pdf(meta, body, pdf, root)
         print(f"PDF: {pdf}")

@@ -10,7 +10,7 @@ Zwei Wege, ein Ziel: ein Commit nach `main` startet das Deployment der Website.
 ## Upload (Essay und Gedanke)
 1. `/publish` legt `inbox/<slug>/original.<ext>` und danach `inbox/<slug>/meta.json` per GitHub-API ab.
 2. `.github/workflows/publish.yml` startet bei Änderungen unter `inbox/`, überspringt unvollständige Ordner und ruft `scripts/publish/build_post.py` auf.
-3. Ergebnis: `content/blog/<slug>.md` + `artifacts/jonas-website/public/blog/<slug>.pdf` (Essay) oder `content/gedanken/<slug>.md` (Gedanke). Fehler landen in `inbox-failed/`.
+3. Ergebnis: `artifacts/jonas-website/content/blog/<slug>.md` + `artifacts/jonas-website/public/blog/<slug>.pdf` (Essay) oder `artifacts/jonas-website/content/gedanken/<slug>.md` (Gedanke). Fehler landen in `inbox-failed/`.
 4. Der Workflow pusht mit dem Repo-Secret `PUBLISH_TOKEN` (fine-grained, Contents: Read & write, unter deinem Konto, damit der Admin-Bypass der Branch-Regel greift). Ein Push mit einem eigenen Token startet `pages.yml` von selbst; mit `GITHUB_TOKEN` wäre er außerdem blockiert.
 
 Grenzen: Upload bis 4 MB (Vercel Hobby), .docx/.doc/.md, Inhalt wird gegen die Endung geprüft. Bilder im Text werden entfernt. HTML wird entfernt. Gedanken haben keine Tags und kein Bild.
@@ -18,7 +18,7 @@ Zurücknehmen: Liste auf `/publish` löscht Beitrag und PDF per GitHub-API.
 
 ## Mail (Gedanke)
 `workers/post-mail` (Cloudflare Email Worker). Prüft der Reihe nach: Größe ≤ 100 KB, geheime Empfängeradresse, Umschlag- = Header-Absender auf der Liste, `dmarc=pass`, Tageslimit 10. Antwort mit Zurücknehmen-Link (HMAC über den Slug; GET zeigt nur eine Bestätigung, erst POST löscht).
-Der Worker schreibt nur nach `content/gedanken/` und kann nur das, was der Token darf.
+Der Worker schreibt nur nach `artifacts/jonas-website/content/gedanken/` und kann nur das, was der Token darf.
 
 ## Einrichtung (einmalig)
 **GitHub-Token** (fine-grained, nur dieses Repo, Contents: Read & write):
