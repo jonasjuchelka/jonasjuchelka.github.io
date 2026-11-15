@@ -1,17 +1,17 @@
 {
   "meta": {
-    "description": "Jonas Juchelka étudie Management & Technology à la TU München. Axe principal : le deep learning, avec le raisonnement récursif à l'aide de petits réseaux, des modèles efficaces, des projets et des réflexions."
+    "description": "Jonas Juchelka étudie Management & Technology à la TU München. Spécialité : deep learning, avec le raisonnement récursif à l'aide de petits réseaux, les modèles efficaces, des projets et des réflexions."
   },
   "ui": {
     "skip": "Aller au contenu",
-    "homeAria": "Jonas Juchelka, retour à la page d'accueil",
+    "homeAria": "Jonas Juchelka, vers la page d'accueil",
     "mainNav": "Navigation principale",
     "contactAria": "Contact",
     "legalAria": "Mentions légales",
     "crumbsAria": "Fil d'Ariane",
     "readingTime": "{n} min de lecture",
     "badgeInfo": "Remarque",
-    "badgeWarning": "Ouvert"
+    "badgeWarning": "En suspens"
   },
   "nav": {
     "projects": "Projets",
@@ -26,18 +26,18 @@
     "translating": "Traduction en cours …",
     "showOriginal": "Afficher l'original",
     "notice": "Traduit automatiquement avec Claude (Anthropic). Pour cela, le texte de cette page a été envoyé à un service de traduction. La version allemande fait foi.",
-    "error": "La traduction est actuellement impossible. Veuillez réessayer plus tard."
+    "error": "Traduction momentanément impossible. Veuillez réessayer plus tard."
   },
   "footer": {
     "line": "Deep learning · Management & Technology, TU München.",
-    "base": "Site web statique. Aucun suivi, aucun cookie.",
+    "base": "Site statique. Aucun suivi, aucun cookie.",
     "rss": "Flux RSS",
     "imprint": "Mentions légales",
     "privacy": "Confidentialité"
   },
   "home": {
     "eyebrow": "Munich / Berkeley",
-    "title": "Petits réseaux. Raisonnement récursif.",
+    "title": "Petits réseaux. Pensée récursive.",
     "intro": "Du deep learning avec peu de paramètres : je reconstruis des architectures qui appliquent plusieurs fois le même réseau.",
     "ctaProject": "Projet TRM",
     "ctaMail": "E-mail",
@@ -60,24 +60,26 @@
       }
     ],
     "figcaption": "Un réseau, appliqué T fois.",
-    "workEyebrow": "Travaux",
+    "glanceTitle": "En un coup d'œil",
+    "workEyebrow": "Travail",
     "projectsTitle": "Projets",
+    "allProjects": "Tous les projets",
     "notesEyebrow": "Notes",
     "blogTitle": "Blog",
     "contactTitle": "Contact"
   },
   "diagram": {
-    "title": "Récursion avec poids partagés",
-    "desc": "Une entrée x passe dans un réseau f de poids theta. La sortie h est réinjectée T fois dans le même réseau, puis vient la sortie finale.",
+    "title": "Récursion à poids partagés",
+    "desc": "Une entrée x entre dans un réseau f de poids theta. La sortie h est réinjectée T fois dans le même réseau, puis vient la sortie finale.",
     "shared": "θ partagé",
     "layers": "3 couches → 1 couche ×T"
   },
   "projects": {
     "metaTitle": "Projets",
-    "metaDesc": "Projets de Jonas Juchelka, avec un bref contexte documenté.",
+    "metaDesc": "Projets de Jonas Juchelka, avec un contexte bref et documenté.",
     "eyebrow": "Aperçu",
     "title": "Projets",
-    "lede": "Peu de projets, mais uniquement avec des informations vérifiables. Lorsque les résultats ne sont pas validés pour publication, ils sont volontairement absents ici.",
+    "lede": "Peu de projets, mais uniquement avec des informations vérifiables. Lorsque les résultats ne sont pas autorisés à la publication, ils sont volontairement absents ici.",
     "detailEyebrow": "Projet",
     "asideAria": "Informations sur le projet",
     "role": "Rôle",
@@ -91,11 +93,43 @@
     "eyebrow": "Notes",
     "title": "Blog",
     "emptyTitle": "Rien n'a encore été publié.",
-    "emptyBefore": "Les textes issus des études et de la pratique apparaîtront ici dès qu'ils seront terminés, pas avant. Pour ne rien manquer, abonnez-vous au",
+    "emptyBefore": "Les textes issus des études et de la pratique paraîtront ici une fois terminés, pas avant. Pour ne rien manquer, abonnez-vous au",
     "emptyLink": "flux RSS",
     "emptyAfter": ".",
     "articleEyebrow": "Article",
-    "toc": "Sommaire"
+    "toc": "Sommaire",
+    "filter": "Filtre",
+    "search": "Rechercher",
+    "searchOpen": "Ouvrir la recherche",
+    "searchAria": "Rechercher dans les publications",
+    "format": "Format",
+    "category": "Catégorie",
+    "tagsLabel": "Tags",
+    "year": "Année",
+    "view": "Affichage",
+    "all": "Tous",
+    "essays": "Essais",
+    "thoughts": "Réflexions",
+    "thought": "Réflexion",
+    "isNew": "Nouveau",
+    "preview": "Aperçu",
+    "list": "Liste",
+    "reset": "Réinitialiser les filtres",
+    "resetShort": "Réinitialiser",
+    "collapse": "Replier",
+    "toggleFilter": "Déplier ou replier les filtres",
+    "none": "Aucune publication pour ces filtres.",
+    "countOne": "publication",
+    "countMany": "publications",
+    "activeFilters": "actifs",
+    "readShort": "env. {n} min",
+    "showFull": "Afficher la réflexion complète",
+    "close": "Fermer",
+    "back": "Blog",
+    "pdf": "PDF",
+    "next": "Publication suivante",
+    "themeDark": "Thème sombre",
+    "themeLight": "Thème clair"
   },
   "contact": {
     "metaTitle": "Contact",
@@ -115,22 +149,22 @@
     "continue": "Continuer vers la connexion",
     "button": "Se connecter avec un passkey",
     "notReadyTitle": "Pas encore configuré",
-    "notReady": "L'application privée n'a pas encore d'adresse de production définitive. Dès qu'elle existera, cette page y mènera directement.",
-    "fact1Bold": "Uniquement avec un passkey.",
+    "notReady": "L'application privée n'a pas encore d'adresse de production définitive. Dès qu'elle en aura une, cette page y mènera directement.",
+    "fact1Bold": "Uniquement par passkey.",
     "fact1": "Pas de mot de passe, pas de connexion via les réseaux sociaux, pas de lien par e-mail.",
     "fact2Bold": "Uniquement sur invitation.",
     "fact2": "Il n'existe pas d'inscription publique.",
     "fact3Bold": "Séparé.",
-    "fact3": "La connexion et les données se trouvent exclusivement sur l'application privée, pas sur GitHub Pages."
+    "fact3": "La connexion et les données se trouvent exclusivement sur l'application privée, et non sur GitHub Pages."
   },
   "legal": {
     "eyebrow": "Mentions légales",
-    "authoritative": "La version allemande de cette page fait foi sur le plan juridique.",
+    "authoritative": "Seule la version allemande de cette page fait foi sur le plan juridique.",
     "imprint": {
       "metaTitle": "Mentions légales",
       "metaDesc": "Identification de l'éditeur, actuellement incomplète.",
       "noticeTitle": "Incomplet : point de production en suspens",
-      "notice": "Une adresse postale utilisable pour la signification n'est pas encore disponible et n'est pas inventée ici. Ces mentions légales ne sont donc pas encore complètes.",
+      "notice": "Une adresse postale valable pour les notifications officielles n'est pas encore disponible et n'est pas inventée ici. Ces mentions légales ne sont donc pas encore complètes.",
       "responsible": "Responsable",
       "contact": "Contact",
       "email": "E-mail :"
@@ -138,25 +172,27 @@
     "privacy": {
       "metaTitle": "Confidentialité",
       "metaDesc": "Quelles données sont générées lors de la visite de ce site.",
-      "noticeTitle": "Projet : examen juridique en suspens",
-      "notice": "Ces informations décrivent la technique réellement mise en place. Une déclaration complète et juridiquement vérifiée, y compris l'adresse du responsable, reste à venir.",
+      "noticeTitle": "Brouillon : vérification juridique en suspens",
+      "notice": "Ces informations décrivent la technique effectivement mise en place. Une déclaration complète et juridiquement vérifiée, incluant l'adresse du responsable, reste à venir.",
       "hostingTitle": "Hébergement",
-      "hosting": "Le site est servi sous forme de fichiers statiques via GitHub Pages. Lors de la consultation, GitHub traite les données de connexion techniquement nécessaires, comme l'adresse IP. Je n'ai aucune influence sur ce traitement au-delà de la configuration.",
+      "hosting": "Le site est diffusé sous forme de fichiers statiques via GitHub Pages. Lors de la consultation, GitHub traite les données de connexion techniquement nécessaires, comme l'adresse IP. Je n'ai aucune influence sur ce traitement au-delà de la configuration.",
       "notTitle": "Ce que ce site ne fait pas",
-      "not1": "Aucun cookie, aucun suivi, aucun service d'analyse ou de marketing.",
-      "not2": "Aucune police ni aucun script chargé depuis des tiers.",
-      "not3": "Aucun formulaire de contact. Un e-mail est traité par votre fournisseur de messagerie et par le mien.",
+      "not1": "Pas de cookies, pas de suivi, pas de services d'analyse ou de marketing.",
+      "not2": "Pas de polices ni de scripts de tiers chargés depuis l'extérieur.",
+      "not3": "Pas de formulaire de contact. Un e-mail est traité par votre fournisseur de messagerie et par le mien.",
       "translationTitle": "Traduction",
-      "translation1": "Les langues du sélecteur de langue sont traduites à l'avance et servies sous forme de fichiers statiques. Aucune donnée n'est alors envoyée à des tiers.",
-      "translation2": "Ce n'est que si vous déclenchez activement une traduction en direct sous « Autres langues » que le texte visible de la page actuelle est envoyé à un service de traduction, qui le traduit avec l'API Claude d'Anthropic. L'exploitant du service traite en outre les données de connexion techniquement nécessaires, comme l'adresse IP. Aucun cookie n'est déposé et aucune donnée n'est conservée durablement. Sans votre action, aucun appel n'a lieu.",
+      "translation1": "Les langues proposées dans le sélecteur de langue sont traduites à l'avance et diffusées sous forme de fichiers statiques. Aucune donnée n'est alors envoyée à des tiers.",
+      "translation2": "Uniquement si vous déclenchez activement une traduction en direct sous « Autres langues », le texte visible de la page actuelle est envoyé à un service de traduction qui le traduit avec l'API Claude d'Anthropic. En outre, l'exploitant du service traite les données de connexion techniquement nécessaires, comme l'adresse IP. Aucun cookie n'est déposé et aucune donnée n'est conservée durablement. Sans déclenchement de votre part, aucune requête n'a lieu.",
+      "themeTitle": "Thème clair et sombre",
+      "theme": "Si vous activez le thème sombre, votre navigateur mémorise ce choix dans le stockage local (localStorage) afin qu'il s'applique lors de votre prochaine visite. L'entrée reste sur votre appareil, n'est envoyée à aucun serveur et peut être supprimée via les paramètres du navigateur.",
       "privateTitle": "Espace privé",
-      "private": "L'espace protégé par passkey est une application distincte, dotée de sa propre politique de confidentialité. Ce site public n'y transmet aucune donnée."
+      "private": "L'espace protégé par passkey est une application distincte, dotée de sa propre déclaration de confidentialité. Ce site public n'y transmet aucune donnée."
     }
   },
   "notFound": {
     "title": "Page introuvable",
     "heading": "Cette page n'existe pas ici.",
-    "lede": "Elle a peut-être été déplacée, ou l'adresse n'a peut-être jamais été correcte. Voici où aller ensuite :",
+    "lede": "Elle a peut-être été déplacée, ou l'adresse n'a peut-être jamais été correcte. D'ici, vous pouvez continuer :",
     "home": "Accueil"
   }
 }

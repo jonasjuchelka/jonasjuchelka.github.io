@@ -8,7 +8,7 @@
     "mainNav": "Hoofdnavigatie",
     "contactAria": "Contact",
     "legalAria": "Juridisch",
-    "crumbsAria": "Broodkruimelpad",
+    "crumbsAria": "Kruimelpad",
     "readingTime": "{n} min. leestijd",
     "badgeInfo": "Opmerking",
     "badgeWarning": "Open"
@@ -51,7 +51,7 @@
         "v": "Management & Technology, TU München"
       },
       {
-        "k": "Specialisatie",
+        "k": "Verdieping",
         "v": "Computer Engineering"
       },
       {
@@ -60,15 +60,17 @@
       }
     ],
     "figcaption": "Eén netwerk, T keer toegepast.",
+    "glanceTitle": "In één oogopslag",
     "workEyebrow": "Werk",
     "projectsTitle": "Projecten",
+    "allProjects": "Alle projecten",
     "notesEyebrow": "Notities",
     "blogTitle": "Blog",
     "contactTitle": "Contact"
   },
   "diagram": {
     "title": "Recursie met gedeelde gewichten",
-    "desc": "Een invoer x gaat een netwerk f in met gewichten theta. De uitgang h wordt T keer teruggevoerd in hetzelfde netwerk, daarna volgt de uitvoer.",
+    "desc": "Een invoer x gaat een netwerk f met gewichten theta in. De uitvoer h wordt T keer teruggevoerd in hetzelfde netwerk, waarna de uitvoer volgt.",
     "shared": "gedeelde θ",
     "layers": "3 lagen → 1 laag ×T"
   },
@@ -77,7 +79,7 @@
     "metaDesc": "Projecten van Jonas Juchelka met korte, onderbouwde context.",
     "eyebrow": "Overzicht",
     "title": "Projecten",
-    "lede": "Weinig projecten, en alleen met gegevens die zich laten onderbouwen. Waar resultaten niet zijn vrijgegeven, ontbreken ze hier bewust.",
+    "lede": "Weinig projecten, en alleen met gegevens die te onderbouwen zijn. Waar resultaten niet zijn vrijgegeven, ontbreken ze hier bewust.",
     "detailEyebrow": "Project",
     "asideAria": "Projectgegevens",
     "role": "Rol",
@@ -95,33 +97,65 @@
     "emptyLink": "RSS-feed",
     "emptyAfter": ".",
     "articleEyebrow": "Artikel",
-    "toc": "Inhoud"
+    "toc": "Inhoud",
+    "filter": "Filter",
+    "search": "Zoeken",
+    "searchOpen": "Zoeken openen",
+    "searchAria": "Berichten doorzoeken",
+    "format": "Formaat",
+    "category": "Categorie",
+    "tagsLabel": "Tags",
+    "year": "Jaar",
+    "view": "Weergave",
+    "all": "Alle",
+    "essays": "Essays",
+    "thoughts": "Gedachten",
+    "thought": "Gedachte",
+    "isNew": "Nieuw",
+    "preview": "Voorbeeld",
+    "list": "Lijst",
+    "reset": "Filters wissen",
+    "resetShort": "Wissen",
+    "collapse": "Inklappen",
+    "toggleFilter": "Filter in- of uitklappen",
+    "none": "Geen berichten voor deze filters.",
+    "countOne": "Bericht",
+    "countMany": "Berichten",
+    "activeFilters": "actief",
+    "readShort": "ca. {n} min.",
+    "showFull": "Hele gedachte tonen",
+    "close": "Sluiten",
+    "back": "Blog",
+    "pdf": "PDF",
+    "next": "Volgend bericht",
+    "themeDark": "Donker thema",
+    "themeLight": "Licht thema"
   },
   "contact": {
     "metaTitle": "Contact",
-    "metaDesc": "Contact met Jonas Juchelka via e-mail of via GitHub.",
+    "metaDesc": "Contact met Jonas Juchelka per e-mail of via GitHub.",
     "eyebrow": "Contact",
     "title": "Schrijf me.",
-    "lede": "Geen formulier, geen omweg. Een e-mail bereikt me direct.",
+    "lede": "Geen formulier, geen omweg. Een e-mail bereikt mij rechtstreeks.",
     "email": "E-mail",
     "github": "GitHub"
   },
   "login": {
     "metaTitle": "Privégedeelte",
-    "metaDesc": "Toegang tot het privégedeelte, beveiligd met een passkey.",
+    "metaDesc": "Toegang tot het privégedeelte, beschermd met een passkey.",
     "eyebrow": "Toegang",
     "title": "Privégedeelte",
     "lede": "Het privégedeelte is een aparte applicatie op een eigen adres. Deze openbare pagina meldt niemand aan en slaat niets op.",
     "continue": "Verder naar inloggen",
     "button": "Inloggen met passkey",
     "notReadyTitle": "Nog niet ingericht",
-    "notReady": "De privétoepassing heeft nog geen vast productieadres. Zodra dat er is, leidt deze pagina er direct naartoe.",
+    "notReady": "De privétoepassing heeft nog geen vast productieadres. Zodra dat er is, leidt deze pagina er rechtstreeks naartoe.",
     "fact1Bold": "Alleen met passkey.",
     "fact1": "Geen wachtwoord, geen social login, geen link per e-mail.",
     "fact2Bold": "Alleen met uitnodiging.",
-    "fact2": "Openbare registratie is er niet.",
+    "fact2": "Openbare registratie bestaat niet.",
     "fact3Bold": "Gescheiden.",
-    "fact3": "Inloggen en gegevens staan uitsluitend in de privétoepassing, niet op GitHub Pages."
+    "fact3": "Inloggen en gegevens bevinden zich uitsluitend in de privéapplicatie, niet op GitHub Pages."
   },
   "legal": {
     "eyebrow": "Juridisch",
@@ -137,26 +171,28 @@
     },
     "privacy": {
       "metaTitle": "Privacy",
-      "metaDesc": "Welke gegevens bij een bezoek aan deze website ontstaan.",
+      "metaDesc": "Welke gegevens ontstaan bij een bezoek aan deze website.",
       "noticeTitle": "Concept: juridische toetsing nog open",
-      "notice": "Deze gegevens beschrijven de daadwerkelijk ingerichte techniek. Een volledige, juridisch getoetste verklaring inclusief adres van de verantwoordelijke is nog niet beschikbaar.",
+      "notice": "Deze gegevens beschrijven de daadwerkelijk ingerichte techniek. Een volledige, juridisch getoetste verklaring inclusief adres van de verantwoordelijke ontbreekt nog.",
       "hostingTitle": "Hosting",
-      "hosting": "De website wordt als statische bestanden via GitHub Pages geleverd. Bij het opvragen verwerkt GitHub technisch noodzakelijke verbindingsgegevens zoals het IP-adres. Op deze verwerking heb ik geen invloed buiten de configuratie om.",
+      "hosting": "De website wordt als statische bestanden via GitHub Pages geleverd. Bij het opvragen verwerkt GitHub technisch noodzakelijke verbindingsgegevens zoals het IP-adres. Op deze verwerking heb ik buiten de configuratie om geen invloed.",
       "notTitle": "Wat deze website niet doet",
       "not1": "Geen cookies, geen tracking, geen analyse- of marketingdiensten.",
       "not2": "Geen extern geladen lettertypen of scripts van derden.",
-      "not3": "Geen contactformulier. Een e-mail wordt verwerkt door uw e-mailprovider en de mijne.",
+      "not3": "Geen contactformulier. Een e-mail wordt verwerkt door uw e-mailprovider en die van mij.",
       "translationTitle": "Vertaling",
       "translation1": "De talen in de taalkeuze zijn vooraf vertaald en worden als statische bestanden geleverd. Hierbij worden geen gegevens naar derden gestuurd.",
-      "translation2": "Alleen wanneer u onder „Meer talen” actief een live vertaling start, wordt de zichtbare tekst van de huidige pagina naar een vertaaldienst gestuurd, die deze met de Claude API van Anthropic vertaalt. Daarnaast verwerkt de beheerder van de dienst technisch noodzakelijke verbindingsgegevens zoals het IP-adres. Er worden geen cookies geplaatst en geen gegevens permanent opgeslagen. Zonder uw actie vindt er geen aanroep plaats.",
+      "translation2": "Alleen wanneer u onder „Meer talen” actief een live vertaling start, wordt de zichtbare tekst van de huidige pagina naar een vertaaldienst gestuurd, die deze met de Claude API van Anthropic vertaalt. Daarnaast verwerkt de exploitant van de dienst technisch noodzakelijke verbindingsgegevens zoals het IP-adres. Er worden geen cookies geplaatst en er worden geen gegevens permanent opgeslagen. Zonder uw actie vindt er geen aanroep plaats.",
+      "themeTitle": "Licht en donker thema",
+      "theme": "Als u het donkere thema inschakelt, onthoudt uw browser deze keuze in de lokale opslag (localStorage), zodat deze bij uw volgende bezoek geldt. De vermelding blijft op uw apparaat, wordt niet naar een server gestuurd en kan via de browserinstellingen worden verwijderd.",
       "privateTitle": "Privégedeelte",
-      "private": "Het met een passkey beveiligde gedeelte is een aparte applicatie met een eigen privacyverklaring. Deze openbare website stuurt daar geen gegevens naartoe."
+      "private": "Het met een passkey beschermde gedeelte is een aparte applicatie met een eigen privacyverklaring. Deze openbare website stuurt daarheen geen gegevens."
     }
   },
   "notFound": {
     "title": "Pagina niet gevonden",
     "heading": "Deze pagina bestaat hier niet.",
-    "lede": "Misschien is ze verplaatst, misschien klopte het adres nooit. Vanaf hier kunt u verder:",
+    "lede": "Misschien is hij verplaatst, misschien was het adres nooit juist. Vanaf hier kunt u verder:",
     "home": "Startpagina"
   }
 }
