@@ -109,13 +109,26 @@ Suchfeld: Pille, 44px, 2px Himmelblau-Rand, Weiß-Hintergrund. Fokus: Rand Köni
 - **Artikelseite** (ruhig, Headspace-inspiriert): Leiste „‹ Blog“ und „PDF“ (PDF nur, wenn `public/blog/<slug>.pdf` existiert), Meta, H1, Einleitung 1,375rem, Fließtext 1,25rem/1,75 (Catamaran 300), Zitate als Fläche mit 28px Radius, am Ende Karte „Nächster Beitrag“. Auf dem Handy 20px Radien, Leiste klebt.
 - **Teilweise feste Leiste (Handy)**: beim Runterscrollen weg, beim Hochscrollen in 0,32s zurück (Toleranz 6px hoch, 4px runter); bleibt sichtbar, solange etwas darin den Fokus hat.
 
+## 6a. Startseite
+
+Leitgedanke: zeigen statt aufzählen. Jede Aussage bekommt ein Bild, aber nur aus Inhalten, die es auf der Seite schon gibt (Wörterbuch `home.*`, Projekt-Frontmatter). Keine neuen Fakten.
+
+- **Hero**: links Schriftzug (max. 30rem, schreibt sich einmal), darunter Eyebrow, `h1` (kleiner als früher, 1,9–3,1rem, weil der Schriftzug führt), Einleitung, zwei Buttons. Rechts das Rekursions-Diagramm auf Surface-Fläche (28px Radius, kein Rand). Unter 820px eine Spalte.
+- **Diagramm-Signal**: Ein Babyblau-Punkt läuft einmal von x durch f, dreimal durch die Schleife und zu ŷ (4,4 s, startet nach dem Schriftzug; noch einmal beim Hover über die Abbildung). Macht „ein Netz, T-mal angewendet“ sichtbar. Ruhezustand: unsichtbar. Im Dunkelmodus sind Linien und Schrift des Diagramms hell.
+- **Auf einen Blick** (ersetzt die Mono-Tabelle): `home.spec` in fester Reihenfolge Aktuell, Studium, Vertiefung, Austausch. Studium → Austausch stehen als **Route** nebeneinander, verbunden durch einen gepunkteten Himmelblau-Bogen (statisch, dekorativ); Aktuell und Vertiefung als zwei **Kacheln** darunter. Jede Angabe: rundes Icon (2,75rem, Babyblau 40 %, Linien-Icon in Überschriftenfarbe), Label in Mukta-Versalien, Wert in Catamaran 400. Semantik bleibt `dl/dt/dd`. Handy: Route untereinander, Bogen gedreht.
+- **Projektkarten** (nur Startseite; die Projektseite behält die Liste): 3 Spalten, unter 900px Bild links/Text rechts, unter 520px gestapelt. Karte = Surface, 28px Radius, oben ein **Piktogramm je Projekt** (16:9, Fläche Babyblau 28 %), darunter Rolle (Mukta-Versalien), Titel (`h3`, ganze Karte klickbar), Kurztext, Tags. Hover wie überall: Babyblau-Verlauf ohne Übergang (dunkel: einfarbig), Fokus 3px Glow um die Karte. Darunter Textlink „Alle Projekte →“.
+- **Piktogramme**: Linien 2,5px, runde Enden, nur Überschriftenfarbe, Himmelblau, Babyblau und Hintergrund. Je Projekt ein Motiv aus dem Inhalt (TRM: Block mit Rückführung; Wiki: Seite verzweigt in Seiten; FFI: wachsende Balken). Neues Projekt ohne Motiv bekommt die neutrale Form. Rein dekorativ (`aria-hidden`), `src/components/HomeArt.tsx`.
+- **Kontaktkarte**: dunkle Fläche (Königsblau, 28px Radius) mit Eyebrow, „Schreib mir.“, einem Satz und den zwei Links in Babyblau. Texte aus `contact.*`.
+- **Kontraste (berechnet)**: Sekundär auf Surface 9.13; Königsblau auf Surface 12.88, auf Piktogramm-Fläche 11.19, auf Icon-Kreis 10.57; Hellgrau auf Königsblau 8.07; Babyblau auf Königsblau 7.71. Dunkel: gedämpft auf Fläche 5.72, Überschrift auf Fläche 9.85, Kontaktkarte Babyblau auf Schwarz 10.74, Hellgrau auf Schwarz 11.25.
+- **Geprüft** (Chrome, echte Komponenten und echtes CSS): 320, 390, 768, 1280 px, hell und dunkel, kein Querscrollen; `prefers-reduced-motion` zeigt alles sofort. Offen: echter Build und Safari.
+
 ## 7. Bewegung
 
-Erlaubt: Einblenden von Beiträgen, Aufklappen des Filters (0,45s), Aufgleiten des Suchfelds (0,3s), gleitende Segment-Markierung, Schreib-Animation des Schriftzugs (einmal beim Laden der Startseite). Verboten: Übergänge auf Buttons. Immer `prefers-reduced-motion` respektieren.
+Erlaubt: Einblenden von Beiträgen, Aufklappen des Filters (0,45s), Aufgleiten des Suchfelds (0,3s), gleitende Segment-Markierung, Schreib-Animation des Schriftzugs und Signal im Rekursions-Diagramm (je einmal beim Laden der Startseite). Verboten: Übergänge auf Buttons. Immer `prefers-reduced-motion` respektieren.
 
 ### Schriftzug (Startseite)
 
-- **Ort**: ganz oben auf der Startseite, linksbündig, max. 28rem breit, über dem Hero. Die Kopfzeile behält ihr bisheriges Logo.
+- **Ort**: ganz oben im Hero der Startseite, linksbündig, max. 30rem breit. Die Kopfzeile behält ihr bisheriges Logo.
 - **Form**: die Originalpfade aus `@jonasjuchelka_logo.ai` (Zeichenfläche 2), unverändert. „Jonas“ in Babyblau, „JUCHELKA“ in Himmelblau (beides Token, nicht fest codiert). Die Pfade nicht bearbeiten.
 - **Animation (Füller)**: Erst „Jonas“, dann „JUCHELKA“, jeweils Buchstabe für Buchstabe und Strich für Strich in Schreibrichtung, mit Absetzen zwischen den Strichen (auch Serifen und Querstriche sind eigene Striche). Kein Aufdecken per Wischer. Etwa 5,7 s, einmal, keine Schleife.
   - **Feder**: Vor dem vollen Strich läuft eine dünne Spitze (35 % und 70 % der Strichbreite, 36 ms und 18 ms voraus), die Linie schwillt also an wie Tinte aus der Feder.

@@ -43,8 +43,10 @@
       { "k": "Austausch", "v": "UC Berkeley, 2026/27" }
     ],
     "figcaption": "Ein Netz, T-mal angewendet.",
+    "glanceTitle": "Auf einen Blick",
     "workEyebrow": "Arbeit",
     "projectsTitle": "Projekte",
+    "allProjects": "Alle Projekte",
     "notesEyebrow": "Notizen",
     "blogTitle": "Blog",
     "contactTitle": "Kontakt"
