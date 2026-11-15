@@ -227,3 +227,12 @@ a:hover{text-decoration-thickness:2px}
 .live-notice{position:fixed;inset-inline:1rem;bottom:1rem;z-index:30;display:flex;gap:1rem;align-items:center;justify-content:space-between;max-width:48rem;margin-inline:auto;padding:.75rem 1rem;background:var(--brand-koenigsblau,#1c2b36);color:#fff;border-radius:8px;font-size:.95rem;box-shadow:0 10px 28px rgba(28,43,54,.3)}
 .live-notice button{font:inherit;color:inherit;background:none;border:1px solid currentColor;border-radius:6px;padding:.25rem .75rem;cursor:pointer;white-space:nowrap}
 @media (max-width:40rem){.lang__menu{position:fixed;inset-inline:1rem;top:4.75rem;width:auto;max-width:none}}
+
+/* Schriftzug (Startseite): Schreib-Animation, siehe docs/style-guide.md */
+.schriftzug-wrap{padding-top:clamp(1.75rem,5vw,3.5rem)}
+.schriftzug-wrap+.hero{padding-top:clamp(1.5rem,4vw,3rem)}
+.schriftzug{display:block;width:min(100%,28rem);height:auto;overflow:visible}
+.schriftzug__name path{fill:none;stroke:var(--brand-babyblau-hell);stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1 1;stroke-dashoffset:0;animation:sz-draw linear both}
+.schriftzug__sub{fill:var(--brand-himmelblau-dunkel);animation:sz-wipe .9s ease-in-out both}
+@keyframes sz-draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes sz-wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}

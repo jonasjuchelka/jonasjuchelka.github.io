@@ -111,7 +111,16 @@ Suchfeld: Pille, 44px, 2px Himmelblau-Rand, Weiß-Hintergrund. Fokus: Rand Köni
 
 ## 7. Bewegung
 
-Erlaubt: Einblenden von Beiträgen, Aufklappen des Filters (0,45s), Aufgleiten des Suchfelds (0,3s), gleitende Segment-Markierung. Verboten: Übergänge auf Buttons. Immer `prefers-reduced-motion` respektieren.
+Erlaubt: Einblenden von Beiträgen, Aufklappen des Filters (0,45s), Aufgleiten des Suchfelds (0,3s), gleitende Segment-Markierung, Schreib-Animation des Schriftzugs (einmal beim Laden der Startseite). Verboten: Übergänge auf Buttons. Immer `prefers-reduced-motion` respektieren.
+
+### Schriftzug (Startseite)
+
+- **Ort**: ganz oben auf der Startseite, linksbündig, max. 28rem breit, über dem Hero. Die Kopfzeile behält ihr bisheriges Logo.
+- **Form**: die Originalpfade aus `@jonasjuchelka_logo.ai` (Zeichenfläche 2), unverändert. „Jonas“ in Babyblau, „JUCHELKA“ in Himmelblau (beides Token, nicht fest codiert). Die Pfade nicht bearbeiten.
+- **Animation**: Buchstabe für Buchstabe (J, o, n, a, s), Strich für Strich in Schreibrichtung, danach schreibt sich „JUCHELKA“ von links ein. Etwa 4 s, einmal, kein Wiederholen, keine Schleife. Technik: Der Schreibstrich ist nur eine Maske (Pinsel entlang der Strichmitte, begrenzt auf die Originalform), keine neue Form. Reine CSS-Animation (`stroke-dashoffset`, `clip-path`), kein JavaScript, deshalb ohne Springen beim Laden.
+- **Bewegung reduziert**: `prefers-reduced-motion` zeigt den fertigen Schriftzug sofort (die globale Regel schaltet die Animation ab; der Grundzustand ist „fertig“, der Anfangszustand steht nur in den Keyframes).
+- **Barrierefreiheit**: `role="img"` mit `aria-label` = Seitenname. Der Schriftzug ist Logo (Logotypen sind von der Kontrastpflicht ausgenommen); der Seitentitel bleibt die `h1` im Hero. Babyblau auf Weiß hat nur 1,8:1 (berechnet) und darf deshalb nie Fließtext tragen.
+- **Pflege**: Wird der Schriftzug geändert, müssen Pfade und Schreibstriche neu erzeugt werden (Strichmitten neu legen, Abdeckung der Buchstaben prüfen: 100 % der Fläche muss aufgedeckt werden).
 
 ## 8. Barrierefreiheit (Pflicht beim Umsetzen)
 

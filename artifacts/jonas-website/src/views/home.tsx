@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Eyebrow } from "@workspace/site-ui";
 import type { Metadata } from "next";
 import { ProjectList } from "@/components/ProjectList";
+import { Schriftzug } from "@/components/Schriftzug";
 import { RecursionDiagram } from "@/components/RecursionDiagram";
 import { getPosts, getProjects, formatDate } from "@/lib/content";
 import { EMAIL, GITHUB, SITE_NAME, abs } from "@/lib/site";
@@ -25,6 +26,10 @@ export function HomeView({ lang }: { lang: string }) {
   const posts = getPosts(lang).slice(0, 3);
   return (
     <>
+      <div className="wrap schriftzug-wrap">
+        <Schriftzug />
+      </div>
+
       <section className="hero hero--split wrap" aria-labelledby="hero-title">
         <div className="hero__copy">
           <Eyebrow>{t.home.eyebrow}</Eyebrow>
