@@ -24,7 +24,7 @@ function setup({ replyFails = 0 } = {}) {
   const kv = new Map();
   const env = {
     REPO: "o/r", BRANCH: "main", ALLOWED_SENDERS: ME, SECRET_LOCAL_PART: SECRET_ADDR, PUBLIC_URL: "https://w.example.test",
-    REPLY_FROM: "antwort@post.example.test", GITHUB_TOKEN: "t", UNPUBLISH_SECRET: "z".repeat(64),
+    GITHUB_TOKEN: "t", UNPUBLISH_SECRET: "z".repeat(64),
     STATE: { get: async (k) => kv.get(k) ?? null, put: async (k, v) => void kv.set(k, v), delete: async (k) => void kv.delete(k) },
   };
   const gh = [];
@@ -106,11 +106,15 @@ test("Fremder Absender, falsche Adresse, nicht konfiguriert → abgelehnt", asyn
   }
 });
 
-test("Antwort von REPLY_FROM scheitert → zweiter Versuch von der Empfangsadresse", async () => {
-  const t = setup({ replyFails: 1 });
+test("Antwort kommt von der Empfangsadresse (Cloudflare-Regel), genau ein Versuch", async () => {
+  const t = setup();
   await worker.email(t.mail(), t.env);
   assert.equal(t.replies.length, 1);
   assert.equal(t.replies[0].from, `${SECRET_ADDR}@post.example.test`);
+  assert.match(t.replies[0].raw, new RegExp(`^From: <${SECRET_ADDR}@post\\.example\\.test>\\r$`, "m"));
+  const t2 = setup({ replyFails: 1 });                 // scheitert der Versuch: kein zweiter (Cloudflare würde ihn ablehnen)
+  await worker.email(t2.mail(), t2.env);
+  assert.equal(t2.replies.length, 0);
 });
 
 test("Ungültige oder manipulierte Links ändern nichts", async () => {
