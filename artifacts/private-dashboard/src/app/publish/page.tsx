@@ -32,7 +32,7 @@ export default function PublishPage() {
   const [topic, setTopic] = useState("");
   const [tags, setTags] = useState("");
   const [summary, setSummary] = useState("");
-  const [done, setDone] = useState<string | null>(null);
+  const [done, setDone] = useState<{ slug: string; kind: "essay" | "gedanke" } | null>(null);
 
   const ext = file?.name.split(".").pop()?.toLowerCase() ?? "";
   const fileError = file && (!OK_EXT.includes(ext) ? "Nur .docx, .doc und .md." : file.size > MAX ? "Größer als 4 MB." : kind === "gedanke" && ext !== "md" ? "Ein Gedanke ist reiner Text (.md)." : "");
@@ -44,7 +44,7 @@ export default function PublishPage() {
     f.set("file", file!); f.set("kind", kind); f.set("title", title); f.set("topic", topic); f.set("summary", summary);
     f.set("tags", kind === "gedanke" ? "" : tags);
     const r = await send("POST", f) as { slug: string };
-    setDone(r.slug); setFile(null); setTitle(""); setTopic(""); setTags(""); setSummary("");
+    setDone({ slug: r.slug, kind }); setFile(null); setTitle(""); setTopic(""); setTags(""); setSummary("");
     if (fileRef.current) fileRef.current.value = "";
   }, "Hochgeladen. Der Beitrag geht in ein bis zwei Minuten live.");
 
@@ -94,7 +94,7 @@ export default function PublishPage() {
           <button className="btn btn--big" type="submit" disabled={!ready || act.busy}>{act.busy ? "Wird hochgeladen …" : "Veröffentlichen"}</button>
         </div>
         <ActionStatus a={act} />
-        {done ? <p className="hint">Adresse: <code>/blog/{done}/</code></p> : null}
+        {done ? <p className="hint">Adresse: <code>{done.kind === "essay" ? `/blog/${done.slug}/` : `Gedanke ${done.slug}`}</code></p> : null}
       </form>
 
       <section className="stack" aria-labelledby="pub-list">
