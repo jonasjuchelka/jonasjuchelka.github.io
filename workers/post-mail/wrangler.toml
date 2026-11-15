@@ -5,19 +5,18 @@ compatibility_date = "2026-10-01"
 [vars]
 REPO = "jonasjuchelka/jonasjuchelka.github.io"
 BRANCH = "main"
-# Die folgenden drei Werte trägst DU im Cloudflare-Dashboard ein (Worker → Settings → Variables),
-# damit weder deine Adresse noch die geheime Adresse im öffentlichen Repo stehen:
+# Diese drei Variablen stehen bewusst NICHT hier, sondern nur im Cloudflare-Dashboard
+# (Worker → Settings → Variables), damit weder deine Adresse noch die geheime Adresse im öffentlichen Repo stehen:
 #   ALLOWED_SENDERS   = deine Absenderadresse (kommagetrennt, wenn mehrere)
 #   SECRET_LOCAL_PART = geheimer Teil vor dem @ der Empfangsadresse
 #   PUBLIC_URL        = https://<worker-name>.<konto>.workers.dev
-ALLOWED_SENDERS = "ERSETZEN"
-SECRET_LOCAL_PART = "ERSETZEN"
-PUBLIC_URL = "ERSETZEN"
+# Würden sie hier mit Platzhalter stehen, überschreibt jedes "wrangler deploy" die Dashboard-Werte.
+# Deploy immer mit: wrangler deploy --keep-vars
 REPLY_FROM = "antwort@post.jonasjuchelka.com"
 
-# KV für den Tageszähler: wrangler kv namespace create STATE, dann die id hier eintragen.
+# KV für den Tageszähler. Die id ist kein Geheimnis (ohne Konto-Zugang nutzlos).
 [[kv_namespaces]]
 binding = "STATE"
-id = "ERSETZEN"
+id = "469437a2ed4c4c539b3c04c8bfefd9a5"
 
 # Secrets (nie in diese Datei): wrangler secret put GITHUB_TOKEN / UNPUBLISH_SECRET

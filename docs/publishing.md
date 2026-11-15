@@ -27,10 +27,10 @@ Der Worker schreibt nur nach `artifacts/jonas-website/content/gedanken/` und kan
 Nie in den Chat oder ins Repo.
 
 **Worker** (`workers/post-mail/wrangler.toml`):
-1. `wrangler kv namespace create STATE`, die `id` eintragen.
+1. `wrangler kv namespace create STATE` (erledigt, die `id` steht in `wrangler.toml`).
 2. Im Dashboard unter Settings → Variables setzen: `ALLOWED_SENDERS`, `SECRET_LOCAL_PART`, `PUBLIC_URL`. Diese Werte bleiben aus dem öffentlichen Repo heraus.
 3. `wrangler secret put UNPUBLISH_SECRET` (lange Zufallszeichenfolge).
-4. `pnpm install` in `workers/post-mail`, dann `wrangler deploy`.
+4. `pnpm install` in `workers/post-mail`, dann `wrangler deploy --keep-vars` (ohne `--keep-vars` löscht ein Deploy die Dashboard-Variablen).
 5. Email Routing → Custom address `<SECRET_LOCAL_PART>@post.jonasjuchelka.com` → Action „Send to a Worker“ → `jonas-post-mail`.
 
 ## Tests
