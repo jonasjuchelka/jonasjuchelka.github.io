@@ -11,7 +11,7 @@ Zwei Wege, ein Ziel: ein Commit nach `main` startet das Deployment der Website.
 1. `/publish` legt `inbox/<slug>/original.<ext>` und danach `inbox/<slug>/meta.json` per GitHub-API ab.
 2. `.github/workflows/publish.yml` startet bei Änderungen unter `inbox/`, überspringt unvollständige Ordner und ruft `scripts/publish/build_post.py` auf.
 3. Ergebnis: `content/blog/<slug>.md` + `artifacts/jonas-website/public/blog/<slug>.pdf` (Essay) oder `content/gedanken/<slug>.md` (Gedanke). Fehler landen in `inbox-failed/`.
-4. Der Workflow stößt `pages.yml` an (Pushes mit `GITHUB_TOKEN` lösen sonst keine Workflows aus).
+4. Der Workflow pusht mit dem Repo-Secret `PUBLISH_TOKEN` (fine-grained, Contents: Read & write, unter deinem Konto, damit der Admin-Bypass der Branch-Regel greift). Ein Push mit einem eigenen Token startet `pages.yml` von selbst; mit `GITHUB_TOKEN` wäre er außerdem blockiert.
 
 Grenzen: Upload bis 4 MB (Vercel Hobby), .docx/.doc/.md, Inhalt wird gegen die Endung geprüft. Bilder im Text werden entfernt. HTML wird entfernt. Gedanken haben keine Tags und kein Bild.
 Zurücknehmen: Liste auf `/publish` löscht Beitrag und PDF per GitHub-API.
