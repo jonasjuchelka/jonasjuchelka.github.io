@@ -7,9 +7,9 @@
     "homeAria": "Jonas Juchelka, ana sayfaya git",
     "mainNav": "Ana gezinme",
     "contactAria": "İletişim",
-    "legalAria": "Yasal bilgiler",
+    "legalAria": "Hukuki bilgiler",
     "crumbsAria": "Gezinti yolu",
-    "readingTime": "{n} dk okuma süresi",
+    "readingTime": "{n} dk okuma",
     "badgeInfo": "Not",
     "badgeWarning": "Açık"
   },
@@ -25,20 +25,20 @@
     "choose": "Dil seç",
     "translating": "Çevriliyor …",
     "showOriginal": "Orijinali göster",
-    "notice": "Claude (Anthropic) ile makine çevirisi. Bunun için bu sayfanın metni bir çeviri hizmetine gönderildi. Almanca sürüm esas alınır.",
+    "notice": "Claude (Anthropic) ile makine çevirisi. Bunun için bu sayfanın metni bir çeviri hizmetine gönderildi. Geçerli olan Almanca sürümdür.",
     "error": "Çeviri şu anda mümkün değil. Lütfen daha sonra tekrar deneyin."
   },
   "footer": {
     "line": "Derin öğrenme · Management & Technology, TU München.",
     "base": "Statik web sitesi. İzleme yok, çerez yok.",
-    "rss": "RSS beslemesi",
+    "rss": "RSS akışı",
     "imprint": "Künye",
     "privacy": "Gizlilik"
   },
   "home": {
     "eyebrow": "Münih / Berkeley",
     "title": "Küçük ağlar. Özyinelemeli düşünme.",
-    "intro": "Az parametreyle derin öğrenme: Aynı ağı defalarca uygulayan mimarileri yeniden inşa ediyorum.",
+    "intro": "Az parametreyle derin öğrenme: Aynı ağı birden çok kez uygulayan mimarileri yeniden inşa ediyorum.",
     "ctaProject": "TRM projesi",
     "ctaMail": "E-posta",
     "spec": [
@@ -47,28 +47,30 @@
         "v": "TRM, Keras ile yeniden inşa edildi"
       },
       {
-        "k": "Eğitim",
+        "k": "Öğrenim",
         "v": "Management & Technology, TU München"
       },
       {
-        "k": "Uzmanlaşma",
-        "v": "Bilgisayar mühendisliği"
+        "k": "İhtisas",
+        "v": "Bilgisayar Mühendisliği"
       },
       {
         "k": "Değişim",
         "v": "UC Berkeley, 2026/27"
       }
     ],
-    "figcaption": "Bir ağ, T kez uygulanır.",
+    "figcaption": "Bir ağ, T kez uygulanıyor.",
+    "glanceTitle": "Kısaca",
     "workEyebrow": "Çalışma",
     "projectsTitle": "Projeler",
+    "allProjects": "Tüm projeler",
     "notesEyebrow": "Notlar",
     "blogTitle": "Blog",
     "contactTitle": "İletişim"
   },
   "diagram": {
     "title": "Paylaşılan ağırlıklarla özyineleme",
-    "desc": "Bir x girdisi, theta ağırlıklı bir f ağına girer. h çıkışı T kez aynı ağa geri beslenir, ardından çıktı gelir.",
+    "desc": "Bir x girdisi, theta ağırlıklarına sahip bir f ağına girer. Çıkış h, T kez aynı ağa geri beslenir, ardından çıktı gelir.",
     "shared": "paylaşılan θ",
     "layers": "3 katman → 1 katman ×T"
   },
@@ -77,7 +79,7 @@
     "metaDesc": "Jonas Juchelka'nın projeleri, kısa ve belgelenmiş bağlamla.",
     "eyebrow": "Genel bakış",
     "title": "Projeler",
-    "lede": "Az sayıda proje, yalnızca kanıtlanabilir bilgilerle. Sonuçların yayımlanmasına izin verilmediği yerlerde, bunlar bilinçli olarak burada yer almıyor.",
+    "lede": "Az sayıda proje, ama yalnızca belgelenebilen bilgilerle. Sonuçlar yayımlanmaya onaylanmadıysa, bilerek burada yer almıyor.",
     "detailEyebrow": "Proje",
     "asideAria": "Proje bilgileri",
     "role": "Rol",
@@ -87,15 +89,47 @@
   },
   "blog": {
     "metaTitle": "Blog",
-    "metaDesc": "Jonas Juchelka'dan makaleler ve notlar.",
+    "metaDesc": "Jonas Juchelka'nın makaleleri ve notları.",
     "eyebrow": "Notlar",
     "title": "Blog",
     "emptyTitle": "Henüz bir şey yayımlanmadı.",
-    "emptyBefore": "Üniversite ve uygulamadan yazılar, hazır olduklarında burada yer alacak, daha önce değil. Hiçbir şeyi kaçırmak istemeyenler şuna abone olabilir:",
-    "emptyLink": "RSS beslemesi",
+    "emptyBefore": "Üniversiteden ve pratikten yazılar, hazır olduğunda burada yer alacak, daha önce değil. Hiçbir şeyi kaçırmak istemeyenler şuna abone olabilir:",
+    "emptyLink": "RSS akışı",
     "emptyAfter": ".",
     "articleEyebrow": "Makale",
-    "toc": "İçindekiler"
+    "toc": "İçindekiler",
+    "filter": "Filtre",
+    "search": "Ara",
+    "searchOpen": "Aramayı aç",
+    "searchAria": "Yazılarda ara",
+    "format": "Biçim",
+    "category": "Kategori",
+    "tagsLabel": "Etiketler",
+    "year": "Yıl",
+    "view": "Görünüm",
+    "all": "Tümü",
+    "essays": "Denemeler",
+    "thoughts": "Düşünceler",
+    "thought": "Düşünce",
+    "isNew": "Yeni",
+    "preview": "Önizleme",
+    "list": "Liste",
+    "reset": "Filtreleri sıfırla",
+    "resetShort": "Sıfırla",
+    "collapse": "Daralt",
+    "toggleFilter": "Filtreyi aç veya kapat",
+    "none": "Bu filtreler için yazı yok.",
+    "countOne": "yazı",
+    "countMany": "yazı",
+    "activeFilters": "etkin",
+    "readShort": "yakl. {n} dk",
+    "showFull": "Düşüncenin tamamını göster",
+    "close": "Kapat",
+    "back": "Blog",
+    "pdf": "PDF",
+    "next": "Sonraki yazı",
+    "themeDark": "Koyu tema",
+    "themeLight": "Açık tema"
   },
   "contact": {
     "metaTitle": "İletişim",
@@ -111,26 +145,26 @@
     "metaDesc": "Passkey ile korunan özel alana giriş.",
     "eyebrow": "Erişim",
     "title": "Özel alan",
-    "lede": "Özel alan, kendi adresi altında ayrı bir uygulamadır. Bu herkese açık sayfa kimseyi oturum açtırmaz ve hiçbir şey saklamaz.",
+    "lede": "Özel alan, kendi adresi olan ayrı bir uygulamadır. Bu herkese açık sayfa kimseyi oturum açtırmaz ve hiçbir şey saklamaz.",
     "continue": "Girişe devam et",
     "button": "Passkey ile giriş yap",
     "notReadyTitle": "Henüz kurulmadı",
     "notReady": "Özel uygulamanın henüz sabit bir üretim adresi yok. Adres hazır olduğunda bu sayfa doğrudan oraya yönlendirecek.",
     "fact1Bold": "Yalnızca passkey ile.",
-    "fact1": "Parola yok, sosyal medya girişi yok, e-postayla bağlantı yok.",
+    "fact1": "Parola yok, sosyal medya ile giriş yok, e-postayla bağlantı yok.",
     "fact2Bold": "Yalnızca davetle.",
-    "fact2": "Herkese açık bir kayıt yok.",
+    "fact2": "Herkese açık kayıt yoktur.",
     "fact3Bold": "Ayrı.",
-    "fact3": "Giriş ve veriler yalnızca özel uygulamada bulunur, GitHub Pages'te değil."
+    "fact3": "Giriş ve veriler yalnızca özel uygulamada bulunur, GitHub Pages üzerinde değil."
   },
   "legal": {
-    "eyebrow": "Yasal bilgiler",
-    "authoritative": "Hukuken bağlayıcı olan, bu sayfanın Almanca sürümüdür.",
+    "eyebrow": "Hukuki bilgiler",
+    "authoritative": "Hukuken geçerli olan, bu sayfanın Almanca sürümüdür.",
     "imprint": {
       "metaTitle": "Künye",
-      "metaDesc": "Sağlayıcı bilgileri, şu anda eksik.",
+      "metaDesc": "Sağlayıcı bilgisi, şu anda eksik.",
       "noticeTitle": "Eksik: açık üretim maddesi",
-      "notice": "Tebligata elverişli bir adres henüz mevcut değil ve burada uydurulmuyor. Bu nedenle bu künye henüz tam değil.",
+      "notice": "Tebligata elverişli bir adres henüz mevcut değil ve burada uydurulmuyor. Bu nedenle bu künye henüz tam değildir.",
       "responsible": "Sorumlu",
       "contact": "İletişim",
       "email": "E-posta:"
@@ -138,19 +172,21 @@
     "privacy": {
       "metaTitle": "Gizlilik",
       "metaDesc": "Bu web sitesini ziyaret ederken hangi verilerin oluştuğu.",
-      "noticeTitle": "Taslak: hukuki inceleme bekleniyor",
-      "notice": "Bu bilgiler, fiilen kurulmuş olan tekniği açıklar. Sorumlunun adresini de içeren, tam ve hukuken incelenmiş bir beyan henüz hazır değil.",
+      "noticeTitle": "Taslak: hukuki inceleme beklemede",
+      "notice": "Bu bilgiler fiilen kurulmuş olan teknolojiyi açıklar. Sorumlunun adresi dahil, eksiksiz ve hukuken incelenmiş bir beyan henüz hazır değildir.",
       "hostingTitle": "Barındırma",
-      "hosting": "Web sitesi, GitHub Pages üzerinden statik dosyalar olarak sunulur. Erişim sırasında GitHub, IP adresi gibi teknik olarak gerekli bağlantı verilerini işler. Yapılandırmanın ötesinde bu işleme üzerinde bir etkim yoktur.",
+      "hosting": "Web sitesi, GitHub Pages üzerinden statik dosyalar olarak sunulur. Erişim sırasında GitHub, IP adresi gibi teknik olarak gerekli bağlantı verilerini işler. Yapılandırmanın ötesinde bu işleme üzerinde etkim yoktur.",
       "notTitle": "Bu web sitesinin yapmadıkları",
       "not1": "Çerez yok, izleme yok, analiz veya pazarlama hizmeti yok.",
-      "not2": "Üçüncü taraflardan harici olarak yüklenen yazı tipleri veya betikler yok.",
-      "not3": "İletişim formu yok. Bir e-postayı sizin e-posta sağlayıcınız ve benimki işler.",
+      "not2": "Üçüncü taraflardan harici olarak yüklenen yazı tipi veya betik yok.",
+      "not3": "İletişim formu yok. Bir e-postayı sizin ve benim e-posta sağlayıcım işler.",
       "translationTitle": "Çeviri",
       "translation1": "Dil seçimindeki diller önceden çevrilmiştir ve statik dosyalar olarak sunulur. Bu sırada üçüncü taraflara veri gönderilmez.",
-      "translation2": "Yalnızca „Diğer diller“ altında canlı çeviriyi kendiniz başlatırsanız, geçerli sayfanın görünen metni, onu Anthropic'in Claude API'si ile çeviren bir çeviri hizmetine gönderilir. Ayrıca hizmetin işletmecisi, IP adresi gibi teknik olarak gerekli bağlantı verilerini işler. Çerez yerleştirilmez ve veriler kalıcı olarak saklanmaz. Siz başlatmadıkça herhangi bir istek yapılmaz.",
+      "translation2": "Yalnızca “Diğer diller” altında canlı çeviriyi kendiniz başlatırsanız, mevcut sayfanın görünen metni bir çeviri hizmetine gönderilir; hizmet bunu Anthropic'in Claude API'si ile çevirir. Ayrıca hizmetin işletmecisi, IP adresi gibi teknik olarak gerekli bağlantı verilerini işler. Ne çerez yerleştirilir ne de veriler kalıcı olarak saklanır. Siz başlatmadıkça herhangi bir istek yapılmaz.",
+      "themeTitle": "Açık ve koyu tema",
+      "theme": "Koyu temayı açarsanız tarayıcınız bu seçimi, bir sonraki ziyarette geçerli olması için yerel depolamada (localStorage) saklar. Kayıt cihazınızda kalır, bir sunucuya gönderilmez ve tarayıcı ayarlarından silinebilir.",
       "privateTitle": "Özel alan",
-      "private": "Passkey ile korunan alan, kendi gizlilik beyanına sahip ayrı bir uygulamadır. Bu herkese açık web sitesi oraya veri aktarmaz."
+      "private": "Passkey ile korunan alan, kendi gizlilik beyanı olan ayrı bir uygulamadır. Bu herkese açık web sitesi oraya hiçbir veri aktarmaz."
     }
   },
   "notFound": {
