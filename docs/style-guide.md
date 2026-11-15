@@ -87,10 +87,15 @@ Suchfeld: Pille, 44px, 2px Himmelblau-Rand, Weiß-Hintergrund. Fokus: Rand Köni
 - Fokus: 3px Glow. Pillen-Radius 999px.
 
 ### Handy-Web (iPhone/Android)
-- Filter **eingeklappt**: nur Kopfzeile „Filter ⌄ · 9 Beiträge · Lupe“; Badge zeigt aktive Filter. Aufgeklappt: alle Gruppen und Ansicht-Umschalter. (Mac bleibt: Vorschau mit Pfeil.)
-- **Weniger Text**: Datum `13.11.26`, Lesezeit `ca. 8 Min.`, bei Gedanken nur Gedanke + Neu (kein Thema), Essay-Vorschau 2 Zeilen.
-- **Kleinere Schrift**: Fließtext und Gedanke 1rem (Catamaran 400; Light erst ab 18px), Meta .82rem, Pillen .72rem, H1 2,1rem.
-- **iOS-Regeln**: Eingabefelder mind. 16px (sonst zoomt Safari), Zielgröße 44px, `viewport-fit=cover` mit `env(safe-area-inset-*)`, `100dvh`, `-webkit-tap-highlight-color: transparent`, `touch-action: manipulation`, Hover-Effekte nur unter `(hover:hover)`.
+- **Filter-Auslöser**: ein beschrifteter Pillen-Button „Filter ⌄“ (Label + Pfeil + Zähler-Badge in einem), Optik 38px, Trefferfläche 44px. Kein separater runder Pfeil-Knopf. Eingeklappt ist vom Filter nichts sichtbar oder per Tab erreichbar. (Mac bleibt: Vorschau mit Pfeil.)
+- **Kopfzeile klebt** beim Scrollen oben (Filter · Anzahl · Lupe), mit feiner Trennlinie sobald sie klebt.
+- **Essay mit Bild**: Bild klein (4,75rem, quadratisch) rechts **neben dem Titel**; Vorschau und Tags laufen darunter über die volle Breite, kein Leerraum unter dem Bild. Ohne Bild volle Breite.
+- **Liste**: Text/Titel volle Breite, darunter eine Zeile „Datum · Neu · Typ“, Mini-Bild rechts.
+- **Weniger Text**: Datum `13.11.26`, Lesezeit `ca. 8 Min.`, Gedanken nur Gedanke + Neu, Essay-Vorschau 2 Zeilen.
+- **Schrift**: Fließtext und Gedanke 1rem (Catamaran 400), Meta .82rem, Pillen .72rem, H1 2,1rem; nichts unter 11px.
+- **Kein Hover** auf dem Handy (keine Hover-Fläche, keine Titelfarbe beim Tippen).
+- **iOS-Regeln**: Eingabefelder mind. 16px, Trefferflächen 44px (unsichtbar per `::after` vergrößern, Optik darf kleiner sein), `viewport-fit=cover` + `env(safe-area-inset-*)`, kein `user-scalable=no`, `touch-action: manipulation`, `prefers-reduced-motion` schaltet alle Übergänge ab.
+- **Tests**: `tests/mobile.py` (320, 375, 390, 430 px, Querformat, hell/dunkel).
 
 ## 7. Bewegung
 
