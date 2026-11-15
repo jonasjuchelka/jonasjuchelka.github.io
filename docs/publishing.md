@@ -16,6 +16,8 @@ Zwei Wege, ein Ziel: ein Commit nach `main` startet das Deployment der Website.
 Grenzen: Upload bis 4 MB (Vercel Hobby), .docx/.doc/.md, Inhalt wird gegen die Endung geprüft. Bilder im Text werden entfernt. HTML wird entfernt. Gedanken haben keine Tags und kein Bild.
 Zurücknehmen: Liste auf `/publish` löscht Beitrag und PDF per GitHub-API.
 
+**Überschriften im Essay:** Die erste Überschrift wird nur entfernt, wenn sie dem Titel entspricht. Danach werden die Ebenen so verschoben, dass Kapitel bei h2 beginnen (h1 ist der Titel). „Überschrift 1“ in Word wird also zu h2. Das PDF nutzt nur die vier Markenschriften, auch in der Fußzeile (die Schriften werden dafür vor dem Browserstart als Systemschrift installiert).
+
 ## Mail (Gedanke)
 `workers/post-mail` (Cloudflare Email Worker). Ablauf:
 1. Prüft der Reihe nach: Größe ≤ 100 KB, geheime Empfängeradresse, Umschlag- = Header-Absender auf der Liste, Authentifizierung, Tageslimit 10.
