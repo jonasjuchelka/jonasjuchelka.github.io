@@ -18,7 +18,15 @@ export default {
       rawSize: message.rawSize, envelopeFrom: message.from, to: message.to,
       headerFrom: message.headers.get("from"), authResults: message.headers.get("authentication-results"),
     }, env);
-    if (!check.ok) { console.log("abgelehnt:", check.reason); message.setReject("Nicht angenommen"); return; }   // Absender sieht nur eine Ablehnung, keinen Grund
+    if (!check.ok) {
+      console.log("abgelehnt:", check.reason);
+      if (check.reason === "dmarc") {   // Diagnose: welche Header kommen an, welche Urteile stehen darin (keine Adressen, kein Text)?
+        const verdicts = (h) => (String(message.headers.get(h) ?? "").toLowerCase().match(/\b(arc|spf|dkim|dmarc)=[a-z]+/g) ?? []).join(" ");
+        console.log("header:", [...message.headers.keys()].join(","));
+        console.log("urteile auth:", verdicts("authentication-results") || "-", "| arc:", verdicts("arc-authentication-results") || "-");
+      }
+      message.setReject("Nicht angenommen"); return;
+    }   // Absender sieht nur eine Ablehnung, keinen Grund
     if (!(await underLimit(env.STATE))) { message.setReject("Tageslimit erreicht"); return; }
 
     const mail = await PostalMime.parse(message.raw);                    // Anhänge und HTML werden ignoriert
