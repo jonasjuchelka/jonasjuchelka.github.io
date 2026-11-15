@@ -54,7 +54,21 @@ def find_original(folder: Path) -> Path:
     raise SystemExit("Keine original.docx/.doc/.md gefunden")
 
 
-def to_markdown(src: Path, work: Path) -> str:
+def fix_headings(body: str, title: str) -> str:
+    """Erste Überschrift nur entfernen, wenn sie der Titel ist. Danach Ebenen so verschieben,
+    dass die oberste Überschrift im Text h2 ist (h1 ist der Titel der Seite/des PDFs)."""
+    m = re.match(r"\s*#{1,6}\s+([^\n]*)\n", body)
+    norm = lambda t: re.sub(r"\W+", " ", t).strip().casefold()
+    if m and norm(m.group(1)) == norm(title):
+        body = body[m.end():]
+    levels = [len(h) for h in re.findall(r"^(#{1,6})\s", body, flags=re.M)]
+    shift = 2 - min(levels) if levels else 0
+    if shift > 0:
+        body = re.sub(r"^(#{1,6})(?=\s)", lambda h: "#" * min(6, len(h.group(1)) + shift), body, flags=re.M)
+    return body
+
+
+def to_markdown(src: Path, work: Path, title: str = "") -> str:
     fmt = "markdown-raw_html-raw_attribute" if src.suffix == ".md" else "docx"
     if src.suffix == ".doc":  # altes Word-Format zuerst nach .docx
         run(["soffice", "--headless", "--convert-to", "docx", "--outdir", str(work), str(src)])
@@ -66,7 +80,7 @@ def to_markdown(src: Path, work: Path) -> str:
         src.write_text(txt, "utf8")
     out = run(["pandoc", "-f", fmt, "-t", "gfm-raw_html", "--wrap=none", "--markdown-headings=atx", str(src)])
     body = out.stdout
-    body = re.sub(r"^\s*# [^\n]*\n", "", body, count=1)  # erste H1 = Titel, steht schon in den Angaben
+    body = fix_headings(body, title)                   # Titel-Überschrift weg, Kapitel ab h2
     body = re.sub(r"!\[[^\]]*\]\([^)]*\)", "", body)   # Bilder im Text: nein, nur das Titelbild über meta
     body = re.sub(r"^(Bild|Image|Figure)\s*$", "", body, flags=re.M)  # pandoc-Ersatztext für nicht ladbare Bilder
     body = re.sub(r"<[^>]+>", "", body)                 # übrig gebliebenes HTML weg
@@ -81,6 +95,20 @@ def front(meta: dict, draft: bool) -> str:
         lines.append(f"topic: {q(meta['topic'])}")
     lines += ["tags: [" + ", ".join(q(t) for t in meta["tags"]) + "]", f"draft: {str(draft).lower()}", "---", ""]
     return "\n".join(lines)
+
+
+def install_fonts(fonts: Path):
+    """Kopf-/Fußzeilen des PDFs sehen keine @font-face der Seite, nur Systemschriften.
+    Darum die Markenschriften vor dem Browserstart in den Schriftordner des Nutzers legen (sonst Fremdschrift in der Fußzeile)."""
+    dest = Path.home() / ".local/share/fonts/jj"
+    dest.mkdir(parents=True, exist_ok=True)
+    changed = False
+    for f in fonts.glob("*.ttf"):
+        t = dest / f.name
+        if not t.exists() or t.stat().st_size != f.stat().st_size:
+            shutil.copyfile(f, t); changed = True
+    if changed and shutil.which("fc-cache"):
+        subprocess.run(["fc-cache", "-f", str(dest)], capture_output=True, timeout=120)
 
 
 def make_pdf(meta: dict, body_md: str, out_pdf: Path, root: Path):
@@ -99,6 +127,7 @@ def make_pdf(meta: dict, body_md: str, out_pdf: Path, root: Path):
 {f'<p class="lede">{e(meta["summary"])}</p>' if meta["summary"] else ''}</header>
 <main>{inner}</main></body></html>'''
         (td / "p.html").write_text(doc, "utf8")
+        install_fonts(fonts)
         from playwright.sync_api import sync_playwright
         with sync_playwright() as p:
             b = p.chromium.launch()
@@ -122,7 +151,7 @@ def main():
     meta = load_meta(folder)
     src = find_original(folder)
     with tempfile.TemporaryDirectory() as w:
-        body = to_markdown(src, Path(w))
+        body = to_markdown(src, Path(w), meta["title"])
     if meta["kind"] == "gedanke":
         if len(body) > MAX_GEDANKE:
             raise SystemExit(f"Gedanke zu lang ({len(body)} > {MAX_GEDANKE} Zeichen)")
