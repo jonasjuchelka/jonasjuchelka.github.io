@@ -47,7 +47,7 @@ jobs:
           git config user.name "jj-publisher"
           git config user.email "publisher@users.noreply.github.com"
           # Jeden Pfad einzeln: git add bricht komplett ab, wenn ein Pfad (z. B. inbox-failed) nicht existiert
-          for p in content artifacts/jonas-website/public/blog inbox inbox-failed; do [ -e "$p" ] && git add -A "$p"; done
+          for p in artifacts/jonas-website/content artifacts/jonas-website/public/blog inbox inbox-failed; do [ -e "$p" ] && git add -A "$p"; done
           if git diff --cached --quiet; then echo "Nichts zu committen"; exit 0; fi
           git commit -m "Beitrag veröffentlicht (automatisch)"
           git push

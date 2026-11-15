@@ -59,7 +59,7 @@ test("Frontmatter ist gültiges YAML-Muster mit kind gedanke und ohne Tags", () 
   assert.match(f, /^---\ntitle: "Erste Zeile: mit \\"Anführungszeichen\\""\n/);
   assert.match(f, /kind: gedanke\ntags: \[\]\ndraft: false\n---\n\nErste Zeile/);
 });
-test("GitHub: veröffentlichen schreibt nur nach content/gedanken, Zurücknehmen löscht mit sha", async () => {
+test("GitHub: veröffentlichen schreibt nur nach artifacts/jonas-website/content/gedanken, Zurücknehmen löscht mit sha", async () => {
   const calls = [];
   globalThis.fetch = async (url, init = {}) => {
     calls.push([init.method ?? "GET", String(url), init.body]);
@@ -67,7 +67,7 @@ test("GitHub: veröffentlichen schreibt nur nach content/gedanken, Zurücknehmen
     return new Response("{}", { status: 200 });
   };
   await publishGedanke(env, "g-20261115-080000-abc123", "x");
-  assert.match(calls[0][1], /contents\/content\/gedanken\/g-20261115-080000-abc123\.md$/);
+  assert.match(calls[0][1], /contents\/artifacts\/jonas-website\/content\/gedanken\/g-20261115-080000-abc123\.md$/);
   assert.equal(await unpublishGedanke(env, "g-20261115-080000-abc123"), "removed");
   assert.equal(JSON.parse(calls[2][2]).sha, "abc");
   globalThis.fetch = async () => new Response("", { status: 404 });

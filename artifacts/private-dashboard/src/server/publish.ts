@@ -38,7 +38,7 @@ export async function publishUpload(form: FormData) {
   checkMeta(meta, ext, bytes);
   const slug = slugify(meta.title);
   if (!validSlug(slug)) throw new UploadError(400, "Aus dem Titel lässt sich keine Adresse bilden.");
-  const dir = meta.kind === "gedanke" ? "content/gedanken" : "content/blog";
+  const dir = meta.kind === "gedanke" ? "artifacts/jonas-website/content/gedanken" : "artifacts/jonas-website/content/blog";
   if ((await exists(`${dir}/${slug}.md`)) || (await exists(`inbox/${slug}/meta.json`)))
     throw new UploadError(409, "Es gibt schon einen Beitrag mit diesem Titel. Bitte den Titel ändern.");
   // Erst die Datei, dann meta.json: die Action startet erst, wenn beides da ist.
@@ -58,14 +58,14 @@ export async function listPublished(): Promise<Published[]> {
     return ((await r.json()) as { name: string }[]).filter((f) => f.name.endsWith(".md") && !f.name.startsWith("_"))
       .map((f) => ({ slug: f.name.slice(0, -3), kind }));
   };
-  return [...(await one("content/blog", "essay")), ...(await one("content/gedanken", "gedanke"))];
+  return [...(await one("artifacts/jonas-website/content/blog", "essay")), ...(await one("artifacts/jonas-website/content/gedanken", "gedanke"))];
 }
 
 export async function unpublish(slug: string) {
   const s = await adminFresh();
   if (!validSlug(slug)) throw new UploadError(400, "Ungültige Adresse.");
   let removed = 0;
-  for (const path of [`content/blog/${slug}.md`, `content/gedanken/${slug}.md`, `artifacts/jonas-website/public/blog/${slug}.pdf`]) {
+  for (const path of [`artifacts/jonas-website/content/blog/${slug}.md`, `artifacts/jonas-website/content/gedanken/${slug}.md`, `artifacts/jonas-website/public/blog/${slug}.pdf`]) {
     const g = await gh(`${path}?ref=main`);
     if (g.status === 404) continue;
     if (!g.ok) throw new AccessError(502, "GitHub antwortet nicht wie erwartet.");
