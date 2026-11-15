@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BrandLogo } from "./BrandLogo";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { ThemeToggle } from "./ThemeToggle";
 import { NAV_PATHS, translateEndpoint } from "@/lib/site";
 import { LANGUAGES, availableLocales, getDict, localePath } from "@/lib/i18n";
 
@@ -23,6 +24,7 @@ export function Header({ lang }: { lang: string }) {
                 </Link>
               </li>
             ))}
+            <li><ThemeToggle darkLabel={t.blog.themeDark} lightLabel={t.blog.themeLight} /></li>
             <li><LanguageSwitcher lang={lang} locales={locales} t={t.lang} endpoint={translateEndpoint()} /></li>
           </ul>
         </nav>

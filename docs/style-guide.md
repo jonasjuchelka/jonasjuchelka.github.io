@@ -1,6 +1,6 @@
 # Style Guide
 
-Einzige Referenz für Aussehen und Verhalten der Website. Wird bei jeder Design-Änderung mitgepflegt (neue Komponente, geänderte Farbe, neuer Zustand). Quellen: `lib/design-tokens/src/tokens.css`, `docs/branding.md`. Stand: 14.11.2026, entstanden beim Blog-Entwurf. Alle Kontrastwerte sind selbst berechnet (WCAG-Formel); eine vollständige Messung aller gerenderten Zustände steht weiter aus.
+Einzige Referenz für Aussehen und Verhalten der Website. Wird bei jeder Design-Änderung mitgepflegt (neue Komponente, geänderte Farbe, neuer Zustand). Quellen: `lib/design-tokens/src/tokens.css`, `docs/branding.md`. Stand: 15.11.2026, Blog-Entwurf ist umgesetzt. Alle Kontrastwerte sind selbst berechnet (WCAG-Formel); eine vollständige Messung aller gerenderten Zustände steht weiter aus.
 
 ## 1. Grundsätze
 
@@ -100,13 +100,22 @@ Suchfeld: Pille, 44px, 2px Himmelblau-Rand, Weiß-Hintergrund. Fokus: Rand Köni
 - **iOS-Regeln**: Eingabefelder mind. 16px, Trefferflächen 44px (unsichtbar per `::after` vergrößern, Optik darf kleiner sein), `viewport-fit=cover` + `env(safe-area-inset-*)`, kein `user-scalable=no`, `touch-action: manipulation`, `prefers-reduced-motion` schaltet alle Übergänge ab.
 - **Tests**: `tests/mobile.py` (320, 375, 390, 430 px, Querformat, hell/dunkel).
 
+### Umsetzung auf der echten Seite (ab 15.11.2026)
+- **Code**: `src/components/BlogIndex.tsx` (Filter, Liste, Gedanken, Leseansicht), `src/app/blog.css` (alles Blog-spezifische, gescoped unter `.blog` und `.article`), `ThemeToggle.tsx` im Kopf, Artikelseite in `src/views/blog.tsx`. Mockup und Seite teilen sich Tokens, nicht Dateien.
+- **Inhalt**: Essays liegen in `content/blog/*.md`, Gedanken in `content/gedanken/*.md` (kurzer Text, kein eigener Seitenpfad, nicht im RSS-Feed). Frontmatter-Felder neu: `topic` (Kategorie, optional) und `image` (kleines Bild eines Essays, optional). Ohne `topic` gibt es keine Kategorie-Pille.
+- **Ein Aufbau für Mac und Handy**: Elemente, die nur auf einem Gerät vorkommen, sind doppelt vorhanden und werden per CSS (Umbruch bei 720px) ein- oder ausgeblendet. So gibt es beim Laden kein Umspringen.
+- **Neu-Pille** wird erst im Browser gesetzt (Datum von heute), nicht beim Bauen. Sonst stünde „Neu“ bis zum nächsten Deploy auf alten Beiträgen.
+- **Dunkelmodus**: Schalter (Mond/Sonne, 44px, Surface-Fläche) im Kopf. Standard ist **hell**, nicht die Systemeinstellung, weil noch nicht jede Seite im Dunkeln geprüft ist. Die Wahl liegt nur im `localStorage` des Geräts (steht in der Datenschutzerklärung); ein kleines Skript im `<head>` setzt sie vor dem ersten Zeichnen. Dunkel überschreibt nur die semantischen Tokens (`html[data-theme="dark"]` in `blog.css`): Hintergrund `#1c2b36`, Fläche `#2d4354`, Text `#eef2f5`, gedämpft `#b0c4d4`, Überschrift `#fafafa`, Fokus Babyblau.
+- **Artikelseite** (ruhig, Headspace-inspiriert): Leiste „‹ Blog“ und „PDF“ (PDF nur, wenn `public/blog/<slug>.pdf` existiert), Meta, H1, Einleitung 1,375rem, Fließtext 1,25rem/1,75 (Catamaran 300), Zitate als Fläche mit 28px Radius, am Ende Karte „Nächster Beitrag“. Auf dem Handy 20px Radien, Leiste klebt.
+- **Teilweise feste Leiste (Handy)**: beim Runterscrollen weg, beim Hochscrollen in 0,32s zurück (Toleranz 6px hoch, 4px runter); bleibt sichtbar, solange etwas darin den Fokus hat.
+
 ## 7. Bewegung
 
 Erlaubt: Einblenden von Beiträgen, Aufklappen des Filters (0,45s), Aufgleiten des Suchfelds (0,3s), gleitende Segment-Markierung. Verboten: Übergänge auf Buttons. Immer `prefers-reduced-motion` respektieren.
 
 ## 8. Barrierefreiheit (Pflicht beim Umsetzen)
 
-- Zugeklapptes Filterpanel für Tastatur und Screenreader unerreichbar (`inert`), Schalter mit `aria-expanded` und `aria-controls`.
+- Handy: zugeklapptes Filterpanel für Tastatur und Screenreader unerreichbar (`visibility:hidden`), Schalter mit `aria-expanded` und `aria-controls`. Mac: Fokus auf eine Option unterhalb der Vorschau klappt das Panel automatisch auf.
 - Anzahl mit `aria-live="polite"`; Filter-Badge mit verstecktem Text „aktiv“.
 - Zielgröße mindestens 24px (WCAG 2.5.8), Filter-Buttons 44px.
 - Zustand nie nur über Farbe: gewählt = Füllung (3:1) **und** Häkchen.

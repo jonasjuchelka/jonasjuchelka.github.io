@@ -26,8 +26,14 @@ const postSchema = z.object({
   summary: z.string().min(1),
   tags: z.array(z.string()).default([]),
   draft: z.boolean().default(true),
+  /** "essay" (lang, eigene Seite, PDF) oder "gedanke" (kurz, ohne Seite). Gedanken liegen in content/gedanken. */
+  kind: z.enum(["essay", "gedanke"]).default("essay"),
+  topic: z.string().max(40).optional(),
+  /** Optionales kleines Bild eines Essays, Pfad unter /public (z. B. /blog/mein-essay.jpg). */
+  image: z.string().regex(/^\/[\w./-]+$/).optional(),
 });
 
+export type Gedanke = { slug: string; date: Date; topic?: string; text: string };
 export type Project = z.infer<typeof projectSchema> & { body: string };
 export type Post = z.infer<typeof postSchema> & { body: string; readingMinutes: number; headings: { id: string; text: string }[] };
 
@@ -78,7 +84,19 @@ export function getPosts(lang: string = DEFAULT_LOCALE): Post[] {
       const headings = [...d.content.matchAll(/^##\s+(.+)$/gm)].map((m) => ({ text: m[1].trim(), id: slugify(m[1]) }));
       return { ...meta, body: d.content, readingMinutes: Math.max(1, Math.round(words / 200)), headings };
     })
-    .filter((p) => !p.draft)
+    .filter((p) => !p.draft && p.kind === "essay")
+    .sort((a, b) => b.date.getTime() - a.date.getTime());
+}
+/** Gedanken: kurze Texte aus content/gedanken (Upload oder Mail). Kein eigener Seitenpfad. */
+export function getGedanken(lang: string = DEFAULT_LOCALE): Gedanke[] {
+  return readDir("gedanken", lang)
+    .map((d) => {
+      const meta = parse(postSchema.extend({ draft: z.boolean().default(false), summary: z.string().default("") }), d.data, d.file);
+      // Der Mail-Worker maskiert "<" als "&lt;". React escaped selbst, also hier zurück.
+      return { meta, text: d.content.trim().replace(/&lt;/g, "<") };
+    })
+    .filter((g) => !g.meta.draft && g.text.length > 0)
+    .map((g) => ({ slug: g.meta.slug, date: g.meta.date, topic: g.meta.topic, text: g.text }))
     .sort((a, b) => b.date.getTime() - a.date.getTime());
 }
 export function getPost(slug: string, lang: string = DEFAULT_LOCALE) {
