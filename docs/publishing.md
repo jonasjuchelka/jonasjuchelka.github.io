@@ -39,6 +39,11 @@ Nie in den Chat oder ins Repo.
 4. `pnpm install` in `workers/post-mail`, dann `wrangler deploy --keep-vars` (ohne `--keep-vars` löscht ein Deploy die Dashboard-Variablen).
 5. Email Routing → Custom address `<SECRET_LOCAL_PART>@post.jonasjuchelka.com` → Action „Send to a Worker“ → `jonas-post-mail`.
 
+
+### Automatisch deployen
+`.github/workflows/deploy-post-mail.yml` deployt den Worker nach jedem Merge, der `workers/post-mail/` ändert (oder per Hand: Actions → „Deploy mail worker“ → Run workflow). Erst laufen die Tests, nur wenn sie grün sind, wird deployt (`wrangler deploy --keep-vars`, Dashboard-Variablen bleiben).
+Einmalig nötig: Repository-Secret `CLOUDFLARE_API_TOKEN` (Cloudflare → Profil → API Tokens → Create Token → Vorlage „Edit Cloudflare Workers“, Account: nur dein Konto, Zone: nur `jonasjuchelka.com`).
+
 ## Tests
 - `node --test tests/post-mail.test.mjs tests/post-mail-flow.test.mjs` (Worker-Logik und ganzer Ablauf: Spoofing, eingeschleuste Header, DKIM/DMARC, Größe, Limit, Signaturen, Bestätigung, Zurücknehmen)
 - `tsx --test tests/publish.test.ts` (Upload-Prüfung)

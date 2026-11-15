@@ -1,0 +1,47 @@
+name: Deploy mail worker
+# Deploys workers/post-mail to Cloudflare after a merge to main that touches it, or by hand (Actions → Run workflow).
+# Tests run first; a red test means no deploy.
+# Needs the repository secret CLOUDFLARE_API_TOKEN (Cloudflare template "Edit Cloudflare Workers").
+# --keep-vars keeps the variables set in the Cloudflare dashboard (ALLOWED_SENDERS, SECRET_LOCAL_PART, PUBLIC_URL).
+on:
+  push:
+    branches: [main]
+    paths:
+      - "workers/post-mail/**"
+      - "tests/post-mail*.test.mjs"
+      - ".github/workflows/deploy-post-mail.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: deploy-post-mail
+  cancel-in-progress: false
+jobs:
+  deploy:
+    if: github.repository == 'jonasjuchelka/jonasjuchelka.github.io'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Tests
+        run: node --test tests/post-mail.test.mjs tests/post-mail-flow.test.mjs
+      - name: Check secret
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::error::Repository secret CLOUDFLARE_API_TOKEN is not set (see docs/publishing.md)."
+            exit 1
+          fi
+      - name: Install dependencies (no install scripts)
+        working-directory: workers/post-mail
+        run: npm install --ignore-scripts --no-audit --no-fund
+      - name: Deploy
+        working-directory: workers/post-mail
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          # Public, non-secret: Cloudflare account id (visible in every dashboard URL).
+          CLOUDFLARE_ACCOUNT_ID: 88fd38541000d772409a3602b3fe5153
+        run: npx --yes wrangler@4.162.0 deploy --keep-vars
