@@ -44,26 +44,23 @@ Zeilenlänge 45–75 Zeichen. Navigation: alle Einträge Gewicht 400, aktuelle S
 
 ## 4. Buttons (ein System)
 
-Referenz ist „Privater Bereich“. Alles Klickbare im Filter/Blog nutzt dieselbe Familie:
+Alles Klickbare im Filter/Blog nutzt dieselbe Familie. **Ringlos**: kein Rand, Zustand nur über Fläche, Symbol und Hover.
 
 | Zustand | Aussehen |
 |---|---|
-| Ruhe | 2px Himmelblau-Rand, Königsblau-Text, kein Hintergrund |
-| Hover | Verlauf `135deg, Babyblau 38 % → 10 %`, Rand bleibt, **kein Übergang** |
-| Aktiv / gewählt | Babyblau-Fläche 40 %, 2px **Königsblau**-Rand |
+| Ruhe | Surface-Fläche (`#eef2f5`, dunkel `#2d4354`), Königsblau-Text, kein Rand |
+| Hover | Verlauf `135deg, Babyblau 38 % → 10 %` (dunkel: einfarbig Babyblau 24 %), **kein Übergang** |
+| Gewählt | Füllung `--active` (hell `#6295ba`, dunkel `#4f7797`, je 3:1 gegen den Seitengrund) **plus Häkchen** |
 | Fokus (Tastatur) | 3px Glow `rgb(116 175 219 / .55)`, kein schwarzer Outline |
 | Deaktiviert | 50 % Deckkraft |
 
-Form: Pille (`border-radius: 999px`), Höhe 44px (Chips 40px). Kein Übergang auf Buttons (`transition: none`), auch nicht für den Pfeil-Schalter.
+Form: Pille (`border-radius: 999px`), Höhe 44px (Chips 40px). `transition: none` auf allen Buttons. Segment (Vorschau | Liste): Pille mit gleitender Markierung (`.ind`), Abstand zwischen den Knöpfen.
 
-Varianten (nur diese):
-- **Standard-Button**: Nav-Eintrag „Privater Bereich“, Menü, Lupe, Chips, Segment-Schalter (Vorschau | Liste).
-- **Listenzeile** (`.opt`): gleiche Zustände, transparenter Rand in Ruhe, damit nichts springt.
-- **Icon-Schalter** (`.tgl`): nur Symbol, kein Rand, Sekundärfarbe bei 75 % Deckkraft, Hover Verlauf. Einziger Schalter zum Auf- und Zuklappen des Filters, sitzt am Ende der sichtbaren Vorschau bzw. am Ende des ganzen Filters.
-- **Text-Link-Button** (`.reset`): unterstrichen, Hover dickere Linie.
-- **Primär-CTA** (`.btn--primary`, Himmelblau-Fläche mit Königsblau-Text): nur für die eine Hauptaktion einer Seite, nicht im Filter.
+**Häkchen**: SVG als CSS-Maske (`currentColor`), 1em, `margin-right .4em`, `transform: translateY(-.06em)`. Catamaran hat Ascent 1,10 em, Descent 0,54 em, Versalhöhe 0,68 em; die Zeilenmitte liegt 0,06 em unter der Versalmitte, daher wirkt ein mittig gesetztes Symbol zu tief. Gemessen: vorher +1,75 px, nachher < 0,2 px bei 16 px. Gilt für jede neue Schrift: Metriken prüfen, Offset neu messen.
 
-Nicht verwenden: gefüllte Königsblau-Buttons für Auswahl, harte Rechtecke, Pfeile als Dreiecke, Hover mit Bewegung (`translateY`).
+Varianten (nur diese): Standard-Button (Nav „Privater Bereich“ mit 2px Himmelblau-Rand, Menü, Lupe, Chips, Segment), Listenzeile (`.opt`, Abstand 4px), Icon-Schalter (`.tgl`), Text-Link-Button (`.reset`), Primär-CTA (`.btn--primary`, nur eine Hauptaktion pro Seite, nicht im Filter).
+
+Nicht verwenden: gefüllte Königsblau-Auswahl-Buttons, Ringe um Auswahl, harte Rechtecke, Hover mit Bewegung.
 
 ## 5. Formularfelder
 
@@ -71,25 +68,30 @@ Suchfeld: Pille, 44px, 2px Himmelblau-Rand, Weiß-Hintergrund. Fokus: Rand Köni
 
 ## 6. Blog
 
-- Zwei Formate: **Essay** (Titel, Vorschau 2–3 Zeilen, Lesezeit) und **Gedanke** (kein Titel, voller Text, Himmelblau-Balken links).
-- Layout Mac: Filter links (16rem), Beiträge rechts. Handy: eine Spalte, Lupe und Anzahl in einer Zeile, Filter darunter.
-- Filter: Lupe oben (Suchfeld gleitet darunter auf), Anzahl der Beiträge im Filterbereich, ein Icon-Schalter. Zugeklappt sind die ersten Einträge sichtbar und laufen mit einem Verlauf aus; der Schalter steht direkt darunter.
-- Auswahl umschalten: erneuter Klick auf einen gewählten Eintrag hebt die Auswahl auf.
-- Ansicht: Vorschau | Liste. Sobald gefiltert oder gesucht wird, wechselt die Ansicht automatisch auf die Liste; der Umschalter bleibt bedienbar.
-- Suchtreffer in Gelb markiert. „Neu“-Pille bei Beiträgen ≤ 7 Tage.
-- Laden: erste 3 Beiträge (Liste 10), weitere per Scroll; der letzte sichtbare Beitrag läuft aus. Neue Beiträge blenden 0,5s ein (`prefers-reduced-motion`: keine Animation).
-- Keine Linie zwischen Ansicht-Umschalter und Beiträgen.
+- **Überschrift**: „Blog“ (Plus Jakarta 600) mit **eckigem** Markenstrich darunter (Königsblau 0–18 %, Himmelblau 18–58 %, Babyblau 58–100 %, Höhe 8px, kein Radius). Dunkel: Strich beginnt mit `#4f7797`. Kein Verlauf in der Schrift (Kontrast).
+- **Formate**: Essay (Titel, Vorschau 2–3 Zeilen, Lesezeit, optional Bild) und Gedanke (kein Titel, kein Bild, kein Icon, Himmelblau-Balken links, Abstand Balken–Text .9rem).
+- **Pillen („Tags“)**: immer rund. Höchstens drei Arten: **Neu** (≤ 7 Tage, Neon-Gelb mit Schwarz, 0,86rem), **Thema** (Kategorie) und **Tags**. Essay: Thema + Neu in der Kopfzeile, Tags darunter. Gedanke: „Gedanke“ + Neu + Thema, **keine freien Tags**.
+- **Gedanke-Vorschau**: 3 Zeilen, beim Hover 6, der Pfeil klappt den ganzen Text auf. Der Pfeil sitzt direkt am Ende der letzten sichtbaren Zeile; ein Spacer hält dort Platz frei, damit immer so viel Text abgeschnitten wird, dass der Pfeil sauber hineinpasst.
+- **Layout**: Mac: Filter links (16rem), Beiträge rechts. Handy: eine Spalte.
+- **Filter**: „Filter“ ist die **Oberkategorie** (Plus Jakarta 600, 1,3rem, normale Schreibung, Zähler der aktiven Filter als Badge). „Format“, „Kategorie“, „Tags“, „Jahr“ sind **Unterkategorien** (Mukta, Großbuchstaben, gesperrt, 0,78rem). Gleiche Hierarchie auf dem Handy. Abstand innerhalb einer Gruppe 4px, zwischen Gruppen mehr (Nähe-Prinzip).
+- **Anzahl** („9 Beiträge“) steht auf einer Ebene mit der Lupe, nicht bei den Optionen. Suche hinter der Lupe.
+- **Eingeklappter Filter**: Format komplett, Mac erste 3 Kategorie-Zeilen, Handy erste Chip-Zeile; die letzte Zeile ausgegraut, **kein Verlauf**.
+- Auswahl umschalten: erneuter Klick hebt auf. Ansicht Vorschau | Liste; bei Filter/Suche automatisch Liste, Umschalter bleibt bedienbar.
+- Suchtreffer gelb. Laden: erste 3 Beiträge (Liste 10), weitere per Scroll.
+- **Nachtmodus**: Hintergrund Königsblau, **keine Verläufe oder Ausblendungen** (Hover-Fläche durchgehend gefüllt). Markenfarben: Babyblau für Labels, Gedanke-Balken, Hover-Titel und Zähler-Badge; Himmelblau für Tag-Ränder; Pillen mit Babyblau-Tönung.
 
 ## 7. Bewegung
 
-Erlaubt: Einblenden von Beiträgen, Aufklappen des Filters (0,45s), Aufgleiten des Suchfelds (0,3s). Verboten: Übergänge auf Buttons. Immer `prefers-reduced-motion` respektieren.
+Erlaubt: Einblenden von Beiträgen, Aufklappen des Filters (0,45s), Aufgleiten des Suchfelds (0,3s), gleitende Segment-Markierung. Verboten: Übergänge auf Buttons. Immer `prefers-reduced-motion` respektieren.
 
 ## 8. Barrierefreiheit (Pflicht beim Umsetzen)
 
-- Zugeklapptes Filterpanel für Tastatur und Screenreader unerreichbar machen (`inert` oder `hidden` nach dem Zuklappen), Schalter mit `aria-expanded` und `aria-controls`.
-- Anzahl mit `aria-live="polite"`.
-- Zielgröße mindestens 44px.
-- Zustand nie nur über Farbe: aktiv = Fläche **und** Königsblau-Rand.
+- Zugeklapptes Filterpanel für Tastatur und Screenreader unerreichbar (`inert`), Schalter mit `aria-expanded` und `aria-controls`.
+- Anzahl mit `aria-live="polite"`; Filter-Badge mit verstecktem Text „aktiv“.
+- Zielgröße mindestens 24px (WCAG 2.5.8), Filter-Buttons 44px.
+- Zustand nie nur über Farbe: gewählt = Füllung (3:1) **und** Häkchen.
+- Kontrast: Text AA (APCA Lc ≥ 60 für UI-Text, ≥ 75 für Fließtext), Dunkelmodus eigens messen. Bekannt offen: Himmelblau-Rand der Nav-Pille 2,26:1.
+- Gleichnamige Buttons („Alle“) mit eindeutigem `aria-label` versehen.
 
 ## 9. Pflege
 
