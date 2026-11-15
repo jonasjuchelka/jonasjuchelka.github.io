@@ -117,10 +117,14 @@ Erlaubt: Einblenden von Beiträgen, Aufklappen des Filters (0,45s), Aufgleiten d
 
 - **Ort**: ganz oben auf der Startseite, linksbündig, max. 28rem breit, über dem Hero. Die Kopfzeile behält ihr bisheriges Logo.
 - **Form**: die Originalpfade aus `@jonasjuchelka_logo.ai` (Zeichenfläche 2), unverändert. „Jonas“ in Babyblau, „JUCHELKA“ in Himmelblau (beides Token, nicht fest codiert). Die Pfade nicht bearbeiten.
-- **Animation**: Buchstabe für Buchstabe (J, o, n, a, s), Strich für Strich in Schreibrichtung, danach schreibt sich „JUCHELKA“ von links ein. Etwa 4 s, einmal, kein Wiederholen, keine Schleife. Technik: Der Schreibstrich ist nur eine Maske (Pinsel entlang der Strichmitte, begrenzt auf die Originalform), keine neue Form. Reine CSS-Animation (`stroke-dashoffset`, `clip-path`), kein JavaScript, deshalb ohne Springen beim Laden.
+- **Animation (Füller)**: Erst „Jonas“, dann „JUCHELKA“, jeweils Buchstabe für Buchstabe und Strich für Strich in Schreibrichtung, mit Absetzen zwischen den Strichen (auch Serifen und Querstriche sind eigene Striche). Kein Aufdecken per Wischer. Etwa 5,7 s, einmal, keine Schleife.
+  - **Feder**: Vor dem vollen Strich läuft eine dünne Spitze (35 % und 70 % der Strichbreite, 36 ms und 18 ms voraus), die Linie schwillt also an wie Tinte aus der Feder.
+  - **Rhythmus**: Die Feder ist in Kurven langsamer, läuft am Strichanfang an und bremst am Ende; kurze Striche (Serifen) sind schneller.
+  - **Nasse Tinte**: Frisch Geschriebenes ist eine Markenstufe dunkler und trocknet in 0,8 s auf die Endfarbe (Jonas: Himmelblau → Babyblau; JUCHELKA: Dunkel-sekundär → Himmelblau). Nur Tokens, kein `color-mix` (in Chrome beim Animieren von `stroke` fehlerhaft).
+  - **Technik**: Der Schreibstrich ist nur eine Maske (Pinsel entlang der Strichmitte, begrenzt auf die Originalform des Buchstabens), keine neue Form. Reine CSS-Animation (`stroke-dashoffset`), Zeiten pro Strichstück als `--d` und `--t`, kein JavaScript.
 - **Bewegung reduziert**: `prefers-reduced-motion` zeigt den fertigen Schriftzug sofort (die globale Regel schaltet die Animation ab; der Grundzustand ist „fertig“, der Anfangszustand steht nur in den Keyframes).
 - **Barrierefreiheit**: `role="img"` mit `aria-label` = Seitenname. Der Schriftzug ist Logo (Logotypen sind von der Kontrastpflicht ausgenommen); der Seitentitel bleibt die `h1` im Hero. Babyblau auf Weiß hat nur 1,8:1 (berechnet) und darf deshalb nie Fließtext tragen.
-- **Pflege**: Wird der Schriftzug geändert, müssen Pfade und Schreibstriche neu erzeugt werden (Strichmitten neu legen, Abdeckung der Buchstaben prüfen: 100 % der Fläche muss aufgedeckt werden).
+- **Pflege**: Wird der Schriftzug geändert, müssen Pfade und Schreibstriche neu erzeugt werden (Strichmitten neu legen, Abdeckung prüfen: Der Endzustand muss pixelgleich mit dem Original sein, geprüft per Bildvergleich in Chrome: keine Lücken).
 
 ## 8. Barrierefreiheit (Pflicht beim Umsetzen)
 

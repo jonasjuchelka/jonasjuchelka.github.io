@@ -232,7 +232,8 @@ a:hover{text-decoration-thickness:2px}
 .schriftzug-wrap{padding-top:clamp(1.75rem,5vw,3.5rem)}
 .schriftzug-wrap+.hero{padding-top:clamp(1.5rem,4vw,3rem)}
 .schriftzug{display:block;width:min(100%,28rem);height:auto;overflow:visible}
-.schriftzug__name path{fill:none;stroke:var(--brand-babyblau-hell);stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1 1;stroke-dashoffset:0;animation:sz-draw linear both}
-.schriftzug__sub{fill:var(--brand-himmelblau-dunkel);animation:sz-wipe .9s ease-in-out both}
-@keyframes sz-draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
-@keyframes sz-wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+.schriftzug__ink--name{--sz-ink:var(--brand-babyblau-hell);--sz-wet:var(--brand-himmelblau-dunkel)}
+.schriftzug__ink--sub{--sz-ink:var(--brand-himmelblau-dunkel);--sz-wet:var(--brand-dunkel-sekundaer)}
+.schriftzug__ink path{fill:none;stroke:var(--sz-ink);stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1 1;animation:sz-draw var(--t) linear var(--d) both,sz-dry .8s ease-out var(--d) both}
+@keyframes sz-draw{from{stroke-dashoffset:1;visibility:hidden}to{stroke-dashoffset:0;visibility:visible}}
+@keyframes sz-dry{from{stroke:var(--sz-wet)}}
