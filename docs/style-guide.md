@@ -89,7 +89,7 @@ Suchfeld: Pille, 44px, 2px Himmelblau-Rand, Weiß-Hintergrund. Fokus: Rand Köni
 
 ### Handy-Web (iPhone/Android)
 - **Filter-Auslöser**: ein beschrifteter Pillen-Button „Filter ⌄“ (Label + Pfeil + Zähler-Badge in einem), Optik 38px, Trefferfläche 44px. Kein separater runder Pfeil-Knopf. Eingeklappt ist vom Filter nichts sichtbar oder per Tab erreichbar. (Mac bleibt: Vorschau mit Pfeil.)
-- **Kopfzeile klebt** beim Scrollen oben (Filter · Anzahl · Lupe), mit feiner Trennlinie sobald sie klebt.
+- **Teilweise feste Kopfzeile** (Filter · Anzahl · Lupe, wie Headroom.js): beim Runterscrollen ganz weg, beim Hochscrollen sofort oben (Gleiten 0,32 s), Toleranz 4px runter / 6px hoch gegen Zittern, ganz oben und bei Tastaturfokus immer sichtbar, feine Trennlinie nur wenn sie klebt. Gleiches Verhalten für die Zurück-Leiste im Artikel.
 - **Essay mit Bild**: Bild klein (4,75rem, quadratisch) rechts **neben dem Titel**; Vorschau und Tags laufen darunter über die volle Breite, kein Leerraum unter dem Bild. Ohne Bild volle Breite.
 - **Liste**: Text/Titel volle Breite, darunter eine Zeile „Datum · Neu · Typ“, Mini-Bild rechts.
 - **Weniger Text**: Datum `13.11.26`, Lesezeit `ca. 8 Min.`, Gedanken nur Gedanke + Neu, Essay-Vorschau 2 Zeilen.
@@ -99,6 +99,15 @@ Suchfeld: Pille, 44px, 2px Himmelblau-Rand, Weiß-Hintergrund. Fokus: Rand Köni
 - **Kein Hover** auf dem Handy (keine Hover-Fläche, keine Titelfarbe beim Tippen).
 - **iOS-Regeln**: Eingabefelder mind. 16px, Trefferflächen 44px (unsichtbar per `::after` vergrößern, Optik darf kleiner sein), `viewport-fit=cover` + `env(safe-area-inset-*)`, kein `user-scalable=no`, `touch-action: manipulation`, `prefers-reduced-motion` schaltet alle Übergänge ab.
 - **Tests**: `tests/mobile.py` (320, 375, 390, 430 px, Querformat, hell/dunkel).
+
+### Artikelseite (Essays)
+- Eigene Seite unter `#/beitrag/<slug>` (später `/blog/<slug>`), auf Mac und Handy; Browser-Zurück funktioniert, Fokus springt auf die Überschrift.
+- Aufbau: Leiste „‹ Blog“ und „PDF“ · Meta (Thema eckig, Neu, Datum, Lesezeit) · H1 · Einleitung (Catamaran 300, 1,375rem) · optionales Titelbild (16:9, Radius 28px) · Text · Tags · „Nächster Beitrag“-Karte.
+- Lesetext: Catamaran 300, 20px (Handy 18px), Zeilenhöhe 1,75, max. 64ch (~68 Zeichen). Zwischentitel Plus Jakarta 1,5rem. Zitate als weiche Fläche (Surface, Radius 28px) statt Linie.
+- Gedanken haben keine eigene Seite: Mac klappt an Ort und Stelle auf, Handy öffnet die Leseansicht.
+
+### Ruhe (angelehnt an Headspace)
+Viel Weißraum, große Radien (Karten 20–28px, Knöpfe Pille), Flächen statt Rahmen, weiche Trennlinien (Hellgrau 55 %), langsame weiche Bewegung (0,3–0,5 s, `cubic-bezier(.22,.61,.36,1)`). Farben und Schriften bleiben die eigenen Tokens.
 
 ## 7. Bewegung
 
