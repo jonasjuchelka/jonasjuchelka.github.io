@@ -5,7 +5,7 @@ Zwei Wege, ein Ziel: ein Commit nach `main` startet das Deployment der Website.
 | Weg | Wer | Was entsteht |
 | --- | --- | --- |
 | Upload im privaten Bereich (`/publish`) | Admin mit frischer Passkey-Bestätigung | Essay (Seite + PDF) oder Gedanke |
-| Mail an die geheime Adresse | nur erlaubte Absender mit DMARC pass | Gedanke (nur Klartext, ≤ 2000 Zeichen) |
+| Mail an die geheime Adresse | nur erlaubte Absender mit DKIM + DMARC pass, danach Klick auf den Bestätigungslink | Gedanke (nur Klartext, ≤ 2000 Zeichen) |
 
 ## Upload (Essay und Gedanke)
 1. `/publish` legt `inbox/<slug>/original.<ext>` und danach `inbox/<slug>/meta.json` per GitHub-API ab.
@@ -17,8 +17,14 @@ Grenzen: Upload bis 4 MB (Vercel Hobby), .docx/.doc/.md, Inhalt wird gegen die E
 Zurücknehmen: Liste auf `/publish` löscht Beitrag und PDF per GitHub-API.
 
 ## Mail (Gedanke)
-`workers/post-mail` (Cloudflare Email Worker). Prüft der Reihe nach: Größe ≤ 100 KB, geheime Empfängeradresse, Umschlag- = Header-Absender auf der Liste, `dmarc=pass`, Tageslimit 10. Antwort mit Zurücknehmen-Link (HMAC über den Slug; GET zeigt nur eine Bestätigung, erst POST löscht).
+`workers/post-mail` (Cloudflare Email Worker). Ablauf:
+1. Prüft der Reihe nach: Größe ≤ 100 KB, geheime Empfängeradresse, Umschlag- = Header-Absender auf der Liste, Authentifizierung, Tageslimit 10.
+2. Authentifizierung: Nur der `Authentication-Results`-Header von `mx.cloudflare.net` zählt. Alle `dmarc`-Ergebnisse müssen `pass` sein (für die Absender-Domain), alle `dkim`-Ergebnisse `pass`, eines davon mit `header.d=<Absender-Domain>`. `policy.dmarc=none` ist nur die Richtlinie des Absenders (bei Gmail `none`), kein Ergebnis. Kommentare oder Quotes mit `;`/`=` und unausgeglichene Klammern → abgelehnt (Versuch, ein echtes `fail` zu verstecken).
+3. Der Text wird als Entwurf im KV gespeichert (24 h) und **nicht** veröffentlicht. Antwort an den echten Absender mit zwei Links: „Veröffentlichen“ und „Später zurücknehmen“ (HMAC, Zweck ist Teil der Signatur).
+4. GET auf einen Link zeigt nur eine Seite mit Knopf (Mail-Scanner öffnen Links), erst POST handelt.
+Eine gefälschte Mail, die alle Header-Prüfungen überlistet, kommt trotzdem nie online: Der Bestätigungslink geht an das echte Postfach.
 Der Worker schreibt nur nach `artifacts/jonas-website/content/gedanken/` und kann nur das, was der Token darf.
+Fehlersuche: `npx wrangler tail` zeigt `abgelehnt: <grund> <detail>`, `antwort gesendet`/`antwort fehlgeschlagen`, `veröffentlicht` (ohne Adressen und Text).
 
 ## Einrichtung (einmalig)
 **GitHub-Token** (fine-grained, nur dieses Repo, Contents: Read & write):
@@ -34,6 +40,6 @@ Nie in den Chat oder ins Repo.
 5. Email Routing → Custom address `<SECRET_LOCAL_PART>@post.jonasjuchelka.com` → Action „Send to a Worker“ → `jonas-post-mail`.
 
 ## Tests
-- `node --test tests/post-mail.test.mjs` (Worker-Logik: Spoofing, DMARC, Größe, Limit, Signatur)
+- `node --test tests/post-mail.test.mjs tests/post-mail-flow.test.mjs` (Worker-Logik und ganzer Ablauf: Spoofing, eingeschleuste Header, DKIM/DMARC, Größe, Limit, Signaturen, Bestätigung, Zurücknehmen)
 - `tsx --test tests/publish.test.ts` (Upload-Prüfung)
 - Umwandlung: Beispieldateien durch `python3 scripts/publish/build_post.py inbox/<slug> --root <ordner>` schicken (Pandoc, LibreOffice, Playwright nötig).

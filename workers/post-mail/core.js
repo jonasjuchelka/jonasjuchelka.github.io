@@ -12,11 +12,59 @@ export function address(s) {
   return m ? m[1].toLowerCase() : null;
 }
 
-/** Cloudflare schreibt sein Ergebnis in Authentication-Results. Nur ein eindeutiges dmarc=pass zählt. */
-export function dmarcPass(authResults) {
-  const v = String(authResults ?? "").toLowerCase();
-  return /\bdmarc=pass\b/.test(v) && !/\bdmarc=(fail|none|temperror|permerror|softfail)\b/.test(v);
+export const AUTHSERV = "mx.cloudflare.net";
+
+/**
+ * Quoted Strings und Kommentare (auch verschachtelt) entfernen.
+ * Cloudflares eigene Kommentare/Quotes enthalten nie ";" oder "=". Tauchen sie darin auf, versucht jemand,
+ * ein echtes Ergebnis in einem Kommentar zu verstecken → null (dann wird abgelehnt). Ebenso bei unausgeglichenen Klammern/Quotes.
+ */
+function stripComments(v) {
+  let out = "", depth = 0, quoted = false;
+  for (const c of v) {
+    if (quoted) { if (c === '"') quoted = false; else if (c === ";" || c === "=") return null; continue; }
+    if (c === '"' && depth === 0) { quoted = true; out += '""'; continue; }
+    if (c === "(") { depth++; continue; }
+    if (c === ")") { if (--depth < 0) return null; continue; }
+    if (depth > 0) { if (c === ";" || c === "=") return null; continue; }
+    out += c;
+  }
+  return depth === 0 && !quoted ? out : null;
 }
+
+/**
+ * Prüft das Authentication-Results, das Cloudflares Mailserver setzt (RFC 8601).
+ * Gezählt werden nur echte Methoden-Ergebnisse am Anfang eines Abschnitts ("; dmarc=pass ..."),
+ * nicht Eigenschaften wie "policy.dmarc=none" (das ist nur die veröffentlichte Richtlinie des Absenders).
+ * Regeln (alle müssen gelten):
+ *  1. Der Header beginnt mit Cloudflares Kennung (mx.cloudflare.net).
+ *  2. Es gibt mindestens ein dmarc-Ergebnis, ALLE dmarc-Ergebnisse sind "pass", jedes für header.from=<Absender-Domain>.
+ *  3. Es gibt mindestens ein dkim-Ergebnis, ALLE dkim-Ergebnisse sind "pass", mindestens eines mit header.d=<Absender-Domain>.
+ * "Alle" statt "eins": Fügt ein Angreifer eigene Header mit "pass" ein, bleibt Cloudflares echtes "fail"/"none" stehen und die Mail fällt durch.
+ */
+export function authCheck(authResults, domain) {
+  const raw = String(authResults ?? "");
+  const d = String(domain ?? "").toLowerCase();
+  if (!raw.trim() || !d) return { ok: false, why: "kein_header" };
+  const stripped = stripComments(raw);
+  if (stripped == null) return { ok: false, why: "header_kaputt" };
+  const v = stripped.toLowerCase().replace(/\s+/g, " ").trim();
+  const parts = v.split(";").map((x) => x.trim());
+  if (parts[0] !== AUTHSERV) return { ok: false, why: "fremder_server" };
+  const res = { dmarc: [], dkim: [] };
+  for (const seg of parts.slice(1)) {
+    const m = /^([a-z][a-z0-9_-]*)\s*=\s*([a-z]+)(.*)$/.exec(seg);
+    if (m && m[1] in res) res[m[1]].push({ result: m[2], props: m[3] });
+  }
+  const prop = (props, key) => (new RegExp(`(?:^|\\s)${key.replace(".", "\\.")}=([^\\s,]+)`).exec(props) ?? [])[1];
+  if (res.dmarc.length === 0 || res.dmarc.some((r) => r.result !== "pass")) return { ok: false, why: "dmarc" };
+  if (res.dmarc.some((r) => prop(r.props, "header.from") !== d)) return { ok: false, why: "dmarc_domain" };
+  if (res.dkim.length === 0 || res.dkim.some((r) => r.result !== "pass")) return { ok: false, why: "dkim" };
+  if (!res.dkim.some((r) => prop(r.props, "header.d") === d)) return { ok: false, why: "dkim_domain" };
+  return { ok: true };
+}
+/** Kurzform für Tests und Logs. */
+export const dmarcPass = (authResults, domain) => authCheck(authResults, domain).ok;
 
 /** Alle Bedingungen für eine gültige Mail. Gibt { ok:true, sender } oder { ok:false, reason } zurück. */
 export function checkEnvelope({ rawSize, envelopeFrom, headerFrom, to, authResults }, env) {
@@ -30,7 +78,8 @@ export function checkEnvelope({ rawSize, envelopeFrom, headerFrom, to, authResul
   const hdr_from = address(headerFrom);
   // Umschlag- und Header-Absender müssen übereinstimmen und auf der Liste stehen, sonst ist es Fälschung.
   if (!env_from || env_from !== hdr_from || !allowed.includes(env_from)) return { ok: false, reason: "sender" };
-  if (!dmarcPass(authResults)) return { ok: false, reason: "dmarc" };
+  const auth = authCheck(authResults, env_from.split("@")[1]);
+  if (!auth.ok) return { ok: false, reason: "auth", why: auth.why };
   return { ok: true, sender: env_from };
 }
 
@@ -57,13 +106,15 @@ export function frontmatter(slug, text, now = new Date()) {
 // --- Zurücknehmen-Link: HMAC über den Slug, damit niemand fremde Beiträge löschen kann ---
 const enc = new TextEncoder();
 const hex = (buf) => [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
-export async function sign(slug, secret) {
+// Zweck ("unpublish" oder "confirm") ist Teil der Signatur: ein Zurücknehmen-Link kann nie veröffentlichen und umgekehrt.
+export async function sign(slug, secret, purpose = "unpublish") {
+  if (!secret || String(secret).length < 32) throw new Error("secret_too_short");
   const key = await crypto.subtle.importKey("raw", enc.encode(secret), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
-  return hex(await crypto.subtle.sign("HMAC", key, enc.encode(`unpublish:${slug}`)));
+  return hex(await crypto.subtle.sign("HMAC", key, enc.encode(`${purpose}:${slug}`)));
 }
-export async function verify(slug, sig, secret) {
+export async function verify(slug, sig, secret, purpose = "unpublish") {
   if (!validSlug(slug) || !/^[0-9a-f]{64}$/.test(sig ?? "")) return false;
-  const good = await sign(slug, secret);
+  const good = await sign(slug, secret, purpose);
   let d = 0; for (let i = 0; i < 64; i++) d |= good.charCodeAt(i) ^ sig.charCodeAt(i);
   return d === 0;
 }
@@ -77,6 +128,15 @@ export async function underLimit(kv, now = new Date()) {
   return true;
 }
 
+// --- Entwurf bis zur Bestätigung (KV, verfällt nach 24 h) ---
+export const PENDING_TTL = 86400;
+export async function savePending(kv, slug, content) { await kv.put(`p:${slug}`, content, { expirationTtl: PENDING_TTL }); }
+export async function takePending(kv, slug) {
+  const c = await kv.get(`p:${slug}`);
+  if (c != null) await kv.delete(`p:${slug}`);   // zuerst löschen: ein zweiter Klick findet nichts mehr
+  return c;
+}
+
 // --- GitHub Contents API ---
 const gh = (env, path, init = {}) => fetch(`https://api.github.com/repos/${env.REPO}/contents/${path}`, {
   ...init,
@@ -86,7 +146,9 @@ const b64 = (s) => { const b = enc.encode(s); let r = ""; for (const x of b) r +
 
 export async function publishGedanke(env, slug, content) {
   const r = await gh(env, `artifacts/jonas-website/content/gedanken/${slug}.md`, { method: "PUT", body: JSON.stringify({ message: `Gedanke per Mail: ${slug}`, content: b64(content), branch: env.BRANCH ?? "main" }) });
+  if (r.status === 422) return "exists";   // Datei gibt es schon (z. B. Doppelklick an zwei Standorten): nichts überschreiben
   if (!r.ok) throw new Error(`github_put_${r.status}`);
+  return "created";
 }
 export async function unpublishGedanke(env, slug) {
   const path = `artifacts/jonas-website/content/gedanken/${slug}.md`;
@@ -99,8 +161,12 @@ export async function unpublishGedanke(env, slug) {
   return "removed";
 }
 
-export function replyMime({ from, to, subject, inReplyTo, body, messageId }) {
-  const safe = (s) => String(s).replace(/[\r\n]+/g, " ");
-  return [`From: <${from}>`, `To: <${to}>`, `Subject: ${safe(subject)}`, `In-Reply-To: ${safe(inReplyTo ?? "")}`, `Message-ID: <${messageId}>`,
-    "MIME-Version: 1.0", "Content-Type: text/plain; charset=utf-8", "", body].join("\r\n");
+const b64wrap = (s) => b64(s).replace(/.{76}(?=.)/g, "$&\r\n");
+const encWord = (s) => /^[\x20-\x7e]*$/.test(s) ? s : `=?UTF-8?B?${b64(s)}?=`;
+export function replyMime({ from, to, subject, inReplyTo, body, messageId, date = new Date() }) {
+  const safe = (s) => String(s ?? "").replace(/[\r\n]+/g, " ");
+  const irt = safe(inReplyTo);
+  return [`From: <${safe(from)}>`, `To: <${safe(to)}>`, `Subject: ${encWord(safe(subject))}`, `Date: ${date.toUTCString()}`,
+    ...(irt ? [`In-Reply-To: ${irt}`, `References: ${irt}`] : []), `Message-ID: <${safe(messageId)}>`,
+    "MIME-Version: 1.0", "Content-Type: text/plain; charset=utf-8", "Content-Transfer-Encoding: base64", "", b64wrap(body), ""].join("\r\n");
 }
