@@ -3,25 +3,43 @@
 //         Entwurf im KV (24 h) → Antwort an den echten Absender mit Link "Veröffentlichen" (und "Zurücknehmen").
 // Veröffentlicht wird erst nach Klick + Bestätigung (POST). Eine gefälschte Mail kommt nie bis online,
 // weil die Antwort mit dem Link an das echte Postfach geht.
-// Secrets: GITHUB_TOKEN, UNPUBLISH_SECRET. Variablen: REPO, ALLOWED_SENDERS, SECRET_LOCAL_PART, PUBLIC_URL. KV: STATE.
+// Die Antwort geht über Resend (RESEND_API_KEY + MAIL_FROM), weil Cloudflares reply() auf Subdomains nicht funktioniert
+// (bekannter Fehler: "mail from is not from the correct domain"). Ohne Resend-Schlüssel wird reply() versucht.
+// Secrets: GITHUB_TOKEN, UNPUBLISH_SECRET, RESEND_API_KEY. Variablen: REPO, ALLOWED_SENDERS, SECRET_LOCAL_PART, PUBLIC_URL, MAIL_FROM. KV: STATE.
 import PostalMime from "postal-mime";
 import { EmailMessage } from "cloudflare:email";
 import { checkEnvelope, cleanText, MAX_CHARS, makeSlug, frontmatter, sign, verify, underLimit, publishGedanke, unpublishGedanke,
   replyMime, validSlug, savePending, takePending } from "./core.js";
 
 /**
- * Antwort an den Absender. Cloudflare erlaubt genau EINEN Versuch pro Mail (auch ein gescheiterter zählt)
- * und nur von der Adresse/Domain, die die Mail empfangen hat. Darum: Absender = message.to (wie in Cloudflares Beispiel).
+ * Antwort an den (geprüften, erlaubten) Absender.
+ * 1. Über Resend, wenn RESEND_API_KEY und MAIL_FROM gesetzt sind. Empfänger ist nur der geprüfte Absender von der Allowlist.
+ * 2. Sonst Cloudflares reply(): genau ein Versuch, nur von der Empfangsadresse; auf Subdomains scheitert das (Cloudflare-Fehler).
  */
-async function reply(message, env, subject, body) {
+async function reply(message, env, subject, body, sender, idemKey) {
+  const inReplyTo = message.headers.get("message-id");
+  if (env.RESEND_API_KEY && env.MAIL_FROM) {
+    try {
+      const headers = { Authorization: `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json", "User-Agent": "jonas-post-mail/1.0" };
+      if (idemKey) headers["Idempotency-Key"] = idemKey;
+      const r = await fetch("https://api.resend.com/emails", {
+        method: "POST", headers, signal: AbortSignal.timeout(10_000),
+        body: JSON.stringify({ from: env.MAIL_FROM, to: [sender], subject, text: body,
+          ...(inReplyTo ? { headers: { "In-Reply-To": inReplyTo, References: inReplyTo } } : {}) }),
+      });
+      if (r.ok) { console.log("antwort gesendet (resend)"); return true; }
+      const err = await r.json().catch(() => ({}));
+      console.log("antwort fehlgeschlagen (resend):", r.status, String(err?.message ?? err?.name ?? "").slice(0, 200));
+    } catch (e) { console.log("antwort fehlgeschlagen (resend):", String(e?.message ?? e).slice(0, 200)); }
+    // weiter mit reply() als Rückfall (klappt nur ohne Subdomain)
+  }
   const from = message.to;
   try {
-    const raw = replyMime({ from, to: message.from, subject, inReplyTo: message.headers.get("message-id"), body,
-      messageId: `${crypto.randomUUID()}@${from.split("@")[1]}` });
+    const raw = replyMime({ from, to: message.from, subject, inReplyTo, body, messageId: `${crypto.randomUUID()}@${from.split("@")[1]}` });
     await message.reply(new EmailMessage(from, message.from, raw));
-    console.log("antwort gesendet");
+    console.log("antwort gesendet (reply)");
     return true;
-  } catch (e) { console.log("antwort fehlgeschlagen:", String(e?.message ?? e).slice(0, 200)); return false; }
+  } catch (e) { console.log("antwort fehlgeschlagen (reply):", String(e?.message ?? e).slice(0, 200)); return false; }
 }
 
 const page = (t, extra = "") => new Response(`<!doctype html><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content=noindex><title>${t}</title><body style="font:18px/1.5 system-ui;max-width:28rem;margin:4rem auto;padding:0 1rem;color:#1c2b36"><h1 style="font-size:1.3rem">${t}</h1>${extra}`,
@@ -43,8 +61,8 @@ export default {
 
     const mail = await PostalMime.parse(message.raw);                    // Anhänge und HTML werden ignoriert
     const text = cleanText(mail.text);
-    if (!text) { await reply(message, env, "Leer", "Die Mail enthielt keinen Klartext. Nichts veröffentlicht."); return; }
-    if (text.length > MAX_CHARS) { await reply(message, env, "Zu lang", `Ein Gedanke darf höchstens ${MAX_CHARS} Zeichen haben (hier: ${text.length}). Nichts veröffentlicht.`); return; }
+    if (!text) { await reply(message, env, "Leer", "Die Mail enthielt keinen Klartext. Nichts veröffentlicht.", check.sender); return; }
+    if (text.length > MAX_CHARS) { await reply(message, env, "Zu lang", `Ein Gedanke darf höchstens ${MAX_CHARS} Zeichen haben (hier: ${text.length}). Nichts veröffentlicht.`, check.sender); return; }
 
     const slug = makeSlug();
     await savePending(env.STATE, slug, frontmatter(slug, text));
@@ -53,7 +71,7 @@ export default {
     console.log("entwurf gespeichert");
     await reply(message, env, "Gedanke bestätigen",
       `Dein Gedanke wartet auf Bestätigung (24 Stunden gültig):\n\n${text.slice(0, 300)}${text.length > 300 ? " …" : ""}\n\n` +
-      `Veröffentlichen: ${ok}\n\nSpäter zurücknehmen: ${undo}\n\nWenn du das nicht geschickt hast: nichts tun. Ohne Klick wird nichts veröffentlicht.\nBitte nicht auf diese Mail antworten (eine Antwort wäre ein neuer Entwurf).`);
+      `Veröffentlichen: ${ok}\n\nSpäter zurücknehmen: ${undo}\n\nWenn du das nicht geschickt hast: nichts tun. Ohne Klick wird nichts veröffentlicht.\nBitte nicht auf diese Mail antworten.`, check.sender, `confirm-${slug}`);
   },
 
   // GET zeigt nur eine Seite mit Knopf (Mail-Scanner öffnen Links), erst POST handelt.

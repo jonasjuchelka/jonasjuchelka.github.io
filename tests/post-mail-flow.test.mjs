@@ -20,15 +20,20 @@ const ME = "me@example.test", SECRET_ADDR = "abcdef0123456789abcdef0123456789";
 const AUTH_OK = `mx.cloudflare.net; dkim=pass header.d=example.test header.s=s1 header.b=x; dmarc=pass header.from=example.test policy.dmarc=none; spf=pass (mx.cloudflare.net: domain of ${ME} designates 2001:db8::1 as permitted sender) smtp.mailfrom=${ME}; arc=none smtp.remote-ip="2001:db8::1"`;
 const AUTH_SPOOF = "mx.cloudflare.net; dkim=none; dmarc=fail header.from=example.test policy.dmarc=none; spf=softfail smtp.mailfrom=" + ME;
 
-function setup({ replyFails = 0 } = {}) {
+function setup({ replyFails = 0, resend = false, resendStatus = 200 } = {}) {
   const kv = new Map();
   const env = {
     REPO: "o/r", BRANCH: "main", ALLOWED_SENDERS: ME, SECRET_LOCAL_PART: SECRET_ADDR, PUBLIC_URL: "https://w.example.test",
     GITHUB_TOKEN: "t", UNPUBLISH_SECRET: "z".repeat(64),
     STATE: { get: async (k) => kv.get(k) ?? null, put: async (k, v) => void kv.set(k, v), delete: async (k) => void kv.delete(k) },
+    ...(resend ? { RESEND_API_KEY: "re_test", MAIL_FROM: "Gedanken <post@example.test>" } : {}),
   };
-  const gh = [];
+  const gh = [], sent = [];
   globalThis.fetch = async (url, init = {}) => {
+    if (String(url).startsWith("https://api.resend.com/")) {
+      sent.push({ url: String(url), headers: init.headers, body: JSON.parse(init.body) });
+      return new Response(JSON.stringify(resendStatus === 200 ? { id: "r1" } : { name: "validation_error", message: "The domain is not verified" }), { status: resendStatus });
+    }
     const method = init.method ?? "GET"; gh.push({ method, url: String(url), body: init.body ? JSON.parse(init.body) : null });
     if (method === "GET") return new Response(JSON.stringify({ sha: "abc" }), { status: 200 });
     return new Response("{}", { status: method === "PUT" ? 201 : 200 });
@@ -47,7 +52,8 @@ function setup({ replyFails = 0 } = {}) {
   const decode = (raw) => new TextDecoder().decode(Uint8Array.from(atob(raw.split("\r\n\r\n")[1].replace(/\r\n/g, "")), (c) => c.charCodeAt(0)));
   const links = (raw) => [...decode(raw).matchAll(/https:\/\/w\.example\.test\/[cu]\/\S+/g)].map((m) => m[0]);
   const call = (url, method = "GET") => worker.fetch(new Request(url, { method }), env).then(async (r) => ({ status: r.status, html: await r.text() }));
-  return { env, kv, gh, replies, mail, decode, links, call };
+  const textLinks = (text) => [...text.matchAll(/https:\/\/w\.example\.test\/[cu]\/\S+/g)].map((m) => m[0]);
+  return { env, kv, gh, sent, replies, mail, decode, links, textLinks, call };
 }
 
 test("Ablauf: Mail → Bestätigungsmail → erst nach Klick + POST online → Zurücknehmen", async () => {
@@ -141,4 +147,40 @@ test("Leere und zu lange Mails: Antwort, aber kein Entwurf", async () => {
   await worker.email(t.mail({ text: "x".repeat(2001) }), t.env);
   assert.equal(t.replies.length, 2);
   assert.equal([...t.kv.keys()].filter((k) => k.startsWith("p:")).length, 0);
+});
+
+test("Resend: Bestätigungsmail nur an den geprüften Absender, mit Threading und Idempotenz; Cloudflare-reply() wird nicht benutzt", async () => {
+  const t = setup({ resend: true });
+  await worker.email(t.mail(), t.env);
+  assert.equal(t.replies.length, 0);
+  assert.equal(t.sent.length, 1);
+  const { body, headers } = t.sent[0];
+  assert.deepEqual(body.to, [ME]);
+  assert.equal(body.from, "Gedanken <post@example.test>");
+  assert.equal(body.headers["In-Reply-To"], "<m1@mail.example.test>");
+  assert.equal(headers.Authorization, "Bearer re_test");
+  assert.match(headers["Idempotency-Key"], /^confirm-g-\d{8}-\d{6}-[a-z0-9]{6}$/);
+  assert.ok(!JSON.stringify(body).includes(SECRET_ADDR), "geheime Adresse steht nicht in der Bestätigungsmail");
+  const [confirm, undo] = t.textLinks(body.text);
+  assert.match(confirm, /\/c\//); assert.match(undo, /\/u\//);
+  assert.equal(t.gh.length, 0);
+  assert.match((await t.call(confirm, "POST")).html, /Veröffentlicht/);
+  assert.equal(t.gh.filter((c) => c.method === "PUT").length, 1);
+});
+
+test("Resend scheitert → Rückfall auf reply(), Entwurf bleibt, nichts veröffentlicht", async () => {
+  const t = setup({ resend: true, resendStatus: 403 });
+  await worker.email(t.mail(), t.env);
+  assert.equal(t.sent.length, 1);
+  assert.equal(t.replies.length, 1);
+  assert.equal([...t.kv.keys()].filter((k) => k.startsWith("p:")).length, 1);
+  assert.equal(t.gh.length, 0);
+});
+
+test("Resend: gefälschte Mail bekommt keine Mail", async () => {
+  const t = setup({ resend: true });
+  const m = t.mail({ auth: AUTH_SPOOF });
+  await worker.email(m, t.env);
+  assert.equal(m.rejected, "Nicht angenommen");
+  assert.equal(t.sent.length, 0);
 });

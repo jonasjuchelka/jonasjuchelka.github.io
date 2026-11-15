@@ -5,6 +5,8 @@ compatibility_date = "2026-10-01"
 [vars]
 REPO = "jonasjuchelka/jonasjuchelka.github.io"
 BRANCH = "main"
+# Absender der Bestätigungsmail (über Resend). Die Domain muss bei Resend verifiziert sein.
+MAIL_FROM = "Gedanken <post@jonasjuchelka.com>"
 # Diese drei Variablen stehen bewusst NICHT hier, sondern nur im Cloudflare-Dashboard
 # (Worker → Settings → Variables), damit weder deine Adresse noch die geheime Adresse im öffentlichen Repo stehen:
 #   ALLOWED_SENDERS   = deine Absenderadresse (kommagetrennt, wenn mehrere)
@@ -18,4 +20,4 @@ BRANCH = "main"
 binding = "STATE"
 id = "469437a2ed4c4c539b3c04c8bfefd9a5"
 
-# Secrets (nie in diese Datei): wrangler secret put GITHUB_TOKEN / UNPUBLISH_SECRET
+# Secrets (nie in diese Datei): wrangler secret put GITHUB_TOKEN / UNPUBLISH_SECRET / RESEND_API_KEY
