@@ -18,7 +18,7 @@ export default {
       rawSize: message.rawSize, envelopeFrom: message.from, to: message.to,
       headerFrom: message.headers.get("from"), authResults: message.headers.get("authentication-results"),
     }, env);
-    if (!check.ok) { message.setReject("Nicht angenommen"); return; }   // Absender sieht nur eine Ablehnung, keinen Grund
+    if (!check.ok) { console.log("abgelehnt:", check.reason); message.setReject("Nicht angenommen"); return; }   // Absender sieht nur eine Ablehnung, keinen Grund
     if (!(await underLimit(env.STATE))) { message.setReject("Tageslimit erreicht"); return; }
 
     const mail = await PostalMime.parse(message.raw);                    // Anhänge und HTML werden ignoriert
