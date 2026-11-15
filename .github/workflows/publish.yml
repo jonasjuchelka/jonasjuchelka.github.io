@@ -1,0 +1,52 @@
+name: Beitrag veröffentlichen
+# Läuft, wenn der private Bereich einen Upload nach inbox/<slug>/ committet.
+# Wandelt .docx/.doc/.md in Beitrag + PDF um, committet das Ergebnis und stößt das Deployment an.
+on:
+  push:
+    branches: [main]
+    paths: ["inbox/**"]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write   # nötig, weil Pushes mit GITHUB_TOKEN selbst keine Workflows auslösen
+concurrency:
+  group: publish
+  cancel-in-progress: false
+jobs:
+  build:
+    if: github.repository == 'jonasjuchelka/jonasjuchelka.github.io'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Werkzeuge
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq pandoc libreoffice-writer poppler-utils
+          python3 -m pip install --quiet playwright
+          python3 -m playwright install --with-deps chromium
+      - name: Umwandeln
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          for d in inbox/*/; do
+            slug=$(basename "$d")
+            # Upload noch unvollständig (meta.json kommt als Letztes): überspringen, der nächste Lauf holt es nach
+            if [ ! -f "inbox/$slug/meta.json" ] || ! ls inbox/"$slug"/original.* >/dev/null 2>&1; then continue; fi
+            if python3 -I scripts/publish/build_post.py "inbox/$slug"; then
+              rm -rf "inbox/$slug"
+            else
+              mkdir -p inbox-failed && mv "inbox/$slug" "inbox-failed/$slug"
+              echo "::error::Umwandlung fehlgeschlagen: $slug"
+            fi
+          done
+      - name: Committen und Deployment anstoßen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "jj-publisher"
+          git config user.email "publisher@users.noreply.github.com"
+          git add -A content artifacts/jonas-website/public/blog inbox inbox-failed 2>/dev/null || true
+          if git diff --cached --quiet; then echo "Nichts zu committen"; exit 0; fi
+          git commit -m "Beitrag veröffentlicht (automatisch)"
+          git push
+          gh workflow run pages.yml --ref main

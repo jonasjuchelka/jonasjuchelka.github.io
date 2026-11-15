@@ -9,6 +9,7 @@ const NAV = [
   { href: "/tools", label: "Tools" },
   { href: "/access-guide", label: "Zugangsleitfaden" },
   { href: "/account", label: "Konto" },
+  { href: "/publish", label: "Veröffentlichen" },
   { href: "/admin", label: "Administration" },
 ];
 const PUBLIC_SITE = "https://jonasjuchelka.github.io/";

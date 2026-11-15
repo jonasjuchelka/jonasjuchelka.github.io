@@ -1,0 +1,23 @@
+name = "jonas-post-mail"
+main = "index.js"
+compatibility_date = "2026-10-01"
+
+[vars]
+REPO = "jonasjuchelka/jonasjuchelka.github.io"
+BRANCH = "main"
+# Die folgenden drei Werte trägst DU im Cloudflare-Dashboard ein (Worker → Settings → Variables),
+# damit weder deine Adresse noch die geheime Adresse im öffentlichen Repo stehen:
+#   ALLOWED_SENDERS   = deine Absenderadresse (kommagetrennt, wenn mehrere)
+#   SECRET_LOCAL_PART = geheimer Teil vor dem @ der Empfangsadresse
+#   PUBLIC_URL        = https://<worker-name>.<konto>.workers.dev
+ALLOWED_SENDERS = "ERSETZEN"
+SECRET_LOCAL_PART = "ERSETZEN"
+PUBLIC_URL = "ERSETZEN"
+REPLY_FROM = "antwort@post.jonasjuchelka.com"
+
+# KV für den Tageszähler: wrangler kv namespace create STATE, dann die id hier eintragen.
+[[kv_namespaces]]
+binding = "STATE"
+id = "ERSETZEN"
+
+# Secrets (nie in diese Datei): wrangler secret put GITHUB_TOKEN / UNPUBLISH_SECRET
