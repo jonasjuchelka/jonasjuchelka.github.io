@@ -1,0 +1,702 @@
+{
+  "places": {
+    "muenchen": {
+      "name": "München",
+      "lat": 48.14,
+      "lon": 11.58,
+      "when": "2024'ten beri",
+      "what": "TU München'de öğrenim",
+      "badge": "home"
+    },
+    "berkeley": {
+      "name": "Berkeley",
+      "lat": 37.87,
+      "lon": -122.27,
+      "when": "Güz 2026",
+      "what": "UC Berkeley'de yurt dışı dönemi",
+      "badge": "now"
+    },
+    "aachen": {
+      "name": "Aachen",
+      "lat": 50.78,
+      "lon": 6.08,
+      "when": "2024'e kadar",
+      "what": "Büyüdüğüm yer; okul ve Abitur",
+      "label": "none"
+    },
+    "saintbrieuc": {
+      "name": "Saint-Brieuc",
+      "lat": 48.51,
+      "lon": -2.76,
+      "when": "Mayıs 2019",
+      "what": "Bretagne'da öğrenci değişim programı",
+      "label": "left"
+    },
+    "madrid": {
+      "name": "Madrid",
+      "lat": 40.42,
+      "lon": -3.7,
+      "when": "Güz 2021",
+      "what": "Madrid'de bir okulda dört ay",
+      "label": "left"
+    },
+    "juja": {
+      "name": "Juja",
+      "lat": -1.1,
+      "lon": 37.01,
+      "when": "2016 ve 2018",
+      "what": "Kenya'da okul ve sosyal hizmet çalışması"
+    },
+    "vae": {
+      "name": "BAE",
+      "lat": 24.45,
+      "lon": 54.38,
+      "when": "2013 – 2016",
+      "what": "Üniversitelerle geziler"
+    },
+    "suzhou": {
+      "name": "Suzhou",
+      "lat": 31.3,
+      "lon": 120.6,
+      "when": "2026",
+      "what": "German-Chinese Talent Exchange"
+    }
+  },
+  "entries": [
+    {
+      "id": "audition",
+      "kind": "station",
+      "pinned": true,
+      "now": true,
+      "year": 2026,
+      "date": "10.2026'dan beri",
+      "place": "San Francisco",
+      "loc": "berkeley",
+      "tags": [
+        "Girişimcilik",
+        "Proje"
+      ],
+      "title": "Audition",
+      "org": "Başvurular için yapay zekâ ön görüşmesi · Kurucu ortak",
+      "icon": "mic",
+      "why": "İlk görüşmeden önce bir yapay zekâ görüşmesi. Şirketler kimin gerçekten yapabildiğini görür.",
+      "text": [
+        "Audition, SF Tech Week Hackathon'unda ortaya çıktı. O zamandan beri onu bir startup olarak geliştiriyorum.",
+        "Şirket pozisyonu ve gereksinimleri girer. Yapay zekâ sorular önerir, şirket bunları onaylar. Adaylar bir bağlantı üzerinden kesintisiz bir video kaydıyla yanıt verir, şirket ardından bir değerlendirme görür."
+      ],
+      "points": [
+        "Bir insan ilk görüşmeyi yapmadan önce şirketlerin çok sayıda adaya gönderdiği bir ön görüşme",
+        "Ekran, ses ve kişi kaydedilir",
+        "a16z speedrun'a başvuru"
+      ],
+      "links": []
+    },
+    {
+      "id": "concentr8",
+      "kind": "station",
+      "pinned": true,
+      "now": true,
+      "year": 2026,
+      "date": "10.2026'dan beri",
+      "place": "Berkeley",
+      "loc": "berkeley",
+      "tags": [
+        "Girişimcilik",
+        "Proje"
+      ],
+      "title": "Concentr8",
+      "org": "Nörofarklı insanlara özel odaklanma uygulaması · Backend",
+      "icon": "target",
+      "photo": {
+        "file": "concentr8.jpg",
+        "alt": "Concentr8 ekibiyle ben",
+        "focus": "50% 40%"
+      },
+      "why": "Öğrenirken sen fark etmeden önce seni göreve geri döndüren bir uygulama.",
+      "text": [
+        "Concentr8'i bu dönem UC Berkeley'de geliştirdim. Başlangıcı San Francisco'daki Cal Hacks 13.0'da oldu, sonra Technology Entrepreneurship dersindeki projemizle birleştirdik.",
+        "Backend'i Jinyuan Xu ve Camila Scotti Pinto ile birlikte ekip olarak geliştiriyorum."
+      ],
+      "points": [
+        "Bir çalışma oturumu sırasında dikkat dağıtan uygulamaları ve siteleri engelleyen Mac uygulaması",
+        "Belirli çalışma saatlerinde aramalar: sabah, öğle, akşam",
+        "Önce soru soran, sonra çalışma oturumlarından oluşan bir plan öneren yapay zekâ sohbeti",
+        "Google ile giriş, takvim bağlanır"
+      ],
+      "links": [
+        {
+          "label": "İndirme sayfası",
+          "url": "https://concentr8.github.io/"
+        }
+      ]
+    },
+    {
+      "id": "berkeley",
+      "kind": "station",
+      "now": true,
+      "year": 2026,
+      "date": "08.2026 – 12.2026",
+      "place": "Berkeley, ABD",
+      "loc": "berkeley",
+      "tags": [
+        "Eğitim",
+        "Yurt dışı"
+      ],
+      "title": "Yurt dışı dönemi",
+      "org": "University of California, Berkeley",
+      "logo": "ucberkeley.svg",
+      "photo": {
+        "file": "berkeley.jpg",
+        "alt": "San Francisco Körfezi'nde ben",
+        "focus": "60% 40%"
+      },
+      "why": "Bilgisayar bilimlerinin en iyi üniversitelerinden birinde bir dönem, yapay zekâ startup'ları ekosisteminin tam ortasında.",
+      "text": [
+        "Berkeley International Study Program aracılığıyla Berkeley'de bir dönem okuyorum. Derslerin yanı sıra her hackathon fırsatını değerlendiriyorum."
+      ],
+      "points": [
+        "Yapay Zekâ (CS 188)",
+        "Kriptografi (CS 171)",
+        "Technology Entrepreneurship (ENGIN 183E)"
+      ],
+      "links": [
+        {
+          "label": "UC Berkeley",
+          "url": "https://www.berkeley.edu/"
+        },
+        {
+          "label": "Berkeley International Study Program",
+          "url": "https://bisp.berkeley.edu/"
+        }
+      ]
+    },
+    {
+      "id": "tutor",
+      "kind": "station",
+      "year": 2025,
+      "date": "08.2025 – 04.2026",
+      "place": "Münih",
+      "loc": "muenchen",
+      "tags": [
+        "İş"
+      ],
+      "title": "Yöneylem Araştırması tutor'ü",
+      "org": "TU München · Prof. Kolisch kürsüsü",
+      "logo": "tum.svg",
+      "why": "Derste en iyi %5 içinde yer aldığım için seçildim. Sonrasında dersi kendim verdim.",
+      "text": [
+        "2025/26 kış döneminde ve 2026 yaz döneminde “Operations Research and Decision Analysis” dersinin alıştırma oturumlarını verdim, ayrıca birebir destek sağladım. Dersin kendisini 1,3 ile tamamladım."
+      ],
+      "points": [
+        "Yaklaşık 25 öğrenci için haftada 4 saat alıştırma oturumu",
+        "Simpleks, ağ akışları, tamsayılı optimizasyon",
+        "Gurobi ile modelleme"
+      ],
+      "links": []
+    },
+    {
+      "id": "ritzenhoefer",
+      "kind": "station",
+      "year": 2025,
+      "date": "08.2025 – 10.2025",
+      "place": "Düsseldorf",
+      "tags": [
+        "İş"
+      ],
+      "title": "Strateji ve dönüşüm danışmanlığında Fellow",
+      "org": "ritzenhoefer & company",
+      "logo": "ritzenhoefer.png",
+      "photo": {
+        "file": "ritzenhoefer.jpg",
+        "alt": "Müşteriye giderken tren istasyonunda dizüstü bilgisayarla ben",
+        "focus": "60% 35%"
+      },
+      "why": "Bir Alman büyük bankası için büyük bir dönüşüm projesi, içeriden görülmüş.",
+      "text": [
+        "ritzenhoefer & company, büyük bankalara, sigorta şirketlerine ve sanayiye büyük yeniden yapılanmalarda danışmanlık yapar. Çoğunlukla doğrudan müşterinin yanındaydım ve proje ofisini destekledim."
+      ],
+      "points": [
+        "Runbook raporlamasının teknik ve organizasyonel sorumluluğunu üstlendim, bir kısmını Excel makrolarıyla otomatikleştirdim",
+        "Change request sürecini iyileştirdim, 70'ten fazla change request yönettim",
+        "Yönlendirme komitesine kadar sunumlar hazırladım",
+        "Kıdemli danışmanlar için bir iş paylaşımı modeli geliştirdim"
+      ],
+      "links": [
+        {
+          "label": "ritzenhoefer & company",
+          "url": "https://www.ritzenhoefer.com/"
+        }
+      ]
+    },
+    {
+      "id": "comstruct",
+      "kind": "station",
+      "year": 2025,
+      "date": "03.2025 – 05.2025",
+      "place": "München",
+      "loc": "muenchen",
+      "tags": [
+        "Çalışma"
+      ],
+      "title": "İş Geliştirme Stajı",
+      "org": "comstruct · İnşaat sektörü için yazılım",
+      "logo": "comstruct.svg",
+      "photo": {
+        "file": "comstruct.jpg",
+        "alt": "Bir meslektaşımla comstruct ofisinde",
+        "focus": "50% 30%"
+      },
+      "why": "Series A aşamasındaki bir girişimde dokuz haftada 74 tedarikçi sisteme dahil edildi.",
+      "text": [
+        "comstruct, inşaat şirketlerinin malzeme tedarikini dijitalleştiriyor: irsaliyeler, faturalar ve siparişler tedarikçilerle dijital olarak yürütülüyor. Go-to-Market ekibindeydim."
+      ],
+      "points": [
+        "9 haftada telefon ve e-posta yoluyla 74 tedarikçi sisteme dahil edildi",
+        "Tedarikçi entegrasyon sürecini analiz edip iyileştirdim",
+        "comstruct'ı BAUMA fuarında temsil ettim",
+        "Tüm şirket için ekip etkinlikleri organize ettim"
+      ],
+      "links": [
+        {
+          "label": "comstruct.com",
+          "url": "https://www.comstruct.com/"
+        }
+      ]
+    },
+    {
+      "id": "shapely",
+      "kind": "station",
+      "year": 2026,
+      "date": "03.2026 – 05.2026",
+      "place": "Aachen",
+      "loc": "aachen",
+      "tags": [
+        "Girişimcilik",
+        "Proje"
+      ],
+      "title": "Shapely",
+      "org": "Siparişe göre 3D baskı · kendi girişim fikrim",
+      "logo": "shapely.png",
+      "why": "Telefonla tara, basılmış halini evine teslim al. En çok, bir fikri ne zaman bırakmak gerektiğini öğrendim.",
+      "text": [
+        "Sipariş için bir web uygulaması ve parçaları LiDAR tarayıcıyla yakalayıp baskıya hazır bir dosyaya dönüştüren bir iPhone uygulaması. „Son kullanıcılara yönelik uygulama“ modelinden sonradan vazgeçtim."
+      ],
+      "points": [
+        "ARKit, LiDAR ve Supabase ile iPhone uygulaması prototipi",
+        "İş modelini eleştirel biçimde inceleyip reddettim"
+      ],
+      "links": [
+        {
+          "label": "shapely.live",
+          "url": "https://shapely.live/"
+        }
+      ]
+    },
+    {
+      "id": "tum",
+      "kind": "station",
+      "now": true,
+      "year": 2024,
+      "date": "10.2024'ten beri",
+      "place": "München",
+      "loc": "muenchen",
+      "tags": [
+        "Eğitim"
+      ],
+      "title": "B.Sc. Management & Technology",
+      "org": "TU München · Uzmanlık alanı Computer Engineering",
+      "logo": "tum.svg",
+      "why": "İşletme ve bilgisayar bilimi tek bir bölümde, %9 kabul oranına sahip bir programda.",
+      "text": [
+        "2024/25 kış yarıyılından beri okuyorum. Mezuniyet 2027 için planlanıyor."
+      ],
+      "points": [
+        "Not ortalaması 1,6",
+        "Uzmanlık alanı Computer Engineering"
+      ],
+      "links": [
+        {
+          "label": "TUM'daki bölüm",
+          "url": "https://www.mgt.tum.de/de/programs/bachelor-in-management-technology/muenchen"
+        }
+      ]
+    },
+    {
+      "id": "cycos",
+      "kind": "station",
+      "year": 2024,
+      "date": "06.2024",
+      "place": "Aachen",
+      "loc": "aachen",
+      "tags": [
+        "Çalışma"
+      ],
+      "title": "Ağ Teknolojisi ve Programlama Stajı",
+      "org": "cycos AG · Eviden (Atos) bünyesinde bir şirket",
+      "logo": "cy.svg",
+      "photo": {
+        "file": "cycos.jpg",
+        "alt": "cycos logosunun önünde ben",
+        "focus": "70% 40%"
+      },
+      "why": "İlk kez sunucuları ve sanal makineleri kendim kurdum ve Java ile program yazdım.",
+      "text": [
+        "cycos, 30 yılı aşkın süredir analog sistemlerden bulutta iş birliğine kadar telekomünikasyon yazılımları geliştiriyor. Dört hafta boyunca geliştirici ekibindeydim."
+      ],
+      "points": [
+        "Ağ temelleri: IP adresleri, yönlendirme, protokoller",
+        "Linux, sunucular ve Proxmox ile sanal makineler",
+        "Nesne yönelimli programlama ile Java",
+        "Telefoni ve VoIP'e dair genel bakış"
+      ],
+      "links": []
+    },
+    {
+      "id": "ffi",
+      "kind": "station",
+      "year": 2024,
+      "date": "04.2024 – 08.2026",
+      "place": "München",
+      "loc": "muenchen",
+      "tags": [
+        "Girişimcilik",
+        "Gönüllülük"
+      ],
+      "title": "Kurucu Ortak ve Yönetim Kurulu Üyesi",
+      "org": "Future Founders Initiative e.V. · 08.2026'dan beri danışma kurulunda",
+      "logo": "ffi.png",
+      "photo": {
+        "file": "ffi.jpg",
+        "alt": "Future Founders Initiative etkinliğinde grup fotoğrafı",
+        "focus": "50% 40%"
+      },
+      "why": "Beş kişiden üç şehirde faaliyet gösteren bir girişim oluştu. Sonra bilinçli olarak devrettim.",
+      "text": [
+        "Future Founders Initiative, girişimci olmak isteyen öğrencileri bir araya getiriyor: ilk fikirden pitch'e kadar ücretsiz atölyeler. Ben kurucu ortaklarından biriyim, yönetim kurulunda inşa ettim ve 2026'da danışma kuruluna geçtim."
+      ],
+      "points": [
+        "110'dan fazla öğrenci için üç günlük etkinlikler",
+        "München, Frankfurt ve Stuttgart'ta şubeler",
+        "Yönetim kurulu yapısını yeniden kurdum",
+        "Değerleri birlikte oluşturduk: seyirci değil, yapan olmak; birbirine destek olmak; bir iz bırakmak; ego olmaması"
+      ],
+      "links": []
+    },
+    {
+      "id": "abitur",
+      "kind": "station",
+      "year": 2024,
+      "date": "08.2016 – 06.2024",
+      "place": "Aachen",
+      "loc": "aachen",
+      "tags": [
+        "Okul"
+      ],
+      "title": "Abitur",
+      "org": "Bischöfliches Pius-Gymnasium · Leistungskurse Matematik, Coğrafya, Almanca",
+      "logo": "pius.png",
+      "why": "1,2 ortalamayla Abitur ve bunun yanında RWTH'de matematik dersleri.",
+      "text": [
+        "Okulun yanında RWTH Aachen'de erken öğrenci olarak Yüksek Matematik derslerine katıldım."
+      ],
+      "points": [
+        "Onur derecesiyle MINT sertifikası (sınıfın en iyi %5'i)",
+        "RWTH Aachen'de erken öğrencilik"
+      ],
+      "links": [
+        {
+          "label": "Pius-Gymnasium",
+          "url": "https://www.pius-gymnasium.de/"
+        }
+      ]
+    },
+    {
+      "id": "aixtron",
+      "kind": "station",
+      "year": 2023,
+      "date": "06.2023 – 07.2023",
+      "place": "Herzogenrath",
+      "loc": "aachen",
+      "tags": [
+        "İş"
+      ],
+      "title": "İnsan Kaynakları ve İletişim Stajı",
+      "org": "AIXTRON SE",
+      "logo": "aixtron.svg",
+      "why": "Yarı iletken ekipmanı üreten bir şirkette, insan kaynakları ve basın biriminde iki hafta.",
+      "text": [
+        "AIXTRON, ekran, lazer ve güneş hücreleri için bileşik yarı iletkenlerin üretildiği makineler yapar. İnsan kaynakları departmanındaydım ve basın çalışmalarına katkıda bulundum."
+      ],
+      "points": [
+        "Stajyer Günü'nün planlanmasına katıldım",
+        "Kariyer web sitesinin öğrencilere yönelik sayfasını yeniden düzenledim",
+        "Basın bültenlerinin hazırlanmasında görev aldım"
+      ],
+      "links": [
+        {
+          "label": "AIXTRON",
+          "url": "https://www.aixtron.com/"
+        }
+      ]
+    },
+    {
+      "id": "schuelerpraktika",
+      "kind": "station",
+      "year": 2023,
+      "date": "2021 – 2023",
+      "place": "Aachen ve Köln",
+      "loc": "aachen",
+      "tags": [
+        "İş"
+      ],
+      "title": "Okul döneminde kısa stajlar",
+      "org": "Göz optiği, kimya, enerji ticareti",
+      "icon": "briefcase",
+      "why": "Karar vermeden önce mümkün olduğunca çok mesleği içeriden görmek.",
+      "text": [
+        "ChemCologne'un „Meine Position ist spitze!“ etkinliği kapsamında iki kez bir yönetici pozisyonuna başvurdum ve bu pozisyonu bir gün boyunca üstlendim."
+      ],
+      "points": [
+        "Knapsack Kimya Parkı'nda bir gün tesis işletme müdürü (YNCORIS, 2022)",
+        "Köln'deki Infineum'da bir gün bakım müdürü (Maintenance Manager) (2023)",
+        "Trianel'de iki gün enerji ticareti: gün öncesi ve gün içi açık artırması (2023)",
+        "Bir göz optikçisinde Boys’ Day (2021)"
+      ],
+      "links": []
+    },
+    {
+      "id": "sozialpraktikum",
+      "kind": "station",
+      "year": 2022,
+      "date": "01.2022",
+      "place": "Aachen",
+      "loc": "aachen",
+      "tags": [
+        "Gönüllülük"
+      ],
+      "title": "Sosyal staj",
+      "org": "Caritas Aachen'in Café Plattform'u",
+      "icon": "heart",
+      "why": "Evsiz insanlar için bir buluşma noktasında iki hafta.",
+      "text": [
+        "Café Plattform, Caritas'ın herkese açık bir buluşma noktasıdır. Mutfakta ve yemek dağıtımında çalıştım ve misafirlerle sohbet etmeye çalıştım."
+      ],
+      "points": [
+        "Sabah toplantıları, mutfak ve yemek dağıtımı",
+        "Sokak sosyal hizmeti ve istihdam projelerine dair bir bakış"
+      ],
+      "links": []
+    },
+    {
+      "id": "madrid",
+      "kind": "station",
+      "year": 2021,
+      "date": "09.2021 – 12.2021",
+      "place": "Madrid, İspanya",
+      "loc": "madrid",
+      "tags": [
+        "Okul",
+        "Yurt dışı"
+      ],
+      "title": "Madrid'de dört ay okul",
+      "org": "Colegio Tajamar · Bachillerato de Ciencias",
+      "logo": "tajamar.png",
+      "why": "Az İspanyolcayla geldim, sonunda normal derslerde not tutabiliyordum.",
+      "text": [
+        "Bachillerato'nun ilk yılında fen bilimleri kolundaydım; haftada 37 ders saati vardı ve sınıf arkadaşlarımla aynı sınavlara girdim."
+      ],
+      "points": [
+        "Ağırlık: yaşam bilimleri",
+        "İspanyolcayı gündelik hayatta öğrendim"
+      ],
+      "links": [
+        {
+          "label": "Colegio Tajamar",
+          "url": "https://www.tajamar.es/"
+        }
+      ]
+    },
+    {
+      "id": "frankreich",
+      "kind": "station",
+      "year": 2019,
+      "date": "05.2019",
+      "place": "Saint-Brieuc, Fransa",
+      "loc": "saintbrieuc",
+      "tags": [
+        "Okul",
+        "Yurt dışı"
+      ],
+      "title": "Bretagne'da öğrenci değişimi",
+      "org": "Pius-Gymnasium ve Saint Charles – La Providence",
+      "icon": "globe",
+      "why": "Fransızca ve Almanca tutulan bir seyahat günlüğüyle belgelenen iki haftalık değişim programı.",
+      "text": [
+        "2018 sonbaharında değişim öğrencisi arkadaşım bizdeydi, Aachen'de; Mayıs 2019'da ben Saint-Brieuc'teydim."
+      ],
+      "points": [
+        "Mont-Saint-Michel, Saint-Malo ve yerinde ders",
+        "Özel başarıyla tamamlandı (Avrupa Okul Pasaportu)"
+      ],
+      "links": []
+    },
+    {
+      "id": "kenia2018",
+      "kind": "station",
+      "year": 2018,
+      "date": "03.2018 – 04.2018",
+      "place": "Juja, Kenya",
+      "loc": "juja",
+      "tags": [
+        "Gönüllülük",
+        "Yurt dışı"
+      ],
+      "title": "Bir çocuk yuvasında gönüllü yardım",
+      "org": "Star of Hope Children’s Home",
+      "icon": "heart",
+      "why": "Yetimler ve ailesiz çocukların kaldığı bir yuvada üç hafta.",
+      "text": [
+        "Orada ihtiyaç duyulan her işte çalıştım ve akşamları İngilizce dersi aldım."
+      ],
+      "points": [
+        "Çit yapımına katkı ve alanın bakımı",
+        "Çocuklarla oyun oynama"
+      ],
+      "links": []
+    },
+    {
+      "id": "kenia2016",
+      "kind": "station",
+      "year": 2016,
+      "date": "03.2016 – 05.2016",
+      "place": "Juja, Kenya",
+      "loc": "juja",
+      "tags": [
+        "Okul",
+        "Yurt dışı"
+      ],
+      "title": "Kenya'da bir okul dönemi",
+      "org": "Precious Blood Primary School",
+      "icon": "school",
+      "why": "Çocukken Kenya'da bir okulda geçirilen bir dönem. Aachen'in çok ötesine ilk bakışım.",
+      "text": [
+        "Dördüncü sınıftaydım ve tüm okul gündelik hayatına katıldım."
+      ],
+      "points": [
+        "En sevdiklerim: matematik ve şarkı söyleme"
+      ],
+      "links": []
+    },
+    {
+      "id": "vae",
+      "kind": "station",
+      "year": 2016,
+      "date": "2013, 2015 ve 2016",
+      "place": "Dubai, Abu Dabi, Ras el-Hayma",
+      "loc": "vae",
+      "tags": [
+        "Yurt dışı"
+      ],
+      "title": "Emirliklere geziler",
+      "org": "Duisburg-Essen Üniversitesi ve UAE University",
+      "icon": "compass",
+      "why": "Öğrenciyken yapısal dönüşümü anlamak için üç kez üniversite öğrencileriyle birlikte yola çıktım.",
+      "text": [
+        "Geziler, DAAD'ın „İslam Dünyasıyla Yükseköğretim Diyaloğu“ programının parçasıydı. Konu, Ruhr bölgesi ile Emirlikler karşılaştırılarak kömür ve petrol sonrası dönüşümdü."
+      ],
+      "points": [
+        "Her seferinde on gün saha çalışması ve görüşmeler",
+        "Her iki üniversitenin öğrencileriyle birlikte"
+      ],
+      "links": []
+    },
+    {
+      "id": "sdw",
+      "kind": "award",
+      "year": 2024,
+      "date": "10.2024'ten beri",
+      "tags": [
+        "Burs"
+      ],
+      "title": "Stiftung der Deutschen Wirtschaft bursu",
+      "org": "Studienförderwerk Klaus Murmann",
+      "logo": "sdw.svg",
+      "why": "Toplumsal sorumluluk bilincine ve girişimci ruha sahip öğrenciler için.",
+      "text": [
+        "Studienförderwerk Klaus Murmann her yıl yaklaşık 2.000 öğrenciyi ve doktora öğrencisini destekliyor."
+      ],
+      "points": [],
+      "links": [
+        {
+          "label": "sdw.org",
+          "url": "https://www.sdw.org/"
+        }
+      ]
+    },
+    {
+      "id": "hrs",
+      "kind": "award",
+      "year": 2026,
+      "date": "10.2026'dan beri",
+      "tags": [
+        "Burs"
+      ],
+      "title": "Hans Rudolf Stiftung bursu",
+      "org": "Hans Rudolf Stiftung, Münih",
+      "logo": "hr-stiftung.png",
+      "why": "Azimli Münihli öğrenciler için bir burs.",
+      "text": [],
+      "points": [],
+      "links": []
+    },
+    {
+      "id": "gcte",
+      "kind": "award",
+      "year": 2026,
+      "date": "2026",
+      "place": "Suzhou ve Şanghay, Çin",
+      "loc": "suzhou",
+      "tags": [
+        "Ödül",
+        "Yurt dışı"
+      ],
+      "title": "German-Chinese Talent Exchange",
+      "org": "TU München heyeti",
+      "icon": "exchange",
+      "photo": {
+        "file": "china.jpg",
+        "alt": "Suzhou'daki heyetimiz",
+        "focus": "50% 50%"
+      },
+      "why": "Kabul oranı %5. TUM'un en iyi öğrencilerinden biri olarak seçildi.",
+      "text": [
+        "TUM heyetiyle Suzhou ve Şanghay'da."
+      ],
+      "points": [],
+      "links": []
+    },
+    {
+      "id": "dsa",
+      "kind": "award",
+      "year": 2023,
+      "date": "2023",
+      "tags": [
+        "Ödül"
+      ],
+      "title": "Deutsche SchülerAkademie",
+      "org": "Okul tarafından önerildi",
+      "logo": "dsa.svg",
+      "why": "Almanya'daki öğrencilerin %1'inden azı seçilir.",
+      "text": [
+        "Kurs yöneticileri: Henric Meinhardt ve Johannes Lumma."
+      ],
+      "points": [],
+      "links": [
+        {
+          "label": "Deutsche SchülerAkademie",
+          "url": "https://www.deutsche-schuelerakademie.de/"
+        }
+      ]
+    }
+  ]
+}

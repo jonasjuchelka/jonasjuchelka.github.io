@@ -1,0 +1,702 @@
+{
+  "places": {
+    "muenchen": {
+      "name": "München",
+      "lat": 48.14,
+      "lon": 11.58,
+      "when": "2024年より",
+      "what": "TU Müncheで学業に取り組む",
+      "badge": "home"
+    },
+    "berkeley": {
+      "name": "Berkeley",
+      "lat": 37.87,
+      "lon": -122.27,
+      "when": "2026年秋",
+      "what": "UC Berkeleyでの留学学期",
+      "badge": "now"
+    },
+    "aachen": {
+      "name": "Aachen",
+      "lat": 50.78,
+      "lon": 6.08,
+      "when": "2024年まで",
+      "what": "育った場所、学校生活とアビトゥーア",
+      "label": "none"
+    },
+    "saintbrieuc": {
+      "name": "Saint-Brieuc",
+      "lat": 48.51,
+      "lon": -2.76,
+      "when": "2019年5月",
+      "what": "ブルターニュでの学校交換留学",
+      "label": "left"
+    },
+    "madrid": {
+      "name": "Madrid",
+      "lat": 40.42,
+      "lon": -3.7,
+      "when": "2021年秋",
+      "what": "Madridの学校で4か月間過ごす",
+      "label": "left"
+    },
+    "juja": {
+      "name": "Juja",
+      "lat": -1.1,
+      "lon": 37.01,
+      "when": "2016年と2018年",
+      "what": "ケニアでの学校生活と社会奉仕活動"
+    },
+    "vae": {
+      "name": "アラブ首長国連邦",
+      "lat": 24.45,
+      "lon": 54.38,
+      "when": "2013年から2016年",
+      "what": "大学との研修旅行"
+    },
+    "suzhou": {
+      "name": "Suzhou",
+      "lat": 31.3,
+      "lon": 120.6,
+      "when": "2026年",
+      "what": "German-Chinese Talent Exchange"
+    }
+  },
+  "entries": [
+    {
+      "id": "audition",
+      "kind": "station",
+      "pinned": true,
+      "now": true,
+      "year": 2026,
+      "date": "10.2026より",
+      "place": "San Francisco",
+      "loc": "berkeley",
+      "tags": [
+        "起業",
+        "プロジェクト"
+      ],
+      "title": "Audition",
+      "org": "応募者向けAI事前面接 · 共同創業者",
+      "icon": "mic",
+      "why": "最初の面談の前にAI面接を行います。企業は、本当にできる人を見極められます。",
+      "text": [
+        "Auditionは SF Tech Week Hackathon で生まれました。以来、スタートアップとして開発を続けています。",
+        "企業が職種と要件を入力すると、AIが質問を提案し、企業が承認します。応募者はリンクから、途切れのない一本の動画で回答します。企業はその後、評価結果を確認できます。"
+      ],
+      "points": [
+        "人が最初の面談を行う前に、企業が多数の応募者へ送る事前面接",
+        "録画されるのは画面、音声、本人の映像",
+        "a16z speedrun に応募"
+      ],
+      "links": []
+    },
+    {
+      "id": "concentr8",
+      "kind": "station",
+      "pinned": true,
+      "now": true,
+      "year": 2026,
+      "date": "10.2026より",
+      "place": "Berkeley",
+      "loc": "berkeley",
+      "tags": [
+        "起業",
+        "プロジェクト"
+      ],
+      "title": "Concentr8",
+      "org": "神経多様性のある人向けの集中支援アプリ · バックエンド",
+      "icon": "target",
+      "photo": {
+        "file": "concentr8.jpg",
+        "alt": "Concentr8のチームと私",
+        "focus": "50% 40%"
+      },
+      "why": "自分で気づく前に、勉強中の意識を課題へ引き戻してくれるアプリです。",
+      "text": [
+        "Concentr8は今学期、UC Berkeley で作りました。始まりは San Francisco で開かれた Cal Hacks 13.0 で、その後、Technology Entrepreneurship の授業で取り組んでいたプロジェクトと統合しました。",
+        "Jinyuan Xu、Camila Scotti Pinto とのチームで、バックエンドを担当しています。"
+      ],
+      "points": [
+        "学習時間中、気を散らすアプリやサイトをブロックする Mac アプリ",
+        "朝・昼・晩の決まった学習時間に電話をかける機能",
+        "まず質問をし、その後に学習セッションの計画を提案するAIチャット",
+        "Google でログインし、カレンダーと連携"
+      ],
+      "links": [
+        {
+          "label": "ダウンロードページ",
+          "url": "https://concentr8.github.io/"
+        }
+      ]
+    },
+    {
+      "id": "berkeley",
+      "kind": "station",
+      "now": true,
+      "year": 2026,
+      "date": "08.2026 – 12.2026",
+      "place": "Berkeley, USA",
+      "loc": "berkeley",
+      "tags": [
+        "学業",
+        "留学"
+      ],
+      "title": "交換留学",
+      "org": "University of California, Berkeley",
+      "logo": "ucberkeley.svg",
+      "photo": {
+        "file": "berkeley.jpg",
+        "alt": "サンフランシスコ湾岸での私",
+        "focus": "60% 40%"
+      },
+      "why": "情報科学で屈指の大学で1学期を過ごし、AIスタートアップのエコシステムの只中に身を置きます。",
+      "text": [
+        "Berkeley International Study Program を通じて、Berkeley で1学期学んでいます。授業の合間も、ハッカソンの機会があれば逃さず参加しています。"
+      ],
+      "points": [
+        "人工知能(CS 188)",
+        "暗号学(CS 171)",
+        "Technology Entrepreneurship(ENGIN 183E)"
+      ],
+      "links": [
+        {
+          "label": "UC Berkeley",
+          "url": "https://www.berkeley.edu/"
+        },
+        {
+          "label": "Berkeley International Study Program",
+          "url": "https://bisp.berkeley.edu/"
+        }
+      ]
+    },
+    {
+      "id": "tutor",
+      "kind": "station",
+      "year": 2025,
+      "date": "08.2025 – 04.2026",
+      "place": "ミュンヘン",
+      "loc": "muenchen",
+      "tags": [
+        "仕事"
+      ],
+      "title": "オペレーションズ・リサーチのチューター",
+      "org": "TU München · Kolisch教授講座",
+      "logo": "tum.svg",
+      "why": "授業で上位5%に入っていたことから選ばれました。その後は自分で教える側になりました。",
+      "text": [
+        "2025/26年冬学期と2026年夏学期に、「Operations Research and Decision Analysis」のチュートリアルを担当し、個別指導も行いました。この授業自体は1,3で修了しています。"
+      ],
+      "points": [
+        "週4時間のチュートリアルを、約25人の学生に対して実施",
+        "シンプレックス法、ネットワークフロー、整数最適化",
+        "Gurobi によるモデリング"
+      ],
+      "links": []
+    },
+    {
+      "id": "ritzenhoefer",
+      "kind": "station",
+      "year": 2025,
+      "date": "08.2025 – 10.2025",
+      "place": "デュッセルドルフ",
+      "tags": [
+        "仕事"
+      ],
+      "title": "フェロー、戦略・トランスフォーメーションコンサルティング",
+      "org": "ritzenhoefer & company",
+      "logo": "ritzenhoefer.png",
+      "photo": {
+        "file": "ritzenhoefer.jpg",
+        "alt": "クライアント先へ向かう途中、駅でノートPCを持つ私",
+        "focus": "60% 35%"
+      },
+      "why": "ドイツの大手銀行の大規模な変革プロジェクトを、内側から見ることができました。",
+      "text": [
+        "ritzenhoefer & company は、大手銀行、保険会社、製造業の大規模な組織再編を支援しています。私は主にクライアント先に常駐し、プロジェクトオフィスを支援しました。"
+      ],
+      "points": [
+        "ランブックのレポーティングについて、技術面と運用面の責任を担い、一部を Excel マクロで自動化",
+        "チェンジリクエストのプロセスを改善し、70件以上のチェンジリクエストを管理",
+        "運営委員会向けまでのプレゼンテーション資料を作成",
+        "シニアコンサルタント向けのジョブシェアリングモデルを開発"
+      ],
+      "links": [
+        {
+          "label": "ritzenhoefer & company",
+          "url": "https://www.ritzenhoefer.com/"
+        }
+      ]
+    },
+    {
+      "id": "comstruct",
+      "kind": "station",
+      "year": 2025,
+      "date": "03.2025 – 05.2025",
+      "place": "ミュンヘン",
+      "loc": "muenchen",
+      "tags": [
+        "仕事"
+      ],
+      "title": "ビジネスディベロップメント インターンシップ",
+      "org": "comstruct · 建設業向けソフトウェア",
+      "logo": "comstruct.svg",
+      "photo": {
+        "file": "comstruct.jpg",
+        "alt": "comstruct のオフィスで同僚と一緒に写る私",
+        "focus": "50% 30%"
+      },
+      "why": "シリーズAのスタートアップで、9週間で74社のサプライヤーを接続しました。",
+      "text": [
+        "comstruct は建設会社の資材調達をデジタル化しています。納品書、請求書、発注書をサプライヤーとデジタルでやり取りできます。私はGo-to-Marketチームに所属していました。"
+      ],
+      "points": [
+        "電話とメールで、9週間に74社のサプライヤーを接続",
+        "サプライヤー接続のプロセスを分析し、改善",
+        "展示会BAUMAでcomstructを代表して出展",
+        "全社向けのチームイベントを企画・運営"
+      ],
+      "links": [
+        {
+          "label": "comstruct.com",
+          "url": "https://www.comstruct.com/"
+        }
+      ]
+    },
+    {
+      "id": "shapely",
+      "kind": "station",
+      "year": 2026,
+      "date": "03.2026 – 05.2026",
+      "place": "アーヘン",
+      "loc": "aachen",
+      "tags": [
+        "起業",
+        "プロジェクト"
+      ],
+      "title": "Shapely",
+      "org": "受注生産の3Dプリント · 自身の起業アイデア",
+      "logo": "shapely.png",
+      "why": "スマートフォンでスキャンすると、印刷されたものが自宅に届く。得られた最大の学びは、アイデアを手放すべきタイミングでした。",
+      "text": [
+        "注文用のWebアプリと、LiDARスキャナーで部品を読み取り、印刷可能なファイルを生成するiPhoneアプリを作りました。「一般消費者向けアプリ」というモデルからは、のちに離れました。"
+      ],
+      "points": [
+        "ARKit、LiDAR、SupabaseによるiPhoneアプリのプロトタイプ",
+        "ビジネスモデルを批判的に検証し、見送りを決定"
+      ],
+      "links": [
+        {
+          "label": "shapely.live",
+          "url": "https://shapely.live/"
+        }
+      ]
+    },
+    {
+      "id": "tum",
+      "kind": "station",
+      "now": true,
+      "year": 2024,
+      "date": "seit 10.2024",
+      "place": "ミュンヘン",
+      "loc": "muenchen",
+      "tags": [
+        "学業"
+      ],
+      "title": "B.Sc. Management & Technology",
+      "org": "TU München · 専攻 Computer Engineering",
+      "logo": "tum.svg",
+      "why": "経済学と情報学を一つの学位で学べる、合格率9%のプログラムです。",
+      "text": [
+        "2024/25年度の冬学期から在籍しています。卒業は2027年の予定です。"
+      ],
+      "points": [
+        "成績平均 1.6",
+        "専攻 Computer Engineering"
+      ],
+      "links": [
+        {
+          "label": "TUMの学位プログラム",
+          "url": "https://www.mgt.tum.de/de/programs/bachelor-in-management-technology/muenchen"
+        }
+      ]
+    },
+    {
+      "id": "cycos",
+      "kind": "station",
+      "year": 2024,
+      "date": "06.2024",
+      "place": "アーヘン",
+      "loc": "aachen",
+      "tags": [
+        "仕事"
+      ],
+      "title": "ネットワーク技術とプログラミングのインターンシップ",
+      "org": "cycos AG · Eviden (Atos) 傘下の企業",
+      "logo": "cy.svg",
+      "photo": {
+        "file": "cycos.jpg",
+        "alt": "cycos のロゴの前に立つ私",
+        "focus": "70% 40%"
+      },
+      "why": "サーバーと仮想マシンを初めて自分で構築し、Javaでプログラミングしました。",
+      "text": [
+        "cycos は30年以上にわたり、アナログシステムからクラウド上のコラボレーションまで、通信向けソフトウェアを開発しています。私は4週間、開発チームに所属しました。"
+      ],
+      "points": [
+        "ネットワークの基礎：IPアドレス、ルーティング、プロトコル",
+        "Linux、ProxmoxによるサーバーとVM",
+        "オブジェクト指向プログラミングによるJava",
+        "電話とVoIPの概要を学ぶ"
+      ],
+      "links": []
+    },
+    {
+      "id": "ffi",
+      "kind": "station",
+      "year": 2024,
+      "date": "04.2024 – 08.2026",
+      "place": "ミュンヘン",
+      "loc": "muenchen",
+      "tags": [
+        "起業",
+        "活動"
+      ],
+      "title": "共同創設者・理事",
+      "org": "Future Founders Initiative e.V. · 08.2026以降は諮問委員会",
+      "logo": "ffi.png",
+      "photo": {
+        "file": "ffi.jpg",
+        "alt": "Future Founders Initiative のイベントでの集合写真",
+        "focus": "50% 40%"
+      },
+      "why": "5人から始まり、3都市に広がる団体になりました。その後、意識的に後任へ引き継ぎました。",
+      "text": [
+        "Future Founders Initiative は、起業を志す学生を結びつける団体です。最初のアイデアからピッチまでを扱う無料のワークショップを開いています。私は共同創設者として理事会で団体を築き上げ、2026年に諮問委員会へ移りました。"
+      ],
+      "points": [
+        "110人以上の学生が参加した3日間のイベント",
+        "拠点はミュンヘン、フランクフルト、シュトゥットガルト",
+        "理事会の体制を再構築",
+        "共に価値観を策定：傍観者ではなく実行者であること、互いに支え合うこと、何かを残すこと、エゴを持たないこと"
+      ],
+      "links": []
+    },
+    {
+      "id": "abitur",
+      "kind": "station",
+      "year": 2024,
+      "date": "08.2016 – 06.2024",
+      "place": "アーヘン",
+      "loc": "aachen",
+      "tags": [
+        "学校"
+      ],
+      "title": "アビトゥーア",
+      "org": "Bischöfliches Pius-Gymnasium · 選択履修コース:数学、地理、ドイツ語",
+      "logo": "pius.png",
+      "why": "アビトゥーアは1.2で修了し、並行してRWTHの数学の講義も受けていました。",
+      "text": [
+        "学校に通いながら、早期履修制度でRWTHアーヘンの高等数学の講義を受講しました。"
+      ],
+      "points": [
+        "MINT証明書を優等で取得(学年の上位5%)",
+        "RWTHアーヘンでの早期履修"
+      ],
+      "links": [
+        {
+          "label": "Pius-Gymnasium",
+          "url": "https://www.pius-gymnasium.de/"
+        }
+      ]
+    },
+    {
+      "id": "aixtron",
+      "kind": "station",
+      "year": 2023,
+      "date": "06.2023 – 07.2023",
+      "place": "ヘルツォーゲンラート",
+      "loc": "aachen",
+      "tags": [
+        "仕事"
+      ],
+      "title": "人事・広報インターンシップ",
+      "org": "AIXTRON SE",
+      "logo": "aixtron.svg",
+      "why": "半導体製造装置メーカーで、人事と広報業務を2週間経験しました。",
+      "text": [
+        "AIXTRONは、ディスプレイ、レーザー、太陽電池に使われる化合物半導体を製造するための装置を作っています。私は人事部に所属し、広報業務にも携わりました。"
+      ],
+      "points": [
+        "研修生向けイベントの企画に参加",
+        "採用サイトの生徒向けページを改訂",
+        "プレスリリースを担当"
+      ],
+      "links": [
+        {
+          "label": "AIXTRON",
+          "url": "https://www.aixtron.com/"
+        }
+      ]
+    },
+    {
+      "id": "schuelerpraktika",
+      "kind": "station",
+      "year": 2023,
+      "date": "2021 – 2023",
+      "place": "アーヘンとケルン",
+      "loc": "aachen",
+      "tags": [
+        "仕事"
+      ],
+      "title": "在学中の短期インターンシップ",
+      "org": "眼鏡店、化学、エネルギー取引",
+      "icon": "briefcase",
+      "why": "進路を決める前に、できるだけ多くの職業を内側から見ておきたかったためです。",
+      "text": [
+        "ChemCologneの企画「Meine Position ist spitze!」で、管理職のポジションに2回応募し、それぞれ1日その役割を務めました。"
+      ],
+      "points": [
+        "ケムパーク・クナプザック(YNCORIS)で拠点運営責任者を1日務めた(2022年)",
+        "ケルンのInfineumでメンテナンスマネージャーを1日務めた(2023年)",
+        "Trianelでエネルギー取引を2日間経験:前日市場オークションと当日市場オークション(2023年)",
+        "眼鏡店でのボーイズデー(2021年)"
+      ],
+      "links": []
+    },
+    {
+      "id": "sozialpraktikum",
+      "kind": "station",
+      "year": 2022,
+      "date": "01.2022",
+      "place": "アーヘン",
+      "loc": "aachen",
+      "tags": [
+        "社会活動"
+      ],
+      "title": "社会実習",
+      "org": "アーヘン・カリタスのCafé Plattform",
+      "icon": "heart",
+      "why": "ホームレスの人々のための集いの場で2週間過ごしました。",
+      "text": [
+        "Café Plattformはカリタスが運営する誰でも訪れられる集いの場です。私は厨房と食事の配膳を手伝い、利用者の方々との会話を心がけました。"
+      ],
+      "points": [
+        "朝のミーティング、厨房、食事の配膳",
+        "ストリートワークや就労支援プロジェクトの見学"
+      ],
+      "links": []
+    },
+    {
+      "id": "madrid",
+      "kind": "station",
+      "year": 2021,
+      "date": "09.2021 – 12.2021",
+      "place": "スペイン、マドリード",
+      "loc": "madrid",
+      "tags": [
+        "学校",
+        "留学"
+      ],
+      "title": "マドリードでの4か月間の学校生活",
+      "org": "Colegio Tajamar · Bachillerato de Ciencias",
+      "logo": "tajamar.png",
+      "why": "ほとんどスペイン語が話せない状態で着き、最後には通常の授業でノートを取れるようになりました。",
+      "text": [
+        "Bachilleratoの1年目に、理系コースで週37時間の授業を受け、クラスメートと同じ試験を受けました。"
+      ],
+      "points": [
+        "生命科学を重点的に履修",
+        "日常生活の中でスペイン語を習得"
+      ],
+      "links": [
+        {
+          "label": "Colegio Tajamar",
+          "url": "https://www.tajamar.es/"
+        }
+      ]
+    },
+    {
+      "id": "frankreich",
+      "kind": "station",
+      "year": 2019,
+      "date": "05.2019",
+      "place": "Saint-Brieuc、フランス",
+      "loc": "saintbrieuc",
+      "tags": [
+        "学校",
+        "海外"
+      ],
+      "title": "ブルターニュでの学校交換留学",
+      "org": "Pius-Gymnasium と Saint Charles – La Providence",
+      "icon": "globe",
+      "why": "2週間の交換留学。フランス語とドイツ語で書いた旅日記に記録しました。",
+      "text": [
+        "2018年秋には交換相手がアーヘンの我が家に滞在し、2019年5月には私がSaint-Brieucを訪れました。"
+      ],
+      "points": [
+        "モン・サン＝ミシェル、サン・マロ、現地での授業",
+        "特に優れた成績で修了（Europaschulpass）"
+      ],
+      "links": []
+    },
+    {
+      "id": "kenia2018",
+      "kind": "station",
+      "year": 2018,
+      "date": "03.2018 – 04.2018",
+      "place": "Juja、ケニア",
+      "loc": "juja",
+      "tags": [
+        "社会貢献活動",
+        "海外"
+      ],
+      "title": "児童養護施設でのボランティア",
+      "org": "Star of Hope Children’s Home",
+      "icon": "heart",
+      "why": "孤児や家族のいない子どもたちのための施設で過ごした3週間。",
+      "text": [
+        "必要とされる場所で手伝いをし、夕方には英語の授業を受けました。"
+      ],
+      "points": [
+        "フェンスの建設を手伝い、敷地の手入れをした",
+        "子どもたちと遊んだ"
+      ],
+      "links": []
+    },
+    {
+      "id": "kenia2016",
+      "kind": "station",
+      "year": 2016,
+      "date": "03.2016 – 05.2016",
+      "place": "Juja、ケニア",
+      "loc": "juja",
+      "tags": [
+        "学校",
+        "海外"
+      ],
+      "title": "ケニアでの学校1学期",
+      "org": "Precious Blood Primary School",
+      "icon": "school",
+      "why": "子どもの頃、ケニアの学校で1学期を過ごしました。アーヘンをはるかに越えて世界を見た最初の経験です。",
+      "text": [
+        "4年生のクラスに入り、学校生活のすべてに参加しました。"
+      ],
+      "points": [
+        "一番好きだったのは算数と歌"
+      ],
+      "links": []
+    },
+    {
+      "id": "vae",
+      "kind": "station",
+      "year": 2016,
+      "date": "2013, 2015, 2016",
+      "place": "ドバイ、アブダビ、ラスアルハイマ",
+      "loc": "vae",
+      "tags": [
+        "海外"
+      ],
+      "title": "首長国連邦への研修旅行",
+      "org": "デュースブルク・エッセン大学と UAE University",
+      "icon": "compass",
+      "why": "生徒として3回、大学生とともに構造転換を理解するために訪れました。",
+      "text": [
+        "この研修旅行は、DAADのプログラム「イスラム世界との大学対話」の一環でした。テーマは石炭・石油後の転換で、ルール地方と首長国連邦を比較しました。"
+      ],
+      "points": [
+        "各10日間のフィールドリサーチと交流",
+        "両大学の学生とともに参加"
+      ],
+      "links": []
+    },
+    {
+      "id": "sdw",
+      "kind": "award",
+      "year": 2024,
+      "date": "10.2024 以降",
+      "tags": [
+        "奨学金"
+      ],
+      "title": "Stiftung der Deutschen Wirtschaft の奨学金",
+      "org": "Studienförderwerk Klaus Murmann",
+      "logo": "sdw.svg",
+      "why": "公共心と起業家精神を持つ学生のための奨学金。",
+      "text": [
+        "Studienförderwerk Klaus Murmann は、毎年約2,000人の学生および博士課程の学生を支援しています。"
+      ],
+      "points": [],
+      "links": [
+        {
+          "label": "sdw.org",
+          "url": "https://www.sdw.org/"
+        }
+      ]
+    },
+    {
+      "id": "hrs",
+      "kind": "award",
+      "year": 2026,
+      "date": "10.2026 以降",
+      "tags": [
+        "奨学金"
+      ],
+      "title": "Hans Rudolf Stiftung 奨学金",
+      "org": "Hans Rudolf Stiftung、ミュンヘン",
+      "logo": "hr-stiftung.png",
+      "why": "ミュンヘンの意欲ある学生のための奨学金。",
+      "text": [],
+      "points": [],
+      "links": []
+    },
+    {
+      "id": "gcte",
+      "kind": "award",
+      "year": 2026,
+      "date": "2026",
+      "place": "中国、蘇州・上海",
+      "loc": "suzhou",
+      "tags": [
+        "表彰",
+        "海外"
+      ],
+      "title": "German-Chinese Talent Exchange",
+      "org": "TU Münchenの代表団",
+      "icon": "exchange",
+      "photo": {
+        "file": "china.jpg",
+        "alt": "蘇州での代表団",
+        "focus": "50% 50%"
+      },
+      "why": "採用率5%。TUMの最優秀学生の一人として選出。",
+      "text": [
+        "TUMの代表団として蘇州と上海を訪問。"
+      ],
+      "points": [],
+      "links": []
+    },
+    {
+      "id": "dsa",
+      "kind": "award",
+      "year": 2023,
+      "date": "2023",
+      "tags": [
+        "表彰"
+      ],
+      "title": "Deutsche SchülerAkademie",
+      "org": "学校からの推薦",
+      "logo": "dsa.svg",
+      "why": "ドイツの生徒のうち選ばれるのは1%未満。",
+      "text": [
+        "コースリーダー: Henric Meinhardt、Johannes Lumma。"
+      ],
+      "points": [],
+      "links": [
+        {
+          "label": "Deutsche SchülerAkademie",
+          "url": "https://www.deutsche-schuelerakademie.de/"
+        }
+      ]
+    }
+  ]
+}
