@@ -1,0 +1,702 @@
+{
+  "places": {
+    "muenchen": {
+      "name": "Monaco di Baviera",
+      "lat": 48.14,
+      "lon": 11.58,
+      "when": "dal 2024",
+      "what": "Studio presso la TU München",
+      "badge": "home"
+    },
+    "berkeley": {
+      "name": "Berkeley",
+      "lat": 37.87,
+      "lon": -122.27,
+      "when": "autunno 2026",
+      "what": "Semestre all'estero presso la UC Berkeley",
+      "badge": "now"
+    },
+    "aachen": {
+      "name": "Aquisgrana",
+      "lat": 50.78,
+      "lon": 6.08,
+      "when": "fino al 2024",
+      "what": "Cresciuto qui, scuola e Abitur",
+      "label": "none"
+    },
+    "saintbrieuc": {
+      "name": "Saint-Brieuc",
+      "lat": 48.51,
+      "lon": -2.76,
+      "when": "maggio 2019",
+      "what": "Scambio scolastico in Bretagna",
+      "label": "left"
+    },
+    "madrid": {
+      "name": "Madrid",
+      "lat": 40.42,
+      "lon": -3.7,
+      "when": "autunno 2021",
+      "what": "Quattro mesi in una scuola a Madrid",
+      "label": "left"
+    },
+    "juja": {
+      "name": "Juja",
+      "lat": -1.1,
+      "lon": 37.01,
+      "when": "2016 e 2018",
+      "what": "Scuola e lavoro sociale in Kenya"
+    },
+    "vae": {
+      "name": "Emirati Arabi Uniti",
+      "lat": 24.45,
+      "lon": 54.38,
+      "when": "dal 2013 al 2016",
+      "what": "Escursioni con università"
+    },
+    "suzhou": {
+      "name": "Suzhou",
+      "lat": 31.3,
+      "lon": 120.6,
+      "when": "2026",
+      "what": "German-Chinese Talent Exchange"
+    }
+  },
+  "entries": [
+    {
+      "id": "audition",
+      "kind": "station",
+      "pinned": true,
+      "now": true,
+      "year": 2026,
+      "date": "dal 10.2026",
+      "place": "San Francisco",
+      "loc": "berkeley",
+      "tags": [
+        "Startup",
+        "Progetto"
+      ],
+      "title": "Audition",
+      "org": "Pre-colloquio con IA per le candidature · Cofondatore",
+      "icon": "mic",
+      "why": "Un colloquio con IA prima del primo incontro. Le aziende vedono chi sa davvero fare le cose.",
+      "text": [
+        "Audition è nato durante l'hackathon SF Tech Week. Da allora lo sviluppo come startup.",
+        "L'azienda inserisce il ruolo e i requisiti. L'IA propone delle domande, che l'azienda approva. I candidati rispondono tramite un link, con un'unica registrazione video continua, e l'azienda riceve poi una valutazione."
+      ],
+      "points": [
+        "Un pre-colloquio che le aziende inviano a molti candidati, prima che una persona conduca il primo colloquio",
+        "Vengono registrati schermo, voce e persona",
+        "Candidatura ad a16z speedrun"
+      ],
+      "links": []
+    },
+    {
+      "id": "concentr8",
+      "kind": "station",
+      "pinned": true,
+      "now": true,
+      "year": 2026,
+      "date": "dal 10.2026",
+      "place": "Berkeley",
+      "loc": "berkeley",
+      "tags": [
+        "Startup",
+        "Progetto"
+      ],
+      "title": "Concentr8",
+      "org": "App per la concentrazione, specializzata per persone neurodivergenti · Backend",
+      "icon": "target",
+      "photo": {
+        "file": "concentr8.jpg",
+        "alt": "Io con il team di Concentr8",
+        "focus": "50% 40%"
+      },
+      "why": "Un'app che ti riporta al compito mentre studi, prima che te ne accorga da solo.",
+      "text": [
+        "Ho sviluppato Concentr8 questo semestre alla UC Berkeley. È nato durante Cal Hacks 13.0 a San Francisco, poi lo abbiamo unito al nostro progetto del corso Technology Entrepreneurship.",
+        "Mi occupo del backend, insieme a Jinyuan Xu e Camila Scotti Pinto."
+      ],
+      "points": [
+        "App per Mac che blocca app e siti che distraggono durante una sessione di studio",
+        "Chiamate a orari di studio fissi: mattina, mezzogiorno, sera",
+        "Chat con IA che prima fa domande e poi propone un piano con sessioni di studio",
+        "Accesso con Google, collegamento al calendario"
+      ],
+      "links": [
+        {
+          "label": "Pagina di download",
+          "url": "https://concentr8.github.io/"
+        }
+      ]
+    },
+    {
+      "id": "berkeley",
+      "kind": "station",
+      "now": true,
+      "year": 2026,
+      "date": "08.2026 – 12.2026",
+      "place": "Berkeley, USA",
+      "loc": "berkeley",
+      "tags": [
+        "Studi",
+        "Estero"
+      ],
+      "title": "Semestre all'estero",
+      "org": "University of California, Berkeley",
+      "logo": "ucberkeley.svg",
+      "photo": {
+        "file": "berkeley.jpg",
+        "alt": "Io sulla baia di San Francisco",
+        "focus": "60% 40%"
+      },
+      "why": "Un semestre in una delle migliori università per l'informatica, nel cuore dell'ecosistema delle startup di IA.",
+      "text": [
+        "Studio per un semestre a Berkeley tramite il Berkeley International Study Program. Oltre ai corsi, colgo ogni occasione per partecipare a hackathon."
+      ],
+      "points": [
+        "Intelligenza artificiale (CS 188)",
+        "Crittografia (CS 171)",
+        "Technology Entrepreneurship (ENGIN 183E)"
+      ],
+      "links": [
+        {
+          "label": "UC Berkeley",
+          "url": "https://www.berkeley.edu/"
+        },
+        {
+          "label": "Berkeley International Study Program",
+          "url": "https://bisp.berkeley.edu/"
+        }
+      ]
+    },
+    {
+      "id": "tutor",
+      "kind": "station",
+      "year": 2025,
+      "date": "08.2025 – 04.2026",
+      "place": "Monaco di Baviera",
+      "loc": "muenchen",
+      "tags": [
+        "Lavoro"
+      ],
+      "title": "Tutor di Operations Research",
+      "org": "TU München · Cattedra del Prof. Kolisch",
+      "logo": "tum.svg",
+      "why": "Selezionato perché ero tra il 5 % migliore del corso. Poi l'ho insegnato io stesso.",
+      "text": [
+        "Ho tenuto il tutorato di «Operations Research and Decision Analysis» nel semestre invernale 2025/26 e in quello estivo 2026, oltre a un'assistenza individuale. Il corso l'ho concluso io stesso con 1,3."
+      ],
+      "points": [
+        "4 ore di tutorato a settimana per circa 25 studenti",
+        "Simplex, flussi su rete, ottimizzazione intera",
+        "Modellazione con Gurobi"
+      ],
+      "links": []
+    },
+    {
+      "id": "ritzenhoefer",
+      "kind": "station",
+      "year": 2025,
+      "date": "08.2025 – 10.2025",
+      "place": "Düsseldorf",
+      "tags": [
+        "Lavoro"
+      ],
+      "title": "Fellow, consulenza strategica e di trasformazione",
+      "org": "ritzenhoefer & company",
+      "logo": "ritzenhoefer.png",
+      "photo": {
+        "file": "ritzenhoefer.jpg",
+        "alt": "Io con il laptop in stazione, in viaggio verso il cliente",
+        "focus": "60% 35%"
+      },
+      "why": "Un grande progetto di trasformazione per una grande banca tedesca, visto dall'interno.",
+      "text": [
+        "ritzenhoefer & company affianca grandi banche, assicurazioni e industria in grandi ristrutturazioni. Ero per lo più direttamente presso il cliente e supportavo il project office."
+      ],
+      "points": [
+        "Responsabile, dal punto di vista tecnico e organizzativo, del reporting del runbook, in parte automatizzato con macro di Excel",
+        "Migliorato il processo di change request, gestite oltre 70 change request",
+        "Create presentazioni fino al comitato direttivo",
+        "Sviluppato un modello di job sharing per consulenti senior"
+      ],
+      "links": [
+        {
+          "label": "ritzenhoefer & company",
+          "url": "https://www.ritzenhoefer.com/"
+        }
+      ]
+    },
+    {
+      "id": "comstruct",
+      "kind": "station",
+      "year": 2025,
+      "date": "03.2025 – 05.2025",
+      "place": "Monaco di Baviera",
+      "loc": "muenchen",
+      "tags": [
+        "Lavoro"
+      ],
+      "title": "Stage in Business Development",
+      "org": "comstruct · Software per il settore edile",
+      "logo": "comstruct.svg",
+      "photo": {
+        "file": "comstruct.jpg",
+        "alt": "Io con un collega nell'ufficio di comstruct",
+        "focus": "50% 30%"
+      },
+      "why": "74 fornitori integrati in nove settimane, in una startup in Series A.",
+      "text": [
+        "comstruct digitalizza gli acquisti di materiali delle imprese edili: bolle di consegna, fatture e ordini passano in digitale con i fornitori. Facevo parte del team Go-to-Market."
+      ],
+      "points": [
+        "74 fornitori integrati in 9 settimane per telefono e e-mail",
+        "Analizzato e migliorato il processo di integrazione dei fornitori",
+        "Rappresentato comstruct alla fiera BAUMA",
+        "Organizzato eventi di team per tutta l'azienda"
+      ],
+      "links": [
+        {
+          "label": "comstruct.com",
+          "url": "https://www.comstruct.com/"
+        }
+      ]
+    },
+    {
+      "id": "shapely",
+      "kind": "station",
+      "year": 2026,
+      "date": "03.2026 – 05.2026",
+      "place": "Aquisgrana",
+      "loc": "aachen",
+      "tags": [
+        "Fondare",
+        "Progetto"
+      ],
+      "title": "Shapely",
+      "org": "Stampa 3D su ordinazione · idea di startup personale",
+      "logo": "shapely.png",
+      "why": "Scansioni con lo smartphone e ricevi il pezzo stampato a casa. Ho imparato soprattutto quando è il momento di lasciar andare un'idea.",
+      "text": [
+        "Una web app per gli ordini e un'app per iPhone che rileva i pezzi con lo scanner LiDAR e ne ricava un file pronto per la stampa. Ho poi abbandonato il modello «app per clienti finali»."
+      ],
+      "points": [
+        "Prototipo dell'app per iPhone con ARKit, LiDAR e Supabase",
+        "Modello di business esaminato in modo critico e scartato"
+      ],
+      "links": [
+        {
+          "label": "shapely.live",
+          "url": "https://shapely.live/"
+        }
+      ]
+    },
+    {
+      "id": "tum",
+      "kind": "station",
+      "now": true,
+      "year": 2024,
+      "date": "dal 10.2024",
+      "place": "Monaco di Baviera",
+      "loc": "muenchen",
+      "tags": [
+        "Studio"
+      ],
+      "title": "B.Sc. Management & Technology",
+      "org": "TU München · Specializzazione in Computer Engineering",
+      "logo": "tum.svg",
+      "why": "Economia e informatica in un unico corso di studi, in un programma con il 9 % di tasso di ammissione.",
+      "text": [
+        "Studio dal semestre invernale 2024/25. La laurea è prevista per il 2027."
+      ],
+      "points": [
+        "Media voti 1,6",
+        "Specializzazione in Computer Engineering"
+      ],
+      "links": [
+        {
+          "label": "Corso di studi presso la TUM",
+          "url": "https://www.mgt.tum.de/de/programs/bachelor-in-management-technology/muenchen"
+        }
+      ]
+    },
+    {
+      "id": "cycos",
+      "kind": "station",
+      "year": 2024,
+      "date": "06.2024",
+      "place": "Aquisgrana",
+      "loc": "aachen",
+      "tags": [
+        "Lavoro"
+      ],
+      "title": "Stage in tecnica di rete e programmazione",
+      "org": "cycos AG · un'azienda di Eviden (Atos)",
+      "logo": "cy.svg",
+      "photo": {
+        "file": "cycos.jpg",
+        "alt": "Io davanti al logo di cycos",
+        "focus": "70% 40%"
+      },
+      "why": "Per la prima volta ho configurato da solo server e macchine virtuali e programmato in Java.",
+      "text": [
+        "Da oltre 30 anni cycos sviluppa software per le telecomunicazioni, dai sistemi analogici alla collaborazione nel cloud. Sono stato quattro settimane nel team di sviluppo."
+      ],
+      "points": [
+        "Basi di rete: indirizzi IP, routing, protocolli",
+        "Linux, server e VM con Proxmox",
+        "Java con programmazione orientata agli oggetti",
+        "Panoramica su telefonia e VoIP"
+      ],
+      "links": []
+    },
+    {
+      "id": "ffi",
+      "kind": "station",
+      "year": 2024,
+      "date": "04.2024 – 08.2026",
+      "place": "Monaco di Baviera",
+      "loc": "muenchen",
+      "tags": [
+        "Fondare",
+        "Impegno"
+      ],
+      "title": "Cofondatore e membro del direttivo",
+      "org": "Future Founders Initiative e.V. · dal 08.2026 nel comitato consultivo",
+      "logo": "ffi.png",
+      "photo": {
+        "file": "ffi.jpg",
+        "alt": "Foto di gruppo a un evento della Future Founders Initiative",
+        "focus": "50% 40%"
+      },
+      "why": "Da cinque persone a un'iniziativa in tre città. Poi ho passato la mano consapevolmente.",
+      "text": [
+        "La Future Founders Initiative riunisce studenti che vogliono fondare una startup: workshop gratuiti dalla prima idea al pitch. L'ho cofondata, ho contribuito a costruirla nel direttivo e nel 2026 sono passato al comitato consultivo."
+      ],
+      "points": [
+        "Eventi di tre giorni per oltre 110 studenti",
+        "Sedi a Monaco di Baviera, Francoforte e Stoccarda",
+        "Struttura del direttivo riorganizzata",
+        "Valori elaborati insieme: fare invece di stare a guardare, esserci l'uno per l'altro, lasciare qualcosa, niente ego"
+      ],
+      "links": []
+    },
+    {
+      "id": "abitur",
+      "kind": "station",
+      "year": 2024,
+      "date": "08.2016 – 06.2024",
+      "place": "Aachen",
+      "loc": "aachen",
+      "tags": [
+        "Scuola"
+      ],
+      "title": "Abitur",
+      "org": "Bischöfliches Pius-Gymnasium · Corsi avanzati di matematica, geografia, tedesco",
+      "logo": "pius.png",
+      "why": "Abitur con 1,2 e, parallelamente, già lezioni di matematica alla RWTH.",
+      "text": [
+        "Parallelamente alla scuola ho seguito, come studente precoce, i corsi di matematica superiore alla RWTH Aachen."
+      ],
+      "points": [
+        "Certificato MINT con lode (miglior 5 % dell'anno)",
+        "Studio anticipato alla RWTH Aachen"
+      ],
+      "links": [
+        {
+          "label": "Pius-Gymnasium",
+          "url": "https://www.pius-gymnasium.de/"
+        }
+      ]
+    },
+    {
+      "id": "aixtron",
+      "kind": "station",
+      "year": 2023,
+      "date": "06.2023 – 07.2023",
+      "place": "Herzogenrath",
+      "loc": "aachen",
+      "tags": [
+        "Lavoro"
+      ],
+      "title": "Stage in risorse umane e comunicazione",
+      "org": "AIXTRON SE",
+      "logo": "aixtron.svg",
+      "why": "Due settimane presso un produttore di impianti per semiconduttori, nelle risorse umane e nell'ufficio stampa.",
+      "text": [
+        "AIXTRON costruisce impianti con cui si realizzano semiconduttori composti per display, laser e celle solari. Ero nel reparto risorse umane e ho collaborato all'ufficio stampa."
+      ],
+      "points": [
+        "Partecipato all'organizzazione della giornata degli apprendisti",
+        "Rivista la pagina per gli studenti del sito web delle carriere",
+        "Seguito comunicati stampa"
+      ],
+      "links": [
+        {
+          "label": "AIXTRON",
+          "url": "https://www.aixtron.com/"
+        }
+      ]
+    },
+    {
+      "id": "schuelerpraktika",
+      "kind": "station",
+      "year": 2023,
+      "date": "2021 – 2023",
+      "place": "Aachen e Colonia",
+      "loc": "aachen",
+      "tags": [
+        "Lavoro"
+      ],
+      "title": "Brevi stage durante gli anni di scuola",
+      "org": "Ottica, chimica, commercio di energia",
+      "icon": "briefcase",
+      "why": "Vedere dall'interno quante più professioni possibile prima di decidere.",
+      "text": [
+        "Nell'iniziativa «Meine Position ist spitze!» di ChemCologne mi sono candidato due volte per una posizione dirigenziale e l'ho ricoperta per un giorno."
+      ],
+      "points": [
+        "Un giorno responsabile della gestione del sito nel Chemiepark Knapsack (YNCORIS, 2022)",
+        "Un giorno Maintenance Manager presso Infineum a Colonia (2023)",
+        "Due giorni di commercio di energia presso Trianel: aste day-ahead e intraday (2023)",
+        "Boys' Day presso un ottico (2021)"
+      ],
+      "links": []
+    },
+    {
+      "id": "sozialpraktikum",
+      "kind": "station",
+      "year": 2022,
+      "date": "01.2022",
+      "place": "Aachen",
+      "loc": "aachen",
+      "tags": [
+        "Impegno"
+      ],
+      "title": "Stage sociale",
+      "org": "Café Plattform della Caritas Aachen",
+      "icon": "heart",
+      "why": "Due settimane in un luogo di incontro per persone senza fissa dimora.",
+      "text": [
+        "Il Café Plattform è un luogo di incontro aperto della Caritas. Ho collaborato in cucina e nella distribuzione dei pasti e ho cercato il dialogo con gli ospiti."
+      ],
+      "points": [
+        "Riunioni del mattino, cucina e distribuzione dei pasti",
+        "Uno sguardo sul lavoro di strada e sui progetti di inserimento lavorativo"
+      ],
+      "links": []
+    },
+    {
+      "id": "madrid",
+      "kind": "station",
+      "year": 2021,
+      "date": "09.2021 – 12.2021",
+      "place": "Madrid, Spagna",
+      "loc": "madrid",
+      "tags": [
+        "Scuola",
+        "Estero"
+      ],
+      "title": "Quattro mesi di scuola a Madrid",
+      "org": "Colegio Tajamar · Bachillerato de Ciencias",
+      "logo": "tajamar.png",
+      "why": "Arrivato con poco spagnolo, alla fine seguivo le lezioni normali prendendo appunti.",
+      "text": [
+        "Frequentavo il primo anno del Bachillerato nell'indirizzo scientifico, con 37 ore settimanali e gli stessi esami della mia classe."
+      ],
+      "points": [
+        "Focus sulle scienze biologiche",
+        "Spagnolo imparato nella vita quotidiana"
+      ],
+      "links": [
+        {
+          "label": "Colegio Tajamar",
+          "url": "https://www.tajamar.es/"
+        }
+      ]
+    },
+    {
+      "id": "frankreich",
+      "kind": "station",
+      "year": 2019,
+      "date": "05.2019",
+      "place": "Saint-Brieuc, Francia",
+      "loc": "saintbrieuc",
+      "tags": [
+        "Scuola",
+        "Estero"
+      ],
+      "title": "Scambio scolastico in Bretagna",
+      "org": "Pius-Gymnasium e Saint Charles – La Providence",
+      "icon": "globe",
+      "why": "Due settimane di scambio, raccontate in un diario di viaggio in francese e tedesco.",
+      "text": [
+        "Nell'autunno 2018 il mio partner di scambio è stato da noi ad Aquisgrana, a maggio 2019 sono stato io a Saint-Brieuc."
+      ],
+      "points": [
+        "Mont-Saint-Michel, Saint-Malo e lezioni sul posto",
+        "Concluso con particolare successo (Europaschulpass)"
+      ],
+      "links": []
+    },
+    {
+      "id": "kenia2018",
+      "kind": "station",
+      "year": 2018,
+      "date": "03.2018 – 04.2018",
+      "place": "Juja, Kenya",
+      "loc": "juja",
+      "tags": [
+        "Impegno",
+        "Estero"
+      ],
+      "title": "Volontariato in un orfanotrofio",
+      "org": "Star of Hope Children’s Home",
+      "icon": "heart",
+      "why": "Tre settimane in una casa per orfani e bambini senza famiglia.",
+      "text": [
+        "Ho dato una mano dove serviva e la sera ho seguito lezioni di inglese."
+      ],
+      "points": [
+        "Ho contribuito a costruire una recinzione e a curare l'area",
+        "Ho giocato con i bambini"
+      ],
+      "links": []
+    },
+    {
+      "id": "kenia2016",
+      "kind": "station",
+      "year": 2016,
+      "date": "03.2016 – 05.2016",
+      "place": "Juja, Kenya",
+      "loc": "juja",
+      "tags": [
+        "Scuola",
+        "Estero"
+      ],
+      "title": "Un trimestre scolastico in Kenya",
+      "org": "Precious Blood Primary School",
+      "icon": "school",
+      "why": "Da bambino, un trimestre in una scuola in Kenya. Il mio primo sguardo ben oltre Aquisgrana.",
+      "text": [
+        "Ero in quarta elementare e ho vissuto tutta la quotidianità scolastica."
+      ],
+      "points": [
+        "Le mie materie preferite: matematica e canto"
+      ],
+      "links": []
+    },
+    {
+      "id": "vae",
+      "kind": "station",
+      "year": 2016,
+      "date": "2013, 2015 e 2016",
+      "place": "Dubai, Abu Dhabi, Ras al-Khaimah",
+      "loc": "vae",
+      "tags": [
+        "Estero"
+      ],
+      "title": "Escursioni di studio negli Emirati",
+      "org": "Università di Duisburg-Essen e UAE University",
+      "icon": "compass",
+      "why": "Da studente, tre viaggi con universitari per capire il cambiamento strutturale.",
+      "text": [
+        "Le escursioni facevano parte del programma DAAD «Dialogo accademico con il mondo islamico». Il tema era la trasformazione dopo carbone e petrolio, in un confronto tra la regione della Ruhr e gli Emirati."
+      ],
+      "points": [
+        "Ogni volta dieci giorni di ricerca sul campo e incontri",
+        "Insieme a studenti di entrambe le università"
+      ],
+      "links": []
+    },
+    {
+      "id": "sdw",
+      "kind": "award",
+      "year": 2024,
+      "date": "da 10.2024",
+      "tags": [
+        "Borsa di studio"
+      ],
+      "title": "Borsa di studio della Stiftung der Deutschen Wirtschaft",
+      "org": "Studienförderwerk Klaus Murmann",
+      "logo": "sdw.svg",
+      "why": "Per studenti con senso civico e spirito imprenditoriale.",
+      "text": [
+        "Lo Studienförderwerk Klaus Murmann sostiene ogni anno circa 2.000 studenti e dottorandi."
+      ],
+      "points": [],
+      "links": [
+        {
+          "label": "sdw.org",
+          "url": "https://www.sdw.org/"
+        }
+      ]
+    },
+    {
+      "id": "hrs",
+      "kind": "award",
+      "year": 2026,
+      "date": "da 10.2026",
+      "tags": [
+        "Borsa di studio"
+      ],
+      "title": "Borsa di studio della Hans Rudolf Stiftung",
+      "org": "Hans Rudolf Stiftung, Monaco di Baviera",
+      "logo": "hr-stiftung.png",
+      "why": "Una borsa di studio per studenti determinati di Monaco.",
+      "text": [],
+      "points": [],
+      "links": []
+    },
+    {
+      "id": "gcte",
+      "kind": "award",
+      "year": 2026,
+      "date": "2026",
+      "place": "Suzhou e Shanghai, Cina",
+      "loc": "suzhou",
+      "tags": [
+        "Riconoscimento",
+        "Estero"
+      ],
+      "title": "German-Chinese Talent Exchange",
+      "org": "Delegazione della TU München",
+      "icon": "exchange",
+      "photo": {
+        "file": "china.jpg",
+        "alt": "La nostra delegazione a Suzhou",
+        "focus": "50% 50%"
+      },
+      "why": "Tasso di ammissione del 5 %. Selezionato tra i migliori studenti della TUM.",
+      "text": [
+        "Con la delegazione della TUM a Suzhou e Shanghai."
+      ],
+      "points": [],
+      "links": []
+    },
+    {
+      "id": "dsa",
+      "kind": "award",
+      "year": 2023,
+      "date": "2023",
+      "tags": [
+        "Riconoscimento"
+      ],
+      "title": "Deutsche SchülerAkademie",
+      "org": "Proposto dalla scuola",
+      "logo": "dsa.svg",
+      "why": "Viene selezionato meno dell'1 % degli studenti in Germania.",
+      "text": [
+        "Direzione del corso: Henric Meinhardt e Johannes Lumma."
+      ],
+      "points": [],
+      "links": [
+        {
+          "label": "Deutsche SchülerAkademie",
+          "url": "https://www.deutsche-schuelerakademie.de/"
+        }
+      ]
+    }
+  ]
+}
