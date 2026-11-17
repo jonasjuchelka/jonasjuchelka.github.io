@@ -20,7 +20,7 @@ export function MapSection({ entries, places, t, lang, world, title, aria }: {
         </svg>
         <span className="wmap__land" aria-hidden="true" />
         {places.map((p) => (
-          <button key={p.key} type="button" className={`pin${p.badge === "now" ? " pin--now" : ""}${p.label === "left" || p.x > 75 ? " pin--left" : ""}${p.label === "none" ? " pin--quiet" : ""}`}
+          <button key={p.key} type="button" className={`pin${p.badge ? " pin--badge" : ""}${p.badge === "now" ? " pin--now" : ""}${p.label === "left" || p.x > 75 ? " pin--left" : ""}${p.label === "none" ? " pin--quiet" : ""}`}
             style={{ left: `${p.x}%`, top: `${p.y}%` }} onClick={() => openPlace(p.key)} aria-label={p.name}>
             <span className="pin__l" aria-hidden="true">{p.name}</span>
           </button>
