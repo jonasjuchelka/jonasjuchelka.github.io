@@ -1,6 +1,6 @@
 # Style Guide
 
-Einzige Referenz für Aussehen und Verhalten der Website. Wird bei jeder Design-Änderung mitgepflegt (neue Komponente, geänderte Farbe, neuer Zustand). Quellen: `lib/design-tokens/src/tokens.css`, `docs/branding.md`. Stand: 15.11.2026, Blog-Entwurf ist umgesetzt. Alle Kontrastwerte sind selbst berechnet (WCAG-Formel); eine vollständige Messung aller gerenderten Zustände steht weiter aus.
+Einzige Referenz für Aussehen und Verhalten der Website. Wird bei jeder Design-Änderung mitgepflegt (neue Komponente, geänderte Farbe, neuer Zustand). Quellen: `lib/design-tokens/src/tokens.css`, `docs/branding.md`. Stand: 17.11.2026, neue Startseite, Projekte (Lebenslauf) und Kontakt sind umgesetzt. Alle Kontrastwerte sind selbst berechnet (WCAG-Formel); eine vollständige Messung aller gerenderten Zustände steht weiter aus.
 
 ## 1. Grundsätze
 
@@ -40,7 +40,7 @@ Kontraste (berechnet): Königsblau auf Weiß 13,89; Sekundär auf Weiß 9,85; K�
 | Langtext Handy | Catamaran | 400 | 1,0625–1,125rem / 1,55 |
 | Labels, Eyebrow, Zähler, Datum | Mukta | 400 | 0,82–0,95rem, Versalien mit 0,1–0,12em |
 
-Zeilenlänge 45–75 Zeichen. Navigation: alle Einträge Gewicht 400, aktuelle Seite mit 3px Himmelblau-Unterstreichung. Light (300) nie unter 18px. Schriftdateien: `lib/design-tokens/fonts` (TTF, lokal, OFL 1.1).
+Zeilenlänge 45–75 Zeichen. Navigation: alle Einträge Gewicht 400, aktuelle Seite mit 5px Himmelblau-Strich (siehe Navigation). Light (300) nie unter 18px. Schriftdateien: `lib/design-tokens/fonts` (TTF, lokal, OFL 1.1).
 
 ## 4. Buttons (ein System)
 
@@ -83,16 +83,17 @@ Suchfeld: Pille, 44px, 2px Himmelblau-Rand, Weiß-Hintergrund. Fokus: Rand Köni
 - **Nachtmodus**: Hintergrund Königsblau, **keine Verläufe oder Ausblendungen** (Hover-Fläche durchgehend gefüllt). Markenfarben: Babyblau für Labels, Gedanke-Balken, Hover-Titel und Zähler-Badge; Himmelblau für Tag-Ränder; Pillen mit Babyblau-Tönung.
 
 ### Navigation
-- Aktuelle Seite: **3px Königsblau-Unterstrich** (dunkel Babyblau), Abstand .4em. Ein Himmelblau-Strich war auf dem Hover nicht lesbar.
-- Hover: Verlaufspille wie bei allen Buttons (kein einfarbiges Rechteck), kein Übergang.
-- Fokus: 3px Glow. Pillen-Radius 999px.
+- Einträge: Home, Projekte, Blog, Kontakt, dazu „Login“ als Pille (2px Himmelblau, aktiv = aktive Fläche + Königsblau-Rand). „Privater Bereich“ heißt jetzt überall „Login“.
+- Aktuelle Seite: **5px Himmelblau-Strich** unter dem Wort. Hover: derselbe Strich in Babyblau, **keine Fläche** (die Verlaufspille im Menü sah unruhig aus). Ein Unterstreichungsstil für die ganze Seite.
+- Fokus: 3px Glow. Kein Übergang.
+- Handy (bis 820px): oben nur Logo, Mond und Sprache; unten eine feste Leiste mit fünf Icons (Home, Projekte, Blog, Kontakt, Login), aktive Seite mit Himmelblau-Strich oben. So sieht man sofort, wie es weitergeht.
 
 ### Handy-Web (iPhone/Android)
 - **Filter-Auslöser**: ein beschrifteter Pillen-Button „Filter ⌄“ (Label + Pfeil + Zähler-Badge in einem), Optik 38px, Trefferfläche 44px. Kein separater runder Pfeil-Knopf. Eingeklappt ist vom Filter nichts sichtbar oder per Tab erreichbar. (Mac bleibt: Vorschau mit Pfeil.)
 - **Kopfzeile klebt** beim Scrollen oben (Filter · Anzahl · Lupe), mit feiner Trennlinie sobald sie klebt.
 - **Essay mit Bild**: Bild klein (4,75rem, quadratisch) rechts **neben dem Titel**; Vorschau und Tags laufen darunter über die volle Breite, kein Leerraum unter dem Bild. Ohne Bild volle Breite.
 - **Liste**: Text/Titel volle Breite, darunter eine Zeile „Datum · Neu · Typ“, Mini-Bild rechts.
-- **Weniger Text**: Datum `13.11.26`, Lesezeit `ca. 8 Min.`, Gedanken nur Gedanke + Neu, Essay-Vorschau 2 Zeilen.
+- **Weniger Text**: Datum nur als Monat (`Nov. 26`, Mac `November 2026`), Lesezeit `ca. 8 Min.`, Gedanken nur Gedanke + Neu, Essay-Vorschau 2 Zeilen.
 - **Schrift**: Fließtext und Gedanke 1rem (Catamaran 400), Meta .82rem, Pillen .72rem, H1 2,1rem; nichts unter 11px.
 - **Gedanke auf dem Handy**: 3 Zeilen; Tippen auf Text oder Pfeil öffnet eine **Leseansicht** (Bottom Sheet, `<dialog>` modal): Griff oben, Meta-Zeile, X-Knopf oben rechts, voller Text; Seite dahinter abgedunkelt und gesperrt. Schließen per X, Esc oder Tippen auf die dunkle Fläche; Fokus kehrt zum Pfeil zurück. Kein zweistufiges Aufklappen.
 - **Filter einklappen**: Am Ende des offenen Panels steht neben „Zurücksetzen“ ein Knopf „Einklappen ⌃“; er schließt das Panel, setzt den Fokus auf „Filter“ und scrollt zurück nach oben.
@@ -111,24 +112,40 @@ Suchfeld: Pille, 44px, 2px Himmelblau-Rand, Weiß-Hintergrund. Fokus: Rand Köni
 
 ## 6a. Startseite
 
-Leitgedanke: zeigen statt aufzählen. Jede Aussage bekommt ein Bild, aber nur aus Inhalten, die es auf der Seite schon gibt (Wörterbuch `home.*`, Projekt-Frontmatter). Keine neuen Fakten.
+- **Kopf**: nur Foto und Schriftzug. Das Foto ist voll breit (Mac `clamp(27rem, 82vh, 46rem)` hoch), dunkler Verlauf von links; der Schriftzug steht links auf Kopfhöhe. Handy: Bild so hoch, dass Leiste und Überschrift beim Öffnen schon sichtbar sind (`100svh − 15,5rem`), Foto steht fest, der Schriftzug sitzt unten am Bild und wandert mit der Leiste über das Foto.
+- **Leiste unter dem Bild**: Die Kopfleiste klebt oben (`sticky`). Auf der Startseite liegt das Bild absolut oben und die Leiste bekommt per `body:has(.home-hero)` Abstand. Auf allen anderen Seiten steht die Leiste ganz oben.
+- **Aussage**: `h1` auf Englisch in allen Sprachen: „Curious how the world works. / Driven to make it better.“ „better“ mit Markierung in aktiver Fläche. Darunter zwei Buttons: „Mein CV“ (Hauptaktion) und „Kontakt“. Keine Werte, kein Einleitungssatz.
+- **Karte** „Hier war ich zu Hause“: Natural Earth (gemeinfrei), Winkel-Tripel-Projektion mit Gradnetz, Arktis und Antarktis vollständig. Land als CSS-Maske (`public/media/welt.svg`), damit es im Dunkelmodus umfärbbar ist. Punkte: Babyblau mit Königsblau-Rand (dunkel: weißer Rand), aktueller Ort mit Hof. Kein Hinweistext, keine Hand, kein Pulsieren. Unter der Karte dieselben Orte als Chips; München mit Haus-Icon („Zuhause“), Berkeley mit Standort-Icon („Aktuell“). Klick öffnet das Orts-Blatt.
+- **Blog**: die drei neuesten Essays als Liste (Monat, Titel, zwei Zeilen Vorschau).
 
-- **Hero**: links Schriftzug (max. 30rem, schreibt sich einmal), darunter Eyebrow, `h1` (kleiner als früher, 1,9–3,1rem, weil der Schriftzug führt), Einleitung, zwei Buttons. Rechts das Rekursions-Diagramm auf Surface-Fläche (28px Radius, kein Rand). Unter 820px eine Spalte.
-- **Diagramm-Signal**: Ein Babyblau-Punkt läuft einmal von x durch f, dreimal durch die Schleife und zu ŷ (4,4 s, startet nach dem Schriftzug; noch einmal beim Hover über die Abbildung). Macht „ein Netz, T-mal angewendet“ sichtbar. Ruhezustand: unsichtbar. Im Dunkelmodus sind Linien und Schrift des Diagramms hell.
-- **Auf einen Blick** (ersetzt die Mono-Tabelle): `home.spec` in fester Reihenfolge Aktuell, Studium, Vertiefung, Austausch. Studium → Austausch stehen als **Route** nebeneinander, verbunden durch einen gepunkteten Himmelblau-Bogen (statisch, dekorativ); Aktuell und Vertiefung als zwei **Kacheln** darunter. Jede Angabe: rundes Icon (2,75rem, Babyblau 40 %, Linien-Icon in Überschriftenfarbe), Label in Mukta-Versalien, Wert in Catamaran 400. Semantik bleibt `dl/dt/dd`. Handy: Route untereinander, Bogen gedreht.
-- **Projektkarten** (nur Startseite; die Projektseite behält die Liste): 3 Spalten, unter 900px Bild links/Text rechts, unter 520px gestapelt. Karte = Surface, 28px Radius, oben ein **Piktogramm je Projekt** (16:9, Fläche Babyblau 28 %), darunter Rolle (Mukta-Versalien), Titel (`h3`, ganze Karte klickbar), Kurztext, Tags. Hover wie überall: Babyblau-Verlauf ohne Übergang (dunkel: einfarbig), Fokus 3px Glow um die Karte. Darunter Textlink „Alle Projekte →“.
-- **Piktogramme**: Linien 2,5px, runde Enden, nur Überschriftenfarbe, Himmelblau, Babyblau und Hintergrund. Je Projekt ein Motiv aus dem Inhalt (TRM: Block mit Rückführung; Wiki: Seite verzweigt in Seiten; FFI: wachsende Balken). Neues Projekt ohne Motiv bekommt die neutrale Form. Rein dekorativ (`aria-hidden`), `src/components/HomeArt.tsx`.
-- **Kontaktkarte**: dunkle Fläche (Königsblau, 28px Radius) mit Eyebrow, „Schreib mir.“, einem Satz und den zwei Links in Babyblau. Texte aus `contact.*`.
-- **Kontraste (berechnet)**: Sekundär auf Surface 9.13; Königsblau auf Surface 12.88, auf Piktogramm-Fläche 11.19, auf Icon-Kreis 10.57; Hellgrau auf Königsblau 8.07; Babyblau auf Königsblau 7.71. Dunkel: gedämpft auf Fläche 5.72, Überschrift auf Fläche 9.85, Kontaktkarte Babyblau auf Schwarz 10.74, Hellgrau auf Schwarz 11.25.
-- **Geprüft** (Chrome, echte Komponenten und echtes CSS): 320, 390, 768, 1280 px, hell und dunkel, kein Querscrollen; `prefers-reduced-motion` zeigt alles sofort. Offen: echter Build und Safari.
+## 6b. Logo in der Kopfleiste
+
+- Nur das Logo, ohne Namen daneben. Auf der Startseite erscheint es erst, wenn der Schriftzug aus dem Bild gescrollt ist; auf allen anderen Seiten bei jedem Aufruf.
+- **Animation**: erst wird „Jonas“ geschrieben (Tinte aus dem Schriftzug, ca. 0,8 s), dann kommt das große J von rechts herein und wird dabei in einem Zug geschrieben: linke Spitze, oben über den Bogen, Schaft, Schweif links unten. „nas“ blendet aus, „Jo“ bleibt unter dem J. Nur Masken über den Originalpfaden, keine neuen Formen. `prefers-reduced-motion`: Logo sofort fertig.
+
+## 6c. Projekte (Lebenslauf)
+
+- **Daten**: `artifacts/jonas-website/content/cv.json` (Deutsch). Übersetzungen erzeugt `scripts/translate.mjs` nach `content/<lang>/cv.json`; nur Texte werden übersetzt, IDs, Jahre, Links und Dateien bleiben gleich. Bearbeiten im privaten Bereich unter „Stationen“ (ein Commit auf main, danach baut Pages neu).
+- **Kopf**: voll breite Königsblau-Fläche ohne Fotos (dunkel Schwarz), Eyebrow, „Projekte“, ein Satz, Button „Lebenslauf als PDF“ (Variante auf Dunkel: Rand Babyblau).
+- **Angepinnt** („Daran arbeite ich gerade“): Bühne mit großem Bild (4:3, 28px Radius) und Text rechts; Reiter für die angepinnten Projekte darunter. Handy: Reiter oben, gleich breit, aktiver Reiter mit Königsblau-Rand. Ohne Foto: ruhige Babyblau-Fläche mit Logo-Feld.
+- **Zeitstrahl** („Der Weg bis hierher“): Jahr als Himmelblau-Pille, Linie in Hellgrau, je Station Logo-Feld, Meta (Zeitraum · Ort), Titel, Organisation, Tags. Themen-Chips filtern (erneuter Klick hebt auf), Anzahl rechts. Ortsfilter kommt von der Karte (`?ort=muenchen`) und steht als eigener Chip mit ×.
+- **Stipendien und Auszeichnungen**: eigene Liste unter dem Zeitstrahl, Himmelblau-Linie oben, Zeile mit Logo, Titel, Satz, Zeitraum.
+- **Logo-Felder**: gleicher weißer Rand für alle (Mac 132×92, Handy 76×60, Radius 18/14). Die Größe jedes Logos ist so gewählt, dass alle **gleich schwer** wirken: gleiche Fläche bei jedem Seitenverhältnis (Breite ∝ √Seitenverhältnis) und ausgeglichene Tintendeckung (dichte Logos wie TUM kleiner, dünne Schriftzüge größer, Faktor (0,28/Deckung)^0,45, begrenzt auf 0,8–1,2). Werte in `src/data/logos.json`; neue Logos ohne Eintrag nehmen 70 %. Logos immer als echte Datei (SVG, sonst PNG mit transparentem Hintergrund, ohne Rand und ohne weiße Schrift); lieber die Bildmarke als einen langen Schriftzug (wie auf LinkedIn).
+- **Icons** für Stationen ohne Logo: Linien-Icons im 24er Raster, 1,6px, runde Enden, Königsblau auf Surface (Mikrofon, Zielscheibe, Koffer, Herz, Globus, Schule, Kompass, Tausch, Doktorhut, Buch).
+- **Blatt** (Station oder Ort): `<dialog>`, am Mac von rechts (36rem), auf dem Handy von unten (bis 92 % Höhe, Griff oben). Oben ein Titelbild, auf dem man Jonas sieht (16:9); ohne Foto eine flache Babyblau-Fläche. Darunter klein das Logo, dann Meta, Titel, Organisation, Tags, „Das Wichtigste“ (Himmelblau-Balken links), Text, „Was ich gemacht habe“, „Weiterlesen“ (nur geprüfte Links). **Keine weiteren Bilder.** Unten immer ein klebender Zurück-Knopf. Orts-Blatt: Stationen dort und „Im Lebenslauf zeigen“.
+- **PDF**: entsteht bei jedem Build aus `cv.json` (`scripts/cv-pdf.mjs`, Markenschriften eingebettet). Ohne Telefonnummer, Adresse, Geburtsdatum und E-Mail.
+
+## 6d. Kontakt
+
+- Links „Schreib mir.“ (mit Strich), darunter die Adresse **als Bild** in einer Surface-Fläche mit „Kopieren“ und „Mail schreiben“ (setzen die Adresse erst beim Klick zusammen, damit einfache Bots sie nicht im HTML finden), dann „Termin buchen“ (Reclaim) und Chips LinkedIn und GitHub. Rechts ein Foto (4:5, 28px), auf dem Handy oben (16:10). Kein weiterer Text. Im Dunkelmodus wird das Adressbild invertiert. Das Impressum nennt die Adresse weiter als Text (Pflichtangabe).
 
 ## 7. Bewegung
 
-Erlaubt: Einblenden von Beiträgen, Aufklappen des Filters (0,45s), Aufgleiten des Suchfelds (0,3s), gleitende Segment-Markierung, Schreib-Animation des Schriftzugs und Signal im Rekursions-Diagramm (je einmal beim Laden der Startseite). Verboten: Übergänge auf Buttons. Immer `prefers-reduced-motion` respektieren.
+Erlaubt: Blatt von rechts bzw. unten (0,35s), Logo-Animation (2,2s, bei jedem Seitenaufruf), Einblenden von Beiträgen, Aufklappen des Filters (0,45s), Aufgleiten des Suchfelds (0,3s), gleitende Segment-Markierung, Schreib-Animation des Schriftzugs und Signal im Rekursions-Diagramm (je einmal beim Laden der Startseite). Verboten: Übergänge auf Buttons. Immer `prefers-reduced-motion` respektieren.
 
 ### Schriftzug (Startseite)
 
-- **Ort**: ganz oben im Hero der Startseite, linksbündig, max. 30rem breit. Die Kopfzeile behält ihr bisheriges Logo.
+- **Ort**: im Foto-Kopf der Startseite (Mac links auf Kopfhöhe, max. 30rem; Handy unten mittig). Auf dunklem Grund ist die nasse Tinte Weiß statt dunkler Markenstufe.
 - **Form**: die Originalpfade aus `@jonasjuchelka_logo.ai` (Zeichenfläche 2), unverändert. „Jonas“ in Babyblau, „JUCHELKA“ in Himmelblau (beides Token, nicht fest codiert). Die Pfade nicht bearbeiten.
 - **Animation (Füller)**: Erst „Jonas“, dann „JUCHELKA“, jeweils Buchstabe für Buchstabe und Strich für Strich in Schreibrichtung, mit Absetzen zwischen den Strichen (auch Serifen und Querstriche sind eigene Striche). Kein Aufdecken per Wischer. Etwa 5,7 s, einmal, keine Schleife.
   - **Feder**: Vor dem vollen Strich läuft eine dünne Spitze (35 % und 70 % der Strichbreite, 36 ms und 18 ms voraus), die Linie schwillt also an wie Tinte aus der Feder.

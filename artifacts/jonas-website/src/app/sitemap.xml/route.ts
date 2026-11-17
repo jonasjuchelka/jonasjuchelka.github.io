@@ -1,10 +1,9 @@
-import { getPosts, getProjects } from "@/lib/content";
+import { getPosts } from "@/lib/content";
 import { abs } from "@/lib/site";
 import { availableLocales, localePath } from "@/lib/i18n";
 export const dynamic = "force-static";
 export function GET() {
   const base = ["/", "/projects/", "/blog/", "/kontakt/",
-    ...getProjects().map((p) => `/projects/${p.slug}/`),
     ...getPosts().map((p) => `/blog/${p.slug}/`)];
   const locales = availableLocales();
   const entries = base.map((p) => {

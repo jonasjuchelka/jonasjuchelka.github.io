@@ -1,6 +1,7 @@
-import Link from "next/link";
-import { BrandLogo } from "./BrandLogo";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { LogoMark } from "./LogoMark";
+import { LogoPlayer } from "./LogoPlayer";
+import { NavLinks, TabBar, type NavItem } from "./NavLinks";
 import { ThemeToggle } from "./ThemeToggle";
 import { NAV_PATHS, translateEndpoint } from "@/lib/site";
 import { LANGUAGES, availableLocales, getDict, localePath } from "@/lib/i18n";
@@ -8,27 +9,22 @@ import { LANGUAGES, availableLocales, getDict, localePath } from "@/lib/i18n";
 export function Header({ lang }: { lang: string }) {
   const t = getDict(lang);
   const locales = availableLocales().map((code) => ({ code, name: LANGUAGES[code].name }));
+  const items: NavItem[] = NAV_PATHS.map((n) => ({ href: n.href, key: n.key, label: t.nav[n.key] }));
   return (
-    <header className="site-header">
-      <div className="wrap site-header__inner">
-        <Link href={localePath(lang, "/")} className="wordmark" aria-label={t.ui.homeAria}>
-          <BrandLogo className="wordmark__logo" />
-          <span className="wordmark__name">Jonas Juchelka</span>
-        </Link>
-        <nav aria-label={t.ui.mainNav}>
-          <ul className="nav">
-            {NAV_PATHS.map((n) => (
-              <li key={n.href}>
-                <Link href={localePath(lang, n.href)} className={n.href === "/login/" ? "nav__private" : undefined} data-testid={`link-nav-${n.href.replaceAll("/", "")}`}>
-                  {t.nav[n.key]}
-                </Link>
-              </li>
-            ))}
-            <li><ThemeToggle darkLabel={t.blog.themeDark} lightLabel={t.blog.themeLight} /></li>
-            <li><LanguageSwitcher lang={lang} locales={locales} t={t.lang} endpoint={translateEndpoint()} /></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <>
+      <header className="site-header">
+        <div className="wrap site-header__inner">
+          <LogoPlayer href={localePath(lang, "/")} label={t.ui.homeAria}><LogoMark /></LogoPlayer>
+          <nav aria-label={t.ui.mainNav} className="site-header__nav">
+            <ul className="nav">
+              <NavLinks lang={lang} items={items} />
+              <li><ThemeToggle darkLabel={t.blog.themeDark} lightLabel={t.blog.themeLight} /></li>
+              <li><LanguageSwitcher lang={lang} locales={locales} t={t.lang} endpoint={translateEndpoint()} /></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <TabBar lang={lang} items={items} label={t.ui.mainNav} />
+    </>
   );
 }

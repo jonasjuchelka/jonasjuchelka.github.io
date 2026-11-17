@@ -25,7 +25,8 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq pandoc libreoffice-writer poppler-utils
-          python3 -m pip install --quiet playwright
+          # Systemweit installieren: build_post.py läuft mit python3 -I, das Pakete im Benutzerverzeichnis nicht sieht.
+          sudo python3 -m pip install --quiet --break-system-packages playwright
           python3 -m playwright install --with-deps chromium
       - name: Umwandeln
         run: |

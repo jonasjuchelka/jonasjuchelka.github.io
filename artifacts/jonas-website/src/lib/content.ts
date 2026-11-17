@@ -103,11 +103,22 @@ export function getPost(slug: string, lang: string = DEFAULT_LOCALE) {
   return getPosts(lang).find((p) => p.slug === slug);
 }
 
+/** Blog-Datum: nur Monat und Jahr (Wunsch: keine Tage). */
 export const formatDate = (d: Date, lang: string = DEFAULT_LOCALE) => {
   const tag = (LANGUAGES[lang]?.og ?? "de_DE").replace("_", "-");
   try {
-    return new Intl.DateTimeFormat(tag, { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(d);
+    return new Intl.DateTimeFormat(tag, { month: "long", year: "numeric", timeZone: "UTC" }).format(d);
   } catch {
-    return new Intl.DateTimeFormat("de-DE", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(d);
+    return new Intl.DateTimeFormat("de-DE", { month: "long", year: "numeric", timeZone: "UTC" }).format(d);
+  }
+};
+
+/** Kurzform für das Handy, ebenfalls ohne Tag, z. B. „Nov. 26“. */
+export const formatMonthShort = (d: Date, lang: string = DEFAULT_LOCALE) => {
+  const tag = (LANGUAGES[lang]?.og ?? "de_DE").replace("_", "-");
+  try {
+    return new Intl.DateTimeFormat(tag, { month: "short", year: "2-digit", timeZone: "UTC" }).format(d);
+  } catch {
+    return new Intl.DateTimeFormat("de-DE", { month: "short", year: "2-digit", timeZone: "UTC" }).format(d);
   }
 };

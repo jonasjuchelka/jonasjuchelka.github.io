@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { BrandLogo } from "./BrandLogo";
-import { EMAIL, GITHUB } from "@/lib/site";
+import { GITHUB, LINKEDIN } from "@/lib/site";
 import { getDict, localePath } from "@/lib/i18n";
 
 export function Footer({ lang }: { lang: string }) {
@@ -14,7 +14,8 @@ export function Footer({ lang }: { lang: string }) {
           <p className="site-footer__line">{t.footer.line}</p>
         </div>
         <ul className="site-footer__links" aria-label={t.ui.contactAria}>
-          <li><a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
+          <li><Link href={localePath(lang, "/kontakt/")}>{t.footer.contact}</Link></li>
+          <li><a href={LINKEDIN} rel="me noopener noreferrer">LinkedIn</a></li>
           <li><a href={GITHUB} rel="me noopener noreferrer">GitHub</a></li>
           <li><Link href="/feed.xml" prefetch={false}>{t.footer.rss}</Link></li>
         </ul>
