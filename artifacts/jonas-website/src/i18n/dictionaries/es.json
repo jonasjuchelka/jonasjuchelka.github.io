@@ -1,6 +1,6 @@
 {
   "meta": {
-    "description": "Jonas Juchelka estudia Management & Technology en la TU München. Enfoque en deep learning: razonamiento recursivo con redes pequeñas, modelos eficientes, proyectos y reflexiones."
+    "description": "Jonas Juchelka estudia Management & Technology en la TU München y emprende. Proyectos, currículum y reflexiones."
   },
   "ui": {
     "skip": "Saltar al contenido",
@@ -14,10 +14,11 @@
     "badgeWarning": "Pendiente"
   },
   "nav": {
+    "home": "Inicio",
     "projects": "Proyectos",
     "blog": "Blog",
     "contact": "Contacto",
-    "private": "Área privada"
+    "private": "Acceso"
   },
   "lang": {
     "label": "Idioma",
@@ -25,75 +26,70 @@
     "choose": "Elegir idioma",
     "translating": "Traduciendo …",
     "showOriginal": "Mostrar original",
-    "notice": "Traducido automáticamente con Claude (Anthropic). Para ello, el texto de esta página se envió a un servicio de traducción. La versión alemana es la que prevalece.",
-    "error": "La traducción no está disponible en este momento. Inténtalo de nuevo más tarde."
+    "notice": "Traducido automáticamente con Claude (Anthropic). Para ello, el texto de esta página se envió a un servicio de traducción. Prevalece la versión en alemán.",
+    "error": "La traducción no es posible en este momento. Inténtalo de nuevo más tarde."
   },
   "footer": {
-    "line": "Deep learning · Management & Technology, TU München.",
+    "line": "Management & Technology, TU München · UC Berkeley.",
     "base": "Sitio web estático. Sin seguimiento, sin cookies.",
     "rss": "Feed RSS",
     "imprint": "Aviso legal",
-    "privacy": "Privacidad"
+    "privacy": "Protección de datos",
+    "contact": "Contacto"
   },
   "home": {
-    "eyebrow": "Múnich / Berkeley",
-    "title": "Redes pequeñas. Pensamiento recursivo.",
-    "intro": "Deep learning con pocos parámetros: reconstruyo arquitecturas que aplican varias veces la misma red.",
-    "ctaProject": "Proyecto TRM",
-    "ctaMail": "Correo electrónico",
-    "spec": [
-      {
-        "k": "Actualmente",
-        "v": "Reconstrucción de TRM en Keras"
-      },
-      {
-        "k": "Estudios",
-        "v": "Management & Technology, TU München"
-      },
-      {
-        "k": "Especialización",
-        "v": "Computer Engineering"
-      },
-      {
-        "k": "Intercambio",
-        "v": "UC Berkeley, 2026/27"
-      }
-    ],
-    "figcaption": "Una red, aplicada T veces.",
-    "glanceTitle": "De un vistazo",
-    "workEyebrow": "Trabajo",
-    "projectsTitle": "Proyectos",
-    "allProjects": "Todos los proyectos",
-    "notesEyebrow": "Notas",
+    "photoAlt": "Jonas Juchelka sonríe frente a una pared clara con sombras de hojas",
+    "headline1": "Curious how the world works.",
+    "headline2": "Driven to make it",
+    "headline2Mark": "better",
+    "headline2End": ".",
+    "ctaCv": "Mi CV",
+    "ctaContact": "Contacto",
+    "mapTitle": "Aquí estuve en casa",
+    "mapAria": "Mapa del mundo con los lugares donde he vivido",
     "blogTitle": "Blog",
-    "contactTitle": "Contacto"
-  },
-  "diagram": {
-    "title": "Recursión con pesos compartidos",
-    "desc": "Una entrada x entra en una red f con pesos theta. La salida h se realimenta T veces en la misma red, y después sigue la salida.",
-    "shared": "θ compartido",
-    "layers": "3 capas → 1 capa ×T"
+    "allPosts": "Todas las entradas"
   },
   "projects": {
-    "metaTitle": "Proyectos",
-    "metaDesc": "Proyectos de Jonas Juchelka con contexto breve y verificable.",
-    "eyebrow": "Resumen",
+    "metaTitle": "Proyectos y currículum",
+    "metaDesc": "En qué trabaja Jonas Juchelka ahora y el camino hasta aquí: estudios, trabajo, emprendimiento, estancias en el extranjero, becas.",
+    "eyebrow": "Proyectos y currículum",
     "title": "Proyectos",
-    "lede": "Pocos proyectos, y solo con datos que se pueden respaldar. Donde los resultados no están autorizados, se omiten aquí deliberadamente.",
-    "detailEyebrow": "Proyecto",
-    "asideAria": "Datos del proyecto",
-    "role": "Rol",
-    "context": "Marco",
-    "topics": "Temas",
-    "back": "Volver a todos los proyectos"
+    "lede": "Arriba está lo que estoy construyendo ahora. Debajo, el camino hasta aquí.",
+    "pdf": "Currículum en PDF",
+    "pinned": "Fijado",
+    "pinnedTitle": "En esto trabajo ahora",
+    "pinnedNote": "Se agradece el feedback.",
+    "open": "Ver",
+    "feedback": "Dar feedback",
+    "pathTitle": "El camino hasta aquí",
+    "count": "{n} etapas",
+    "countOne": "1 etapa",
+    "filterAria": "Filtrar por tema",
+    "placeFilter": "Lugar: {name}",
+    "clearPlace": "Quitar filtro de lugar",
+    "awardsTitle": "Becas y distinciones",
+    "why": "Lo esencial",
+    "did": "Qué hice",
+    "more": "Seguir leyendo",
+    "back": "Volver",
+    "backTo": "Volver a {name}",
+    "close": "Cerrar",
+    "station": "Etapa",
+    "place": "Lugar",
+    "showInCv": "Mostrar en el currículum",
+    "noStations": "Aún no hay ninguna etapa registrada aquí.",
+    "now": "Actual",
+    "home": "Hogar",
+    "tabsAria": "Proyectos actuales"
   },
   "blog": {
     "metaTitle": "Blog",
     "metaDesc": "Artículos y notas de Jonas Juchelka.",
     "eyebrow": "Notas",
     "title": "Blog",
-    "emptyTitle": "Aún no hay nada publicado.",
-    "emptyBefore": "Aquí aparecerán textos de los estudios y la práctica en cuanto estén terminados, no antes. Quien no quiera perderse nada puede suscribirse al",
+    "emptyTitle": "Todavía no hay nada publicado.",
+    "emptyBefore": "Aquí aparecerán textos de los estudios y de la práctica cuando estén terminados, no antes. Quien no quiera perderse nada puede suscribirse al",
     "emptyLink": "feed RSS",
     "emptyAfter": ".",
     "articleEyebrow": "Artículo",
@@ -107,10 +103,10 @@
     "tagsLabel": "Etiquetas",
     "year": "Año",
     "view": "Vista",
-    "all": "Todos",
+    "all": "Todas",
     "essays": "Ensayos",
-    "thoughts": "Reflexiones",
-    "thought": "Reflexión",
+    "thoughts": "Pensamientos",
+    "thought": "Pensamiento",
     "isNew": "Nuevo",
     "preview": "Vista previa",
     "list": "Lista",
@@ -123,7 +119,7 @@
     "countMany": "entradas",
     "activeFilters": "activos",
     "readShort": "aprox. {n} min",
-    "showFull": "Mostrar la reflexión completa",
+    "showFull": "Mostrar el pensamiento completo",
     "close": "Cerrar",
     "back": "Blog",
     "pdf": "PDF",
@@ -133,12 +129,16 @@
   },
   "contact": {
     "metaTitle": "Contacto",
-    "metaDesc": "Contacto con Jonas Juchelka por correo electrónico o a través de GitHub.",
-    "eyebrow": "Contacto",
+    "metaDesc": "Contacto con Jonas Juchelka por correo electrónico, cita, LinkedIn o GitHub.",
     "title": "Escríbeme.",
-    "lede": "Sin formulario, sin rodeos. Un correo electrónico me llega directamente.",
-    "email": "Correo electrónico",
-    "github": "GitHub"
+    "mailAlt": "Mi dirección de correo electrónico, como imagen para que los bots no puedan leerla fácilmente",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "copyFail": "Cópiala a mano",
+    "write": "Escribir un correo",
+    "book": "Reservar una cita",
+    "photoAlt": "Jonas Juchelka",
+    "backHome": "A la página de inicio"
   },
   "login": {
     "metaTitle": "Área privada",
@@ -148,32 +148,32 @@
     "lede": "El área privada es una aplicación independiente con su propia dirección. Esta página pública no inicia sesión a nadie y no guarda nada.",
     "continue": "Continuar al inicio de sesión",
     "button": "Iniciar sesión con passkey",
-    "notReadyTitle": "Aún no configurada",
-    "notReady": "La aplicación privada todavía no tiene una dirección de producción definitiva. Cuando la tenga, esta página llevará directamente allí.",
+    "notReadyTitle": "Aún no configurado",
+    "notReady": "La aplicación privada todavía no tiene una dirección de producción definitiva. En cuanto la tenga, esta página llevará directamente allí.",
     "fact1Bold": "Solo con passkey.",
     "fact1": "Sin contraseña, sin inicio de sesión social, sin enlace por correo electrónico.",
     "fact2Bold": "Solo con invitación.",
     "fact2": "No existe registro público.",
-    "fact3Bold": "Separada.",
+    "fact3Bold": "Separado.",
     "fact3": "El inicio de sesión y los datos se encuentran exclusivamente en la aplicación privada, no en GitHub Pages."
   },
   "legal": {
     "eyebrow": "Información legal",
-    "authoritative": "Jurídicamente prevalece la versión alemana de esta página.",
+    "authoritative": "Legalmente prevalece la versión en alemán de esta página.",
     "imprint": {
       "metaTitle": "Aviso legal",
       "metaDesc": "Identificación del proveedor, actualmente incompleta.",
       "noticeTitle": "Incompleto: punto de producción pendiente",
-      "notice": "Todavía no se dispone de una dirección postal válida para notificaciones, y no se inventa aquí. Por eso, este aviso legal aún no está completo.",
+      "notice": "Todavía no se dispone de una dirección postal válida para notificaciones judiciales y no se inventa aquí. Por eso este aviso legal aún no está completo.",
       "responsible": "Responsable",
       "contact": "Contacto",
       "email": "Correo electrónico:"
     },
     "privacy": {
-      "metaTitle": "Privacidad",
+      "metaTitle": "Protección de datos",
       "metaDesc": "Qué datos se generan al visitar este sitio web.",
-      "noticeTitle": "Borrador: revisión jurídica pendiente",
-      "notice": "Estos datos describen la tecnología realmente implantada. Aún falta una declaración completa y revisada jurídicamente, que incluya la dirección del responsable.",
+      "noticeTitle": "Borrador: revisión legal pendiente",
+      "notice": "Estas indicaciones describen la tecnología realmente implantada. Aún falta una declaración completa y revisada legalmente, incluida la dirección del responsable.",
       "hostingTitle": "Alojamiento",
       "hosting": "El sitio web se sirve como archivos estáticos a través de GitHub Pages. Al acceder, GitHub procesa los datos de conexión técnicamente necesarios, como la dirección IP. No tengo influencia sobre este tratamiento más allá de la configuración.",
       "notTitle": "Lo que este sitio web no hace",
@@ -182,17 +182,17 @@
       "not3": "Sin formulario de contacto. Un correo electrónico lo procesan su proveedor de correo y el mío.",
       "translationTitle": "Traducción",
       "translation1": "Los idiomas del selector de idioma están traducidos de antemano y se sirven como archivos estáticos. No se envían datos a terceros.",
-      "translation2": "Solo si usted activa una traducción en vivo en «Más idiomas», el texto visible de la página actual se envía a un servicio de traducción, que lo traduce con la API de Claude de Anthropic. Además, el operador del servicio procesa los datos de conexión técnicamente necesarios, como la dirección IP. No se establecen cookies ni se almacenan datos de forma permanente. Sin su activación, no se realiza ninguna consulta.",
+      "translation2": "Solo si usted activa una traducción en vivo en «Más idiomas», el texto visible de la página actual se envía a un servicio de traducción que lo traduce con la API de Claude de Anthropic. Además, el operador del servicio procesa los datos de conexión técnicamente necesarios, como la dirección IP. No se instalan cookies ni se almacenan datos de forma permanente. Sin que usted lo active, no se realiza ninguna consulta.",
       "themeTitle": "Diseño claro y oscuro",
-      "theme": "Si activa el diseño oscuro, su navegador recuerda esta elección en el almacenamiento local (localStorage) para que se aplique en la próxima visita. La entrada permanece en su dispositivo, no se envía a ningún servidor y se puede eliminar desde la configuración del navegador.",
+      "theme": "Si activa el diseño oscuro, su navegador recuerda esta elección en el almacenamiento local (localStorage) para que se aplique en la próxima visita. La entrada permanece en su dispositivo, no se envía a ningún servidor y puede eliminarse desde los ajustes del navegador.",
       "privateTitle": "Área privada",
-      "private": "El área protegida con passkey es una aplicación independiente con su propia política de privacidad. Este sitio web público no transmite datos a ella."
+      "private": "El área protegida con passkey es una aplicación independiente con su propia política de privacidad. Este sitio web público no transfiere datos allí."
     }
   },
   "notFound": {
     "title": "Página no encontrada",
     "heading": "Esta página no existe aquí.",
-    "lede": "Quizá se haya movido, quizá la dirección nunca fue correcta. Desde aquí puedes continuar:",
+    "lede": "Quizá se movió, quizá la dirección nunca fue correcta. Desde aquí puedes continuar:",
     "home": "Inicio"
   }
 }

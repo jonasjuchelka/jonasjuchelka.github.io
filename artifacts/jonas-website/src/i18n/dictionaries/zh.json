@@ -1,6 +1,6 @@
 {
   "meta": {
-    "description": "Jonas Juchelka 就读于 TU München 管理与技术专业（Management & Technology），专注深度学习：小型网络的递归推理、高效模型、项目与思考。"
+    "description": "Jonas Juchelka 在 TU München 学习 Management & Technology，并投身创业。项目、简历与思考。"
   },
   "ui": {
     "skip": "跳到正文",
@@ -11,89 +11,85 @@
     "crumbsAria": "面包屑导航",
     "readingTime": "阅读约 {n} 分钟",
     "badgeInfo": "提示",
-    "badgeWarning": "待完善"
+    "badgeWarning": "待完成"
   },
   "nav": {
+    "home": "首页",
     "projects": "项目",
     "blog": "博客",
     "contact": "联系",
-    "private": "私人区域"
+    "private": "登录"
   },
   "lang": {
     "label": "语言",
     "more": "更多语言（实时翻译）",
     "choose": "选择语言",
-    "translating": "翻译中……",
+    "translating": "正在翻译…",
     "showOriginal": "显示原文",
-    "notice": "由 Claude（Anthropic）机器翻译。为此，本页文本已发送至翻译服务。以德语版本为准。",
+    "notice": "由 Claude (Anthropic) 机器翻译。为此，本页文本已发送至翻译服务。以德语版本为准。",
     "error": "目前无法翻译，请稍后再试。"
   },
   "footer": {
-    "line": "深度学习 · TU München 管理与技术专业（Management & Technology）。",
+    "line": "Management & Technology，TU München · UC Berkeley。",
     "base": "静态网站。无追踪，无 Cookie。",
     "rss": "RSS 订阅",
     "imprint": "法律声明",
-    "privacy": "数据保护"
+    "privacy": "隐私政策",
+    "contact": "联系"
   },
   "home": {
-    "eyebrow": "慕尼黑 / 伯克利",
-    "title": "小型网络，递归思考。",
-    "intro": "用少量参数做深度学习：我复现那些多次重复使用同一个网络的架构。",
-    "ctaProject": "TRM 项目",
-    "ctaMail": "电子邮件",
-    "spec": [
-      {
-        "k": "当前",
-        "v": "用 Keras 复现 TRM"
-      },
-      {
-        "k": "学业",
-        "v": "Management & Technology，TU München"
-      },
-      {
-        "k": "方向",
-        "v": "计算机工程"
-      },
-      {
-        "k": "交换",
-        "v": "UC Berkeley，2026/27"
-      }
-    ],
-    "figcaption": "同一个网络，应用 T 次。",
-    "glanceTitle": "概览",
-    "workEyebrow": "工作",
-    "projectsTitle": "项目",
-    "allProjects": "全部项目",
-    "notesEyebrow": "笔记",
+    "photoAlt": "Jonas Juchelka 站在浅色墙前微笑，墙上有树叶的影子",
+    "headline1": "Curious how the world works.",
+    "headline2": "Driven to make it",
+    "headline2Mark": "better",
+    "headline2End": ".",
+    "ctaCv": "我的简历",
+    "ctaContact": "联系",
+    "mapTitle": "我曾生活过的地方",
+    "mapAria": "标有我曾居住地点的世界地图",
     "blogTitle": "博客",
-    "contactTitle": "联系"
-  },
-  "diagram": {
-    "title": "共享权重的递归",
-    "desc": "输入 x 进入带有权重 theta 的网络 f。输出 h 被 T 次送回同一个网络，之后得到最终输出。",
-    "shared": "共享 θ",
-    "layers": "3 层 → 1 层 ×T"
+    "allPosts": "全部文章"
   },
   "projects": {
-    "metaTitle": "项目",
-    "metaDesc": "Jonas Juchelka 的项目，附简短且有据可查的背景说明。",
-    "eyebrow": "概览",
+    "metaTitle": "项目与简历",
+    "metaDesc": "Jonas Juchelka 目前在做什么，以及一路走来的经历：学业、工作、创业、海外经历、奖学金。",
+    "eyebrow": "项目与简历",
     "title": "项目",
-    "lede": "项目不多，只列出可以证实的信息。尚未获准公开的结果，这里有意不予呈现。",
-    "detailEyebrow": "项目",
-    "asideAria": "项目信息",
-    "role": "角色",
-    "context": "背景",
-    "topics": "主题",
-    "back": "返回全部项目"
+    "lede": "上方是我目前正在做的事，下方是一路走来的经历。",
+    "pdf": "简历 PDF",
+    "pinned": "置顶",
+    "pinnedTitle": "我目前在做的事",
+    "pinnedNote": "欢迎反馈。",
+    "open": "查看",
+    "feedback": "提供反馈",
+    "pathTitle": "一路走来",
+    "count": "{n} 个阶段",
+    "countOne": "1 个阶段",
+    "filterAria": "按主题筛选",
+    "placeFilter": "地点：{name}",
+    "clearPlace": "取消地点筛选",
+    "awardsTitle": "奖学金与奖项",
+    "why": "要点",
+    "did": "我做了什么",
+    "more": "继续阅读",
+    "back": "返回",
+    "backTo": "返回 {name}",
+    "close": "关闭",
+    "station": "阶段",
+    "place": "地点",
+    "showInCv": "在简历中查看",
+    "noStations": "这里还没有录入任何阶段。",
+    "now": "当前",
+    "home": "家",
+    "tabsAria": "当前项目"
   },
   "blog": {
     "metaTitle": "博客",
     "metaDesc": "Jonas Juchelka 的文章与笔记。",
     "eyebrow": "笔记",
     "title": "博客",
-    "emptyTitle": "暂无已发布内容。",
-    "emptyBefore": "来自学习与实践的文字，完成后才会在这里发布，不会提前。若不想错过，可订阅",
+    "emptyTitle": "尚未发布任何内容。",
+    "emptyBefore": "来自学习与实践的文章会在完成后发布于此，不会提前。如不想错过，请订阅",
     "emptyLink": "RSS 订阅",
     "emptyAfter": "。",
     "articleEyebrow": "文章",
@@ -108,9 +104,9 @@
     "year": "年份",
     "view": "视图",
     "all": "全部",
-    "essays": "长文",
-    "thoughts": "随想",
-    "thought": "随想",
+    "essays": "随笔",
+    "thoughts": "想法",
+    "thought": "想法",
     "isNew": "新",
     "preview": "预览",
     "list": "列表",
@@ -123,7 +119,7 @@
     "countMany": "篇文章",
     "activeFilters": "已启用",
     "readShort": "约 {n} 分钟",
-    "showFull": "显示完整随想",
+    "showFull": "显示完整想法",
     "close": "关闭",
     "back": "博客",
     "pdf": "PDF",
@@ -133,66 +129,70 @@
   },
   "contact": {
     "metaTitle": "联系",
-    "metaDesc": "通过电子邮件或 GitHub 联系 Jonas Juchelka。",
-    "eyebrow": "联系",
+    "metaDesc": "通过电子邮件、预约、LinkedIn 或 GitHub 联系 Jonas Juchelka。",
     "title": "给我写信。",
-    "lede": "没有表单，不绕弯路。一封电子邮件就能直接联系到我。",
-    "email": "电子邮件",
-    "github": "GitHub"
+    "mailAlt": "我的电子邮件地址，以图片形式显示，以免被机器人直接读取",
+    "copy": "复制",
+    "copied": "已复制",
+    "copyFail": "请手动输入",
+    "write": "发送邮件",
+    "book": "预约时间",
+    "photoAlt": "Jonas Juchelka",
+    "backHome": "返回首页"
   },
   "login": {
     "metaTitle": "私人区域",
-    "metaDesc": "进入受 Passkey 保护的私人区域。",
+    "metaDesc": "进入由 Passkey 保护的私人区域。",
     "eyebrow": "访问",
     "title": "私人区域",
-    "lede": "私人区域是一个独立的应用，位于单独的地址。这个公开页面不会让任何人登录，也不会保存任何内容。",
+    "lede": "私人区域是一个独立的应用，使用独立的地址。这个公开页面不会让任何人登录，也不会保存任何内容。",
     "continue": "继续登录",
     "button": "使用 Passkey 登录",
     "notReadyTitle": "尚未设置",
-    "notReady": "私人应用目前还没有固定的正式地址。地址确定后，此页面将直接跳转过去。",
+    "notReady": "私人应用尚无固定的正式地址。一旦确定，本页将直接跳转到该地址。",
     "fact1Bold": "仅限 Passkey。",
     "fact1": "没有密码，没有社交账号登录，也没有邮件链接。",
     "fact2Bold": "仅限受邀。",
     "fact2": "不提供公开注册。",
     "fact3Bold": "相互分离。",
-    "fact3": "登录和数据只存放在私人应用上，不在 GitHub Pages 上。"
+    "fact3": "登录和数据仅存放在私人应用上，而不在 GitHub Pages 上。"
   },
   "legal": {
     "eyebrow": "法律信息",
-    "authoritative": "具有法律效力的是本页的德语版本。",
+    "authoritative": "本页的法律效力以德语版本为准。",
     "imprint": {
       "metaTitle": "法律声明",
-      "metaDesc": "服务提供者标识，目前尚不完整。",
-      "noticeTitle": "不完整：生产环境待办事项",
-      "notice": "目前尚无可供送达的地址，此处也不会虚构。因此本法律声明尚不完整。",
+      "metaDesc": "服务提供者信息，目前尚不完整。",
+      "noticeTitle": "不完整：待完成事项",
+      "notice": "目前尚无可用于送达的地址，此处也不会虚构。因此本法律声明尚不完整。",
       "responsible": "责任人",
       "contact": "联系方式",
       "email": "电子邮件："
     },
     "privacy": {
-      "metaTitle": "数据保护",
+      "metaTitle": "隐私政策",
       "metaDesc": "访问本网站时会产生哪些数据。",
-      "noticeTitle": "草稿：法律审查待定",
-      "notice": "以下说明描述的是实际部署的技术。包含责任人地址、完整且经过法律审查的声明尚未完成。",
+      "noticeTitle": "草稿：尚待法律审核",
+      "notice": "以下内容描述的是实际部署的技术。包含责任人地址、经过法律审核的完整声明尚未完成。",
       "hostingTitle": "托管",
-      "hosting": "本网站以静态文件形式通过 GitHub Pages 提供。访问时，GitHub 会处理技术上必需的连接数据，例如 IP 地址。除配置之外，我对这一处理过程没有影响。",
-      "notTitle": "本网站不会做的事",
+      "hosting": "本网站以静态文件形式通过 GitHub Pages 提供。访问时，GitHub 会处理技术上必需的连接数据，例如 IP 地址。除配置之外，我对这一处理无法施加影响。",
+      "notTitle": "本网站不做的事",
       "not1": "没有 Cookie，没有追踪，没有分析或营销服务。",
-      "not2": "不加载来自第三方的外部字体或脚本。",
+      "not2": "不从外部加载第三方的字体或脚本。",
       "not3": "没有联系表单。电子邮件由您和我各自的邮件服务商处理。",
       "translationTitle": "翻译",
-      "translation1": "语言选择中的各语言已预先翻译，并以静态文件形式提供。在此过程中不会向第三方发送任何数据。",
-      "translation2": "只有当您在“更多语言”下主动触发实时翻译时，当前页面的可见文本才会被发送至翻译服务，由其通过 Anthropic 的 Claude API 进行翻译。此外，该服务的运营方会处理技术上必需的连接数据，例如 IP 地址。不会设置 Cookie，也不会永久保存数据。未经您触发，不会发起任何请求。",
+      "translation1": "语言选项中的各语言均已预先翻译，并以静态文件形式提供。过程中不会向第三方发送任何数据。",
+      "translation2": "只有当您在“更多语言”下主动触发实时翻译时，当前页面的可见文本才会被发送至翻译服务，由其通过 Anthropic 的 Claude API 进行翻译。此外，该服务的运营方会处理技术上必需的连接数据，例如 IP 地址。不会设置 Cookie，也不会永久保存数据。未经您触发，不会进行任何请求。",
       "themeTitle": "浅色与深色主题",
-      "theme": "如果您启用深色主题，浏览器会将这一选择保存在本地存储（localStorage）中，以便下次访问时生效。该条目只保留在您的设备上，不会发送到服务器，并且可以通过浏览器设置删除。",
+      "theme": "如果您启用深色主题，您的浏览器会将这一选择保存在本地存储（localStorage）中，以便下次访问时沿用。该条目保留在您的设备上，不会发送到服务器，并可通过浏览器设置删除。",
       "privateTitle": "私人区域",
-      "private": "受 Passkey 保护的区域是一个独立的应用，有自己的隐私声明。本公开网站不会向其传输任何数据。"
+      "private": "由 Passkey 保护的区域是一个独立的应用，拥有自己的隐私声明。这个公开网站不会向其传输任何数据。"
     }
   },
   "notFound": {
     "title": "页面未找到",
     "heading": "这里没有这个页面。",
-    "lede": "也许它已被移动，也许地址一开始就不对。可以从这里继续：",
+    "lede": "也许它被移动了，也许地址一开始就不对。可以从这里继续：",
     "home": "首页"
   }
 }
