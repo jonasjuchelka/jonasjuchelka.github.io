@@ -1,0 +1,29 @@
+name: Vorschau-Screenshots (temporär)
+on:
+  push:
+    branches: [vorschau-screens]
+permissions:
+  contents: write
+jobs:
+  shots:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @workspace/jonas-website build
+        env:
+          NEXT_PUBLIC_PRIVATE_APP_ORIGIN: https://jonas-private.vercel.app
+      - run: mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i playwright-core@1 >/dev/null
+      - run: |
+          cd artifacts/jonas-website/out && (python3 -m http.server 4000 >/dev/null 2>&1 &) && sleep 2
+          cd $GITHUB_WORKSPACE && NODE_PATH=/tmp/pw/node_modules node .github/shots.mjs /tmp/shots
+      - run: |
+          cd /tmp/shots && git init -q && git checkout -q -b vorschau-bilder && git add . && git -c user.name=bot -c user.email=bot@example.com commit -qm shots
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" vorschau-bilder
