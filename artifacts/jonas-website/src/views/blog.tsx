@@ -5,14 +5,13 @@ import { notFound } from "next/navigation";
 import { Markdown } from "@/components/Markdown";
 import { PageHead } from "@/components/PageHead";
 import { BlogIndex, type BlogItem, type BlogLabels } from "@/components/BlogIndex";
-import { getGedanken, getPost, getPosts, formatDate } from "@/lib/content";
+import { getGedanken, getPost, getPosts, formatDate, formatMonthShort } from "@/lib/content";
 import { pageMeta } from "@/lib/meta";
 import { fill, getDict, localePath } from "@/lib/i18n";
 
 export const blogMeta = (lang: string) => pageMeta(lang, getDict(lang).blog.metaTitle, getDict(lang).blog.metaDesc, "/blog/");
 
 /** TT.MM.JJ, für die schmale Ansicht. */
-const shortDate = (d: Date) => `${String(d.getUTCDate()).padStart(2, "0")}.${String(d.getUTCMonth() + 1).padStart(2, "0")}.${String(d.getUTCFullYear()).slice(2)}`;
 const isoDay = (d: Date) => d.toISOString().slice(0, 10);
 
 export function BlogView({ lang }: { lang: string }) {
@@ -39,10 +38,10 @@ export function BlogView({ lang }: { lang: string }) {
   const items: BlogItem[] = [
     ...posts.map((p): BlogItem => ({
       kind: "e", id: p.slug, href: localePath(lang, `/blog/${p.slug}/`), title: p.title, text: p.summary,
-      date: isoDay(p.date), long: formatDate(p.date, lang), short: shortDate(p.date), topic: p.topic, tags: p.tags, minutes: p.readingMinutes, image: p.image,
+      date: isoDay(p.date), long: formatDate(p.date, lang), short: formatMonthShort(p.date, lang), topic: p.topic, tags: p.tags, minutes: p.readingMinutes, image: p.image,
     })),
     ...gedanken.map((g): BlogItem => ({
-      kind: "g", id: `g-${g.slug}`, text: g.text, date: isoDay(g.date), long: formatDate(g.date, lang), short: shortDate(g.date), topic: g.topic, tags: [],
+      kind: "g", id: `g-${g.slug}`, text: g.text, date: isoDay(g.date), long: formatDate(g.date, lang), short: formatMonthShort(g.date, lang), topic: g.topic, tags: [],
     })),
   ];
   const labels: BlogLabels = { ...t, readLong: d.ui.readingTime, readShort: t.readShort };

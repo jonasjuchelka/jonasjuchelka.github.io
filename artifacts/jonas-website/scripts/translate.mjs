@@ -2,6 +2,7 @@
 // Pre-translates the site into fixed languages with the Claude API and writes static files:
 //   src/i18n/dictionaries/<lang>.json   (UI texts, translated from de.json)
 //   content/<lang>/{projects,blog}/*.md (content files, translated from content/{projects,blog})
+//   content/<lang>/cv.json              (CV texts, translated from content/cv.json; ids, years, links and files stay identical)
 // Usage: ANTHROPIC_API_KEY=... node scripts/translate.mjs [--langs es,fr] [--force] [--dry]
 // Unchanged sources are skipped via src/i18n/.translation-cache.json (hashes only, no text).
 import fs from "node:fs";
@@ -38,7 +39,7 @@ const saveCache = () => fs.writeFileSync(CACHE_FILE, JSON.stringify(cache, null,
 const SYSTEM = (language) => `You are a professional translator for a personal academic website (deep learning student, TU Munich / UC Berkeley). Translate the German source into ${language}.
 Rules:
 - Natural, concise, neutral tone; keep the meaning exactly, add or remove nothing.
-- Never translate or alter: proper names (Jonas Juchelka, Jacob Rossel, Cloyne Court, Future Founders Initiative, TU Munich/TU München, UC Berkeley, Keras, Notion, TRM), the paper title "Less is More: Recursive Reasoning with Tiny Networks", code, math symbols, URLs, email addresses.
+- Never translate or alter: proper names (Jonas Juchelka, Audition, Concentr8, comstruct, cycos, AIXTRON, ritzenhoefer & company, Colegio Tajamar, Pius-Gymnasium, Hans Rudolf Stiftung, Stiftung der Deutschen Wirtschaft, Deutsche SchülerAkademie, Jacob Rossel, Cloyne Court, Future Founders Initiative, TU Munich/TU München, UC Berkeley, Keras, Notion, TRM), the paper title "Less is More: Recursive Reasoning with Tiny Networks", code, math symbols, URLs, email addresses.
 - Keep placeholders like {n} and all Markdown syntax exactly as is.
 - Output only the requested format, no commentary.`;
 
@@ -153,8 +154,55 @@ async function translateContent(lang) {
   }
 }
 
+// CV: only human-readable fields are sent; everything else is copied from the German source unchanged.
+const CV_TEXT = { entry: ["date", "place", "title", "org", "why"], entryLists: ["tags", "text", "points"], place: ["name", "when", "what"] };
+function cvStrings(cv) {
+  return {
+    places: Object.fromEntries(Object.entries(cv.places).map(([k, p]) => [k, Object.fromEntries(CV_TEXT.place.map((f) => [f, p[f]]))])),
+    entries: cv.entries.map((e) => ({
+      ...Object.fromEntries(CV_TEXT.entry.filter((f) => typeof e[f] === "string" && e[f]).map((f) => [f, e[f]])),
+      ...Object.fromEntries(CV_TEXT.entryLists.map((f) => [f, e[f] ?? []])),
+      ...(e.photo ? { photoAlt: e.photo.alt } : {}),
+      links: (e.links ?? []).map((l) => l.label),
+    })),
+  };
+}
+function cvApply(cv, s) {
+  const out = structuredClone(cv);
+  for (const [k, p] of Object.entries(out.places)) for (const f of CV_TEXT.place) p[f] = s.places[k][f];
+  out.entries.forEach((e, i) => {
+    const t = s.entries[i];
+    for (const f of CV_TEXT.entry) if (typeof t[f] === "string") e[f] = t[f];
+    for (const f of CV_TEXT.entryLists) e[f] = t[f];
+    if (e.photo) e.photo.alt = t.photoAlt;
+    e.links = (e.links ?? []).map((l, j) => ({ ...l, label: t.links[j] }));
+  });
+  return out;
+}
+async function translateCv(lang) {
+  const srcFile = path.join(CONTENT, "cv.json");
+  if (!fs.existsSync(srcFile)) return;
+  const raw = fs.readFileSync(srcFile, "utf8");
+  const h = sha(raw + MODEL);
+  const outFile = path.join(CONTENT, lang, "cv.json");
+  if (!flag("force") && cache[lang]?.cv === h && fs.existsSync(outFile)) return console.log(`  cv: up to date`);
+  if (flag("dry")) return console.log(`  cv: would translate`);
+  const src = JSON.parse(raw);
+  const strings = cvStrings(src);
+  const out = await attempt("cv", async () => {
+    const o = extractJson(await claude(NAMES[lang], `Translate all string values of this JSON (a CV) from German. Keep every key and the array lengths unchanged. Dates like "08.2025 – 10.2025" keep their numbers. Return valid JSON only.\n\n${JSON.stringify(strings, null, 1)}`));
+    sameShape(strings, o);
+    return o;
+  });
+  fs.mkdirSync(path.dirname(outFile), { recursive: true });
+  fs.writeFileSync(outFile, JSON.stringify(cvApply(src, out), null, 2) + "\n");
+  (cache[lang] ??= {}).cv = h;
+  saveCache();
+  console.log(`  cv: written`);
+}
+
 for (const lang of langs) {
   console.log(`${lang} (${NAMES[lang]})`);
-  try { await translateDict(lang); await translateContent(lang); }
+  try { await translateDict(lang); await translateContent(lang); await translateCv(lang); }
   catch (e) { console.error(`  FAILED: ${e.message}`); process.exitCode = 1; }
 }

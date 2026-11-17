@@ -1,6 +1,6 @@
 {
   "meta": {
-    "description": "Jonas Juchelka studiert Management & Technology an der TU München. Schwerpunkt Deep Learning: rekursives Schließen mit kleinen Netzen, effiziente Modelle, Projekte und Gedanken."
+    "description": "Jonas Juchelka studiert Management & Technology an der TU München und gründet. Projekte, Lebenslauf und Gedanken."
   },
   "ui": {
     "skip": "Zum Inhalt springen",
@@ -13,7 +13,13 @@
     "badgeInfo": "Hinweis",
     "badgeWarning": "Offen"
   },
-  "nav": { "projects": "Projekte", "blog": "Blog", "contact": "Kontakt", "private": "Privater Bereich" },
+  "nav": {
+    "home": "Home",
+    "projects": "Projekte",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "private": "Login"
+  },
   "lang": {
     "label": "Sprache",
     "more": "Weitere Sprachen (Live-Übersetzung)",
@@ -24,51 +30,58 @@
     "error": "Übersetzung gerade nicht möglich. Bitte später erneut versuchen."
   },
   "footer": {
-    "line": "Deep Learning · Management & Technology, TU München.",
+    "line": "Management & Technology, TU München · UC Berkeley.",
     "base": "Statische Website. Kein Tracking, keine Cookies.",
     "rss": "RSS-Feed",
     "imprint": "Impressum",
-    "privacy": "Datenschutz"
+    "privacy": "Datenschutz",
+    "contact": "Kontakt"
   },
   "home": {
-    "eyebrow": "München / Berkeley",
-    "title": "Kleine Netze. Rekursives Denken.",
-    "intro": "Deep Learning mit wenigen Parametern: Ich baue Architekturen nach, die dasselbe Netz mehrfach anwenden.",
-    "ctaProject": "TRM-Projekt",
-    "ctaMail": "E-Mail",
-    "spec": [
-      { "k": "Aktuell", "v": "TRM in Keras nachgebaut" },
-      { "k": "Studium", "v": "Management & Technology, TU München" },
-      { "k": "Vertiefung", "v": "Computer Engineering" },
-      { "k": "Austausch", "v": "UC Berkeley, 2026/27" }
-    ],
-    "figcaption": "Ein Netz, T-mal angewendet.",
-    "glanceTitle": "Auf einen Blick",
-    "workEyebrow": "Arbeit",
-    "projectsTitle": "Projekte",
-    "allProjects": "Alle Projekte",
-    "notesEyebrow": "Notizen",
+    "photoAlt": "Jonas Juchelka lächelt vor einer hellen Wand mit Blätterschatten",
+    "headline1": "Curious how the world works.",
+    "headline2": "Driven to make it",
+    "headline2Mark": "better",
+    "headline2End": ".",
+    "ctaCv": "Mein CV",
+    "ctaContact": "Kontakt",
+    "mapTitle": "Hier war ich zu Hause",
+    "mapAria": "Weltkarte mit den Orten, an denen ich gelebt habe",
     "blogTitle": "Blog",
-    "contactTitle": "Kontakt"
-  },
-  "diagram": {
-    "title": "Rekursion mit geteilten Gewichten",
-    "desc": "Eine Eingabe x geht in ein Netz f mit Gewichten theta. Der Ausgang h wird T-mal in dasselbe Netz zurückgeführt, danach folgt die Ausgabe.",
-    "shared": "geteiltes θ",
-    "layers": "3 Schichten → 1 Schicht ×T"
+    "allPosts": "Alle Beiträge"
   },
   "projects": {
-    "metaTitle": "Projekte",
-    "metaDesc": "Projekte von Jonas Juchelka mit kurzem, belegtem Kontext.",
-    "eyebrow": "Übersicht",
+    "metaTitle": "Projekte und Lebenslauf",
+    "metaDesc": "Woran Jonas Juchelka gerade baut, und der Weg bis hierher: Studium, Arbeit, Gründen, Ausland, Stipendien.",
+    "eyebrow": "Projekte und Lebenslauf",
     "title": "Projekte",
-    "lede": "Wenige Projekte, dafür nur mit Angaben, die sich belegen lassen. Wo Ergebnisse nicht freigegeben sind, fehlen sie hier bewusst.",
-    "detailEyebrow": "Projekt",
-    "asideAria": "Projektangaben",
-    "role": "Rolle",
-    "context": "Rahmen",
-    "topics": "Themen",
-    "back": "Zurück zu allen Projekten"
+    "lede": "Oben steht, woran ich gerade baue. Darunter der Weg bis hierher.",
+    "pdf": "Lebenslauf als PDF",
+    "pinned": "Angepinnt",
+    "pinnedTitle": "Daran arbeite ich gerade",
+    "pinnedNote": "Feedback ist willkommen.",
+    "open": "Ansehen",
+    "feedback": "Feedback geben",
+    "pathTitle": "Der Weg bis hierher",
+    "count": "{n} Stationen",
+    "countOne": "1 Station",
+    "filterAria": "Nach Thema filtern",
+    "placeFilter": "Ort: {name}",
+    "clearPlace": "Ortsfilter aufheben",
+    "awardsTitle": "Stipendien und Auszeichnungen",
+    "why": "Das Wichtigste",
+    "did": "Was ich gemacht habe",
+    "more": "Weiterlesen",
+    "back": "Zurück",
+    "backTo": "Zurück zu {name}",
+    "close": "Schließen",
+    "station": "Station",
+    "place": "Ort",
+    "showInCv": "Im Lebenslauf zeigen",
+    "noStations": "Hier ist noch keine Station eingetragen.",
+    "now": "Aktuell",
+    "home": "Zuhause",
+    "tabsAria": "Aktuelle Projekte"
   },
   "blog": {
     "metaTitle": "Blog",
@@ -116,12 +129,16 @@
   },
   "contact": {
     "metaTitle": "Kontakt",
-    "metaDesc": "Kontakt zu Jonas Juchelka per E-Mail oder über GitHub.",
-    "eyebrow": "Kontakt",
+    "metaDesc": "Kontakt zu Jonas Juchelka per E-Mail, Termin, LinkedIn oder GitHub.",
     "title": "Schreib mir.",
-    "lede": "Kein Formular, kein Umweg. Eine E-Mail erreicht mich direkt.",
-    "email": "E-Mail",
-    "github": "GitHub"
+    "mailAlt": "Meine E-Mail-Adresse, als Bild, damit Bots sie nicht einfach lesen",
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "copyFail": "Bitte abtippen",
+    "write": "Mail schreiben",
+    "book": "Termin buchen",
+    "photoAlt": "Jonas Juchelka",
+    "backHome": "Zur Startseite"
   },
   "login": {
     "metaTitle": "Privater Bereich",
@@ -176,6 +193,6 @@
     "title": "Seite nicht gefunden",
     "heading": "Diese Seite gibt es hier nicht.",
     "lede": "Vielleicht wurde sie verschoben, vielleicht war die Adresse nie richtig. Von hier geht es weiter:",
-    "home": "Startseite"
+    "home": "Home"
   }
 }

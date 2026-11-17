@@ -2,6 +2,7 @@ import "@workspace/design-tokens/tokens.css";
 import "@workspace/site-ui/site-ui.css";
 import "../app/globals.css";
 import "../app/blog.css";
+import "../app/site.css";
 import { fontVariables } from "../app/fonts";
 import type { ReactNode } from "react";
 import { Header } from "./Header";

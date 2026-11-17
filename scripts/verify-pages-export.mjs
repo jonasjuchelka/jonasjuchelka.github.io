@@ -7,7 +7,7 @@ export const pagesDirectory = fileURLToPath(new URL("../artifacts/jonas-website/
 const publicRoots = new Set([
   ".nojekyll", "_next", "404", "404.html", "index.html", "index.txt",
   "projects", "blog", "kontakt", "login", "impressum", "datenschutz",
-  "brand", "icon.svg", "robots.txt", "sitemap.xml", "feed.xml",
+  "brand", "media", "icon.svg", "robots.txt", "sitemap.xml", "feed.xml",
 ]);
 const forbiddenContent = /DATABASE_URL|SESSION_SECRET|PRIVATE_APP_ORIGIN|PREVIEW_AUTH_ORIGIN|private_area\.|@simplewebauthn|artifacts\/private-dashboard|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----/;
 

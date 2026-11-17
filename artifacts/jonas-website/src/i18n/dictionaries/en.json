@@ -1,6 +1,6 @@
 {
   "meta": {
-    "description": "Jonas Juchelka studies Management & Technology at TU München. Focus on deep learning: recursive reasoning with tiny networks, efficient models, projects and thoughts."
+    "description": "Jonas Juchelka studies Management & Technology at TU Munich and builds startups. Projects, CV and thoughts."
   },
   "ui": {
     "skip": "Skip to content",
@@ -14,10 +14,11 @@
     "badgeWarning": "Open"
   },
   "nav": {
+    "home": "Home",
     "projects": "Projects",
     "blog": "Blog",
     "contact": "Contact",
-    "private": "Private area"
+    "private": "Login"
   },
   "lang": {
     "label": "Language",
@@ -29,63 +30,58 @@
     "error": "Translation is currently unavailable. Please try again later."
   },
   "footer": {
-    "line": "Deep Learning · Management & Technology, TU München.",
+    "line": "Management & Technology, TU München · UC Berkeley.",
     "base": "Static website. No tracking, no cookies.",
     "rss": "RSS feed",
     "imprint": "Imprint",
-    "privacy": "Privacy"
+    "privacy": "Privacy",
+    "contact": "Contact"
   },
   "home": {
-    "eyebrow": "Munich / Berkeley",
-    "title": "Tiny networks. Recursive reasoning.",
-    "intro": "Deep learning with few parameters: I reimplement architectures that apply the same network multiple times.",
-    "ctaProject": "TRM project",
-    "ctaMail": "Email",
-    "spec": [
-      {
-        "k": "Currently",
-        "v": "Reimplementing TRM in Keras"
-      },
-      {
-        "k": "Studies",
-        "v": "Management & Technology, TU München"
-      },
-      {
-        "k": "Specialization",
-        "v": "Computer Engineering"
-      },
-      {
-        "k": "Exchange",
-        "v": "UC Berkeley, 2026/27"
-      }
-    ],
-    "figcaption": "One network, applied T times.",
-    "glanceTitle": "At a glance",
-    "workEyebrow": "Work",
-    "projectsTitle": "Projects",
-    "allProjects": "All projects",
-    "notesEyebrow": "Notes",
+    "photoAlt": "Jonas Juchelka smiling in front of a light wall with leaf shadows",
+    "headline1": "Curious how the world works.",
+    "headline2": "Driven to make it",
+    "headline2Mark": "better",
+    "headline2End": ".",
+    "ctaCv": "My CV",
+    "ctaContact": "Contact",
+    "mapTitle": "Places I have called home",
+    "mapAria": "World map with the places I have lived",
     "blogTitle": "Blog",
-    "contactTitle": "Contact"
-  },
-  "diagram": {
-    "title": "Recursion with shared weights",
-    "desc": "An input x goes into a network f with weights theta. The output h is fed back into the same network T times, followed by the final output.",
-    "shared": "shared θ",
-    "layers": "3 layers → 1 layer ×T"
+    "allPosts": "All posts"
   },
   "projects": {
-    "metaTitle": "Projects",
-    "metaDesc": "Projects by Jonas Juchelka with brief, verifiable context.",
-    "eyebrow": "Overview",
+    "metaTitle": "Projects and CV",
+    "metaDesc": "What Jonas Juchelka is building right now, and the path so far: studies, work, startups, time abroad, scholarships.",
+    "eyebrow": "Projects and CV",
     "title": "Projects",
-    "lede": "A few projects, with only details that can be verified. Where results have not been released, they are deliberately left out here.",
-    "detailEyebrow": "Project",
-    "asideAria": "Project details",
-    "role": "Role",
-    "context": "Context",
-    "topics": "Topics",
-    "back": "Back to all projects"
+    "lede": "At the top: what I am building right now. Below: the path so far.",
+    "pdf": "CV as PDF",
+    "pinned": "Pinned",
+    "pinnedTitle": "What I am working on",
+    "pinnedNote": "Feedback is welcome.",
+    "open": "View",
+    "feedback": "Give feedback",
+    "pathTitle": "The path so far",
+    "count": "{n} stations",
+    "countOne": "1 station",
+    "filterAria": "Filter by topic",
+    "placeFilter": "Place: {name}",
+    "clearPlace": "Clear place filter",
+    "awardsTitle": "Scholarships and awards",
+    "why": "The key point",
+    "did": "What I did",
+    "more": "Read more",
+    "back": "Back",
+    "backTo": "Back to {name}",
+    "close": "Close",
+    "station": "Station",
+    "place": "Place",
+    "showInCv": "Show in CV",
+    "noStations": "No station here yet.",
+    "now": "Now",
+    "home": "Home",
+    "tabsAria": "Current projects"
   },
   "blog": {
     "metaTitle": "Blog",
@@ -133,12 +129,16 @@
   },
   "contact": {
     "metaTitle": "Contact",
-    "metaDesc": "Contact Jonas Juchelka by email or via GitHub.",
-    "eyebrow": "Contact",
+    "metaDesc": "Contact Jonas Juchelka by email, a call, LinkedIn or GitHub.",
     "title": "Write to me.",
-    "lede": "No form, no detour. An email reaches me directly.",
-    "email": "Email",
-    "github": "GitHub"
+    "mailAlt": "My email address, as an image so bots cannot easily read it",
+    "copy": "Copy",
+    "copied": "Copied",
+    "copyFail": "Please type it",
+    "write": "Write an email",
+    "book": "Book a call",
+    "photoAlt": "Jonas Juchelka",
+    "backHome": "Back to home"
   },
   "login": {
     "metaTitle": "Private area",
@@ -193,6 +193,6 @@
     "title": "Page not found",
     "heading": "This page doesn't exist here.",
     "lede": "Maybe it was moved, maybe the address was never correct. From here you can continue:",
-    "home": "Home page"
+    "home": "Home"
   }
 }
