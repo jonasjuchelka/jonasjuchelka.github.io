@@ -52,6 +52,7 @@ async function claude(language, user) {
     });
     if (res.ok) {
       const data = await res.json();
+      if (data.stop_reason === "max_tokens") throw new Error("answer cut off (max_tokens)");
       return data.content.filter((b) => b.type === "text").map((b) => b.text).join("").trim();
     }
     if (res.status === 429 || res.status >= 500) { await new Promise((r) => setTimeout(r, 2000 * attempt)); continue; }
@@ -155,6 +156,7 @@ async function translateContent(lang) {
 }
 
 // CV: only human-readable fields are sent; everything else is copied from the German source unchanged.
+const CV_BATCH = 5;
 const CV_TEXT = { entry: ["date", "place", "title", "org", "why"], entryLists: ["tags", "text", "points"], place: ["name", "when", "what"] };
 function cvStrings(cv) {
   return {
@@ -189,11 +191,16 @@ async function translateCv(lang) {
   if (flag("dry")) return console.log(`  cv: would translate`);
   const src = JSON.parse(raw);
   const strings = cvStrings(src);
-  const out = await attempt("cv", async () => {
-    const o = extractJson(await claude(NAMES[lang], `Translate all string values of this JSON (a CV) from German. Keep every key and the array lengths unchanged. Dates like "08.2025 – 10.2025" keep their numbers. Return valid JSON only.\n\n${JSON.stringify(strings, null, 1)}`));
-    sameShape(strings, o);
+  // The whole CV in one answer is too long (cut off at max_tokens), so it goes in small parts.
+  const part = (label, obj) => attempt(label, async () => {
+    const o = extractJson(await claude(NAMES[lang], `Translate all string values of this JSON (part of a CV) from German. Keep every key and the array lengths unchanged. Dates like "08.2025 – 10.2025" keep their numbers. Return valid JSON only.\n\n${JSON.stringify(obj, null, 1)}`));
+    sameShape(obj, o);
     return o;
   });
+  const out = { places: (await part("cv places", { places: strings.places })).places, entries: [] };
+  for (let i = 0; i < strings.entries.length; i += CV_BATCH) {
+    out.entries.push(...(await part(`cv entries ${i + 1}+`, { entries: strings.entries.slice(i, i + CV_BATCH) })).entries);
+  }
   fs.mkdirSync(path.dirname(outFile), { recursive: true });
   fs.writeFileSync(outFile, JSON.stringify(cvApply(src, out), null, 2) + "\n");
   (cache[lang] ??= {}).cv = h;
