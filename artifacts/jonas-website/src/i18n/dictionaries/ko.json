@@ -1,23 +1,24 @@
 {
   "meta": {
-    "description": "Jonas Juchelka는 TU München에서 Management & Technology를 공부합니다. 딥러닝 중심: 작은 네트워크를 활용한 재귀적 추론, 효율적인 모델, 프로젝트와 생각."
+    "description": "Jonas Juchelka는 TU München에서 Management & Technology를 공부하며 창업을 하고 있습니다. 프로젝트, 이력서, 생각을 소개합니다."
   },
   "ui": {
     "skip": "본문으로 건너뛰기",
     "homeAria": "Jonas Juchelka, 홈페이지로 이동",
-    "mainNav": "주요 내비게이션",
+    "mainNav": "주 메뉴",
     "contactAria": "연락처",
-    "legalAria": "법적 사항",
+    "legalAria": "법적 고지",
     "crumbsAria": "탐색 경로",
     "readingTime": "읽는 데 {n}분",
     "badgeInfo": "안내",
     "badgeWarning": "미정"
   },
   "nav": {
+    "home": "홈",
     "projects": "프로젝트",
     "blog": "블로그",
     "contact": "연락처",
-    "private": "비공개 영역"
+    "private": "로그인"
   },
   "lang": {
     "label": "언어",
@@ -25,77 +26,72 @@
     "choose": "언어 선택",
     "translating": "번역 중 …",
     "showOriginal": "원문 보기",
-    "notice": "Claude(Anthropic)로 기계 번역했습니다. 이를 위해 이 페이지의 텍스트가 번역 서비스로 전송되었습니다. 독일어판이 기준입니다.",
+    "notice": "Claude(Anthropic)로 기계 번역되었습니다. 이를 위해 이 페이지의 텍스트가 번역 서비스로 전송되었습니다. 독일어 버전이 기준입니다.",
     "error": "지금은 번역할 수 없습니다. 나중에 다시 시도해 주세요."
   },
   "footer": {
-    "line": "딥러닝 · Management & Technology, TU München.",
-    "base": "정적 웹사이트. 추적 없음, 쿠키 없음.",
+    "line": "Management & Technology, TU München · UC Berkeley.",
+    "base": "정적 웹사이트입니다. 추적과 쿠키가 없습니다.",
     "rss": "RSS 피드",
-    "imprint": "법적 고지(Impressum)",
-    "privacy": "개인정보 처리방침"
+    "imprint": "법적 고지",
+    "privacy": "개인정보 처리방침",
+    "contact": "연락처"
   },
   "home": {
-    "eyebrow": "뮌헨 / 버클리",
-    "title": "작은 네트워크. 재귀적 사고.",
-    "intro": "적은 파라미터로 하는 딥러닝: 같은 네트워크를 여러 번 적용하는 아키텍처를 재현합니다.",
-    "ctaProject": "TRM 프로젝트",
-    "ctaMail": "이메일",
-    "spec": [
-      {
-        "k": "현재",
-        "v": "Keras로 TRM 재구현"
-      },
-      {
-        "k": "학업",
-        "v": "Management & Technology, TU München"
-      },
-      {
-        "k": "심화 전공",
-        "v": "Computer Engineering"
-      },
-      {
-        "k": "교환",
-        "v": "UC Berkeley, 2026/27"
-      }
-    ],
-    "figcaption": "하나의 네트워크를 T번 적용.",
-    "glanceTitle": "한눈에 보기",
-    "workEyebrow": "작업",
-    "projectsTitle": "프로젝트",
-    "allProjects": "모든 프로젝트",
-    "notesEyebrow": "노트",
+    "photoAlt": "나뭇잎 그림자가 비치는 밝은 벽 앞에서 미소 짓고 있는 Jonas Juchelka",
+    "headline1": "Curious how the world works.",
+    "headline2": "Driven to make it",
+    "headline2Mark": "better",
+    "headline2End": ".",
+    "ctaCv": "내 CV",
+    "ctaContact": "연락처",
+    "mapTitle": "제가 살았던 곳",
+    "mapAria": "제가 살았던 장소를 표시한 세계 지도",
     "blogTitle": "블로그",
-    "contactTitle": "연락처"
-  },
-  "diagram": {
-    "title": "가중치를 공유하는 재귀",
-    "desc": "입력 x가 가중치 theta를 가진 네트워크 f로 들어갑니다. 출력 h는 같은 네트워크로 T번 되돌려진 뒤 최종 출력이 나옵니다.",
-    "shared": "공유 θ",
-    "layers": "3개 층 → 1개 층 ×T"
+    "allPosts": "모든 글"
   },
   "projects": {
-    "metaTitle": "프로젝트",
-    "metaDesc": "Jonas Juchelka의 프로젝트와 근거 있는 간단한 배경 설명.",
-    "eyebrow": "개요",
+    "metaTitle": "프로젝트와 이력서",
+    "metaDesc": "Jonas Juchelka가 지금 만들고 있는 것과 지금까지의 길: 학업, 일, 창업, 해외 경험, 장학금.",
+    "eyebrow": "프로젝트와 이력서",
     "title": "프로젝트",
-    "lede": "프로젝트는 많지 않으며, 근거를 댈 수 있는 내용만 담았습니다. 공개 승인이 나지 않은 결과는 의도적으로 싣지 않았습니다.",
-    "detailEyebrow": "프로젝트",
-    "asideAria": "프로젝트 정보",
-    "role": "역할",
-    "context": "배경",
-    "topics": "주제",
-    "back": "모든 프로젝트로 돌아가기"
+    "lede": "위에는 지금 만들고 있는 것이, 아래에는 지금까지의 길이 있습니다.",
+    "pdf": "PDF 이력서",
+    "pinned": "고정됨",
+    "pinnedTitle": "지금 작업 중인 것",
+    "pinnedNote": "피드백을 환영합니다.",
+    "open": "보기",
+    "feedback": "피드백 남기기",
+    "pathTitle": "지금까지의 길",
+    "count": "{n}개 항목",
+    "countOne": "1개 항목",
+    "filterAria": "주제별로 필터링",
+    "placeFilter": "장소: {name}",
+    "clearPlace": "장소 필터 해제",
+    "awardsTitle": "장학금과 수상",
+    "why": "핵심",
+    "did": "제가 한 일",
+    "more": "더 읽기",
+    "back": "뒤로",
+    "backTo": "{name}(으)로 돌아가기",
+    "close": "닫기",
+    "station": "항목",
+    "place": "장소",
+    "showInCv": "이력서에서 보기",
+    "noStations": "아직 등록된 항목이 없습니다.",
+    "now": "현재",
+    "home": "집",
+    "tabsAria": "현재 프로젝트"
   },
   "blog": {
     "metaTitle": "블로그",
-    "metaDesc": "Jonas Juchelka의 글과 노트.",
-    "eyebrow": "노트",
+    "metaDesc": "Jonas Juchelka의 글과 메모.",
+    "eyebrow": "메모",
     "title": "블로그",
     "emptyTitle": "아직 게시된 글이 없습니다.",
-    "emptyBefore": "학업과 실무에서 나온 글은 완성되는 대로, 그보다 일찍은 아니고 여기에 올라옵니다. 새 글을 놓치고 싶지 않다면 이쪽을 구독하세요:",
+    "emptyBefore": "학업과 실무에서 나온 글은 완성되는 대로, 그보다 일찍은 아니고, 이곳에 올라옵니다. 놓치고 싶지 않다면",
     "emptyLink": "RSS 피드",
-    "emptyAfter": ".",
+    "emptyAfter": "를 구독하세요.",
     "articleEyebrow": "글",
     "toc": "목차",
     "filter": "필터",
@@ -109,9 +105,9 @@
     "view": "보기 방식",
     "all": "전체",
     "essays": "에세이",
-    "thoughts": "단상",
-    "thought": "단상",
-    "isNew": "신규",
+    "thoughts": "생각",
+    "thought": "생각",
+    "isNew": "새 글",
     "preview": "미리보기",
     "list": "목록",
     "reset": "필터 초기화",
@@ -119,11 +115,11 @@
     "collapse": "접기",
     "toggleFilter": "필터 펼치기 또는 접기",
     "none": "이 필터에 해당하는 글이 없습니다.",
-    "countOne": "개의 글",
-    "countMany": "개의 글",
+    "countOne": "개 글",
+    "countMany": "개 글",
     "activeFilters": "적용 중",
     "readShort": "약 {n}분",
-    "showFull": "단상 전체 보기",
+    "showFull": "생각 전체 보기",
     "close": "닫기",
     "back": "블로그",
     "pdf": "PDF",
@@ -133,38 +129,42 @@
   },
   "contact": {
     "metaTitle": "연락처",
-    "metaDesc": "이메일 또는 GitHub로 Jonas Juchelka에게 연락하기.",
-    "eyebrow": "연락처",
-    "title": "메일 보내 주세요.",
-    "lede": "양식도, 우회로도 없습니다. 이메일은 저에게 바로 도착합니다.",
-    "email": "이메일",
-    "github": "GitHub"
+    "metaDesc": "이메일, 일정 예약, LinkedIn 또는 GitHub로 Jonas Juchelka에게 연락하세요.",
+    "title": "메시지를 보내 주세요.",
+    "mailAlt": "봇이 쉽게 읽지 못하도록 이미지로 표시한 제 이메일 주소",
+    "copy": "복사",
+    "copied": "복사됨",
+    "copyFail": "직접 입력해 주세요",
+    "write": "메일 쓰기",
+    "book": "일정 예약",
+    "photoAlt": "Jonas Juchelka",
+    "backHome": "홈으로"
   },
   "login": {
     "metaTitle": "비공개 영역",
-    "metaDesc": "패스키로 보호되는 비공개 영역으로 들어가는 입구.",
-    "eyebrow": "접속",
+    "metaDesc": "패스키로 보호되는 비공개 영역으로 들어가는 입구입니다.",
+    "eyebrow": "접근",
     "title": "비공개 영역",
     "lede": "비공개 영역은 별도의 주소에서 운영되는 독립된 애플리케이션입니다. 이 공개 페이지는 아무도 로그인시키지 않으며 아무것도 저장하지 않습니다.",
     "continue": "로그인으로 계속",
     "button": "패스키로 로그인",
     "notReadyTitle": "아직 설정되지 않음",
-    "notReady": "비공개 애플리케이션에는 아직 고정된 운영 주소가 없습니다. 주소가 정해지면 이 페이지가 바로 그곳으로 연결됩니다.",
+    "notReady": "비공개 애플리케이션에는 아직 확정된 운영 주소가 없습니다. 주소가 정해지면 이 페이지가 바로 그곳으로 연결됩니다.",
     "fact1Bold": "패스키로만 가능.",
     "fact1": "비밀번호도, 소셜 로그인도, 이메일 링크도 없습니다.",
     "fact2Bold": "초대로만 가능.",
-    "fact2": "공개 가입은 없습니다.",
+    "fact2": "공개 회원가입은 없습니다.",
     "fact3Bold": "분리됨.",
-    "fact3": "로그인과 데이터는 GitHub Pages가 아니라 비공개 애플리케이션에만 있습니다."
+    "fact3": "로그인과 데이터는 전적으로 비공개 애플리케이션에만 있으며, GitHub Pages에는 없습니다."
   },
   "legal": {
-    "eyebrow": "법적 사항",
-    "authoritative": "법적 효력은 이 페이지의 독일어판에 있습니다.",
+    "eyebrow": "법적 고지",
+    "authoritative": "법적으로는 이 페이지의 독일어 버전이 기준입니다.",
     "imprint": {
-      "metaTitle": "법적 고지(Impressum)",
-      "metaDesc": "사업자 표시, 현재 미완성.",
-      "noticeTitle": "미완성: 운영상 미해결 사항",
-      "notice": "법적 송달이 가능한 주소가 아직 없으며, 여기에 임의로 지어내지 않습니다. 따라서 이 법적 고지는 아직 완전하지 않습니다.",
+      "metaTitle": "법적 고지",
+      "metaDesc": "사업자 정보 표기이며, 현재는 불완전합니다.",
+      "noticeTitle": "불완전: 운영상 미해결 사항",
+      "notice": "송달 가능한 주소가 아직 없으며, 이곳에 임의로 만들어 넣지 않습니다. 따라서 이 법적 고지는 아직 완전하지 않습니다.",
       "responsible": "책임자",
       "contact": "연락처",
       "email": "이메일:"
@@ -172,27 +172,27 @@
     "privacy": {
       "metaTitle": "개인정보 처리방침",
       "metaDesc": "이 웹사이트를 방문할 때 발생하는 데이터.",
-      "noticeTitle": "초안: 법적 검토 필요",
-      "notice": "이 내용은 실제로 구축된 기술을 설명합니다. 책임자 주소를 포함한, 법적 검토를 거친 완전한 고지는 아직 마련되지 않았습니다.",
+      "noticeTitle": "초안: 법적 검토 대기 중",
+      "notice": "이 내용은 실제로 구성된 기술을 설명한 것입니다. 책임자의 주소를 포함해 법적으로 검토를 마친 완전한 방침은 아직 마련되지 않았습니다.",
       "hostingTitle": "호스팅",
-      "hosting": "이 웹사이트는 GitHub Pages를 통해 정적 파일로 제공됩니다. 접속 시 GitHub는 IP 주소와 같이 기술적으로 필요한 연결 데이터를 처리합니다. 이 처리에 대해서는 설정 이상으로 제가 영향을 줄 수 없습니다.",
+      "hosting": "이 웹사이트는 GitHub Pages를 통해 정적 파일로 제공됩니다. 접속 시 GitHub는 IP 주소와 같이 기술적으로 필요한 연결 데이터를 처리합니다. 이 처리에 대해 저는 설정 외에는 영향을 미칠 수 없습니다.",
       "notTitle": "이 웹사이트가 하지 않는 것",
       "not1": "쿠키, 추적, 분석 또는 마케팅 서비스가 없습니다.",
       "not2": "외부에서 불러오는 글꼴이나 제3자 스크립트가 없습니다.",
-      "not3": "문의 양식이 없습니다. 이메일은 방문자와 저의 이메일 제공업체가 처리합니다.",
+      "not3": "문의 양식이 없습니다. 이메일은 귀하의 이메일 제공업체와 제 이메일 제공업체가 처리합니다.",
       "translationTitle": "번역",
-      "translation1": "언어 선택에 있는 언어들은 미리 번역되어 정적 파일로 제공됩니다. 이 과정에서 제3자에게 데이터가 전송되지 않습니다.",
-      "translation2": "방문자가 \"다른 언어\"에서 직접 실시간 번역을 실행한 경우에만, 현재 페이지에 보이는 텍스트가 번역 서비스로 전송되어 Anthropic의 Claude API로 번역됩니다. 이때 서비스 운영자는 IP 주소와 같이 기술적으로 필요한 연결 데이터도 처리합니다. 쿠키는 설정되지 않으며 데이터는 영구적으로 저장되지 않습니다. 방문자가 실행하지 않으면 어떠한 요청도 이루어지지 않습니다.",
+      "translation1": "언어 선택에 있는 언어들은 미리 번역되어 정적 파일로 제공됩니다. 이때 제3자에게 전송되는 데이터는 없습니다.",
+      "translation2": "„다른 언어“에서 직접 실시간 번역을 실행하는 경우에만, 현재 페이지에 보이는 텍스트가 번역 서비스로 전송되며, 이 서비스는 Anthropic의 Claude API로 이를 번역합니다. 또한 서비스 운영자는 IP 주소와 같이 기술적으로 필요한 연결 데이터를 처리합니다. 쿠키는 설정되지 않으며 데이터가 영구 저장되지도 않습니다. 귀하가 실행하지 않으면 어떤 요청도 이루어지지 않습니다.",
       "themeTitle": "라이트 및 다크 테마",
-      "theme": "다크 테마를 켜면 브라우저가 다음 방문 때 적용되도록 이 선택을 로컬 저장소(localStorage)에 기억합니다. 이 항목은 방문자의 기기에만 남고 서버로 전송되지 않으며, 브라우저 설정에서 삭제할 수 있습니다.",
+      "theme": "다크 테마를 켜면 다음 방문 때에도 적용되도록 브라우저가 이 선택을 로컬 저장소(localStorage)에 기억합니다. 이 항목은 귀하의 기기에 남아 있으며 서버로 전송되지 않고, 브라우저 설정에서 삭제할 수 있습니다.",
       "privateTitle": "비공개 영역",
-      "private": "패스키로 보호되는 영역은 별도의 개인정보 처리방침을 가진 독립된 애플리케이션입니다. 이 공개 웹사이트는 그곳으로 어떤 데이터도 전송하지 않습니다."
+      "private": "패스키로 보호되는 영역은 자체 개인정보 처리방침을 가진 별도의 애플리케이션입니다. 이 공개 웹사이트는 그곳으로 어떤 데이터도 전송하지 않습니다."
     }
   },
   "notFound": {
-    "title": "페이지를 찾을 수 없습니다",
-    "heading": "이 페이지는 여기에 없습니다.",
-    "lede": "다른 곳으로 옮겨졌거나 처음부터 주소가 잘못되었을 수 있습니다. 여기서 이어서 이동할 수 있습니다:",
-    "home": "홈페이지"
+    "title": "페이지를 찾을 수 없음",
+    "heading": "이곳에는 이 페이지가 없습니다.",
+    "lede": "이동되었거나, 처음부터 주소가 잘못되었을 수 있습니다. 여기서 계속 이동할 수 있습니다:",
+    "home": "홈"
   }
 }

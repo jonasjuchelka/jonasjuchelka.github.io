@@ -1,23 +1,24 @@
 {
   "meta": {
-    "description": "Jonas Juchelka, TU München'de Management & Technology okuyor. Odak noktası derin öğrenme: küçük ağlarla özyinelemeli akıl yürütme, verimli modeller, projeler ve düşünceler."
+    "description": "Jonas Juchelka, TU München'de Management & Technology okuyor ve girişimcilik yapıyor. Projeler, özgeçmiş ve düşünceler."
   },
   "ui": {
     "skip": "İçeriğe geç",
     "homeAria": "Jonas Juchelka, ana sayfaya git",
     "mainNav": "Ana gezinme",
     "contactAria": "İletişim",
-    "legalAria": "Hukuki bilgiler",
+    "legalAria": "Yasal bilgiler",
     "crumbsAria": "Gezinti yolu",
     "readingTime": "{n} dk okuma",
     "badgeInfo": "Not",
     "badgeWarning": "Açık"
   },
   "nav": {
+    "home": "Ana sayfa",
     "projects": "Projeler",
     "blog": "Blog",
     "contact": "İletişim",
-    "private": "Özel alan"
+    "private": "Giriş"
   },
   "lang": {
     "label": "Dil",
@@ -25,75 +26,70 @@
     "choose": "Dil seç",
     "translating": "Çevriliyor …",
     "showOriginal": "Orijinali göster",
-    "notice": "Claude (Anthropic) ile makine çevirisi. Bunun için bu sayfanın metni bir çeviri hizmetine gönderildi. Geçerli olan Almanca sürümdür.",
+    "notice": "Claude (Anthropic) ile makine çevirisi. Bunun için bu sayfanın metni bir çeviri hizmetine gönderildi. Geçerli olan Almanca metindir.",
     "error": "Çeviri şu anda mümkün değil. Lütfen daha sonra tekrar deneyin."
   },
   "footer": {
-    "line": "Derin öğrenme · Management & Technology, TU München.",
+    "line": "Management & Technology, TU München · UC Berkeley.",
     "base": "Statik web sitesi. İzleme yok, çerez yok.",
     "rss": "RSS akışı",
-    "imprint": "Künye",
-    "privacy": "Gizlilik"
+    "imprint": "Yasal bildirim",
+    "privacy": "Gizlilik",
+    "contact": "İletişim"
   },
   "home": {
-    "eyebrow": "Münih / Berkeley",
-    "title": "Küçük ağlar. Özyinelemeli düşünme.",
-    "intro": "Az parametreyle derin öğrenme: Aynı ağı birden çok kez uygulayan mimarileri yeniden inşa ediyorum.",
-    "ctaProject": "TRM projesi",
-    "ctaMail": "E-posta",
-    "spec": [
-      {
-        "k": "Güncel",
-        "v": "TRM, Keras ile yeniden inşa edildi"
-      },
-      {
-        "k": "Öğrenim",
-        "v": "Management & Technology, TU München"
-      },
-      {
-        "k": "İhtisas",
-        "v": "Bilgisayar Mühendisliği"
-      },
-      {
-        "k": "Değişim",
-        "v": "UC Berkeley, 2026/27"
-      }
-    ],
-    "figcaption": "Bir ağ, T kez uygulanıyor.",
-    "glanceTitle": "Kısaca",
-    "workEyebrow": "Çalışma",
-    "projectsTitle": "Projeler",
-    "allProjects": "Tüm projeler",
-    "notesEyebrow": "Notlar",
+    "photoAlt": "Jonas Juchelka, yaprak gölgeleri düşen aydınlık bir duvarın önünde gülümsüyor",
+    "headline1": "Curious how the world works.",
+    "headline2": "Driven to make it",
+    "headline2Mark": "better",
+    "headline2End": ".",
+    "ctaCv": "Özgeçmişim",
+    "ctaContact": "İletişim",
+    "mapTitle": "Evim dediğim yerler",
+    "mapAria": "Yaşadığım yerlerin işaretli olduğu dünya haritası",
     "blogTitle": "Blog",
-    "contactTitle": "İletişim"
-  },
-  "diagram": {
-    "title": "Paylaşılan ağırlıklarla özyineleme",
-    "desc": "Bir x girdisi, theta ağırlıklarına sahip bir f ağına girer. Çıkış h, T kez aynı ağa geri beslenir, ardından çıktı gelir.",
-    "shared": "paylaşılan θ",
-    "layers": "3 katman → 1 katman ×T"
+    "allPosts": "Tüm yazılar"
   },
   "projects": {
-    "metaTitle": "Projeler",
-    "metaDesc": "Jonas Juchelka'nın projeleri, kısa ve belgelenmiş bağlamla.",
-    "eyebrow": "Genel bakış",
+    "metaTitle": "Projeler ve özgeçmiş",
+    "metaDesc": "Jonas Juchelka'nın şu anda üzerinde çalıştığı işler ve buraya uzanan yol: eğitim, iş, girişimcilik, yurt dışı, burslar.",
+    "eyebrow": "Projeler ve özgeçmiş",
     "title": "Projeler",
-    "lede": "Az sayıda proje, ama yalnızca belgelenebilen bilgilerle. Sonuçlar yayımlanmaya onaylanmadıysa, bilerek burada yer almıyor.",
-    "detailEyebrow": "Proje",
-    "asideAria": "Proje bilgileri",
-    "role": "Rol",
-    "context": "Çerçeve",
-    "topics": "Konular",
-    "back": "Tüm projelere dön"
+    "lede": "Yukarıda şu anda üzerinde çalıştığım işler var. Aşağıda buraya uzanan yol.",
+    "pdf": "Özgeçmiş (PDF)",
+    "pinned": "Sabitlenmiş",
+    "pinnedTitle": "Şu anda üzerinde çalıştığım işler",
+    "pinnedNote": "Geri bildirim memnuniyetle karşılanır.",
+    "open": "Göz at",
+    "feedback": "Geri bildirim ver",
+    "pathTitle": "Buraya uzanan yol",
+    "count": "{n} durak",
+    "countOne": "1 durak",
+    "filterAria": "Konuya göre filtrele",
+    "placeFilter": "Yer: {name}",
+    "clearPlace": "Yer filtresini kaldır",
+    "awardsTitle": "Burslar ve ödüller",
+    "why": "En önemlisi",
+    "did": "Ne yaptım",
+    "more": "Devamını oku",
+    "back": "Geri",
+    "backTo": "{name} sayfasına dön",
+    "close": "Kapat",
+    "station": "Durak",
+    "place": "Yer",
+    "showInCv": "Özgeçmişte göster",
+    "noStations": "Burada henüz bir durak eklenmedi.",
+    "now": "Güncel",
+    "home": "Ev",
+    "tabsAria": "Güncel projeler"
   },
   "blog": {
     "metaTitle": "Blog",
-    "metaDesc": "Jonas Juchelka'nın makaleleri ve notları.",
+    "metaDesc": "Jonas Juchelka'dan makaleler ve notlar.",
     "eyebrow": "Notlar",
     "title": "Blog",
     "emptyTitle": "Henüz bir şey yayımlanmadı.",
-    "emptyBefore": "Üniversiteden ve pratikten yazılar, hazır olduğunda burada yer alacak, daha önce değil. Hiçbir şeyi kaçırmak istemeyenler şuna abone olabilir:",
+    "emptyBefore": "Eğitimden ve uygulamadan metinler, hazır olur olmaz burada yer alacak, daha erken değil. Hiçbir şeyi kaçırmak istemeyenler şuna abone olabilir:",
     "emptyLink": "RSS akışı",
     "emptyAfter": ".",
     "articleEyebrow": "Makale",
@@ -117,8 +113,8 @@
     "reset": "Filtreleri sıfırla",
     "resetShort": "Sıfırla",
     "collapse": "Daralt",
-    "toggleFilter": "Filtreyi aç veya kapat",
-    "none": "Bu filtreler için yazı yok.",
+    "toggleFilter": "Filtreleri aç veya kapat",
+    "none": "Bu filtrelere uygun yazı yok.",
     "countOne": "yazı",
     "countMany": "yazı",
     "activeFilters": "etkin",
@@ -133,12 +129,16 @@
   },
   "contact": {
     "metaTitle": "İletişim",
-    "metaDesc": "Jonas Juchelka ile e-posta veya GitHub üzerinden iletişim.",
-    "eyebrow": "İletişim",
+    "metaDesc": "Jonas Juchelka ile e-posta, randevu, LinkedIn veya GitHub üzerinden iletişim.",
     "title": "Bana yaz.",
-    "lede": "Form yok, dolambaç yok. Bir e-posta bana doğrudan ulaşır.",
-    "email": "E-posta",
-    "github": "GitHub"
+    "mailAlt": "E-posta adresim, botlar kolayca okuyamasın diye görsel olarak",
+    "copy": "Kopyala",
+    "copied": "Kopyalandı",
+    "copyFail": "Lütfen elle yazın",
+    "write": "E-posta yaz",
+    "book": "Randevu al",
+    "photoAlt": "Jonas Juchelka",
+    "backHome": "Ana sayfaya dön"
   },
   "login": {
     "metaTitle": "Özel alan",
@@ -149,22 +149,22 @@
     "continue": "Girişe devam et",
     "button": "Passkey ile giriş yap",
     "notReadyTitle": "Henüz kurulmadı",
-    "notReady": "Özel uygulamanın henüz sabit bir üretim adresi yok. Adres hazır olduğunda bu sayfa doğrudan oraya yönlendirecek.",
-    "fact1Bold": "Yalnızca passkey ile.",
+    "notReady": "Özel uygulamanın henüz sabit bir yayın adresi yok. Adres hazır olduğunda bu sayfa doğrudan oraya yönlendirecek.",
+    "fact1Bold": "Yalnızca Passkey ile.",
     "fact1": "Parola yok, sosyal medya ile giriş yok, e-postayla bağlantı yok.",
     "fact2Bold": "Yalnızca davetle.",
     "fact2": "Herkese açık kayıt yoktur.",
     "fact3Bold": "Ayrı.",
-    "fact3": "Giriş ve veriler yalnızca özel uygulamada bulunur, GitHub Pages üzerinde değil."
+    "fact3": "Giriş ve veriler yalnızca özel uygulamada bulunur, GitHub Pages'te değil."
   },
   "legal": {
-    "eyebrow": "Hukuki bilgiler",
+    "eyebrow": "Yasal bilgiler",
     "authoritative": "Hukuken geçerli olan, bu sayfanın Almanca sürümüdür.",
     "imprint": {
-      "metaTitle": "Künye",
-      "metaDesc": "Sağlayıcı bilgisi, şu anda eksik.",
-      "noticeTitle": "Eksik: açık üretim maddesi",
-      "notice": "Tebligata elverişli bir adres henüz mevcut değil ve burada uydurulmuyor. Bu nedenle bu künye henüz tam değildir.",
+      "metaTitle": "Yasal bildirim",
+      "metaDesc": "Sağlayıcı bilgileri, şu anda eksik.",
+      "noticeTitle": "Eksik: açık kalan yayın maddesi",
+      "notice": "Tebligat yapılabilir bir adres henüz mevcut değil ve burada uydurulmayacak. Bu nedenle bu yasal bildirim henüz tam değildir.",
       "responsible": "Sorumlu",
       "contact": "İletişim",
       "email": "E-posta:"
@@ -172,26 +172,26 @@
     "privacy": {
       "metaTitle": "Gizlilik",
       "metaDesc": "Bu web sitesini ziyaret ederken hangi verilerin oluştuğu.",
-      "noticeTitle": "Taslak: hukuki inceleme beklemede",
-      "notice": "Bu bilgiler fiilen kurulmuş olan teknolojiyi açıklar. Sorumlunun adresi dahil, eksiksiz ve hukuken incelenmiş bir beyan henüz hazır değildir.",
+      "noticeTitle": "Taslak: hukuki inceleme bekliyor",
+      "notice": "Bu bilgiler, fiilen kurulu olan teknik yapıyı tanımlar. Sorumlunun adresini de içeren, eksiksiz ve hukuken incelenmiş bir beyan henüz hazır değildir.",
       "hostingTitle": "Barındırma",
-      "hosting": "Web sitesi, GitHub Pages üzerinden statik dosyalar olarak sunulur. Erişim sırasında GitHub, IP adresi gibi teknik olarak gerekli bağlantı verilerini işler. Yapılandırmanın ötesinde bu işleme üzerinde etkim yoktur.",
+      "hosting": "Web sitesi, GitHub Pages üzerinden statik dosyalar olarak sunulur. Erişim sırasında GitHub, IP adresi gibi teknik olarak gerekli bağlantı verilerini işler. Yapılandırmanın ötesinde bu işlemeye etkim yoktur.",
       "notTitle": "Bu web sitesinin yapmadıkları",
       "not1": "Çerez yok, izleme yok, analiz veya pazarlama hizmeti yok.",
       "not2": "Üçüncü taraflardan harici olarak yüklenen yazı tipi veya betik yok.",
-      "not3": "İletişim formu yok. Bir e-postayı sizin ve benim e-posta sağlayıcım işler.",
+      "not3": "İletişim formu yok. Bir e-postayı sizin e-posta sağlayıcınız ve benimki işler.",
       "translationTitle": "Çeviri",
       "translation1": "Dil seçimindeki diller önceden çevrilmiştir ve statik dosyalar olarak sunulur. Bu sırada üçüncü taraflara veri gönderilmez.",
-      "translation2": "Yalnızca “Diğer diller” altında canlı çeviriyi kendiniz başlatırsanız, mevcut sayfanın görünen metni bir çeviri hizmetine gönderilir; hizmet bunu Anthropic'in Claude API'si ile çevirir. Ayrıca hizmetin işletmecisi, IP adresi gibi teknik olarak gerekli bağlantı verilerini işler. Ne çerez yerleştirilir ne de veriler kalıcı olarak saklanır. Siz başlatmadıkça herhangi bir istek yapılmaz.",
+      "translation2": "Yalnızca „Diğer diller“ altında canlı çeviriyi kendiniz başlatırsanız, mevcut sayfanın görünen metni, onu Anthropic'in Claude API'si ile çeviren bir çeviri hizmetine gönderilir. Ayrıca hizmetin işletmecisi, IP adresi gibi teknik olarak gerekli bağlantı verilerini işler. Ne çerez kaydedilir ne de veriler kalıcı olarak saklanır. Siz başlatmadıkça hiçbir istek yapılmaz.",
       "themeTitle": "Açık ve koyu tema",
-      "theme": "Koyu temayı açarsanız tarayıcınız bu seçimi, bir sonraki ziyarette geçerli olması için yerel depolamada (localStorage) saklar. Kayıt cihazınızda kalır, bir sunucuya gönderilmez ve tarayıcı ayarlarından silinebilir.",
+      "theme": "Koyu temayı açarsanız tarayıcınız bu tercihi, bir sonraki ziyarette de geçerli olması için yerel depolamada (localStorage) saklar. Kayıt cihazınızda kalır, bir sunucuya gönderilmez ve tarayıcı ayarlarından silinebilir.",
       "privateTitle": "Özel alan",
-      "private": "Passkey ile korunan alan, kendi gizlilik beyanı olan ayrı bir uygulamadır. Bu herkese açık web sitesi oraya hiçbir veri aktarmaz."
+      "private": "Passkey ile korunan alan, kendi gizlilik beyanı olan ayrı bir uygulamadır. Bu herkese açık web sitesi oraya veri aktarmaz."
     }
   },
   "notFound": {
     "title": "Sayfa bulunamadı",
-    "heading": "Böyle bir sayfa burada yok.",
+    "heading": "Burada böyle bir sayfa yok.",
     "lede": "Belki taşındı, belki adres hiç doğru değildi. Buradan devam edebilirsiniz:",
     "home": "Ana sayfa"
   }
