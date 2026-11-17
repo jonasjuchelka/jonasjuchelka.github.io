@@ -34,6 +34,6 @@ await shot("p-proj-sheet", ...P, "/projects/", (p) => p.click(".tl .st >> nth=2"
 await shot("p-proj-aw", ...P, "/projects/", (p) => p.evaluate(() => document.getElementById("aw-h").scrollIntoView()));
 await shot("p-kontakt", ...P, "/kontakt/");
 await shot("p-home-dark", ...P, "/", (p) => p.evaluate(() => window.scrollTo(0, 320)), { dark: true });
-fs.copyFileSync("artifacts/jonas-website/out/media/lebenslauf.pdf", `${out}/lebenslauf.pdf`);
+fs.copyFileSync(process.env.GITHUB_WORKSPACE + "/artifacts/jonas-website/out/media/lebenslauf.pdf", `${out}/lebenslauf.pdf`);
 await b.close();
 console.log("ok", fs.readdirSync(out).length);
