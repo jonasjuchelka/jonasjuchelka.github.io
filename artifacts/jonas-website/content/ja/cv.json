@@ -1,46 +1,46 @@
 {
   "places": {
     "muenchen": {
-      "name": "München",
+      "name": "ミュンヘン",
       "lat": 48.14,
       "lon": 11.58,
-      "when": "2024年より",
-      "what": "TU Müncheで学業に取り組む",
+      "when": "2024年から",
+      "what": "TU Müncheで学業",
       "badge": "home"
     },
     "berkeley": {
-      "name": "Berkeley",
+      "name": "バークレー",
       "lat": 37.87,
       "lon": -122.27,
       "when": "2026年秋",
-      "what": "UC Berkeleyでの留学学期",
+      "what": "UC Berkeleyで交換留学",
       "badge": "now"
     },
     "aachen": {
-      "name": "Aachen",
+      "name": "アーヘン",
       "lat": 50.78,
       "lon": 6.08,
       "when": "2024年まで",
-      "what": "育った場所、学校生活とアビトゥーア",
+      "what": "学校生活とアビトゥーア取得",
       "label": "none"
     },
     "madrid": {
-      "name": "Madrid",
+      "name": "マドリード",
       "lat": 40.42,
       "lon": -3.7,
       "when": "2021年秋",
-      "what": "Madridの学校で4か月間過ごす",
+      "what": "Colegio Tajamarでの海外滞在",
       "label": "left"
     },
     "juja": {
-      "name": "Juja",
+      "name": "ジュジャ",
       "lat": -1.1,
       "lon": 37.01,
       "when": "2016年と2018年",
-      "what": "ケニアでの学校生活と社会奉仕活動"
+      "what": "ケニアでの学校トライメスターとボランティア活動"
     },
     "suzhou": {
-      "name": "Suzhou",
+      "name": "蘇州",
       "lat": 31.3,
       "lon": 120.6,
       "when": "2026年",
@@ -54,7 +54,7 @@
       "pinned": true,
       "now": true,
       "year": 2026,
-      "date": "10.2026より",
+      "date": "seit 10.2026",
       "place": "San Francisco",
       "loc": "berkeley",
       "tags": [
@@ -62,23 +62,23 @@
         "プロジェクト"
       ],
       "title": "Audition",
-      "org": "応募者向けAI事前面接 · 共同創業者",
+      "org": "共同創業者 · 採用プロセス向けAI事前インタビュー",
       "icon": "mic",
-      "why": "最初の面談の前にAI面接を行います。企業は、本当にできる人を見極められます。",
+      "why": "最初の面談の前にAIによる事前インタビューを行い、誰が要件を本当に満たしているかを企業が早い段階で把握できるようにします。",
       "text": [
         "Auditionは SF Tech Week Hackathon で生まれました。以来、スタートアップとして開発を続けています。",
-        "企業が職種と要件を入力すると、AIが質問を提案し、企業が承認します。応募者はリンクから、途切れのない一本の動画で回答します。企業はその後、評価結果を確認できます。"
+        "企業が職種と要件を入力すると、AIが適切な質問を提案し、企業がそれを承認します。応募者はリンクから、途切れのない動画録画で回答します。その後、企業は構造化された評価結果を受け取ります。"
       ],
       "points": [
-        "人が最初の面談を行う前に、企業が多数の応募者へ送る事前面接",
-        "録画されるのは画面、音声、本人の映像",
-        "a16z speedrun に応募"
+        "企業が最初の対面面談の前に、多数の応募者へ送る事前インタビュー",
+        "画面、音声、回答の様子を記録",
+        "アクセラレーター a16z speedrun に応募"
       ],
       "links": [],
       "cv": {
-        "org": "Mitgründer · KI-Vorinterview für Recruiting",
+        "org": "共同創業者 · 採用向けAI事前インタビュー",
         "points": [
-          "Entstanden beim SF Tech Week Hackathon, Bewerbung beim Accelerator a16z speedrun"
+          "SF Tech Week Hackathon で誕生、アクセラレーター a16z speedrun に応募"
         ]
       }
     },
@@ -88,7 +88,7 @@
       "pinned": true,
       "now": true,
       "year": 2026,
-      "date": "10.2026より",
+      "date": "seit 10.2026",
       "place": "Berkeley",
       "loc": "berkeley",
       "tags": [
@@ -96,23 +96,23 @@
         "プロジェクト"
       ],
       "title": "Concentr8",
-      "org": "神経多様性のある人向けの集中支援アプリ · バックエンド",
+      "org": "共同創業者 · 神経多様性のある学生向け集中アプリ · バックエンド",
       "icon": "target",
       "photo": {
         "file": "concentr8.jpg",
         "alt": "Concentr8のチームと私",
         "focus": "50% 40%"
       },
-      "why": "自分で気づく前に、勉強中の意識を課題へ引き戻してくれるアプリです。",
+      "why": "学習中に気が散って負ける前に、学生を課題へ引き戻すアプリです。",
       "text": [
-        "Concentr8は今学期、UC Berkeley で作りました。始まりは San Francisco で開かれた Cal Hacks 13.0 で、その後、Technology Entrepreneurship の授業で取り組んでいたプロジェクトと統合しました。",
-        "Jinyuan Xu、Camila Scotti Pinto とのチームで、バックエンドを担当しています。"
+        "Concentr8は、サンフランシスコでの Cal Hacks 13.0 で生まれました。その後、バークレーの授業 Technology Entrepreneurship (ENGIN 183E) で取り組んでいたプロジェクトと統合しました。",
+        "バックエンドを担当しています。チームメンバーは Jinyuan Xu と Camila Scotti Pinto です。"
       ],
       "points": [
-        "学習時間中、気を散らすアプリやサイトをブロックする Mac アプリ",
-        "朝・昼・晩の決まった学習時間に電話をかける機能",
-        "まず質問をし、その後に学習セッションの計画を提案するAIチャット",
-        "Google でログインし、カレンダーと連携"
+        "学習セッション中、気を散らすアプリやウェブサイトをブロックするMacアプリ",
+        "決まった学習時間(朝、昼、夜)の自動電話",
+        "まず質問を返し、その後に学習セッションを含む計画を提案するAIアシスタント",
+        "Googleでのログインと Googleカレンダー との連携"
       ],
       "links": [
         {
@@ -126,8 +126,8 @@
       ],
       "cv": {
         "points": [
-          "Backend verantwortet: Mac-App, die Ablenkungen sperrt, Anrufe zu festen Lernzeiten, KI-Planung mit Google Kalender",
-          "Entstanden bei Cal Hacks 13.0, weiterentwickelt im Kurs Technology Entrepreneurship (ENGIN 183E)"
+          "バックエンドを担当:気を散らすものをブロックするMacアプリ、決まった学習時間の電話、Googleカレンダーと連携したAIによる計画",
+          "Cal Hacks 13.0 で誕生し、Technology Entrepreneurship (ENGIN 183E) の授業で発展"
         ],
         "link": 0
       }
@@ -142,25 +142,25 @@
       "loc": "berkeley",
       "tags": [
         "学業",
-        "留学"
+        "海外"
       ],
-      "title": "交換留学",
-      "org": "University of California, Berkeley",
+      "title": "留学",
+      "org": "University of California, Berkeley · Berkeley International Study Program",
       "logo": "ucberkeley.svg",
       "photo": {
         "file": "berkeley.jpg",
-        "alt": "サンフランシスコ湾岸での私",
+        "alt": "サンフランシスコ湾岸にいる私",
         "focus": "60% 40%"
       },
-      "why": "情報科学で屈指の大学で1学期を過ごし、AIスタートアップのエコシステムの只中に身を置きます。",
+      "why": "情報科学の最先端大学の一つで、AIスタートアップのエコシステムの真ん中で過ごす1学期です。",
       "text": [
-        "Berkeley International Study Program を通じて、Berkeley で1学期学んでいます。授業の合間も、ハッカソンの機会があれば逃さず参加しています。"
+        "Berkeley International Study Program を通じて、2026年秋にUC Berkeleyで学びます。授業に加えて、ハッカソンに参加し、自分の起業プロジェクトにも取り組んでいます。"
       ],
       "points": [
-        "Künstliche Intelligenz (CS 188)",
-        "Kryptografie (CS 171)",
+        "人工知能 (CS 188)",
+        "暗号学 (CS 171)",
         "Technology Entrepreneurship (ENGIN 183E)",
-        "Gefördert durch die Stiftung der Deutschen Wirtschaft"
+        "Stiftung der Deutschen Wirtschaft の奨学支援を受けています"
       ],
       "links": [
         {
@@ -178,10 +178,10 @@
       ],
       "cv": {
         "title": "University of California, Berkeley",
-        "org": "Austauschstudent · Berkeley International Study Program",
+        "org": "交換留学生 · Berkeley International Study Program",
         "points": [
-          "Künstliche Intelligenz (CS 188), Kryptografie (CS 171), Technology Entrepreneurship (ENGIN 183E)",
-          "Gefördert durch die Stiftung der Deutschen Wirtschaft (sdw)"
+          "人工知能 (CS 188)、暗号学 (CS 171)、Technology Entrepreneurship (ENGIN 183E)",
+          "Stiftung der Deutschen Wirtschaft (sdw) の奨学支援を受けています"
         ]
       }
     },
@@ -190,23 +190,23 @@
       "kind": "station",
       "year": 2025,
       "date": "08.2025 – 04.2026",
-      "place": "ミュンヘン",
+      "place": "München",
       "loc": "muenchen",
       "tags": [
         "仕事"
       ],
       "title": "オペレーションズ・リサーチのチューター",
-      "org": "TU München · Kolisch教授講座",
+      "org": "TU München · Kolisch教授の講座",
       "logo": "tum.svg",
-      "why": "授業で上位5%に入っていたことから選ばれました。その後は自分で教える側になりました。",
+      "why": "授業での成績が上位5%に入ったことから選ばれ、その後この授業を自らチューターとして教えました。",
       "text": [
-        "2025/26年冬学期と2026年夏学期に、「Operations Research and Decision Analysis」のチュートリアルを担当し、個別指導も行いました。この授業自体は1,3で修了しています。"
+        "2025/26年冬学期と2026年夏学期に、「Operations Research and Decision Analysis」のチュートリアルを担当し、加えて学生の個別指導も行いました。この授業自体は1,3で修了しました。"
       ],
       "points": [
-        "4 Stunden Tutorium pro Woche für rund 25 Studierende",
-        "Übungsaufgaben selbst konzipiert",
-        "Simplex, Netzwerkflüsse, ganzzahlige Optimierung",
-        "Modellierung mit Gurobi"
+        "週4時間のチュートリアルを約25人の学生に実施",
+        "演習問題を自ら作成",
+        "シンプレックス法、ネットワークフロー、整数最適化",
+        "Gurobi によるモデリング"
       ],
       "links": [
         {
@@ -215,12 +215,12 @@
         }
       ],
       "cv": {
-        "title": "Tutor, Operations Research and Decision Analysis",
+        "title": "チューター、Operations Research and Decision Analysis",
         "org": "Technische Universität München",
         "points": [
-          "Ausgewählt für eine Kursleistung unter den besten 5 % (Note 1,3)",
-          "4 Stunden Tutorium pro Woche für rund 25 Studierende, Übungsaufgaben selbst konzipiert",
-          "Simplex, Netzwerkflüsse, ganzzahlige Optimierung, Gurobi"
+          "授業成績が上位5%に入り選出(成績 1,3)",
+          "週4時間のチュートリアルを約25人の学生に実施、演習問題を自ら作成",
+          "シンプレックス法、ネットワークフロー、整数最適化、Gurobi"
         ]
       }
     },
@@ -229,26 +229,26 @@
       "kind": "station",
       "year": 2025,
       "date": "08.2025 – 10.2025",
-      "place": "デュッセルドルフ",
+      "place": "Düsseldorf",
       "tags": [
         "仕事"
       ],
-      "title": "フェロー、戦略・トランスフォーメーションコンサルティング",
+      "title": "フェロー、戦略・変革コンサルティング",
       "org": "ritzenhoefer & company",
       "logo": "ritzenhoefer.png",
       "photo": {
         "file": "ritzenhoefer.jpg",
-        "alt": "クライアント先へ向かう途中、駅でノートPCを持つ私",
+        "alt": "ノートパソコンを持って、顧客先へ向かう途中の駅にいる私",
         "focus": "60% 35%"
       },
-      "why": "ドイツの大手銀行の大規模な変革プロジェクトを、内側から見ることができました。",
+      "why": "ドイツの大手銀行の大規模な変革プロジェクトに、顧客先で直接参加しました。",
       "text": [
-        "ritzenhoefer & company は、大手銀行、保険会社、製造業の大規模な組織再編を支援しています。私は主にクライアント先に常駐し、プロジェクトオフィスを支援しました。"
+        "ritzenhoefer & company は、大手銀行、保険会社、産業企業に対して包括的な変革の支援を行っています。私は主に顧客先に常駐し、プロジェクトマネジメントオフィス(PMO)を支援しました。"
       ],
       "points": [
-        "ランブックのレポーティングについて、技術面と運用面の責任を担い、一部を Excel マクロで自動化",
-        "チェンジリクエストのプロセスを改善し、70件以上のチェンジリクエストを管理",
-        "運営委員会向けまでのプレゼンテーション資料を作成",
+        "Runbookのレポーティングを技術面・運営面で担当し、一部をExcelマクロで自動化",
+        "変更要求(Change Request)のプロセスを改善し、70件を超える変更要求を管理",
+        "運営委員会に至るまでの意思決定資料を作成",
         "シニアコンサルタント向けのジョブシェアリングモデルを開発"
       ],
       "links": [
@@ -259,8 +259,8 @@
       ],
       "cv": {
         "points": [
-          "Runbook und über 70 Change Requests im PMO verantwortet, Berichtswesen mit Excel-Makros teilautomatisiert",
-          "60/60-Jobsharing-Modell für Senior Consultants entwickelt"
+          "PMOでRunbookと70件を超える変更要求を担当し、レポーティングをExcelマクロで部分的に自動化",
+          "シニアコンサルタント向けの60/60ジョブシェアリングモデルを開発"
         ]
       }
     },
@@ -274,20 +274,20 @@
       "tags": [
         "仕事"
       ],
-      "title": "ビジネスディベロップメント インターンシップ",
-      "org": "comstruct · 建設業向けソフトウェア",
+      "title": "ビジネスデベロップメント インターンシップ",
+      "org": "comstruct · 建設現場向け資材調達ソフトウェア、Series A",
       "logo": "comstruct.svg",
       "photo": {
         "file": "comstruct.jpg",
-        "alt": "comstruct のオフィスで同僚と一緒に写る私",
+        "alt": "comstructのオフィスで同僚と一緒に写る私",
         "focus": "50% 30%"
       },
-      "why": "シリーズAのスタートアップで、9週間で74社のサプライヤーを接続しました。",
+      "why": "Series AスタートアップのGo-to-Marketチームで、9週間で74社のサプライヤーを接続した。",
       "text": [
-        "comstruct は建設会社の資材調達をデジタル化しています。納品書、請求書、発注書をサプライヤーとデジタルでやり取りできます。私はGo-to-Marketチームに所属していました。"
+        "comstructは建設会社の資材調達をデジタル化している。発注書、納品書、請求書は、建設会社とサプライヤーの間でデジタルにやり取りされる。私はGo-to-Marketチームの一員だった。"
       ],
       "points": [
-        "電話とメールで、9週間に74社のサプライヤーを接続",
+        "技術的な連携を含め、9週間で74社のサプライヤーを接続",
         "サプライヤー接続のプロセスを分析し、改善",
         "展示会BAUMAでcomstructを代表して出展",
         "全社向けのチームイベントを企画・運営"
@@ -299,14 +299,14 @@
         }
       ],
       "cv": {
-        "title": "Business Development, Supply Chain Integration",
-        "org": "comstruct · Bausoftware, Series A · Praktikum",
+        "title": "ビジネスデベロップメント、サプライチェーン統合",
+        "org": "comstruct · 建設ソフトウェア、Series A · インターンシップ",
         "points": [
-          "74 Lieferanten in 9 Wochen angebunden, einschließlich technischer Integration",
-          "Prozess der Lieferantenanbindung analysiert und verbessert"
+          "技術的な連携を含め、9週間で74社のサプライヤーを接続",
+          "サプライヤー接続のプロセスを分析し、改善"
         ],
         "extra": [
-          "comstruct auf der Fachmesse BAUMA vertreten"
+          "展示会BAUMAでcomstructを代表して出展"
         ]
       }
     },
@@ -315,26 +315,26 @@
       "kind": "station",
       "year": 2026,
       "date": "03.2026 – 05.2026",
-      "place": "München",
+      "place": "ミュンヘン",
       "loc": "muenchen",
       "tags": [
         "起業",
         "プロジェクト"
       ],
       "title": "Shapely",
-      "org": "受注生産の3Dプリント · 自身の起業アイデア",
+      "org": "共同創業者 · 3Dプリンターによる交換部品",
       "logo": "shapely.png",
-      "why": "スマートフォンでスキャンすると、印刷されたものが自宅に届く。得られた最大の学びは、アイデアを手放すべきタイミングでした。",
+      "why": "CADファイルのない交換部品を印刷する。そして、ビジネスモデルをいつ諦めるべきかを学ぶ。",
       "text": [
-        "Bricht ein Kunststoffteil, gibt es oft weder Ersatz noch eine Konstruktionsdatei. Shapely sollte genau diese Lücke schließen: Teil fotografieren oder scannen, daraus ein druckfertiges Modell erstellen, drucken und liefern.",
-        "Wir waren zu dritt, alle von der TU München, und Teil des TUM Startup Launchpad. Ich habe Strategie, Finanzen und Go-to-Market verantwortet."
+        "プラスチック部品が壊れても、交換品も設計データもないことが多い。Shapelyはまさにこの隙間を埋めようとした。部品を撮影またはスキャンし、そこから印刷可能なモデルを作成し、印刷して届ける。",
+        "メンバーは3人で、全員TU Müchenの学生であり、TUM Startup Launchpadに参加していた。私は戦略、財務、Go-to-Marketを担当した。"
       ],
       "points": [
-        "Erste Aufträge bewusst von Hand umgesetzt: in Fusion 360 modelliert, auf einem Bambu Lab X1 Carbon gedruckt und selbst ausgeliefert",
-        "Web-Plattform, die passende Teile auf Thingiverse und Printables findet",
-        "iPhone-Prototyp, der Teile mit dem LiDAR-Scanner erfasst (Swift, ARKit, Supabase)",
-        "Interviews mit Instandhaltern und Konstrukteuren geführt, Wettbewerber wie Replique und 3YOURMIND analysiert",
-        "Ergebnis der Tests: Das Modell trägt nicht, wir haben es eingestellt"
+        "最初の案件はあえて手作業で対応：Fusion 360でモデリングし、Bambu Lab X1 Carbonで印刷し、自分たちで納品",
+        "ThingiverseとPrintablesから適合する部品を探すWebプラットフォーム",
+        "LiDARスキャナーで部品を取り込むiPhoneプロトタイプ(Swift、ARKit、Supabase)",
+        "保守担当者や設計者へのインタビューを実施し、Replique、3YOURMINDなどの競合を分析",
+        "テストの結果：このモデルは成り立たず、事業を終了した"
       ],
       "links": [
         {
@@ -343,11 +343,11 @@
         }
       ],
       "cv": {
-        "org": "Mitgründer · Ersatzteile aus dem 3D-Drucker, ohne CAD-Datei",
+        "org": "共同創業者 · CADファイルなしで作る3Dプリンター交換部品",
         "points": [
-          "Strategie, Finanzen und Go-to-Market im Dreierteam, TUM Startup Launchpad",
-          "Erste Aufträge von Hand umgesetzt (Fusion 360, 3D-Druck); iPhone-Scan-Prototyp mit ARKit und LiDAR",
-          "Geschäftsmodell in Interviews mit Instandhaltern geprüft und eingestellt"
+          "3人チームで戦略、財務、Go-to-Marketを担当、TUM Startup Launchpad",
+          "最初の案件を手作業で実施(Fusion 360、3Dプリント)、ARKitとLiDARを使ったiPhoneスキャンのプロトタイプ",
+          "保守担当者へのインタビューでビジネスモデルを検証し、事業を終了"
         ],
         "link": 0
       }
@@ -357,21 +357,21 @@
       "kind": "station",
       "now": true,
       "year": 2024,
-      "date": "seit 10.2024",
+      "date": "10.2024以降",
       "place": "ミュンヘン",
       "loc": "muenchen",
       "tags": [
         "学業"
       ],
-      "title": "B.Sc. Management & Technology",
-      "org": "TU München · 専攻 Computer Engineering",
+      "title": "TU Münchenで学士課程",
+      "org": "B.Sc. Management and Technology · 専攻 Computer Engineering",
       "logo": "tum.svg",
-      "why": "経済学と情報学を一つの学位で学べる、合格率9%のプログラムです。",
+      "why": "経営学と情報工学の境界に位置する学位プログラムで、合格率は9 %。",
       "text": [
-        "2024/25年度の冬学期から在籍しています。卒業は2027年の予定です。"
+        "2024/25年冬学期からミュンヘン工科大学で学び、Computer Engineeringを専攻している。卒業は2027年の予定。"
       ],
       "points": [
-        "成績平均 1.6",
+        "成績平均 1,6(上位10 %)",
         "専攻 Computer Engineering"
       ],
       "links": [
@@ -380,15 +380,15 @@
           "url": "https://www.tum.de/"
         },
         {
-          "label": "TUMの学位プログラム",
+          "label": "学位プログラム",
           "url": "https://www.mgt.tum.de/de/programs/bachelor-in-management-technology/muenchen"
         }
       ],
       "cv": {
-        "title": "Technische Universität München",
-        "org": "B.Sc. Management and Technology, Vertiefung Computer Engineering",
+        "title": "ミュンヘン工科大学",
+        "org": "B.Sc. Management and Technology、専攻 Computer Engineering",
         "points": [
-          "Notenschnitt 1,6 (Top 10 %), Studiengang mit 9 % Aufnahmequote"
+          "成績平均 1,6(上位10 %)、合格率9 %の学位プログラム"
         ]
       }
     },
@@ -403,27 +403,27 @@
         "仕事"
       ],
       "title": "ネットワーク技術とプログラミングのインターンシップ",
-      "org": "cycos AG · Eviden (Atos) 傘下の企業",
+      "org": "cycos AG · Eviden (Atos)傘下の企業",
       "logo": "cy.svg",
       "photo": {
         "file": "cycos.jpg",
-        "alt": "cycos のロゴの前に立つ私",
+        "alt": "cycosのロゴの前に立つ私",
         "focus": "70% 40%"
       },
-      "why": "サーバーと仮想マシンを初めて自分で構築し、Javaでプログラミングしました。",
+      "why": "ソフトウェア開発とネットワーク技術における初めての実務経験：サーバー、仮想マシン、Java。",
       "text": [
-        "cycos は30年以上にわたり、アナログシステムからクラウド上のコラボレーションまで、通信向けソフトウェアを開発しています。私は4週間、開発チームに所属しました。"
+        "cycosは30年以上にわたり、アナログシステムからクラウド型のコラボレーションソリューションまで、通信向けソフトウェアを開発してきた。私は4週間、開発チームに所属した。"
       ],
       "points": [
-        "ネットワークの基礎：IPアドレス、ルーティング、プロトコル",
-        "Linux、ProxmoxによるサーバーとVM",
-        "オブジェクト指向プログラミングによるJava",
-        "電話とVoIPの概要を学ぶ"
+        "ネットワークの基礎：IPアドレッシング、ルーティング、プロトコル",
+        "ProxmoxでLinuxサーバーと仮想マシンを構築",
+        "Javaによるオブジェクト指向プログラミング",
+        "電話通信とVoIPの概要を学ぶ"
       ],
       "links": [],
       "cv": {
         "points": [
-          "Linux-Server und virtuelle Maschinen (Proxmox) aufgesetzt, objektorientierte Programmierung in Java"
+          "Linuxサーバーと仮想マシン(Proxmox)を構築、Javaによるオブジェクト指向プログラミング"
         ],
         "optional": true
       }
@@ -439,31 +439,31 @@
         "起業",
         "活動"
       ],
-      "title": "共同創設者・理事",
-      "org": "Future Founders Initiative e.V. · 08.2026以降は諮問委員会",
+      "title": "共同創業者・理事",
+      "org": "Future Founders Initiative e.V. · 08.2026より顧問会",
       "logo": "ffi.png",
       "photo": {
         "file": "ffi.jpg",
-        "alt": "Future Founders Initiative のイベントでの集合写真",
+        "alt": "Future Founders Initiativeのイベントでの集合写真",
         "focus": "50% 40%"
       },
-      "why": "5人から始まり、3都市に広がる団体になりました。その後、意識的に後任へ引き継ぎました。",
+      "why": "5人の創設メンバーで始め、3都市に広がる組織に育て、その後あえて引き継いだ。",
       "text": [
-        "Future Founders Initiative は、起業を志す学生を結びつける団体です。最初のアイデアからピッチまでを扱う無料のワークショップを開いています。私は共同創設者として理事会で団体を築き上げ、2026年に諮問委員会へ移りました。"
+        "Future Founders Initiativeは、起業を志す学生を集め、最初のアイデアからピッチまでの無料ワークショップを提供している。私は協会を共同で設立し、理事として育て、2026年に顧問会へ移った。"
       ],
       "points": [
-        "110人以上の学生が参加した3日間のイベント",
+        "110人以上の学生向けに3日間の起業イベントを企画・運営",
         "拠点はミュンヘン、フランクフルト、シュトゥットガルト",
-        "理事会の体制を再構築",
-        "共に価値観を策定：傍観者ではなく実行者であること、互いに支え合うこと、何かを残すこと、エゴを持たないこと"
+        "理事会の体制を新たに構築",
+        "行動指針を共同で策定：傍観者でなく実行者であること、互いに支え合うこと、何かを残すこと、エゴを持たないこと"
       ],
       "links": [],
       "cv": {
         "title": "Future Founders Initiative e.V.",
-        "org": "Mitgründer und Vorstand, seit 08.2026 im Beirat",
+        "org": "共同創業者・理事、08.2026より顧問会",
         "points": [
-          "Von fünf Gründungsmitgliedern zu einer Initiative in drei Städten aufgebaut",
-          "Dreitägige Gründungsveranstaltungen für über 110 Studierende organisiert"
+          "5人の創設メンバーから3都市に広がる組織へと育てた",
+          "110人以上の学生向けに3日間の起業イベントを企画・運営"
         ]
       }
     },
@@ -478,20 +478,20 @@
         "学校"
       ],
       "title": "アビトゥーア",
-      "org": "Bischöfliches Pius-Gymnasium · 選択履修コース:数学、地理、ドイツ語",
+      "org": "Bischöfliches Pius-Gymnasium Aachen · 履修重点科目:数学、地理、ドイツ語",
       "logo": "pius.png",
-      "why": "アビトゥーアは1.2で修了し、並行してRWTHの数学の講義も受けていました。",
+      "why": "アビトゥーアの成績は1.2、MINT-ECの優等証書を取得し、在学中からRWTH Aachenで数学の講義を受講しました。",
       "text": [
-        "Am Pius-Gymnasium habe ich mich weit über den Unterricht hinaus engagiert: mit einem eigenen Förderkurs, in Nachhilfe und Hausaufgabenbetreuung und acht Jahre lang in der Big Band.",
-        "Parallel zur Oberstufe habe ich im Frühstudium die Vorlesung Höhere Mathematik an der RWTH Aachen besucht."
+        "Pius-Gymnasiumでは、授業の枠を大きく超えて活動しました。自分で補習コースを開き、家庭教師や宿題の見守りを行い、8年間ビッグバンドにも所属しました。",
+        "上級課程と並行して、早期履修制度でRWTH Aachenの「高等数学」の講義を受講しました。"
       ],
       "points": [
-        "Abiturnote 1,2 (Top 10 %)",
-        "MINT-EC-Zertifikat mit Auszeichnung, die höchste von drei Stufen (Top 5 % des Jahrgangs)",
-        "Förderkurs „Economy & Innovation“ für die Klassen 8 bis 10 aufgebaut und ab Oktober 2022 wöchentlich zwei Stunden geleitet: Volkswirtschaft, persönliche Finanzen, Steuern, internationale Politik, künstliche Intelligenz, Präsentieren und Websites",
-        "Ein Schuljahr lang wöchentliche Mathematik-Einzelförderung für einen Fünftklässler mit besonderem Förderbedarf",
-        "Hausaufgabenbetreuung für die Unter- und Mittelstufe",
-        "Posaune in der Big Band seit 2016 und im Schulorchester: Konzerte, Schulfeste, Gedenkveranstaltungen"
+        "アビトゥーア成績1.2(上位10 %)",
+        "MINT-ECの優等証書(3段階中の最高位、学年の上位5 %)",
+        "8〜10年生向けの補習コース「Economy & Innovation」を立ち上げ、2022年10月から毎週2時間担当:経済学、個人の資産管理、税、国際政治、人工知能、プレゼンテーション、ウェブサイト",
+        "1学年間、特別な支援を必要とする5年生に対して毎週数学の個別指導を実施",
+        "低学年・中学年向けの宿題の見守り",
+        "2016年からビッグバンドとスクールオーケストラでトロンボーンを担当:コンサート、学校行事、追悼行事"
       ],
       "links": [
         {
@@ -509,14 +509,14 @@
       ],
       "cv": {
         "title": "Bischöfliches Pius-Gymnasium Aachen",
-        "org": "Abitur 1,2 (Top 10 %) · Leistungskurse Mathematik, Erdkunde, Deutsch",
+        "org": "アビトゥーア1.2(上位10 %) · 履修重点科目:数学、地理、ドイツ語",
         "points": [
-          "Frühstudium: Höhere Mathematik an der RWTH Aachen",
-          "Förderkurs „Economy & Innovation“ für die Klassen 8 bis 10 aufgebaut und ab 10.2022 wöchentlich zwei Stunden geleitet: Volkswirtschaft, Finanzen, KI, Präsentieren",
-          "Ein Schuljahr wöchentliche Mathematik-Einzelförderung für einen jüngeren Schüler mit besonderem Förderbedarf"
+          "早期履修:RWTH Aachenで高等数学",
+          "8〜10年生向けの補習コース「Economy & Innovation」を立ち上げ、10.2022から毎週2時間担当:経済学、金融、AI、プレゼンテーション",
+          "1学年間、特別な支援を必要とする年下の生徒に毎週数学の個別指導を実施"
         ],
         "extra": [
-          "Hausaufgabenbetreuung für die Unter- und Mittelstufe; Posaune in Big Band und Schulorchester seit 2016"
+          "低学年・中学年向けの宿題の見守り;2016年からビッグバンドとスクールオーケストラでトロンボーンを担当"
         ]
       }
     },
@@ -530,17 +530,17 @@
       "tags": [
         "仕事"
       ],
-      "title": "人事・広報インターンシップ",
+      "title": "人事・コミュニケーション部門でのインターンシップ",
       "org": "AIXTRON SE",
       "logo": "aixtron.svg",
-      "why": "半導体製造装置メーカーで、人事と広報業務を2週間経験しました。",
+      "why": "半導体産業向けの装置メーカーで、人事部と企業広報に2週間所属しました。",
       "text": [
-        "AIXTRONは、ディスプレイ、レーザー、太陽電池に使われる化合物半導体を製造するための装置を作っています。私は人事部に所属し、広報業務にも携わりました。"
+        "AIXTRONは、ディスプレイ、レーザー、太陽電池に用いられる化合物半導体を製造するための装置を手がけています。私は人事部と広報業務に携わりました。"
       ],
       "points": [
         "研修生向けイベントの企画に参加",
-        "採用サイトの生徒向けページを改訂",
-        "プレスリリースを担当"
+        "採用サイトの学生向けページを改訂",
+        "プレスリリースの作成を補助"
       ],
       "links": [
         {
@@ -550,7 +550,7 @@
       ],
       "cv": {
         "points": [
-          "Azubi-Tag mitgeplant, Schülerseite der Karriere-Website überarbeitet, Pressemitteilungen mitbetreut"
+          "研修生向けイベントの企画に参加、採用サイトの学生向けページを改訂、プレスリリースの作成を補助"
         ],
         "optional": true
       }
@@ -560,22 +560,22 @@
       "kind": "station",
       "year": 2021,
       "date": "09.2021 – 12.2021",
-      "place": "スペイン、マドリード",
+      "place": "マドリード(スペイン)",
       "loc": "madrid",
       "tags": [
         "学校",
-        "留学"
+        "海外"
       ],
-      "title": "マドリードでの4か月間の学校生活",
-      "org": "Colegio Tajamar · Bachillerato de Ciencias",
+      "title": "マドリードでの留学",
+      "org": "Colegio Tajamar · バチジェラート、理系コース",
       "logo": "tajamar.png",
-      "why": "ほとんどスペイン語が話せない状態で着き、最後には通常の授業でノートを取れるようになりました。",
+      "why": "スペインの学校制度で4か月を過ごしました。基礎的な知識だけで到着しましたが、最後には通常どおり授業と試験に参加しました。",
       "text": [
-        "Bachilleratoの1年目に、理系コースで週37時間の授業を受け、クラスメートと同じ試験を受けました。"
+        "2021年の秋に、理系コースでバチジェラート1年目に通い、週37時間の授業を受け、クラスメートと同じ試験を受けました。"
       ],
       "points": [
-        "生命科学を重点的に履修",
-        "日常生活の中でスペイン語を習得"
+        "生命科学に重点",
+        "学校生活の中でスペイン語力を伸ばした"
       ],
       "links": [
         {
@@ -585,7 +585,7 @@
       ],
       "cv": {
         "title": "Colegio Tajamar",
-        "org": "Auslandssemester, Bachillerato mit Schwerpunkt Biowissenschaften",
+        "org": "留学学期、生命科学に重点を置いたバチジェラート",
         "points": []
       }
     },
@@ -594,22 +594,22 @@
       "kind": "station",
       "year": 2018,
       "date": "03.2018 – 04.2018",
-      "place": "Juja、ケニア",
+      "place": "ジュジャ(ケニア)",
       "loc": "juja",
       "tags": [
-        "社会貢献活動",
+        "ボランティア",
         "海外"
       ],
-      "title": "児童養護施設でのボランティア",
+      "title": "児童養護施設でのボランティア活動",
       "org": "Star of Hope Children’s Home",
       "icon": "heart",
-      "why": "孤児や家族のいない子どもたちのための施設で過ごした3週間。",
+      "why": "孤児や家族の支えのない子どもたちのための施設で、3週間活動しました。",
       "text": [
-        "必要とされる場所で手伝いをし、夕方には英語の授業を受けました。"
+        "施設の日常で必要とされる場面を手伝い、夜には英語の授業を受けました。"
       ],
       "points": [
-        "フェンスの建設を手伝い、敷地の手入れをした",
-        "子どもたちと遊んだ"
+        "敷地内の建設・修繕作業に参加",
+        "子どもたちの世話と余暇活動の運営"
       ],
       "links": [],
       "cv": {
@@ -621,27 +621,27 @@
       "kind": "station",
       "year": 2016,
       "date": "03.2016 – 05.2016",
-      "place": "Juja、ケニア",
+      "place": "ジュジャ(ケニア)",
       "loc": "juja",
       "tags": [
         "学校",
         "海外"
       ],
-      "title": "ケニアでの学校1学期",
-      "org": "Precious Blood Primary School",
+      "title": "ケニアでの1学期間の就学",
+      "org": "Precious Blood Primary School · ナイロビ近郊ジュジャ",
       "icon": "school",
-      "why": "子どもの頃、ケニアの学校で1学期を過ごしました。アーヘンをはるかに越えて世界を見た最初の経験です。",
+      "why": "異なる学校制度で3か月間授業を受けました。国際的な視点への関心はここから始まりました。",
       "text": [
-        "4年生のクラスに入り、学校生活のすべてに参加しました。"
+        "2016年の春に、Precious Blood Primary Schoolで1学期を過ごし、4年生の授業に通常どおり参加しました。"
       ],
       "points": [
-        "Vollständiger Schulalltag in allen Fächern",
-        "Schwerpunkte: Mathematik und Musik"
+        "全教科にわたる学校生活を丸ごと経験",
+        "重点科目:数学と音楽"
       ],
       "links": [],
       "cv": {
         "title": "Precious Blood Primary School",
-        "org": "Trimester im kenianischen Schulsystem",
+        "org": "ケニアの学校制度での1学期",
         "points": []
       }
     },
@@ -656,9 +656,9 @@
       "title": "Stiftung der Deutschen Wirtschaft の奨学金",
       "org": "Studienförderwerk Klaus Murmann",
       "logo": "sdw.svg",
-      "why": "公共心と起業家精神を持つ学生のための奨学金。",
+      "why": "公共心と起業家精神を持つ学生への支援。",
       "text": [
-        "Studienförderwerk Klaus Murmann は、毎年約2,000人の学生および博士課程の学生を支援しています。"
+        "Studienförderwerk Klaus Murmann はドイツにある13の学業優秀者支援機関のひとつで、毎年約2,000人の学生と博士課程在籍者を支援している。"
       ],
       "points": [],
       "links": [
@@ -669,7 +669,7 @@
       ],
       "cv": {
         "title": "Stiftung der Deutschen Wirtschaft (sdw)",
-        "org": "Stipendiat, eines der 13 Begabtenförderungswerke in Deutschland",
+        "org": "奨学生、ドイツの13の学業優秀者支援機関のひとつ",
         "link": 0
       }
     },
@@ -681,16 +681,16 @@
       "tags": [
         "奨学金"
       ],
-      "title": "Hans Rudolf Stiftung 奨学金",
+      "title": "Hans Rudolf Stiftung の奨学金",
       "org": "Hans Rudolf Stiftung、ミュンヘン",
       "logo": "hr-stiftung.png",
-      "why": "ミュンヘンの意欲ある学生のための奨学金。",
+      "why": "ミュンヘンの大学に在籍する学生のための奨学金。",
       "text": [],
       "points": [],
       "links": [],
       "cv": {
         "title": "Hans Rudolf Stiftung",
-        "org": "Stipendiat"
+        "org": "奨学生"
       }
     },
     {
@@ -699,14 +699,14 @@
       "year": 2024,
       "date": "06.2024",
       "tags": [
-        "Auszeichnung"
+        "受賞"
       ],
-      "title": "MINT-EC-Zertifikat mit Auszeichnung",
-      "org": "MINT-EC, das nationale Excellence-Schulnetzwerk",
+      "title": "MINT-EC認定証(優秀)",
+      "org": "MINT-EC、ドイツの全国エクセレンス校ネットワーク",
       "icon": "cap",
-      "why": "Die höchste von drei Stufen, für herausragende Leistungen und Engagement in Mathematik, Informatik, Naturwissenschaften und Technik über die gesamte Schulzeit.",
+      "why": "3段階のうち最高位。在学期間を通じて、数学・情報学・自然科学・技術の分野で優れた成績と取り組みを示した生徒に授与される。",
       "text": [
-        "Das Zertifikat wird mit dem Abitur an Schulen des MINT-EC-Netzwerks vergeben und ist von Kultusministerkonferenz und Hochschulrektorenkonferenz anerkannt. Damit gehörte ich zu den besten 5 % meines Jahrgangs."
+        "この認定証はMINT-ECネットワーク加盟校でアビトゥーアとともに授与され、各州文部大臣会議と大学学長会議に認められている。これにより、同学年の上位5%に入りました。"
       ],
       "points": [],
       "links": [
@@ -716,7 +716,7 @@
         }
       ],
       "cv": {
-        "org": "Höchste von drei Stufen, Top 5 % des Jahrgangs",
+        "org": "3段階のうち最高位、同学年の上位5%",
         "link": 0
       }
     },
@@ -725,28 +725,28 @@
       "kind": "award",
       "year": 2026,
       "date": "2026",
-      "place": "中国、蘇州・上海",
+      "place": "中国、蘇州および上海",
       "loc": "suzhou",
       "tags": [
-        "表彰",
+        "受賞",
         "海外"
       ],
       "title": "German-Chinese Talent Exchange",
-      "org": "TU Münchenの代表団",
+      "org": "TU München の代表団",
       "icon": "exchange",
       "photo": {
         "file": "china.jpg",
-        "alt": "蘇州での代表団",
+        "alt": "蘇州での私たちの代表団",
         "focus": "50% 50%"
       },
-      "why": "採用率5%。TUMの最優秀学生の一人として選出。",
+      "why": "採用率5%の中、TUMの優秀な学生の一人として選ばれた。",
       "text": [
-        "TUMの代表団として蘇州と上海を訪問。"
+        "TU München の代表団の一員として蘇州と上海を訪問した。"
       ],
       "points": [],
       "links": [],
       "cv": {
-        "org": "Delegation der TU München nach Suzhou und Shanghai, 5 % Aufnahmequote"
+        "org": "TU München の代表団として蘇州・上海へ、採用率5%"
       }
     },
     {
@@ -755,14 +755,14 @@
       "year": 2023,
       "date": "2023",
       "tags": [
-        "表彰"
+        "受賞"
       ],
       "title": "Deutsche SchülerAkademie",
-      "org": "学校からの推薦",
+      "org": "学校から推薦",
       "logo": "dsa.svg",
-      "why": "ドイツの生徒のうち選ばれるのは1%未満。",
+      "why": "選ばれるのはドイツの生徒の1%未満。",
       "text": [
-        "コースリーダー: Henric Meinhardt、Johannes Lumma。"
+        "Deutsche SchülerAkademie は、特に能力が高く意欲のある生徒のための Bildung & Begabung によるサマープログラムである。"
       ],
       "points": [],
       "links": [
@@ -772,7 +772,7 @@
         }
       ],
       "cv": {
-        "org": "Von der Schule nominiert, weniger als 1 % werden ausgewählt",
+        "org": "学校から推薦、選ばれるのは1%未満",
         "link": 0
       }
     }

@@ -4,7 +4,7 @@
       "name": "慕尼黑",
       "lat": 48.14,
       "lon": 11.58,
-      "when": "自2024年起",
+      "when": "2024年起",
       "what": "就读于TU München",
       "badge": "home"
     },
@@ -13,7 +13,7 @@
       "lat": 37.87,
       "lon": -122.27,
       "when": "2026年秋季",
-      "what": "在UC Berkeley交换一学期",
+      "what": "在UC Berkeley交换学期",
       "badge": "now"
     },
     "aachen": {
@@ -21,7 +21,7 @@
       "lat": 50.78,
       "lon": 6.08,
       "when": "至2024年",
-      "what": "在此成长，完成中学学业并取得高中毕业证书（Abitur）",
+      "what": "中学时期及高中毕业(Abitur)",
       "label": "none"
     },
     "madrid": {
@@ -29,7 +29,7 @@
       "lat": 40.42,
       "lon": -3.7,
       "when": "2021年秋季",
-      "what": "在马德里一所学校学习四个月",
+      "what": "在Colegio Tajamar海外交流",
       "label": "left"
     },
     "juja": {
@@ -37,7 +37,7 @@
       "lat": -1.1,
       "lon": 37.01,
       "when": "2016年和2018年",
-      "what": "在肯尼亚的学校参与学习与社会服务工作"
+      "what": "在肯尼亚的学校学习一个学期(三学期制)及志愿服务"
     },
     "suzhou": {
       "name": "苏州",
@@ -55,30 +55,30 @@
       "now": true,
       "year": 2026,
       "date": "自 10.2026 起",
-      "place": "San Francisco",
+      "place": "旧金山",
       "loc": "berkeley",
       "tags": [
         "创业",
         "项目"
       ],
       "title": "Audition",
-      "org": "面向求职申请的 AI 预面试 · 联合创始人",
+      "org": "联合创始人 · 面向招聘流程的 AI 预面试",
       "icon": "mic",
-      "why": "在第一次面谈之前先做一次 AI 面试，让公司看到谁真正有能力。",
+      "why": "在首次面谈之前先进行 AI 预面试,让企业尽早看出谁真正符合要求。",
       "text": [
-        "Audition 诞生于 SF Tech Week Hackathon，此后我一直在把它作为初创公司继续开发。",
-        "公司输入职位和要求，AI 提出问题建议，由公司审核通过。求职者通过链接作答，全程连续录制视频，之后公司会看到一份评估结果。"
+        "Audition 诞生于 SF Tech Week Hackathon,此后我们将它作为初创项目继续开发。",
+        "企业输入职位和要求,AI 提出合适的问题,由企业审核通过。求职者通过链接以一段连续的视频录制作答,之后企业会收到一份结构化的评估。"
       ],
       "points": [
-        "公司可在真人进行第一次面谈之前，向大量求职者发送这一预面试",
-        "录制内容包括屏幕、声音和人物",
-        "已申请 a16z speedrun"
+        "企业在首次面谈前可向众多求职者发送的预面试",
+        "记录屏幕、声音和作答表现",
+        "已申请加速器 a16z speedrun"
       ],
       "links": [],
       "cv": {
-        "org": "Mitgründer · KI-Vorinterview für Recruiting",
+        "org": "联合创始人 · 面向招聘的 AI 预面试",
         "points": [
-          "Entstanden beim SF Tech Week Hackathon, Bewerbung beim Accelerator a16z speedrun"
+          "诞生于 SF Tech Week Hackathon,已申请加速器 a16z speedrun"
         ]
       }
     },
@@ -89,30 +89,30 @@
       "now": true,
       "year": 2026,
       "date": "自 10.2026 起",
-      "place": "Berkeley",
+      "place": "伯克利",
       "loc": "berkeley",
       "tags": [
         "创业",
         "项目"
       ],
       "title": "Concentr8",
-      "org": "专为神经多样性人群设计的专注力应用 · 后端",
+      "org": "联合创始人 · 面向神经多样性学生的专注力应用 · 后端",
       "icon": "target",
       "photo": {
         "file": "concentr8.jpg",
-        "alt": "我与 Concentr8 团队的合影",
+        "alt": "我与 Concentr8 团队",
         "focus": "50% 40%"
       },
-      "why": "一款应用，在你自己察觉之前就把你拉回学习任务。",
+      "why": "一款在干扰得逞之前,帮助学生在学习时回到任务上的应用。",
       "text": [
-        "本学期我在 UC Berkeley 开发了 Concentr8。它起源于在 San Francisco 举办的 Cal Hacks 13.0，之后我们把它与 Technology Entrepreneurship 课程中的项目合并。",
-        "我负责后端，与 Jinyuan Xu 和 Camila Scotti Pinto 组队。"
+        "Concentr8 诞生于旧金山的 Cal Hacks 13.0。之后我们把它与伯克利 Technology Entrepreneurship (ENGIN 183E) 课程中的项目合并。",
+        "我负责后端,与 Jinyuan Xu 和 Camila Scotti Pinto 组成团队。"
       ],
       "points": [
-        "Mac 应用，在学习时段内屏蔽分散注意力的应用和网站",
-        "在固定学习时间来电提醒：早上、中午、晚上",
-        "AI 聊天会先提问，再给出包含各学习时段的计划建议",
-        "使用 Google 登录，并连接日历"
+        "Mac 应用,在学习时段内屏蔽分散注意力的应用和网站",
+        "在固定学习时间自动来电:早上、中午、晚上",
+        "AI 助手先提出追问,再给出包含各个学习时段的计划",
+        "支持 Google 登录并接入 Google 日历"
       ],
       "links": [
         {
@@ -126,8 +126,8 @@
       ],
       "cv": {
         "points": [
-          "Backend verantwortet: Mac-App, die Ablenkungen sperrt, Anrufe zu festen Lernzeiten, KI-Planung mit Google Kalender",
-          "Entstanden bei Cal Hacks 13.0, weiterentwickelt im Kurs Technology Entrepreneurship (ENGIN 183E)"
+          "负责后端:屏蔽干扰的 Mac 应用、固定学习时间的来电、结合 Google 日历的 AI 规划",
+          "诞生于 Cal Hacks 13.0,在 Technology Entrepreneurship (ENGIN 183E) 课程中继续开发"
         ],
         "link": 0
       }
@@ -138,29 +138,29 @@
       "now": true,
       "year": 2026,
       "date": "08.2026 – 12.2026",
-      "place": "美国 Berkeley",
+      "place": "美国伯克利",
       "loc": "berkeley",
       "tags": [
         "学业",
         "海外"
       ],
-      "title": "交换学期",
-      "org": "University of California, Berkeley",
+      "title": "海外交换学期",
+      "org": "University of California, Berkeley · Berkeley International Study Program",
       "logo": "ucberkeley.svg",
       "photo": {
         "file": "berkeley.jpg",
-        "alt": "我在 San Francisco 湾边",
+        "alt": "我在旧金山湾边",
         "focus": "60% 40%"
       },
-      "why": "在计算机科学顶尖大学之一度过一个学期，身处 AI 初创企业的生态圈中心。",
+      "why": "在顶尖的计算机科学大学之一度过一个学期,身处 AI 初创企业的生态之中。",
       "text": [
-        "我通过 Berkeley International Study Program 在 Berkeley 学习一个学期。除了上课，我也抓住每个机会参加黑客松。"
+        "通过 Berkeley International Study Program,我将在 2026 年秋季就读于 UC Berkeley。除了课程之外,我还参加黑客松,并开展自己的创业项目。"
       ],
       "points": [
-        "Künstliche Intelligenz (CS 188)",
-        "Kryptografie (CS 171)",
+        "人工智能 (CS 188)",
+        "密码学 (CS 171)",
         "Technology Entrepreneurship (ENGIN 183E)",
-        "Gefördert durch die Stiftung der Deutschen Wirtschaft"
+        "获 Stiftung der Deutschen Wirtschaft 资助"
       ],
       "links": [
         {
@@ -178,10 +178,10 @@
       ],
       "cv": {
         "title": "University of California, Berkeley",
-        "org": "Austauschstudent · Berkeley International Study Program",
+        "org": "交换生 · Berkeley International Study Program",
         "points": [
-          "Künstliche Intelligenz (CS 188), Kryptografie (CS 171), Technology Entrepreneurship (ENGIN 183E)",
-          "Gefördert durch die Stiftung der Deutschen Wirtschaft (sdw)"
+          "人工智能 (CS 188)、密码学 (CS 171)、Technology Entrepreneurship (ENGIN 183E)",
+          "获 Stiftung der Deutschen Wirtschaft (sdw) 资助"
         ]
       }
     },
@@ -198,15 +198,15 @@
       "title": "运筹学助教",
       "org": "TU München · Kolisch 教授讲席",
       "logo": "tum.svg",
-      "why": "因我在该课程中位列前 5% 而被选中，之后由我亲自授课。",
+      "why": "凭借课程成绩位列前 5 % 而入选;之后我自己以助教身份讲授该课程。",
       "text": [
-        "我在 2025/26 冬季学期和 2026 夏季学期主持了“Operations Research and Decision Analysis”的习题课，并提供一对一辅导。我自己以 1.3 的成绩修完了这门课。"
+        "在 2025/26 冬季学期和 2026 夏季学期,我主持了“Operations Research and Decision Analysis”的习题课,并额外为学生提供一对一辅导。我本人以 1,3 的成绩完成了该课程。"
       ],
       "points": [
-        "4 Stunden Tutorium pro Woche für rund 25 Studierende",
-        "Übungsaufgaben selbst konzipiert",
-        "Simplex, Netzwerkflüsse, ganzzahlige Optimierung",
-        "Modellierung mit Gurobi"
+        "每周 4 小时习题课,面向约 25 名学生",
+        "自行设计练习题",
+        "单纯形法、网络流、整数优化",
+        "使用 Gurobi 建模"
       ],
       "links": [
         {
@@ -215,12 +215,12 @@
         }
       ],
       "cv": {
-        "title": "Tutor, Operations Research and Decision Analysis",
+        "title": "助教,Operations Research and Decision Analysis",
         "org": "Technische Universität München",
         "points": [
-          "Ausgewählt für eine Kursleistung unter den besten 5 % (Note 1,3)",
-          "4 Stunden Tutorium pro Woche für rund 25 Studierende, Übungsaufgaben selbst konzipiert",
-          "Simplex, Netzwerkflüsse, ganzzahlige Optimierung, Gurobi"
+          "凭借课程成绩位列前 5 % 入选(成绩 1,3)",
+          "每周 4 小时习题课,面向约 25 名学生,自行设计练习题",
+          "单纯形法、网络流、整数优化、Gurobi"
         ]
       }
     },
@@ -233,23 +233,23 @@
       "tags": [
         "工作"
       ],
-      "title": "Fellow，战略与转型咨询",
+      "title": "Fellow,战略与转型咨询",
       "org": "ritzenhoefer & company",
       "logo": "ritzenhoefer.png",
       "photo": {
         "file": "ritzenhoefer.jpg",
-        "alt": "我带着笔记本电脑在火车站，正前往客户现场",
+        "alt": "我带着笔记本电脑在火车站,前往客户现场的路上",
         "focus": "60% 35%"
       },
-      "why": "从内部亲身参与一家德国大型银行的大型转型项目。",
+      "why": "直接在客户现场参与一家德国大型银行的大型转型项目。",
       "text": [
-        "ritzenhoefer & company 为大型银行、保险公司和工业企业的重大重组提供咨询。我大多直接在客户现场工作，支持项目办公室。"
+        "ritzenhoefer & company 为大型银行、保险公司和工业企业提供全面转型方面的咨询。我主要在客户现场工作,并支持项目管理办公室(PMO)。"
       ],
       "points": [
-        "在技术和组织层面负责 Runbook 报告体系，其中部分内容用 Excel 宏实现自动化",
-        "改进变更请求流程，管理超过 70 个变更请求",
-        "制作直至指导委员会层面的演示文稿",
-        "为高级顾问设计了一种工作分担（Job-Sharing）模式"
+        "负责 Runbook 报告体系的技术与组织工作,并用 Excel 宏将其中一部分自动化",
+        "改进变更请求流程,并管理了 70 多个变更请求",
+        "编制提交至指导委员会层面的决策文件",
+        "为高级顾问设计岗位共享模式"
       ],
       "links": [
         {
@@ -259,8 +259,8 @@
       ],
       "cv": {
         "points": [
-          "Runbook und über 70 Change Requests im PMO verantwortet, Berichtswesen mit Excel-Makros teilautomatisiert",
-          "60/60-Jobsharing-Modell für Senior Consultants entwickelt"
+          "在 PMO 负责 Runbook 和 70 多个变更请求,用 Excel 宏将报告体系部分自动化",
+          "为高级顾问设计 60/60 岗位共享模式"
         ]
       }
     },
@@ -274,22 +274,22 @@
       "tags": [
         "工作"
       ],
-      "title": "商务拓展实习",
-      "org": "comstruct · 建筑行业软件",
+      "title": "业务拓展实习",
+      "org": "comstruct · 建筑行业材料采购软件,Series A",
       "logo": "comstruct.svg",
       "photo": {
         "file": "comstruct.jpg",
-        "alt": "我与一位同事在 comstruct 办公室的合影",
+        "alt": "我与一位同事在 comstruct 办公室",
         "focus": "50% 30%"
       },
-      "why": "在一家 A 轮创业公司用九周时间接入了 74 家供应商。",
+      "why": "在一家 Series A 初创公司的 Go-to-Market 团队中,九周内接入 74 家供应商。",
       "text": [
-        "comstruct 为建筑企业实现材料采购数字化:送货单、发票和订单都与供应商在线流转。我在 Go-to-Market 团队工作。"
+        "comstruct 为建筑企业的材料采购提供数字化服务:订单、送货单和发票在建筑企业与供应商之间以数字方式流转。我是 Go-to-Market 团队的一员。"
       ],
       "points": [
-        "9 周内通过电话和邮件接入 74 家供应商",
-        "分析并改进了供应商接入流程",
-        "代表 comstruct 参加 BAUMA 展会",
+        "9 周内接入 74 家供应商,包括技术集成",
+        "分析并改进供应商接入流程",
+        "代表 comstruct 参加 BAUMA 行业展会",
         "为全公司组织团队活动"
       ],
       "links": [
@@ -299,14 +299,14 @@
         }
       ],
       "cv": {
-        "title": "Business Development, Supply Chain Integration",
-        "org": "comstruct · Bausoftware, Series A · Praktikum",
+        "title": "业务拓展,供应链集成",
+        "org": "comstruct · 建筑软件,Series A · 实习",
         "points": [
-          "74 Lieferanten in 9 Wochen angebunden, einschließlich technischer Integration",
-          "Prozess der Lieferantenanbindung analysiert und verbessert"
+          "9 周内接入 74 家供应商,包括技术集成",
+          "分析并改进供应商接入流程"
         ],
         "extra": [
-          "comstruct auf der Fachmesse BAUMA vertreten"
+          "代表 comstruct 参加 BAUMA 行业展会"
         ]
       }
     },
@@ -322,19 +322,19 @@
         "项目"
       ],
       "title": "Shapely",
-      "org": "按订单 3D 打印 · 自己的创业构想",
+      "org": "联合创始人 · 3D 打印备件",
       "logo": "shapely.png",
-      "why": "用手机扫描,打印好的成品送货到家。我学到的最重要的一点,是何时该放下一个想法。",
+      "why": "打印没有 CAD 文件的备件,并学会何时放弃一个商业模式。",
       "text": [
-        "Bricht ein Kunststoffteil, gibt es oft weder Ersatz noch eine Konstruktionsdatei. Shapely sollte genau diese Lücke schließen: Teil fotografieren oder scannen, daraus ein druckfertiges Modell erstellen, drucken und liefern.",
-        "Wir waren zu dritt, alle von der TU München, und Teil des TUM Startup Launchpad. Ich habe Strategie, Finanzen und Go-to-Market verantwortet."
+        "塑料零件损坏后,往往既买不到替换件,也没有设计文件。Shapely 正是要填补这一空白:拍照或扫描零件,生成可直接打印的模型,然后打印并交付。",
+        "我们是三人团队,均来自 TU München,并参加了 TUM Startup Launchpad。我负责战略、财务和 Go-to-Market。"
       ],
       "points": [
-        "Erste Aufträge bewusst von Hand umgesetzt: in Fusion 360 modelliert, auf einem Bambu Lab X1 Carbon gedruckt und selbst ausgeliefert",
-        "Web-Plattform, die passende Teile auf Thingiverse und Printables findet",
-        "iPhone-Prototyp, der Teile mit dem LiDAR-Scanner erfasst (Swift, ARKit, Supabase)",
-        "Interviews mit Instandhaltern und Konstrukteuren geführt, Wettbewerber wie Replique und 3YOURMIND analysiert",
-        "Ergebnis der Tests: Das Modell trägt nicht, wir haben es eingestellt"
+        "有意先手工完成最初的订单:用 Fusion 360 建模,在 Bambu Lab X1 Carbon 上打印,并亲自交付",
+        "开发了一个网络平台,可在 Thingiverse 和 Printables 上查找匹配的零件",
+        "开发了 iPhone 原型,通过 LiDAR 扫描仪采集零件(Swift、ARKit、Supabase)",
+        "访谈了设备维护人员和结构工程师,分析了 Replique 和 3YOURMIND 等竞争对手",
+        "测试结果:该模式行不通,我们终止了项目"
       ],
       "links": [
         {
@@ -343,11 +343,11 @@
         }
       ],
       "cv": {
-        "org": "Mitgründer · Ersatzteile aus dem 3D-Drucker, ohne CAD-Datei",
+        "org": "联合创始人 · 无需 CAD 文件的 3D 打印备件",
         "points": [
-          "Strategie, Finanzen und Go-to-Market im Dreierteam, TUM Startup Launchpad",
-          "Erste Aufträge von Hand umgesetzt (Fusion 360, 3D-Druck); iPhone-Scan-Prototyp mit ARKit und LiDAR",
-          "Geschäftsmodell in Interviews mit Instandhaltern geprüft und eingestellt"
+          "在三人团队中负责战略、财务和 Go-to-Market,TUM Startup Launchpad",
+          "手工完成最初的订单(Fusion 360、3D 打印);使用 ARKit 和 LiDAR 开发 iPhone 扫描原型",
+          "通过对设备维护人员的访谈验证了商业模式,并终止了项目"
         ],
         "link": 0
       }
@@ -357,22 +357,22 @@
       "kind": "station",
       "now": true,
       "year": 2024,
-      "date": "seit 10.2024",
+      "date": "自 10.2024 起",
       "place": "慕尼黑",
       "loc": "muenchen",
       "tags": [
         "学业"
       ],
-      "title": "管理与技术理学学士(B.Sc. Management & Technology)",
-      "org": "TU München · 方向:计算机工程",
+      "title": "TU München 本科学习",
+      "org": "B.Sc. Management and Technology · 专业方向 Computer Engineering",
       "logo": "tum.svg",
-      "why": "把经济与计算机科学结合在同一个专业里,该项目的录取率为 9 %。",
+      "why": "处于经济与信息学交叉领域的专业,录取率为 9 %。",
       "text": [
-        "我自 2024/25 冬季学期起就读,预计 2027 年毕业。"
+        "我自 2024/25 冬季学期起就读于慕尼黑工业大学,专业方向为 Computer Engineering。预计 2027 年毕业。"
       ],
       "points": [
-        "平均成绩 1,6",
-        "方向:计算机工程"
+        "平均成绩 1,6(前 10 %)",
+        "专业方向 Computer Engineering"
       ],
       "links": [
         {
@@ -380,15 +380,15 @@
           "url": "https://www.tum.de/"
         },
         {
-          "label": "TUM 的专业介绍",
+          "label": "专业",
           "url": "https://www.mgt.tum.de/de/programs/bachelor-in-management-technology/muenchen"
         }
       ],
       "cv": {
-        "title": "Technische Universität München",
-        "org": "B.Sc. Management and Technology, Vertiefung Computer Engineering",
+        "title": "慕尼黑工业大学",
+        "org": "B.Sc. Management and Technology,专业方向 Computer Engineering",
         "points": [
-          "Notenschnitt 1,6 (Top 10 %), Studiengang mit 9 % Aufnahmequote"
+          "平均成绩 1,6(前 10 %),该专业录取率为 9 %"
         ]
       }
     },
@@ -407,23 +407,23 @@
       "logo": "cy.svg",
       "photo": {
         "file": "cycos.jpg",
-        "alt": "我站在 cycos 标志前的照片",
+        "alt": "我站在 cycos 标志前",
         "focus": "70% 40%"
       },
-      "why": "第一次亲手搭建服务器和虚拟机,并用 Java 编程。",
+      "why": "首次获得软件开发和网络技术的实践经验:服务器、虚拟机和 Java。",
       "text": [
-        "cycos 开发电信软件已有 30 多年,从模拟系统到云端协作均有涉及。我在开发团队工作了四周。"
+        "cycos 开发电信软件已有 30 多年,从模拟系统到基于云的协作解决方案均有涉及。我在开发团队待了四周。"
       ],
       "points": [
-        "网络基础:IP 地址、路由、协议",
-        "Linux、服务器以及基于 Proxmox 的虚拟机",
-        "Java 与面向对象编程",
+        "网络基础:IP 寻址、路由、协议",
+        "使用 Proxmox 搭建 Linux 服务器和虚拟机",
+        "使用 Java 进行面向对象编程",
         "了解电话通信和 VoIP"
       ],
       "links": [],
       "cv": {
         "points": [
-          "Linux-Server und virtuelle Maschinen (Proxmox) aufgesetzt, objektorientierte Programmierung in Java"
+          "搭建 Linux 服务器和虚拟机(Proxmox),使用 Java 进行面向对象编程"
         ],
         "optional": true
       }
@@ -437,7 +437,7 @@
       "loc": "muenchen",
       "tags": [
         "创业",
-        "公益参与"
+        "社会参与"
       ],
       "title": "联合创始人兼理事会成员",
       "org": "Future Founders Initiative e.V. · 自 08.2026 起任顾问委员会成员",
@@ -447,23 +447,23 @@
         "alt": "Future Founders Initiative 活动上的合影",
         "focus": "50% 40%"
       },
-      "why": "从五个人发展成覆盖三座城市的组织,之后我有意识地完成了交接。",
+      "why": "从五名创始成员起步,发展为覆盖三座城市的组织,随后有意识地移交。",
       "text": [
-        "Future Founders Initiative 汇聚有创业意愿的学生:提供免费工作坊,涵盖从最初的想法到路演的全过程。我参与创立了它,在理事会中推动其发展,并于 2026 年转任顾问委员会成员。"
+        "Future Founders Initiative 汇聚有志创业的学生,提供从最初的想法到路演的免费工作坊。我共同创立了这个协会,在理事会中参与搭建,并于 2026 年转任顾问委员会成员。"
       ],
       "points": [
-        "为 110 多名学生举办为期三天的活动",
-        "在慕尼黑、法兰克福和斯图加特设有分部",
-        "重新搭建了理事会架构",
-        "共同制定价值观:做行动者而非旁观者、彼此支持、留下些什么、不摆架子"
+        "为 110 多名学生组织了为期三天的创业活动",
+        "分会设在慕尼黑、法兰克福和斯图加特",
+        "重新搭建了理事会结构",
+        "共同制定了核心价值观:做行动者而非旁观者、互相支持、留下些什么、不自我中心"
       ],
       "links": [],
       "cv": {
         "title": "Future Founders Initiative e.V.",
-        "org": "Mitgründer und Vorstand, seit 08.2026 im Beirat",
+        "org": "联合创始人兼理事会成员,自 08.2026 起任顾问委员会成员",
         "points": [
-          "Von fünf Gründungsmitgliedern zu einer Initiative in drei Städten aufgebaut",
-          "Dreitägige Gründungsveranstaltungen für über 110 Studierende organisiert"
+          "从五名创始成员发展为覆盖三座城市的组织",
+          "为 110 多名学生组织了为期三天的创业活动"
         ]
       }
     },
@@ -472,26 +472,26 @@
       "kind": "station",
       "year": 2024,
       "date": "08.2016 – 06.2024",
-      "place": "亚琛",
+      "place": "Aachen",
       "loc": "aachen",
       "tags": [
         "学校"
       ],
-      "title": "Abitur",
-      "org": "Bischöfliches Pius-Gymnasium · 高级课程：数学、地理、德语",
+      "title": "Abitur(高中毕业考试)",
+      "org": "Bischöfliches Pius-Gymnasium Aachen · 进阶课程:数学、地理、德语",
       "logo": "pius.png",
-      "why": "Abitur 成绩 1.2，同时已在 RWTH 听数学课程。",
+      "why": "Abitur成绩1.2,获MINT-EC证书(优异等级),中学期间已在RWTH Aachen旁听数学课程。",
       "text": [
-        "Am Pius-Gymnasium habe ich mich weit über den Unterricht hinaus engagiert: mit einem eigenen Förderkurs, in Nachhilfe und Hausaufgabenbetreuung und acht Jahre lang in der Big Band.",
-        "Parallel zur Oberstufe habe ich im Frühstudium die Vorlesung Höhere Mathematik an der RWTH Aachen besucht."
+        "在Pius-Gymnasium,我在课堂之外投入了很多精力:开设了自己的拓展课程,参与课业辅导和作业辅导,并在Big Band演奏了八年。",
+        "在高年级阶段,我同时提前修读了RWTH Aachen的高等数学课程。"
       ],
       "points": [
-        "Abiturnote 1,2 (Top 10 %)",
-        "MINT-EC-Zertifikat mit Auszeichnung, die höchste von drei Stufen (Top 5 % des Jahrgangs)",
-        "Förderkurs „Economy & Innovation“ für die Klassen 8 bis 10 aufgebaut und ab Oktober 2022 wöchentlich zwei Stunden geleitet: Volkswirtschaft, persönliche Finanzen, Steuern, internationale Politik, künstliche Intelligenz, Präsentieren und Websites",
-        "Ein Schuljahr lang wöchentliche Mathematik-Einzelförderung für einen Fünftklässler mit besonderem Förderbedarf",
-        "Hausaufgabenbetreuung für die Unter- und Mittelstufe",
-        "Posaune in der Big Band seit 2016 und im Schulorchester: Konzerte, Schulfeste, Gedenkveranstaltungen"
+        "Abitur成绩1.2(前10%)",
+        "MINT-EC证书(优异等级),三个等级中的最高级(同年级前5%)",
+        "创建了面向8至10年级的拓展课程“Economy & Innovation”,并自2022年10月起每周授课两小时:经济学、个人理财、税收、国际政治、人工智能、演讲展示和网站制作",
+        "整整一个学年每周为一名有特殊辅导需求的五年级学生提供一对一数学辅导",
+        "为初中低年级和中年级学生提供作业辅导",
+        "自2016年起在Big Band和学校管弦乐团担任长号手:参加音乐会、校庆和纪念活动"
       ],
       "links": [
         {
@@ -509,14 +509,14 @@
       ],
       "cv": {
         "title": "Bischöfliches Pius-Gymnasium Aachen",
-        "org": "Abitur 1,2 (Top 10 %) · Leistungskurse Mathematik, Erdkunde, Deutsch",
+        "org": "Abitur成绩1.2(前10%)· 进阶课程:数学、地理、德语",
         "points": [
-          "Frühstudium: Höhere Mathematik an der RWTH Aachen",
-          "Förderkurs „Economy & Innovation“ für die Klassen 8 bis 10 aufgebaut und ab 10.2022 wöchentlich zwei Stunden geleitet: Volkswirtschaft, Finanzen, KI, Präsentieren",
-          "Ein Schuljahr wöchentliche Mathematik-Einzelförderung für einen jüngeren Schüler mit besonderem Förderbedarf"
+          "提前修读大学课程:RWTH Aachen的高等数学",
+          "创建了面向8至10年级的拓展课程“Economy & Innovation”,并自10.2022起每周授课两小时:经济学、理财、人工智能、演讲展示",
+          "整整一个学年每周为一名有特殊辅导需求的低年级学生提供一对一数学辅导"
         ],
         "extra": [
-          "Hausaufgabenbetreuung für die Unter- und Mittelstufe; Posaune in Big Band und Schulorchester seit 2016"
+          "为初中低年级和中年级学生提供作业辅导;自2016年起在Big Band和学校管弦乐团演奏长号"
         ]
       }
     },
@@ -525,7 +525,7 @@
       "kind": "station",
       "year": 2023,
       "date": "06.2023 – 07.2023",
-      "place": "黑尔佐根拉特",
+      "place": "Herzogenrath",
       "loc": "aachen",
       "tags": [
         "工作"
@@ -533,14 +533,14 @@
       "title": "人事与传播实习",
       "org": "AIXTRON SE",
       "logo": "aixtron.svg",
-      "why": "在一家半导体设备制造商实习两周，工作涉及人事和新闻事务。",
+      "why": "在一家半导体行业设备制造商实习两周,分别在人事部门和企业传播部门工作。",
       "text": [
-        "AIXTRON 制造用于生产显示屏、激光器和太阳能电池所需化合物半导体的设备。我在人事部门工作，并参与了新闻事务。"
+        "AIXTRON生产用于制造显示器、激光器和太阳能电池所需化合物半导体的设备。我参与了人事部门和新闻工作。"
       ],
       "points": [
         "参与策划学徒日",
-        "改版招聘网站的学生专区",
-        "协助处理新闻稿"
+        "改版了招聘网站的学生专区",
+        "参与新闻稿的编写"
       ],
       "links": [
         {
@@ -550,7 +550,7 @@
       ],
       "cv": {
         "points": [
-          "Azubi-Tag mitgeplant, Schülerseite der Karriere-Website überarbeitet, Pressemitteilungen mitbetreut"
+          "参与策划学徒日,改版招聘网站的学生专区,参与新闻稿的编写"
         ],
         "optional": true
       }
@@ -560,22 +560,22 @@
       "kind": "station",
       "year": 2021,
       "date": "09.2021 – 12.2021",
-      "place": "西班牙，马德里",
+      "place": "马德里,西班牙",
       "loc": "madrid",
       "tags": [
         "学校",
-        "国外"
+        "海外"
       ],
-      "title": "在马德里上学四个月",
-      "org": "Colegio Tajamar · Bachillerato de Ciencias",
+      "title": "马德里海外交流",
+      "org": "Colegio Tajamar · Bachillerato,理科方向",
       "logo": "tajamar.png",
-      "why": "刚到时只会一点西班牙语，最后能在正常课堂上做笔记。",
+      "why": "在西班牙学校体系中度过四个月:带着基础西班牙语来到这里,最终正常参加了课程和考试。",
       "text": [
-        "我就读于 Bachillerato 第一年的自然科学方向，每周 37 课时，考试与班上同学相同。"
+        "2021年秋季,我就读于Bachillerato第一年的理科方向,每周37课时,并参加与同班同学相同的考试。"
       ],
       "points": [
-        "重点为生命科学",
-        "在日常生活中学会西班牙语"
+        "重点学习生命科学",
+        "在日常校园生活中提高了西班牙语水平"
       ],
       "links": [
         {
@@ -585,7 +585,7 @@
       ],
       "cv": {
         "title": "Colegio Tajamar",
-        "org": "Auslandssemester, Bachillerato mit Schwerpunkt Biowissenschaften",
+        "org": "海外交流学期,Bachillerato,以生命科学为重点",
         "points": []
       }
     },
@@ -594,22 +594,22 @@
       "kind": "station",
       "year": 2018,
       "date": "03.2018 – 04.2018",
-      "place": "Juja，肯尼亚",
+      "place": "Juja,肯尼亚",
       "loc": "juja",
       "tags": [
-        "志愿服务",
+        "公益",
         "海外"
       ],
-      "title": "在儿童之家做志愿者",
+      "title": "儿童之家志愿工作",
       "org": "Star of Hope Children’s Home",
       "icon": "heart",
-      "why": "三周时间，在一家收容孤儿和无家可归儿童的机构里度过。",
+      "why": "在一家收容孤儿和缺乏家庭依靠的儿童的儿童之家参与工作三周。",
       "text": [
-        "我在那里哪里需要就去哪里帮忙，晚上还上英语课。"
+        "我在日常中协助该机构,哪里需要帮助就去哪里,晚上则上英语课。"
       ],
       "points": [
-        "参与修建围栏，并维护院区",
-        "和孩子们一起玩耍"
+        "参与园区内的建设和维护工作",
+        "照顾孩子们并组织他们的课余活动"
       ],
       "links": [],
       "cv": {
@@ -621,27 +621,27 @@
       "kind": "station",
       "year": 2016,
       "date": "03.2016 – 05.2016",
-      "place": "Juja，肯尼亚",
+      "place": "Juja,肯尼亚",
       "loc": "juja",
       "tags": [
         "学校",
         "海外"
       ],
-      "title": "在肯尼亚度过一个学期",
-      "org": "Precious Blood Primary School",
+      "title": "肯尼亚学校学期",
+      "org": "Precious Blood Primary School · Juja,靠近内罗毕",
       "icon": "school",
-      "why": "小时候在肯尼亚的一所学校度过一个学期，这是我第一次把视野放到亚琛之外。",
+      "why": "在另一种学校体系中上了三个月的课。我对国际视野的兴趣由此开始。",
       "text": [
-        "我读四年级，完整参与了日常的学校生活。"
+        "2016年春季,我在Precious Blood Primary School度过了一个学期,正常参加四年级的课程。"
       ],
       "points": [
-        "Vollständiger Schulalltag in allen Fächern",
-        "Schwerpunkte: Mathematik und Musik"
+        "完整体验各科目的日常学校生活",
+        "重点科目:数学和音乐"
       ],
       "links": [],
       "cv": {
         "title": "Precious Blood Primary School",
-        "org": "Trimester im kenianischen Schulsystem",
+        "org": "在肯尼亚学校体系中度过一个学期",
         "points": []
       }
     },
@@ -649,16 +649,16 @@
       "id": "sdw",
       "kind": "award",
       "year": 2024,
-      "date": "自 10.2024",
+      "date": "自 10.2024 起",
       "tags": [
         "奖学金"
       ],
       "title": "Stiftung der Deutschen Wirtschaft 奖学金",
       "org": "Studienförderwerk Klaus Murmann",
       "logo": "sdw.svg",
-      "why": "面向具有公益精神和创业精神的大学生。",
+      "why": "资助具有公益精神和创业精神的大学生。",
       "text": [
-        "Studienförderwerk Klaus Murmann 每年资助约 2.000 名大学生和博士生。"
+        "Studienförderwerk Klaus Murmann 是德国13个天才资助机构之一,每年资助约2,000名本科生和博士生。"
       ],
       "points": [],
       "links": [
@@ -669,7 +669,7 @@
       ],
       "cv": {
         "title": "Stiftung der Deutschen Wirtschaft (sdw)",
-        "org": "Stipendiat, eines der 13 Begabtenförderungswerke in Deutschland",
+        "org": "奖学金获得者,德国13个天才资助机构之一",
         "link": 0
       }
     },
@@ -682,15 +682,15 @@
         "奖学金"
       ],
       "title": "Hans Rudolf Stiftung 奖学金",
-      "org": "Hans Rudolf Stiftung，慕尼黑",
+      "org": "Hans Rudolf Stiftung,慕尼黑",
       "logo": "hr-stiftung.png",
-      "why": "面向目标明确的慕尼黑在读学生的奖学金。",
+      "why": "面向慕尼黑高校学生的奖学金。",
       "text": [],
       "points": [],
       "links": [],
       "cv": {
         "title": "Hans Rudolf Stiftung",
-        "org": "Stipendiat"
+        "org": "奖学金获得者"
       }
     },
     {
@@ -699,14 +699,14 @@
       "year": 2024,
       "date": "06.2024",
       "tags": [
-        "Auszeichnung"
+        "荣誉"
       ],
-      "title": "MINT-EC-Zertifikat mit Auszeichnung",
-      "org": "MINT-EC, das nationale Excellence-Schulnetzwerk",
+      "title": "MINT-EC 优秀证书",
+      "org": "MINT-EC,德国国家级卓越学校网络",
       "icon": "cap",
-      "why": "Die höchste von drei Stufen, für herausragende Leistungen und Engagement in Mathematik, Informatik, Naturwissenschaften und Technik über die gesamte Schulzeit.",
+      "why": "三个等级中的最高级,表彰在整个中学阶段在数学、信息学、自然科学和技术方面的杰出成绩与投入。",
       "text": [
-        "Das Zertifikat wird mit dem Abitur an Schulen des MINT-EC-Netzwerks vergeben und ist von Kultusministerkonferenz und Hochschulrektorenkonferenz anerkannt. Damit gehörte ich zu den besten 5 % meines Jahrgangs."
+        "该证书随高中毕业考试(Abitur)在 MINT-EC 网络学校颁发,获得德国各州文化部长联席会议和德国高校校长联席会议的认可。我因此跻身同年级前5%。"
       ],
       "points": [],
       "links": [
@@ -716,7 +716,7 @@
         }
       ],
       "cv": {
-        "org": "Höchste von drei Stufen, Top 5 % des Jahrgangs",
+        "org": "三个等级中的最高级,同年级前5%",
         "link": 0
       }
     },
@@ -739,14 +739,14 @@
         "alt": "我们在苏州的代表团",
         "focus": "50% 50%"
       },
-      "why": "录取率 5%。作为 TUM 最优秀的学生之一入选。",
+      "why": "在5%的录取率下,作为 TUM 最优秀的学生之一入选。",
       "text": [
-        "随 TUM 代表团前往苏州和上海。"
+        "随 TU München 代表团前往苏州和上海。"
       ],
       "points": [],
       "links": [],
       "cv": {
-        "org": "Delegation der TU München nach Suzhou und Shanghai, 5 % Aufnahmequote"
+        "org": "TU München 赴苏州和上海代表团,录取率5%"
       }
     },
     {
@@ -758,11 +758,11 @@
         "荣誉"
       ],
       "title": "Deutsche SchülerAkademie",
-      "org": "由学校推荐",
+      "org": "由学校提名",
       "logo": "dsa.svg",
-      "why": "在德国，入选者不到 1% 的中学生。",
+      "why": "德国不到1%的中学生能够入选。",
       "text": [
-        "课程负责人：Henric Meinhardt 和 Johannes Lumma。"
+        "Deutsche SchülerAkademie 是由 Bildung & Begabung 举办的夏季项目,面向能力突出、积极进取的中学生。"
       ],
       "points": [],
       "links": [
@@ -772,7 +772,7 @@
         }
       ],
       "cv": {
-        "org": "Von der Schule nominiert, weniger als 1 % werden ausgewählt",
+        "org": "由学校提名,入选率不到1%",
         "link": 0
       }
     }

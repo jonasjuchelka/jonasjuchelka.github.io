@@ -1,6 +1,6 @@
 {
   "meta": {
-    "description": "Jonas Juchelka estuda Management & Technology na TU München e está fundando uma empresa. Projetos, currículo e reflexões."
+    "description": "Jonas Juchelka constrói startups e estuda na TU München, atualmente na UC Berkeley. Projetos, currículo e reflexões."
   },
   "ui": {
     "skip": "Ir para o conteúdo",
@@ -18,7 +18,10 @@
     "projects": "Projetos",
     "blog": "Blog",
     "contact": "Contato",
-    "private": "Login"
+    "private": "Login",
+    "menu": "Menu",
+    "menuOpen": "Abrir menu",
+    "menuClose": "Fechar menu"
   },
   "lang": {
     "label": "Idioma",
@@ -26,8 +29,8 @@
     "choose": "Escolher idioma",
     "translating": "Traduzindo …",
     "showOriginal": "Mostrar original",
-    "notice": "Tradução automática feita com Claude (Anthropic). Para isso, o texto desta página foi enviado a um serviço de tradução. Prevalece a versão em alemão.",
-    "error": "Não foi possível traduzir agora. Tente novamente mais tarde."
+    "notice": "Traduzido automaticamente com Claude (Anthropic). Para isso, o texto desta página foi enviado a um serviço de tradução. Prevalece a versão em alemão.",
+    "error": "Tradução indisponível no momento. Tente novamente mais tarde."
   },
   "footer": {
     "line": "Curious how the world works. Driven to make it better.",
@@ -43,19 +46,22 @@
     "headline2": "Driven to make it",
     "headline2Mark": "better",
     "headline2End": ".",
-    "ctaCv": "Meu currículo",
+    "ctaCv": "Meu CV",
     "ctaContact": "Contato",
-    "mapTitle": "Onde já me senti em casa",
+    "mapTitle": "Lugares onde me senti em casa",
     "mapAria": "Mapa-múndi com os lugares onde morei",
     "blogTitle": "Blog",
-    "allPosts": "Todos os posts"
+    "allPosts": "Todos os posts",
+    "projectsEyebrow": "Projetos",
+    "projectsPath": "Etapas dos últimos anos",
+    "allProjects": "Todos os projetos e o currículo completo"
   },
   "projects": {
     "metaTitle": "Projetos e currículo",
     "metaDesc": "No que Jonas Juchelka está trabalhando agora e o caminho até aqui: estudos, trabalho, empreendedorismo, exterior, bolsas.",
     "eyebrow": "Projetos e currículo",
     "title": "Projetos",
-    "lede": "Acima, o que estou construindo agora. Abaixo, o caminho até aqui.",
+    "lede": "Em cima, o que estou construindo agora. Abaixo, o caminho até aqui.",
     "pdf": "Currículo em PDF",
     "pinned": "Fixado",
     "pinnedTitle": "No que estou trabalhando agora",
@@ -70,15 +76,15 @@
     "clearPlace": "Remover filtro de local",
     "awardsTitle": "Bolsas e prêmios",
     "why": "O essencial",
-    "did": "O que eu fiz",
-    "more": "Ler mais",
+    "did": "O que fiz",
+    "more": "Continuar lendo",
     "back": "Voltar",
     "backTo": "Voltar para {name}",
     "close": "Fechar",
     "station": "Etapa",
     "place": "Local",
     "showInCv": "Mostrar no currículo",
-    "noStations": "Nenhuma etapa foi registrada aqui ainda.",
+    "noStations": "Ainda não há nenhuma etapa registrada aqui.",
     "now": "Atual",
     "home": "Casa",
     "tabsAria": "Projetos atuais"
@@ -105,8 +111,8 @@
     "view": "Visualização",
     "all": "Todos",
     "essays": "Ensaios",
-    "thoughts": "Reflexões",
-    "thought": "Reflexão",
+    "thoughts": "Pensamentos",
+    "thought": "Pensamento",
     "isNew": "Novo",
     "preview": "Prévia",
     "list": "Lista",
@@ -114,18 +120,21 @@
     "resetShort": "Redefinir",
     "collapse": "Recolher",
     "toggleFilter": "Expandir ou recolher filtros",
-    "none": "Nenhum post para esses filtros.",
+    "none": "Nenhum post para estes filtros.",
     "countOne": "post",
     "countMany": "posts",
     "activeFilters": "ativos",
     "readShort": "cerca de {n} min",
-    "showFull": "Mostrar a reflexão completa",
+    "showFull": "Mostrar o pensamento completo",
     "close": "Fechar",
     "back": "Blog",
     "pdf": "PDF",
     "next": "Próximo post",
     "themeDark": "Tema escuro",
-    "themeLight": "Tema claro"
+    "themeLight": "Tema claro",
+    "translatedNote": "Traduzido automaticamente. Original: {lang}.",
+    "readOriginal": "Ler o original",
+    "readTranslation": "Ler a tradução"
   },
   "contact": {
     "metaTitle": "Contato",
@@ -135,36 +144,36 @@
     "copy": "Copiar",
     "copied": "Copiado",
     "copyFail": "Por favor, digite manualmente",
-    "write": "Escrever e-mail",
-    "book": "Agendar conversa",
+    "write": "Enviar e-mail",
+    "book": "Agendar horário",
     "photoAlt": "Jonas Juchelka",
     "backHome": "Para a página inicial"
   },
   "login": {
-    "metaTitle": "Área privada",
-    "metaDesc": "Acesso à área privada, protegida por passkey.",
-    "eyebrow": "Acesso",
-    "title": "Área privada",
-    "lede": "A área privada é um aplicativo separado, em um endereço próprio. Esta página pública não autentica ninguém e não armazena nada.",
-    "continue": "Continuar para o login",
+    "metaTitle": "Login",
+    "metaDesc": "Login para a área privada, protegida por passkey.",
+    "eyebrow": "Área privada",
+    "title": "Login",
+    "lede": "A área privada é apenas para pessoas convidadas. O acesso é feito exclusivamente por passkeys.",
     "button": "Entrar com passkey",
     "notReadyTitle": "Ainda não configurado",
     "notReady": "O aplicativo privado ainda não tem um endereço de produção definitivo. Assim que tiver, esta página levará diretamente até ele.",
     "fact1Bold": "Somente com passkey.",
     "fact1": "Sem senha, sem login social, sem link por e-mail.",
     "fact2Bold": "Somente com convite.",
-    "fact2": "Não existe cadastro público.",
+    "fact2": "Não há cadastro público.",
     "fact3Bold": "Separado.",
-    "fact3": "Login e dados ficam exclusivamente no aplicativo privado, não no GitHub Pages."
+    "fact3": "O login e os dados ficam apenas no aplicativo privado, não neste site.",
+    "backHome": "Para a página inicial"
   },
   "legal": {
     "eyebrow": "Informações legais",
     "authoritative": "Juridicamente, prevalece a versão em alemão desta página.",
     "imprint": {
       "metaTitle": "Informações legais",
-      "metaDesc": "Identificação do provedor, atualmente incompleta.",
+      "metaDesc": "Identificação do responsável pelo site, atualmente incompleta.",
       "noticeTitle": "Incompleto: ponto de produção em aberto",
-      "notice": "Ainda não há um endereço postal válido para notificações, e ele não será inventado aqui. Por isso, estas informações legais ainda não estão completas.",
+      "notice": "Ainda não há um endereço para notificação judicial, e ele não será inventado aqui. Por isso, estas informações legais ainda não estão completas.",
       "responsible": "Responsável",
       "contact": "Contato",
       "email": "E-mail:"
@@ -173,20 +182,20 @@
       "metaTitle": "Privacidade",
       "metaDesc": "Quais dados são gerados ao visitar este site.",
       "noticeTitle": "Rascunho: revisão jurídica pendente",
-      "notice": "Estas informações descrevem a tecnologia efetivamente implementada. Ainda falta uma declaração completa e juridicamente revisada, incluindo o endereço do responsável.",
+      "notice": "Estas informações descrevem a tecnologia efetivamente em uso. Uma declaração completa e juridicamente revisada, incluindo o endereço do responsável, ainda está pendente.",
       "hostingTitle": "Hospedagem",
-      "hosting": "O site é entregue como arquivos estáticos pelo GitHub Pages. Ao acessá-lo, o GitHub processa dados de conexão tecnicamente necessários, como o endereço IP. Não tenho influência sobre esse processamento além da configuração.",
+      "hosting": "O site é entregue como arquivos estáticos via GitHub Pages. Ao acessá-lo, o GitHub processa dados de conexão tecnicamente necessários, como o endereço IP. Não tenho influência sobre esse processamento além da configuração.",
       "notTitle": "O que este site não faz",
-      "not1": "Sem cookies, sem rastreamento, sem serviços de análise ou marketing.",
+      "not1": "Sem cookies, sem rastreamento, sem serviços de análise ou de marketing.",
       "not2": "Sem fontes ou scripts de terceiros carregados externamente.",
       "not3": "Sem formulário de contato. Um e-mail é processado pelo seu provedor de e-mail e pelo meu.",
       "translationTitle": "Tradução",
       "translation1": "Os idiomas da seleção de idiomas são traduzidos previamente e entregues como arquivos estáticos. Nenhum dado é enviado a terceiros nesse processo.",
-      "translation2": "Somente se você acionar ativamente uma tradução ao vivo em \"Mais idiomas\", o texto visível da página atual é enviado a um serviço de tradução, que o traduz com a Claude API da Anthropic. Além disso, o operador do serviço processa dados de conexão tecnicamente necessários, como o endereço IP. Nenhum cookie é definido e nenhum dado é armazenado de forma permanente. Sem o seu acionamento, nenhuma requisição é feita.",
+      "translation2": "Somente se você acionar ativamente uma tradução ao vivo em “Mais idiomas”, o texto visível da página atual é enviado a um serviço de tradução, que o traduz com a Claude API da Anthropic. Além disso, o operador do serviço processa dados de conexão tecnicamente necessários, como o endereço IP. Nenhum cookie é definido e nenhum dado é armazenado de forma permanente. Sem o seu acionamento, nenhuma requisição é feita.",
       "themeTitle": "Tema claro e escuro",
-      "theme": "Se você ativar o tema escuro, o navegador guarda essa escolha no armazenamento local (localStorage) para que ela valha na próxima visita. O registro permanece no seu dispositivo, não é enviado a nenhum servidor e pode ser excluído nas configurações do navegador.",
+      "theme": "Se você ativar o tema escuro, seu navegador memoriza essa escolha no armazenamento local (localStorage) para que ela valha na próxima visita. A entrada permanece no seu dispositivo, não é enviada a nenhum servidor e pode ser excluída nas configurações do navegador.",
       "privateTitle": "Área privada",
-      "private": "A área protegida por passkey é um aplicativo separado, com sua própria declaração de privacidade. Este site público não transmite dados para lá."
+      "private": "A área protegida por passkey é um aplicativo separado, com sua própria política de privacidade. Este site público não transmite dados para lá."
     }
   },
   "notFound": {

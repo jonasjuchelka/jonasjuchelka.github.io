@@ -1,16 +1,16 @@
 {
   "meta": {
-    "description": "Jonas Juchelka étudie Management & Technology à la TU München et crée des entreprises. Projets, CV et réflexions."
+    "description": "Jonas Juchelka crée des startups et étudie à la TU München, actuellement à l'UC Berkeley. Projets, CV et réflexions."
   },
   "ui": {
     "skip": "Aller au contenu",
-    "homeAria": "Jonas Juchelka, retour à l'accueil",
+    "homeAria": "Jonas Juchelka, vers la page d'accueil",
     "mainNav": "Navigation principale",
     "contactAria": "Contact",
     "legalAria": "Mentions légales",
     "crumbsAria": "Fil d'Ariane",
     "readingTime": "{n} min de lecture",
-    "badgeInfo": "Remarque",
+    "badgeInfo": "Information",
     "badgeWarning": "En suspens"
   },
   "nav": {
@@ -18,7 +18,10 @@
     "projects": "Projets",
     "blog": "Blog",
     "contact": "Contact",
-    "private": "Connexion"
+    "private": "Connexion",
+    "menu": "Menu",
+    "menuOpen": "Ouvrir le menu",
+    "menuClose": "Fermer le menu"
   },
   "lang": {
     "label": "Langue",
@@ -27,41 +30,44 @@
     "translating": "Traduction en cours …",
     "showOriginal": "Afficher l'original",
     "notice": "Traduit automatiquement avec Claude (Anthropic). Pour cela, le texte de cette page a été envoyé à un service de traduction. La version allemande fait foi.",
-    "error": "La traduction est momentanément impossible. Veuillez réessayer plus tard."
+    "error": "Traduction momentanément impossible. Veuillez réessayer plus tard."
   },
   "footer": {
     "line": "Curious how the world works. Driven to make it better.",
-    "base": "Site statique. Pas de suivi, pas de cookies.",
+    "base": "Site statique. Aucun suivi, aucun cookie.",
     "rss": "Flux RSS",
     "imprint": "Mentions légales",
     "privacy": "Confidentialité",
     "contact": "Contact"
   },
   "home": {
-    "photoAlt": "Jonas Juchelka sourit devant un mur clair avec des ombres de feuillage",
+    "photoAlt": "Jonas Juchelka sourit devant un mur clair marqué par l'ombre de feuilles",
     "headline1": "Curious how the world works.",
     "headline2": "Driven to make it",
     "headline2Mark": "better",
     "headline2End": ".",
     "ctaCv": "Mon CV",
     "ctaContact": "Contact",
-    "mapTitle": "Là où j'ai été chez moi",
+    "mapTitle": "Là où j'ai vécu",
     "mapAria": "Carte du monde avec les lieux où j'ai vécu",
     "blogTitle": "Blog",
-    "allPosts": "Tous les articles"
+    "allPosts": "Tous les articles",
+    "projectsEyebrow": "Projets",
+    "projectsPath": "Étapes des dernières années",
+    "allProjects": "Tous les projets et le CV complet"
   },
   "projects": {
     "metaTitle": "Projets et CV",
-    "metaDesc": "Ce sur quoi Jonas Juchelka travaille en ce moment, et le chemin parcouru : études, travail, création d'entreprise, étranger, bourses.",
+    "metaDesc": "Ce sur quoi Jonas Juchelka travaille actuellement, et le chemin parcouru : études, travail, création d'entreprise, étranger, bourses.",
     "eyebrow": "Projets et CV",
     "title": "Projets",
-    "lede": "En haut, ce sur quoi je travaille en ce moment. Dessous, le chemin parcouru jusqu'ici.",
+    "lede": "En haut, ce sur quoi je travaille actuellement. Dessous, le chemin parcouru jusqu'ici.",
     "pdf": "CV en PDF",
     "pinned": "Épinglé",
     "pinnedTitle": "Ce sur quoi je travaille actuellement",
     "pinnedNote": "Les retours sont les bienvenus.",
     "open": "Voir",
-    "feedback": "Donner un avis",
+    "feedback": "Donner un retour",
     "pathTitle": "Le chemin parcouru",
     "count": "{n} étapes",
     "countOne": "1 étape",
@@ -81,7 +87,7 @@
     "noStations": "Aucune étape n'est encore renseignée ici.",
     "now": "Actuellement",
     "home": "Chez moi",
-    "tabsAria": "Projets actuels"
+    "tabsAria": "Projets en cours"
   },
   "blog": {
     "metaTitle": "Blog",
@@ -89,7 +95,7 @@
     "eyebrow": "Notes",
     "title": "Blog",
     "emptyTitle": "Rien n'a encore été publié.",
-    "emptyBefore": "Les textes issus des études et de la pratique apparaîtront ici dès qu'ils seront prêts, pas avant. Pour ne rien manquer, abonnez-vous au",
+    "emptyBefore": "Des textes issus des études et de la pratique apparaîtront ici dès qu'ils seront prêts, pas avant. Pour ne rien manquer, abonnez-vous au",
     "emptyLink": "flux RSS",
     "emptyAfter": ".",
     "articleEyebrow": "Article",
@@ -105,8 +111,8 @@
     "view": "Affichage",
     "all": "Tous",
     "essays": "Essais",
-    "thoughts": "Pensées",
-    "thought": "Pensée",
+    "thoughts": "Réflexions",
+    "thought": "Réflexion",
     "isNew": "Nouveau",
     "preview": "Aperçu",
     "list": "Liste",
@@ -119,52 +125,55 @@
     "countMany": "articles",
     "activeFilters": "actifs",
     "readShort": "env. {n} min",
-    "showFull": "Afficher la pensée en entier",
+    "showFull": "Afficher la réflexion complète",
     "close": "Fermer",
     "back": "Blog",
     "pdf": "PDF",
     "next": "Article suivant",
     "themeDark": "Thème sombre",
-    "themeLight": "Thème clair"
+    "themeLight": "Thème clair",
+    "translatedNote": "Traduit automatiquement. Original : {lang}.",
+    "readOriginal": "Lire l'original",
+    "readTranslation": "Lire la traduction"
   },
   "contact": {
     "metaTitle": "Contact",
     "metaDesc": "Contacter Jonas Juchelka par e-mail, rendez-vous, LinkedIn ou GitHub.",
     "title": "Écris-moi.",
-    "mailAlt": "Mon adresse e-mail, sous forme d'image, pour que les bots ne puissent pas la lire facilement",
+    "mailAlt": "Mon adresse e-mail, sous forme d'image pour que les robots ne puissent pas la lire facilement",
     "copy": "Copier",
     "copied": "Copié",
-    "copyFail": "Merci de la recopier",
+    "copyFail": "Merci de la saisir à la main",
     "write": "Écrire un e-mail",
     "book": "Prendre rendez-vous",
     "photoAlt": "Jonas Juchelka",
     "backHome": "Retour à l'accueil"
   },
   "login": {
-    "metaTitle": "Espace privé",
-    "metaDesc": "Accès à l'espace privé protégé par passkey.",
-    "eyebrow": "Accès",
-    "title": "Espace privé",
-    "lede": "L'espace privé est une application distincte, à une adresse distincte. Cette page publique ne connecte personne et ne stocke rien.",
-    "continue": "Continuer vers la connexion",
+    "metaTitle": "Connexion",
+    "metaDesc": "Connexion à l'espace privé protégé par passkey.",
+    "eyebrow": "Espace privé",
+    "title": "Connexion",
+    "lede": "L'espace privé est réservé aux personnes invitées. La connexion se fait exclusivement par passkey.",
     "button": "Se connecter avec un passkey",
     "notReadyTitle": "Pas encore configuré",
-    "notReady": "L'application privée n'a pas encore d'adresse de production définitive. Dès qu'elle en aura une, cette page y mènera directement.",
-    "fact1Bold": "Uniquement avec un passkey.",
-    "fact1": "Pas de mot de passe, pas de connexion via les réseaux sociaux, pas de lien par e-mail.",
+    "notReady": "L'application privée n'a pas encore d'adresse de production définitive. Dès qu'elle existera, cette page y mènera directement.",
+    "fact1Bold": "Uniquement par passkey.",
+    "fact1": "Pas de mot de passe, pas de connexion via les réseaux sociaux, pas de lien envoyé par e-mail.",
     "fact2Bold": "Uniquement sur invitation.",
     "fact2": "Il n'existe pas d'inscription publique.",
     "fact3Bold": "Séparé.",
-    "fact3": "La connexion et les données se trouvent exclusivement sur l'application privée, et non sur GitHub Pages."
+    "fact3": "La connexion et les données se trouvent uniquement dans l'application privée, pas sur ce site.",
+    "backHome": "Retour à l'accueil"
   },
   "legal": {
     "eyebrow": "Mentions légales",
-    "authoritative": "La version allemande de cette page fait foi sur le plan juridique.",
+    "authoritative": "La version allemande de cette page fait foi juridiquement.",
     "imprint": {
       "metaTitle": "Mentions légales",
-      "metaDesc": "Identification de l'éditeur, actuellement incomplète.",
+      "metaDesc": "Identification du fournisseur, actuellement incomplète.",
       "noticeTitle": "Incomplet : point de production en suspens",
-      "notice": "Une adresse postale valable pour la signification judiciaire n'est pas encore disponible et n'est pas inventée ici. Ces mentions légales ne sont donc pas encore complètes.",
+      "notice": "Une adresse postale à laquelle des documents officiels peuvent être notifiés n'est pas encore disponible et n'est pas inventée ici. Ces mentions légales ne sont donc pas encore complètes.",
       "responsible": "Responsable",
       "contact": "Contact",
       "email": "E-mail :"
@@ -172,8 +181,8 @@
     "privacy": {
       "metaTitle": "Confidentialité",
       "metaDesc": "Quelles données sont générées lors de la visite de ce site.",
-      "noticeTitle": "Projet : vérification juridique en suspens",
-      "notice": "Ces indications décrivent la technique réellement mise en place. Une déclaration complète et juridiquement vérifiée, incluant l'adresse du responsable, reste à venir.",
+      "noticeTitle": "Brouillon : vérification juridique en suspens",
+      "notice": "Ces informations décrivent la technique réellement mise en place. Une déclaration complète et juridiquement vérifiée, incluant l'adresse du responsable, reste à venir.",
       "hostingTitle": "Hébergement",
       "hosting": "Le site est diffusé sous forme de fichiers statiques via GitHub Pages. Lors de la consultation, GitHub traite les données de connexion techniquement nécessaires, comme l'adresse IP. Je n'ai aucune influence sur ce traitement au-delà de la configuration.",
       "notTitle": "Ce que ce site ne fait pas",
@@ -181,10 +190,10 @@
       "not2": "Pas de polices ni de scripts de tiers chargés depuis l'extérieur.",
       "not3": "Pas de formulaire de contact. Un e-mail est traité par votre fournisseur de messagerie et par le mien.",
       "translationTitle": "Traduction",
-      "translation1": "Les langues du sélecteur de langue sont traduites à l'avance et diffusées sous forme de fichiers statiques. Aucune donnée n'est alors envoyée à des tiers.",
+      "translation1": "Les langues proposées dans le sélecteur de langue sont traduites à l'avance et diffusées sous forme de fichiers statiques. Aucune donnée n'est envoyée à des tiers.",
       "translation2": "Ce n'est que si vous déclenchez activement une traduction en direct sous « Autres langues » que le texte visible de la page actuelle est envoyé à un service de traduction, qui le traduit avec l'API Claude d'Anthropic. L'exploitant du service traite en outre les données de connexion techniquement nécessaires, comme l'adresse IP. Aucun cookie n'est déposé et aucune donnée n'est conservée durablement. Sans votre déclenchement, aucune requête n'a lieu.",
       "themeTitle": "Thème clair et sombre",
-      "theme": "Si vous activez le thème sombre, votre navigateur mémorise ce choix dans le stockage local (localStorage) afin qu'il s'applique lors de votre prochaine visite. Cette entrée reste sur votre appareil, n'est envoyée à aucun serveur et peut être supprimée via les paramètres du navigateur.",
+      "theme": "Si vous activez le thème sombre, votre navigateur mémorise ce choix dans le stockage local (localStorage) afin qu'il s'applique lors de votre prochaine visite. Cette entrée reste sur votre appareil, n'est pas envoyée à un serveur et peut être supprimée via les paramètres du navigateur.",
       "privateTitle": "Espace privé",
       "private": "L'espace protégé par passkey est une application distincte, avec sa propre déclaration de confidentialité. Ce site public n'y transmet aucune donnée."
     }
@@ -192,7 +201,7 @@
   "notFound": {
     "title": "Page introuvable",
     "heading": "Cette page n'existe pas ici.",
-    "lede": "Elle a peut-être été déplacée, ou l'adresse n'a peut-être jamais été correcte. Voici où aller :",
+    "lede": "Elle a peut-être été déplacée, ou l'adresse n'a peut-être jamais été correcte. Voici où aller à partir d'ici :",
     "home": "Accueil"
   }
 }
