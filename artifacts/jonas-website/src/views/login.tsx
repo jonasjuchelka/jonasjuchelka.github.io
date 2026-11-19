@@ -10,7 +10,7 @@ export const loginMeta = (lang: string) => ({ ...pageMeta(lang, getDict(lang).lo
 // Login: eine ruhige Karte mit Logo, einem Satz, dem Passkey-Button (Hauptaktion) und dem Weg zurück zur Startseite.
 // Nur die Markenschriften, keine technische Adresse, kein Monospace. Die drei Fakten stehen klein darunter.
 const ICONS = {
-  key: "M14.5 9.5a4 4 0 1 1-3.1 3.9L4 20.8V17h3v-3h3l1.4-1.4A4 4 0 0 1 14.5 9.5zM16 7.5h.01",
+  key: "M6 11h12v9H6zM9 11V8a3 3 0 0 1 6 0v3M12 14.5v2",
   mail: "M3.5 6.5h17v11h-17zM3.5 7.5l8.5 6 8.5-6",
   shield: "M12 3.5 19 6v5.5c0 4.4-3 7.7-7 9-4-1.3-7-4.6-7-9V6z",
 };
