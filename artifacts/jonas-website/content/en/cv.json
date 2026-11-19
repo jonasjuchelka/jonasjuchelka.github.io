@@ -434,7 +434,7 @@
           "Set up Linux servers and virtual machines with Proxmox; object-oriented programming in Java in the development team"
         ],
         "link": 0,
-        "optional": true
+        "optional": false
       }
     },
     {

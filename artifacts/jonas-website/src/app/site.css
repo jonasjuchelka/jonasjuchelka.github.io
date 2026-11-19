@@ -85,7 +85,7 @@ html[data-theme="dark"]{--cv-active:#3b5a72;--cv-hover:rgb(130 196 245/.24);--cv
 .nav .mnav__list a{padding:0 .25rem;border-radius:0;background:none;text-decoration:none}
 .nav .mnav__list a:hover{background:var(--cv-hover);color:var(--color-heading)}
 .nav .mnav__login .btn{border-radius:999px;padding:0 1.3rem}
-.nav .mnav__login .btn:hover{background:var(--cv-hover),var(--color-background);color:var(--color-heading)}
+.nav .mnav__login .btn:hover{background:var(--cv-hover),var(--color-background);color:var(--color-heading);text-decoration:none}
 .mnav__login .btn{width:100%;min-height:52px}
 .mnav__login .btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .mnav__login .btn[aria-current="page"]{background:var(--cv-active);border-color:var(--color-heading)}
@@ -394,3 +394,6 @@ html[data-theme="dark"] .phead{background:#06060d}
 .nextpage__a:hover .nextpage__t{text-decoration:underline;text-decoration-color:var(--brand-himmelblau-dunkel);text-decoration-thickness:5px;text-underline-offset:.2em}
 .nextpage__hint{font-family:var(--font-ui);font-weight:var(--weight-ui);color:var(--color-text-muted)}
 .nextpage__bar{position:absolute;left:0;bottom:0;height:6px;width:100%;background:var(--brand-himmelblau-dunkel);transform-origin:0 50%;transform:scaleX(var(--np,0));transition:transform .12s linear}
+
+/* Catamaran Regular (UI) immer mit Gewicht 400, auch wo der Fließtext (300) vererbt wird */
+.skip-link,.more a,.site-footer__line,.site-footer__links a,.site-footer__base{font-weight:var(--weight-ui)}
