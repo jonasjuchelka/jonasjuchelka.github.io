@@ -434,7 +434,7 @@
           "Linux-Server und virtuelle Maschinen mit Proxmox aufgesetzt; objektorientierte Programmierung in Java im Entwicklungsteam"
         ],
         "link": 0,
-        "optional": true
+        "optional": false
       }
     },
     {

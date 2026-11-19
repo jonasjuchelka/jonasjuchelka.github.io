@@ -95,7 +95,7 @@ const C = {
 const rgb = (c, stroke = false) => `${c.map((v) => v.toFixed(3)).join(" ")} ${stroke ? "RG" : "rg"}`;
 
 // ---------- Seite ----------
-const W = 595.28, H = 841.89, ML = 40, MR = 40, TOP = 32, BOTTOM = 28;
+const W = 595.28, H = 841.89, ML = 40, MR = 40, TOP = 32, BOTTOM = 25;
 const CW = W - ML - MR;
 
 let P = null; // aktuelle Seite { ops, annots }
@@ -227,7 +227,7 @@ function build(sz, level) {
     const roleLines = wrap(e.role, "R", st.body, CW - dateW - 16);
     const pts = e.points.map((p) => wrap(p, "R", st.body, CW - 11));
     count(e.org, e.role, e.place, e.date, ...e.points);
-    const h = orgLines.length * lh + roleLines.length * lh + pts.reduce((a, l) => a + l.length * lh, 0) + (pts.length ? 1 : 0) + sz * 0.45;
+    const h = orgLines.length * lh + roleLines.length * lh + pts.reduce((a, l) => a + l.length * lh, 0) + (pts.length ? 1 : 0) + sz * 0.3;
     return {
       h,
       draw: (y0) => {
@@ -311,7 +311,7 @@ function build(sz, level) {
   return { blocks, words: words.length };
 }
 
-const HEAD_H = 80;
+const HEAD_H = 77;
 function paginate(blocks) {
   const pages = [[]]; let y = H - TOP - HEAD_H;
   for (const b of blocks) {
