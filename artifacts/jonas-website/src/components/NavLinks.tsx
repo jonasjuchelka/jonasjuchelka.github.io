@@ -37,7 +37,7 @@ const ICONS: Record<string, string> = {
   private: "M6 11h12v9H6zM9 11V8a3 3 0 0 1 6 0v3",
 };
 
-/** Handy: alles hinter einem Hamburger-Knopf. Das Menü klappt oben als Blatt auf (Dialog), Login als Pille unten. */
+/** Handy: alles hinter einem Hamburger-Knopf, der unten rechts schwebt. Das Menü klappt von unten als Blatt auf (Dialog), Login als Pille unten. */
 export function MobileMenu({ lang, items, openLabel, closeLabel, title }: { lang: string; items: NavItem[]; openLabel: string; closeLabel: string; title: string }) {
   const active = useActive(lang);
   const dlg = useRef<HTMLDialogElement>(null);

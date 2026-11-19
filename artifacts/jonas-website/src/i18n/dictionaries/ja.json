@@ -11,7 +11,9 @@
     "crumbsAria": "パンくずリスト",
     "readingTime": "読了時間 {n} 分",
     "badgeInfo": "お知らせ",
-    "badgeWarning": "未完了"
+    "badgeWarning": "未完了",
+    "nextLabel": "次のページ",
+    "nextHint": "そのままスクロール"
   },
   "nav": {
     "home": "ホーム",
@@ -52,7 +54,7 @@
     "mapAria": "私が暮らしたことのある場所を示した世界地図",
     "blogTitle": "ブログ",
     "allPosts": "すべての記事",
-    "projectsEyebrow": "プロジェクト",
+    "projectsEyebrow": "現在のプロジェクト",
     "projectsPath": "ここ数年の歩み",
     "allProjects": "すべてのプロジェクトと履歴書"
   },
@@ -64,8 +66,7 @@
     "lede": "上には現在取り組んでいることを、その下にはこれまでの歩みを載せています。",
     "pdf": "履歴書(PDF)",
     "pinned": "ピン留め",
-    "pinnedTitle": "現在取り組んでいること",
-    "pinnedNote": "フィードバックを歓迎します。",
+    "pinnedTitle": "現在のプロジェクト",
     "open": "見る",
     "feedback": "フィードバックを送る",
     "pathTitle": "これまでの歩み",

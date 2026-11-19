@@ -11,7 +11,9 @@
     "crumbsAria": "Fil d'Ariane",
     "readingTime": "{n} min de lecture",
     "badgeInfo": "Information",
-    "badgeWarning": "En suspens"
+    "badgeWarning": "En suspens",
+    "nextLabel": "Ensuite",
+    "nextHint": "Continuez à défiler"
   },
   "nav": {
     "home": "Accueil",
@@ -52,7 +54,7 @@
     "mapAria": "Carte du monde avec les lieux où j'ai vécu",
     "blogTitle": "Blog",
     "allPosts": "Tous les articles",
-    "projectsEyebrow": "Projets",
+    "projectsEyebrow": "Projets en cours",
     "projectsPath": "Étapes des dernières années",
     "allProjects": "Tous les projets et le CV complet"
   },
@@ -64,8 +66,7 @@
     "lede": "En haut, ce sur quoi je travaille actuellement. Dessous, le chemin parcouru jusqu'ici.",
     "pdf": "CV en PDF",
     "pinned": "Épinglé",
-    "pinnedTitle": "Ce sur quoi je travaille actuellement",
-    "pinnedNote": "Les retours sont les bienvenus.",
+    "pinnedTitle": "Projets en cours",
     "open": "Voir",
     "feedback": "Donner un retour",
     "pathTitle": "Le chemin parcouru",

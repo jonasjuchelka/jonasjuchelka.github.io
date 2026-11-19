@@ -38,13 +38,6 @@
       "lon": 37.01,
       "when": "2016 en 2018",
       "what": "Schooltrimester en vrijwilligerswerk in Kenia"
-    },
-    "suzhou": {
-      "name": "Suzhou",
-      "lat": 31.3,
-      "lon": 120.6,
-      "when": "2026",
-      "what": "German-Chinese Talent Exchange"
     }
   },
   "entries": [
@@ -76,9 +69,10 @@
       ],
       "links": [],
       "cv": {
-        "org": "Medeoprichter · AI-voorinterview voor recruitment",
+        "org": "Audition",
+        "title": "Mitgründer · KI-Vorinterview für Recruiting",
         "points": [
-          "Ontstaan tijdens de SF Tech Week Hackathon, aanmelding bij de accelerator a16z speedrun"
+          "Beim SF Tech Week Hackathon gestartet und seitdem als Startup weiterentwickelt; Bewerbung beim Accelerator a16z speedrun"
         ]
       }
     },
@@ -125,9 +119,11 @@
         }
       ],
       "cv": {
+        "org": "Concentr8",
+        "title": "Mitgründer, Backend · Fokus-App für neurodivergente Studierende",
         "points": [
-          "Verantwoordelijk voor de backend: Mac-app die afleiding blokkeert, telefoontjes op vaste studietijden, AI-planning met Google Agenda",
-          "Ontstaan tijdens Cal Hacks 13.0, verder ontwikkeld in de cursus Technology Entrepreneurship (ENGIN 183E)"
+          "Backend gebaut: Mac-App gegen Ablenkung, Anrufe zu festen Lernzeiten, KI-Planung mit Google Kalender",
+          "Bei Cal Hacks 13.0 gestartet, im Berkeley-Kurs Technology Entrepreneurship (ENGIN 183E) weiterentwickelt"
         ],
         "link": 0
       }
@@ -177,12 +173,12 @@
         }
       ],
       "cv": {
-        "title": "University of California, Berkeley",
-        "org": "Uitwisselingsstudent · Berkeley International Study Program",
+        "org": "University of California, Berkeley",
+        "title": "Austauschsemester · Berkeley International Study Program",
         "points": [
-          "Kunstmatige intelligentie (CS 188), cryptografie (CS 171), Technology Entrepreneurship (ENGIN 183E)",
-          "Gefinancierd door de Stiftung der Deutschen Wirtschaft (sdw)"
-        ]
+          "Künstliche Intelligenz (CS 188), Kryptografie (CS 171), Technology Entrepreneurship (ENGIN 183E); sdw-gefördert"
+        ],
+        "link": 0
       }
     },
     {
@@ -215,13 +211,13 @@
         }
       ],
       "cv": {
-        "title": "Tutor, Operations Research and Decision Analysis",
         "org": "Technische Universität München",
+        "title": "Tutor, Operations Research and Decision Analysis",
         "points": [
-          "Geselecteerd op basis van een cursusprestatie bij de beste 5 % (cijfer 1,3)",
-          "4 uur tutorium per week voor ongeveer 25 studenten, oefenopgaven zelf ontworpen",
-          "Simplex, netwerkstromen, geheeltallige optimalisatie, Gurobi"
-        ]
+          "Ausgewählt nach Kursleistung in den Top 5 % (Note 1,3); 4 Std. Tutorium pro Woche für rund 25 Studierende",
+          "Übungen zu Simplex, Netzwerkflüssen und ganzzahliger Optimierung (Gurobi) konzipiert; Einzelbetreuung"
+        ],
+        "link": 0
       }
     },
     {
@@ -258,10 +254,16 @@
         }
       ],
       "cv": {
+        "org": "ritzenhoefer & company",
+        "title": "Fellow, Strategie- und Transformationsberatung",
         "points": [
-          "Runbook en meer dan 70 change requests in het PMO verantwoord, rapportage deels geautomatiseerd met Excel-macro's",
-          "60/60-jobsharingmodel voor senior consultants ontwikkeld"
-        ]
+          "Runbook-Reporting im PMO des Transformationsprogramms einer Großbank verantwortet und teilautomatisiert",
+          "Change-Request-Prozess verbessert, über 70 Change Requests gesteuert; Vorlagen für den Lenkungsausschuss"
+        ],
+        "extra": [
+          "60/60-Jobsharing-Modell für Senior Consultants entwickelt"
+        ],
+        "link": 0
       }
     },
     {
@@ -299,15 +301,13 @@
         }
       ],
       "cv": {
-        "title": "Business Development, Supply Chain Integration",
-        "org": "comstruct · Bouwsoftware, Series A · Stage",
+        "org": "comstruct",
+        "title": "Business Development, Supply Chain Integration (Praktikum)",
         "points": [
-          "74 leveranciers in 9 weken aangesloten, inclusief technische integratie",
-          "Het proces van leveranciersaansluiting geanalyseerd en verbeterd"
+          "74 Lieferanten in 9 Wochen an die Einkaufsplattform eines Series-A-Startups angebunden, einschließlich technischer Integration",
+          "Prozess der Lieferantenanbindung analysiert und verbessert; comstruct auf der Fachmesse BAUMA vertreten"
         ],
-        "extra": [
-          "comstruct vertegenwoordigd op de vakbeurs BAUMA"
-        ]
+        "link": 0
       }
     },
     {
@@ -343,11 +343,11 @@
         }
       ],
       "cv": {
-        "org": "Medeoprichter · Reserveonderdelen uit de 3D-printer, zonder CAD-bestand",
+        "org": "Shapely",
+        "title": "Mitgründer, Strategie und Finanzen · 3D-gedruckte Ersatzteile ohne CAD-Datei",
         "points": [
-          "Strategie, financiën en Go-to-Market in een team van drie, TUM Startup Launchpad",
-          "De eerste opdrachten met de hand uitgevoerd (Fusion 360, 3D-printen); iPhone-scanprototype met ARKit en LiDAR",
-          "Bedrijfsmodel in interviews met onderhoudstechnici getoetst en stopgezet"
+          "Geschäftsmodell im Dreierteam im TUM Startup Launchpad aufgebaut; erste Aufträge selbst gedruckt und geliefert",
+          "Zahlungsbereitschaft in Interviews mit Instandhaltern geprüft, Modell auf Basis der Ergebnisse eingestellt"
         ],
         "link": 0
       }
@@ -385,11 +385,12 @@
         }
       ],
       "cv": {
-        "title": "Technische Universität München",
-        "org": "B.Sc. Management and Technology, specialisatie Computer Engineering",
+        "org": "Technische Universität München",
+        "title": "B.Sc. Management and Technology, Vertiefung Computer Engineering",
         "points": [
-          "Gemiddeld cijfer 1,6 (top 10 %), opleiding met een toelatingspercentage van 9 %"
-        ]
+          "Notenschnitt 1,6 (Top 10 %) in einem Studiengang mit 9 % Aufnahmequote"
+        ],
+        "link": 0
       }
     },
     {
@@ -420,11 +421,19 @@
         "Objectgeoriënteerd programmeren in Java",
         "Inkijk in telefonie en VoIP"
       ],
-      "links": [],
+      "links": [
+        {
+          "label": "cycos.com",
+          "url": "https://www.cycos.com/"
+        }
+      ],
       "cv": {
+        "org": "cycos AG (Eviden, Atos)",
+        "title": "Praktikum Netzwerktechnik und Programmierung",
         "points": [
-          "Linux-servers en virtuele machines (Proxmox) opgezet, objectgeoriënteerd programmeren in Java"
+          "Linux-Server und virtuelle Maschinen mit Proxmox aufgesetzt; objektorientierte Programmierung in Java im Entwicklungsteam"
         ],
+        "link": 0,
         "optional": true
       }
     },
@@ -459,11 +468,11 @@
       ],
       "links": [],
       "cv": {
-        "title": "Future Founders Initiative e.V.",
-        "org": "Medeoprichter en bestuurslid, sinds 08.2026 in de adviesraad",
+        "org": "Future Founders Initiative e.V.",
+        "title": "Mitgründer und Vorstand · seit 08.2026 im Beirat",
         "points": [
-          "Van vijf oprichtende leden uitgebouwd tot een initiatief in drie steden",
-          "Driedaagse oprichtingsevenementen voor meer dan 110 studenten georganiseerd"
+          "Studentische Gründungsinitiative von fünf Gründungsmitgliedern auf drei Standorte aufgebaut; Vorstandsstruktur neu aufgesetzt",
+          "Dreitägige Gründungsveranstaltungen für jeweils über 110 Studierende organisiert"
         ]
       }
     },
@@ -508,16 +517,17 @@
         }
       ],
       "cv": {
-        "title": "Bischöfliches Pius-Gymnasium Aachen",
-        "org": "Abitur 1,2 (top 10 %) · Verdiepingsvakken wiskunde, aardrijkskunde, Duits",
+        "org": "Bischöfliches Pius-Gymnasium Aachen",
+        "title": "Abitur 1,2 (Top 10 %) · Leistungskurse Mathematik, Erdkunde, Deutsch",
         "points": [
-          "Vroegstudie: hogere wiskunde aan de RWTH Aachen",
-          "Ondersteuningscursus „Economy & Innovation“ voor klas 8 tot 10 opgezet en vanaf 10.2022 wekelijks twee uur gegeven: economie, financiën, AI, presenteren",
-          "Een schooljaar wekelijks individuele wiskundebegeleiding voor een jongere leerling met een bijzondere ondersteuningsbehoefte"
+          "MINT-EC-Zertifikat mit Auszeichnung (Top 5 % des Jahrgangs); Frühstudium Höhere Mathematik an der RWTH Aachen",
+          "Förderkurs „Economy & Innovation“ für Kl. 8–10 aufgebaut und ab 10.2022 wöchentlich geleitet: Wirtschaft, KI",
+          "Ein Schuljahr wöchentliche Mathe-Einzelförderung für einen jüngeren Schüler, „mit besonderem Erfolg“ bescheinigt"
         ],
         "extra": [
-          "Huiswerkbegeleiding voor de onder- en middenbouw; trombone in bigband en schoolorkest sinds 2016"
-        ]
+          "Posaune in Big Band und Schulorchester seit 2016; Hausaufgabenbetreuung für die Unter- und Mittelstufe"
+        ],
+        "link": 0
       }
     },
     {
@@ -549,9 +559,12 @@
         }
       ],
       "cv": {
+        "org": "AIXTRON SE",
+        "title": "Praktikum Personal und Kommunikation",
         "points": [
-          "Meegeholpen bij de planning van de leerlingendag voor stagiairs en leerlingen in opleiding, schoolpagina van de carrièrewebsite herzien, meegewerkt aan persberichten"
+          "Azubi-Tag mitgeplant, Schülerseite der Karriere-Website überarbeitet und Pressemitteilungen mitbetreut"
         ],
+        "link": 0,
         "optional": true
       }
     },
@@ -584,9 +597,7 @@
         }
       ],
       "cv": {
-        "title": "Colegio Tajamar",
-        "org": "Semester in het buitenland, Bachillerato met zwaartepunt biowetenschappen",
-        "points": []
+        "hide": true
       }
     },
     {
@@ -640,9 +651,7 @@
       ],
       "links": [],
       "cv": {
-        "title": "Precious Blood Primary School",
-        "org": "Trimester in het Keniaanse schoolsysteem",
-        "points": []
+        "hide": true
       }
     },
     {
@@ -668,8 +677,8 @@
         }
       ],
       "cv": {
-        "title": "Stiftung der Deutschen Wirtschaft (sdw)",
-        "org": "Stipendiaat, een van de 13 begaafdenstudiefondsen in Duitsland",
+        "org": "Stiftung der Deutschen Wirtschaft (sdw)",
+        "title": "Stipendium; eines von 13 Begabtenförderungswerken",
         "link": 0
       }
     },
@@ -689,8 +698,8 @@
       "points": [],
       "links": [],
       "cv": {
-        "title": "Hans Rudolf Stiftung",
-        "org": "Stipendiaat"
+        "org": "Hans Rudolf Stiftung",
+        "title": "Stipendium"
       }
     },
     {
@@ -716,8 +725,7 @@
         }
       ],
       "cv": {
-        "org": "Hoogste van drie niveaus, top 5 % van de jaargang",
-        "link": 0
+        "hide": true
       }
     },
     {
@@ -726,7 +734,6 @@
       "year": 2026,
       "date": "2026",
       "place": "Suzhou en Shanghai, China",
-      "loc": "suzhou",
       "tags": [
         "Onderscheiding",
         "Buitenland"
@@ -746,7 +753,8 @@
       "points": [],
       "links": [],
       "cv": {
-        "org": "Delegatie van de TU München naar Suzhou en Shanghai, 5 % toelatingspercentage"
+        "org": "German-Chinese Talent Exchange",
+        "title": "Delegation nach Suzhou und Shanghai; 5 % Aufnahmequote"
       }
     },
     {
@@ -772,7 +780,8 @@
         }
       ],
       "cv": {
-        "org": "Voorgedragen door de school, minder dan 1 % wordt geselecteerd",
+        "org": "Deutsche SchülerAkademie",
+        "title": "Von der Schule nominiert; unter 1 % ausgewählt",
         "link": 0
       }
     }

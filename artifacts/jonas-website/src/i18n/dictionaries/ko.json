@@ -11,7 +11,9 @@
     "crumbsAria": "경로 표시",
     "readingTime": "읽는 데 {n}분",
     "badgeInfo": "안내",
-    "badgeWarning": "미해결"
+    "badgeWarning": "미해결",
+    "nextLabel": "다음",
+    "nextHint": "계속 스크롤하세요"
   },
   "nav": {
     "home": "홈",
@@ -52,7 +54,7 @@
     "mapAria": "제가 살았던 장소가 표시된 세계 지도",
     "blogTitle": "블로그",
     "allPosts": "모든 글",
-    "projectsEyebrow": "프로젝트",
+    "projectsEyebrow": "현재 프로젝트",
     "projectsPath": "지난 몇 년간의 걸음",
     "allProjects": "모든 프로젝트와 전체 이력서"
   },
@@ -64,8 +66,7 @@
     "lede": "위에는 제가 지금 만들고 있는 것이, 아래에는 지금까지의 길이 있습니다.",
     "pdf": "PDF 이력서",
     "pinned": "고정됨",
-    "pinnedTitle": "지금 작업 중인 것",
-    "pinnedNote": "피드백을 환영합니다.",
+    "pinnedTitle": "현재 프로젝트",
     "open": "보기",
     "feedback": "피드백 남기기",
     "pathTitle": "지금까지의 길",

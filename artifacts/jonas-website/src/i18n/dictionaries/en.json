@@ -11,7 +11,9 @@
     "crumbsAria": "Breadcrumbs",
     "readingTime": "{n} min read",
     "badgeInfo": "Note",
-    "badgeWarning": "Open"
+    "badgeWarning": "Open",
+    "nextLabel": "Up next",
+    "nextHint": "Just keep scrolling"
   },
   "nav": {
     "home": "Home",
@@ -52,7 +54,7 @@
     "mapAria": "World map with the places I have lived",
     "blogTitle": "Blog",
     "allPosts": "All posts",
-    "projectsEyebrow": "Projects",
+    "projectsEyebrow": "Current projects",
     "projectsPath": "Recent stations",
     "allProjects": "All projects and the full CV"
   },
@@ -64,8 +66,7 @@
     "lede": "At the top: what I am building right now. Below: the path so far.",
     "pdf": "CV as PDF",
     "pinned": "Pinned",
-    "pinnedTitle": "What I am working on",
-    "pinnedNote": "Feedback is welcome.",
+    "pinnedTitle": "Current projects",
     "open": "View",
     "feedback": "Give feedback",
     "pathTitle": "The path so far",

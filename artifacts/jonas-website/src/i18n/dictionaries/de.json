@@ -11,7 +11,9 @@
     "crumbsAria": "Brotkrumen",
     "readingTime": "{n} Min. Lesezeit",
     "badgeInfo": "Hinweis",
-    "badgeWarning": "Offen"
+    "badgeWarning": "Offen",
+    "nextLabel": "Als Nächstes",
+    "nextHint": "Einfach weiterscrollen"
   },
   "nav": {
     "home": "Home",
@@ -52,7 +54,7 @@
     "mapAria": "Weltkarte mit den Orten, an denen ich gelebt habe",
     "blogTitle": "Blog",
     "allPosts": "Alle Beiträge",
-    "projectsEyebrow": "Projekte",
+    "projectsEyebrow": "Aktuelle Projekte",
     "projectsPath": "Stationen der letzten Jahre",
     "allProjects": "Alle Projekte und der ganze Lebenslauf"
   },
@@ -64,8 +66,7 @@
     "lede": "Oben steht, woran ich gerade baue. Darunter der Weg bis hierher.",
     "pdf": "Lebenslauf als PDF",
     "pinned": "Angepinnt",
-    "pinnedTitle": "Daran arbeite ich gerade",
-    "pinnedNote": "Feedback ist willkommen.",
+    "pinnedTitle": "Aktuelle Projekte",
     "open": "Ansehen",
     "feedback": "Feedback geben",
     "pathTitle": "Der Weg bis hierher",
