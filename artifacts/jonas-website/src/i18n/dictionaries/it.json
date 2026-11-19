@@ -1,10 +1,10 @@
 {
   "meta": {
-    "description": "Jonas Juchelka studia Management & Technology alla TU München e fonda startup. Progetti, curriculum e riflessioni."
+    "description": "Jonas Juchelka costruisce startup e studia alla TU München, attualmente alla UC Berkeley. Progetti, curriculum e riflessioni."
   },
   "ui": {
     "skip": "Vai al contenuto",
-    "homeAria": "Jonas Juchelka, vai alla pagina iniziale",
+    "homeAria": "Jonas Juchelka, vai alla home page",
     "mainNav": "Navigazione principale",
     "contactAria": "Contatti",
     "legalAria": "Note legali",
@@ -18,15 +18,18 @@
     "projects": "Progetti",
     "blog": "Blog",
     "contact": "Contatti",
-    "private": "Login"
+    "private": "Login",
+    "menu": "Menu",
+    "menuOpen": "Apri il menu",
+    "menuClose": "Chiudi il menu"
   },
   "lang": {
     "label": "Lingua",
-    "more": "Altre lingue (traduzione in tempo reale)",
+    "more": "Altre lingue (traduzione dal vivo)",
     "choose": "Scegli la lingua",
     "translating": "Traduzione in corso …",
     "showOriginal": "Mostra l'originale",
-    "notice": "Tradotto automaticamente con Claude (Anthropic). Per questo il testo di questa pagina è stato inviato a un servizio di traduzione. Fa fede la versione tedesca.",
+    "notice": "Tradotto automaticamente con Claude (Anthropic). A tal fine il testo di questa pagina è stato inviato a un servizio di traduzione. Fa fede la versione tedesca.",
     "error": "Al momento la traduzione non è possibile. Riprova più tardi."
   },
   "footer": {
@@ -38,7 +41,7 @@
     "contact": "Contatti"
   },
   "home": {
-    "photoAlt": "Jonas Juchelka sorride davanti a una parete chiara con ombre di foglie",
+    "photoAlt": "Jonas Juchelka sorride davanti a una parete chiara con l'ombra delle foglie",
     "headline1": "Curious how the world works.",
     "headline2": "Driven to make it",
     "headline2Mark": "better",
@@ -48,19 +51,22 @@
     "mapTitle": "Qui sono stato a casa",
     "mapAria": "Mappa del mondo con i luoghi in cui ho vissuto",
     "blogTitle": "Blog",
-    "allPosts": "Tutti gli articoli"
+    "allPosts": "Tutti gli articoli",
+    "projectsEyebrow": "Progetti",
+    "projectsPath": "Le tappe degli ultimi anni",
+    "allProjects": "Tutti i progetti e il curriculum completo"
   },
   "projects": {
     "metaTitle": "Progetti e curriculum",
-    "metaDesc": "Ciò a cui Jonas Juchelka sta lavorando e il percorso fin qui: studio, lavoro, imprenditoria, estero, borse di studio.",
+    "metaDesc": "A cosa lavora Jonas Juchelka in questo momento e il percorso fin qui: studio, lavoro, fondazione di startup, estero, borse di studio.",
     "eyebrow": "Progetti e curriculum",
     "title": "Progetti",
-    "lede": "In alto c'è ciò a cui sto lavorando ora. Sotto, il percorso fin qui.",
+    "lede": "In alto c'è ciò a cui sto lavorando adesso. Sotto, il percorso fin qui.",
     "pdf": "Curriculum in PDF",
     "pinned": "In evidenza",
-    "pinnedTitle": "A questo sto lavorando ora",
-    "pinnedNote": "Il feedback è benvenuto.",
-    "open": "Visualizza",
+    "pinnedTitle": "A cosa sto lavorando adesso",
+    "pinnedNote": "Ogni feedback è benvenuto.",
+    "open": "Guarda",
     "feedback": "Lascia un feedback",
     "pathTitle": "Il percorso fin qui",
     "count": "{n} tappe",
@@ -89,12 +95,12 @@
     "eyebrow": "Appunti",
     "title": "Blog",
     "emptyTitle": "Ancora nulla di pubblicato.",
-    "emptyBefore": "Qui compariranno testi dallo studio e dalla pratica non appena saranno pronti, non prima. Chi non vuole perdere nulla si iscrive al",
+    "emptyBefore": "Qui appariranno testi dallo studio e dalla pratica, quando saranno pronti e non prima. Chi non vuole perdersi nulla può abbonarsi al",
     "emptyLink": "feed RSS",
     "emptyAfter": ".",
     "articleEyebrow": "Articolo",
     "toc": "Indice",
-    "filter": "Filtro",
+    "filter": "Filtri",
     "search": "Cerca",
     "searchOpen": "Apri la ricerca",
     "searchAria": "Cerca tra gli articoli",
@@ -105,8 +111,8 @@
     "view": "Vista",
     "all": "Tutti",
     "essays": "Saggi",
-    "thoughts": "Riflessioni",
-    "thought": "Riflessione",
+    "thoughts": "Pensieri",
+    "thought": "Pensiero",
     "isNew": "Nuovo",
     "preview": "Anteprima",
     "list": "Elenco",
@@ -119,43 +125,46 @@
     "countMany": "articoli",
     "activeFilters": "attivi",
     "readShort": "ca. {n} min",
-    "showFull": "Mostra l'intera riflessione",
+    "showFull": "Mostra il pensiero completo",
     "close": "Chiudi",
     "back": "Blog",
     "pdf": "PDF",
     "next": "Articolo successivo",
     "themeDark": "Tema scuro",
-    "themeLight": "Tema chiaro"
+    "themeLight": "Tema chiaro",
+    "translatedNote": "Tradotto automaticamente. Originale: {lang}.",
+    "readOriginal": "Leggi l'originale",
+    "readTranslation": "Leggi la traduzione"
   },
   "contact": {
     "metaTitle": "Contatti",
     "metaDesc": "Contatta Jonas Juchelka via e-mail, appuntamento, LinkedIn o GitHub.",
     "title": "Scrivimi.",
-    "mailAlt": "Il mio indirizzo e-mail, come immagine, perché i bot non lo leggano facilmente",
+    "mailAlt": "Il mio indirizzo e-mail, come immagine, perché i bot non possano leggerlo facilmente",
     "copy": "Copia",
     "copied": "Copiato",
     "copyFail": "Digitalo a mano",
-    "write": "Scrivi una mail",
+    "write": "Scrivi una e-mail",
     "book": "Prenota un appuntamento",
     "photoAlt": "Jonas Juchelka",
-    "backHome": "Alla pagina iniziale"
+    "backHome": "Alla home page"
   },
   "login": {
-    "metaTitle": "Area privata",
-    "metaDesc": "Accesso all'area privata protetta da passkey.",
-    "eyebrow": "Accesso",
-    "title": "Area privata",
-    "lede": "L'area privata è un'applicazione a sé stante, con un proprio indirizzo. Questa pagina pubblica non registra nessuno e non memorizza nulla.",
-    "continue": "Continua con l'accesso",
+    "metaTitle": "Login",
+    "metaDesc": "Login all'area privata protetta da passkey.",
+    "eyebrow": "Area privata",
+    "title": "Login",
+    "lede": "L'area privata è riservata alle persone invitate. L'accesso avviene esclusivamente tramite passkey.",
     "button": "Accedi con passkey",
     "notReadyTitle": "Non ancora configurata",
-    "notReady": "L'applicazione privata non ha ancora un indirizzo di produzione definitivo. Non appena sarà disponibile, questa pagina porterà direttamente lì.",
+    "notReady": "L'applicazione privata non ha ancora un indirizzo di produzione definitivo. Quando sarà pronto, questa pagina porterà direttamente lì.",
     "fact1Bold": "Solo con passkey.",
     "fact1": "Nessuna password, nessun social login, nessun link via e-mail.",
     "fact2Bold": "Solo su invito.",
-    "fact2": "Non esiste una registrazione pubblica.",
+    "fact2": "Non è prevista una registrazione pubblica.",
     "fact3Bold": "Separata.",
-    "fact3": "Accesso e dati risiedono esclusivamente nell'applicazione privata, non su GitHub Pages."
+    "fact3": "Accesso e dati si trovano solo nell'applicazione privata, non su questo sito.",
+    "backHome": "Alla home page"
   },
   "legal": {
     "eyebrow": "Note legali",
@@ -164,7 +173,7 @@
       "metaTitle": "Note legali",
       "metaDesc": "Identificazione del fornitore, attualmente incompleta.",
       "noticeTitle": "Incompleto: punto di produzione aperto",
-      "notice": "Non è ancora disponibile un indirizzo valido per la notifica di atti, e qui non viene inventato. Queste note legali non sono quindi ancora complete.",
+      "notice": "Non è ancora disponibile un indirizzo valido per le notifiche legali, e qui non viene inventato. Queste note legali non sono quindi ancora complete.",
       "responsible": "Responsabile",
       "contact": "Contatti",
       "email": "E-mail:"
@@ -172,27 +181,27 @@
     "privacy": {
       "metaTitle": "Privacy",
       "metaDesc": "Quali dati vengono generati visitando questo sito.",
-      "noticeTitle": "Bozza: verifica legale ancora da fare",
-      "notice": "Queste indicazioni descrivono la tecnica effettivamente in uso. Manca ancora un'informativa completa e verificata dal punto di vista legale, comprensiva dell'indirizzo del responsabile.",
+      "noticeTitle": "Bozza: verifica legale in sospeso",
+      "notice": "Queste informazioni descrivono la tecnica effettivamente in uso. Manca ancora una dichiarazione completa e verificata a livello legale, compreso l'indirizzo del responsabile.",
       "hostingTitle": "Hosting",
-      "hosting": "Il sito viene fornito come file statici tramite GitHub Pages. Al momento dell'accesso GitHub elabora i dati di connessione tecnicamente necessari, come l'indirizzo IP. Su questa elaborazione non ho alcuna influenza oltre la configurazione.",
-      "notTitle": "Cosa questo sito non fa",
-      "not1": "Nessun cookie, nessun tracciamento, nessun servizio di analisi o marketing.",
-      "not2": "Nessun carattere tipografico o script di terze parti caricato da fonti esterne.",
+      "hosting": "Il sito viene distribuito come file statici tramite GitHub Pages. Al momento dell'accesso GitHub elabora i dati di connessione tecnicamente necessari, come l'indirizzo IP. Su questo trattamento non ho alcuna influenza oltre alla configurazione.",
+      "notTitle": "Cosa non fa questo sito",
+      "not1": "Nessun cookie, nessun tracciamento, nessun servizio di analisi o di marketing.",
+      "not2": "Nessun font o script di terze parti caricato da fonti esterne.",
       "not3": "Nessun modulo di contatto. Un'e-mail viene elaborata dal Suo fornitore di posta elettronica e dal mio.",
       "translationTitle": "Traduzione",
-      "translation1": "Le lingue della selezione sono tradotte in anticipo e fornite come file statici. In questo caso non vengono inviati dati a terzi.",
-      "translation2": "Solo se sceglie attivamente una traduzione in tempo reale sotto «Altre lingue», il testo visibile della pagina corrente viene inviato a un servizio di traduzione che lo traduce con l'API Claude di Anthropic. Inoltre il gestore del servizio elabora i dati di connessione tecnicamente necessari, come l'indirizzo IP. Non vengono impostati cookie né memorizzati dati in modo permanente. Senza la Sua attivazione non avviene alcuna richiesta.",
+      "translation1": "Le lingue del selettore sono tradotte in anticipo e distribuite come file statici. In questo caso non vengono inviati dati a terzi.",
+      "translation2": "Solo se sotto «Altre lingue» Lei avvia attivamente una traduzione dal vivo, il testo visibile della pagina corrente viene inviato a un servizio di traduzione, che lo traduce con la Claude API di Anthropic. Inoltre il gestore del servizio elabora i dati di connessione tecnicamente necessari, come l'indirizzo IP. Non vengono impostati cookie né conservati dati in modo permanente. Senza il Suo avvio non avviene alcuna richiesta.",
       "themeTitle": "Tema chiaro e scuro",
-      "theme": "Se attiva il tema scuro, il Suo browser memorizza questa scelta nella memoria locale (localStorage), in modo che valga anche alla visita successiva. La voce rimane sul Suo dispositivo, non viene inviata a nessun server e può essere eliminata dalle impostazioni del browser.",
+      "theme": "Se attiva il tema scuro, il Suo browser memorizza questa scelta nella memoria locale (localStorage), in modo che valga anche alla visita successiva. La voce resta sul Suo dispositivo, non viene inviata a nessun server e può essere eliminata dalle impostazioni del browser.",
       "privateTitle": "Area privata",
-      "private": "L'area protetta da passkey è un'applicazione separata con una propria informativa sulla privacy. Questo sito pubblico non vi trasmette alcun dato."
+      "private": "L'area protetta da passkey è un'applicazione separata con una propria informativa sulla privacy. Questo sito pubblico non trasmette dati a quell'applicazione."
     }
   },
   "notFound": {
     "title": "Pagina non trovata",
     "heading": "Questa pagina qui non esiste.",
-    "lede": "Forse è stata spostata, forse l'indirizzo non è mai stato corretto. Da qui si può proseguire:",
+    "lede": "Forse è stata spostata, forse l'indirizzo non è mai stato giusto. Da qui si può proseguire:",
     "home": "Home"
   }
 }

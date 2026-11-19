@@ -5,7 +5,7 @@
       "lat": 48.14,
       "lon": 11.58,
       "when": "2024년부터",
-      "what": "TU München에서 학업",
+      "what": "TU München 재학",
       "badge": "home"
     },
     "berkeley": {
@@ -13,7 +13,7 @@
       "lat": 37.87,
       "lon": -122.27,
       "when": "2026년 가을",
-      "what": "UC Berkeley 교환학기",
+      "what": "UC Berkeley 교환학생 학기",
       "badge": "now"
     },
     "aachen": {
@@ -21,7 +21,7 @@
       "lat": 50.78,
       "lon": 6.08,
       "when": "2024년까지",
-      "what": "성장기, 학교 및 아비투어",
+      "what": "학창 시절 및 아비투어 취득",
       "label": "none"
     },
     "madrid": {
@@ -29,7 +29,7 @@
       "lat": 40.42,
       "lon": -3.7,
       "when": "2021년 가을",
-      "what": "마드리드의 한 학교에서 4개월",
+      "what": "Colegio Tajamar 해외 체류",
       "label": "left"
     },
     "juja": {
@@ -37,7 +37,7 @@
       "lat": -1.1,
       "lon": 37.01,
       "when": "2016년, 2018년",
-      "what": "케냐에서 학교 및 사회봉사 활동"
+      "what": "케냐에서의 학교 트리메스터 및 봉사 활동"
     },
     "suzhou": {
       "name": "쑤저우",
@@ -62,23 +62,23 @@
         "프로젝트"
       ],
       "title": "Audition",
-      "org": "지원자용 AI 사전 인터뷰 · 공동 창업자",
+      "org": "공동 창업자 · 채용 절차를 위한 AI 기반 사전 인터뷰",
       "icon": "mic",
-      "why": "첫 면담 전에 진행하는 AI 인터뷰. 기업은 누가 실제로 잘하는지 확인할 수 있습니다.",
+      "why": "첫 면접 전에 AI 사전 인터뷰를 진행해, 기업이 요건을 실제로 충족하는 지원자를 일찍 파악할 수 있게 합니다.",
       "text": [
-        "Audition은 SF Tech Week Hackathon에서 시작되었습니다. 이후 스타트업으로 계속 개발하고 있습니다.",
-        "기업이 직무와 요구 사항을 입력하면 AI가 질문을 제안하고, 기업이 이를 승인합니다. 지원자는 링크를 통해 끊김 없는 영상 녹화로 답변하고, 기업은 이후 평가 결과를 확인합니다."
+        "Audition은 SF Tech Week Hackathon에서 시작되었습니다. 이후 스타트업으로 계속 발전시키고 있습니다.",
+        "기업이 직무와 요건을 입력하면 AI가 적합한 질문을 제안하고, 기업이 이를 승인합니다. 지원자는 링크를 통해 끊김 없는 영상 녹화로 답변하고, 이후 기업은 구조화된 평가 결과를 받습니다."
       ],
       "points": [
-        "사람이 첫 면담을 진행하기 전에, 기업이 많은 지원자에게 보내는 사전 인터뷰",
-        "화면, 음성, 지원자 본인을 녹화",
-        "a16z speedrun에 지원"
+        "기업이 첫 대면 면접 전에 다수의 지원자에게 발송하는 사전 인터뷰",
+        "화면, 음성, 답변 행동 기록",
+        "액셀러레이터 a16z speedrun에 지원"
       ],
       "links": [],
       "cv": {
-        "org": "Mitgründer · KI-Vorinterview für Recruiting",
+        "org": "공동 창업자 · 채용을 위한 AI 사전 인터뷰",
         "points": [
-          "Entstanden beim SF Tech Week Hackathon, Bewerbung beim Accelerator a16z speedrun"
+          "SF Tech Week Hackathon에서 시작, 액셀러레이터 a16z speedrun에 지원"
         ]
       }
     },
@@ -96,23 +96,23 @@
         "프로젝트"
       ],
       "title": "Concentr8",
-      "org": "신경다양성을 가진 사람들을 위한 집중 앱 · 백엔드",
+      "org": "공동 창업자 · 신경다양성 학생을 위한 집중 앱 · 백엔드",
       "icon": "target",
       "photo": {
         "file": "concentr8.jpg",
         "alt": "Concentr8 팀과 함께한 나",
         "focus": "50% 40%"
       },
-      "why": "공부하다 딴짓을 하기 전에, 스스로 알아차리기도 전에 다시 과제로 데려와 주는 앱입니다.",
+      "why": "산만함이 이기기 전에 학생이 공부 중인 과제로 돌아오도록 돕는 앱입니다.",
       "text": [
-        "Concentr8은 이번 학기에 UC Berkeley에서 만들었습니다. 시작은 샌프란시스코에서 열린 Cal Hacks 13.0이었고, 이후 Technology Entrepreneurship 수업의 프로젝트와 합쳤습니다.",
-        "저는 Jinyuan Xu, Camila Scotti Pinto와 한 팀으로 백엔드를 만들고 있습니다."
+        "Concentr8은 샌프란시스코에서 열린 Cal Hacks 13.0에서 시작되었습니다. 이후 버클리 강의 Technology Entrepreneurship (ENGIN 183E)에서 진행하던 프로젝트와 합쳤습니다.",
+        "저는 Jinyuan Xu, Camila Scotti Pinto와 한 팀으로 백엔드를 맡고 있습니다."
       ],
       "points": [
-        "학습 시간 동안 방해되는 앱과 사이트를 차단하는 Mac 앱",
-        "정해진 학습 시간(아침, 점심, 저녁)에 오는 전화",
-        "먼저 질문한 뒤 학습 일정이 담긴 계획을 제안하는 AI 채팅",
-        "Google 로그인 및 캘린더 연동"
+        "학습 시간 동안 주의를 흐트러뜨리는 앱과 웹사이트를 차단하는 Mac 앱",
+        "정해진 학습 시간(아침, 점심, 저녁)에 오는 자동 전화",
+        "먼저 질문을 던진 뒤 학습 시간표 계획을 제안하는 AI 어시스턴트",
+        "Google 로그인 및 Google 캘린더 연동"
       ],
       "links": [
         {
@@ -126,8 +126,8 @@
       ],
       "cv": {
         "points": [
-          "Backend verantwortet: Mac-App, die Ablenkungen sperrt, Anrufe zu festen Lernzeiten, KI-Planung mit Google Kalender",
-          "Entstanden bei Cal Hacks 13.0, weiterentwickelt im Kurs Technology Entrepreneurship (ENGIN 183E)"
+          "백엔드 담당: 방해 요소를 차단하는 Mac 앱, 정해진 학습 시간의 전화, Google 캘린더 연동 AI 계획",
+          "Cal Hacks 13.0에서 시작해 Technology Entrepreneurship (ENGIN 183E) 강의에서 발전"
         ],
         "link": 0
       }
@@ -144,23 +144,23 @@
         "학업",
         "해외"
       ],
-      "title": "교환학생 학기",
-      "org": "University of California, Berkeley",
+      "title": "해외 교환 학기",
+      "org": "University of California, Berkeley · Berkeley International Study Program",
       "logo": "ucberkeley.svg",
       "photo": {
         "file": "berkeley.jpg",
-        "alt": "샌프란시스코 만에서 찍은 사진",
+        "alt": "샌프란시스코 만에서의 나",
         "focus": "60% 40%"
       },
-      "why": "컴퓨터공학 최상위권 대학 중 한 곳에서, AI 스타트업 생태계 한가운데에서 보내는 한 학기입니다.",
+      "why": "컴퓨터 과학 분야 최고 대학 중 한 곳에서 AI 스타트업 생태계의 한가운데에서 보내는 한 학기입니다.",
       "text": [
-        "Berkeley International Study Program을 통해 버클리에서 한 학기 동안 공부합니다. 수업 외에도 기회가 닿을 때마다 해커톤에 참가하고 있습니다."
+        "Berkeley International Study Program을 통해 2026년 가을 학기에 UC Berkeley에서 공부합니다. 수업 외에도 해커톤에 참가하고 직접 창업 프로젝트를 진행합니다."
       ],
       "points": [
-        "Künstliche Intelligenz (CS 188)",
-        "Kryptografie (CS 171)",
+        "인공지능 (CS 188)",
+        "암호학 (CS 171)",
         "Technology Entrepreneurship (ENGIN 183E)",
-        "Gefördert durch die Stiftung der Deutschen Wirtschaft"
+        "Stiftung der Deutschen Wirtschaft 장학 지원"
       ],
       "links": [
         {
@@ -178,10 +178,10 @@
       ],
       "cv": {
         "title": "University of California, Berkeley",
-        "org": "Austauschstudent · Berkeley International Study Program",
+        "org": "교환학생 · Berkeley International Study Program",
         "points": [
-          "Künstliche Intelligenz (CS 188), Kryptografie (CS 171), Technology Entrepreneurship (ENGIN 183E)",
-          "Gefördert durch die Stiftung der Deutschen Wirtschaft (sdw)"
+          "인공지능 (CS 188), 암호학 (CS 171), Technology Entrepreneurship (ENGIN 183E)",
+          "Stiftung der Deutschen Wirtschaft (sdw) 장학 지원"
         ]
       }
     },
@@ -195,18 +195,18 @@
       "tags": [
         "근무"
       ],
-      "title": "오퍼레이션스 리서치 튜터",
-      "org": "TU München · Prof. Kolisch 교수 연구실",
+      "title": "Operations Research 튜터",
+      "org": "TU München · Kolisch 교수 연구실",
       "logo": "tum.svg",
-      "why": "수업에서 상위 5%에 들어 선발되었고, 이후 직접 이 수업을 가르쳤습니다.",
+      "why": "상위 5% 이내의 수강 성과로 선발되었고, 이후 같은 과목을 튜터로서 직접 가르쳤습니다.",
       "text": [
-        "2025/26 겨울학기와 2026 여름학기에 „Operations Research and Decision Analysis“ 튜토리얼을 진행했고, 개별 지도도 함께 맡았습니다. 이 수업 자체는 1,3의 성적으로 마쳤습니다."
+        "2025/26 겨울학기와 2026 여름학기에 “Operations Research and Decision Analysis” 튜토리얼을 진행했고, 학생들을 개별적으로도 추가 지도했습니다. 이 과목 자체는 1,3으로 이수했습니다."
       ],
       "points": [
-        "4 Stunden Tutorium pro Woche für rund 25 Studierende",
-        "Übungsaufgaben selbst konzipiert",
-        "Simplex, Netzwerkflüsse, ganzzahlige Optimierung",
-        "Modellierung mit Gurobi"
+        "약 25명의 학생을 대상으로 주 4시간 튜토리얼",
+        "연습 문제 직접 설계",
+        "심플렉스, 네트워크 흐름, 정수 최적화",
+        "Gurobi를 이용한 모델링"
       ],
       "links": [
         {
@@ -215,12 +215,12 @@
         }
       ],
       "cv": {
-        "title": "Tutor, Operations Research and Decision Analysis",
+        "title": "튜터, Operations Research and Decision Analysis",
         "org": "Technische Universität München",
         "points": [
-          "Ausgewählt für eine Kursleistung unter den besten 5 % (Note 1,3)",
-          "4 Stunden Tutorium pro Woche für rund 25 Studierende, Übungsaufgaben selbst konzipiert",
-          "Simplex, Netzwerkflüsse, ganzzahlige Optimierung, Gurobi"
+          "상위 5% 이내의 수강 성과로 선발 (성적 1,3)",
+          "약 25명의 학생을 대상으로 주 4시간 튜토리얼, 연습 문제 직접 설계",
+          "심플렉스, 네트워크 흐름, 정수 최적화, Gurobi"
         ]
       }
     },
@@ -238,17 +238,17 @@
       "logo": "ritzenhoefer.png",
       "photo": {
         "file": "ritzenhoefer.jpg",
-        "alt": "고객사로 가는 길에 기차역에서 노트북을 든 나",
+        "alt": "고객사로 가는 길에 기차역에서 노트북과 함께 있는 나",
         "focus": "60% 35%"
       },
-      "why": "독일 대형 은행의 대규모 트랜스포메이션 프로젝트를 내부에서 지켜볼 수 있었습니다.",
+      "why": "독일 대형 은행의 대규모 트랜스포메이션 프로젝트에 고객사 현장에서 직접 참여했습니다.",
       "text": [
-        "ritzenhoefer & company는 대형 은행, 보험사, 제조업체의 대규모 개편을 자문합니다. 저는 주로 고객사 현장에서 프로젝트 사무국을 지원했습니다."
+        "ritzenhoefer & company는 대형 은행, 보험사, 제조업체의 전방위적 트랜스포메이션을 자문합니다. 저는 주로 고객사 현장에서 근무하며 프로젝트 관리 오피스(PMO)를 지원했습니다."
       ],
       "points": [
-        "런북 보고 체계를 기술적·조직적으로 책임지고, 일부를 Excel 매크로로 자동화",
-        "변경 요청(Change Request) 프로세스를 개선하고 70건 이상의 변경 요청을 관리",
-        "운영위원회(Lenkungsausschuss) 보고용 프레젠테이션까지 작성",
+        "런북 보고 체계를 기술적·조직적으로 총괄하고, 일부를 Excel 매크로로 자동화",
+        "변경 요청 프로세스를 개선하고 70건이 넘는 변경 요청을 관리",
+        "운영위원회에 이르기까지 의사결정 자료 작성",
         "시니어 컨설턴트를 위한 잡셰어링 모델 개발"
       ],
       "links": [
@@ -259,8 +259,8 @@
       ],
       "cv": {
         "points": [
-          "Runbook und über 70 Change Requests im PMO verantwortet, Berichtswesen mit Excel-Makros teilautomatisiert",
-          "60/60-Jobsharing-Modell für Senior Consultants entwickelt"
+          "PMO에서 런북과 70건이 넘는 변경 요청을 총괄, Excel 매크로로 보고 체계를 부분 자동화",
+          "시니어 컨설턴트를 위한 60/60 잡셰어링 모델 개발"
         ]
       }
     },
@@ -275,22 +275,22 @@
         "근무"
       ],
       "title": "비즈니스 개발 인턴십",
-      "org": "comstruct · 건설 부문 소프트웨어",
+      "org": "comstruct · 건설 자재 구매 소프트웨어, Series A",
       "logo": "comstruct.svg",
       "photo": {
         "file": "comstruct.jpg",
-        "alt": "comstruct 사무실에서 동료와 함께 있는 나",
+        "alt": "comstruct 사무실에서 동료와 함께한 나",
         "focus": "50% 30%"
       },
-      "why": "시리즈 A 스타트업에서 9주 만에 공급업체 74곳을 연동했습니다.",
+      "why": "Series A 스타트업의 Go-to-Market 팀에서 9주 만에 공급업체 74곳을 연동했습니다.",
       "text": [
-        "comstruct는 건설사의 자재 구매를 디지털화합니다. 납품서, 청구서, 주문서가 공급업체와 디지털로 오갑니다. 저는 Go-to-Market 팀에서 일했습니다."
+        "comstruct는 건설사의 자재 구매를 디지털화합니다. 주문서, 납품서, 청구서가 건설사와 공급업체 사이에서 디지털로 오갑니다. 저는 Go-to-Market 팀의 일원이었습니다."
       ],
       "points": [
-        "9주 동안 전화와 메일로 공급업체 74곳 연동",
-        "공급업체 연동 절차를 분석하고 개선",
-        "BAUMA 박람회에서 comstruct 홍보",
-        "전사 팀 행사 기획"
+        "기술적 연동을 포함해 9주 만에 공급업체 74곳 연동",
+        "공급업체 연동 프로세스를 분석하고 개선",
+        "건설 박람회 BAUMA에서 comstruct 대표로 참가",
+        "전사 대상 팀 이벤트 기획 및 운영"
       ],
       "links": [
         {
@@ -299,14 +299,14 @@
         }
       ],
       "cv": {
-        "title": "Business Development, Supply Chain Integration",
-        "org": "comstruct · Bausoftware, Series A · Praktikum",
+        "title": "비즈니스 개발, 공급망 연동",
+        "org": "comstruct · 건설 소프트웨어, Series A · 인턴십",
         "points": [
-          "74 Lieferanten in 9 Wochen angebunden, einschließlich technischer Integration",
-          "Prozess der Lieferantenanbindung analysiert und verbessert"
+          "기술적 연동을 포함해 9주 만에 공급업체 74곳 연동",
+          "공급업체 연동 프로세스를 분석하고 개선"
         ],
         "extra": [
-          "comstruct auf der Fachmesse BAUMA vertreten"
+          "건설 박람회 BAUMA에서 comstruct 대표로 참가"
         ]
       }
     },
@@ -322,19 +322,19 @@
         "프로젝트"
       ],
       "title": "Shapely",
-      "org": "주문형 3D 프린팅 · 직접 구상한 창업 아이디어",
+      "org": "공동 창업자 · 3D 프린터로 만드는 교체 부품",
       "logo": "shapely.png",
-      "why": "휴대폰으로 스캔하면 출력물이 집으로 배송됩니다. 무엇보다 아이디어를 언제 내려놓아야 하는지를 배웠습니다.",
+      "why": "CAD 파일이 없는 교체 부품을 출력합니다. 그리고 언제 사업 모델을 접어야 하는지를 배웠습니다.",
       "text": [
-        "Bricht ein Kunststoffteil, gibt es oft weder Ersatz noch eine Konstruktionsdatei. Shapely sollte genau diese Lücke schließen: Teil fotografieren oder scannen, daraus ein druckfertiges Modell erstellen, drucken und liefern.",
-        "Wir waren zu dritt, alle von der TU München, und Teil des TUM Startup Launchpad. Ich habe Strategie, Finanzen und Go-to-Market verantwortet."
+        "플라스틱 부품이 부러지면 교체품도 설계 파일도 없는 경우가 많습니다. Shapely는 바로 이 공백을 메우려 했습니다. 부품을 사진으로 찍거나 스캔해 출력 가능한 모델을 만들고, 출력해서 배송하는 방식입니다.",
+        "팀은 TU München 소속 세 명이었고, TUM Startup Launchpad에 참여했습니다. 저는 전략, 재무, Go-to-Market을 맡았습니다."
       ],
       "points": [
-        "Erste Aufträge bewusst von Hand umgesetzt: in Fusion 360 modelliert, auf einem Bambu Lab X1 Carbon gedruckt und selbst ausgeliefert",
-        "Web-Plattform, die passende Teile auf Thingiverse und Printables findet",
-        "iPhone-Prototyp, der Teile mit dem LiDAR-Scanner erfasst (Swift, ARKit, Supabase)",
-        "Interviews mit Instandhaltern und Konstrukteuren geführt, Wettbewerber wie Replique und 3YOURMIND analysiert",
-        "Ergebnis der Tests: Das Modell trägt nicht, wir haben es eingestellt"
+        "첫 주문은 의도적으로 수작업으로 처리: Fusion 360으로 모델링하고, Bambu Lab X1 Carbon으로 출력해 직접 배송",
+        "Thingiverse와 Printables에서 맞는 부품을 찾아 주는 웹 플랫폼",
+        "LiDAR 스캐너로 부품을 인식하는 iPhone 프로토타입(Swift, ARKit, Supabase)",
+        "정비 담당자와 설계 엔지니어 인터뷰를 진행하고, Replique와 3YOURMIND 등 경쟁사를 분석",
+        "테스트 결과: 이 모델은 성립하지 않아 중단"
       ],
       "links": [
         {
@@ -343,11 +343,11 @@
         }
       ],
       "cv": {
-        "org": "Mitgründer · Ersatzteile aus dem 3D-Drucker, ohne CAD-Datei",
+        "org": "공동 창업자 · CAD 파일 없는 3D 프린터 교체 부품",
         "points": [
-          "Strategie, Finanzen und Go-to-Market im Dreierteam, TUM Startup Launchpad",
-          "Erste Aufträge von Hand umgesetzt (Fusion 360, 3D-Druck); iPhone-Scan-Prototyp mit ARKit und LiDAR",
-          "Geschäftsmodell in Interviews mit Instandhaltern geprüft und eingestellt"
+          "3인 팀에서 전략, 재무, Go-to-Market 담당, TUM Startup Launchpad",
+          "첫 주문을 수작업으로 처리(Fusion 360, 3D 프린팅), ARKit과 LiDAR 기반 iPhone 스캔 프로토타입",
+          "정비 담당자 인터뷰로 사업 모델을 검증한 뒤 중단"
         ],
         "link": 0
       }
@@ -357,22 +357,22 @@
       "kind": "station",
       "now": true,
       "year": 2024,
-      "date": "10.2024부터",
+      "date": "2024.10부터",
       "place": "뮌헨",
       "loc": "muenchen",
       "tags": [
         "학업"
       ],
-      "title": "B.Sc. Management & Technology",
-      "org": "TU München · 심화 전공 Computer Engineering",
+      "title": "TU München 학사 과정",
+      "org": "B.Sc. Management and Technology · 전공 심화 Computer Engineering",
       "logo": "tum.svg",
-      "why": "경영학과 컴퓨터공학을 한 학위 과정에서 공부합니다. 입학률 9 %의 프로그램입니다.",
+      "why": "경영과 컴퓨터 공학의 접점에 있는 학과로, 합격률은 9%입니다.",
       "text": [
-        "2024/25 겨울학기부터 공부하고 있습니다. 졸업은 2027년으로 예정되어 있습니다."
+        "2024/25 겨울학기부터 뮌헨 공과대학교에서 Computer Engineering을 심화 전공으로 공부하고 있습니다. 졸업은 2027년으로 예정되어 있습니다."
       ],
       "points": [
-        "평균 성적 1,6",
-        "심화 전공 Computer Engineering"
+        "평균 학점 1.6(상위 10%)",
+        "Computer Engineering 심화 전공"
       ],
       "links": [
         {
@@ -380,15 +380,15 @@
           "url": "https://www.tum.de/"
         },
         {
-          "label": "TUM 학위 과정 소개",
+          "label": "학과 소개",
           "url": "https://www.mgt.tum.de/de/programs/bachelor-in-management-technology/muenchen"
         }
       ],
       "cv": {
-        "title": "Technische Universität München",
-        "org": "B.Sc. Management and Technology, Vertiefung Computer Engineering",
+        "title": "뮌헨 공과대학교",
+        "org": "B.Sc. Management and Technology, 전공 심화 Computer Engineering",
         "points": [
-          "Notenschnitt 1,6 (Top 10 %), Studiengang mit 9 % Aufnahmequote"
+          "평균 학점 1.6(상위 10%), 합격률 9%의 학과"
         ]
       }
     },
@@ -407,23 +407,23 @@
       "logo": "cy.svg",
       "photo": {
         "file": "cycos.jpg",
-        "alt": "cycos 로고 앞에 서 있는 나",
+        "alt": "cycos 로고 앞에 선 나",
         "focus": "70% 40%"
       },
-      "why": "서버와 가상 머신을 처음으로 직접 구축하고 Java를 프로그래밍했습니다.",
+      "why": "소프트웨어 개발과 네트워크 기술에서의 첫 실무 경험: 서버, 가상 머신, Java.",
       "text": [
-        "cycos는 30년 넘게 아날로그 시스템부터 클라우드 협업까지 통신 소프트웨어를 개발해 왔습니다. 저는 4주 동안 개발팀에서 일했습니다."
+        "cycos는 30년 넘게 아날로그 시스템부터 클라우드 기반 협업 솔루션까지 통신 소프트웨어를 개발해 왔습니다. 저는 4주 동안 개발팀에서 일했습니다."
       ],
       "points": [
-        "네트워크 기초: IP 주소, 라우팅, 프로토콜",
-        "Linux, 서버, Proxmox 기반 VM",
-        "객체 지향 프로그래밍을 활용한 Java",
-        "전화 및 VoIP 개요"
+        "네트워크 기초: IP 주소 지정, 라우팅, 프로토콜",
+        "Proxmox로 Linux 서버와 가상 머신 구축",
+        "Java 객체지향 프로그래밍",
+        "전화 통신과 VoIP 개요 학습"
       ],
       "links": [],
       "cv": {
         "points": [
-          "Linux-Server und virtuelle Maschinen (Proxmox) aufgesetzt, objektorientierte Programmierung in Java"
+          "Linux 서버와 가상 머신(Proxmox) 구축, Java 객체지향 프로그래밍"
         ],
         "optional": true
       }
@@ -439,31 +439,31 @@
         "창업",
         "활동"
       ],
-      "title": "공동 창립자 및 이사회 임원",
-      "org": "Future Founders Initiative e.V. · 08.2026부터 자문위원회",
+      "title": "공동 창업자 및 이사회 임원",
+      "org": "Future Founders Initiative e.V. · 2026.08부터 자문위원회",
       "logo": "ffi.png",
       "photo": {
         "file": "ffi.jpg",
-        "alt": "Future Founders Initiative 행사에서 찍은 단체 사진",
+        "alt": "Future Founders Initiative 행사에서의 단체 사진",
         "focus": "50% 40%"
       },
-      "why": "다섯 명으로 시작해 세 도시에서 활동하는 단체가 되었습니다. 그 후 의도적으로 역할을 넘겼습니다.",
+      "why": "창립 멤버 다섯 명으로 시작해 세 도시에 걸친 이니셔티브로 키웠고, 이후 의도적으로 넘겼습니다.",
       "text": [
-        "Future Founders Initiative는 창업을 꿈꾸는 학생들을 연결해 줍니다. 첫 아이디어부터 피치까지 무료 워크숍을 제공합니다. 저는 공동 창립자로서 이사회에서 단체를 키웠고 2026년에 자문위원회로 옮겼습니다."
+        "Future Founders Initiative는 창업을 꿈꾸는 학생들을 모으고, 첫 아이디어부터 피치까지 무료 워크숍을 제공합니다. 저는 협회를 공동 창립하고 이사회에서 키웠으며, 2026년에 자문위원회로 옮겼습니다."
       ],
       "points": [
-        "학생 110명 이상이 참여한 3일간의 행사",
-        "뮌헨, 프랑크푸르트, 슈투트가르트 지부",
+        "학생 110명 이상을 대상으로 3일간의 창업 행사 개최",
+        "뮌헨, 프랑크푸르트, 슈투트가르트 거점 운영",
         "이사회 구조 재정비",
-        "함께 만든 가치: 구경꾼이 아닌 실행가, 서로를 위한 존재, 무언가를 남기기, 자존심 내려놓기"
+        "핵심 가치를 함께 정립: 구경꾼이 아닌 실행가, 서로를 위해 나서기, 무언가를 남기기, 자존심 내세우지 않기"
       ],
       "links": [],
       "cv": {
         "title": "Future Founders Initiative e.V.",
-        "org": "Mitgründer und Vorstand, seit 08.2026 im Beirat",
+        "org": "공동 창업자 및 이사회 임원, 2026.08부터 자문위원회",
         "points": [
-          "Von fünf Gründungsmitgliedern zu einer Initiative in drei Städten aufgebaut",
-          "Dreitägige Gründungsveranstaltungen für über 110 Studierende organisiert"
+          "창립 멤버 다섯 명에서 세 도시에 걸친 이니셔티브로 성장시킴",
+          "학생 110명 이상을 대상으로 3일간의 창업 행사 개최"
         ]
       }
     },
@@ -472,26 +472,26 @@
       "kind": "station",
       "year": 2024,
       "date": "08.2016 – 06.2024",
-      "place": "아헨",
+      "place": "Aachen",
       "loc": "aachen",
       "tags": [
         "학교"
       ],
-      "title": "아비투어",
-      "org": "Bischöfliches Pius-Gymnasium · 심화 과목: 수학, 지리, 독일어",
+      "title": "Abitur",
+      "org": "Bischöfliches Pius-Gymnasium Aachen · 심화 과목: 수학, 지리, 독일어",
       "logo": "pius.png",
-      "why": "아비투어를 1.2점으로 마쳤고, 그와 함께 RWTH에서 이미 수학 강의도 들었습니다.",
+      "why": "Abitur 1,2, MINT-EC 우등 인증서를 받았고, 재학 중에 이미 RWTH Aachen에서 수학 강의를 들었습니다.",
       "text": [
-        "Am Pius-Gymnasium habe ich mich weit über den Unterricht hinaus engagiert: mit einem eigenen Förderkurs, in Nachhilfe und Hausaufgabenbetreuung und acht Jahre lang in der Big Band.",
-        "Parallel zur Oberstufe habe ich im Frühstudium die Vorlesung Höhere Mathematik an der RWTH Aachen besucht."
+        "Pius-Gymnasium에서는 수업 범위를 훨씬 넘어 활동했습니다. 직접 만든 보충 과정, 과외와 숙제 지도, 그리고 8년 동안 빅밴드 활동이 그것입니다.",
+        "고학년 과정과 병행하여 조기 대학 수강 제도로 RWTH Aachen에서 고등수학 강의를 들었습니다."
       ],
       "points": [
-        "Abiturnote 1,2 (Top 10 %)",
-        "MINT-EC-Zertifikat mit Auszeichnung, die höchste von drei Stufen (Top 5 % des Jahrgangs)",
-        "Förderkurs „Economy & Innovation“ für die Klassen 8 bis 10 aufgebaut und ab Oktober 2022 wöchentlich zwei Stunden geleitet: Volkswirtschaft, persönliche Finanzen, Steuern, internationale Politik, künstliche Intelligenz, Präsentieren und Websites",
-        "Ein Schuljahr lang wöchentliche Mathematik-Einzelförderung für einen Fünftklässler mit besonderem Förderbedarf",
-        "Hausaufgabenbetreuung für die Unter- und Mittelstufe",
-        "Posaune in der Big Band seit 2016 und im Schulorchester: Konzerte, Schulfeste, Gedenkveranstaltungen"
+        "Abitur 성적 1,2 (상위 10 %)",
+        "MINT-EC 우등 인증서, 3단계 중 최고 등급 (학년 상위 5 %)",
+        "8~10학년을 위한 보충 과정 “Economy & Innovation”을 개설하고 2022년 10월부터 매주 2시간씩 직접 진행: 경제학, 개인 금융, 세금, 국제 정치, 인공지능, 발표, 웹사이트",
+        "한 학년 동안 특별한 지원이 필요한 5학년 학생을 위해 매주 수학 일대일 지도",
+        "저학년·중학년 숙제 지도",
+        "2016년부터 빅밴드에서, 그리고 학교 오케스트라에서 트롬본 연주: 연주회, 학교 행사, 추념 행사"
       ],
       "links": [
         {
@@ -509,14 +509,14 @@
       ],
       "cv": {
         "title": "Bischöfliches Pius-Gymnasium Aachen",
-        "org": "Abitur 1,2 (Top 10 %) · Leistungskurse Mathematik, Erdkunde, Deutsch",
+        "org": "Abitur 1,2 (상위 10 %) · 심화 과목: 수학, 지리, 독일어",
         "points": [
-          "Frühstudium: Höhere Mathematik an der RWTH Aachen",
-          "Förderkurs „Economy & Innovation“ für die Klassen 8 bis 10 aufgebaut und ab 10.2022 wöchentlich zwei Stunden geleitet: Volkswirtschaft, Finanzen, KI, Präsentieren",
-          "Ein Schuljahr wöchentliche Mathematik-Einzelförderung für einen jüngeren Schüler mit besonderem Förderbedarf"
+          "조기 대학 수강: RWTH Aachen 고등수학",
+          "8~10학년을 위한 보충 과정 “Economy & Innovation”을 개설하고 2022년 10월부터 매주 2시간씩 진행: 경제학, 금융, AI, 발표",
+          "한 학년 동안 특별한 지원이 필요한 어린 학생을 위해 매주 수학 일대일 지도"
         ],
         "extra": [
-          "Hausaufgabenbetreuung für die Unter- und Mittelstufe; Posaune in Big Band und Schulorchester seit 2016"
+          "저학년·중학년 숙제 지도; 2016년부터 빅밴드와 학교 오케스트라에서 트롬본 연주"
         ]
       }
     },
@@ -525,22 +525,22 @@
       "kind": "station",
       "year": 2023,
       "date": "06.2023 – 07.2023",
-      "place": "헤르초겐라트",
+      "place": "Herzogenrath",
       "loc": "aachen",
       "tags": [
-        "업무"
+        "근무"
       ],
-      "title": "인사·커뮤니케이션 인턴십",
+      "title": "인사 및 커뮤니케이션 인턴십",
       "org": "AIXTRON SE",
       "logo": "aixtron.svg",
-      "why": "반도체 장비 제조사에서 2주간 인사와 홍보 업무를 경험했습니다.",
+      "why": "반도체 산업용 장비 제조사의 인사팀과 기업 커뮤니케이션 부서에서 보낸 2주.",
       "text": [
-        "AIXTRON은 디스플레이, 레이저, 태양전지에 쓰이는 화합물 반도체를 만드는 장비를 제작합니다. 저는 인사 부서에서 일하며 홍보 업무에도 참여했습니다."
+        "AIXTRON은 디스플레이, 레이저, 태양전지에 쓰이는 화합물 반도체를 제조하는 장비를 만듭니다. 저는 인사팀과 홍보 업무에 참여했습니다."
       ],
       "points": [
-        "견습생의 날 공동 기획",
+        "직업교육생의 날 기획에 참여",
         "채용 웹사이트의 학생용 페이지 개편",
-        "보도자료 담당"
+        "보도자료 작성 지원"
       ],
       "links": [
         {
@@ -550,7 +550,7 @@
       ],
       "cv": {
         "points": [
-          "Azubi-Tag mitgeplant, Schülerseite der Karriere-Website überarbeitet, Pressemitteilungen mitbetreut"
+          "직업교육생의 날 기획 참여, 채용 웹사이트의 학생용 페이지 개편, 보도자료 작성 지원"
         ],
         "optional": true
       }
@@ -560,22 +560,22 @@
       "kind": "station",
       "year": 2021,
       "date": "09.2021 – 12.2021",
-      "place": "스페인 마드리드",
+      "place": "Madrid, 스페인",
       "loc": "madrid",
       "tags": [
         "학교",
         "해외"
       ],
-      "title": "마드리드에서의 4개월 학교 생활",
-      "org": "Colegio Tajamar · Bachillerato de Ciencias",
+      "title": "마드리드 해외 체류",
+      "org": "Colegio Tajamar · Bachillerato, 자연과학 계열",
       "logo": "tajamar.png",
-      "why": "스페인어를 거의 못 하는 상태로 도착했지만, 마지막에는 일반 수업을 따라가며 필기할 수 있었습니다.",
+      "why": "스페인 학교 제도에서 보낸 4개월: 기초 지식만 가지고 도착해, 마지막에는 정규 수업과 시험에 정식으로 참여했습니다.",
       "text": [
-        "저는 Bachillerato 1학년 자연과학 계열에서 주 37시간 수업을 듣고, 같은 반 학생들과 동일한 시험을 치렀습니다."
+        "2021년 가을에 자연과학 계열 Bachillerato 1학년 과정을 다녔고, 주당 37시간의 수업을 듣고 같은 반 학생들과 동일한 시험을 치렀습니다."
       ],
       "points": [
         "생명과학 중심",
-        "일상 속에서 스페인어 습득"
+        "학교생활을 통해 스페인어 실력 향상"
       ],
       "links": [
         {
@@ -585,7 +585,7 @@
       ],
       "cv": {
         "title": "Colegio Tajamar",
-        "org": "Auslandssemester, Bachillerato mit Schwerpunkt Biowissenschaften",
+        "org": "해외 교환 학기, 생명과학 중심 Bachillerato",
         "points": []
       }
     },
@@ -600,16 +600,16 @@
         "봉사",
         "해외"
       ],
-      "title": "아동 보호시설 봉사",
+      "title": "아동 보호시설 자원봉사",
       "org": "Star of Hope Children’s Home",
       "icon": "heart",
-      "why": "고아와 가족이 없는 아이들을 위한 시설에서 3주간 지냈습니다.",
+      "why": "고아와 가족의 보호를 받지 못하는 아이들을 위한 보호시설에서 3주간 일했습니다.",
       "text": [
-        "일손이 필요한 곳 어디에서든 함께 일했고, 저녁에는 영어 수업을 받았습니다."
+        "시설의 일상에서 도움이 필요한 곳을 지원했고, 저녁에는 영어 수업을 받았습니다."
       ],
       "points": [
-        "울타리 설치에 참여하고 부지를 정리함",
-        "아이들과 함께 놀아 줌"
+        "시설 부지의 건축 및 보수 작업 참여",
+        "아이들 돌봄 및 여가 활동 진행"
       ],
       "links": [],
       "cv": {
@@ -627,21 +627,21 @@
         "학교",
         "해외"
       ],
-      "title": "케냐에서 보낸 한 학기",
-      "org": "Precious Blood Primary School",
+      "title": "케냐에서의 학교 트라이메스터",
+      "org": "Precious Blood Primary School · Nairobi 인근 Juja",
       "icon": "school",
-      "why": "어린 시절 케냐의 한 학교에서 한 학기(트리메스터)를 보냈습니다. 아헨 너머의 세상을 처음으로 넓게 본 경험이었습니다.",
+      "why": "다른 학교 제도에서 3개월간 수업을 들었습니다. 국제적인 시각에 대한 제 관심은 여기서 시작되었습니다.",
       "text": [
-        "4학년에 다니며 학교생활 전반을 함께했습니다."
+        "2016년 봄에 Precious Blood Primary School에서 한 트라이메스터를 보내며 4학년 수업에 정규 학생으로 참여했습니다."
       ],
       "points": [
-        "Vollständiger Schulalltag in allen Fächern",
-        "Schwerpunkte: Mathematik und Musik"
+        "모든 과목에 걸친 온전한 학교생활",
+        "중점 과목: 수학과 음악"
       ],
       "links": [],
       "cv": {
         "title": "Precious Blood Primary School",
-        "org": "Trimester im kenianischen Schulsystem",
+        "org": "케냐 학교 제도에서의 트라이메스터",
         "points": []
       }
     },
@@ -656,9 +656,9 @@
       "title": "Stiftung der Deutschen Wirtschaft 장학금",
       "org": "Studienförderwerk Klaus Murmann",
       "logo": "sdw.svg",
-      "why": "공동체 의식과 기업가 정신을 갖춘 학생을 위한 장학금입니다.",
+      "why": "공동체 의식과 기업가 정신을 갖춘 학생을 위한 지원.",
       "text": [
-        "Studienförderwerk Klaus Murmann은 매년 약 2,000명의 학생과 박사 과정생을 지원합니다."
+        "Studienförderwerk Klaus Murmann은 독일의 13개 영재 지원 재단 중 하나로, 매년 약 2,000명의 학부생과 박사과정생을 지원합니다."
       ],
       "points": [],
       "links": [
@@ -669,7 +669,7 @@
       ],
       "cv": {
         "title": "Stiftung der Deutschen Wirtschaft (sdw)",
-        "org": "Stipendiat, eines der 13 Begabtenförderungswerke in Deutschland",
+        "org": "장학생, 독일 13개 영재 지원 재단 중 하나",
         "link": 0
       }
     },
@@ -684,13 +684,13 @@
       "title": "Hans Rudolf Stiftung 장학금",
       "org": "Hans Rudolf Stiftung, 뮌헨",
       "logo": "hr-stiftung.png",
-      "why": "뚜렷한 목표를 가진 뮌헨 지역 학생을 위한 장학금.",
+      "why": "뮌헨 소재 대학 학생을 위한 장학금.",
       "text": [],
       "points": [],
       "links": [],
       "cv": {
         "title": "Hans Rudolf Stiftung",
-        "org": "Stipendiat"
+        "org": "장학생"
       }
     },
     {
@@ -699,14 +699,14 @@
       "year": 2024,
       "date": "06.2024",
       "tags": [
-        "Auszeichnung"
+        "수상"
       ],
-      "title": "MINT-EC-Zertifikat mit Auszeichnung",
-      "org": "MINT-EC, das nationale Excellence-Schulnetzwerk",
+      "title": "MINT-EC 수료증 우수 등급",
+      "org": "MINT-EC, 독일 전국 우수 학교 네트워크",
       "icon": "cap",
-      "why": "Die höchste von drei Stufen, für herausragende Leistungen und Engagement in Mathematik, Informatik, Naturwissenschaften und Technik über die gesamte Schulzeit.",
+      "why": "세 단계 중 최고 등급으로, 재학 기간 전체에 걸쳐 수학, 컴퓨터과학, 자연과학, 기술 분야에서 보인 탁월한 성취와 참여에 수여됩니다.",
       "text": [
-        "Das Zertifikat wird mit dem Abitur an Schulen des MINT-EC-Netzwerks vergeben und ist von Kultusministerkonferenz und Hochschulrektorenkonferenz anerkannt. Damit gehörte ich zu den besten 5 % meines Jahrgangs."
+        "이 수료증은 MINT-EC 네트워크 소속 학교에서 아비투어와 함께 수여되며, 각 주 문화부장관회의와 독일 대학총장회의의 인정을 받습니다. 이로써 저는 같은 학년 상위 5%에 속했습니다."
       ],
       "points": [],
       "links": [
@@ -716,7 +716,7 @@
         }
       ],
       "cv": {
-        "org": "Höchste von drei Stufen, Top 5 % des Jahrgangs",
+        "org": "세 단계 중 최고 등급, 학년 상위 5%",
         "link": 0
       }
     },
@@ -725,7 +725,7 @@
       "kind": "award",
       "year": 2026,
       "date": "2026",
-      "place": "쑤저우 및 상하이, 중국",
+      "place": "중국 쑤저우 및 상하이",
       "loc": "suzhou",
       "tags": [
         "수상",
@@ -736,17 +736,17 @@
       "icon": "exchange",
       "photo": {
         "file": "china.jpg",
-        "alt": "쑤저우에서의 대표단",
+        "alt": "쑤저우에서의 우리 대표단",
         "focus": "50% 50%"
       },
-      "why": "선발 비율 5%. TUM 최우수 학생 중 한 명으로 선발.",
+      "why": "선발률 5%의 경쟁을 거쳐 TUM 최우수 학생 중 한 명으로 선발되었습니다.",
       "text": [
-        "TUM 대표단과 함께 쑤저우와 상하이를 방문."
+        "TU München 대표단과 함께 쑤저우와 상하이를 방문했습니다."
       ],
       "points": [],
       "links": [],
       "cv": {
-        "org": "Delegation der TU München nach Suzhou und Shanghai, 5 % Aufnahmequote"
+        "org": "쑤저우와 상하이로 파견된 TU München 대표단, 선발률 5%"
       }
     },
     {
@@ -758,11 +758,11 @@
         "수상"
       ],
       "title": "Deutsche SchülerAkademie",
-      "org": "학교 추천",
+      "org": "학교의 추천",
       "logo": "dsa.svg",
-      "why": "독일 학생의 1% 미만이 선발됨.",
+      "why": "독일 전체 학생 중 1% 미만만 선발됩니다.",
       "text": [
-        "강좌 지도: Henric Meinhardt, Johannes Lumma."
+        "Deutsche SchülerAkademie는 Bildung & Begabung이 특히 뛰어나고 의욕적인 학생들을 위해 운영하는 여름 프로그램입니다."
       ],
       "points": [],
       "links": [
@@ -772,7 +772,7 @@
         }
       ],
       "cv": {
-        "org": "Von der Schule nominiert, weniger als 1 % werden ausgewählt",
+        "org": "학교의 추천, 1% 미만 선발",
         "link": 0
       }
     }

@@ -1,7 +1,7 @@
 {
   "places": {
     "muenchen": {
-      "name": "München",
+      "name": "Münih",
       "lat": 48.14,
       "lon": 11.58,
       "when": "2024'ten beri",
@@ -21,7 +21,7 @@
       "lat": 50.78,
       "lon": 6.08,
       "when": "2024'e kadar",
-      "what": "Büyüdüğüm yer; okul ve Abitur",
+      "what": "Okul dönemi ve Abitur",
       "label": "none"
     },
     "madrid": {
@@ -29,7 +29,7 @@
       "lat": 40.42,
       "lon": -3.7,
       "when": "Güz 2021",
-      "what": "Madrid'de bir okulda dört ay",
+      "what": "Colegio Tajamar'da yurt dışı dönemi",
       "label": "left"
     },
     "juja": {
@@ -37,7 +37,7 @@
       "lat": -1.1,
       "lon": 37.01,
       "when": "2016 ve 2018",
-      "what": "Kenya'da okul ve sosyal hizmet çalışması"
+      "what": "Okul trimesteri ve Kenya'da gönüllü çalışma"
     },
     "suzhou": {
       "name": "Suzhou",
@@ -62,23 +62,23 @@
         "Proje"
       ],
       "title": "Audition",
-      "org": "Başvurular için yapay zekâ ön görüşmesi · Kurucu ortak",
+      "org": "Kurucu ortak · İşe alım süreçleri için yapay zekâ destekli ön mülakat",
       "icon": "mic",
-      "why": "İlk görüşmeden önce bir yapay zekâ görüşmesi. Şirketler kimin gerçekten yapabildiğini görür.",
+      "why": "İlk görüşmeden önce yapılan bir yapay zekâ ön mülakatı sayesinde şirketler, hangi adayların gereksinimleri gerçekten karşıladığını erkenden görür.",
       "text": [
-        "Audition, SF Tech Week Hackathon'unda ortaya çıktı. O zamandan beri onu bir startup olarak geliştiriyorum.",
-        "Şirket pozisyonu ve gereksinimleri girer. Yapay zekâ sorular önerir, şirket bunları onaylar. Adaylar bir bağlantı üzerinden kesintisiz bir video kaydıyla yanıt verir, şirket ardından bir değerlendirme görür."
+        "Audition, SF Tech Week Hackathon'da ortaya çıktı. O zamandan beri bir girişim olarak geliştiriyoruz.",
+        "Şirketler pozisyonu ve gereksinimleri girer, yapay zekâ uygun sorular önerir ve şirket bunları onaylar. Adaylar bir bağlantı üzerinden kesintisiz bir video kaydıyla yanıt verir; ardından şirket yapılandırılmış bir değerlendirme alır."
       ],
       "points": [
-        "Bir insan ilk görüşmeyi yapmadan önce şirketlerin çok sayıda adaya gönderdiği bir ön görüşme",
-        "Ekran, ses ve kişi kaydedilir",
-        "a16z speedrun'a başvuru"
+        "Şirketlerin ilk yüz yüze görüşmeden önce çok sayıda adaya gönderdiği ön mülakat",
+        "Ekranın, sesin ve yanıt davranışının kaydı",
+        "a16z speedrun hızlandırma programına başvuru"
       ],
       "links": [],
       "cv": {
-        "org": "Mitgründer · KI-Vorinterview für Recruiting",
+        "org": "Kurucu ortak · İşe alım için yapay zekâ ön mülakatı",
         "points": [
-          "Entstanden beim SF Tech Week Hackathon, Bewerbung beim Accelerator a16z speedrun"
+          "SF Tech Week Hackathon'da ortaya çıktı, a16z speedrun hızlandırma programına başvuru yapıldı"
         ]
       }
     },
@@ -96,23 +96,23 @@
         "Proje"
       ],
       "title": "Concentr8",
-      "org": "Nörofarklı insanlara özel odaklanma uygulaması · Backend",
+      "org": "Kurucu ortak · Nörogelişimsel farklılığı olan öğrenciler için odak uygulaması · Backend",
       "icon": "target",
       "photo": {
         "file": "concentr8.jpg",
         "alt": "Concentr8 ekibiyle ben",
         "focus": "50% 40%"
       },
-      "why": "Öğrenirken sen fark etmeden önce seni göreve geri döndüren bir uygulama.",
+      "why": "Öğrencileri çalışırken, dikkat dağınıklığı kazanmadan önce göreve geri döndüren bir uygulama.",
       "text": [
-        "Concentr8'i bu dönem UC Berkeley'de geliştirdim. Başlangıcı San Francisco'daki Cal Hacks 13.0'da oldu, sonra Technology Entrepreneurship dersindeki projemizle birleştirdik.",
-        "Backend'i Jinyuan Xu ve Camila Scotti Pinto ile birlikte ekip olarak geliştiriyorum."
+        "Concentr8, San Francisco'daki Cal Hacks 13.0'da ortaya çıktı. Ardından onu, Berkeley'deki Technology Entrepreneurship (ENGIN 183E) dersinden çıkan projemizle birleştirdik.",
+        "Jinyuan Xu ve Camila Scotti Pinto ile birlikte ekip olarak backend'den ben sorumluyum."
       ],
       "points": [
-        "Bir çalışma oturumu sırasında dikkat dağıtan uygulamaları ve siteleri engelleyen Mac uygulaması",
-        "Belirli çalışma saatlerinde aramalar: sabah, öğle, akşam",
-        "Önce soru soran, sonra çalışma oturumlarından oluşan bir plan öneren yapay zekâ sohbeti",
-        "Google ile giriş, takvim bağlanır"
+        "Bir çalışma oturumu sırasında dikkat dağıtan uygulamaları ve web sitelerini engelleyen Mac uygulaması",
+        "Sabit çalışma saatlerinde otomatik aramalar: sabah, öğle, akşam",
+        "Önce karşı sorular soran, ardından çalışma oturumlarından oluşan bir plan öneren yapay zekâ asistanı",
+        "Google ile giriş ve Google Takvim entegrasyonu"
       ],
       "links": [
         {
@@ -126,8 +126,8 @@
       ],
       "cv": {
         "points": [
-          "Backend verantwortet: Mac-App, die Ablenkungen sperrt, Anrufe zu festen Lernzeiten, KI-Planung mit Google Kalender",
-          "Entstanden bei Cal Hacks 13.0, weiterentwickelt im Kurs Technology Entrepreneurship (ENGIN 183E)"
+          "Backend sorumluluğu: dikkat dağıtıcıları engelleyen Mac uygulaması, sabit çalışma saatlerinde aramalar, Google Takvim ile yapay zekâ planlaması",
+          "Cal Hacks 13.0'da ortaya çıktı, Technology Entrepreneurship (ENGIN 183E) dersinde geliştirildi"
         ],
         "link": 0
       }
@@ -145,22 +145,22 @@
         "Yurt dışı"
       ],
       "title": "Yurt dışı dönemi",
-      "org": "University of California, Berkeley",
+      "org": "University of California, Berkeley · Berkeley International Study Program",
       "logo": "ucberkeley.svg",
       "photo": {
         "file": "berkeley.jpg",
         "alt": "San Francisco Körfezi'nde ben",
         "focus": "60% 40%"
       },
-      "why": "Bilgisayar bilimlerinin en iyi üniversitelerinden birinde bir dönem, yapay zekâ startup'ları ekosisteminin tam ortasında.",
+      "why": "Bilgisayar bilimlerinin önde gelen üniversitelerinden birinde, yapay zekâ girişimleri ekosisteminin tam ortasında bir dönem.",
       "text": [
-        "Berkeley International Study Program aracılığıyla Berkeley'de bir dönem okuyorum. Derslerin yanı sıra her hackathon fırsatını değerlendiriyorum."
+        "Berkeley International Study Program aracılığıyla 2026 sonbaharında UC Berkeley'de okuyorum. Derslerin yanı sıra hackathonlara katılıyor ve kendi girişim projelerim üzerinde çalışıyorum."
       ],
       "points": [
-        "Künstliche Intelligenz (CS 188)",
-        "Kryptografie (CS 171)",
+        "Yapay zekâ (CS 188)",
+        "Kriptografi (CS 171)",
         "Technology Entrepreneurship (ENGIN 183E)",
-        "Gefördert durch die Stiftung der Deutschen Wirtschaft"
+        "Stiftung der Deutschen Wirtschaft tarafından destekleniyor"
       ],
       "links": [
         {
@@ -178,10 +178,10 @@
       ],
       "cv": {
         "title": "University of California, Berkeley",
-        "org": "Austauschstudent · Berkeley International Study Program",
+        "org": "Değişim öğrencisi · Berkeley International Study Program",
         "points": [
-          "Künstliche Intelligenz (CS 188), Kryptografie (CS 171), Technology Entrepreneurship (ENGIN 183E)",
-          "Gefördert durch die Stiftung der Deutschen Wirtschaft (sdw)"
+          "Yapay zekâ (CS 188), Kriptografi (CS 171), Technology Entrepreneurship (ENGIN 183E)",
+          "Stiftung der Deutschen Wirtschaft (sdw) tarafından destekleniyor"
         ]
       }
     },
@@ -193,20 +193,20 @@
       "place": "Münih",
       "loc": "muenchen",
       "tags": [
-        "İş"
+        "Çalışma"
       ],
-      "title": "Yöneylem Araştırması tutor'ü",
-      "org": "TU München · Prof. Kolisch kürsüsü",
+      "title": "Yöneylem Araştırması Tutor'ü",
+      "org": "TU München · Prof. Kolisch Kürsüsü",
       "logo": "tum.svg",
-      "why": "Derste en iyi %5 içinde yer aldığım için seçildim. Sonrasında dersi kendim verdim.",
+      "why": "Bir ders başarısı nedeniyle en iyi %5 arasından seçildim; ardından dersi kendim tutor olarak verdim.",
       "text": [
-        "2025/26 kış döneminde ve 2026 yaz döneminde “Operations Research and Decision Analysis” dersinin alıştırma oturumlarını verdim, ayrıca birebir destek sağladım. Dersin kendisini 1,3 ile tamamladım."
+        "2025/26 kış dönemi ve 2026 yaz döneminde „Operations Research and Decision Analysis“ dersinin tutoryalını verdim ve öğrencilere ayrıca bire bir destek sağladım. Dersin kendisini 1,3 ile tamamlamıştım."
       ],
       "points": [
-        "4 Stunden Tutorium pro Woche für rund 25 Studierende",
-        "Übungsaufgaben selbst konzipiert",
-        "Simplex, Netzwerkflüsse, ganzzahlige Optimierung",
-        "Modellierung mit Gurobi"
+        "Haftada 4 saat tutoryal, yaklaşık 25 öğrenci için",
+        "Alıştırma sorularını kendim hazırladım",
+        "Simpleks, ağ akışları, tam sayılı optimizasyon",
+        "Gurobi ile modelleme"
       ],
       "links": [
         {
@@ -218,9 +218,9 @@
         "title": "Tutor, Operations Research and Decision Analysis",
         "org": "Technische Universität München",
         "points": [
-          "Ausgewählt für eine Kursleistung unter den besten 5 % (Note 1,3)",
-          "4 Stunden Tutorium pro Woche für rund 25 Studierende, Übungsaufgaben selbst konzipiert",
-          "Simplex, Netzwerkflüsse, ganzzahlige Optimierung, Gurobi"
+          "Bir ders başarısı nedeniyle en iyi %5 arasından seçildi (Not 1,3)",
+          "Haftada 4 saat tutoryal, yaklaşık 25 öğrenci için, alıştırma soruları kendi hazırladığım",
+          "Simpleks, ağ akışları, tam sayılı optimizasyon, Gurobi"
         ]
       }
     },
@@ -231,9 +231,9 @@
       "date": "08.2025 – 10.2025",
       "place": "Düsseldorf",
       "tags": [
-        "İş"
+        "Çalışma"
       ],
-      "title": "Strateji ve dönüşüm danışmanlığında Fellow",
+      "title": "Fellow, Strateji ve Dönüşüm Danışmanlığı",
       "org": "ritzenhoefer & company",
       "logo": "ritzenhoefer.png",
       "photo": {
@@ -241,15 +241,15 @@
         "alt": "Müşteriye giderken tren istasyonunda dizüstü bilgisayarla ben",
         "focus": "60% 35%"
       },
-      "why": "Bir Alman büyük bankası için büyük bir dönüşüm projesi, içeriden görülmüş.",
+      "why": "Alman bir büyük bankanın büyük bir dönüşüm projesinde, doğrudan müşteri tarafında çalıştım.",
       "text": [
-        "ritzenhoefer & company, büyük bankalara, sigorta şirketlerine ve sanayiye büyük yeniden yapılanmalarda danışmanlık yapar. Çoğunlukla doğrudan müşterinin yanındaydım ve proje ofisini destekledim."
+        "ritzenhoefer & company; büyük bankalara, sigorta şirketlerine ve sanayi şirketlerine kapsamlı dönüşümlerde danışmanlık yapar. Çoğunlukla müşterinin yerinde çalıştım ve proje yönetim ofisine (PMO) destek verdim."
       ],
       "points": [
-        "Runbook raporlamasının teknik ve organizasyonel sorumluluğunu üstlendim, bir kısmını Excel makrolarıyla otomatikleştirdim",
-        "Change request sürecini iyileştirdim, 70'ten fazla change request yönettim",
-        "Yönlendirme komitesine kadar sunumlar hazırladım",
-        "Kıdemli danışmanlar için bir iş paylaşımı modeli geliştirdim"
+        "Runbook raporlamasının teknik ve organizasyonel sorumluluğunu üstlendim, bir bölümünü Excel makrolarıyla otomatikleştirdim",
+        "Change request sürecini iyileştirdim ve 70'ten fazla change request'i yönettim",
+        "Yönlendirme komitesine kadar karar taslakları hazırladım",
+        "Kıdemli danışmanlar için iş paylaşımı modeli geliştirdim"
       ],
       "links": [
         {
@@ -259,8 +259,8 @@
       ],
       "cv": {
         "points": [
-          "Runbook und über 70 Change Requests im PMO verantwortet, Berichtswesen mit Excel-Makros teilautomatisiert",
-          "60/60-Jobsharing-Modell für Senior Consultants entwickelt"
+          "PMO'da runbook ve 70'ten fazla change request'in sorumluluğunu üstlendi, raporlamayı Excel makrolarıyla kısmen otomatikleştirdi",
+          "Kıdemli danışmanlar için 60/60 iş paylaşımı modeli geliştirdi"
         ]
       }
     },
@@ -269,28 +269,28 @@
       "kind": "station",
       "year": 2025,
       "date": "03.2025 – 05.2025",
-      "place": "München",
+      "place": "Münih",
       "loc": "muenchen",
       "tags": [
-        "Çalışma"
+        "İş"
       ],
-      "title": "İş Geliştirme Stajı",
-      "org": "comstruct · İnşaat sektörü için yazılım",
+      "title": "Business Development stajı",
+      "org": "comstruct · İnşaatta malzeme tedariki için yazılım, Series A",
       "logo": "comstruct.svg",
       "photo": {
         "file": "comstruct.jpg",
-        "alt": "Bir meslektaşımla comstruct ofisinde",
+        "alt": "Ben ve bir iş arkadaşım comstruct ofisinde",
         "focus": "50% 30%"
       },
-      "why": "Series A aşamasındaki bir girişimde dokuz haftada 74 tedarikçi sisteme dahil edildi.",
+      "why": "Series A aşamasındaki bir girişimin go-to-market ekibinde dokuz haftada 74 tedarikçi entegre edildi.",
       "text": [
-        "comstruct, inşaat şirketlerinin malzeme tedarikini dijitalleştiriyor: irsaliyeler, faturalar ve siparişler tedarikçilerle dijital olarak yürütülüyor. Go-to-Market ekibindeydim."
+        "comstruct, inşaat şirketlerinin malzeme tedarikini dijitalleştirir: siparişler, irsaliyeler ve faturalar inşaat şirketleri ile tedarikçiler arasında dijital olarak ilerler. Go-to-market ekibinin bir parçasıydım."
       ],
       "points": [
-        "9 haftada telefon ve e-posta yoluyla 74 tedarikçi sisteme dahil edildi",
-        "Tedarikçi entegrasyon sürecini analiz edip iyileştirdim",
-        "comstruct'ı BAUMA fuarında temsil ettim",
-        "Tüm şirket için ekip etkinlikleri organize ettim"
+        "Teknik entegrasyon dahil, 9 haftada 74 tedarikçi sisteme bağlandı",
+        "Tedarikçi entegrasyon süreci analiz edilip iyileştirildi",
+        "comstruct, BAUMA fuarında temsil edildi",
+        "Tüm şirket için ekip etkinlikleri organize edildi"
       ],
       "links": [
         {
@@ -299,14 +299,14 @@
         }
       ],
       "cv": {
-        "title": "Business Development, Supply Chain Integration",
-        "org": "comstruct · Bausoftware, Series A · Praktikum",
+        "title": "Business Development, Tedarik Zinciri Entegrasyonu",
+        "org": "comstruct · İnşaat yazılımı, Series A · Staj",
         "points": [
-          "74 Lieferanten in 9 Wochen angebunden, einschließlich technischer Integration",
-          "Prozess der Lieferantenanbindung analysiert und verbessert"
+          "Teknik entegrasyon dahil, 9 haftada 74 tedarikçi sisteme bağlandı",
+          "Tedarikçi entegrasyon süreci analiz edilip iyileştirildi"
         ],
         "extra": [
-          "comstruct auf der Fachmesse BAUMA vertreten"
+          "comstruct, BAUMA fuarında temsil edildi"
         ]
       }
     },
@@ -315,26 +315,26 @@
       "kind": "station",
       "year": 2026,
       "date": "03.2026 – 05.2026",
-      "place": "München",
+      "place": "Münih",
       "loc": "muenchen",
       "tags": [
         "Girişimcilik",
         "Proje"
       ],
       "title": "Shapely",
-      "org": "Siparişe göre 3D baskı · kendi girişim fikrim",
+      "org": "Kurucu ortak · 3D yazıcıdan yedek parça",
       "logo": "shapely.png",
-      "why": "Telefonla tara, basılmış halini evine teslim al. En çok, bir fikri ne zaman bırakmak gerektiğini öğrendim.",
+      "why": "CAD dosyası bulunmayan yedek parçaları basmak. Ve bir iş modelinden ne zaman vazgeçileceğini öğrenmek.",
       "text": [
-        "Bricht ein Kunststoffteil, gibt es oft weder Ersatz noch eine Konstruktionsdatei. Shapely sollte genau diese Lücke schließen: Teil fotografieren oder scannen, daraus ein druckfertiges Modell erstellen, drucken und liefern.",
-        "Wir waren zu dritt, alle von der TU München, und Teil des TUM Startup Launchpad. Ich habe Strategie, Finanzen und Go-to-Market verantwortet."
+        "Plastik bir parça kırıldığında çoğu zaman ne yedeği ne de tasarım dosyası bulunur. Shapely tam olarak bu boşluğu kapatmayı hedefliyordu: parçanın fotoğrafını çekmek veya taramak, ondan baskıya hazır bir model oluşturmak, basmak ve teslim etmek.",
+        "Üç kişiydik, hepimiz TU München'dendik ve TUM Startup Launchpad'in bir parçasıydık. Strateji, finans ve go-to-market benim sorumluluğumdaydı."
       ],
       "points": [
-        "Erste Aufträge bewusst von Hand umgesetzt: in Fusion 360 modelliert, auf einem Bambu Lab X1 Carbon gedruckt und selbst ausgeliefert",
-        "Web-Plattform, die passende Teile auf Thingiverse und Printables findet",
-        "iPhone-Prototyp, der Teile mit dem LiDAR-Scanner erfasst (Swift, ARKit, Supabase)",
-        "Interviews mit Instandhaltern und Konstrukteuren geführt, Wettbewerber wie Replique und 3YOURMIND analysiert",
-        "Ergebnis der Tests: Das Modell trägt nicht, wir haben es eingestellt"
+        "İlk siparişler bilinçli olarak elle yapıldı: Fusion 360'ta modellendi, Bambu Lab X1 Carbon'da basıldı ve kendimiz teslim ettik",
+        "Thingiverse ve Printables üzerinde uygun parçaları bulan web platformu",
+        "Parçaları LiDAR tarayıcıyla yakalayan iPhone prototipi (Swift, ARKit, Supabase)",
+        "Bakım teknisyenleri ve tasarım mühendisleriyle görüşmeler yapıldı, Replique ve 3YOURMIND gibi rakipler analiz edildi",
+        "Testlerin sonucu: Model sürdürülebilir değil, bu yüzden projeyi sonlandırdık"
       ],
       "links": [
         {
@@ -343,11 +343,11 @@
         }
       ],
       "cv": {
-        "org": "Mitgründer · Ersatzteile aus dem 3D-Drucker, ohne CAD-Datei",
+        "org": "Kurucu ortak · CAD dosyası olmadan 3D yazıcıdan yedek parça",
         "points": [
-          "Strategie, Finanzen und Go-to-Market im Dreierteam, TUM Startup Launchpad",
-          "Erste Aufträge von Hand umgesetzt (Fusion 360, 3D-Druck); iPhone-Scan-Prototyp mit ARKit und LiDAR",
-          "Geschäftsmodell in Interviews mit Instandhaltern geprüft und eingestellt"
+          "Üç kişilik ekipte strateji, finans ve go-to-market, TUM Startup Launchpad",
+          "İlk siparişler elle gerçekleştirildi (Fusion 360, 3D baskı); ARKit ve LiDAR ile iPhone tarama prototipi",
+          "İş modeli, bakım teknisyenleriyle yapılan görüşmelerde test edildi ve sonlandırıldı"
         ],
         "link": 0
       }
@@ -358,21 +358,21 @@
       "now": true,
       "year": 2024,
       "date": "10.2024'ten beri",
-      "place": "München",
+      "place": "Münih",
       "loc": "muenchen",
       "tags": [
         "Eğitim"
       ],
-      "title": "B.Sc. Management & Technology",
-      "org": "TU München · Uzmanlık alanı Computer Engineering",
+      "title": "TU München'de lisans eğitimi",
+      "org": "B.Sc. Management and Technology · Computer Engineering uzmanlık alanı",
       "logo": "tum.svg",
-      "why": "İşletme ve bilgisayar bilimi tek bir bölümde, %9 kabul oranına sahip bir programda.",
+      "why": "İşletme ile bilişimin kesişiminde bir bölüm, kabul oranı %9.",
       "text": [
-        "2024/25 kış yarıyılından beri okuyorum. Mezuniyet 2027 için planlanıyor."
+        "2024/25 kış dönemi itibarıyla Technische Universität München'de, Computer Engineering uzmanlık alanında okuyorum. Mezuniyet 2027 için planlanıyor."
       ],
       "points": [
-        "Not ortalaması 1,6",
-        "Uzmanlık alanı Computer Engineering"
+        "Not ortalaması 1,6 (ilk %10)",
+        "Computer Engineering uzmanlık alanı"
       ],
       "links": [
         {
@@ -380,15 +380,15 @@
           "url": "https://www.tum.de/"
         },
         {
-          "label": "TUM'daki bölüm",
+          "label": "Bölüm",
           "url": "https://www.mgt.tum.de/de/programs/bachelor-in-management-technology/muenchen"
         }
       ],
       "cv": {
         "title": "Technische Universität München",
-        "org": "B.Sc. Management and Technology, Vertiefung Computer Engineering",
+        "org": "B.Sc. Management and Technology, Computer Engineering uzmanlık alanı",
         "points": [
-          "Notenschnitt 1,6 (Top 10 %), Studiengang mit 9 % Aufnahmequote"
+          "Not ortalaması 1,6 (ilk %10), kabul oranı %9 olan bir bölüm"
         ]
       }
     },
@@ -400,30 +400,30 @@
       "place": "Aachen",
       "loc": "aachen",
       "tags": [
-        "Çalışma"
+        "İş"
       ],
-      "title": "Ağ Teknolojisi ve Programlama Stajı",
+      "title": "Ağ teknolojisi ve programlama stajı",
       "org": "cycos AG · Eviden (Atos) bünyesinde bir şirket",
       "logo": "cy.svg",
       "photo": {
         "file": "cycos.jpg",
-        "alt": "cycos logosunun önünde ben",
+        "alt": "Ben, cycos logosunun önünde",
         "focus": "70% 40%"
       },
-      "why": "İlk kez sunucuları ve sanal makineleri kendim kurdum ve Java ile program yazdım.",
+      "why": "Yazılım geliştirme ve ağ teknolojisinde ilk pratik deneyim: sunucular, sanal makineler ve Java.",
       "text": [
-        "cycos, 30 yılı aşkın süredir analog sistemlerden bulutta iş birliğine kadar telekomünikasyon yazılımları geliştiriyor. Dört hafta boyunca geliştirici ekibindeydim."
+        "cycos, 30 yılı aşkın süredir analog sistemlerden bulut tabanlı iş birliği çözümlerine kadar telekomünikasyon yazılımı geliştiriyor. Dört hafta boyunca geliştirme ekibindeydim."
       ],
       "points": [
-        "Ağ temelleri: IP adresleri, yönlendirme, protokoller",
-        "Linux, sunucular ve Proxmox ile sanal makineler",
-        "Nesne yönelimli programlama ile Java",
-        "Telefoni ve VoIP'e dair genel bakış"
+        "Ağ temelleri: IP adresleme, yönlendirme, protokoller",
+        "Proxmox ile Linux sunucuları ve sanal makineler kuruldu",
+        "Java ile nesne yönelimli programlama",
+        "Telefon teknolojisi ve VoIP'e giriş"
       ],
       "links": [],
       "cv": {
         "points": [
-          "Linux-Server und virtuelle Maschinen (Proxmox) aufgesetzt, objektorientierte Programmierung in Java"
+          "Linux sunucuları ve sanal makineler (Proxmox) kuruldu, Java ile nesne yönelimli programlama"
         ],
         "optional": true
       }
@@ -433,13 +433,13 @@
       "kind": "station",
       "year": 2024,
       "date": "04.2024 – 08.2026",
-      "place": "München",
+      "place": "Münih",
       "loc": "muenchen",
       "tags": [
         "Girişimcilik",
         "Gönüllülük"
       ],
-      "title": "Kurucu Ortak ve Yönetim Kurulu Üyesi",
+      "title": "Kurucu ortak ve yönetim kurulu üyesi",
       "org": "Future Founders Initiative e.V. · 08.2026'dan beri danışma kurulunda",
       "logo": "ffi.png",
       "photo": {
@@ -447,23 +447,23 @@
         "alt": "Future Founders Initiative etkinliğinde grup fotoğrafı",
         "focus": "50% 40%"
       },
-      "why": "Beş kişiden üç şehirde faaliyet gösteren bir girişim oluştu. Sonra bilinçli olarak devrettim.",
+      "why": "Beş kurucu üyeyle başlayıp üç şehirde faaliyet gösteren bir inisiyatife dönüştürüldü ve ardından bilinçli olarak devredildi.",
       "text": [
-        "Future Founders Initiative, girişimci olmak isteyen öğrencileri bir araya getiriyor: ilk fikirden pitch'e kadar ücretsiz atölyeler. Ben kurucu ortaklarından biriyim, yönetim kurulunda inşa ettim ve 2026'da danışma kuruluna geçtim."
+        "Future Founders Initiative, girişimci olmak isteyen öğrencileri bir araya getirir ve ilk fikirden pitch'e kadar ücretsiz atölyeler sunar. Derneği birlikte kurdum, yönetim kurulunda büyüttüm ve 2026'da danışma kuruluna geçtim."
       ],
       "points": [
-        "110'dan fazla öğrenci için üç günlük etkinlikler",
-        "München, Frankfurt ve Stuttgart'ta şubeler",
-        "Yönetim kurulu yapısını yeniden kurdum",
-        "Değerleri birlikte oluşturduk: seyirci değil, yapan olmak; birbirine destek olmak; bir iz bırakmak; ego olmaması"
+        "110'dan fazla öğrenci için üç günlük girişimcilik etkinlikleri organize edildi",
+        "Münih, Frankfurt ve Stuttgart'ta şubeler",
+        "Yönetim kurulu yapısı yeniden kuruldu",
+        "Yol gösterici değerler birlikte belirlendi: seyirci değil, harekete geçen kişiler olmak; birbirinin yanında durmak; geriye bir şey bırakmak; ego olmaması"
       ],
       "links": [],
       "cv": {
         "title": "Future Founders Initiative e.V.",
-        "org": "Mitgründer und Vorstand, seit 08.2026 im Beirat",
+        "org": "Kurucu ortak ve yönetim kurulu üyesi, 08.2026'dan beri danışma kurulunda",
         "points": [
-          "Von fünf Gründungsmitgliedern zu einer Initiative in drei Städten aufgebaut",
-          "Dreitägige Gründungsveranstaltungen für über 110 Studierende organisiert"
+          "Beş kurucu üyeden üç şehirde faaliyet gösteren bir inisiyatife büyütüldü",
+          "110'dan fazla öğrenci için üç günlük girişimcilik etkinlikleri organize edildi"
         ]
       }
     },
@@ -478,20 +478,20 @@
         "Okul"
       ],
       "title": "Abitur",
-      "org": "Bischöfliches Pius-Gymnasium · Leistungskurse Matematik, Coğrafya, Almanca",
+      "org": "Bischöfliches Pius-Gymnasium Aachen · İleri düzey dersler: Matematik, Coğrafya, Almanca",
       "logo": "pius.png",
-      "why": "1,2 ortalamayla Abitur ve bunun yanında RWTH'de matematik dersleri.",
+      "why": "Abitur notu 1,2, MINT-EC sertifikası (onur derecesiyle) ve okul döneminde RWTH Aachen'de matematik derslerine katılım.",
       "text": [
-        "Am Pius-Gymnasium habe ich mich weit über den Unterricht hinaus engagiert: mit einem eigenen Förderkurs, in Nachhilfe und Hausaufgabenbetreuung und acht Jahre lang in der Big Band.",
-        "Parallel zur Oberstufe habe ich im Frühstudium die Vorlesung Höhere Mathematik an der RWTH Aachen besucht."
+        "Pius-Gymnasium'da ders içinin çok ötesinde görev aldım: kendi destek kursumla, özel ders ve ödev desteğiyle, ayrıca sekiz yıl boyunca Big Band'de.",
+        "Lise son sınıf döneminde, erken üniversite öğrenimi kapsamında RWTH Aachen'de Yüksek Matematik dersine katıldım."
       ],
       "points": [
-        "Abiturnote 1,2 (Top 10 %)",
-        "MINT-EC-Zertifikat mit Auszeichnung, die höchste von drei Stufen (Top 5 % des Jahrgangs)",
-        "Förderkurs „Economy & Innovation“ für die Klassen 8 bis 10 aufgebaut und ab Oktober 2022 wöchentlich zwei Stunden geleitet: Volkswirtschaft, persönliche Finanzen, Steuern, internationale Politik, künstliche Intelligenz, Präsentieren und Websites",
-        "Ein Schuljahr lang wöchentliche Mathematik-Einzelförderung für einen Fünftklässler mit besonderem Förderbedarf",
-        "Hausaufgabenbetreuung für die Unter- und Mittelstufe",
-        "Posaune in der Big Band seit 2016 und im Schulorchester: Konzerte, Schulfeste, Gedenkveranstaltungen"
+        "Abitur notu 1,2 (ilk %10)",
+        "MINT-EC sertifikası onur derecesiyle, üç kademenin en yükseği (dönemin ilk %5'i)",
+        "8. ile 10. sınıflar için „Economy & Innovation“ destek kursunu kurdum ve Ekim 2022'den itibaren haftada iki saat yürüttüm: ekonomi, kişisel finans, vergiler, uluslararası politika, yapay zekâ, sunum yapma ve web siteleri",
+        "Bir okul yılı boyunca, özel destek ihtiyacı olan bir beşinci sınıf öğrencisine haftalık birebir matematik desteği",
+        "Alt ve orta kademe için ödev desteği",
+        "2016'dan beri Big Band'de ve okul orkestrasında trombon: konserler, okul şenlikleri, anma etkinlikleri"
       ],
       "links": [
         {
@@ -509,14 +509,14 @@
       ],
       "cv": {
         "title": "Bischöfliches Pius-Gymnasium Aachen",
-        "org": "Abitur 1,2 (Top 10 %) · Leistungskurse Mathematik, Erdkunde, Deutsch",
+        "org": "Abitur 1,2 (ilk %10) · İleri düzey dersler: Matematik, Coğrafya, Almanca",
         "points": [
-          "Frühstudium: Höhere Mathematik an der RWTH Aachen",
-          "Förderkurs „Economy & Innovation“ für die Klassen 8 bis 10 aufgebaut und ab 10.2022 wöchentlich zwei Stunden geleitet: Volkswirtschaft, Finanzen, KI, Präsentieren",
-          "Ein Schuljahr wöchentliche Mathematik-Einzelförderung für einen jüngeren Schüler mit besonderem Förderbedarf"
+          "Erken üniversite öğrenimi: RWTH Aachen'de Yüksek Matematik",
+          "8. ile 10. sınıflar için „Economy & Innovation“ destek kursunu kurdum ve 10.2022'den itibaren haftada iki saat yürüttüm: ekonomi, finans, yapay zekâ, sunum yapma",
+          "Bir okul yılı boyunca, özel destek ihtiyacı olan daha genç bir öğrenciye haftalık birebir matematik desteği"
         ],
         "extra": [
-          "Hausaufgabenbetreuung für die Unter- und Mittelstufe; Posaune in Big Band und Schulorchester seit 2016"
+          "Alt ve orta kademe için ödev desteği; 2016'dan beri Big Band'de ve okul orkestrasında trombon"
         ]
       }
     },
@@ -530,17 +530,17 @@
       "tags": [
         "İş"
       ],
-      "title": "İnsan Kaynakları ve İletişim Stajı",
+      "title": "İnsan Kaynakları ve İletişim stajı",
       "org": "AIXTRON SE",
       "logo": "aixtron.svg",
-      "why": "Yarı iletken ekipmanı üreten bir şirkette, insan kaynakları ve basın biriminde iki hafta.",
+      "why": "Yarı iletken sanayisine yönelik tesis üreten bir şirkette, insan kaynakları departmanında ve kurumsal iletişimde iki hafta.",
       "text": [
-        "AIXTRON, ekran, lazer ve güneş hücreleri için bileşik yarı iletkenlerin üretildiği makineler yapar. İnsan kaynakları departmanındaydım ve basın çalışmalarına katkıda bulundum."
+        "AIXTRON, ekranlar, lazerler ve güneş hücreleri için bileşik yarı iletkenlerin üretildiği tesisler üretir. İnsan kaynakları departmanında ve basın çalışmalarında görev aldım."
       ],
       "points": [
-        "Stajyer Günü'nün planlanmasına katıldım",
-        "Kariyer web sitesinin öğrencilere yönelik sayfasını yeniden düzenledim",
-        "Basın bültenlerinin hazırlanmasında görev aldım"
+        "Çırak günü planlamasına katkı",
+        "Kariyer web sitesinin öğrenci sayfasının yenilenmesi",
+        "Basın bültenlerinin hazırlanmasına katkı"
       ],
       "links": [
         {
@@ -550,7 +550,7 @@
       ],
       "cv": {
         "points": [
-          "Azubi-Tag mitgeplant, Schülerseite der Karriere-Website überarbeitet, Pressemitteilungen mitbetreut"
+          "Çırak günü planlamasına katkı, kariyer web sitesinin öğrenci sayfasının yenilenmesi, basın bültenlerinin hazırlanmasına katkı"
         ],
         "optional": true
       }
@@ -566,16 +566,16 @@
         "Okul",
         "Yurt dışı"
       ],
-      "title": "Madrid'de dört ay okul",
-      "org": "Colegio Tajamar · Bachillerato de Ciencias",
+      "title": "Madrid'de yurt dışı dönemi",
+      "org": "Colegio Tajamar · Bachillerato, fen bilimleri dalı",
       "logo": "tajamar.png",
-      "why": "Az İspanyolcayla geldim, sonunda normal derslerde not tutabiliyordum.",
+      "why": "İspanyol okul sisteminde dört ay: temel bilgilerle geldim, sonunda derslere ve sınavlara düzenli olarak katıldım.",
       "text": [
-        "Bachillerato'nun ilk yılında fen bilimleri kolundaydım; haftada 37 ders saati vardı ve sınıf arkadaşlarımla aynı sınavlara girdim."
+        "2021 sonbaharında Bachillerato'nun ilk yılına fen bilimleri dalında devam ettim; haftada 37 ders saati vardı ve sınıfımla aynı sınavlara girdim."
       ],
       "points": [
         "Ağırlık: yaşam bilimleri",
-        "İspanyolcayı gündelik hayatta öğrendim"
+        "Günlük okul hayatında İspanyolcamı geliştirdim"
       ],
       "links": [
         {
@@ -585,7 +585,7 @@
       ],
       "cv": {
         "title": "Colegio Tajamar",
-        "org": "Auslandssemester, Bachillerato mit Schwerpunkt Biowissenschaften",
+        "org": "Yurt dışı dönemi, yaşam bilimleri ağırlıklı Bachillerato",
         "points": []
       }
     },
@@ -600,16 +600,16 @@
         "Gönüllülük",
         "Yurt dışı"
       ],
-      "title": "Bir çocuk yuvasında gönüllü yardım",
+      "title": "Bir çocuk yuvasında gönüllü çalışma",
       "org": "Star of Hope Children’s Home",
       "icon": "heart",
-      "why": "Yetimler ve ailesiz çocukların kaldığı bir yuvada üç hafta.",
+      "why": "Yetim çocuklar ve aile desteğinden yoksun çocuklar için bir yuvada üç hafta gönüllü çalışma.",
       "text": [
-        "Orada ihtiyaç duyulan her işte çalıştım ve akşamları İngilizce dersi aldım."
+        "Kurumun günlük işlerinde yardıma ihtiyaç duyulan yerlerde destek oldum ve akşamları İngilizce dersi aldım."
       ],
       "points": [
-        "Çit yapımına katkı ve alanın bakımı",
-        "Çocuklarla oyun oynama"
+        "Arazideki inşaat ve bakım işlerine katkı",
+        "Çocukların bakımı ve boş zaman etkinlikleri"
       ],
       "links": [],
       "cv": {
@@ -627,21 +627,21 @@
         "Okul",
         "Yurt dışı"
       ],
-      "title": "Kenya'da bir okul dönemi",
-      "org": "Precious Blood Primary School",
+      "title": "Kenya'da okul trimestri",
+      "org": "Precious Blood Primary School · Nairobi yakınlarında Juja",
       "icon": "school",
-      "why": "Çocukken Kenya'da bir okulda geçirilen bir dönem. Aachen'in çok ötesine ilk bakışım.",
+      "why": "Farklı bir okul sisteminde üç ay ders. Uluslararası bakış açılarına olan ilgim burada başladı.",
       "text": [
-        "Dördüncü sınıftaydım ve tüm okul gündelik hayatına katıldım."
+        "2016 baharında Precious Blood Primary School'da bir trimester geçirdim ve dördüncü sınıf derslerine düzenli olarak katıldım."
       ],
       "points": [
-        "Vollständiger Schulalltag in allen Fächern",
-        "Schwerpunkte: Mathematik und Musik"
+        "Tüm derslerle tam kapsamlı okul hayatı",
+        "Ağırlık: matematik ve müzik"
       ],
       "links": [],
       "cv": {
         "title": "Precious Blood Primary School",
-        "org": "Trimester im kenianischen Schulsystem",
+        "org": "Kenya okul sisteminde bir trimester",
         "points": []
       }
     },
@@ -656,9 +656,9 @@
       "title": "Stiftung der Deutschen Wirtschaft bursu",
       "org": "Studienförderwerk Klaus Murmann",
       "logo": "sdw.svg",
-      "why": "Toplumsal sorumluluk bilincine ve girişimci ruha sahip öğrenciler için.",
+      "why": "Toplumsal sorumluluk bilinci ve girişimci ruhu olan öğrencilere yönelik destek.",
       "text": [
-        "Studienförderwerk Klaus Murmann her yıl yaklaşık 2.000 öğrenciyi ve doktora öğrencisini destekliyor."
+        "Studienförderwerk Klaus Murmann, Almanya'daki 13 yetenek destek kuruluşundan biridir ve her yıl yaklaşık 2.000 lisans öğrencisini ve doktora öğrencisini destekler."
       ],
       "points": [],
       "links": [
@@ -669,7 +669,7 @@
       ],
       "cv": {
         "title": "Stiftung der Deutschen Wirtschaft (sdw)",
-        "org": "Stipendiat, eines der 13 Begabtenförderungswerke in Deutschland",
+        "org": "Burslu öğrenci, Almanya'daki 13 yetenek destek kuruluşundan biri",
         "link": 0
       }
     },
@@ -684,13 +684,13 @@
       "title": "Hans Rudolf Stiftung bursu",
       "org": "Hans Rudolf Stiftung, Münih",
       "logo": "hr-stiftung.png",
-      "why": "Azimli Münihli öğrenciler için bir burs.",
+      "why": "Münih'teki yükseköğretim kurumlarında okuyan öğrencilere yönelik burs.",
       "text": [],
       "points": [],
       "links": [],
       "cv": {
         "title": "Hans Rudolf Stiftung",
-        "org": "Stipendiat"
+        "org": "Burslu öğrenci"
       }
     },
     {
@@ -699,14 +699,14 @@
       "year": 2024,
       "date": "06.2024",
       "tags": [
-        "Auszeichnung"
+        "Ödül"
       ],
-      "title": "MINT-EC-Zertifikat mit Auszeichnung",
-      "org": "MINT-EC, das nationale Excellence-Schulnetzwerk",
+      "title": "MINT-EC sertifikası, üstün başarı derecesiyle",
+      "org": "MINT-EC, ulusal mükemmeliyet okulları ağı",
       "icon": "cap",
-      "why": "Die höchste von drei Stufen, für herausragende Leistungen und Engagement in Mathematik, Informatik, Naturwissenschaften und Technik über die gesamte Schulzeit.",
+      "why": "Okul hayatı boyunca matematik, bilgisayar bilimi, doğa bilimleri ve teknik alanlarındaki üstün başarı ve katkı için verilen, üç dereceden en yükseği.",
       "text": [
-        "Das Zertifikat wird mit dem Abitur an Schulen des MINT-EC-Netzwerks vergeben und ist von Kultusministerkonferenz und Hochschulrektorenkonferenz anerkannt. Damit gehörte ich zu den besten 5 % meines Jahrgangs."
+        "Sertifika, MINT-EC ağına bağlı okullarda Abitur ile birlikte verilir ve Kultusministerkonferenz ile Hochschulrektorenkonferenz tarafından tanınır. Böylece sınıfımın en iyi %5'i arasında yer aldım."
       ],
       "points": [],
       "links": [
@@ -716,7 +716,7 @@
         }
       ],
       "cv": {
-        "org": "Höchste von drei Stufen, Top 5 % des Jahrgangs",
+        "org": "Üç dereceden en yükseği, sınıfın en iyi %5'i",
         "link": 0
       }
     },
@@ -739,14 +739,14 @@
         "alt": "Suzhou'daki heyetimiz",
         "focus": "50% 50%"
       },
-      "why": "Kabul oranı %5. TUM'un en iyi öğrencilerinden biri olarak seçildi.",
+      "why": "%5'lik kabul oranıyla TUM'un en başarılı öğrencilerinden biri olarak seçildim.",
       "text": [
-        "TUM heyetiyle Suzhou ve Şanghay'da."
+        "TU München heyetiyle Suzhou ve Şanghay'da."
       ],
       "points": [],
       "links": [],
       "cv": {
-        "org": "Delegation der TU München nach Suzhou und Shanghai, 5 % Aufnahmequote"
+        "org": "TU München heyetiyle Suzhou ve Şanghay'a, %5 kabul oranı"
       }
     },
     {
@@ -758,11 +758,11 @@
         "Ödül"
       ],
       "title": "Deutsche SchülerAkademie",
-      "org": "Okul tarafından önerildi",
+      "org": "Okul tarafından aday gösterildi",
       "logo": "dsa.svg",
       "why": "Almanya'daki öğrencilerin %1'inden azı seçilir.",
       "text": [
-        "Kurs yöneticileri: Henric Meinhardt ve Johannes Lumma."
+        "Deutsche SchülerAkademie, Bildung & Begabung tarafından düzenlenen ve özellikle yetenekli ve motive öğrencilere yönelik bir yaz programıdır."
       ],
       "points": [],
       "links": [
@@ -772,7 +772,7 @@
         }
       ],
       "cv": {
-        "org": "Von der Schule nominiert, weniger als 1 % werden ausgewählt",
+        "org": "Okul tarafından aday gösterildi, %1'den azı seçilir",
         "link": 0
       }
     }

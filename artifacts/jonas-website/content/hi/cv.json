@@ -1,7 +1,7 @@
 {
   "places": {
     "muenchen": {
-      "name": "München",
+      "name": "म्यूनिख",
       "lat": 48.14,
       "lon": 11.58,
       "when": "2024 से",
@@ -9,19 +9,19 @@
       "badge": "home"
     },
     "berkeley": {
-      "name": "Berkeley",
+      "name": "बर्कले",
       "lat": 37.87,
       "lon": -122.27,
       "when": "पतझड़ 2026",
-      "what": "UC Berkeley में विदेश सेमेस्टर",
+      "what": "UC Berkeley में विदेश में एक सेमेस्टर",
       "badge": "now"
     },
     "aachen": {
-      "name": "आख़ेन",
+      "name": "आखेन",
       "lat": 50.78,
       "lon": 6.08,
       "when": "2024 तक",
-      "what": "पला-बढ़ा, स्कूल और Abitur",
+      "what": "स्कूली शिक्षा और अबीटूर",
       "label": "none"
     },
     "madrid": {
@@ -29,18 +29,18 @@
       "lat": 40.42,
       "lon": -3.7,
       "when": "पतझड़ 2021",
-      "what": "मैड्रिड के एक स्कूल में चार महीने",
+      "what": "Colegio Tajamar में विदेश प्रवास",
       "label": "left"
     },
     "juja": {
-      "name": "Juja",
+      "name": "जूजा",
       "lat": -1.1,
       "lon": 37.01,
       "when": "2016 और 2018",
-      "what": "केन्या में स्कूल और सामाजिक कार्य"
+      "what": "स्कूल का एक ट्राइमेस्टर और केन्या में स्वयंसेवा कार्य"
     },
     "suzhou": {
-      "name": "Suzhou",
+      "name": "सूज़ौ",
       "lat": 31.3,
       "lon": 120.6,
       "when": "2026",
@@ -55,30 +55,30 @@
       "now": true,
       "year": 2026,
       "date": "10.2026 से",
-      "place": "सैन फ़्रांसिस्को",
+      "place": "San Francisco",
       "loc": "berkeley",
       "tags": [
-        "स्टार्टअप",
+        "स्टार्टअप बनाना",
         "प्रोजेक्ट"
       ],
       "title": "Audition",
-      "org": "आवेदनों के लिए AI प्री-इंटरव्यू · सह-संस्थापक",
+      "org": "सह-संस्थापक · भर्ती प्रक्रिया के लिए AI-आधारित प्री-इंटरव्यू",
       "icon": "mic",
-      "why": "पहली बातचीत से पहले एक AI इंटरव्यू। कंपनियाँ देख पाती हैं कि कौन सच में काम जानता है।",
+      "why": "पहली बातचीत से पहले एक AI प्री-इंटरव्यू, ताकि कंपनियाँ शुरुआत में ही देख सकें कि कौन सचमुच आवश्यकताओं को पूरा करता है।",
       "text": [
-        "Audition की शुरुआत SF Tech Week Hackathon में हुई थी। तब से मैं इसे स्टार्टअप के रूप में आगे बना रहा हूँ।",
-        "कंपनी भूमिका और ज़रूरतें दर्ज करती है। AI कुछ सवाल सुझाता है, जिन्हें कंपनी मंज़ूर करती है। आवेदक एक लिंक के ज़रिए लगातार चलने वाली वीडियो रिकॉर्डिंग में जवाब देते हैं, और उसके बाद कंपनी को एक मूल्यांकन दिखता है।"
+        "Audition की शुरुआत SF Tech Week Hackathon में हुई। तब से हम इसे एक स्टार्टअप के रूप में आगे बढ़ा रहे हैं।",
+        "कंपनियाँ भूमिका और आवश्यकताएँ दर्ज करती हैं, AI उपयुक्त प्रश्न सुझाता है और कंपनी उन्हें स्वीकृत करती है। आवेदक एक लिंक के ज़रिए एक लगातार वीडियो रिकॉर्डिंग में उत्तर देते हैं; इसके बाद कंपनी को एक संरचित मूल्यांकन मिलता है।"
       ],
       "points": [
-        "एक प्री-इंटरव्यू, जिसे कंपनियाँ किसी व्यक्ति के पहली बातचीत करने से पहले कई आवेदकों को भेजती हैं",
-        "स्क्रीन, आवाज़ और व्यक्ति रिकॉर्ड किए जाते हैं",
-        "a16z speedrun के लिए आवेदन"
+        "प्री-इंटरव्यू, जिसे कंपनियाँ पहली व्यक्तिगत बातचीत से पहले कई आवेदकों को भेजती हैं",
+        "स्क्रीन, आवाज़ और उत्तर देने के व्यवहार की रिकॉर्डिंग",
+        "एक्सेलेरेटर a16z speedrun के लिए आवेदन"
       ],
       "links": [],
       "cv": {
-        "org": "Mitgründer · KI-Vorinterview für Recruiting",
+        "org": "सह-संस्थापक · रिक्रूटिंग के लिए AI प्री-इंटरव्यू",
         "points": [
-          "Entstanden beim SF Tech Week Hackathon, Bewerbung beim Accelerator a16z speedrun"
+          "SF Tech Week Hackathon में शुरुआत, एक्सेलेरेटर a16z speedrun के लिए आवेदन"
         ]
       }
     },
@@ -89,30 +89,30 @@
       "now": true,
       "year": 2026,
       "date": "10.2026 से",
-      "place": "बर्कली",
+      "place": "Berkeley",
       "loc": "berkeley",
       "tags": [
-        "स्टार्टअप",
+        "स्टार्टअप बनाना",
         "प्रोजेक्ट"
       ],
       "title": "Concentr8",
-      "org": "न्यूरोडाइवर्जेंट लोगों के लिए विशेष फ़ोकस ऐप · बैकएंड",
+      "org": "सह-संस्थापक · न्यूरोडाइवर्जेंट छात्रों के लिए फ़ोकस ऐप · बैकएंड",
       "icon": "target",
       "photo": {
         "file": "concentr8.jpg",
-        "alt": "Concentr8 की टीम के साथ मैं",
+        "alt": "मैं Concentr8 की टीम के साथ",
         "focus": "50% 40%"
       },
-      "why": "एक ऐप जो पढ़ाई के दौरान आपके खुद ध्यान भटकने का एहसास करने से पहले ही आपको वापस काम पर ले आता है।",
+      "why": "एक ऐप जो पढ़ाई के दौरान ध्यान भटकने से पहले ही छात्रों को वापस उनके काम पर ले आता है।",
       "text": [
-        "Concentr8 मैंने इस सेमेस्टर UC Berkeley में बनाया। इसकी शुरुआत सैन फ़्रांसिस्को में Cal Hacks 13.0 में हुई थी, फिर हमने इसे Technology Entrepreneurship कोर्स के अपने प्रोजेक्ट के साथ मिला दिया।",
-        "मैं बैकएंड बनाता हूँ, Jinyuan Xu और Camila Scotti Pinto के साथ टीम में।"
+        "Concentr8 की शुरुआत San Francisco में Cal Hacks 13.0 के दौरान हुई। बाद में हमने इसे Berkeley के कोर्स Technology Entrepreneurship (ENGIN 183E) के अपने प्रोजेक्ट के साथ जोड़ दिया।",
+        "बैकएंड की ज़िम्मेदारी मेरी है, Jinyuan Xu और Camila Scotti Pinto के साथ टीम में।"
       ],
       "points": [
-        "Mac ऐप, जो पढ़ाई के सत्र के दौरान ध्यान भटकाने वाले ऐप और वेबसाइटें ब्लॉक करता है",
-        "तय पढ़ाई के समय पर कॉल: सुबह, दोपहर, शाम",
-        "AI चैट, जो पहले सवाल पूछता है और फिर पढ़ाई के सत्रों वाली योजना सुझाता है",
-        "Google से साइन-इन, कैलेंडर जुड़ जाता है"
+        "Mac ऐप, जो पढ़ाई के सत्र के दौरान ध्यान भटकाने वाले ऐप और वेबसाइटें ब्लॉक कर देता है",
+        "तय पढ़ाई के समय पर स्वचालित कॉल: सुबह, दोपहर, शाम",
+        "AI असिस्टेंट, जो पहले सवाल पूछता है और फिर पढ़ाई के सत्रों वाली योजना सुझाता है",
+        "Google से साइन-इन और Google Calendar से जुड़ाव"
       ],
       "links": [
         {
@@ -126,8 +126,8 @@
       ],
       "cv": {
         "points": [
-          "Backend verantwortet: Mac-App, die Ablenkungen sperrt, Anrufe zu festen Lernzeiten, KI-Planung mit Google Kalender",
-          "Entstanden bei Cal Hacks 13.0, weiterentwickelt im Kurs Technology Entrepreneurship (ENGIN 183E)"
+          "बैकएंड की ज़िम्मेदारी: ध्यान भटकाने वाली चीज़ें ब्लॉक करने वाला Mac ऐप, तय पढ़ाई के समय पर कॉल, Google Calendar के साथ AI योजना",
+          "Cal Hacks 13.0 में शुरुआत, कोर्स Technology Entrepreneurship (ENGIN 183E) में आगे विकसित"
         ],
         "link": 0
       }
@@ -138,29 +138,29 @@
       "now": true,
       "year": 2026,
       "date": "08.2026 – 12.2026",
-      "place": "बर्कली, अमेरिका",
+      "place": "Berkeley, अमेरिका",
       "loc": "berkeley",
       "tags": [
         "पढ़ाई",
         "विदेश"
       ],
       "title": "विदेश में सेमेस्टर",
-      "org": "University of California, Berkeley",
+      "org": "University of California, Berkeley · Berkeley International Study Program",
       "logo": "ucberkeley.svg",
       "photo": {
         "file": "berkeley.jpg",
-        "alt": "सैन फ़्रांसिस्को की खाड़ी पर मैं",
+        "alt": "मैं San Francisco की खाड़ी पर",
         "focus": "60% 40%"
       },
-      "why": "कंप्यूटर साइंस की सबसे अच्छी यूनिवर्सिटियों में से एक में एक सेमेस्टर, AI स्टार्टअप के इकोसिस्टम के बीच।",
+      "why": "कंप्यूटर साइंस के अग्रणी विश्वविद्यालयों में से एक में एक सेमेस्टर, AI स्टार्टअप्स के इकोसिस्टम के बीच।",
       "text": [
-        "मैं Berkeley International Study Program के ज़रिए बर्कली में एक सेमेस्टर पढ़ रहा हूँ। कोर्स के अलावा मैं हैकाथॉन का हर मौका इस्तेमाल करता हूँ।"
+        "Berkeley International Study Program के ज़रिए मैं 2026 की पतझड़ में UC Berkeley में पढ़ रहा हूँ। कोर्स के साथ-साथ मैं हैकथॉन में भाग लेता हूँ और अपने स्टार्टअप प्रोजेक्ट्स पर काम करता हूँ।"
       ],
       "points": [
-        "Künstliche Intelligenz (CS 188)",
-        "Kryptografie (CS 171)",
+        "आर्टिफ़िशियल इंटेलिजेंस (CS 188)",
+        "क्रिप्टोग्राफ़ी (CS 171)",
         "Technology Entrepreneurship (ENGIN 183E)",
-        "Gefördert durch die Stiftung der Deutschen Wirtschaft"
+        "Stiftung der Deutschen Wirtschaft से छात्रवृत्ति"
       ],
       "links": [
         {
@@ -178,10 +178,10 @@
       ],
       "cv": {
         "title": "University of California, Berkeley",
-        "org": "Austauschstudent · Berkeley International Study Program",
+        "org": "एक्सचेंज छात्र · Berkeley International Study Program",
         "points": [
-          "Künstliche Intelligenz (CS 188), Kryptografie (CS 171), Technology Entrepreneurship (ENGIN 183E)",
-          "Gefördert durch die Stiftung der Deutschen Wirtschaft (sdw)"
+          "आर्टिफ़िशियल इंटेलिजेंस (CS 188), क्रिप्टोग्राफ़ी (CS 171), Technology Entrepreneurship (ENGIN 183E)",
+          "Stiftung der Deutschen Wirtschaft (sdw) से छात्रवृत्ति"
         ]
       }
     },
@@ -190,23 +190,23 @@
       "kind": "station",
       "year": 2025,
       "date": "08.2025 – 04.2026",
-      "place": "म्यूनिख",
+      "place": "München",
       "loc": "muenchen",
       "tags": [
         "काम"
       ],
-      "title": "ऑपरेशंस रिसर्च के ट्यूटर",
-      "org": "TU München · प्रो. Kolisch की चेयर",
+      "title": "Operations Research में ट्यूटर",
+      "org": "TU München · Prof. Kolisch का चेयर",
       "logo": "tum.svg",
-      "why": "इसलिए चुना गया क्योंकि मैं कोर्स में शीर्ष 5 % में था। बाद में मैंने खुद इसे पढ़ाया।",
+      "why": "कोर्स में शीर्ष 5 % में रहने के आधार पर चयन; इसके बाद मैंने वही कोर्स खुद ट्यूटर के रूप में पढ़ाया।",
       "text": [
-        "मैंने शीतकालीन सेमेस्टर 2025/26 और ग्रीष्मकालीन सेमेस्टर 2026 में “Operations Research and Decision Analysis” का ट्यूटोरियल लिया, साथ में एक-एक करके व्यक्तिगत सहायता भी दी। कोर्स खुद मैंने 1,3 के ग्रेड से पूरा किया था।"
+        "शीतकालीन सेमेस्टर 2025/26 और ग्रीष्मकालीन सेमेस्टर 2026 में मैंने „Operations Research and Decision Analysis“ का ट्यूटोरियल लिया और छात्रों को अलग से व्यक्तिगत रूप से भी मार्गदर्शन दिया। यह कोर्स मैंने खुद 1,3 के साथ पूरा किया था।"
       ],
       "points": [
-        "4 Stunden Tutorium pro Woche für rund 25 Studierende",
-        "Übungsaufgaben selbst konzipiert",
-        "Simplex, Netzwerkflüsse, ganzzahlige Optimierung",
-        "Modellierung mit Gurobi"
+        "लगभग 25 छात्रों के लिए प्रति सप्ताह 4 घंटे का ट्यूटोरियल",
+        "अभ्यास के प्रश्न खुद तैयार किए",
+        "सिंप्लेक्स, नेटवर्क फ़्लो, पूर्णांक अनुकूलन",
+        "Gurobi के साथ मॉडलिंग"
       ],
       "links": [
         {
@@ -215,12 +215,12 @@
         }
       ],
       "cv": {
-        "title": "Tutor, Operations Research and Decision Analysis",
+        "title": "ट्यूटर, Operations Research and Decision Analysis",
         "org": "Technische Universität München",
         "points": [
-          "Ausgewählt für eine Kursleistung unter den besten 5 % (Note 1,3)",
-          "4 Stunden Tutorium pro Woche für rund 25 Studierende, Übungsaufgaben selbst konzipiert",
-          "Simplex, Netzwerkflüsse, ganzzahlige Optimierung, Gurobi"
+          "कोर्स में शीर्ष 5 % के प्रदर्शन के आधार पर चयन (ग्रेड 1,3)",
+          "लगभग 25 छात्रों के लिए प्रति सप्ताह 4 घंटे का ट्यूटोरियल, अभ्यास के प्रश्न खुद तैयार किए",
+          "सिंप्लेक्स, नेटवर्क फ़्लो, पूर्णांक अनुकूलन, Gurobi"
         ]
       }
     },
@@ -229,27 +229,27 @@
       "kind": "station",
       "year": 2025,
       "date": "08.2025 – 10.2025",
-      "place": "डुसेलडॉर्फ",
+      "place": "Düsseldorf",
       "tags": [
         "काम"
       ],
-      "title": "फ़ेलो, स्ट्रैटेजी और ट्रांसफ़ॉर्मेशन कंसल्टिंग",
+      "title": "फ़ेलो, रणनीति और ट्रांसफ़ॉर्मेशन कंसल्टिंग",
       "org": "ritzenhoefer & company",
       "logo": "ritzenhoefer.png",
       "photo": {
         "file": "ritzenhoefer.jpg",
-        "alt": "ग्राहक के यहाँ जाते हुए स्टेशन पर लैपटॉप के साथ मैं",
+        "alt": "मैं लैपटॉप के साथ स्टेशन पर, ग्राहक के यहाँ जाते हुए",
         "focus": "60% 35%"
       },
-      "why": "एक जर्मन बड़े बैंक के लिए एक बड़ा ट्रांसफ़ॉर्मेशन प्रोजेक्ट, अंदर से देखा हुआ।",
+      "why": "एक जर्मन बड़े बैंक के बड़े ट्रांसफ़ॉर्मेशन प्रोजेक्ट में सीधे ग्राहक के यहाँ काम करने का अवसर।",
       "text": [
-        "ritzenhoefer & company बड़े बैंकों, बीमा कंपनियों और उद्योग को बड़े पुनर्गठन में सलाह देती है। मैं ज़्यादातर सीधे ग्राहक के यहाँ रहा और प्रोजेक्ट ऑफ़िस की मदद की।"
+        "ritzenhoefer & company बड़े बैंकों, बीमा कंपनियों और औद्योगिक उद्यमों को व्यापक ट्रांसफ़ॉर्मेशन में सलाह देती है। मैं ज़्यादातर ग्राहक के यहाँ मौजूद रहा और प्रोजेक्ट मैनेजमेंट ऑफ़िस (PMO) की सहायता की।"
       ],
       "points": [
-        "Runbook रिपोर्टिंग की तकनीकी और संगठनात्मक ज़िम्मेदारी संभाली, उसके कुछ हिस्सों को Excel मैक्रो से ऑटोमेट किया",
-        "चेंज-रिक्वेस्ट प्रक्रिया बेहतर की, 70 से ज़्यादा चेंज रिक्वेस्ट संभालीं",
-        "स्टियरिंग कमेटी तक के लिए प्रेज़ेंटेशन तैयार किए",
-        "वरिष्ठ सलाहकारों के लिए जॉब-शेयरिंग मॉडल विकसित किया"
+        "Runbook रिपोर्टिंग की तकनीकी और संगठनात्मक ज़िम्मेदारी संभाली, उसके कुछ हिस्से Excel मैक्रो से स्वचालित किए",
+        "Change-Request प्रक्रिया बेहतर की और 70 से अधिक Change Requests का संचालन किया",
+        "स्टीयरिंग कमेटी तक के लिए निर्णय-प्रस्ताव तैयार किए",
+        "सीनियर कंसल्टेंट्स के लिए जॉब-शेयरिंग मॉडल विकसित किया"
       ],
       "links": [
         {
@@ -259,8 +259,8 @@
       ],
       "cv": {
         "points": [
-          "Runbook und über 70 Change Requests im PMO verantwortet, Berichtswesen mit Excel-Makros teilautomatisiert",
-          "60/60-Jobsharing-Modell für Senior Consultants entwickelt"
+          "PMO में Runbook और 70 से अधिक Change Requests की ज़िम्मेदारी, रिपोर्टिंग को Excel मैक्रो से आंशिक रूप से स्वचालित किया",
+          "सीनियर कंसल्टेंट्स के लिए 60/60 जॉब-शेयरिंग मॉडल विकसित किया"
         ]
       }
     },
@@ -272,24 +272,24 @@
       "place": "म्यूनिख",
       "loc": "muenchen",
       "tags": [
-        "काम"
+        "कार्य"
       ],
       "title": "बिज़नेस डेवलपमेंट इंटर्नशिप",
-      "org": "comstruct · निर्माण क्षेत्र के लिए सॉफ़्टवेयर",
+      "org": "comstruct · निर्माण क्षेत्र में सामग्री खरीद के लिए सॉफ़्टवेयर, Series A",
       "logo": "comstruct.svg",
       "photo": {
         "file": "comstruct.jpg",
         "alt": "comstruct के ऑफ़िस में एक सहकर्मी के साथ मैं",
         "focus": "50% 30%"
       },
-      "why": "सीरीज़ A स्टार्टअप में नौ हफ़्तों में 74 सप्लायर जोड़े।",
+      "why": "एक Series-A स्टार्टअप की Go-to-Market टीम में नौ सप्ताह में 74 आपूर्तिकर्ताओं को जोड़ा।",
       "text": [
-        "comstruct निर्माण कंपनियों की सामग्री ख़रीद को डिजिटल बनाता है: डिलीवरी नोट, इनवॉइस और ऑर्डर सप्लायरों के साथ डिजिटल रूप से चलते हैं। मैं गो-टू-मार्केट टीम में था।"
+        "comstruct निर्माण कंपनियों की सामग्री खरीद को डिजिटल बनाता है: ऑर्डर, डिलीवरी नोट और इनवॉइस निर्माण कंपनियों और आपूर्तिकर्ताओं के बीच डिजिटल रूप से चलते हैं। मैं Go-to-Market टीम का हिस्सा था।"
       ],
       "points": [
-        "9 हफ़्तों में फ़ोन और ईमेल के ज़रिए 74 सप्लायर जोड़े",
-        "सप्लायर ऑनबोर्डिंग की प्रक्रिया का विश्लेषण किया और उसे बेहतर बनाया",
-        "BAUMA मेले में comstruct का प्रतिनिधित्व किया",
+        "तकनीकी इंटीग्रेशन सहित 9 सप्ताह में 74 आपूर्तिकर्ताओं को जोड़ा",
+        "आपूर्तिकर्ताओं को जोड़ने की प्रक्रिया का विश्लेषण किया और उसे बेहतर बनाया",
+        "व्यापार मेले BAUMA में comstruct का प्रतिनिधित्व किया",
         "पूरी कंपनी के लिए टीम इवेंट आयोजित किए"
       ],
       "links": [
@@ -299,14 +299,14 @@
         }
       ],
       "cv": {
-        "title": "Business Development, Supply Chain Integration",
-        "org": "comstruct · Bausoftware, Series A · Praktikum",
+        "title": "बिज़नेस डेवलपमेंट, सप्लाई चेन इंटीग्रेशन",
+        "org": "comstruct · निर्माण सॉफ़्टवेयर, Series A · इंटर्नशिप",
         "points": [
-          "74 Lieferanten in 9 Wochen angebunden, einschließlich technischer Integration",
-          "Prozess der Lieferantenanbindung analysiert und verbessert"
+          "तकनीकी इंटीग्रेशन सहित 9 सप्ताह में 74 आपूर्तिकर्ताओं को जोड़ा",
+          "आपूर्तिकर्ताओं को जोड़ने की प्रक्रिया का विश्लेषण किया और उसे बेहतर बनाया"
         ],
         "extra": [
-          "comstruct auf der Fachmesse BAUMA vertreten"
+          "व्यापार मेले BAUMA में comstruct का प्रतिनिधित्व किया"
         ]
       }
     },
@@ -315,26 +315,26 @@
       "kind": "station",
       "year": 2026,
       "date": "03.2026 – 05.2026",
-      "place": "München",
+      "place": "म्यूनिख",
       "loc": "muenchen",
       "tags": [
         "स्टार्टअप",
         "प्रोजेक्ट"
       ],
       "title": "Shapely",
-      "org": "ऑर्डर पर 3D प्रिंटिंग · अपना स्टार्टअप आइडिया",
+      "org": "सह-संस्थापक · 3D प्रिंटर से स्पेयर पार्ट",
       "logo": "shapely.png",
-      "why": "फ़ोन से स्कैन करें, प्रिंट होकर घर पहुँचे। मैंने मुख्य रूप से यह सीखा कि किसी आइडिया को कब छोड़ देना चाहिए।",
+      "why": "ऐसे स्पेयर पार्ट प्रिंट करना, जिनकी कोई CAD फ़ाइल उपलब्ध नहीं है। और यह सीखना कि कब किसी बिज़नेस मॉडल को छोड़ देना चाहिए।",
       "text": [
-        "Bricht ein Kunststoffteil, gibt es oft weder Ersatz noch eine Konstruktionsdatei. Shapely sollte genau diese Lücke schließen: Teil fotografieren oder scannen, daraus ein druckfertiges Modell erstellen, drucken und liefern.",
-        "Wir waren zu dritt, alle von der TU München, und Teil des TUM Startup Launchpad. Ich habe Strategie, Finanzen und Go-to-Market verantwortet."
+        "प्लास्टिक का कोई पुर्ज़ा टूट जाए, तो अक्सर न बदलने के लिए पुर्ज़ा मिलता है और न ही डिज़ाइन फ़ाइल। Shapely को ठीक इसी कमी को भरना था: पुर्ज़े की फ़ोटो लेना या स्कैन करना, उससे प्रिंट के लिए तैयार मॉडल बनाना, प्रिंट करना और पहुँचाना।",
+        "हम तीन लोग थे, सभी TU München से, और TUM Startup Launchpad का हिस्सा थे। रणनीति, वित्त और Go-to-Market की ज़िम्मेदारी मेरी थी।"
       ],
       "points": [
-        "Erste Aufträge bewusst von Hand umgesetzt: in Fusion 360 modelliert, auf einem Bambu Lab X1 Carbon gedruckt und selbst ausgeliefert",
-        "Web-Plattform, die passende Teile auf Thingiverse und Printables findet",
-        "iPhone-Prototyp, der Teile mit dem LiDAR-Scanner erfasst (Swift, ARKit, Supabase)",
-        "Interviews mit Instandhaltern und Konstrukteuren geführt, Wettbewerber wie Replique und 3YOURMIND analysiert",
-        "Ergebnis der Tests: Das Modell trägt nicht, wir haben es eingestellt"
+        "शुरुआती ऑर्डर जान-बूझकर हाथ से पूरे किए: Fusion 360 में मॉडल बनाया, Bambu Lab X1 Carbon पर प्रिंट किया और खुद पहुँचाया",
+        "वेब प्लैटफ़ॉर्म, जो Thingiverse और Printables पर उपयुक्त पुर्ज़े खोजता है",
+        "iPhone प्रोटोटाइप, जो LiDAR स्कैनर से पुर्ज़ों को कैप्चर करता है (Swift, ARKit, Supabase)",
+        "रखरखाव तकनीशियनों और डिज़ाइन इंजीनियरों के इंटरव्यू किए, Replique और 3YOURMIND जैसे प्रतिस्पर्धियों का विश्लेषण किया",
+        "परीक्षणों का नतीजा: मॉडल टिकाऊ नहीं है, इसलिए हमने इसे बंद कर दिया"
       ],
       "links": [
         {
@@ -343,11 +343,11 @@
         }
       ],
       "cv": {
-        "org": "Mitgründer · Ersatzteile aus dem 3D-Drucker, ohne CAD-Datei",
+        "org": "सह-संस्थापक · 3D प्रिंटर से स्पेयर पार्ट, बिना CAD फ़ाइल के",
         "points": [
-          "Strategie, Finanzen und Go-to-Market im Dreierteam, TUM Startup Launchpad",
-          "Erste Aufträge von Hand umgesetzt (Fusion 360, 3D-Druck); iPhone-Scan-Prototyp mit ARKit und LiDAR",
-          "Geschäftsmodell in Interviews mit Instandhaltern geprüft und eingestellt"
+          "तीन सदस्यों की टीम में रणनीति, वित्त और Go-to-Market, TUM Startup Launchpad",
+          "शुरुआती ऑर्डर हाथ से पूरे किए (Fusion 360, 3D प्रिंटिंग); ARKit और LiDAR के साथ iPhone स्कैन प्रोटोटाइप",
+          "रखरखाव तकनीशियनों के इंटरव्यू में बिज़नेस मॉडल को परखा और बंद कर दिया"
         ],
         "link": 0
       }
@@ -363,16 +363,16 @@
       "tags": [
         "पढ़ाई"
       ],
-      "title": "B.Sc. Management & Technology",
-      "org": "TU München · विशेषज्ञता Computer Engineering",
+      "title": "TU München में बैचलर की पढ़ाई",
+      "org": "B.Sc. Management and Technology · विशेषज्ञता: Computer Engineering",
       "logo": "tum.svg",
-      "why": "एक ही पढ़ाई में अर्थशास्त्र और कंप्यूटर साइंस, ऐसे प्रोग्राम में जिसकी प्रवेश दर 9 % है।",
+      "why": "अर्थशास्त्र और कंप्यूटर विज्ञान के संगम पर एक पाठ्यक्रम, जिसमें प्रवेश दर 9 % है।",
       "text": [
-        "मैं शीतकालीन सेमेस्टर 2024/25 से पढ़ाई कर रहा हूँ। डिग्री पूरी होने की योजना 2027 के लिए है।"
+        "मैं शीतकालीन सत्र 2024/25 से Technische Universität München में Computer Engineering में विशेषज्ञता के साथ पढ़ रहा हूँ। पढ़ाई 2027 में पूरी होनी है।"
       ],
       "points": [
-        "औसत ग्रेड 1,6",
-        "विशेषज्ञता Computer Engineering"
+        "औसत ग्रेड 1,6 (शीर्ष 10 %)",
+        "Computer Engineering में विशेषज्ञता"
       ],
       "links": [
         {
@@ -380,15 +380,15 @@
           "url": "https://www.tum.de/"
         },
         {
-          "label": "TUM में पाठ्यक्रम",
+          "label": "पाठ्यक्रम",
           "url": "https://www.mgt.tum.de/de/programs/bachelor-in-management-technology/muenchen"
         }
       ],
       "cv": {
         "title": "Technische Universität München",
-        "org": "B.Sc. Management and Technology, Vertiefung Computer Engineering",
+        "org": "B.Sc. Management and Technology, विशेषज्ञता: Computer Engineering",
         "points": [
-          "Notenschnitt 1,6 (Top 10 %), Studiengang mit 9 % Aufnahmequote"
+          "औसत ग्रेड 1,6 (शीर्ष 10 %), पाठ्यक्रम की प्रवेश दर 9 %"
         ]
       }
     },
@@ -397,10 +397,10 @@
       "kind": "station",
       "year": 2024,
       "date": "06.2024",
-      "place": "आखन",
+      "place": "आखेन",
       "loc": "aachen",
       "tags": [
-        "काम"
+        "कार्य"
       ],
       "title": "नेटवर्क तकनीक और प्रोग्रामिंग में इंटर्नशिप",
       "org": "cycos AG · Eviden (Atos) की एक कंपनी",
@@ -410,20 +410,20 @@
         "alt": "cycos के लोगो के सामने मैं",
         "focus": "70% 40%"
       },
-      "why": "पहली बार सर्वर और वर्चुअल मशीनें ख़ुद सेट अप कीं और Java में प्रोग्रामिंग की।",
+      "why": "सॉफ़्टवेयर डेवलपमेंट और नेटवर्क तकनीक में पहला व्यावहारिक अनुभव: सर्वर, वर्चुअल मशीन और Java।",
       "text": [
-        "cycos 30 से अधिक वर्षों से दूरसंचार के लिए सॉफ़्टवेयर बना रही है, एनालॉग सिस्टम से लेकर क्लाउड में सहयोग तक। मैं चार हफ़्ते डेवलपर टीम में रहा।"
+        "cycos 30 से अधिक वर्षों से दूरसंचार के लिए सॉफ़्टवेयर बना रही है, एनालॉग सिस्टम से लेकर क्लाउड-आधारित सहयोग समाधानों तक। मैं चार सप्ताह डेवलपमेंट टीम में रहा।"
       ],
       "points": [
-        "नेटवर्क की बुनियादी बातें: IP पते, रूटिंग, प्रोटोकॉल",
-        "Linux, सर्वर और Proxmox के साथ VM",
-        "ऑब्जेक्ट-ओरिएंटेड प्रोग्रामिंग के साथ Java",
+        "नेटवर्क की बुनियादी बातें: IP एड्रेसिंग, रूटिंग, प्रोटोकॉल",
+        "Proxmox के साथ Linux सर्वर और वर्चुअल मशीन सेट अप किए",
+        "Java में ऑब्जेक्ट-ओरिएंटेड प्रोग्रामिंग",
         "टेलीफ़ोनी और VoIP की झलक"
       ],
       "links": [],
       "cv": {
         "points": [
-          "Linux-Server und virtuelle Maschinen (Proxmox) aufgesetzt, objektorientierte Programmierung in Java"
+          "Linux सर्वर और वर्चुअल मशीन (Proxmox) सेट अप किए, Java में ऑब्जेक्ट-ओरिएंटेड प्रोग्रामिंग"
         ],
         "optional": true
       }
@@ -437,33 +437,33 @@
       "loc": "muenchen",
       "tags": [
         "स्टार्टअप",
-        "सामाजिक जुड़ाव"
+        "सामाजिक सहभागिता"
       ],
-      "title": "सह-संस्थापक और कार्यकारी बोर्ड सदस्य",
-      "org": "Future Founders Initiative e.V. · 08.2026 से सलाहकार परिषद में",
+      "title": "सह-संस्थापक और बोर्ड सदस्य",
+      "org": "Future Founders Initiative e.V. · 08.2026 से सलाहकार समिति में",
       "logo": "ffi.png",
       "photo": {
         "file": "ffi.jpg",
-        "alt": "Future Founders Initiative के एक आयोजन में ग्रुप फ़ोटो",
+        "alt": "Future Founders Initiative के एक कार्यक्रम में ग्रुप फ़ोटो",
         "focus": "50% 40%"
       },
-      "why": "पाँच लोगों से शुरू होकर यह तीन शहरों में फैली एक पहल बनी। फिर मैंने सोच-समझकर ज़िम्मेदारी सौंप दी।",
+      "why": "पाँच संस्थापक सदस्यों के साथ शुरू किया, तीन शहरों में फैली पहल के रूप में खड़ा किया और फिर सोच-समझकर सौंप दिया।",
       "text": [
-        "Future Founders Initiative उन छात्रों को साथ लाती है जो स्टार्टअप शुरू करना चाहते हैं: पहले विचार से लेकर पिच तक निःशुल्क वर्कशॉप। मैंने इसकी सह-स्थापना की, कार्यकारी बोर्ड में रहकर इसे खड़ा किया और 2026 में सलाहकार परिषद में चला गया।"
+        "Future Founders Initiative उन विद्यार्थियों को साथ लाती है जो स्टार्टअप शुरू करना चाहते हैं, और पहले विचार से पिच तक मुफ़्त वर्कशॉप देती है। मैंने संगठन की सह-स्थापना की, बोर्ड में रहकर इसे खड़ा किया और 2026 में सलाहकार समिति में चला गया।"
       ],
       "points": [
-        "110 से अधिक छात्रों के लिए तीन दिवसीय आयोजन",
-        "म्यूनिख, फ्रैंकफ़र्ट और श्टुटगार्ट में केंद्र",
-        "कार्यकारी बोर्ड की संरचना नए सिरे से बनाई",
-        "मूल्य मिलकर तय किए: दर्शक नहीं, करने वाले बनो; एक-दूसरे के लिए मौजूद रहो; कुछ पीछे छोड़कर जाओ; कोई अहंकार नहीं"
+        "110 से अधिक विद्यार्थियों के लिए तीन दिन के स्टार्टअप कार्यक्रम आयोजित किए",
+        "म्यूनिख, फ्रैंकफर्ट और स्टुटगार्ट में शाखाएँ",
+        "बोर्ड की संरचना नए सिरे से तैयार की",
+        "मार्गदर्शक मूल्य मिलकर तय किए: दर्शक नहीं, करने वाले बनो; एक-दूसरे का साथ दो; कुछ पीछे छोड़ो; अहंकार नहीं"
       ],
       "links": [],
       "cv": {
         "title": "Future Founders Initiative e.V.",
-        "org": "Mitgründer und Vorstand, seit 08.2026 im Beirat",
+        "org": "सह-संस्थापक और बोर्ड सदस्य, 08.2026 से सलाहकार समिति में",
         "points": [
-          "Von fünf Gründungsmitgliedern zu einer Initiative in drei Städten aufgebaut",
-          "Dreitägige Gründungsveranstaltungen für über 110 Studierende organisiert"
+          "पाँच संस्थापक सदस्यों से तीन शहरों में फैली पहल खड़ी की",
+          "110 से अधिक विद्यार्थियों के लिए तीन दिन के स्टार्टअप कार्यक्रम आयोजित किए"
         ]
       }
     },
@@ -472,26 +472,26 @@
       "kind": "station",
       "year": 2024,
       "date": "08.2016 – 06.2024",
-      "place": "आख़न",
+      "place": "आखेन",
       "loc": "aachen",
       "tags": [
         "स्कूल"
       ],
-      "title": "आबिटूर",
-      "org": "Bischöfliches Pius-Gymnasium · विशेष विषय: गणित, भूगोल, जर्मन",
+      "title": "अबिटुर",
+      "org": "Bischöfliches Pius-Gymnasium Aachen · विशेष विषय: गणित, भूगोल, जर्मन",
       "logo": "pius.png",
-      "why": "आबिटूर में 1,2 के औसत के साथ, और साथ-साथ RWTH में गणित के व्याख्यान भी।",
+      "why": "अबिटुर में 1,2, MINT-EC प्रमाणपत्र सम्मान सहित, और स्कूल के दौरान ही RWTH Aachen में गणित के व्याख्यान।",
       "text": [
-        "Am Pius-Gymnasium habe ich mich weit über den Unterricht hinaus engagiert: mit einem eigenen Förderkurs, in Nachhilfe und Hausaufgabenbetreuung und acht Jahre lang in der Big Band.",
-        "Parallel zur Oberstufe habe ich im Frühstudium die Vorlesung Höhere Mathematik an der RWTH Aachen besucht."
+        "Pius-Gymnasium में मैंने कक्षा से कहीं आगे बढ़कर योगदान दिया: अपने सहायक पाठ्यक्रम के साथ, ट्यूशन और होमवर्क सहायता में, और आठ वर्ष तक बिग बैंड में।",
+        "उच्च माध्यमिक के समानांतर मैंने अर्ली-स्टडी कार्यक्रम के तहत RWTH Aachen में उच्च गणित का व्याख्यान सुना।"
       ],
       "points": [
-        "Abiturnote 1,2 (Top 10 %)",
-        "MINT-EC-Zertifikat mit Auszeichnung, die höchste von drei Stufen (Top 5 % des Jahrgangs)",
-        "Förderkurs „Economy & Innovation“ für die Klassen 8 bis 10 aufgebaut und ab Oktober 2022 wöchentlich zwei Stunden geleitet: Volkswirtschaft, persönliche Finanzen, Steuern, internationale Politik, künstliche Intelligenz, Präsentieren und Websites",
-        "Ein Schuljahr lang wöchentliche Mathematik-Einzelförderung für einen Fünftklässler mit besonderem Förderbedarf",
-        "Hausaufgabenbetreuung für die Unter- und Mittelstufe",
-        "Posaune in der Big Band seit 2016 und im Schulorchester: Konzerte, Schulfeste, Gedenkveranstaltungen"
+        "अबिटुर ग्रेड 1,2 (शीर्ष 10 %)",
+        "MINT-EC प्रमाणपत्र सम्मान सहित, तीन स्तरों में सर्वोच्च (बैच के शीर्ष 5 %)",
+        "कक्षा 8 से 10 के लिए सहायक पाठ्यक्रम „Economy & Innovation“ तैयार किया और अक्टूबर 2022 से साप्ताहिक दो घंटे पढ़ाया: अर्थशास्त्र, व्यक्तिगत वित्त, कर, अंतरराष्ट्रीय राजनीति, कृत्रिम बुद्धिमत्ता, प्रस्तुति और वेबसाइटें",
+        "एक स्कूल वर्ष तक पाँचवीं कक्षा के एक विशेष सहायता-आवश्यकता वाले छात्र को साप्ताहिक गणित की व्यक्तिगत सहायता",
+        "निचली और मध्य कक्षाओं के लिए होमवर्क सहायता",
+        "2016 से बिग बैंड और स्कूल ऑर्केस्ट्रा में ट्रॉम्बोन: संगीत समारोह, स्कूल उत्सव, स्मृति कार्यक्रम"
       ],
       "links": [
         {
@@ -509,14 +509,14 @@
       ],
       "cv": {
         "title": "Bischöfliches Pius-Gymnasium Aachen",
-        "org": "Abitur 1,2 (Top 10 %) · Leistungskurse Mathematik, Erdkunde, Deutsch",
+        "org": "अबिटुर 1,2 (शीर्ष 10 %) · विशेष विषय: गणित, भूगोल, जर्मन",
         "points": [
-          "Frühstudium: Höhere Mathematik an der RWTH Aachen",
-          "Förderkurs „Economy & Innovation“ für die Klassen 8 bis 10 aufgebaut und ab 10.2022 wöchentlich zwei Stunden geleitet: Volkswirtschaft, Finanzen, KI, Präsentieren",
-          "Ein Schuljahr wöchentliche Mathematik-Einzelförderung für einen jüngeren Schüler mit besonderem Förderbedarf"
+          "अर्ली स्टडी: RWTH Aachen में उच्च गणित",
+          "कक्षा 8 से 10 के लिए सहायक पाठ्यक्रम „Economy & Innovation“ तैयार किया और 10.2022 से साप्ताहिक दो घंटे पढ़ाया: अर्थशास्त्र, वित्त, एआई, प्रस्तुति",
+          "एक स्कूल वर्ष तक विशेष सहायता-आवश्यकता वाले एक छोटे छात्र को साप्ताहिक गणित की व्यक्तिगत सहायता"
         ],
         "extra": [
-          "Hausaufgabenbetreuung für die Unter- und Mittelstufe; Posaune in Big Band und Schulorchester seit 2016"
+          "निचली और मध्य कक्षाओं के लिए होमवर्क सहायता; 2016 से बिग बैंड और स्कूल ऑर्केस्ट्रा में ट्रॉम्बोन"
         ]
       }
     },
@@ -525,7 +525,7 @@
       "kind": "station",
       "year": 2023,
       "date": "06.2023 – 07.2023",
-      "place": "हेरत्सोगनराथ",
+      "place": "हेरत्सोगेनराट",
       "loc": "aachen",
       "tags": [
         "कार्य"
@@ -533,14 +533,14 @@
       "title": "मानव संसाधन और संचार में इंटर्नशिप",
       "org": "AIXTRON SE",
       "logo": "aixtron.svg",
-      "why": "सेमीकंडक्टर उपकरण बनाने वाली कंपनी में दो सप्ताह, मानव संसाधन और प्रेस कार्य में।",
+      "why": "सेमीकंडक्टर उद्योग के लिए उपकरण बनाने वाली कंपनी में दो सप्ताह, मानव संसाधन विभाग और कॉर्पोरेट संचार में।",
       "text": [
-        "AIXTRON ऐसे उपकरण बनाती है जिनसे डिस्प्ले, लेज़र और सौर सेल के लिए कंपाउंड सेमीकंडक्टर तैयार होते हैं। मैं मानव संसाधन विभाग में था और प्रेस कार्य में भी सहयोग किया।"
+        "AIXTRON ऐसे उपकरण बनाती है जिनसे डिस्प्ले, लेज़र और सोलर सेल के लिए यौगिक सेमीकंडक्टर तैयार किए जाते हैं। मैंने मानव संसाधन विभाग और प्रेस कार्य में सहयोग किया।"
       ],
       "points": [
-        "प्रशिक्षु दिवस की योजना में सहभागिता",
-        "करियर वेबसाइट के विद्यार्थी पृष्ठ को संशोधित किया",
-        "प्रेस विज्ञप्तियों की देखरेख में सहयोग"
+        "प्रशिक्षु दिवस की योजना में सहयोग",
+        "करियर वेबसाइट के विद्यार्थी पृष्ठ का पुनर्संपादन",
+        "प्रेस विज्ञप्तियों में सहयोग"
       ],
       "links": [
         {
@@ -550,7 +550,7 @@
       ],
       "cv": {
         "points": [
-          "Azubi-Tag mitgeplant, Schülerseite der Karriere-Website überarbeitet, Pressemitteilungen mitbetreut"
+          "प्रशिक्षु दिवस की योजना में सहयोग, करियर वेबसाइट के विद्यार्थी पृष्ठ का पुनर्संपादन, प्रेस विज्ञप्तियों में सहयोग"
         ],
         "optional": true
       }
@@ -566,16 +566,16 @@
         "स्कूल",
         "विदेश"
       ],
-      "title": "मैड्रिड में चार महीने का स्कूल",
-      "org": "Colegio Tajamar · Bachillerato de Ciencias",
+      "title": "मैड्रिड में विदेश प्रवास",
+      "org": "Colegio Tajamar · Bachillerato, प्राकृतिक विज्ञान शाखा",
       "logo": "tajamar.png",
-      "why": "बहुत कम स्पेनिश के साथ पहुँचा, अंत तक सामान्य कक्षाओं में नोट्स लिखने लगा।",
+      "why": "स्पेनी स्कूल प्रणाली में चार महीने: बुनियादी जानकारी के साथ पहुँचा, अंत तक कक्षाओं और परीक्षाओं में नियमित रूप से शामिल हुआ।",
       "text": [
-        "मैं Bachillerato के पहले वर्ष में विज्ञान शाखा में था, साप्ताहिक 37 घंटों की पढ़ाई के साथ और अपनी कक्षा जैसी ही परीक्षाओं के साथ।"
+        "2021 की शरद ऋतु में मैंने प्राकृतिक विज्ञान शाखा में Bachillerato का पहला वर्ष पढ़ा, सप्ताह में 37 घंटे और अपनी कक्षा जैसी ही परीक्षाओं के साथ।"
       ],
       "points": [
         "जैव विज्ञान पर विशेष ध्यान",
-        "रोज़मर्रा में स्पेनिश सीखी"
+        "स्कूल के दैनिक जीवन में स्पेनी भाषा का ज्ञान बढ़ाया"
       ],
       "links": [
         {
@@ -585,7 +585,7 @@
       ],
       "cv": {
         "title": "Colegio Tajamar",
-        "org": "Auslandssemester, Bachillerato mit Schwerpunkt Biowissenschaften",
+        "org": "विदेश में सेमेस्टर, जैव विज्ञान पर केंद्रित Bachillerato",
         "points": []
       }
     },
@@ -594,22 +594,22 @@
       "kind": "station",
       "year": 2018,
       "date": "03.2018 – 04.2018",
-      "place": "Juja, केन्या",
+      "place": "जूजा, केन्या",
       "loc": "juja",
       "tags": [
-        "सामाजिक सेवा",
+        "सेवा",
         "विदेश"
       ],
-      "title": "बाल गृह में सहयोग",
+      "title": "बाल गृह में स्वयंसेवा",
       "org": "Star of Hope Children’s Home",
       "icon": "heart",
-      "why": "अनाथ और बिना परिवार वाले बच्चों के एक गृह में तीन हफ़्ते।",
+      "why": "अनाथ और पारिवारिक सहारे के बिना बच्चों के बाल गृह में तीन सप्ताह का सहयोग।",
       "text": [
-        "मैंने वहाँ जहाँ भी ज़रूरत थी, काम में हाथ बँटाया और शाम को मुझे अंग्रेज़ी की पढ़ाई मिली।"
+        "मैंने संस्था के दैनिक कार्यों में वहाँ मदद की जहाँ ज़रूरत थी, और शाम को मुझे अंग्रेज़ी की शिक्षा मिली।"
       ],
       "points": [
-        "बाड़ बनाने में मदद की और परिसर की देखभाल की",
-        "बच्चों के साथ खेला"
+        "परिसर में निर्माण और रखरखाव कार्यों में सहयोग",
+        "बच्चों की देखरेख और उनके साथ खाली समय की गतिविधियाँ"
       ],
       "links": [],
       "cv": {
@@ -621,27 +621,27 @@
       "kind": "station",
       "year": 2016,
       "date": "03.2016 – 05.2016",
-      "place": "Juja, केन्या",
+      "place": "जूजा, केन्या",
       "loc": "juja",
       "tags": [
         "स्कूल",
         "विदेश"
       ],
-      "title": "केन्या में एक स्कूल ट्राइमेस्टर",
-      "org": "Precious Blood Primary School",
+      "title": "केन्या में स्कूल ट्राइमेस्टर",
+      "org": "Precious Blood Primary School · जूजा, नैरोबी के पास",
       "icon": "school",
-      "why": "बचपन में केन्या के एक स्कूल में एक ट्राइमेस्टर। Aachen से बहुत दूर की दुनिया पर मेरी पहली नज़र।",
+      "why": "एक अलग स्कूल प्रणाली में तीन महीने की पढ़ाई। यहीं से अंतरराष्ट्रीय दृष्टिकोणों में मेरी रुचि शुरू हुई।",
       "text": [
-        "मैं चौथी कक्षा में था और स्कूल की पूरी दिनचर्या में शामिल हुआ।"
+        "2016 की वसंत ऋतु में मैंने Precious Blood Primary School में एक ट्राइमेस्टर बिताया और चौथी कक्षा की पढ़ाई में नियमित रूप से भाग लिया।"
       ],
       "points": [
-        "Vollständiger Schulalltag in allen Fächern",
-        "Schwerpunkte: Mathematik und Musik"
+        "सभी विषयों के साथ पूरा स्कूली दिनचर्या",
+        "मुख्य विषय: गणित और संगीत"
       ],
       "links": [],
       "cv": {
         "title": "Precious Blood Primary School",
-        "org": "Trimester im kenianischen Schulsystem",
+        "org": "केन्याई स्कूल प्रणाली में ट्राइमेस्टर",
         "points": []
       }
     },
@@ -649,16 +649,16 @@
       "id": "sdw",
       "kind": "award",
       "year": 2024,
-      "date": "10.2024 से",
+      "date": "seit 10.2024",
       "tags": [
         "छात्रवृत्ति"
       ],
-      "title": "Stiftung der Deutschen Wirtschaft की छात्रवृत्ति",
+      "title": "Stipendium der Stiftung der Deutschen Wirtschaft",
       "org": "Studienförderwerk Klaus Murmann",
       "logo": "sdw.svg",
-      "why": "सामाजिक भावना और उद्यमशीलता वाले छात्रों के लिए।",
+      "why": "सामाजिक भावना और उद्यमशीलता वाले विद्यार्थियों के लिए सहायता।",
       "text": [
-        "Studienförderwerk Klaus Murmann हर साल लगभग 2,000 छात्रों और डॉक्टरेट शोधार्थियों को सहायता देता है।"
+        "Studienförderwerk Klaus Murmann जर्मनी के 13 प्रतिभा-संवर्धन संगठनों में से एक है और हर साल लगभग 2,000 विद्यार्थियों और डॉक्टरेट शोधार्थियों को सहायता देता है।"
       ],
       "points": [],
       "links": [
@@ -669,7 +669,7 @@
       ],
       "cv": {
         "title": "Stiftung der Deutschen Wirtschaft (sdw)",
-        "org": "Stipendiat, eines der 13 Begabtenförderungswerke in Deutschland",
+        "org": "छात्रवृत्ति प्राप्तकर्ता, जर्मनी के 13 प्रतिभा-संवर्धन संगठनों में से एक",
         "link": 0
       }
     },
@@ -677,20 +677,20 @@
       "id": "hrs",
       "kind": "award",
       "year": 2026,
-      "date": "10.2026 से",
+      "date": "seit 10.2026",
       "tags": [
         "छात्रवृत्ति"
       ],
       "title": "Hans Rudolf Stiftung की छात्रवृत्ति",
       "org": "Hans Rudolf Stiftung, म्यूनिख",
       "logo": "hr-stiftung.png",
-      "why": "म्यूनिख के लक्ष्य-केंद्रित विद्यार्थियों के लिए एक छात्रवृत्ति।",
+      "why": "म्यूनिख के उच्च शिक्षा संस्थानों के विद्यार्थियों के लिए छात्रवृत्ति।",
       "text": [],
       "points": [],
       "links": [],
       "cv": {
         "title": "Hans Rudolf Stiftung",
-        "org": "Stipendiat"
+        "org": "छात्रवृत्ति प्राप्तकर्ता"
       }
     },
     {
@@ -699,14 +699,14 @@
       "year": 2024,
       "date": "06.2024",
       "tags": [
-        "Auszeichnung"
+        "सम्मान"
       ],
-      "title": "MINT-EC-Zertifikat mit Auszeichnung",
-      "org": "MINT-EC, das nationale Excellence-Schulnetzwerk",
+      "title": "विशिष्टता के साथ MINT-EC प्रमाणपत्र",
+      "org": "MINT-EC, राष्ट्रीय उत्कृष्ट विद्यालय नेटवर्क",
       "icon": "cap",
-      "why": "Die höchste von drei Stufen, für herausragende Leistungen und Engagement in Mathematik, Informatik, Naturwissenschaften und Technik über die gesamte Schulzeit.",
+      "why": "तीन स्तरों में सर्वोच्च, पूरी स्कूली शिक्षा के दौरान गणित, सूचना विज्ञान, प्राकृतिक विज्ञान और प्रौद्योगिकी में उत्कृष्ट प्रदर्शन और सक्रिय भागीदारी के लिए।",
       "text": [
-        "Das Zertifikat wird mit dem Abitur an Schulen des MINT-EC-Netzwerks vergeben und ist von Kultusministerkonferenz und Hochschulrektorenkonferenz anerkannt. Damit gehörte ich zu den besten 5 % meines Jahrgangs."
+        "यह प्रमाणपत्र MINT-EC नेटवर्क के स्कूलों में Abitur के साथ दिया जाता है और शिक्षा मंत्रियों के सम्मेलन (Kultusministerkonferenz) तथा विश्वविद्यालय रेक्टर सम्मेलन (Hochschulrektorenkonferenz) द्वारा मान्यता प्राप्त है। इस तरह मैं अपने बैच के शीर्ष 5 % में शामिल था।"
       ],
       "points": [],
       "links": [
@@ -716,7 +716,7 @@
         }
       ],
       "cv": {
-        "org": "Höchste von drei Stufen, Top 5 % des Jahrgangs",
+        "org": "तीन स्तरों में सर्वोच्च, बैच के शीर्ष 5 %",
         "link": 0
       }
     },
@@ -739,14 +739,14 @@
         "alt": "सूज़ौ में हमारा प्रतिनिधिमंडल",
         "focus": "50% 50%"
       },
-      "why": "चयन दर 5 %। TUM के सर्वश्रेष्ठ विद्यार्थियों में से एक के रूप में चयनित।",
+      "why": "5 % की चयन दर के साथ TUM के सर्वश्रेष्ठ विद्यार्थियों में से एक के रूप में चुना गया।",
       "text": [
-        "TUM के प्रतिनिधिमंडल के साथ सूज़ौ और शंघाई की यात्रा।"
+        "TU München के प्रतिनिधिमंडल के साथ सूज़ौ और शंघाई में।"
       ],
       "points": [],
       "links": [],
       "cv": {
-        "org": "Delegation der TU München nach Suzhou und Shanghai, 5 % Aufnahmequote"
+        "org": "TU München के प्रतिनिधिमंडल के साथ सूज़ौ और शंघाई, 5 % चयन दर"
       }
     },
     {
@@ -762,7 +762,7 @@
       "logo": "dsa.svg",
       "why": "जर्मनी के 1 % से भी कम विद्यार्थियों का चयन होता है।",
       "text": [
-        "पाठ्यक्रम निर्देशक: Henric Meinhardt और Johannes Lumma।"
+        "Deutsche SchülerAkademie, Bildung & Begabung का एक ग्रीष्मकालीन कार्यक्रम है, जो विशेष रूप से सक्षम और प्रेरित विद्यार्थियों के लिए है।"
       ],
       "points": [],
       "links": [
@@ -772,7 +772,7 @@
         }
       ],
       "cv": {
-        "org": "Von der Schule nominiert, weniger als 1 % werden ausgewählt",
+        "org": "स्कूल द्वारा नामांकित, 1 % से कम का चयन",
         "link": 0
       }
     }

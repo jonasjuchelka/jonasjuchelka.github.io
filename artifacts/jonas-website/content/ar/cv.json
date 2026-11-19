@@ -21,7 +21,7 @@
       "lat": 50.78,
       "lon": 6.08,
       "when": "حتى 2024",
-      "what": "النشأة والمدرسة والحصول على شهادة الثانوية (الأبيتور)",
+      "what": "المرحلة المدرسية والحصول على شهادة الأبيتور",
       "label": "none"
     },
     "madrid": {
@@ -29,7 +29,7 @@
       "lat": 40.42,
       "lon": -3.7,
       "when": "خريف 2021",
-      "what": "أربعة أشهر في مدرسة في مدريد",
+      "what": "إقامة في الخارج في Colegio Tajamar",
       "label": "left"
     },
     "juja": {
@@ -37,14 +37,14 @@
       "lat": -1.1,
       "lon": 37.01,
       "when": "2016 و2018",
-      "what": "المدرسة والعمل الاجتماعي في كينيا"
+      "what": "فصل دراسي مدرسي ثلاثي وعمل تطوعي في كينيا"
     },
     "suzhou": {
       "name": "سوتشو",
       "lat": 31.3,
       "lon": 120.6,
       "when": "2026",
-      "what": "German-Chinese Talent Exchange"
+      "what": "برنامج تبادل المواهب الألمانية الصينية"
     }
   },
   "entries": [
@@ -58,27 +58,27 @@
       "place": "سان فرانسيسكو",
       "loc": "berkeley",
       "tags": [
-        "تأسيس",
+        "تأسيس شركة",
         "مشروع"
       ],
       "title": "Audition",
-      "org": "مقابلة أولية بالذكاء الاصطناعي للتقديم الوظيفي · مؤسس مشارك",
+      "org": "مؤسس مشارك · مقابلة تمهيدية مدعومة بالذكاء الاصطناعي لعمليات التوظيف",
       "icon": "mic",
-      "why": "مقابلة بالذكاء الاصطناعي قبل المحادثة الأولى. ترى الشركات من يتقن العمل فعلًا.",
+      "why": "مقابلة تمهيدية بالذكاء الاصطناعي قبل المحادثة الأولى، لكي ترى الشركات مبكرًا من يستوفي المتطلبات فعلًا.",
       "text": [
-        "نشأ Audition في هاكاثون SF Tech Week. ومنذ ذلك الحين أواصل بناءه كشركة ناشئة.",
-        "تُدخل الشركة الدور والمتطلبات. يقترح الذكاء الاصطناعي أسئلة، وتعتمدها الشركة. يجيب المتقدمون عبر رابط في تسجيل فيديو متواصل، ثم ترى الشركة تقييمًا."
+        "نشأ Audition في هاكاثون SF Tech Week. ومنذ ذلك الحين نطوّره كشركة ناشئة.",
+        "تُدخل الشركات الدور الوظيفي والمتطلبات، ويقترح الذكاء الاصطناعي أسئلة مناسبة، وتعتمدها الشركة. يجيب المتقدمون عبر رابط في تسجيل فيديو متواصل؛ وبعد ذلك تتلقى الشركة تقييمًا منظمًا."
       ],
       "points": [
-        "مقابلة أولية ترسلها الشركات إلى عدد كبير من المتقدمين قبل أن يجري إنسان المحادثة الأولى",
-        "يُسجَّل كل من الشاشة والصوت والشخص",
-        "تقديم طلب إلى a16z speedrun"
+        "مقابلة تمهيدية ترسلها الشركات إلى عدد كبير من المتقدمين قبل المحادثة الشخصية الأولى",
+        "تسجيل الشاشة والصوت وسلوك الإجابة",
+        "التقدّم إلى المسرّعة a16z speedrun"
       ],
       "links": [],
       "cv": {
-        "org": "Mitgründer · KI-Vorinterview für Recruiting",
+        "org": "مؤسس مشارك · مقابلة تمهيدية بالذكاء الاصطناعي للتوظيف",
         "points": [
-          "Entstanden beim SF Tech Week Hackathon, Bewerbung beim Accelerator a16z speedrun"
+          "نشأ في هاكاثون SF Tech Week، والتقدّم إلى المسرّعة a16z speedrun"
         ]
       }
     },
@@ -92,27 +92,27 @@
       "place": "بيركلي",
       "loc": "berkeley",
       "tags": [
-        "تأسيس",
+        "تأسيس شركة",
         "مشروع"
       ],
       "title": "Concentr8",
-      "org": "تطبيق تركيز مخصص للأشخاص ذوي التنوع العصبي · الواجهة الخلفية",
+      "org": "مؤسس مشارك · تطبيق للتركيز للطلبة ذوي الاختلاف العصبي · الواجهة الخلفية",
       "icon": "target",
       "photo": {
         "file": "concentr8.jpg",
         "alt": "أنا مع فريق Concentr8",
         "focus": "50% 40%"
       },
-      "why": "تطبيق يعيدك إلى مهمتك أثناء الدراسة قبل أن تلاحظ ذلك بنفسك.",
+      "why": "تطبيق يعيد الطلبة أثناء الدراسة إلى مهمتهم قبل أن يغلبهم التشتت.",
       "text": [
-        "بنيتُ Concentr8 هذا الفصل الدراسي في UC Berkeley. بدأ في Cal Hacks 13.0 في سان فرانسيسكو، ثم دمجناه مع مشروعنا من مقرر Technology Entrepreneurship.",
-        "أبني الواجهة الخلفية ضمن فريق مع Jinyuan Xu وCamila Scotti Pinto."
+        "نشأ Concentr8 في Cal Hacks 13.0 في سان فرانسيسكو. بعد ذلك دمجناه مع مشروعنا من مقرر Technology Entrepreneurship (ENGIN 183E) في بيركلي.",
+        "أتولى الواجهة الخلفية ضمن فريق يضم Jinyuan Xu وCamila Scotti Pinto."
       ],
       "points": [
-        "تطبيق Mac يحظر التطبيقات والمواقع المشتتة أثناء جلسة الدراسة",
-        "اتصالات في أوقات دراسة ثابتة: صباحًا وظهرًا ومساءً",
-        "دردشة بالذكاء الاصطناعي تسأل أولًا ثم تقترح خطة بجلسات دراسة",
-        "تسجيل الدخول عبر Google وربط التقويم"
+        "تطبيق لنظام Mac يحجب التطبيقات والمواقع المشتتة أثناء جلسة الدراسة",
+        "مكالمات تلقائية في أوقات دراسة ثابتة: صباحًا وظهرًا ومساءً",
+        "مساعد بالذكاء الاصطناعي يطرح أسئلة أولًا ثم يقترح خطة بجلسات دراسية",
+        "تسجيل الدخول عبر Google والربط مع تقويم Google"
       ],
       "links": [
         {
@@ -126,8 +126,8 @@
       ],
       "cv": {
         "points": [
-          "Backend verantwortet: Mac-App, die Ablenkungen sperrt, Anrufe zu festen Lernzeiten, KI-Planung mit Google Kalender",
-          "Entstanden bei Cal Hacks 13.0, weiterentwickelt im Kurs Technology Entrepreneurship (ENGIN 183E)"
+          "مسؤول عن الواجهة الخلفية: تطبيق Mac يحجب المشتتات، ومكالمات في أوقات دراسة ثابتة، وتخطيط بالذكاء الاصطناعي مع تقويم Google",
+          "نشأ في Cal Hacks 13.0، وتطوّر في مقرر Technology Entrepreneurship (ENGIN 183E)"
         ],
         "link": 0
       }
@@ -145,22 +145,22 @@
         "الخارج"
       ],
       "title": "فصل دراسي في الخارج",
-      "org": "University of California, Berkeley",
+      "org": "University of California, Berkeley · Berkeley International Study Program",
       "logo": "ucberkeley.svg",
       "photo": {
         "file": "berkeley.jpg",
-        "alt": "أنا على خليج سان فرانسيسكو",
+        "alt": "أنا عند خليج سان فرانسيسكو",
         "focus": "60% 40%"
       },
-      "why": "فصل دراسي في إحدى أفضل الجامعات في علوم الحاسوب، في قلب منظومة الشركات الناشئة للذكاء الاصطناعي.",
+      "why": "فصل دراسي في إحدى الجامعات الرائدة في علوم الحاسوب، في قلب منظومة الشركات الناشئة في الذكاء الاصطناعي.",
       "text": [
-        "أدرس فصلًا دراسيًا في بيركلي عبر Berkeley International Study Program. إلى جانب المقررات أغتنم كل فرصة للمشاركة في الهاكاثونات."
+        "أدرس في خريف 2026 في UC Berkeley عبر Berkeley International Study Program. إلى جانب المقررات أشارك في هاكاثونات وأعمل على مشاريع تأسيس خاصة بي."
       ],
       "points": [
-        "Künstliche Intelligenz (CS 188)",
-        "Kryptografie (CS 171)",
+        "الذكاء الاصطناعي (CS 188)",
+        "علم التشفير (CS 171)",
         "Technology Entrepreneurship (ENGIN 183E)",
-        "Gefördert durch die Stiftung der Deutschen Wirtschaft"
+        "بدعم من Stiftung der Deutschen Wirtschaft"
       ],
       "links": [
         {
@@ -178,10 +178,10 @@
       ],
       "cv": {
         "title": "University of California, Berkeley",
-        "org": "Austauschstudent · Berkeley International Study Program",
+        "org": "طالب تبادل · Berkeley International Study Program",
         "points": [
-          "Künstliche Intelligenz (CS 188), Kryptografie (CS 171), Technology Entrepreneurship (ENGIN 183E)",
-          "Gefördert durch die Stiftung der Deutschen Wirtschaft (sdw)"
+          "الذكاء الاصطناعي (CS 188)، وعلم التشفير (CS 171)، وTechnology Entrepreneurship (ENGIN 183E)",
+          "بدعم من Stiftung der Deutschen Wirtschaft (sdw)"
         ]
       }
     },
@@ -195,18 +195,18 @@
       "tags": [
         "عمل"
       ],
-      "title": "مدرّس مساعد (Tutor) في بحوث العمليات",
+      "title": "مدرّس مساعد في بحوث العمليات",
       "org": "TU München · كرسي البروفيسور Kolisch",
       "logo": "tum.svg",
-      "why": "تم اختياري لأنني كنت ضمن أفضل 5% في المقرر. بعد ذلك درّستُه بنفسي.",
+      "why": "اختِرتُ بناءً على أداء ضمن أفضل 5 % في المقرر؛ ثم درّستُ المقرر بنفسي كمدرّس مساعد.",
       "text": [
-        "قدّمتُ التمرين (Tutorium) لمقرر «Operations Research and Decision Analysis» في الفصل الشتوي 2025/26 والفصل الصيفي 2026، إضافةً إلى متابعة فردية. أنهيتُ المقرر نفسه بتقدير 1,3."
+        "في الفصل الشتوي 2025/26 والفصل الصيفي 2026 أعطيتُ حلقة التمارين الخاصة بمقرر «Operations Research and Decision Analysis» وتابعتُ الطلبة فرديًا بالإضافة إلى ذلك. وقد أنهيتُ المقرر نفسه بدرجة 1,3."
       ],
       "points": [
-        "4 Stunden Tutorium pro Woche für rund 25 Studierende",
-        "Übungsaufgaben selbst konzipiert",
-        "Simplex, Netzwerkflüsse, ganzzahlige Optimierung",
-        "Modellierung mit Gurobi"
+        "4 ساعات تمارين أسبوعيًا لنحو 25 طالبًا",
+        "تصميم التمارين بنفسي",
+        "طريقة السمبلكس، وتدفقات الشبكات، والتحسين بالأعداد الصحيحة",
+        "النمذجة باستخدام Gurobi"
       ],
       "links": [
         {
@@ -215,12 +215,12 @@
         }
       ],
       "cv": {
-        "title": "Tutor, Operations Research and Decision Analysis",
+        "title": "مدرّس مساعد، Operations Research and Decision Analysis",
         "org": "Technische Universität München",
         "points": [
-          "Ausgewählt für eine Kursleistung unter den besten 5 % (Note 1,3)",
-          "4 Stunden Tutorium pro Woche für rund 25 Studierende, Übungsaufgaben selbst konzipiert",
-          "Simplex, Netzwerkflüsse, ganzzahlige Optimierung, Gurobi"
+          "اختِرتُ بناءً على أداء ضمن أفضل 5 % في المقرر (الدرجة 1,3)",
+          "4 ساعات تمارين أسبوعيًا لنحو 25 طالبًا، وتصميم التمارين بنفسي",
+          "طريقة السمبلكس، وتدفقات الشبكات، والتحسين بالأعداد الصحيحة، وGurobi"
         ]
       }
     },
@@ -233,7 +233,7 @@
       "tags": [
         "عمل"
       ],
-      "title": "زميل (Fellow)، الاستشارات الاستراتيجية والتحول",
+      "title": "زميل، استشارات الاستراتيجية والتحول",
       "org": "ritzenhoefer & company",
       "logo": "ritzenhoefer.png",
       "photo": {
@@ -241,15 +241,15 @@
         "alt": "أنا مع حاسوب محمول في محطة القطار في طريقي إلى العميل",
         "focus": "60% 35%"
       },
-      "why": "مشروع تحول كبير لبنك ألماني كبير، من الداخل.",
+      "why": "المشاركة في مشروع تحول كبير لأحد البنوك الألمانية الكبرى، مباشرة في موقع العميل.",
       "text": [
-        "تقدم ritzenhoefer & company الاستشارات للبنوك الكبرى وشركات التأمين والصناعة في عمليات إعادة الهيكلة الكبرى. كنت في الغالب لدى العميل مباشرة وأدعم مكتب المشروع."
+        "تقدّم ritzenhoefer & company استشارات للبنوك الكبرى وشركات التأمين والشركات الصناعية في عمليات تحول شاملة. كنتُ في الغالب في موقع العميل ودعمتُ مكتب إدارة المشاريع (PMO)."
       ],
       "points": [
-        "توليت مسؤولية إعداد تقارير Runbook تقنيًا وتنظيميًا، وأتمتة أجزاء منها بماكروهات Excel",
-        "حسّنت عملية طلبات التغيير وأدرت أكثر من 70 طلب تغيير",
-        "أعددت عروضًا تقديمية وصولًا إلى اللجنة التوجيهية",
-        "طورت نموذج مشاركة وظيفية (Job-Sharing) للمستشارين الكبار"
+        "توليتُ المسؤولية التقنية والتنظيمية عن تقارير Runbook، وأتمتُّ أجزاء منها بماكروات Excel",
+        "حسّنتُ عملية طلبات التغيير وأدرتُ أكثر من 70 طلب تغيير",
+        "أعددتُ وثائق القرار المرفوعة حتى اللجنة التوجيهية",
+        "طوّرتُ نموذجًا لتقاسم الوظيفة لكبار المستشارين"
       ],
       "links": [
         {
@@ -259,8 +259,8 @@
       ],
       "cv": {
         "points": [
-          "Runbook und über 70 Change Requests im PMO verantwortet, Berichtswesen mit Excel-Makros teilautomatisiert",
-          "60/60-Jobsharing-Modell für Senior Consultants entwickelt"
+          "توليتُ مسؤولية Runbook وأكثر من 70 طلب تغيير في مكتب إدارة المشاريع، وأتمتُّ جزئيًا إعداد التقارير بماكروات Excel",
+          "طوّرتُ نموذج تقاسم وظيفي 60/60 لكبار المستشارين"
         ]
       }
     },
@@ -275,21 +275,21 @@
         "عمل"
       ],
       "title": "تدريب في تطوير الأعمال",
-      "org": "comstruct · برمجيات لقطاع البناء",
+      "org": "comstruct · برمجيات لشراء المواد في قطاع البناء، Series A",
       "logo": "comstruct.svg",
       "photo": {
         "file": "comstruct.jpg",
         "alt": "أنا مع زميل في مكتب comstruct",
         "focus": "50% 30%"
       },
-      "why": "ربطتُ 74 مورّدًا في تسعة أسابيع، داخل شركة ناشئة في مرحلة Series A.",
+      "why": "ربط 74 مورّدًا في تسعة أسابيع ضمن فريق Go-to-Market في شركة ناشئة من فئة Series A.",
       "text": [
-        "تقوم comstruct برقمنة مشتريات المواد لدى شركات البناء: إذ تتم إشعارات التسليم والفواتير وأوامر الشراء رقميًا مع الموردين. كنتُ في فريق الطرح إلى السوق (Go-to-Market)."
+        "تعمل comstruct على رقمنة شراء المواد لدى شركات البناء: تُتداول الطلبات وإشعارات التسليم والفواتير رقميًا بين شركات البناء والمورّدين. كنت جزءًا من فريق Go-to-Market."
       ],
       "points": [
-        "ربط 74 مورّدًا في 9 أسابيع عبر الهاتف والبريد الإلكتروني",
-        "تحليل مسار ربط الموردين وتحسينه",
-        "تمثيل comstruct في معرض BAUMA",
+        "ربط 74 مورّدًا في 9 أسابيع، بما في ذلك التكامل التقني",
+        "تحليل عملية ربط المورّدين وتحسينها",
+        "تمثيل comstruct في معرض BAUMA التجاري",
         "تنظيم فعاليات للفريق لصالح الشركة بأكملها"
       ],
       "links": [
@@ -299,14 +299,14 @@
         }
       ],
       "cv": {
-        "title": "Business Development, Supply Chain Integration",
-        "org": "comstruct · Bausoftware, Series A · Praktikum",
+        "title": "تطوير الأعمال، تكامل سلسلة التوريد",
+        "org": "comstruct · برمجيات البناء، Series A · تدريب",
         "points": [
-          "74 Lieferanten in 9 Wochen angebunden, einschließlich technischer Integration",
-          "Prozess der Lieferantenanbindung analysiert und verbessert"
+          "ربط 74 مورّدًا في 9 أسابيع، بما في ذلك التكامل التقني",
+          "تحليل عملية ربط المورّدين وتحسينها"
         ],
         "extra": [
-          "comstruct auf der Fachmesse BAUMA vertreten"
+          "تمثيل comstruct في معرض BAUMA التجاري"
         ]
       }
     },
@@ -318,23 +318,23 @@
       "place": "ميونخ",
       "loc": "muenchen",
       "tags": [
-        "تأسيس",
+        "التأسيس",
         "مشروع"
       ],
       "title": "Shapely",
-      "org": "طباعة ثلاثية الأبعاد عند الطلب · فكرة تأسيس خاصة بي",
+      "org": "شريك مؤسس · قطع غيار من الطابعة ثلاثية الأبعاد",
       "logo": "shapely.png",
-      "why": "مسح بالهاتف واستلام القطعة مطبوعة في المنزل. وأهم ما تعلمته هو متى يجب التخلي عن فكرة ما.",
+      "why": "طباعة قطع غيار لا يتوفر لها ملف CAD. وتعلّم متى يجب التخلي عن نموذج عمل.",
       "text": [
-        "Bricht ein Kunststoffteil, gibt es oft weder Ersatz noch eine Konstruktionsdatei. Shapely sollte genau diese Lücke schließen: Teil fotografieren oder scannen, daraus ein druckfertiges Modell erstellen, drucken und liefern.",
-        "Wir waren zu dritt, alle von der TU München, und Teil des TUM Startup Launchpad. Ich habe Strategie, Finanzen und Go-to-Market verantwortet."
+        "عندما تنكسر قطعة بلاستيكية، غالبًا لا يوجد لها بديل ولا ملف تصميم. كان من المفترض أن تسد Shapely هذه الفجوة تحديدًا: تصوير القطعة أو مسحها ضوئيًا، وإنشاء نموذج جاهز للطباعة منها، ثم طباعتها وتسليمها.",
+        "كنا ثلاثة، جميعنا من TU München، وجزءًا من TUM Startup Launchpad. تولّيت الاستراتيجية والمالية وGo-to-Market."
       ],
       "points": [
-        "Erste Aufträge bewusst von Hand umgesetzt: in Fusion 360 modelliert, auf einem Bambu Lab X1 Carbon gedruckt und selbst ausgeliefert",
-        "Web-Plattform, die passende Teile auf Thingiverse und Printables findet",
-        "iPhone-Prototyp, der Teile mit dem LiDAR-Scanner erfasst (Swift, ARKit, Supabase)",
-        "Interviews mit Instandhaltern und Konstrukteuren geführt, Wettbewerber wie Replique und 3YOURMIND analysiert",
-        "Ergebnis der Tests: Das Modell trägt nicht, wir haben es eingestellt"
+        "نفّذنا الطلبات الأولى يدويًا عن قصد: نمذجة في Fusion 360، وطباعة على Bambu Lab X1 Carbon، وتسليم بأنفسنا",
+        "منصة ويب تعثر على القطع المناسبة في Thingiverse وPrintables",
+        "نموذج أولي لـ iPhone يلتقط القطع بماسح LiDAR (Swift، ARKit، Supabase)",
+        "أجرينا مقابلات مع فنيي الصيانة والمهندسين المصممين، وحلّلنا منافسين مثل Replique و3YOURMIND",
+        "نتيجة الاختبارات: النموذج غير قابل للاستمرار، فأوقفناه"
       ],
       "links": [
         {
@@ -343,11 +343,11 @@
         }
       ],
       "cv": {
-        "org": "Mitgründer · Ersatzteile aus dem 3D-Drucker, ohne CAD-Datei",
+        "org": "شريك مؤسس · قطع غيار من الطابعة ثلاثية الأبعاد، دون ملف CAD",
         "points": [
-          "Strategie, Finanzen und Go-to-Market im Dreierteam, TUM Startup Launchpad",
-          "Erste Aufträge von Hand umgesetzt (Fusion 360, 3D-Druck); iPhone-Scan-Prototyp mit ARKit und LiDAR",
-          "Geschäftsmodell in Interviews mit Instandhaltern geprüft und eingestellt"
+          "الاستراتيجية والمالية وGo-to-Market في فريق من ثلاثة أشخاص، TUM Startup Launchpad",
+          "تنفيذ الطلبات الأولى يدويًا (Fusion 360، طباعة ثلاثية الأبعاد)؛ نموذج أولي للمسح على iPhone باستخدام ARKit وLiDAR",
+          "اختبار نموذج العمل في مقابلات مع فنيي الصيانة ثم إيقافه"
         ],
         "link": 0
       }
@@ -363,16 +363,16 @@
       "tags": [
         "دراسة"
       ],
-      "title": "B.Sc. Management & Technology",
-      "org": "TU München · تخصص فرعي في هندسة الحاسوب (Computer Engineering)",
+      "title": "دراسة البكالوريوس في TU München",
+      "org": "B.Sc. Management and Technology · تخصص فرعي Computer Engineering",
       "logo": "tum.svg",
-      "why": "الاقتصاد وعلوم الحاسوب في دراسة واحدة، ضمن برنامج بنسبة قبول 9 %.",
+      "why": "دراسة تجمع بين الاقتصاد وعلوم الحاسوب، بنسبة قبول تبلغ 9 %.",
       "text": [
-        "أدرس منذ الفصل الشتوي 2024/25. ومن المخطط أن أنهي الدراسة في 2027."
+        "أدرس منذ الفصل الشتوي 2024/25 في الجامعة التقنية في ميونخ، بتخصص فرعي في Computer Engineering. ومن المقرر أن أتخرج في عام 2027."
       ],
       "points": [
-        "المعدل 1,6",
-        "تخصص فرعي في هندسة الحاسوب (Computer Engineering)"
+        "المعدل 1,6 (ضمن أفضل 10 %)",
+        "تخصص فرعي Computer Engineering"
       ],
       "links": [
         {
@@ -380,15 +380,15 @@
           "url": "https://www.tum.de/"
         },
         {
-          "label": "البرنامج الدراسي في TUM",
+          "label": "البرنامج الدراسي",
           "url": "https://www.mgt.tum.de/de/programs/bachelor-in-management-technology/muenchen"
         }
       ],
       "cv": {
-        "title": "Technische Universität München",
-        "org": "B.Sc. Management and Technology, Vertiefung Computer Engineering",
+        "title": "الجامعة التقنية في ميونخ",
+        "org": "B.Sc. Management and Technology، تخصص فرعي Computer Engineering",
         "points": [
-          "Notenschnitt 1,6 (Top 10 %), Studiengang mit 9 % Aufnahmequote"
+          "المعدل 1,6 (ضمن أفضل 10 %)، برنامج دراسي بنسبة قبول 9 %"
         ]
       }
     },
@@ -410,20 +410,20 @@
         "alt": "أنا أمام شعار cycos",
         "focus": "70% 40%"
       },
-      "why": "للمرة الأولى أعددتُ خوادم وأجهزة افتراضية بنفسي وبرمجتُ بلغة Java.",
+      "why": "أول خبرة عملية في تطوير البرمجيات وتقنية الشبكات: الخوادم والأجهزة الافتراضية وJava.",
       "text": [
-        "تطوّر cycos برمجيات الاتصالات منذ أكثر من 30 عامًا، بدءًا من الأنظمة التناظرية وصولًا إلى التعاون عبر السحابة. كنتُ أربعة أسابيع في فريق التطوير."
+        "تطوّر cycos منذ أكثر من 30 عامًا برمجيات للاتصالات، من الأنظمة التناظرية إلى حلول التعاون السحابية. قضيت أربعة أسابيع في فريق التطوير."
       ],
       "points": [
-        "أساسيات الشبكات: عناوين IP، التوجيه، البروتوكولات",
-        "Linux والخوادم والأجهزة الافتراضية مع Proxmox",
-        "Java مع البرمجة كائنية التوجّه",
-        "نظرة على الاتصالات الهاتفية وVoIP"
+        "أساسيات الشبكات: عنونة IP، والتوجيه، والبروتوكولات",
+        "إعداد خوادم Linux وأجهزة افتراضية باستخدام Proxmox",
+        "البرمجة كائنية التوجه في Java",
+        "نظرة على الهاتفية وVoIP"
       ],
       "links": [],
       "cv": {
         "points": [
-          "Linux-Server und virtuelle Maschinen (Proxmox) aufgesetzt, objektorientierte Programmierung in Java"
+          "إعداد خوادم Linux وأجهزة افتراضية (Proxmox)، والبرمجة كائنية التوجه في Java"
         ],
         "optional": true
       }
@@ -436,34 +436,34 @@
       "place": "ميونخ",
       "loc": "muenchen",
       "tags": [
-        "تأسيس",
-        "عمل تطوعي"
+        "التأسيس",
+        "العمل التطوعي"
       ],
-      "title": "مؤسس مشارك وعضو مجلس الإدارة",
-      "org": "Future Founders Initiative e.V. · عضو في المجلس الاستشاري منذ 08.2026",
+      "title": "شريك مؤسس وعضو مجلس الإدارة",
+      "org": "Future Founders Initiative e.V. · عضو المجلس الاستشاري منذ 08.2026",
       "logo": "ffi.png",
       "photo": {
         "file": "ffi.jpg",
         "alt": "صورة جماعية في إحدى فعاليات Future Founders Initiative",
         "focus": "50% 40%"
       },
-      "why": "من خمسة أشخاص إلى مبادرة في ثلاث مدن. ثم سلّمتُ المسؤولية عن قصد.",
+      "why": "بدأنا بخمسة أعضاء مؤسسين، وبنينا مبادرة في ثلاث مدن، ثم سلّمناها عن قصد.",
       "text": [
-        "تجمع Future Founders Initiative الطلاب الذين يرغبون في التأسيس: ورش عمل مجانية من الفكرة الأولى حتى العرض أمام المستثمرين (Pitch). شاركتُ في تأسيسها، وساهمتُ في بنائها من خلال مجلس الإدارة، وانتقلتُ في 2026 إلى المجلس الاستشاري."
+        "تجمع Future Founders Initiative الطلاب الراغبين في تأسيس شركات، وتقدّم ورش عمل مجانية من الفكرة الأولى حتى العرض التقديمي. شاركت في تأسيس الجمعية، وبنيتها من خلال مجلس الإدارة، وانتقلت في عام 2026 إلى المجلس الاستشاري."
       ],
       "points": [
-        "فعاليات من ثلاثة أيام لأكثر من 110 طلاب",
-        "فروع في ميونخ وفرانكفورت وشتوتغارت",
+        "تنظيم فعاليات تأسيس مدتها ثلاثة أيام لأكثر من 110 طلاب",
+        "مواقع في ميونخ وفرانكفورت وشتوتغارت",
         "إعادة بناء هيكل مجلس الإدارة",
-        "صياغة القيم بشكل مشترك: صُنّاع لا متفرجون، السند لبعضنا، ترك أثر، بلا أنا"
+        "صياغة القيم التوجيهية بشكل مشترك: أن نكون صنّاع فعل لا متفرجين، وأن نقف إلى جانب بعضنا، وأن نترك أثرًا، دون غرور"
       ],
       "links": [],
       "cv": {
         "title": "Future Founders Initiative e.V.",
-        "org": "Mitgründer und Vorstand, seit 08.2026 im Beirat",
+        "org": "شريك مؤسس وعضو مجلس الإدارة، عضو المجلس الاستشاري منذ 08.2026",
         "points": [
-          "Von fünf Gründungsmitgliedern zu einer Initiative in drei Städten aufgebaut",
-          "Dreitägige Gründungsveranstaltungen für über 110 Studierende organisiert"
+          "بناء مبادرة في ثلاث مدن انطلاقًا من خمسة أعضاء مؤسسين",
+          "تنظيم فعاليات تأسيس مدتها ثلاثة أيام لأكثر من 110 طلاب"
         ]
       }
     },
@@ -477,21 +477,21 @@
       "tags": [
         "مدرسة"
       ],
-      "title": "الشهادة الثانوية (Abitur)",
-      "org": "Bischöfliches Pius-Gymnasium · مقررات متقدمة: الرياضيات، الجغرافيا، اللغة الألمانية",
+      "title": "الأبيتور",
+      "org": "Bischöfliches Pius-Gymnasium Aachen · مقررات متقدمة: الرياضيات والجغرافيا والألمانية",
       "logo": "pius.png",
-      "why": "تخرجت بمعدل 1,2 في الـ Abitur، وحضرت إلى جانبه محاضرات رياضيات في RWTH.",
+      "why": "الأبيتور بمعدل 1,2، وشهادة MINT-EC بتميّز، وحضور محاضرات في الرياضيات في RWTH Aachen أثناء المرحلة المدرسية.",
       "text": [
-        "Am Pius-Gymnasium habe ich mich weit über den Unterricht hinaus engagiert: mit einem eigenen Förderkurs, in Nachhilfe und Hausaufgabenbetreuung und acht Jahre lang in der Big Band.",
-        "Parallel zur Oberstufe habe ich im Frühstudium die Vorlesung Höhere Mathematik an der RWTH Aachen besucht."
+        "في Pius-Gymnasium شاركت بنشاط يتجاوز الدروس بكثير: من خلال دورة دعم أنشأتها بنفسي، والدروس الخصوصية، والإشراف على الواجبات المنزلية، وثماني سنوات في فرقة Big Band.",
+        "بالتوازي مع المرحلة الثانوية العليا حضرت، ضمن الدراسة الجامعية المبكرة، محاضرة الرياضيات العليا في RWTH Aachen."
       ],
       "points": [
-        "Abiturnote 1,2 (Top 10 %)",
-        "MINT-EC-Zertifikat mit Auszeichnung, die höchste von drei Stufen (Top 5 % des Jahrgangs)",
-        "Förderkurs „Economy & Innovation“ für die Klassen 8 bis 10 aufgebaut und ab Oktober 2022 wöchentlich zwei Stunden geleitet: Volkswirtschaft, persönliche Finanzen, Steuern, internationale Politik, künstliche Intelligenz, Präsentieren und Websites",
-        "Ein Schuljahr lang wöchentliche Mathematik-Einzelförderung für einen Fünftklässler mit besonderem Förderbedarf",
-        "Hausaufgabenbetreuung für die Unter- und Mittelstufe",
-        "Posaune in der Big Band seit 2016 und im Schulorchester: Konzerte, Schulfeste, Gedenkveranstaltungen"
+        "معدل الأبيتور 1,2 (ضمن أفضل 10 %)",
+        "شهادة MINT-EC بتميّز، وهي أعلى مستوى من ثلاثة مستويات (ضمن أفضل 5 % من الدفعة)",
+        "أنشأت دورة الدعم „Economy & Innovation“ للصفوف من 8 إلى 10 وأدرتها منذ أكتوبر 2022 بواقع ساعتين أسبوعيًا: الاقتصاد، والمالية الشخصية، والضرائب، والسياسة الدولية، والذكاء الاصطناعي، والعرض التقديمي، والمواقع الإلكترونية",
+        "دعم فردي أسبوعي في الرياضيات طوال عام دراسي لتلميذ في الصف الخامس لديه حاجة خاصة إلى الدعم",
+        "الإشراف على الواجبات المنزلية للمرحلتين الدنيا والمتوسطة",
+        "عزف الترومبون في فرقة Big Band منذ 2016 وفي أوركسترا المدرسة: حفلات، واحتفالات مدرسية، وفعاليات تأبينية"
       ],
       "links": [
         {
@@ -509,14 +509,14 @@
       ],
       "cv": {
         "title": "Bischöfliches Pius-Gymnasium Aachen",
-        "org": "Abitur 1,2 (Top 10 %) · Leistungskurse Mathematik, Erdkunde, Deutsch",
+        "org": "الأبيتور 1,2 (ضمن أفضل 10 %) · مقررات متقدمة: الرياضيات والجغرافيا والألمانية",
         "points": [
-          "Frühstudium: Höhere Mathematik an der RWTH Aachen",
-          "Förderkurs „Economy & Innovation“ für die Klassen 8 bis 10 aufgebaut und ab 10.2022 wöchentlich zwei Stunden geleitet: Volkswirtschaft, Finanzen, KI, Präsentieren",
-          "Ein Schuljahr wöchentliche Mathematik-Einzelförderung für einen jüngeren Schüler mit besonderem Förderbedarf"
+          "دراسة جامعية مبكرة: الرياضيات العليا في RWTH Aachen",
+          "أنشأت دورة الدعم „Economy & Innovation“ للصفوف من 8 إلى 10 وأدرتها منذ 10.2022 بواقع ساعتين أسبوعيًا: الاقتصاد، والمالية، والذكاء الاصطناعي، والعرض التقديمي",
+          "دعم فردي أسبوعي في الرياضيات طوال عام دراسي لتلميذ أصغر سنًا لديه حاجة خاصة إلى الدعم"
         ],
         "extra": [
-          "Hausaufgabenbetreuung für die Unter- und Mittelstufe; Posaune in Big Band und Schulorchester seit 2016"
+          "الإشراف على الواجبات المنزلية للمرحلتين الدنيا والمتوسطة؛ عزف الترومبون في Big Band وأوركسترا المدرسة منذ 2016"
         ]
       }
     },
@@ -525,7 +525,7 @@
       "kind": "station",
       "year": 2023,
       "date": "06.2023 – 07.2023",
-      "place": "هيرتسوغنراث",
+      "place": "هرتسوغنراث",
       "loc": "aachen",
       "tags": [
         "عمل"
@@ -533,14 +533,14 @@
       "title": "تدريب في شؤون الموظفين والاتصال",
       "org": "AIXTRON SE",
       "logo": "aixtron.svg",
-      "why": "أسبوعان لدى شركة مصنِّعة لمعدات أشباه الموصلات، في قسم شؤون الموظفين والعمل الصحفي.",
+      "why": "أسبوعان لدى شركة لتصنيع المعدات لصناعة أشباه الموصلات، في قسم شؤون الموظفين وقسم الاتصال المؤسسي.",
       "text": [
-        "تصنع AIXTRON معدات تُنتَج بها أشباه الموصلات المركّبة للشاشات والليزر والخلايا الشمسية. كنت في قسم شؤون الموظفين وشاركت في العمل الصحفي."
+        "تصنّع AIXTRON معدات تُستخدم في إنتاج أشباه الموصلات المركّبة للشاشات والليزر والخلايا الشمسية. شاركت في العمل في قسم شؤون الموظفين وفي العمل الصحفي."
       ],
       "points": [
-        "شاركت في التخطيط ليوم المتدربين",
-        "راجعت صفحة الطلاب في موقع الوظائف",
-        "تابعت البيانات الصحفية"
+        "شاركت في تخطيط يوم المتدربين",
+        "أعدت صياغة صفحة الطلاب في موقع الوظائف",
+        "شاركت في إعداد البيانات الصحفية"
       ],
       "links": [
         {
@@ -550,7 +550,7 @@
       ],
       "cv": {
         "points": [
-          "Azubi-Tag mitgeplant, Schülerseite der Karriere-Website überarbeitet, Pressemitteilungen mitbetreut"
+          "شاركت في تخطيط يوم المتدربين، وأعدت صياغة صفحة الطلاب في موقع الوظائف، وشاركت في إعداد البيانات الصحفية"
         ],
         "optional": true
       }
@@ -566,16 +566,16 @@
         "مدرسة",
         "الخارج"
       ],
-      "title": "أربعة أشهر دراسة في مدريد",
-      "org": "Colegio Tajamar · Bachillerato de Ciencias",
+      "title": "فترة دراسة في الخارج بمدريد",
+      "org": "Colegio Tajamar · Bachillerato، الفرع العلمي",
       "logo": "tajamar.png",
-      "why": "وصلت بقدر قليل من الإسبانية، وفي النهاية كنت أكتب مع الصف في الدروس العادية.",
+      "why": "أربعة أشهر في النظام المدرسي الإسباني: وصلت بمعرفة أساسية باللغة، وفي النهاية شاركت في الدروس والامتحانات بشكل اعتيادي.",
       "text": [
-        "كنت في السنة الأولى من Bachillerato في المسار العلمي، بواقع 37 ساعة أسبوعيًا ونفس الامتحانات التي أدّاها صفي."
+        "في خريف 2021 درست السنة الأولى من Bachillerato في الفرع العلمي، بواقع 37 ساعة أسبوعيًا ونفس الامتحانات التي خضع لها صفي."
       ],
       "points": [
         "التركيز على علوم الحياة",
-        "تعلمت الإسبانية في الحياة اليومية"
+        "طوّرت مهاراتي في الإسبانية في الحياة المدرسية اليومية"
       ],
       "links": [
         {
@@ -585,7 +585,7 @@
       ],
       "cv": {
         "title": "Colegio Tajamar",
-        "org": "Auslandssemester, Bachillerato mit Schwerpunkt Biowissenschaften",
+        "org": "فصل دراسي في الخارج، Bachillerato مع التركيز على علوم الحياة",
         "points": []
       }
     },
@@ -597,19 +597,19 @@
       "place": "جوجا، كينيا",
       "loc": "juja",
       "tags": [
-        "العمل التطوعي",
+        "التزام مجتمعي",
         "الخارج"
       ],
-      "title": "مساعدة في دار للأطفال",
+      "title": "عمل تطوعي في دار للأطفال",
       "org": "Star of Hope Children’s Home",
       "icon": "heart",
-      "why": "ثلاثة أسابيع في دار لليتامى والأطفال بلا أسرة.",
+      "why": "ثلاثة أسابيع من العمل في دار للأطفال الأيتام والأطفال الذين لا يتوفر لهم سند عائلي.",
       "text": [
-        "ساعدتُ هناك أينما دعت الحاجة، وتلقيتُ دروسًا في اللغة الإنجليزية في المساء."
+        "ساعدت المؤسسة في شؤونها اليومية حيثما كانت المساعدة مطلوبة، وتلقيت في المساء دروسًا في اللغة الإنجليزية."
       ],
       "points": [
-        "شاركتُ في بناء السياج والعناية بالمكان",
-        "لعبتُ مع الأطفال"
+        "المشاركة في أعمال البناء والصيانة في المكان",
+        "رعاية الأطفال وتنظيم أنشطة أوقات فراغهم"
       ],
       "links": [],
       "cv": {
@@ -624,24 +624,24 @@
       "place": "جوجا، كينيا",
       "loc": "juja",
       "tags": [
-        "المدرسة",
+        "مدرسة",
         "الخارج"
       ],
-      "title": "فصل دراسي في كينيا",
-      "org": "Precious Blood Primary School",
+      "title": "فصل دراسي ثلاثي في كينيا",
+      "org": "Precious Blood Primary School · جوجا بالقرب من نيروبي",
       "icon": "school",
-      "why": "قضيتُ وأنا طفل فصلًا دراسيًا في مدرسة بكينيا. كانت أول نظرة لي إلى ما وراء آخن بكثير.",
+      "why": "ثلاثة أشهر من الدراسة في نظام مدرسي مختلف. هنا بدأ اهتمامي بالمنظورات الدولية.",
       "text": [
-        "كنتُ في الصف الرابع وعشتُ الحياة المدرسية اليومية كاملة."
+        "في ربيع 2016 قضيت فصلًا دراسيًا ثلاثيًا في Precious Blood Primary School وشاركت بشكل اعتيادي في دروس الصف الرابع."
       ],
       "points": [
-        "Vollständiger Schulalltag in allen Fächern",
-        "Schwerpunkte: Mathematik und Musik"
+        "حياة مدرسية يومية كاملة في جميع المواد",
+        "مجالا التركيز: الرياضيات والموسيقى"
       ],
       "links": [],
       "cv": {
         "title": "Precious Blood Primary School",
-        "org": "Trimester im kenianischen Schulsystem",
+        "org": "فصل دراسي ثلاثي في النظام المدرسي الكيني",
         "points": []
       }
     },
@@ -656,9 +656,9 @@
       "title": "منحة من Stiftung der Deutschen Wirtschaft",
       "org": "Studienförderwerk Klaus Murmann",
       "logo": "sdw.svg",
-      "why": "للطلبة الذين يتحلّون بروح المسؤولية المجتمعية وروح المبادرة الريادية.",
+      "why": "دعم للطلبة الذين يتمتعون بروح المسؤولية المجتمعية وروح المبادرة.",
       "text": [
-        "يدعم Studienförderwerk Klaus Murmann كل عام نحو 2000 طالب وطالب دكتوراه."
+        "يُعدّ Studienförderwerk Klaus Murmann إحدى مؤسسات رعاية الموهوبين الثلاث عشرة في ألمانيا، ويدعم كل عام نحو 2.000 من الطلبة وطلبة الدكتوراه."
       ],
       "points": [],
       "links": [
@@ -669,7 +669,7 @@
       ],
       "cv": {
         "title": "Stiftung der Deutschen Wirtschaft (sdw)",
-        "org": "Stipendiat, eines der 13 Begabtenförderungswerke in Deutschland",
+        "org": "حاصل على منحة، إحدى مؤسسات رعاية الموهوبين الثلاث عشرة في ألمانيا",
         "link": 0
       }
     },
@@ -679,18 +679,18 @@
       "year": 2026,
       "date": "منذ 10.2026",
       "tags": [
-        "منحة دراسية"
+        "منحة"
       ],
-      "title": "منحة Hans Rudolf Stiftung",
+      "title": "منحة من Hans Rudolf Stiftung",
       "org": "Hans Rudolf Stiftung، ميونخ",
       "logo": "hr-stiftung.png",
-      "why": "منحة دراسية للطلبة الطموحين في ميونخ.",
+      "why": "منحة للطلبة في جامعات ميونخ.",
       "text": [],
       "points": [],
       "links": [],
       "cv": {
         "title": "Hans Rudolf Stiftung",
-        "org": "Stipendiat"
+        "org": "حاصل على منحة"
       }
     },
     {
@@ -699,14 +699,14 @@
       "year": 2024,
       "date": "06.2024",
       "tags": [
-        "Auszeichnung"
+        "تكريم"
       ],
-      "title": "MINT-EC-Zertifikat mit Auszeichnung",
-      "org": "MINT-EC, das nationale Excellence-Schulnetzwerk",
+      "title": "شهادة MINT-EC بتميّز",
+      "org": "MINT-EC، الشبكة الوطنية للمدارس المتميزة",
       "icon": "cap",
-      "why": "Die höchste von drei Stufen, für herausragende Leistungen und Engagement in Mathematik, Informatik, Naturwissenschaften und Technik über die gesamte Schulzeit.",
+      "why": "أعلى مستوى من بين ثلاثة مستويات، تُمنح للإنجازات المتميزة والالتزام في الرياضيات والمعلوماتية والعلوم الطبيعية والتقنية على مدار المرحلة المدرسية بأكملها.",
       "text": [
-        "Das Zertifikat wird mit dem Abitur an Schulen des MINT-EC-Netzwerks vergeben und ist von Kultusministerkonferenz und Hochschulrektorenkonferenz anerkannt. Damit gehörte ich zu den besten 5 % meines Jahrgangs."
+        "تُمنح الشهادة مع الأبيتور في مدارس شبكة MINT-EC، ويعترف بها مؤتمر وزراء التعليم والثقافة في الولايات الألمانية ومؤتمر رؤساء الجامعات الألمانية. وبذلك كنت من أفضل 5 % في دفعتي."
       ],
       "points": [],
       "links": [
@@ -716,7 +716,7 @@
         }
       ],
       "cv": {
-        "org": "Höchste von drei Stufen, Top 5 % des Jahrgangs",
+        "org": "أعلى مستوى من بين ثلاثة، ضمن أفضل 5 % من الدفعة",
         "link": 0
       }
     },
@@ -739,14 +739,14 @@
         "alt": "وفدنا في سوتشو",
         "focus": "50% 50%"
       },
-      "why": "نسبة القبول 5 %. تم اختياري كأحد أفضل الطلبة في TUM.",
+      "why": "اختِرتُ كواحد من أفضل طلبة TUM بنسبة قبول بلغت 5 %.",
       "text": [
-        "مع وفد TUM إلى سوتشو وشنغهاي."
+        "ضمن وفد من TU München في سوتشو وشنغهاي."
       ],
       "points": [],
       "links": [],
       "cv": {
-        "org": "Delegation der TU München nach Suzhou und Shanghai, 5 % Aufnahmequote"
+        "org": "وفد TU München إلى سوتشو وشنغهاي، نسبة قبول 5 %"
       }
     },
     {
@@ -758,11 +758,11 @@
         "تكريم"
       ],
       "title": "Deutsche SchülerAkademie",
-      "org": "بترشيح من المدرسة",
+      "org": "رشّحتني المدرسة",
       "logo": "dsa.svg",
       "why": "يُختار أقل من 1 % من التلاميذ في ألمانيا.",
       "text": [
-        "إدارة الدورة: Henric Meinhardt وJohannes Lumma."
+        "Deutsche SchülerAkademie برنامج صيفي من Bildung & Begabung للتلاميذ الأكثر قدرة وحماسًا."
       ],
       "points": [],
       "links": [
@@ -772,7 +772,7 @@
         }
       ],
       "cv": {
-        "org": "Von der Schule nominiert, weniger als 1 % werden ausgewählt",
+        "org": "رشّحتني المدرسة، ويُختار أقل من 1 %",
         "link": 0
       }
     }

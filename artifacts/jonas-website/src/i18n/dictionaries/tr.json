@@ -1,13 +1,13 @@
 {
   "meta": {
-    "description": "Jonas Juchelka, TU München'de Management & Technology okuyor ve girişimcilik yapıyor. Projeler, özgeçmiş ve düşünceler."
+    "description": "Jonas Juchelka girişimler kuruyor ve TU München'de okuyor, şu an UC Berkeley'de. Projeler, özgeçmiş ve düşünceler."
   },
   "ui": {
     "skip": "İçeriğe geç",
     "homeAria": "Jonas Juchelka, ana sayfaya git",
     "mainNav": "Ana gezinme",
     "contactAria": "İletişim",
-    "legalAria": "Yasal bilgiler",
+    "legalAria": "Hukuki bilgiler",
     "crumbsAria": "Gezinti yolu",
     "readingTime": "{n} dk okuma",
     "badgeInfo": "Not",
@@ -18,7 +18,10 @@
     "projects": "Projeler",
     "blog": "Blog",
     "contact": "İletişim",
-    "private": "Giriş"
+    "private": "Giriş",
+    "menu": "Menü",
+    "menuOpen": "Menüyü aç",
+    "menuClose": "Menüyü kapat"
   },
   "lang": {
     "label": "Dil",
@@ -26,19 +29,19 @@
     "choose": "Dil seç",
     "translating": "Çevriliyor …",
     "showOriginal": "Orijinali göster",
-    "notice": "Claude (Anthropic) ile makine çevirisi. Bunun için bu sayfanın metni bir çeviri hizmetine gönderildi. Geçerli olan Almanca metindir.",
+    "notice": "Claude (Anthropic) ile makine çevirisi. Bunun için bu sayfanın metni bir çeviri hizmetine gönderildi. Geçerli olan Almanca sürümdür.",
     "error": "Çeviri şu anda mümkün değil. Lütfen daha sonra tekrar deneyin."
   },
   "footer": {
     "line": "Curious how the world works. Driven to make it better.",
     "base": "Statik web sitesi. İzleme yok, çerez yok.",
-    "rss": "RSS akışı",
-    "imprint": "Yasal bildirim",
+    "rss": "RSS beslemesi",
+    "imprint": "Yasal bilgiler (Impressum)",
     "privacy": "Gizlilik",
     "contact": "İletişim"
   },
   "home": {
-    "photoAlt": "Jonas Juchelka, yaprak gölgeleri düşen aydınlık bir duvarın önünde gülümsüyor",
+    "photoAlt": "Jonas Juchelka, üzerinde yaprak gölgeleri olan açık renkli bir duvarın önünde gülümsüyor",
     "headline1": "Curious how the world works.",
     "headline2": "Driven to make it",
     "headline2Mark": "better",
@@ -46,21 +49,24 @@
     "ctaCv": "Özgeçmişim",
     "ctaContact": "İletişim",
     "mapTitle": "Evim dediğim yerler",
-    "mapAria": "Yaşadığım yerlerin işaretli olduğu dünya haritası",
+    "mapAria": "Yaşadığım yerleri gösteren dünya haritası",
     "blogTitle": "Blog",
-    "allPosts": "Tüm yazılar"
+    "allPosts": "Tüm yazılar",
+    "projectsEyebrow": "Projeler",
+    "projectsPath": "Son yılların durakları",
+    "allProjects": "Tüm projeler ve özgeçmişin tamamı"
   },
   "projects": {
     "metaTitle": "Projeler ve özgeçmiş",
-    "metaDesc": "Jonas Juchelka'nın şu anda üzerinde çalıştığı işler ve buraya uzanan yol: eğitim, iş, girişimcilik, yurt dışı, burslar.",
+    "metaDesc": "Jonas Juchelka'nın şu an üzerinde çalıştığı işler ve buraya uzanan yol: üniversite, iş, girişimcilik, yurt dışı, burslar.",
     "eyebrow": "Projeler ve özgeçmiş",
     "title": "Projeler",
-    "lede": "Yukarıda şu anda üzerinde çalıştığım işler var. Aşağıda buraya uzanan yol.",
+    "lede": "Yukarıda şu an üzerinde çalıştığım işler var. Aşağıda buraya uzanan yol.",
     "pdf": "Özgeçmiş (PDF)",
-    "pinned": "Sabitlenmiş",
-    "pinnedTitle": "Şu anda üzerinde çalıştığım işler",
+    "pinned": "Sabitlendi",
+    "pinnedTitle": "Şu an üzerinde çalıştığım işler",
     "pinnedNote": "Geri bildirim memnuniyetle karşılanır.",
-    "open": "Göz at",
+    "open": "Görüntüle",
     "feedback": "Geri bildirim ver",
     "pathTitle": "Buraya uzanan yol",
     "count": "{n} durak",
@@ -78,8 +84,8 @@
     "station": "Durak",
     "place": "Yer",
     "showInCv": "Özgeçmişte göster",
-    "noStations": "Burada henüz bir durak eklenmedi.",
-    "now": "Güncel",
+    "noStations": "Burada henüz bir durak girilmedi.",
+    "now": "Şu an",
     "home": "Ev",
     "tabsAria": "Güncel projeler"
   },
@@ -89,8 +95,8 @@
     "eyebrow": "Notlar",
     "title": "Blog",
     "emptyTitle": "Henüz bir şey yayımlanmadı.",
-    "emptyBefore": "Eğitimden ve uygulamadan metinler, hazır olur olmaz burada yer alacak, daha erken değil. Hiçbir şeyi kaçırmak istemeyenler şuna abone olabilir:",
-    "emptyLink": "RSS akışı",
+    "emptyBefore": "Üniversiteden ve pratikten yazılar, hazır olur olmaz burada yer alacak, daha erken değil. Hiçbir şeyi kaçırmak istemeyenler şuna abone olabilir:",
+    "emptyLink": "RSS beslemesi",
     "emptyAfter": ".",
     "articleEyebrow": "Makale",
     "toc": "İçindekiler",
@@ -114,7 +120,7 @@
     "resetShort": "Sıfırla",
     "collapse": "Daralt",
     "toggleFilter": "Filtreleri aç veya kapat",
-    "none": "Bu filtrelere uygun yazı yok.",
+    "none": "Bu filtreler için yazı yok.",
     "countOne": "yazı",
     "countMany": "yazı",
     "activeFilters": "etkin",
@@ -125,7 +131,10 @@
     "pdf": "PDF",
     "next": "Sonraki yazı",
     "themeDark": "Koyu tema",
-    "themeLight": "Açık tema"
+    "themeLight": "Açık tema",
+    "translatedNote": "Otomatik çevrildi. Orijinal: {lang}.",
+    "readOriginal": "Orijinali oku",
+    "readTranslation": "Çeviriyi oku"
   },
   "contact": {
     "metaTitle": "İletişim",
@@ -138,60 +147,60 @@
     "write": "E-posta yaz",
     "book": "Randevu al",
     "photoAlt": "Jonas Juchelka",
-    "backHome": "Ana sayfaya dön"
+    "backHome": "Ana sayfaya"
   },
   "login": {
-    "metaTitle": "Özel alan",
+    "metaTitle": "Giriş",
     "metaDesc": "Passkey ile korunan özel alana giriş.",
-    "eyebrow": "Erişim",
-    "title": "Özel alan",
-    "lede": "Özel alan, kendi adresi olan ayrı bir uygulamadır. Bu herkese açık sayfa kimseyi oturum açtırmaz ve hiçbir şey saklamaz.",
-    "continue": "Girişe devam et",
+    "eyebrow": "Özel alan",
+    "title": "Giriş",
+    "lede": "Özel alan yalnızca davet edilen kişilere açıktır. Giriş yalnızca passkey ile yapılır.",
     "button": "Passkey ile giriş yap",
     "notReadyTitle": "Henüz kurulmadı",
-    "notReady": "Özel uygulamanın henüz sabit bir yayın adresi yok. Adres hazır olduğunda bu sayfa doğrudan oraya yönlendirecek.",
-    "fact1Bold": "Yalnızca Passkey ile.",
-    "fact1": "Parola yok, sosyal medya ile giriş yok, e-postayla bağlantı yok.",
+    "notReady": "Özel uygulamanın henüz sabit bir üretim adresi yok. Adres hazır olduğunda bu sayfa doğrudan oraya yönlendirecek.",
+    "fact1Bold": "Yalnızca passkey ile.",
+    "fact1": "Parola yok, sosyal medya ile giriş yok, e-posta ile bağlantı yok.",
     "fact2Bold": "Yalnızca davetle.",
-    "fact2": "Herkese açık kayıt yoktur.",
+    "fact2": "Herkese açık bir kayıt yoktur.",
     "fact3Bold": "Ayrı.",
-    "fact3": "Giriş ve veriler yalnızca özel uygulamada bulunur, GitHub Pages'te değil."
+    "fact3": "Giriş ve veriler yalnızca özel uygulamada tutulur, bu web sitesinde değil.",
+    "backHome": "Ana sayfaya"
   },
   "legal": {
-    "eyebrow": "Yasal bilgiler",
+    "eyebrow": "Hukuki bilgiler",
     "authoritative": "Hukuken geçerli olan, bu sayfanın Almanca sürümüdür.",
     "imprint": {
-      "metaTitle": "Yasal bildirim",
-      "metaDesc": "Sağlayıcı bilgileri, şu anda eksik.",
-      "noticeTitle": "Eksik: açık kalan yayın maddesi",
-      "notice": "Tebligat yapılabilir bir adres henüz mevcut değil ve burada uydurulmayacak. Bu nedenle bu yasal bildirim henüz tam değildir.",
+      "metaTitle": "Yasal bilgiler (Impressum)",
+      "metaDesc": "Hizmet sağlayıcı bilgileri, şu an eksik.",
+      "noticeTitle": "Eksik: açık kalan üretim maddesi",
+      "notice": "Tebligata elverişli bir adres henüz mevcut değil ve burada uydurulmayacaktır. Bu nedenle bu yasal bilgiler sayfası henüz tamamlanmamıştır.",
       "responsible": "Sorumlu",
       "contact": "İletişim",
       "email": "E-posta:"
     },
     "privacy": {
       "metaTitle": "Gizlilik",
-      "metaDesc": "Bu web sitesini ziyaret ederken hangi verilerin oluştuğu.",
+      "metaDesc": "Bu web sitesini ziyaret ettiğinizde hangi veriler oluşur.",
       "noticeTitle": "Taslak: hukuki inceleme bekliyor",
-      "notice": "Bu bilgiler, fiilen kurulu olan teknik yapıyı tanımlar. Sorumlunun adresini de içeren, eksiksiz ve hukuken incelenmiş bir beyan henüz hazır değildir.",
+      "notice": "Bu bilgiler, fiilen kurulu olan teknolojiyi açıklar. Sorumlunun adresini de içeren, eksiksiz ve hukuken incelenmiş bir beyan henüz hazır değildir.",
       "hostingTitle": "Barındırma",
-      "hosting": "Web sitesi, GitHub Pages üzerinden statik dosyalar olarak sunulur. Erişim sırasında GitHub, IP adresi gibi teknik olarak gerekli bağlantı verilerini işler. Yapılandırmanın ötesinde bu işlemeye etkim yoktur.",
+      "hosting": "Web sitesi, GitHub Pages üzerinden statik dosyalar olarak sunulur. Erişim sırasında GitHub, IP adresi gibi teknik olarak gerekli bağlantı verilerini işler. Bu işleme üzerinde yapılandırmanın ötesinde bir etkim yoktur.",
       "notTitle": "Bu web sitesinin yapmadıkları",
       "not1": "Çerez yok, izleme yok, analiz veya pazarlama hizmeti yok.",
-      "not2": "Üçüncü taraflardan harici olarak yüklenen yazı tipi veya betik yok.",
-      "not3": "İletişim formu yok. Bir e-postayı sizin e-posta sağlayıcınız ve benimki işler.",
+      "not2": "Harici olarak yüklenen yazı tipleri veya üçüncü taraf betikleri yok.",
+      "not3": "İletişim formu yok. Bir e-postayı sizin e-posta sağlayıcınız ve benim e-posta sağlayıcım işler.",
       "translationTitle": "Çeviri",
-      "translation1": "Dil seçimindeki diller önceden çevrilmiştir ve statik dosyalar olarak sunulur. Bu sırada üçüncü taraflara veri gönderilmez.",
-      "translation2": "Yalnızca „Diğer diller“ altında canlı çeviriyi kendiniz başlatırsanız, mevcut sayfanın görünen metni, onu Anthropic'in Claude API'si ile çeviren bir çeviri hizmetine gönderilir. Ayrıca hizmetin işletmecisi, IP adresi gibi teknik olarak gerekli bağlantı verilerini işler. Ne çerez kaydedilir ne de veriler kalıcı olarak saklanır. Siz başlatmadıkça hiçbir istek yapılmaz.",
+      "translation1": "Dil seçimindeki diller önceden çevrilmiştir ve statik dosyalar olarak sunulur. Bu sırada üçüncü taraflara hiçbir veri gönderilmez.",
+      "translation2": "Yalnızca “Diğer diller” altında canlı çeviriyi kendiniz başlatırsanız, geçerli sayfanın görünen metni bir çeviri hizmetine gönderilir ve bu hizmet metni Anthropic'in Claude API'si ile çevirir. Ayrıca hizmetin işletmecisi, IP adresi gibi teknik olarak gerekli bağlantı verilerini işler. Çerez kullanılmaz ve veriler kalıcı olarak saklanmaz. Siz başlatmadığınız sürece hiçbir istek yapılmaz.",
       "themeTitle": "Açık ve koyu tema",
-      "theme": "Koyu temayı açarsanız tarayıcınız bu tercihi, bir sonraki ziyarette de geçerli olması için yerel depolamada (localStorage) saklar. Kayıt cihazınızda kalır, bir sunucuya gönderilmez ve tarayıcı ayarlarından silinebilir.",
+      "theme": "Koyu temayı açarsanız tarayıcınız bu seçimi, bir sonraki ziyaretinizde geçerli olması için yerel depolamada (localStorage) saklar. Bu kayıt cihazınızda kalır, bir sunucuya gönderilmez ve tarayıcı ayarlarından silinebilir.",
       "privateTitle": "Özel alan",
-      "private": "Passkey ile korunan alan, kendi gizlilik beyanı olan ayrı bir uygulamadır. Bu herkese açık web sitesi oraya veri aktarmaz."
+      "private": "Passkey ile korunan alan, kendi gizlilik beyanı olan ayrı bir uygulamadır. Bu herkese açık web sitesi oraya hiçbir veri aktarmaz."
     }
   },
   "notFound": {
     "title": "Sayfa bulunamadı",
-    "heading": "Burada böyle bir sayfa yok.",
+    "heading": "Böyle bir sayfa burada yok.",
     "lede": "Belki taşındı, belki adres hiç doğru değildi. Buradan devam edebilirsiniz:",
     "home": "Ana sayfa"
   }

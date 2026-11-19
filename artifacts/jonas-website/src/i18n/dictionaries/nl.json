@@ -1,6 +1,6 @@
 {
   "meta": {
-    "description": "Jonas Juchelka studeert Management & Technology aan de TU München en richt bedrijven op. Projecten, cv en gedachten."
+    "description": "Jonas Juchelka bouwt startups en studeert aan de TU München, momenteel aan UC Berkeley. Projecten, cv en gedachten."
   },
   "ui": {
     "skip": "Naar de inhoud springen",
@@ -18,7 +18,10 @@
     "projects": "Projecten",
     "blog": "Blog",
     "contact": "Contact",
-    "private": "Login"
+    "private": "Inloggen",
+    "menu": "Menu",
+    "menuOpen": "Menu openen",
+    "menuClose": "Menu sluiten"
   },
   "lang": {
     "label": "Taal",
@@ -26,14 +29,14 @@
     "choose": "Taal kiezen",
     "translating": "Vertalen …",
     "showOriginal": "Origineel tonen",
-    "notice": "Automatisch vertaald met Claude (Anthropic). Hiervoor is de tekst van deze pagina naar een vertaaldienst gestuurd. De Duitse versie is leidend.",
+    "notice": "Automatisch vertaald met Claude (Anthropic). Hiervoor is de tekst van deze pagina naar een vertaaldienst gestuurd. De Duitse versie is bepalend.",
     "error": "Vertalen is momenteel niet mogelijk. Probeer het later opnieuw."
   },
   "footer": {
     "line": "Curious how the world works. Driven to make it better.",
     "base": "Statische website. Geen tracking, geen cookies.",
     "rss": "RSS-feed",
-    "imprint": "Colofon",
+    "imprint": "Impressum",
     "privacy": "Privacy",
     "contact": "Contact"
   },
@@ -45,10 +48,13 @@
     "headline2End": ".",
     "ctaCv": "Mijn cv",
     "ctaContact": "Contact",
-    "mapTitle": "Hier woonde ik",
+    "mapTitle": "Hier was ik thuis",
     "mapAria": "Wereldkaart met de plaatsen waar ik heb gewoond",
     "blogTitle": "Blog",
-    "allPosts": "Alle berichten"
+    "allPosts": "Alle berichten",
+    "projectsEyebrow": "Projecten",
+    "projectsPath": "Stappen van de afgelopen jaren",
+    "allProjects": "Alle projecten en het volledige cv"
   },
   "projects": {
     "metaTitle": "Projecten en cv",
@@ -63,9 +69,9 @@
     "open": "Bekijken",
     "feedback": "Feedback geven",
     "pathTitle": "De weg tot hier",
-    "count": "{n} stations",
-    "countOne": "1 station",
-    "filterAria": "Op thema filteren",
+    "count": "{n} stappen",
+    "countOne": "1 stap",
+    "filterAria": "Filteren op thema",
     "placeFilter": "Plaats: {name}",
     "clearPlace": "Plaatsfilter opheffen",
     "awardsTitle": "Beurzen en onderscheidingen",
@@ -75,10 +81,10 @@
     "back": "Terug",
     "backTo": "Terug naar {name}",
     "close": "Sluiten",
-    "station": "Station",
+    "station": "Stap",
     "place": "Plaats",
-    "showInCv": "In het cv tonen",
-    "noStations": "Hier is nog geen station ingevoerd.",
+    "showInCv": "Tonen in cv",
+    "noStations": "Hier is nog geen stap ingevoerd.",
     "now": "Actueel",
     "home": "Thuis",
     "tabsAria": "Actuele projecten"
@@ -113,10 +119,10 @@
     "reset": "Filters resetten",
     "resetShort": "Resetten",
     "collapse": "Inklappen",
-    "toggleFilter": "Filter in- of uitklappen",
+    "toggleFilter": "Filters in- of uitklappen",
     "none": "Geen berichten voor deze filters.",
-    "countOne": "Bericht",
-    "countMany": "Berichten",
+    "countOne": "bericht",
+    "countMany": "berichten",
     "activeFilters": "actief",
     "readShort": "ca. {n} min.",
     "showFull": "Hele gedachte tonen",
@@ -125,7 +131,10 @@
     "pdf": "PDF",
     "next": "Volgend bericht",
     "themeDark": "Donker thema",
-    "themeLight": "Licht thema"
+    "themeLight": "Licht thema",
+    "translatedNote": "Automatisch vertaald. Origineel: {lang}.",
+    "readOriginal": "Origineel lezen",
+    "readTranslation": "Vertaling lezen"
   },
   "contact": {
     "metaTitle": "Contact",
@@ -134,38 +143,38 @@
     "mailAlt": "Mijn e-mailadres als afbeelding, zodat bots het niet zomaar kunnen lezen",
     "copy": "Kopiëren",
     "copied": "Gekopieerd",
-    "copyFail": "Typ het over",
+    "copyFail": "Typ het a.u.b. over",
     "write": "Mail sturen",
     "book": "Afspraak boeken",
     "photoAlt": "Jonas Juchelka",
     "backHome": "Naar de startpagina"
   },
   "login": {
-    "metaTitle": "Privégedeelte",
-    "metaDesc": "Toegang tot het privégedeelte, beveiligd met een passkey.",
-    "eyebrow": "Toegang",
-    "title": "Privégedeelte",
-    "lede": "Het privégedeelte is een aparte applicatie op een eigen adres. Deze openbare pagina meldt niemand aan en slaat niets op.",
-    "continue": "Verder naar inloggen",
+    "metaTitle": "Inloggen",
+    "metaDesc": "Inloggen in het besloten, met passkey beveiligde gedeelte.",
+    "eyebrow": "Besloten gedeelte",
+    "title": "Inloggen",
+    "lede": "Het besloten gedeelte is alleen voor uitgenodigde personen. Inloggen kan uitsluitend met passkeys.",
     "button": "Inloggen met passkey",
     "notReadyTitle": "Nog niet ingericht",
-    "notReady": "De privétoepassing heeft nog geen vast productieadres. Zodra dat er is, leidt deze pagina er direct naartoe.",
+    "notReady": "De besloten applicatie heeft nog geen vast productieadres. Zodra dat er is, leidt deze pagina er rechtstreeks naartoe.",
     "fact1Bold": "Alleen met passkey.",
     "fact1": "Geen wachtwoord, geen social login, geen link per e-mail.",
     "fact2Bold": "Alleen met uitnodiging.",
-    "fact2": "Openbare registratie is er niet.",
+    "fact2": "Openbare registratie bestaat niet.",
     "fact3Bold": "Gescheiden.",
-    "fact3": "Inloggen en gegevens staan uitsluitend in de privétoepassing, niet op GitHub Pages."
+    "fact3": "Inloggen en gegevens bevinden zich alleen in de besloten applicatie, niet op deze website.",
+    "backHome": "Naar de startpagina"
   },
   "legal": {
     "eyebrow": "Juridisch",
-    "authoritative": "Juridisch leidend is de Duitse versie van deze pagina.",
+    "authoritative": "Juridisch bepalend is de Duitse versie van deze pagina.",
     "imprint": {
-      "metaTitle": "Colofon",
-      "metaDesc": "Aanbiedersgegevens, momenteel onvolledig.",
+      "metaTitle": "Impressum",
+      "metaDesc": "Aanbiedersvermelding, momenteel onvolledig.",
       "noticeTitle": "Onvolledig: openstaand productiepunt",
-      "notice": "Een dagvaardbaar adres is nog niet beschikbaar en wordt hier niet verzonnen. Dit colofon is daarom nog niet volledig.",
-      "responsible": "Verantwoordelijk",
+      "notice": "Een dagvaardbaar adres is er nog niet en wordt hier niet verzonnen. Dit impressum is daarom nog niet volledig.",
+      "responsible": "Verantwoordelijke",
       "contact": "Contact",
       "email": "E-mail:"
     },
@@ -173,26 +182,26 @@
       "metaTitle": "Privacy",
       "metaDesc": "Welke gegevens ontstaan bij een bezoek aan deze website.",
       "noticeTitle": "Concept: juridische toetsing nog open",
-      "notice": "Deze gegevens beschrijven de daadwerkelijk ingerichte techniek. Een volledige, juridisch getoetste verklaring inclusief adres van de verantwoordelijke ontbreekt nog.",
+      "notice": "Deze gegevens beschrijven de daadwerkelijk ingerichte techniek. Een volledige, juridisch getoetste verklaring inclusief adres van de verantwoordelijke is er nog niet.",
       "hostingTitle": "Hosting",
-      "hosting": "De website wordt als statische bestanden via GitHub Pages geleverd. Bij het opvragen verwerkt GitHub technisch noodzakelijke verbindingsgegevens zoals het IP-adres. Op deze verwerking heb ik buiten de configuratie geen invloed.",
+      "hosting": "De website wordt als statische bestanden via GitHub Pages aangeboden. Bij het opvragen verwerkt GitHub technisch noodzakelijke verbindingsgegevens zoals het IP-adres. Op deze verwerking heb ik buiten de configuratie geen invloed.",
       "notTitle": "Wat deze website niet doet",
       "not1": "Geen cookies, geen tracking, geen analyse- of marketingdiensten.",
       "not2": "Geen extern geladen lettertypen of scripts van derden.",
       "not3": "Geen contactformulier. Een e-mail wordt verwerkt door uw e-mailprovider en de mijne.",
       "translationTitle": "Vertaling",
-      "translation1": "De talen in de taalkeuze zijn vooraf vertaald en worden als statische bestanden geleverd. Daarbij worden geen gegevens naar derden gestuurd.",
-      "translation2": "Alleen wanneer u onder „Meer talen” actief een live vertaling start, wordt de zichtbare tekst van de huidige pagina naar een vertaaldienst gestuurd, die deze met de Claude API van Anthropic vertaalt. Daarnaast verwerkt de exploitant van de dienst technisch noodzakelijke verbindingsgegevens zoals het IP-adres. Er worden geen cookies geplaatst en geen gegevens permanent opgeslagen. Zonder uw actie vindt er geen aanroep plaats.",
+      "translation1": "De talen in de taalkeuze zijn vooraf vertaald en worden als statische bestanden aangeboden. Daarbij worden geen gegevens naar derden gestuurd.",
+      "translation2": "Alleen wanneer u onder “Meer talen” actief een live vertaling start, wordt de zichtbare tekst van de huidige pagina naar een vertaaldienst gestuurd, die deze vertaalt met de Claude API van Anthropic. Daarnaast verwerkt de exploitant van de dienst technisch noodzakelijke verbindingsgegevens zoals het IP-adres. Er worden geen cookies geplaatst en geen gegevens permanent opgeslagen. Zonder uw actie vindt er geen aanroep plaats.",
       "themeTitle": "Licht en donker thema",
-      "theme": "Als u het donkere thema inschakelt, onthoudt uw browser deze keuze in de lokale opslag (localStorage), zodat die bij het volgende bezoek geldt. Het item blijft op uw apparaat, wordt niet naar een server gestuurd en kan via de browserinstellingen worden verwijderd.",
-      "privateTitle": "Privégedeelte",
-      "private": "Het met een passkey beveiligde gedeelte is een aparte applicatie met een eigen privacyverklaring. Deze openbare website stuurt daar geen gegevens naartoe."
+      "theme": "Wanneer u het donkere thema inschakelt, onthoudt uw browser deze keuze in de lokale opslag (localStorage), zodat ze bij het volgende bezoek geldt. De vermelding blijft op uw apparaat, wordt niet naar een server gestuurd en kan via de browserinstellingen worden verwijderd.",
+      "privateTitle": "Besloten gedeelte",
+      "private": "Het met passkey beveiligde gedeelte is een afzonderlijke applicatie met een eigen privacyverklaring. Deze openbare website stuurt daar geen gegevens naartoe."
     }
   },
   "notFound": {
     "title": "Pagina niet gevonden",
     "heading": "Deze pagina bestaat hier niet.",
-    "lede": "Misschien is ze verplaatst, misschien was het adres nooit juist. Vanaf hier kunt u verder:",
+    "lede": "Misschien is ze verplaatst, misschien klopte het adres nooit. Vanaf hier kun je verder:",
     "home": "Home"
   }
 }

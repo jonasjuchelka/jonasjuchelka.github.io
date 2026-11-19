@@ -1,6 +1,6 @@
 {
   "meta": {
-    "description": "Jonas Juchelka estudia Management & Technology en la TU München y emprende. Proyectos, currículum y reflexiones."
+    "description": "Jonas Juchelka construye startups y estudia en la TU München, actualmente en UC Berkeley. Proyectos, currículum y reflexiones."
   },
   "ui": {
     "skip": "Saltar al contenido",
@@ -18,16 +18,19 @@
     "projects": "Proyectos",
     "blog": "Blog",
     "contact": "Contacto",
-    "private": "Acceso"
+    "private": "Acceso",
+    "menu": "Menú",
+    "menuOpen": "Abrir menú",
+    "menuClose": "Cerrar menú"
   },
   "lang": {
     "label": "Idioma",
-    "more": "Más idiomas (traducción en vivo)",
+    "more": "Más idiomas (traducción en directo)",
     "choose": "Elegir idioma",
     "translating": "Traduciendo …",
     "showOriginal": "Mostrar original",
     "notice": "Traducido automáticamente con Claude (Anthropic). Para ello, el texto de esta página se envió a un servicio de traducción. Prevalece la versión en alemán.",
-    "error": "La traducción no es posible en este momento. Inténtalo de nuevo más tarde."
+    "error": "La traducción no está disponible en este momento. Inténtalo de nuevo más tarde."
   },
   "footer": {
     "line": "Curious how the world works. Driven to make it better.",
@@ -45,10 +48,13 @@
     "headline2End": ".",
     "ctaCv": "Mi CV",
     "ctaContact": "Contacto",
-    "mapTitle": "Aquí estuve en casa",
+    "mapTitle": "Donde he vivido",
     "mapAria": "Mapa del mundo con los lugares donde he vivido",
     "blogTitle": "Blog",
-    "allPosts": "Todas las entradas"
+    "allPosts": "Todas las entradas",
+    "projectsEyebrow": "Proyectos",
+    "projectsPath": "Etapas de los últimos años",
+    "allProjects": "Todos los proyectos y el currículum completo"
   },
   "projects": {
     "metaTitle": "Proyectos y currículum",
@@ -58,7 +64,7 @@
     "lede": "Arriba está lo que estoy construyendo ahora. Debajo, el camino hasta aquí.",
     "pdf": "Currículum en PDF",
     "pinned": "Fijado",
-    "pinnedTitle": "En esto trabajo ahora",
+    "pinnedTitle": "En esto estoy trabajando ahora",
     "pinnedNote": "Se agradece el feedback.",
     "open": "Ver",
     "feedback": "Dar feedback",
@@ -70,7 +76,7 @@
     "clearPlace": "Quitar filtro de lugar",
     "awardsTitle": "Becas y distinciones",
     "why": "Lo esencial",
-    "did": "Qué hice",
+    "did": "Lo que hice",
     "more": "Seguir leyendo",
     "back": "Volver",
     "backTo": "Volver a {name}",
@@ -80,7 +86,7 @@
     "showInCv": "Mostrar en el currículum",
     "noStations": "Aún no hay ninguna etapa registrada aquí.",
     "now": "Actual",
-    "home": "Hogar",
+    "home": "Casa",
     "tabsAria": "Proyectos actuales"
   },
   "blog": {
@@ -88,8 +94,8 @@
     "metaDesc": "Artículos y notas de Jonas Juchelka.",
     "eyebrow": "Notas",
     "title": "Blog",
-    "emptyTitle": "Todavía no hay nada publicado.",
-    "emptyBefore": "Aquí aparecerán textos de los estudios y de la práctica cuando estén terminados, no antes. Quien no quiera perderse nada puede suscribirse al",
+    "emptyTitle": "Aún no hay nada publicado.",
+    "emptyBefore": "Aquí aparecerán textos de estudio y práctica en cuanto estén terminados, no antes. Quien no quiera perderse nada puede suscribirse al",
     "emptyLink": "feed RSS",
     "emptyAfter": ".",
     "articleEyebrow": "Artículo",
@@ -105,8 +111,8 @@
     "view": "Vista",
     "all": "Todas",
     "essays": "Ensayos",
-    "thoughts": "Pensamientos",
-    "thought": "Pensamiento",
+    "thoughts": "Reflexiones",
+    "thought": "Reflexión",
     "isNew": "Nuevo",
     "preview": "Vista previa",
     "list": "Lista",
@@ -118,53 +124,56 @@
     "countOne": "entrada",
     "countMany": "entradas",
     "activeFilters": "activos",
-    "readShort": "aprox. {n} min",
-    "showFull": "Mostrar el pensamiento completo",
+    "readShort": "aprox. {n} min.",
+    "showFull": "Mostrar la reflexión completa",
     "close": "Cerrar",
     "back": "Blog",
     "pdf": "PDF",
     "next": "Siguiente entrada",
-    "themeDark": "Diseño oscuro",
-    "themeLight": "Diseño claro"
+    "themeDark": "Tema oscuro",
+    "themeLight": "Tema claro",
+    "translatedNote": "Traducido automáticamente. Original: {lang}.",
+    "readOriginal": "Leer el original",
+    "readTranslation": "Leer la traducción"
   },
   "contact": {
     "metaTitle": "Contacto",
     "metaDesc": "Contacto con Jonas Juchelka por correo electrónico, cita, LinkedIn o GitHub.",
     "title": "Escríbeme.",
-    "mailAlt": "Mi dirección de correo electrónico, como imagen para que los bots no puedan leerla fácilmente",
+    "mailAlt": "Mi dirección de correo electrónico, como imagen, para que los bots no puedan leerla fácilmente",
     "copy": "Copiar",
     "copied": "Copiado",
-    "copyFail": "Cópiala a mano",
+    "copyFail": "Por favor, escríbela a mano",
     "write": "Escribir un correo",
     "book": "Reservar una cita",
     "photoAlt": "Jonas Juchelka",
-    "backHome": "A la página de inicio"
+    "backHome": "Ir a la página de inicio"
   },
   "login": {
-    "metaTitle": "Área privada",
-    "metaDesc": "Acceso al área privada protegida con passkey.",
-    "eyebrow": "Acceso",
-    "title": "Área privada",
-    "lede": "El área privada es una aplicación independiente con su propia dirección. Esta página pública no inicia sesión a nadie y no guarda nada.",
-    "continue": "Continuar al inicio de sesión",
+    "metaTitle": "Acceso",
+    "metaDesc": "Acceso al área privada, protegida con passkey.",
+    "eyebrow": "Área privada",
+    "title": "Acceso",
+    "lede": "El área privada es solo para personas invitadas. El inicio de sesión se realiza exclusivamente con passkeys.",
     "button": "Iniciar sesión con passkey",
     "notReadyTitle": "Aún no configurado",
-    "notReady": "La aplicación privada todavía no tiene una dirección de producción definitiva. En cuanto la tenga, esta página llevará directamente allí.",
+    "notReady": "La aplicación privada todavía no tiene una dirección de producción definitiva. En cuanto la tenga, esta página llevará directamente a ella.",
     "fact1Bold": "Solo con passkey.",
     "fact1": "Sin contraseña, sin inicio de sesión social, sin enlace por correo electrónico.",
     "fact2Bold": "Solo con invitación.",
     "fact2": "No existe registro público.",
     "fact3Bold": "Separado.",
-    "fact3": "El inicio de sesión y los datos se encuentran exclusivamente en la aplicación privada, no en GitHub Pages."
+    "fact3": "El inicio de sesión y los datos están únicamente en la aplicación privada, no en este sitio web.",
+    "backHome": "Ir a la página de inicio"
   },
   "legal": {
     "eyebrow": "Información legal",
-    "authoritative": "Legalmente prevalece la versión en alemán de esta página.",
+    "authoritative": "La versión en alemán de esta página es la jurídicamente vinculante.",
     "imprint": {
       "metaTitle": "Aviso legal",
       "metaDesc": "Identificación del proveedor, actualmente incompleta.",
       "noticeTitle": "Incompleto: punto de producción pendiente",
-      "notice": "Todavía no se dispone de una dirección postal válida para notificaciones judiciales y no se inventa aquí. Por eso este aviso legal aún no está completo.",
+      "notice": "Todavía no se dispone de una dirección postal válida para notificaciones, y aquí no se inventa. Por ello, este aviso legal aún no está completo.",
       "responsible": "Responsable",
       "contact": "Contacto",
       "email": "Correo electrónico:"
@@ -172,27 +181,27 @@
     "privacy": {
       "metaTitle": "Protección de datos",
       "metaDesc": "Qué datos se generan al visitar este sitio web.",
-      "noticeTitle": "Borrador: revisión legal pendiente",
-      "notice": "Estas indicaciones describen la tecnología realmente implantada. Aún falta una declaración completa y revisada legalmente, incluida la dirección del responsable.",
+      "noticeTitle": "Borrador: revisión jurídica pendiente",
+      "notice": "Estas indicaciones describen la tecnología realmente implantada. Aún falta una declaración completa y revisada jurídicamente, que incluya la dirección del responsable.",
       "hostingTitle": "Alojamiento",
       "hosting": "El sitio web se sirve como archivos estáticos a través de GitHub Pages. Al acceder, GitHub procesa los datos de conexión técnicamente necesarios, como la dirección IP. No tengo influencia sobre este tratamiento más allá de la configuración.",
       "notTitle": "Lo que este sitio web no hace",
       "not1": "Sin cookies, sin seguimiento, sin servicios de análisis ni de marketing.",
-      "not2": "Sin fuentes ni scripts de terceros cargados externamente.",
+      "not2": "Sin fuentes ni scripts de terceros cargados desde el exterior.",
       "not3": "Sin formulario de contacto. Un correo electrónico lo procesan su proveedor de correo y el mío.",
       "translationTitle": "Traducción",
       "translation1": "Los idiomas del selector de idioma están traducidos de antemano y se sirven como archivos estáticos. No se envían datos a terceros.",
-      "translation2": "Solo si usted activa una traducción en vivo en «Más idiomas», el texto visible de la página actual se envía a un servicio de traducción que lo traduce con la API de Claude de Anthropic. Además, el operador del servicio procesa los datos de conexión técnicamente necesarios, como la dirección IP. No se instalan cookies ni se almacenan datos de forma permanente. Sin que usted lo active, no se realiza ninguna consulta.",
-      "themeTitle": "Diseño claro y oscuro",
-      "theme": "Si activa el diseño oscuro, su navegador recuerda esta elección en el almacenamiento local (localStorage) para que se aplique en la próxima visita. La entrada permanece en su dispositivo, no se envía a ningún servidor y puede eliminarse desde los ajustes del navegador.",
+      "translation2": "Solo si usted activa una traducción en directo en «Más idiomas», el texto visible de la página actual se envía a un servicio de traducción que lo traduce con la API de Claude de Anthropic. Además, el operador del servicio procesa los datos de conexión técnicamente necesarios, como la dirección IP. No se instalan cookies ni se almacenan datos de forma permanente. Sin su activación no se realiza ninguna consulta.",
+      "themeTitle": "Tema claro y oscuro",
+      "theme": "Si activa el tema oscuro, su navegador recuerda esta elección en el almacenamiento local (localStorage) para que se aplique en la próxima visita. La entrada permanece en su dispositivo, no se envía a ningún servidor y se puede borrar desde los ajustes del navegador.",
       "privateTitle": "Área privada",
-      "private": "El área protegida con passkey es una aplicación independiente con su propia política de privacidad. Este sitio web público no transfiere datos allí."
+      "private": "El área protegida con passkey es una aplicación independiente con su propia política de privacidad. Este sitio web público no transmite datos a ella."
     }
   },
   "notFound": {
     "title": "Página no encontrada",
     "heading": "Esta página no existe aquí.",
-    "lede": "Quizá se movió, quizá la dirección nunca fue correcta. Desde aquí puedes continuar:",
+    "lede": "Quizá se haya movido, quizá la dirección nunca fue correcta. Desde aquí puedes continuar:",
     "home": "Inicio"
   }
 }

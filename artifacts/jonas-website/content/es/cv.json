@@ -12,8 +12,8 @@
       "name": "Berkeley",
       "lat": 37.87,
       "lon": -122.27,
-      "when": "otoño de 2026",
-      "what": "Semestre en el extranjero en UC Berkeley",
+      "when": "Otoño de 2026",
+      "what": "Semestre en el extranjero en la UC Berkeley",
       "badge": "now"
     },
     "aachen": {
@@ -21,15 +21,15 @@
       "lat": 50.78,
       "lon": 6.08,
       "when": "hasta 2024",
-      "what": "Infancia, escuela y Abitur",
+      "what": "Etapa escolar y Abitur",
       "label": "none"
     },
     "madrid": {
       "name": "Madrid",
       "lat": 40.42,
       "lon": -3.7,
-      "when": "otoño de 2021",
-      "what": "Cuatro meses en un colegio en Madrid",
+      "when": "Otoño de 2021",
+      "what": "Estancia en el extranjero en el Colegio Tajamar",
       "label": "left"
     },
     "juja": {
@@ -37,7 +37,7 @@
       "lat": -1.1,
       "lon": 37.01,
       "when": "2016 y 2018",
-      "what": "Escuela y trabajo social en Kenia"
+      "what": "Trimestre escolar y voluntariado en Kenia"
     },
     "suzhou": {
       "name": "Suzhou",
@@ -62,23 +62,23 @@
         "Proyecto"
       ],
       "title": "Audition",
-      "org": "Preentrevista con IA para procesos de selección · Cofundador",
+      "org": "Cofundador · Preentrevista con IA para procesos de selección",
       "icon": "mic",
-      "why": "Una entrevista con IA antes de la primera conversación. Las empresas ven quién realmente sabe hacerlo.",
+      "why": "Una preentrevista con IA antes de la primera conversación, para que las empresas vean pronto quién cumple realmente los requisitos.",
       "text": [
-        "Audition nació en el SF Tech Week Hackathon. Desde entonces lo sigo desarrollando como startup.",
-        "La empresa introduce el puesto y los requisitos. La IA propone preguntas y la empresa las aprueba. Los candidatos y candidatas responden a través de un enlace en una grabación de vídeo continua, y después la empresa ve una evaluación."
+        "Audition nació en el SF Tech Week Hackathon. Desde entonces lo seguimos desarrollando como startup.",
+        "Las empresas introducen el puesto y los requisitos, la IA propone preguntas adecuadas y la empresa las aprueba. Los candidatos responden a través de un enlace en una grabación de vídeo continua; después, la empresa recibe una evaluación estructurada."
       ],
       "points": [
-        "Una preentrevista que las empresas envían a muchos candidatos antes de que una persona mantenga la primera conversación",
-        "Se graban la pantalla, la voz y la persona",
-        "Solicitud a a16z speedrun"
+        "Preentrevista que las empresas envían a muchos candidatos antes de la primera conversación personal",
+        "Grabación de pantalla, voz y comportamiento al responder",
+        "Solicitud al acelerador a16z speedrun"
       ],
       "links": [],
       "cv": {
-        "org": "Mitgründer · KI-Vorinterview für Recruiting",
+        "org": "Cofundador · Preentrevista con IA para reclutamiento",
         "points": [
-          "Entstanden beim SF Tech Week Hackathon, Bewerbung beim Accelerator a16z speedrun"
+          "Nació en el SF Tech Week Hackathon, solicitud al acelerador a16z speedrun"
         ]
       }
     },
@@ -96,23 +96,23 @@
         "Proyecto"
       ],
       "title": "Concentr8",
-      "org": "App de concentración, especializada en personas neurodivergentes · Backend",
+      "org": "Cofundador · App de concentración para estudiantes neurodivergentes · Backend",
       "icon": "target",
       "photo": {
         "file": "concentr8.jpg",
         "alt": "Yo con el equipo de Concentr8",
         "focus": "50% 40%"
       },
-      "why": "Una app que te devuelve a la tarea mientras estudias, antes de que te des cuenta tú mismo.",
+      "why": "Una app que devuelve a los estudiantes a la tarea mientras estudian, antes de que gane la distracción.",
       "text": [
-        "Construí Concentr8 este semestre en UC Berkeley. Empezó en Cal Hacks 13.0 en San Francisco y después lo fusionamos con nuestro proyecto del curso Technology Entrepreneurship.",
-        "Me encargo del backend, en equipo con Jinyuan Xu y Camila Scotti Pinto."
+        "Concentr8 nació en Cal Hacks 13.0 en San Francisco. Después lo fusionamos con nuestro proyecto del curso de Berkeley Technology Entrepreneurship (ENGIN 183E).",
+        "Soy responsable del backend, en equipo con Jinyuan Xu y Camila Scotti Pinto."
       ],
       "points": [
-        "App para Mac que bloquea apps y páginas que distraen durante una sesión de estudio",
-        "Llamadas a horas fijas de estudio: mañana, mediodía y noche",
-        "Chat con IA que primero hace preguntas y después propone un plan con sesiones de estudio",
-        "Inicio de sesión con Google, con el calendario conectado"
+        "App para Mac que bloquea apps y sitios web que distraen durante una sesión de estudio",
+        "Llamadas automáticas a horas de estudio fijas: por la mañana, al mediodía y por la noche",
+        "Asistente de IA que primero hace preguntas y luego propone un plan con sesiones de estudio",
+        "Inicio de sesión con Google e integración con Google Calendar"
       ],
       "links": [
         {
@@ -126,8 +126,8 @@
       ],
       "cv": {
         "points": [
-          "Backend verantwortet: Mac-App, die Ablenkungen sperrt, Anrufe zu festen Lernzeiten, KI-Planung mit Google Kalender",
-          "Entstanden bei Cal Hacks 13.0, weiterentwickelt im Kurs Technology Entrepreneurship (ENGIN 183E)"
+          "Responsable del backend: app para Mac que bloquea distracciones, llamadas a horas de estudio fijas, planificación con IA y Google Calendar",
+          "Nació en Cal Hacks 13.0, desarrollado en el curso Technology Entrepreneurship (ENGIN 183E)"
         ],
         "link": 0
       }
@@ -145,22 +145,22 @@
         "Extranjero"
       ],
       "title": "Semestre en el extranjero",
-      "org": "University of California, Berkeley",
+      "org": "University of California, Berkeley · Berkeley International Study Program",
       "logo": "ucberkeley.svg",
       "photo": {
         "file": "berkeley.jpg",
         "alt": "Yo en la bahía de San Francisco",
         "focus": "60% 40%"
       },
-      "why": "Un semestre en una de las mejores universidades de informática, en pleno ecosistema de las startups de IA.",
+      "why": "Un semestre en una de las universidades líderes en informática, en pleno ecosistema de startups de IA.",
       "text": [
-        "Estudio un semestre en Berkeley a través del Berkeley International Study Program. Además de los cursos, aprovecho cada oportunidad para participar en hackathons."
+        "A través del Berkeley International Study Program estudio en otoño de 2026 en la UC Berkeley. Además de los cursos, participo en hackatones y trabajo en proyectos propios de emprendimiento."
       ],
       "points": [
-        "Künstliche Intelligenz (CS 188)",
-        "Kryptografie (CS 171)",
+        "Inteligencia artificial (CS 188)",
+        "Criptografía (CS 171)",
         "Technology Entrepreneurship (ENGIN 183E)",
-        "Gefördert durch die Stiftung der Deutschen Wirtschaft"
+        "Con el apoyo de la Stiftung der Deutschen Wirtschaft"
       ],
       "links": [
         {
@@ -178,10 +178,10 @@
       ],
       "cv": {
         "title": "University of California, Berkeley",
-        "org": "Austauschstudent · Berkeley International Study Program",
+        "org": "Estudiante de intercambio · Berkeley International Study Program",
         "points": [
-          "Künstliche Intelligenz (CS 188), Kryptografie (CS 171), Technology Entrepreneurship (ENGIN 183E)",
-          "Gefördert durch die Stiftung der Deutschen Wirtschaft (sdw)"
+          "Inteligencia artificial (CS 188), criptografía (CS 171), Technology Entrepreneurship (ENGIN 183E)",
+          "Con el apoyo de la Stiftung der Deutschen Wirtschaft (sdw)"
         ]
       }
     },
@@ -195,18 +195,18 @@
       "tags": [
         "Trabajo"
       ],
-      "title": "Tutor de Operations Research",
+      "title": "Tutor de Investigación Operativa",
       "org": "TU München · Cátedra del Prof. Kolisch",
       "logo": "tum.svg",
-      "why": "Seleccionado por estar entre el 5 % mejor del curso. Después lo enseñé yo mismo.",
+      "why": "Seleccionado por mi rendimiento en el curso, entre el 5 % mejor; después impartí yo mismo el curso como tutor.",
       "text": [
-        "Impartí la tutoría de “Operations Research and Decision Analysis” en el semestre de invierno 2025/26 y en el semestre de verano 2026, además de atención individual. El curso en sí lo aprobé con un 1,3."
+        "En el semestre de invierno 2025/26 y en el de verano 2026 impartí la tutoría de «Operations Research and Decision Analysis» y además atendí a estudiantes de forma individual. El propio curso lo aprobé con un 1,3."
       ],
       "points": [
-        "4 Stunden Tutorium pro Woche für rund 25 Studierende",
-        "Übungsaufgaben selbst konzipiert",
-        "Simplex, Netzwerkflüsse, ganzzahlige Optimierung",
-        "Modellierung mit Gurobi"
+        "4 horas de tutoría a la semana para unos 25 estudiantes",
+        "Ejercicios diseñados por mí",
+        "Símplex, flujos en redes, optimización entera",
+        "Modelado con Gurobi"
       ],
       "links": [
         {
@@ -218,9 +218,9 @@
         "title": "Tutor, Operations Research and Decision Analysis",
         "org": "Technische Universität München",
         "points": [
-          "Ausgewählt für eine Kursleistung unter den besten 5 % (Note 1,3)",
-          "4 Stunden Tutorium pro Woche für rund 25 Studierende, Übungsaufgaben selbst konzipiert",
-          "Simplex, Netzwerkflüsse, ganzzahlige Optimierung, Gurobi"
+          "Seleccionado por mi rendimiento en el curso, entre el 5 % mejor (nota 1,3)",
+          "4 horas de tutoría a la semana para unos 25 estudiantes, ejercicios diseñados por mí",
+          "Símplex, flujos en redes, optimización entera, Gurobi"
         ]
       }
     },
@@ -241,15 +241,15 @@
         "alt": "Yo con el portátil en la estación, de camino al cliente",
         "focus": "60% 35%"
       },
-      "why": "Un gran proyecto de transformación para un gran banco alemán, visto desde dentro.",
+      "why": "Colaboración en un gran proyecto de transformación de un banco alemán de gran tamaño, directamente en las instalaciones del cliente.",
       "text": [
-        "ritzenhoefer & company asesora a grandes bancos, aseguradoras e industria en grandes reestructuraciones. Estuve casi siempre directamente en el cliente y apoyé a la oficina del proyecto."
+        "ritzenhoefer & company asesora a grandes bancos, aseguradoras y empresas industriales en transformaciones de gran alcance. Estuve sobre todo en las instalaciones del cliente y apoyé a la oficina de gestión de proyectos (PMO)."
       ],
       "points": [
         "Responsable técnico y organizativo del reporting del runbook, con partes automatizadas mediante macros de Excel",
-        "Mejora del proceso de change requests, con más de 70 change requests gestionados",
-        "Elaboración de presentaciones hasta el comité de dirección",
-        "Desarrollo de un modelo de job sharing para consultores sénior"
+        "Mejora del proceso de change requests y gestión de más de 70 change requests",
+        "Elaboración de propuestas de decisión hasta el comité directivo",
+        "Desarrollo de un modelo de job sharing para Senior Consultants"
       ],
       "links": [
         {
@@ -259,8 +259,8 @@
       ],
       "cv": {
         "points": [
-          "Runbook und über 70 Change Requests im PMO verantwortet, Berichtswesen mit Excel-Makros teilautomatisiert",
-          "60/60-Jobsharing-Modell für Senior Consultants entwickelt"
+          "Responsable del runbook y de más de 70 change requests en la PMO, reporting parcialmente automatizado con macros de Excel",
+          "Desarrollo de un modelo de job sharing 60/60 para Senior Consultants"
         ]
       }
     },
@@ -274,23 +274,23 @@
       "tags": [
         "Trabajo"
       ],
-      "title": "Prácticas de Business Development",
-      "org": "comstruct · Software para el sector de la construcción",
+      "title": "Prácticas en Business Development",
+      "org": "comstruct · Software para la compra de materiales en la construcción, Series A",
       "logo": "comstruct.svg",
       "photo": {
         "file": "comstruct.jpg",
         "alt": "Yo con un compañero en la oficina de comstruct",
         "focus": "50% 30%"
       },
-      "why": "74 proveedores incorporados en nueve semanas, en una startup de Serie A.",
+      "why": "74 proveedores incorporados en nueve semanas, dentro del equipo de go-to-market de una startup Series A.",
       "text": [
-        "comstruct digitaliza las compras de material de las constructoras: albaranes, facturas y pedidos se gestionan digitalmente con los proveedores. Estuve en el equipo de Go-to-Market."
+        "comstruct digitaliza la compra de materiales de las constructoras: pedidos, albaranes y facturas circulan digitalmente entre constructoras y proveedores. Formé parte del equipo de go-to-market."
       ],
       "points": [
-        "74 proveedores incorporados en 9 semanas por teléfono y correo electrónico",
+        "74 proveedores incorporados en 9 semanas, incluida la integración técnica",
         "Análisis y mejora del proceso de incorporación de proveedores",
-        "Representé a comstruct en la feria BAUMA",
-        "Organicé eventos de equipo para toda la empresa"
+        "Representación de comstruct en la feria BAUMA",
+        "Organización de eventos de equipo para toda la empresa"
       ],
       "links": [
         {
@@ -299,14 +299,14 @@
         }
       ],
       "cv": {
-        "title": "Business Development, Supply Chain Integration",
-        "org": "comstruct · Bausoftware, Series A · Praktikum",
+        "title": "Business Development, integración de la cadena de suministro",
+        "org": "comstruct · Software para la construcción, Series A · Prácticas",
         "points": [
-          "74 Lieferanten in 9 Wochen angebunden, einschließlich technischer Integration",
-          "Prozess der Lieferantenanbindung analysiert und verbessert"
+          "74 proveedores incorporados en 9 semanas, incluida la integración técnica",
+          "Análisis y mejora del proceso de incorporación de proveedores"
         ],
         "extra": [
-          "comstruct auf der Fachmesse BAUMA vertreten"
+          "Representación de comstruct en la feria BAUMA"
         ]
       }
     },
@@ -322,19 +322,19 @@
         "Proyecto"
       ],
       "title": "Shapely",
-      "org": "Impresión 3D bajo pedido · idea propia de startup",
+      "org": "Cofundador · Repuestos con impresora 3D",
       "logo": "shapely.png",
-      "why": "Escaneas con el móvil y recibes la pieza impresa en casa. Lo que más aprendí fue cuándo hay que dejar ir una idea.",
+      "why": "Imprimir repuestos para los que no existe archivo CAD. Y aprender cuándo abandonar un modelo de negocio.",
       "text": [
-        "Bricht ein Kunststoffteil, gibt es oft weder Ersatz noch eine Konstruktionsdatei. Shapely sollte genau diese Lücke schließen: Teil fotografieren oder scannen, daraus ein druckfertiges Modell erstellen, drucken und liefern.",
-        "Wir waren zu dritt, alle von der TU München, und Teil des TUM Startup Launchpad. Ich habe Strategie, Finanzen und Go-to-Market verantwortet."
+        "Cuando se rompe una pieza de plástico, a menudo no hay ni repuesto ni archivo de diseño. Shapely quería cubrir justo ese vacío: fotografiar o escanear la pieza, crear a partir de ello un modelo listo para imprimir, imprimirlo y entregarlo.",
+        "Éramos tres, todos de la TU München, y formábamos parte del TUM Startup Launchpad. Yo me encargué de la estrategia, las finanzas y el go-to-market."
       ],
       "points": [
-        "Erste Aufträge bewusst von Hand umgesetzt: in Fusion 360 modelliert, auf einem Bambu Lab X1 Carbon gedruckt und selbst ausgeliefert",
-        "Web-Plattform, die passende Teile auf Thingiverse und Printables findet",
-        "iPhone-Prototyp, der Teile mit dem LiDAR-Scanner erfasst (Swift, ARKit, Supabase)",
-        "Interviews mit Instandhaltern und Konstrukteuren geführt, Wettbewerber wie Replique und 3YOURMIND analysiert",
-        "Ergebnis der Tests: Das Modell trägt nicht, wir haben es eingestellt"
+        "Primeros pedidos realizados deliberadamente a mano: modelados en Fusion 360, impresos en una Bambu Lab X1 Carbon y entregados por nosotros mismos",
+        "Plataforma web que encuentra piezas adecuadas en Thingiverse y Printables",
+        "Prototipo para iPhone que captura piezas con el escáner LiDAR (Swift, ARKit, Supabase)",
+        "Entrevistas con técnicos de mantenimiento y diseñadores, análisis de competidores como Replique y 3YOURMIND",
+        "Resultado de las pruebas: el modelo no se sostiene, así que lo cerramos"
       ],
       "links": [
         {
@@ -343,11 +343,11 @@
         }
       ],
       "cv": {
-        "org": "Mitgründer · Ersatzteile aus dem 3D-Drucker, ohne CAD-Datei",
+        "org": "Cofundador · Repuestos con impresora 3D, sin archivo CAD",
         "points": [
-          "Strategie, Finanzen und Go-to-Market im Dreierteam, TUM Startup Launchpad",
-          "Erste Aufträge von Hand umgesetzt (Fusion 360, 3D-Druck); iPhone-Scan-Prototyp mit ARKit und LiDAR",
-          "Geschäftsmodell in Interviews mit Instandhaltern geprüft und eingestellt"
+          "Estrategia, finanzas y go-to-market en un equipo de tres, TUM Startup Launchpad",
+          "Primeros pedidos realizados a mano (Fusion 360, impresión 3D); prototipo de escaneo para iPhone con ARKit y LiDAR",
+          "Modelo de negocio validado en entrevistas con técnicos de mantenimiento y cerrado"
         ],
         "link": 0
       }
@@ -363,15 +363,15 @@
       "tags": [
         "Estudios"
       ],
-      "title": "B.Sc. Management & Technology",
-      "org": "TU München · Especialización en Computer Engineering",
+      "title": "Grado en la TU München",
+      "org": "B.Sc. Management and Technology · Especialización en Computer Engineering",
       "logo": "tum.svg",
-      "why": "Economía e informática en una sola carrera, en un programa con una tasa de admisión del 9 %.",
+      "why": "Una carrera en la intersección entre economía e informática, con una tasa de admisión del 9 %.",
       "text": [
-        "Estudio desde el semestre de invierno 2024/25. Tengo previsto terminar en 2027."
+        "Estudio en la Technische Universität München desde el semestre de invierno 2024/25, con especialización en Computer Engineering. La graduación está prevista para 2027."
       ],
       "points": [
-        "Nota media de 1,6",
+        "Nota media 1,6 (top 10 %)",
         "Especialización en Computer Engineering"
       ],
       "links": [
@@ -380,15 +380,15 @@
           "url": "https://www.tum.de/"
         },
         {
-          "label": "Programa de estudios en la TUM",
+          "label": "Programa de estudios",
           "url": "https://www.mgt.tum.de/de/programs/bachelor-in-management-technology/muenchen"
         }
       ],
       "cv": {
         "title": "Technische Universität München",
-        "org": "B.Sc. Management and Technology, Vertiefung Computer Engineering",
+        "org": "B.Sc. Management and Technology, especialización en Computer Engineering",
         "points": [
-          "Notenschnitt 1,6 (Top 10 %), Studiengang mit 9 % Aufnahmequote"
+          "Nota media 1,6 (top 10 %), programa con una tasa de admisión del 9 %"
         ]
       }
     },
@@ -410,20 +410,20 @@
         "alt": "Yo delante del logotipo de cycos",
         "focus": "70% 40%"
       },
-      "why": "La primera vez que configuré servidores y máquinas virtuales por mi cuenta y programé en Java.",
+      "why": "Primera experiencia práctica en desarrollo de software y redes: servidores, máquinas virtuales y Java.",
       "text": [
-        "cycos desarrolla desde hace más de 30 años software de telecomunicaciones, desde sistemas analógicos hasta colaboración en la nube. Estuve cuatro semanas en el equipo de desarrollo."
+        "cycos desarrolla desde hace más de 30 años software de telecomunicaciones, desde sistemas analógicos hasta soluciones de colaboración en la nube. Estuve cuatro semanas en el equipo de desarrollo."
       ],
       "points": [
-        "Fundamentos de redes: direcciones IP, enrutamiento, protocolos",
-        "Linux, servidores y máquinas virtuales con Proxmox",
-        "Java con programación orientada a objetos",
+        "Fundamentos de redes: direccionamiento IP, enrutamiento, protocolos",
+        "Configuración de servidores Linux y máquinas virtuales con Proxmox",
+        "Programación orientada a objetos en Java",
         "Introducción a la telefonía y VoIP"
       ],
       "links": [],
       "cv": {
         "points": [
-          "Linux-Server und virtuelle Maschinen (Proxmox) aufgesetzt, objektorientierte Programmierung in Java"
+          "Configuración de servidores Linux y máquinas virtuales (Proxmox), programación orientada a objetos en Java"
         ],
         "optional": true
       }
@@ -437,7 +437,7 @@
       "loc": "muenchen",
       "tags": [
         "Emprendimiento",
-        "Compromiso"
+        "Voluntariado"
       ],
       "title": "Cofundador y miembro de la junta directiva",
       "org": "Future Founders Initiative e.V. · desde 08.2026 en el consejo asesor",
@@ -447,23 +447,23 @@
         "alt": "Foto de grupo en un evento de la Future Founders Initiative",
         "focus": "50% 40%"
       },
-      "why": "De cinco personas pasamos a ser una iniciativa en tres ciudades. Después traspasé el cargo de forma deliberada.",
+      "why": "Empezamos con cinco miembros fundadores, la convertimos en una iniciativa presente en tres ciudades y después la traspasamos de forma deliberada.",
       "text": [
-        "La Future Founders Initiative reúne a estudiantes que quieren emprender: talleres gratuitos desde la primera idea hasta el pitch. La cofundé, la desarrollé desde la junta directiva y en 2026 pasé al consejo asesor."
+        "La Future Founders Initiative reúne a estudiantes que quieren emprender y ofrece talleres gratuitos desde la primera idea hasta el pitch. Cofundé la asociación, la construí desde la junta directiva y en 2026 pasé al consejo asesor."
       ],
       "points": [
-        "Eventos de tres días para más de 110 estudiantes",
+        "Organización de eventos de emprendimiento de tres días para más de 110 estudiantes",
         "Sedes en Múnich, Fráncfort y Stuttgart",
         "Reestructuración de la junta directiva",
-        "Valores elaborados en conjunto: hacedores en lugar de espectadores, estar el uno para el otro, dejar algo tras de sí, sin ego"
+        "Valores rectores elaborados en conjunto: hacedores en lugar de espectadores, apoyarse mutuamente, dejar huella, sin ego"
       ],
       "links": [],
       "cv": {
         "title": "Future Founders Initiative e.V.",
-        "org": "Mitgründer und Vorstand, seit 08.2026 im Beirat",
+        "org": "Cofundador y miembro de la junta directiva, desde 08.2026 en el consejo asesor",
         "points": [
-          "Von fünf Gründungsmitgliedern zu einer Initiative in drei Städten aufgebaut",
-          "Dreitägige Gründungsveranstaltungen für über 110 Studierende organisiert"
+          "De cinco miembros fundadores a una iniciativa presente en tres ciudades",
+          "Organización de eventos de emprendimiento de tres días para más de 110 estudiantes"
         ]
       }
     },
@@ -472,26 +472,26 @@
       "kind": "station",
       "year": 2024,
       "date": "08.2016 – 06.2024",
-      "place": "Aquisgrán",
+      "place": "Aachen",
       "loc": "aachen",
       "tags": [
         "Escuela"
       ],
       "title": "Abitur",
-      "org": "Bischöfliches Pius-Gymnasium · Cursos avanzados de Matemáticas, Geografía, Alemán",
+      "org": "Bischöfliches Pius-Gymnasium Aachen · Cursos avanzados de Matemáticas, Geografía y Alemán",
       "logo": "pius.png",
-      "why": "Abitur con un 1,2 y, además, clases de matemáticas en la RWTH.",
+      "why": "Abitur con 1,2, certificado MINT-EC con distinción y, ya durante la etapa escolar, clases de Matemáticas en la RWTH Aachen.",
       "text": [
-        "Am Pius-Gymnasium habe ich mich weit über den Unterricht hinaus engagiert: mit einem eigenen Förderkurs, in Nachhilfe und Hausaufgabenbetreuung und acht Jahre lang in der Big Band.",
-        "Parallel zur Oberstufe habe ich im Frühstudium die Vorlesung Höhere Mathematik an der RWTH Aachen besucht."
+        "En el Pius-Gymnasium me impliqué mucho más allá de las clases: con un curso de apoyo propio, con clases particulares y supervisión de deberes, y durante ocho años en la Big Band.",
+        "Paralelamente al bachillerato superior asistí, como estudiante anticipado, a la asignatura Höhere Mathematik en la RWTH Aachen."
       ],
       "points": [
-        "Abiturnote 1,2 (Top 10 %)",
-        "MINT-EC-Zertifikat mit Auszeichnung, die höchste von drei Stufen (Top 5 % des Jahrgangs)",
-        "Förderkurs „Economy & Innovation“ für die Klassen 8 bis 10 aufgebaut und ab Oktober 2022 wöchentlich zwei Stunden geleitet: Volkswirtschaft, persönliche Finanzen, Steuern, internationale Politik, künstliche Intelligenz, Präsentieren und Websites",
-        "Ein Schuljahr lang wöchentliche Mathematik-Einzelförderung für einen Fünftklässler mit besonderem Förderbedarf",
-        "Hausaufgabenbetreuung für die Unter- und Mittelstufe",
-        "Posaune in der Big Band seit 2016 und im Schulorchester: Konzerte, Schulfeste, Gedenkveranstaltungen"
+        "Nota del Abitur: 1,2 (top 10 %)",
+        "Certificado MINT-EC con distinción, el nivel más alto de tres (top 5 % de la promoción)",
+        "Creé el curso de apoyo «Economy & Innovation» para los cursos 8 a 10 y lo impartí dos horas semanales desde octubre de 2022: economía, finanzas personales, impuestos, política internacional, inteligencia artificial, presentaciones y sitios web",
+        "Durante un curso escolar, apoyo individual semanal de Matemáticas a un alumno de quinto con necesidades especiales de apoyo",
+        "Supervisión de deberes para los cursos inferiores y medios",
+        "Trombón en la Big Band desde 2016 y en la orquesta escolar: conciertos, fiestas escolares, actos conmemorativos"
       ],
       "links": [
         {
@@ -509,14 +509,14 @@
       ],
       "cv": {
         "title": "Bischöfliches Pius-Gymnasium Aachen",
-        "org": "Abitur 1,2 (Top 10 %) · Leistungskurse Mathematik, Erdkunde, Deutsch",
+        "org": "Abitur 1,2 (top 10 %) · Cursos avanzados de Matemáticas, Geografía y Alemán",
         "points": [
-          "Frühstudium: Höhere Mathematik an der RWTH Aachen",
-          "Förderkurs „Economy & Innovation“ für die Klassen 8 bis 10 aufgebaut und ab 10.2022 wöchentlich zwei Stunden geleitet: Volkswirtschaft, Finanzen, KI, Präsentieren",
-          "Ein Schuljahr wöchentliche Mathematik-Einzelförderung für einen jüngeren Schüler mit besonderem Förderbedarf"
+          "Estudios universitarios anticipados: Matemáticas Superiores en la RWTH Aachen",
+          "Creé el curso de apoyo «Economy & Innovation» para los cursos 8 a 10 y lo impartí dos horas semanales desde 10.2022: economía, finanzas, IA, presentaciones",
+          "Durante un curso escolar, apoyo individual semanal de Matemáticas a un alumno más joven con necesidades especiales de apoyo"
         ],
         "extra": [
-          "Hausaufgabenbetreuung für die Unter- und Mittelstufe; Posaune in Big Band und Schulorchester seit 2016"
+          "Supervisión de deberes para los cursos inferiores y medios; trombón en la Big Band y en la orquesta escolar desde 2016"
         ]
       }
     },
@@ -533,14 +533,14 @@
       "title": "Prácticas en Personal y Comunicación",
       "org": "AIXTRON SE",
       "logo": "aixtron.svg",
-      "why": "Dos semanas en un fabricante de equipos para semiconductores, en Recursos Humanos y prensa.",
+      "why": "Dos semanas en un fabricante de equipos para la industria de semiconductores, en el departamento de personal y en comunicación corporativa.",
       "text": [
-        "AIXTRON construye equipos con los que se fabrican semiconductores compuestos para pantallas, láseres y células solares. Estuve en el departamento de Recursos Humanos y colaboré en el trabajo de prensa."
+        "AIXTRON fabrica equipos con los que se producen semiconductores compuestos para pantallas, láseres y células solares. Colaboré en el departamento de personal y en las relaciones con la prensa."
       ],
       "points": [
-        "Participé en la planificación del día de los aprendices",
-        "Revisé la sección para estudiantes del sitio web de empleo",
-        "Colaboré en la gestión de comunicados de prensa"
+        "Participé en la planificación de la jornada de aprendices",
+        "Renové la sección para estudiantes del sitio web de empleo",
+        "Colaboré en la elaboración de notas de prensa"
       ],
       "links": [
         {
@@ -550,7 +550,7 @@
       ],
       "cv": {
         "points": [
-          "Azubi-Tag mitgeplant, Schülerseite der Karriere-Website überarbeitet, Pressemitteilungen mitbetreut"
+          "Participé en la planificación de la jornada de aprendices, renové la sección para estudiantes del sitio web de empleo y colaboré en notas de prensa"
         ],
         "optional": true
       }
@@ -566,16 +566,16 @@
         "Escuela",
         "Extranjero"
       ],
-      "title": "Cuatro meses de colegio en Madrid",
-      "org": "Colegio Tajamar · Bachillerato de Ciencias",
+      "title": "Estancia en el extranjero en Madrid",
+      "org": "Colegio Tajamar · Bachillerato, modalidad de Ciencias",
       "logo": "tajamar.png",
-      "why": "Llegué con poco español y al final seguía las clases con normalidad.",
+      "why": "Cuatro meses en el sistema escolar español: llegué con conocimientos básicos y al final participé con normalidad en las clases y en los exámenes.",
       "text": [
-        "Cursé el primer año de Bachillerato en la rama de ciencias, con 37 horas semanales y los mismos exámenes que mi clase."
+        "En otoño de 2021 cursé el primer año de Bachillerato en la modalidad de Ciencias, con 37 horas semanales y los mismos exámenes que mi clase."
       ],
       "points": [
-        "Especialización en Ciencias Biológicas",
-        "Aprendí español en el día a día"
+        "Énfasis en Ciencias Biológicas",
+        "Mejoré mi español en el día a día escolar"
       ],
       "links": [
         {
@@ -585,7 +585,7 @@
       ],
       "cv": {
         "title": "Colegio Tajamar",
-        "org": "Auslandssemester, Bachillerato mit Schwerpunkt Biowissenschaften",
+        "org": "Semestre en el extranjero, Bachillerato con énfasis en Ciencias Biológicas",
         "points": []
       }
     },
@@ -597,19 +597,19 @@
       "place": "Juja, Kenia",
       "loc": "juja",
       "tags": [
-        "Voluntariado",
+        "Compromiso",
         "Extranjero"
       ],
       "title": "Voluntariado en un hogar infantil",
       "org": "Star of Hope Children’s Home",
       "icon": "heart",
-      "why": "Tres semanas en un hogar para huérfanos y niños sin familia.",
+      "why": "Tres semanas de colaboración en un hogar infantil para huérfanos y niños sin apoyo familiar.",
       "text": [
-        "Ayudé allí donde hacía falta en cada momento y por las tardes recibía clases de inglés."
+        "Apoyé al centro en el día a día allí donde se necesitaba ayuda y por las tardes recibí clases de inglés."
       ],
       "points": [
-        "Colaboré en la construcción de una valla y en el mantenimiento del recinto",
-        "Jugué con los niños"
+        "Colaboración en trabajos de construcción y mantenimiento en el recinto",
+        "Cuidado de los niños y organización de actividades de ocio con ellos"
       ],
       "links": [],
       "cv": {
@@ -627,21 +627,21 @@
         "Escuela",
         "Extranjero"
       ],
-      "title": "Un trimestre escolar en Kenia",
-      "org": "Precious Blood Primary School",
+      "title": "Trimestre escolar en Kenia",
+      "org": "Precious Blood Primary School · Juja, cerca de Nairobi",
       "icon": "school",
-      "why": "Un trimestre en una escuela de Kenia siendo niño. Mi primera mirada mucho más allá de Aquisgrán.",
+      "why": "Tres meses de clases en un sistema escolar distinto. Aquí comenzó mi interés por las perspectivas internacionales.",
       "text": [
-        "Estaba en cuarto curso y participé en toda la vida escolar diaria."
+        "En primavera de 2016 pasé un trimestre en la Precious Blood Primary School y participé con normalidad en las clases de cuarto curso."
       ],
       "points": [
-        "Vollständiger Schulalltag in allen Fächern",
-        "Schwerpunkte: Mathematik und Musik"
+        "Jornada escolar completa en todas las asignaturas",
+        "Énfasis en Matemáticas y Música"
       ],
       "links": [],
       "cv": {
         "title": "Precious Blood Primary School",
-        "org": "Trimester im kenianischen Schulsystem",
+        "org": "Trimestre en el sistema escolar keniano",
         "points": []
       }
     },
@@ -656,9 +656,9 @@
       "title": "Beca de la Stiftung der Deutschen Wirtschaft",
       "org": "Studienförderwerk Klaus Murmann",
       "logo": "sdw.svg",
-      "why": "Para estudiantes con sentido de comunidad y espíritu emprendedor.",
+      "why": "Apoyo a estudiantes con sentido de comunidad y espíritu emprendedor.",
       "text": [
-        "El Studienförderwerk Klaus Murmann apoya cada año a unos 2.000 estudiantes y doctorandos."
+        "El Studienförderwerk Klaus Murmann es una de las 13 fundaciones alemanas de apoyo a estudiantes con talento y financia cada año a unos 2.000 estudiantes y doctorandos."
       ],
       "points": [],
       "links": [
@@ -669,7 +669,7 @@
       ],
       "cv": {
         "title": "Stiftung der Deutschen Wirtschaft (sdw)",
-        "org": "Stipendiat, eines der 13 Begabtenförderungswerke in Deutschland",
+        "org": "Becario, una de las 13 fundaciones alemanas de apoyo a estudiantes con talento",
         "link": 0
       }
     },
@@ -684,13 +684,13 @@
       "title": "Beca de la Hans Rudolf Stiftung",
       "org": "Hans Rudolf Stiftung, Múnich",
       "logo": "hr-stiftung.png",
-      "why": "Una beca para estudiantes de Múnich con determinación.",
+      "why": "Beca para estudiantes de universidades de Múnich.",
       "text": [],
       "points": [],
       "links": [],
       "cv": {
         "title": "Hans Rudolf Stiftung",
-        "org": "Stipendiat"
+        "org": "Becario"
       }
     },
     {
@@ -699,14 +699,14 @@
       "year": 2024,
       "date": "06.2024",
       "tags": [
-        "Auszeichnung"
+        "Distinción"
       ],
-      "title": "MINT-EC-Zertifikat mit Auszeichnung",
-      "org": "MINT-EC, das nationale Excellence-Schulnetzwerk",
+      "title": "Certificado MINT-EC con distinción",
+      "org": "MINT-EC, la red nacional de colegios de excelencia",
       "icon": "cap",
-      "why": "Die höchste von drei Stufen, für herausragende Leistungen und Engagement in Mathematik, Informatik, Naturwissenschaften und Technik über die gesamte Schulzeit.",
+      "why": "El nivel más alto de los tres, por rendimiento y compromiso sobresalientes en matemáticas, informática, ciencias naturales y tecnología durante toda la etapa escolar.",
       "text": [
-        "Das Zertifikat wird mit dem Abitur an Schulen des MINT-EC-Netzwerks vergeben und ist von Kultusministerkonferenz und Hochschulrektorenkonferenz anerkannt. Damit gehörte ich zu den besten 5 % meines Jahrgangs."
+        "El certificado se concede junto con el Abitur en los colegios de la red MINT-EC y está reconocido por la Conferencia de Ministros de Educación y la Conferencia de Rectores de Universidades. Con él formé parte del 5 % mejor de mi promoción."
       ],
       "points": [],
       "links": [
@@ -716,7 +716,7 @@
         }
       ],
       "cv": {
-        "org": "Höchste von drei Stufen, Top 5 % des Jahrgangs",
+        "org": "El nivel más alto de tres, 5 % mejor de la promoción",
         "link": 0
       }
     },
@@ -739,14 +739,14 @@
         "alt": "Nuestra delegación en Suzhou",
         "focus": "50% 50%"
       },
-      "why": "Tasa de admisión del 5 %. Seleccionado como uno de los mejores estudiantes de la TUM.",
+      "why": "Seleccionado como uno de los mejores estudiantes de la TUM, con una tasa de admisión del 5 %.",
       "text": [
-        "Con la delegación de la TUM a Suzhou y Shanghái."
+        "Con una delegación de la TU München en Suzhou y Shanghái."
       ],
       "points": [],
       "links": [],
       "cv": {
-        "org": "Delegation der TU München nach Suzhou und Shanghai, 5 % Aufnahmequote"
+        "org": "Delegación de la TU München a Suzhou y Shanghái, tasa de admisión del 5 %"
       }
     },
     {
@@ -758,11 +758,11 @@
         "Distinción"
       ],
       "title": "Deutsche SchülerAkademie",
-      "org": "Propuesto por el colegio",
+      "org": "Nominado por el colegio",
       "logo": "dsa.svg",
       "why": "Se selecciona a menos del 1 % de los estudiantes de Alemania.",
       "text": [
-        "Dirección del curso: Henric Meinhardt y Johannes Lumma."
+        "La Deutsche SchülerAkademie es un programa de verano de Bildung & Begabung para estudiantes especialmente capaces y motivados."
       ],
       "points": [],
       "links": [
@@ -772,7 +772,7 @@
         }
       ],
       "cv": {
-        "org": "Von der Schule nominiert, weniger als 1 % werden ausgewählt",
+        "org": "Nominado por el colegio, se selecciona a menos del 1 %",
         "link": 0
       }
     }
