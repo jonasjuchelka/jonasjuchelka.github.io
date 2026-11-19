@@ -11,7 +11,9 @@
     "crumbsAria": "Broodkruimelpad",
     "readingTime": "{n} min. leestijd",
     "badgeInfo": "Opmerking",
-    "badgeWarning": "Open"
+    "badgeWarning": "Open",
+    "nextLabel": "Hierna",
+    "nextHint": "Blijf gewoon scrollen"
   },
   "nav": {
     "home": "Home",
@@ -52,7 +54,7 @@
     "mapAria": "Wereldkaart met de plaatsen waar ik heb gewoond",
     "blogTitle": "Blog",
     "allPosts": "Alle berichten",
-    "projectsEyebrow": "Projecten",
+    "projectsEyebrow": "Actuele projecten",
     "projectsPath": "Stappen van de afgelopen jaren",
     "allProjects": "Alle projecten en het volledige cv"
   },
@@ -64,8 +66,7 @@
     "lede": "Bovenaan staat waar ik nu aan bouw. Daaronder de weg tot hier.",
     "pdf": "Cv als pdf",
     "pinned": "Vastgepind",
-    "pinnedTitle": "Hier werk ik nu aan",
-    "pinnedNote": "Feedback is welkom.",
+    "pinnedTitle": "Actuele projecten",
     "open": "Bekijken",
     "feedback": "Feedback geven",
     "pathTitle": "De weg tot hier",

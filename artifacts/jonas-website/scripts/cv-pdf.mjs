@@ -1,8 +1,13 @@
-// Erzeugt den Lebenslauf als kompaktes PDF (höchstens zwei Seiten) aus content/cv.json, bei jedem Build neu (postbuild).
+// Erzeugt den Lebenslauf als PDF aus content/cv.json, bei jedem Build neu (postbuild), auf Deutsch und Englisch.
+// Regeln nach dem Consulting-Leitfaden (docs/style-guide.md, Abschnitt PDF):
+//   - genau eine A4-Seite; Schriftgröße 9 bis 11 pt; Ziel rund 600 Wörter (± 100), sonst Warnung im Build-Log
+//   - nüchtern: weißes Blatt, schwarzer Text, Königsblau nur für Überschriften, Linien und Links
+//   - je Station: Organisation (mit Link und Pfeil ↗) und Ort, darunter Rolle und Zeitraum, dann ergebnisorientierte Punkte
+//     (Tätigkeit, Kontext, Ergebnis); die Punkte stehen im Block "cv" jeder Station, getrennt von der Website
+//   - Abschnitte überschneidungsfrei: Ausbildung, Berufserfahrung, Gründungen und Engagement, Stipendien, Kenntnisse
+//   - passt es nicht: erst Zusatzpunkte (cv.extra), dann optionale Stationen (cv.optional) weg, dann kleiner bis 9 pt
 // Ohne Abhängigkeiten: eigener kleiner PDF-Schreiber, Markenschriften (TTF) eingebettet, Logo als Vektor, Foto als JPEG.
-// Inhalt: pro Station zählt der Block "cv" (eigene, kürzere Formulierung); fehlt er, nimmt das PDF die ersten zwei Punkte.
-// Passt es nicht auf zwei Seiten, fallen zuerst optionale Stationen und Zusatzpunkte weg, dann wird alles leicht kleiner.
-// Datenschutz: keine Telefonnummer, keine Adresse, kein Geburtsdatum, keine E-Mail (die steht nur auf /kontakt/ als Bild).
+// Datenschutz: keine Telefonnummer, keine Adresse, kein Geburtsdatum. Die E-Mail steht nur als Bild darin (wie auf /kontakt/).
 // Aufruf: node scripts/cv-pdf.mjs [ausgabe.pdf] [--lang de|en]
 import fs from "node:fs";
 import path from "node:path";
@@ -85,24 +90,33 @@ const pdfStr = (txt) => "(" + enc(txt).toString("latin1").replace(/[\\()]/g, (m)
 // ---------- Farben (Tokens aus lib/design-tokens) ----------
 const hex = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16) / 255);
 const C = {
-  koenig: hex("#1c2b36"), text: hex("#06060d"), muted: hex("#2d4354"), himmel: hex("#74afdb"),
-  line: hex("#b0c4d4"), band: hex("#cfe5f7"), surface: hex("#eef2f5"), white: hex("#ffffff"),
+  koenig: hex("#1c2b36"), text: hex("#06060d"), muted: hex("#2d4354"), line: hex("#b0c4d4"), white: hex("#ffffff"),
 };
 const rgb = (c, stroke = false) => `${c.map((v) => v.toFixed(3)).join(" ")} ${stroke ? "RG" : "rg"}`;
 
 // ---------- Seite ----------
-const W = 595.28, H = 841.89, ML = 40, MR = 40;
-const DATE_W = 80, CX = ML + DATE_W + 10, CW = W - MR - CX;
-const BAND = 152, KPI = 50, FOOT = 34;
+const W = 595.28, H = 841.89, ML = 40, MR = 40, TOP = 32, BOTTOM = 28;
+const CW = W - ML - MR;
 
 let P = null; // aktuelle Seite { ops, annots }
 const op = (s) => P.ops.push(s);
 const text = (x, y, txt, f, size, color = C.text) => op(`BT ${rgb(color)} /${f} ${size.toFixed(2)} Tf ${x.toFixed(2)} ${y.toFixed(2)} Td ${pdfStr(txt)} Tj ET`);
+const textR = (xr, y, txt, f, size, color) => text(xr - width(txt, f, size), y, txt, f, size, color);
 const rect = (x, y, w, h, color) => op(`${rgb(color)} ${x.toFixed(2)} ${y.toFixed(2)} ${w.toFixed(2)} ${h.toFixed(2)} re f`);
 const link = (x, y, w, h, url) => P.annots.push({ rect: [x, y, x + w, y + h], url });
 function arrow(x, y, s, color) {
   // kleiner Pfeil nach rechts oben (wie ↗ auf der Website), als Linien gezeichnet
-  op(`${rgb(color, true)} 0.75 w 1 J 1 j ${x.toFixed(2)} ${y.toFixed(2)} m ${(x + s).toFixed(2)} ${(y + s).toFixed(2)} l ${(x + s * 0.3).toFixed(2)} ${(y + s).toFixed(2)} m ${(x + s).toFixed(2)} ${(y + s).toFixed(2)} l ${(x + s).toFixed(2)} ${(y + s * 0.3).toFixed(2)} l S`);
+  op(`${rgb(color, true)} 0.7 w 1 J 1 j ${x.toFixed(2)} ${y.toFixed(2)} m ${(x + s).toFixed(2)} ${(y + s).toFixed(2)} l ${(x + s * 0.3).toFixed(2)} ${(y + s).toFixed(2)} m ${(x + s).toFixed(2)} ${(y + s).toFixed(2)} l ${(x + s).toFixed(2)} ${(y + s * 0.3).toFixed(2)} l S`);
+}
+// Text mit Link: Wort(e) plus kleinem Pfeil; gibt die Breite zurück
+function linkedText(x, y, txt, f, size, color, url) {
+  const w = width(txt, f, size);
+  text(x, y, txt, f, size, color);
+  if (!url) return w;
+  const a = size * 0.42;
+  arrow(x + w + size * 0.22, y + size * 0.12, a, color);
+  link(x - 1, y - size * 0.25, w + size * 0.3 + a + 2, size * 1.15, url);
+  return w + size * 0.3 + a;
 }
 function wrap(txt, f, size, maxW) {
   const lines = []; let cur = "";
@@ -152,8 +166,7 @@ function logo(x, yTop, w, color) {
   return LOGO_VB[1] * k;
 }
 
-// Foto: JPEG direkt einbetten (DCTDecode). Hintergrund ist schon in Bandfarbe.
-const PHOTO_FILE = path.join(root, "assets", "cv", "foto.jpg");
+// Bilder: JPEG direkt einbetten (DCTDecode). Foto mit ganzer Schulterbreite, E-Mail als Bild.
 function jpegSize(buf) {
   let o = 2;
   while (o < buf.length) {
@@ -164,226 +177,197 @@ function jpegSize(buf) {
   }
   throw new Error("JPEG ohne SOF");
 }
-const PHOTO = fs.existsSync(PHOTO_FILE) ? (() => { const buf = fs.readFileSync(PHOTO_FILE); return { buf, ...jpegSize(buf) }; })() : null;
+const loadJpeg = (name) => { const f = path.join(root, "assets", "cv", name); if (!fs.existsSync(f)) return null; const buf = fs.readFileSync(f); return { buf, ...jpegSize(buf) }; };
+const IMAGES = { Im1: loadJpeg("foto.jpg"), Im2: loadJpeg("mail.jpg") };
+const image = (name, x, y, w, h) => { if (IMAGES[name]) op(`q ${w.toFixed(2)} 0 0 ${h.toFixed(2)} ${x.toFixed(2)} ${y.toFixed(2)} cm /${name} Do Q`); };
+function roundClip(x, y, w, h, r) {
+  const c = 0.5523 * r;
+  op(`q ${x + r} ${y} m ${x + w - r} ${y} l ${x + w - r + c} ${y} ${x + w} ${y + r - c} ${x + w} ${y + r} c ${x + w} ${y + h - r} l ${x + w} ${y + h - r + c} ${x + w - r + c} ${y + h} ${x + w - r} ${y + h} c ${x + r} ${y + h} l ${x + r - c} ${y + h} ${x} ${y + h - r + c} ${x} ${y + h - r} c ${x} ${y + r} l ${x} ${y + r - c} ${x + r - c} ${y} ${x + r} ${y} c h W n`);
+}
 
 // ---------- Inhalt ----------
 const byId = new Map(tr.entries.map((e) => [e.id, e]));
 const order = new Map(base.entries.map((e, i) => [e.id, i]));
 const sorted = [...base.entries].sort((a, b) => b.year - a.year || order.get(a.id) - order.get(b.id));
 const sectionOf = (e) => e.kind === "award" ? "awards"
-  : e.tags.includes("Gründen") ? "founding"
+  : e.tags.includes("Gründen") || e.tags.includes("Engagement") ? "founding"
   : e.tags.includes("Studium") || e.tags.includes("Schule") ? "education"
-  : e.tags.includes("Arbeit") ? "experience" : "engagement";
-const SECTIONS = ["education", "experience", "founding", "engagement"];
+  : e.tags.includes("Arbeit") ? "experience" : "founding";
+const SECTIONS = ["education", "experience", "founding"];
+const linkOf = (b, t) => { const i = Number.isInteger(b.cv?.link) ? b.cv.link : null; return i === null ? null : t.links[i]?.url ?? null; };
 
-function entryData(id, drop) {
+// level 0: alles; 1: ohne Zusatzpunkte; 2: ohne optionale Stationen; 3: höchstens zwei Punkte je Station
+function entryData(id, level) {
   const b = base.entries[order.get(id)], t = byId.get(id) ?? b;
   const cv = t.cv ?? {};
-  if (b.cv?.hide || (drop && b.cv?.optional)) return null;
-  const points = Array.isArray(cv.points) ? cv.points : t.points.slice(0, 2);
-  const extra = drop ? [] : (cv.extra ?? []);
-  const lk = Number.isInteger(b.cv?.link) ? t.links[b.cv.link] : null;
-  return { date: t.date, title: cv.title ?? t.title, sub: [cv.org ?? t.org, t.place].filter(Boolean).join(" · "), points: [...points, ...extra], link: lk };
+  if (b.cv?.hide || (level >= 2 && b.cv?.optional)) return null;
+  let points = Array.isArray(cv.points) ? [...cv.points] : t.points.slice(0, 2);
+  if (level < 1) points.push(...(cv.extra ?? []));
+  if (level >= 3) points = points.slice(0, 2);
+  return { org: cv.org ?? t.org, role: cv.title ?? t.title, place: t.place ?? "", date: t.date, points, url: linkOf(b, t) };
 }
 
-function build(s, drop) {
-  const st = {
-    date: 7.4 * s, title: 10.2 * s, sub: 8.5 * s, pt: 8.5 * s, lead: 11.4 * s, sec: 12.5 * s,
-  };
+function build(sz, level) {
+  const st = { body: sz, org: sz + 0.7, sec: sz + 1.6, lead: sz * 1.2 };
+  const words = [];
+  const count = (...t) => t.forEach((x) => x && words.push(...String(x).split(/\s+/).filter(Boolean)));
   const blocks = [];
   const sectionHead = (title) => ({
-    h: st.sec + 10 * s,
+    h: st.sec + 9,
     draw: (y) => {
-      text(ML, y - st.sec, title, "H", st.sec, C.koenig);
-      rect(ML, y - st.sec - 5 * s, W - ML - MR, 0.9, C.line);
-      rect(ML, y - st.sec - 5.6 * s, 28, 2.2, C.himmel);
+      text(ML, y - st.sec - 1, title.toUpperCase(), "H", st.sec * 0.9, C.koenig);
+      rect(ML, y - st.sec - 4, CW, 0.8, C.koenig);
     },
   });
   const entryBlock = (e) => {
-    const titleLines = wrap(e.title, "H", st.title, CW);
-    const linkW = e.link ? width(e.link.label, "R", st.sub) + 9 * s : 0;
-    const linkInline = e.link && width(titleLines.at(-1), "H", st.title) + 10 + linkW <= CW;
-    const subLines = wrap(e.sub, "R", st.sub, CW);
-    const pts = e.points.map((p) => wrap(p, "R", st.pt, CW - 10 * s));
-    const lh = st.title * 1.22, sh = st.sub * 1.3, ph = st.lead;
-    const h = titleLines.length * lh + (e.link && !linkInline ? sh : 0) + subLines.length * sh + (pts.length ? 2 * s : 0) + pts.reduce((a, l) => a + l.length * ph, 0) + 7.5 * s;
+    const lh = st.lead;
+    const placeW = width(e.place, "R", st.body);
+    const dateW = width(e.date, "R", st.body);
+    const orgLines = wrap(e.org, "H", st.org, CW - placeW - 24 - (e.url ? st.org : 0));
+    const roleLines = wrap(e.role, "R", st.body, CW - dateW - 16);
+    const pts = e.points.map((p) => wrap(p, "R", st.body, CW - 11));
+    count(e.org, e.role, e.place, e.date, ...e.points);
+    const h = orgLines.length * lh + roleLines.length * lh + pts.reduce((a, l) => a + l.length * lh, 0) + (pts.length ? 1 : 0) + sz * 0.45;
     return {
       h,
       draw: (y0) => {
         let y = y0;
-        text(ML, y - st.date - 1.2 * s, e.date, "M", st.date, C.muted);
-        titleLines.forEach((l, i) => {
+        orgLines.forEach((l, i) => {
           y -= lh;
-          text(CX, y + 2.4 * s, l, "H", st.title, C.koenig);
-          if (i === titleLines.length - 1 && linkInline) {
-            const lx = CX + width(l, "H", st.title) + 10;
-            text(lx, y + 2.4 * s, e.link.label, "R", st.sub, C.muted);
-            const aw = width(e.link.label, "R", st.sub);
-            arrow(lx + aw + 2.5 * s, y + 2.6 * s, 4.2 * s, C.muted);
-            link(lx - 2, y, aw + 9 * s, lh, e.link.url);
-          }
+          if (i === orgLines.length - 1) linkedText(ML, y + 2, l, "H", st.org, C.koenig, e.url);
+          else text(ML, y + 2, l, "H", st.org, C.koenig);
+          if (i === 0 && e.place) textR(W - MR, y + 2, e.place, "R", st.body, C.muted);
         });
-        for (const l of subLines) { y -= sh; text(CX, y + 2 * s, l, "R", st.sub, C.muted); }
-        if (e.link && !linkInline) {
-          y -= sh; const aw = width(e.link.label, "R", st.sub);
-          text(CX, y + 2 * s, e.link.label, "R", st.sub, C.muted); arrow(CX + aw + 2.5 * s, y + 2.2 * s, 4.2 * s, C.muted); link(CX - 2, y, aw + 9 * s, sh, e.link.url);
-        }
-        if (pts.length) y -= 2 * s;
+        roleLines.forEach((l, i) => {
+          y -= lh;
+          text(ML, y + 2, l, "R", st.body, C.muted);
+          if (i === 0) textR(W - MR, y + 2, e.date, "R", st.body, C.muted);
+        });
+        if (pts.length) y -= 1;
         for (const lines of pts) {
-          rect(CX + 0.5, y - ph + 2.6 * s + st.pt * 0.28, 3 * s, 3 * s, C.himmel);
-          for (const l of lines) { y -= ph; text(CX + 10 * s, y + 2.6 * s, l, "R", st.pt, C.text); }
+          rect(ML + 1.5, y - lh + 2 + st.body * 0.3, st.body * 0.3, st.body * 0.3, C.koenig);
+          for (const l of lines) { y -= lh; text(ML + 11, y + 2, l, "R", st.body, C.text); }
         }
       },
     };
   };
   for (const key of SECTIONS) {
-    const list = sorted.filter((e) => e.kind === "station" && sectionOf(e) === key).map((e) => entryData(e.id, drop)).filter(Boolean);
+    const list = sorted.filter((e) => e.kind === "station" && sectionOf(e) === key).map((e) => entryData(e.id, level)).filter(Boolean);
     if (!list.length) continue;
     const head = sectionHead(X.sections[key]);
+    count(X.sections[key]);
     list.forEach((e, i) => {
       const b = entryBlock(e);
-      // Überschrift nie allein am Seitenende: mit dem ersten Eintrag zusammen setzen
       blocks.push(i === 0 ? { h: head.h + b.h, draw: (y) => { head.draw(y); b.draw(y - head.h); } } : b);
     });
   }
-  // Stipendien und Auszeichnungen: eine Zeile pro Eintrag
-  const awards = sorted.filter((e) => e.kind === "award").map((b) => {
+  // Stipendien und Auszeichnungen: eine Zeile je Eintrag (Name mit Link, Beschreibung, Jahr rechts)
+  const awards = sorted.filter((e) => e.kind === "award" && !e.cv?.hide).map((b) => {
     const t = byId.get(b.id) ?? b;
-    if (b.cv?.hide) return null;
-    return { title: t.cv?.title ?? t.title, desc: t.cv?.org ?? t.why, date: t.date, link: Number.isInteger(b.cv?.link) ? t.links[b.cv.link] : null };
-  }).filter(Boolean);
+    return { org: t.cv?.org ?? t.title, desc: t.cv?.title ?? t.why, date: t.date, url: linkOf(b, t) };
+  });
   if (awards.length) {
     const head = sectionHead(X.sections.awards);
-    const LW = 196 * s, DW = 64 * s;
+    count(X.sections.awards);
+    // Beschreibung in einer festen Spalte, damit die Zeilen ruhig untereinander stehen
+    const col = Math.max(...awards.map((a) => width(a.org, "H", st.body) + (a.url ? st.body : 0))) + 16;
+    const dw = Math.max(...awards.map((a) => width(a.date, "R", st.body)));
     const rows = awards.map((a) => {
-      const tl = wrap(a.title, "R", st.sub, LW - (a.link ? 10 * s : 0));
-      const dl = wrap(a.desc, "R", st.sub, W - MR - (ML + LW + 12) - DW - 8);
-      return { a, tl, dl, h: Math.max(tl.length, dl.length) * st.sub * 1.32 + 3.5 * s };
+      count(a.org, a.desc, a.date);
+      const dl = wrap(a.desc, "R", st.body, CW - col - dw - 12);
+      return { a, ow: col - 12, dl, h: Math.max(1, dl.length) * st.lead };
     });
     blocks.push({
-      h: head.h + rows.reduce((x, r) => x + r.h, 0) + 5 * s,
+      h: head.h + rows.reduce((x, r) => x + r.h, 0) + sz * 0.6,
       draw: (y0) => {
         head.draw(y0); let y = y0 - head.h;
         for (const r of rows) {
-          const lh = st.sub * 1.32;
-          r.tl.forEach((l, i) => text(ML, y - lh * (i + 1) + 2.2 * s, l, "R", st.sub, C.koenig));
-          if (r.a.link) {
-            const last = r.tl.at(-1), lx = ML + width(last, "R", st.sub) + 3 * s, ly = y - lh * r.tl.length + 2.4 * s;
-            arrow(lx, ly, 4.2 * s, C.muted); link(ML - 2, y - lh * r.tl.length, width(last, "R", st.sub) + 10 * s, lh * r.tl.length, r.a.link.url);
-          }
-          r.dl.forEach((l, i) => text(ML + LW + 12, y - lh * (i + 1) + 2.2 * s, l, "R", st.sub, C.muted));
-          const dw = width(r.a.date, "M", st.date);
-          text(W - MR - dw, y - lh + 2.4 * s, r.a.date, "M", st.date, C.muted);
+          const yy = y - st.lead + 2;
+          linkedText(ML, yy, r.a.org, "H", st.body, C.koenig, r.a.url);
+          r.dl.forEach((l, i) => text(ML + r.ow + 12, yy - i * st.lead, l, "R", st.body, C.muted));
+          textR(W - MR, yy, r.a.date, "R", st.body, C.muted);
           y -= r.h;
         }
       },
     });
   }
-  // Kenntnisse
+  // Kenntnisse und Interessen: getrennte Zeilen, Bezeichnung fett
   {
     const head = sectionHead(X.sections.skills);
-    const rows = X.skills.map(([k, v]) => ({ k, lines: wrap(v, "R", st.pt, CW) }));
+    count(X.sections.skills);
+    const lw = Math.max(...X.skills.map(([k]) => width(`${k}:`, "H", st.body))) + 8;
+    const rows = X.skills.map(([k, v]) => { count(k, v); return { k, lines: wrap(v, "R", st.body, CW - lw) }; });
     blocks.push({
-      h: head.h + rows.reduce((x, r) => x + r.lines.length * st.lead + 2.5 * s, 0) + 4 * s,
+      h: head.h + rows.reduce((x, r) => x + r.lines.length * st.lead, 0),
       draw: (y0) => {
         head.draw(y0); let y = y0 - head.h;
         for (const r of rows) {
-          text(ML, y - st.lead + 2.6 * s, r.k.toUpperCase(), "M", st.date, C.muted);
-          for (const l of r.lines) { y -= st.lead; text(CX, y + 2.6 * s, l, "R", st.pt, C.text); }
-          y -= 2.5 * s;
+          text(ML, y - st.lead + 2, `${r.k}:`, "H", st.body, C.koenig);
+          for (const l of r.lines) { y -= st.lead; text(ML + lw, y + 2, l, "R", st.body, C.text); }
         }
       },
     });
   }
-  return blocks;
+  return { blocks, words: words.length };
 }
 
+const HEAD_H = 80;
 function paginate(blocks) {
-  const top1 = H - BAND - KPI - 26, top2 = H - 60, bottom = FOOT + 14;
-  const pages = [[]]; let y = top1;
+  const pages = [[]]; let y = H - TOP - HEAD_H;
   for (const b of blocks) {
-    if (y - b.h < bottom) { pages.push([]); y = top2; }
+    if (y - b.h < BOTTOM + 10) { pages.push([]); y = H - TOP - 20; }
     pages.at(-1).push({ y, h: b.h, draw: b.draw }); y -= b.h;
   }
-  return { pages, free: y - bottom };
+  return pages;
 }
 
+// Suche: möglichst viel Inhalt, möglichst große Schrift; erst bis 9,5 pt mit allen Stufen, dann bis 9 pt.
 let chosen = null;
-for (const drop of [false, true]) {
-  for (let s = 1.06; s >= (drop ? 0.86 : 0.92) - 1e-9; s -= 0.02) {
-    const r = paginate(build(s, drop));
-    if (r.pages.length <= 2) { chosen = { ...r, s, drop }; break; }
+const SIZES_A = [10.5, 10.25, 10, 9.75, 9.5], SIZES_B = [9.25, 9];
+outer: for (const sizes of [SIZES_A, SIZES_B]) {
+  for (let level = 0; level <= 3; level++) {
+    for (const sz of sizes) {
+      const r = build(sz, level);
+      const pages = paginate(r.blocks);
+      if (pages.length === 1) { chosen = { pages, sz, level, words: r.words }; break outer; }
+    }
   }
-  if (chosen) break;
 }
-if (!chosen) { const r = paginate(build(0.86, true)); chosen = { ...r, s: 0.86, drop: true }; console.warn("cv-pdf: passt nicht auf zwei Seiten"); }
+if (!chosen) { const r = build(9, 3); chosen = { pages: paginate(r.blocks), sz: 9, level: 3, words: r.words }; console.warn("cv-pdf: passt nicht auf eine Seite"); }
+if (chosen.words > 700 || chosen.words < 400) console.warn(`cv-pdf: ${chosen.words} Wörter (Ziel 500 bis 700)`);
 
-// ---------- Kopf, Kennzahlen, Orte, Fußzeile ----------
+// ---------- Kopf und Fußzeile ----------
 function drawHead() {
-  rect(0, H - BAND, W, BAND, C.band);
-  if (PHOTO) {
-    const ph = BAND - 6, pw = ph * PHOTO.w / PHOTO.h;
-    op(`q ${pw.toFixed(2)} 0 0 ${ph.toFixed(2)} ${(W - MR - pw + 8).toFixed(2)} ${(H - BAND).toFixed(2)} cm /Im1 Do Q`);
-  }
-  logo(ML, H - 22, 38, C.koenig);
-  text(ML, H - 92, "Jonas Juchelka", "H", 27, C.koenig);
-  text(ML, H - 110, X.headline, "L", 12, C.koenig);
-  // Kontaktzeile: Website, LinkedIn, GitHub (alle klickbar), Orte
-  let x = ML; const y = H - 132, fs_ = 8.8;
+  const top = H - TOP;
+  // Foto rechts oben, ganze Schulterbreite, leicht gerundet
+  const photo = IMAGES.Im1;
+  const ph = 74, pw = photo ? ph * photo.w / photo.h : 0;
+  if (photo) { roundClip(W - MR - pw, top - ph, pw, ph, 6); image("Im1", W - MR - pw, top - ph, pw, ph); op("Q"); }
+  const lh = logo(ML, top, 32, C.koenig);
+  const x0 = ML + 46;
+  text(x0, top - 19, "Jonas Juchelka", "H", 21, C.koenig);
+  text(x0, top - 33, X.headline, "L", 10.5, C.koenig);
+  // Kontakt: E-Mail (Bild), Website, LinkedIn, GitHub (klickbar mit Pfeil), Orte
+  let x = x0; const y = top - 50, fs_ = 9;
+  const mail = IMAGES.Im2;
+  // mail.jpg: Catamaran Regular in 140 px, Bildhöhe = Ascent 154 + Descent 76 px; Grundlinie liegt 76 px über der Unterkante
+  if (mail) { const k = fs_ / 140, mh = mail.h * k, mw = mail.w * k; image("Im2", x - 4 * k, y - 76 * k, mw, mh); x += mw + 12; }
   for (const [label, url] of [["jonasjuchelka.com", SITE.web], ["LinkedIn", SITE.linkedin], ["GitHub", SITE.github]]) {
-    const w = width(label, "R", fs_);
-    text(x, y, label, "R", fs_, C.koenig);
-    arrow(x + w + 2.5, y + 0.6, 4.4, C.koenig);
-    link(x - 2, y - 3, w + 11, 13, url);
-    x += w + 20;
+    x += linkedText(x, y, label, "R", fs_, C.koenig, url) + 12;
   }
-  text(x, y, X.place, "R", fs_, C.muted);
-}
-function drawKpis() {
-  const y0 = H - BAND - 16, n = X.kpis.length, cw = (W - ML - MR) / n;
-  X.kpis.forEach(([num, l1, l2], i) => {
-    const x = ML + i * cw;
-    rect(x, y0, 22, 2.2, C.himmel);
-    text(x, y0 - 19, num, "H", 17, C.koenig);
-    text(x, y0 - 30, l1, "R", 7.4, C.muted);
-    if (l2) text(x, y0 - 39, l2, "R", 7.4, C.muted);
-  });
-}
-function drawSmallHead() {
-  const h = logo(ML, H - 24, 22, C.koenig);
-  text(ML + 30, H - 24 - h + 5, "Jonas Juchelka", "H", 10.5, C.koenig);
-  rect(ML, H - 46, W - ML - MR, 0.9, C.line);
-}
-function drawPlaces(yTop) {
-  const order = X.placesOrder.filter((k) => tr.places[k]);
-  const bh = 64;
-  if (order.length < 2 || yTop - 10 - bh < FOOT + 14) return;
-  const y0 = yTop - 10 - bh;
-  op(`${rgb(C.band)} ${ML} ${y0.toFixed(2)} ${W - ML - MR} ${bh} re f`);
-  text(ML + 14, y0 + bh - 17, X.sections.places.toUpperCase(), "M", 7.4, C.muted);
-  const x1 = ML + 34, x2 = W - MR - 34, ly = y0 + 22, step = (x2 - x1) / (order.length - 1);
-  op(`${rgb(C.himmel, true)} 1.4 w ${x1} ${ly} m ${x2} ${ly} l S`);
-  order.forEach((k, i) => {
-    const p = tr.places[k], x = x1 + i * step, last = i === order.length - 1;
-    const circle = (r) => { const c = 0.5523 * r; return `${x + r} ${ly} m ${x + r} ${ly + c} ${x + c} ${ly + r} ${x} ${ly + r} c ${x - c} ${ly + r} ${x - r} ${ly + c} ${x - r} ${ly} c ${x - r} ${ly - c} ${x - c} ${ly - r} ${x} ${ly - r} c ${x + c} ${ly - r} ${x + r} ${ly - c} ${x + r} ${ly} c`; };
-    op(`${rgb(last ? C.koenig : C.white)} ${rgb(C.koenig, true)} 1.1 w ${circle(3.4)} B`);
-    const nw = width(p.name, "H", 8.4), ww = width(p.when, "R", 7);
-    text(x - nw / 2, ly + 8, p.name, "H", 8.4, C.koenig);
-    text(x - ww / 2, ly - 13, p.when, "R", 7, C.muted);
-  });
+  text(x0, y - 12.5, X.place, "R", fs_, C.muted);
+  void lh;
 }
 const stand = new Intl.DateTimeFormat(lang === "de" ? "de-DE" : "en-US", { month: "long", year: "numeric" }).format(new Date());
 function drawFooter(i, n) {
-  text(ML, 22, `jonasjuchelka.com  ·  ${X.updated} ${stand}`, "R", 7.2, C.muted);
-  const t = `${i} / ${n}`;
-  text(W - MR - width(t, "R", 7.2), 22, t, "R", 7.2, C.muted);
+  text(ML, 20, `${X.updated} ${stand}`, "R", 7, C.muted);
+  if (n > 1) { const t = `${i} / ${n}`; textR(W - MR, 20, t, "R", 7, C.muted); }
 }
 
 const pages = chosen.pages.map((blocks, i) => {
   P = { ops: [], annots: [] };
-  if (i === 0) { drawHead(); drawKpis(); } else drawSmallHead();
+  if (i === 0) drawHead();
   for (const b of blocks) b.draw(b.y);
-  if (i === chosen.pages.length - 1) drawPlaces(blocks.length ? blocks.at(-1).y - blocks.at(-1).h : H - 60);
   drawFooter(i + 1, chosen.pages.length);
   return P;
 });
@@ -399,14 +383,11 @@ for (const [k, face] of Object.entries(FACES)) {
   const desc = add(`<< /Type /FontDescriptor /FontName /${FONT_NAMES[k]} /Flags 32 /FontBBox [${face.bbox.join(" ")}] /ItalicAngle 0 /Ascent ${face.ascent} /Descent ${face.descent} /CapHeight ${face.cap} /StemV 80 /FontFile2 ${file} 0 R >>`);
   fontRefs[k] = add(`<< /Type /Font /Subtype /TrueType /BaseFont /${FONT_NAMES[k]} /FirstChar 32 /LastChar 255 /Widths [${face.widths.join(" ")}] /Encoding /WinAnsiEncoding /FontDescriptor ${desc} 0 R >>`);
 }
-let xobj = "";
-if (PHOTO) {
-  const img = add(Buffer.concat([
-    Buffer.from(`<< /Type /XObject /Subtype /Image /Width ${PHOTO.w} /Height ${PHOTO.h} /ColorSpace /${PHOTO.comps === 1 ? "DeviceGray" : "DeviceRGB"} /BitsPerComponent 8 /Filter /DCTDecode /Length ${PHOTO.buf.length} >>\nstream\n`, "latin1"),
-    PHOTO.buf, Buffer.from("\nendstream", "latin1"),
-  ]));
-  xobj = ` /XObject << /Im1 ${img} 0 R >>`;
-}
+const imgRefs = Object.entries(IMAGES).filter(([, im]) => im).map(([name, im]) => [name, add(Buffer.concat([
+  Buffer.from(`<< /Type /XObject /Subtype /Image /Width ${im.w} /Height ${im.h} /ColorSpace /${im.comps === 1 ? "DeviceGray" : "DeviceRGB"} /BitsPerComponent 8 /Filter /DCTDecode /Length ${im.buf.length} >>\nstream\n`, "latin1"),
+  im.buf, Buffer.from("\nendstream", "latin1"),
+]))]);
+const xobj = imgRefs.length ? ` /XObject << ${imgRefs.map(([n, r]) => `/${n} ${r} 0 R`).join(" ")} >>` : "";
 const res = `<< /Font << ${Object.entries(fontRefs).map(([k, r]) => `/${k} ${r} 0 R`).join(" ")} >>${xobj} >>`;
 const pagesId = add(null);
 const kids = [];
@@ -431,4 +412,4 @@ const xref = [`xref\n0 ${objs.length + 1}\n0000000000 65535 f \n`, ...offsets.ma
 chunks.push(Buffer.from(`${xref}trailer\n<< /Size ${objs.length + 1} /Root ${catalog} 0 R /Info ${info} 0 R >>\nstartxref\n${pos}\n%%EOF\n`, "latin1"));
 fs.mkdirSync(path.dirname(out), { recursive: true });
 fs.writeFileSync(out, Buffer.concat(chunks));
-console.log(`cv-pdf (${lang}): ${pages.length} Seiten, Maßstab ${chosen.s.toFixed(2)}${chosen.drop ? ", optionale Punkte weggelassen" : ""}, ${out}`);
+console.log(`cv-pdf (${lang}): ${pages.length} Seite(n), ${chosen.sz} pt, Stufe ${chosen.level}, ${chosen.words} Wörter, ${out}`);

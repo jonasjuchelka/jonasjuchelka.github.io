@@ -11,7 +11,9 @@
     "crumbsAria": "Ruta de navegación",
     "readingTime": "{n} min de lectura",
     "badgeInfo": "Aviso",
-    "badgeWarning": "Pendiente"
+    "badgeWarning": "Pendiente",
+    "nextLabel": "A continuación",
+    "nextHint": "Sigue desplazándote"
   },
   "nav": {
     "home": "Inicio",
@@ -52,7 +54,7 @@
     "mapAria": "Mapa del mundo con los lugares donde he vivido",
     "blogTitle": "Blog",
     "allPosts": "Todas las entradas",
-    "projectsEyebrow": "Proyectos",
+    "projectsEyebrow": "Proyectos actuales",
     "projectsPath": "Etapas de los últimos años",
     "allProjects": "Todos los proyectos y el currículum completo"
   },
@@ -64,8 +66,7 @@
     "lede": "Arriba está lo que estoy construyendo ahora. Debajo, el camino hasta aquí.",
     "pdf": "Currículum en PDF",
     "pinned": "Fijado",
-    "pinnedTitle": "En esto estoy trabajando ahora",
-    "pinnedNote": "Se agradece el feedback.",
+    "pinnedTitle": "Proyectos actuales",
     "open": "Ver",
     "feedback": "Dar feedback",
     "pathTitle": "El camino hasta aquí",

@@ -38,13 +38,6 @@
       "lon": 37.01,
       "when": "2016 और 2018",
       "what": "स्कूल का एक ट्राइमेस्टर और केन्या में स्वयंसेवा कार्य"
-    },
-    "suzhou": {
-      "name": "सूज़ौ",
-      "lat": 31.3,
-      "lon": 120.6,
-      "when": "2026",
-      "what": "German-Chinese Talent Exchange"
     }
   },
   "entries": [
@@ -76,9 +69,10 @@
       ],
       "links": [],
       "cv": {
-        "org": "सह-संस्थापक · रिक्रूटिंग के लिए AI प्री-इंटरव्यू",
+        "org": "Audition",
+        "title": "Mitgründer · KI-Vorinterview für Recruiting",
         "points": [
-          "SF Tech Week Hackathon में शुरुआत, एक्सेलेरेटर a16z speedrun के लिए आवेदन"
+          "Beim SF Tech Week Hackathon gestartet und seitdem als Startup weiterentwickelt; Bewerbung beim Accelerator a16z speedrun"
         ]
       }
     },
@@ -125,9 +119,11 @@
         }
       ],
       "cv": {
+        "org": "Concentr8",
+        "title": "Mitgründer, Backend · Fokus-App für neurodivergente Studierende",
         "points": [
-          "बैकएंड की ज़िम्मेदारी: ध्यान भटकाने वाली चीज़ें ब्लॉक करने वाला Mac ऐप, तय पढ़ाई के समय पर कॉल, Google Calendar के साथ AI योजना",
-          "Cal Hacks 13.0 में शुरुआत, कोर्स Technology Entrepreneurship (ENGIN 183E) में आगे विकसित"
+          "Backend gebaut: Mac-App gegen Ablenkung, Anrufe zu festen Lernzeiten, KI-Planung mit Google Kalender",
+          "Bei Cal Hacks 13.0 gestartet, im Berkeley-Kurs Technology Entrepreneurship (ENGIN 183E) weiterentwickelt"
         ],
         "link": 0
       }
@@ -177,12 +173,12 @@
         }
       ],
       "cv": {
-        "title": "University of California, Berkeley",
-        "org": "एक्सचेंज छात्र · Berkeley International Study Program",
+        "org": "University of California, Berkeley",
+        "title": "Austauschsemester · Berkeley International Study Program",
         "points": [
-          "आर्टिफ़िशियल इंटेलिजेंस (CS 188), क्रिप्टोग्राफ़ी (CS 171), Technology Entrepreneurship (ENGIN 183E)",
-          "Stiftung der Deutschen Wirtschaft (sdw) से छात्रवृत्ति"
-        ]
+          "Künstliche Intelligenz (CS 188), Kryptografie (CS 171), Technology Entrepreneurship (ENGIN 183E); sdw-gefördert"
+        ],
+        "link": 0
       }
     },
     {
@@ -215,13 +211,13 @@
         }
       ],
       "cv": {
-        "title": "ट्यूटर, Operations Research and Decision Analysis",
         "org": "Technische Universität München",
+        "title": "Tutor, Operations Research and Decision Analysis",
         "points": [
-          "कोर्स में शीर्ष 5 % के प्रदर्शन के आधार पर चयन (ग्रेड 1,3)",
-          "लगभग 25 छात्रों के लिए प्रति सप्ताह 4 घंटे का ट्यूटोरियल, अभ्यास के प्रश्न खुद तैयार किए",
-          "सिंप्लेक्स, नेटवर्क फ़्लो, पूर्णांक अनुकूलन, Gurobi"
-        ]
+          "Ausgewählt nach Kursleistung in den Top 5 % (Note 1,3); 4 Std. Tutorium pro Woche für rund 25 Studierende",
+          "Übungen zu Simplex, Netzwerkflüssen und ganzzahliger Optimierung (Gurobi) konzipiert; Einzelbetreuung"
+        ],
+        "link": 0
       }
     },
     {
@@ -258,10 +254,16 @@
         }
       ],
       "cv": {
+        "org": "ritzenhoefer & company",
+        "title": "Fellow, Strategie- und Transformationsberatung",
         "points": [
-          "PMO में Runbook और 70 से अधिक Change Requests की ज़िम्मेदारी, रिपोर्टिंग को Excel मैक्रो से आंशिक रूप से स्वचालित किया",
-          "सीनियर कंसल्टेंट्स के लिए 60/60 जॉब-शेयरिंग मॉडल विकसित किया"
-        ]
+          "Runbook-Reporting im PMO des Transformationsprogramms einer Großbank verantwortet und teilautomatisiert",
+          "Change-Request-Prozess verbessert, über 70 Change Requests gesteuert; Vorlagen für den Lenkungsausschuss"
+        ],
+        "extra": [
+          "60/60-Jobsharing-Modell für Senior Consultants entwickelt"
+        ],
+        "link": 0
       }
     },
     {
@@ -299,15 +301,13 @@
         }
       ],
       "cv": {
-        "title": "बिज़नेस डेवलपमेंट, सप्लाई चेन इंटीग्रेशन",
-        "org": "comstruct · निर्माण सॉफ़्टवेयर, Series A · इंटर्नशिप",
+        "org": "comstruct",
+        "title": "Business Development, Supply Chain Integration (Praktikum)",
         "points": [
-          "तकनीकी इंटीग्रेशन सहित 9 सप्ताह में 74 आपूर्तिकर्ताओं को जोड़ा",
-          "आपूर्तिकर्ताओं को जोड़ने की प्रक्रिया का विश्लेषण किया और उसे बेहतर बनाया"
+          "74 Lieferanten in 9 Wochen an die Einkaufsplattform eines Series-A-Startups angebunden, einschließlich technischer Integration",
+          "Prozess der Lieferantenanbindung analysiert und verbessert; comstruct auf der Fachmesse BAUMA vertreten"
         ],
-        "extra": [
-          "व्यापार मेले BAUMA में comstruct का प्रतिनिधित्व किया"
-        ]
+        "link": 0
       }
     },
     {
@@ -343,11 +343,11 @@
         }
       ],
       "cv": {
-        "org": "सह-संस्थापक · 3D प्रिंटर से स्पेयर पार्ट, बिना CAD फ़ाइल के",
+        "org": "Shapely",
+        "title": "Mitgründer, Strategie und Finanzen · 3D-gedruckte Ersatzteile ohne CAD-Datei",
         "points": [
-          "तीन सदस्यों की टीम में रणनीति, वित्त और Go-to-Market, TUM Startup Launchpad",
-          "शुरुआती ऑर्डर हाथ से पूरे किए (Fusion 360, 3D प्रिंटिंग); ARKit और LiDAR के साथ iPhone स्कैन प्रोटोटाइप",
-          "रखरखाव तकनीशियनों के इंटरव्यू में बिज़नेस मॉडल को परखा और बंद कर दिया"
+          "Geschäftsmodell im Dreierteam im TUM Startup Launchpad aufgebaut; erste Aufträge selbst gedruckt und geliefert",
+          "Zahlungsbereitschaft in Interviews mit Instandhaltern geprüft, Modell auf Basis der Ergebnisse eingestellt"
         ],
         "link": 0
       }
@@ -385,11 +385,12 @@
         }
       ],
       "cv": {
-        "title": "Technische Universität München",
-        "org": "B.Sc. Management and Technology, विशेषज्ञता: Computer Engineering",
+        "org": "Technische Universität München",
+        "title": "B.Sc. Management and Technology, Vertiefung Computer Engineering",
         "points": [
-          "औसत ग्रेड 1,6 (शीर्ष 10 %), पाठ्यक्रम की प्रवेश दर 9 %"
-        ]
+          "Notenschnitt 1,6 (Top 10 %) in einem Studiengang mit 9 % Aufnahmequote"
+        ],
+        "link": 0
       }
     },
     {
@@ -420,11 +421,19 @@
         "Java में ऑब्जेक्ट-ओरिएंटेड प्रोग्रामिंग",
         "टेलीफ़ोनी और VoIP की झलक"
       ],
-      "links": [],
+      "links": [
+        {
+          "label": "cycos.com",
+          "url": "https://www.cycos.com/"
+        }
+      ],
       "cv": {
+        "org": "cycos AG (Eviden, Atos)",
+        "title": "Praktikum Netzwerktechnik und Programmierung",
         "points": [
-          "Linux सर्वर और वर्चुअल मशीन (Proxmox) सेट अप किए, Java में ऑब्जेक्ट-ओरिएंटेड प्रोग्रामिंग"
+          "Linux-Server und virtuelle Maschinen mit Proxmox aufgesetzt; objektorientierte Programmierung in Java im Entwicklungsteam"
         ],
+        "link": 0,
         "optional": true
       }
     },
@@ -459,11 +468,11 @@
       ],
       "links": [],
       "cv": {
-        "title": "Future Founders Initiative e.V.",
-        "org": "सह-संस्थापक और बोर्ड सदस्य, 08.2026 से सलाहकार समिति में",
+        "org": "Future Founders Initiative e.V.",
+        "title": "Mitgründer und Vorstand · seit 08.2026 im Beirat",
         "points": [
-          "पाँच संस्थापक सदस्यों से तीन शहरों में फैली पहल खड़ी की",
-          "110 से अधिक विद्यार्थियों के लिए तीन दिन के स्टार्टअप कार्यक्रम आयोजित किए"
+          "Studentische Gründungsinitiative von fünf Gründungsmitgliedern auf drei Standorte aufgebaut; Vorstandsstruktur neu aufgesetzt",
+          "Dreitägige Gründungsveranstaltungen für jeweils über 110 Studierende organisiert"
         ]
       }
     },
@@ -508,16 +517,17 @@
         }
       ],
       "cv": {
-        "title": "Bischöfliches Pius-Gymnasium Aachen",
-        "org": "अबिटुर 1,2 (शीर्ष 10 %) · विशेष विषय: गणित, भूगोल, जर्मन",
+        "org": "Bischöfliches Pius-Gymnasium Aachen",
+        "title": "Abitur 1,2 (Top 10 %) · Leistungskurse Mathematik, Erdkunde, Deutsch",
         "points": [
-          "अर्ली स्टडी: RWTH Aachen में उच्च गणित",
-          "कक्षा 8 से 10 के लिए सहायक पाठ्यक्रम „Economy & Innovation“ तैयार किया और 10.2022 से साप्ताहिक दो घंटे पढ़ाया: अर्थशास्त्र, वित्त, एआई, प्रस्तुति",
-          "एक स्कूल वर्ष तक विशेष सहायता-आवश्यकता वाले एक छोटे छात्र को साप्ताहिक गणित की व्यक्तिगत सहायता"
+          "MINT-EC-Zertifikat mit Auszeichnung (Top 5 % des Jahrgangs); Frühstudium Höhere Mathematik an der RWTH Aachen",
+          "Förderkurs „Economy & Innovation“ für Kl. 8–10 aufgebaut und ab 10.2022 wöchentlich geleitet: Wirtschaft, KI",
+          "Ein Schuljahr wöchentliche Mathe-Einzelförderung für einen jüngeren Schüler, „mit besonderem Erfolg“ bescheinigt"
         ],
         "extra": [
-          "निचली और मध्य कक्षाओं के लिए होमवर्क सहायता; 2016 से बिग बैंड और स्कूल ऑर्केस्ट्रा में ट्रॉम्बोन"
-        ]
+          "Posaune in Big Band und Schulorchester seit 2016; Hausaufgabenbetreuung für die Unter- und Mittelstufe"
+        ],
+        "link": 0
       }
     },
     {
@@ -549,9 +559,12 @@
         }
       ],
       "cv": {
+        "org": "AIXTRON SE",
+        "title": "Praktikum Personal und Kommunikation",
         "points": [
-          "प्रशिक्षु दिवस की योजना में सहयोग, करियर वेबसाइट के विद्यार्थी पृष्ठ का पुनर्संपादन, प्रेस विज्ञप्तियों में सहयोग"
+          "Azubi-Tag mitgeplant, Schülerseite der Karriere-Website überarbeitet und Pressemitteilungen mitbetreut"
         ],
+        "link": 0,
         "optional": true
       }
     },
@@ -584,9 +597,7 @@
         }
       ],
       "cv": {
-        "title": "Colegio Tajamar",
-        "org": "विदेश में सेमेस्टर, जैव विज्ञान पर केंद्रित Bachillerato",
-        "points": []
+        "hide": true
       }
     },
     {
@@ -640,9 +651,7 @@
       ],
       "links": [],
       "cv": {
-        "title": "Precious Blood Primary School",
-        "org": "केन्याई स्कूल प्रणाली में ट्राइमेस्टर",
-        "points": []
+        "hide": true
       }
     },
     {
@@ -668,8 +677,8 @@
         }
       ],
       "cv": {
-        "title": "Stiftung der Deutschen Wirtschaft (sdw)",
-        "org": "छात्रवृत्ति प्राप्तकर्ता, जर्मनी के 13 प्रतिभा-संवर्धन संगठनों में से एक",
+        "org": "Stiftung der Deutschen Wirtschaft (sdw)",
+        "title": "Stipendium; eines von 13 Begabtenförderungswerken",
         "link": 0
       }
     },
@@ -689,8 +698,8 @@
       "points": [],
       "links": [],
       "cv": {
-        "title": "Hans Rudolf Stiftung",
-        "org": "छात्रवृत्ति प्राप्तकर्ता"
+        "org": "Hans Rudolf Stiftung",
+        "title": "Stipendium"
       }
     },
     {
@@ -716,8 +725,7 @@
         }
       ],
       "cv": {
-        "org": "तीन स्तरों में सर्वोच्च, बैच के शीर्ष 5 %",
-        "link": 0
+        "hide": true
       }
     },
     {
@@ -726,7 +734,6 @@
       "year": 2026,
       "date": "2026",
       "place": "सूज़ौ और शंघाई, चीन",
-      "loc": "suzhou",
       "tags": [
         "सम्मान",
         "विदेश"
@@ -746,7 +753,8 @@
       "points": [],
       "links": [],
       "cv": {
-        "org": "TU München के प्रतिनिधिमंडल के साथ सूज़ौ और शंघाई, 5 % चयन दर"
+        "org": "German-Chinese Talent Exchange",
+        "title": "Delegation nach Suzhou und Shanghai; 5 % Aufnahmequote"
       }
     },
     {
@@ -772,7 +780,8 @@
         }
       ],
       "cv": {
-        "org": "स्कूल द्वारा नामांकित, 1 % से कम का चयन",
+        "org": "Deutsche SchülerAkademie",
+        "title": "Von der Schule nominiert; unter 1 % ausgewählt",
         "link": 0
       }
     }

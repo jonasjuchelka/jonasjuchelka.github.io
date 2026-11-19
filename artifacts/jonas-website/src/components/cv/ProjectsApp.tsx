@@ -89,7 +89,6 @@ export function ProjectsApp({ entries, places, t, lang }: { entries: CvEntry[]; 
         <section className="wrap cv-sec" aria-labelledby="pin-h">
           <div className="cv-sec__head">
             <div><p className="cv-pinned">{t.pinned}</p><h2 id="pin-h" className="cv-h2">{t.pinnedTitle}</h2></div>
-            <p className="cv-sec__note">{t.pinnedNote}</p>
           </div>
           <Stage list={pinned} t={t} lang={lang} onOpen={openStation} />
         </section>

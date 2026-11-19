@@ -21,8 +21,8 @@ export function homeMeta(lang: string): Metadata {
   };
 }
 
-// Startseite: nur Foto und Schriftzug, darunter (nach der Leiste) die Aussage und zwei Buttons, dann die Projekte
-// (wer weiterscrollt, landet dort), Karte und Blog.
+// Startseite: nur Foto und Schriftzug, darunter (nach der Leiste) die Aussage und zwei Buttons, dann die aktuellen
+// Projekte (kompakt), die letzten Stationen, Karte und Blog. Ganz unten führt „Als Nächstes“ weiter zu den Projekten.
 // Die Leiste sitzt hier unter dem Bild: das Bild liegt absolut oben, die Leiste bekommt per CSS (body:has(.home-hero)) Abstand.
 export function HomeView({ lang }: { lang: string }) {
   const d = getDict(lang);
@@ -52,7 +52,7 @@ export function HomeView({ lang }: { lang: string }) {
       </section>
 
       <HomeProjects entries={cv.entries} places={mapPlaces(cv)} t={d.projects} lang={lang}
-        labels={{ eyebrow: t.projectsEyebrow, title: d.projects.pinnedTitle, path: t.projectsPath, all: t.allProjects }} />
+        labels={{ eyebrow: t.projectsEyebrow, title: d.nav.projects, path: t.projectsPath, all: t.allProjects }} />
 
       <MapSection entries={cv.entries} places={mapPlaces(cv)} t={d.projects} lang={lang} world={world} title={t.mapTitle} aria={t.mapAria} />
 

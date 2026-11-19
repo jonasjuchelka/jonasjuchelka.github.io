@@ -38,13 +38,6 @@
       "lon": 37.01,
       "when": "2016년, 2018년",
       "what": "케냐에서의 학교 트리메스터 및 봉사 활동"
-    },
-    "suzhou": {
-      "name": "쑤저우",
-      "lat": 31.3,
-      "lon": 120.6,
-      "when": "2026년",
-      "what": "German-Chinese Talent Exchange"
     }
   },
   "entries": [
@@ -76,9 +69,10 @@
       ],
       "links": [],
       "cv": {
-        "org": "공동 창업자 · 채용을 위한 AI 사전 인터뷰",
+        "org": "Audition",
+        "title": "Mitgründer · KI-Vorinterview für Recruiting",
         "points": [
-          "SF Tech Week Hackathon에서 시작, 액셀러레이터 a16z speedrun에 지원"
+          "Beim SF Tech Week Hackathon gestartet und seitdem als Startup weiterentwickelt; Bewerbung beim Accelerator a16z speedrun"
         ]
       }
     },
@@ -125,9 +119,11 @@
         }
       ],
       "cv": {
+        "org": "Concentr8",
+        "title": "Mitgründer, Backend · Fokus-App für neurodivergente Studierende",
         "points": [
-          "백엔드 담당: 방해 요소를 차단하는 Mac 앱, 정해진 학습 시간의 전화, Google 캘린더 연동 AI 계획",
-          "Cal Hacks 13.0에서 시작해 Technology Entrepreneurship (ENGIN 183E) 강의에서 발전"
+          "Backend gebaut: Mac-App gegen Ablenkung, Anrufe zu festen Lernzeiten, KI-Planung mit Google Kalender",
+          "Bei Cal Hacks 13.0 gestartet, im Berkeley-Kurs Technology Entrepreneurship (ENGIN 183E) weiterentwickelt"
         ],
         "link": 0
       }
@@ -177,12 +173,12 @@
         }
       ],
       "cv": {
-        "title": "University of California, Berkeley",
-        "org": "교환학생 · Berkeley International Study Program",
+        "org": "University of California, Berkeley",
+        "title": "Austauschsemester · Berkeley International Study Program",
         "points": [
-          "인공지능 (CS 188), 암호학 (CS 171), Technology Entrepreneurship (ENGIN 183E)",
-          "Stiftung der Deutschen Wirtschaft (sdw) 장학 지원"
-        ]
+          "Künstliche Intelligenz (CS 188), Kryptografie (CS 171), Technology Entrepreneurship (ENGIN 183E); sdw-gefördert"
+        ],
+        "link": 0
       }
     },
     {
@@ -215,13 +211,13 @@
         }
       ],
       "cv": {
-        "title": "튜터, Operations Research and Decision Analysis",
         "org": "Technische Universität München",
+        "title": "Tutor, Operations Research and Decision Analysis",
         "points": [
-          "상위 5% 이내의 수강 성과로 선발 (성적 1,3)",
-          "약 25명의 학생을 대상으로 주 4시간 튜토리얼, 연습 문제 직접 설계",
-          "심플렉스, 네트워크 흐름, 정수 최적화, Gurobi"
-        ]
+          "Ausgewählt nach Kursleistung in den Top 5 % (Note 1,3); 4 Std. Tutorium pro Woche für rund 25 Studierende",
+          "Übungen zu Simplex, Netzwerkflüssen und ganzzahliger Optimierung (Gurobi) konzipiert; Einzelbetreuung"
+        ],
+        "link": 0
       }
     },
     {
@@ -258,10 +254,16 @@
         }
       ],
       "cv": {
+        "org": "ritzenhoefer & company",
+        "title": "Fellow, Strategie- und Transformationsberatung",
         "points": [
-          "PMO에서 런북과 70건이 넘는 변경 요청을 총괄, Excel 매크로로 보고 체계를 부분 자동화",
-          "시니어 컨설턴트를 위한 60/60 잡셰어링 모델 개발"
-        ]
+          "Runbook-Reporting im PMO des Transformationsprogramms einer Großbank verantwortet und teilautomatisiert",
+          "Change-Request-Prozess verbessert, über 70 Change Requests gesteuert; Vorlagen für den Lenkungsausschuss"
+        ],
+        "extra": [
+          "60/60-Jobsharing-Modell für Senior Consultants entwickelt"
+        ],
+        "link": 0
       }
     },
     {
@@ -299,15 +301,13 @@
         }
       ],
       "cv": {
-        "title": "비즈니스 개발, 공급망 연동",
-        "org": "comstruct · 건설 소프트웨어, Series A · 인턴십",
+        "org": "comstruct",
+        "title": "Business Development, Supply Chain Integration (Praktikum)",
         "points": [
-          "기술적 연동을 포함해 9주 만에 공급업체 74곳 연동",
-          "공급업체 연동 프로세스를 분석하고 개선"
+          "74 Lieferanten in 9 Wochen an die Einkaufsplattform eines Series-A-Startups angebunden, einschließlich technischer Integration",
+          "Prozess der Lieferantenanbindung analysiert und verbessert; comstruct auf der Fachmesse BAUMA vertreten"
         ],
-        "extra": [
-          "건설 박람회 BAUMA에서 comstruct 대표로 참가"
-        ]
+        "link": 0
       }
     },
     {
@@ -343,11 +343,11 @@
         }
       ],
       "cv": {
-        "org": "공동 창업자 · CAD 파일 없는 3D 프린터 교체 부품",
+        "org": "Shapely",
+        "title": "Mitgründer, Strategie und Finanzen · 3D-gedruckte Ersatzteile ohne CAD-Datei",
         "points": [
-          "3인 팀에서 전략, 재무, Go-to-Market 담당, TUM Startup Launchpad",
-          "첫 주문을 수작업으로 처리(Fusion 360, 3D 프린팅), ARKit과 LiDAR 기반 iPhone 스캔 프로토타입",
-          "정비 담당자 인터뷰로 사업 모델을 검증한 뒤 중단"
+          "Geschäftsmodell im Dreierteam im TUM Startup Launchpad aufgebaut; erste Aufträge selbst gedruckt und geliefert",
+          "Zahlungsbereitschaft in Interviews mit Instandhaltern geprüft, Modell auf Basis der Ergebnisse eingestellt"
         ],
         "link": 0
       }
@@ -385,11 +385,12 @@
         }
       ],
       "cv": {
-        "title": "뮌헨 공과대학교",
-        "org": "B.Sc. Management and Technology, 전공 심화 Computer Engineering",
+        "org": "Technische Universität München",
+        "title": "B.Sc. Management and Technology, Vertiefung Computer Engineering",
         "points": [
-          "평균 학점 1.6(상위 10%), 합격률 9%의 학과"
-        ]
+          "Notenschnitt 1,6 (Top 10 %) in einem Studiengang mit 9 % Aufnahmequote"
+        ],
+        "link": 0
       }
     },
     {
@@ -420,11 +421,19 @@
         "Java 객체지향 프로그래밍",
         "전화 통신과 VoIP 개요 학습"
       ],
-      "links": [],
+      "links": [
+        {
+          "label": "cycos.com",
+          "url": "https://www.cycos.com/"
+        }
+      ],
       "cv": {
+        "org": "cycos AG (Eviden, Atos)",
+        "title": "Praktikum Netzwerktechnik und Programmierung",
         "points": [
-          "Linux 서버와 가상 머신(Proxmox) 구축, Java 객체지향 프로그래밍"
+          "Linux-Server und virtuelle Maschinen mit Proxmox aufgesetzt; objektorientierte Programmierung in Java im Entwicklungsteam"
         ],
+        "link": 0,
         "optional": true
       }
     },
@@ -459,11 +468,11 @@
       ],
       "links": [],
       "cv": {
-        "title": "Future Founders Initiative e.V.",
-        "org": "공동 창업자 및 이사회 임원, 2026.08부터 자문위원회",
+        "org": "Future Founders Initiative e.V.",
+        "title": "Mitgründer und Vorstand · seit 08.2026 im Beirat",
         "points": [
-          "창립 멤버 다섯 명에서 세 도시에 걸친 이니셔티브로 성장시킴",
-          "학생 110명 이상을 대상으로 3일간의 창업 행사 개최"
+          "Studentische Gründungsinitiative von fünf Gründungsmitgliedern auf drei Standorte aufgebaut; Vorstandsstruktur neu aufgesetzt",
+          "Dreitägige Gründungsveranstaltungen für jeweils über 110 Studierende organisiert"
         ]
       }
     },
@@ -508,16 +517,17 @@
         }
       ],
       "cv": {
-        "title": "Bischöfliches Pius-Gymnasium Aachen",
-        "org": "Abitur 1,2 (상위 10 %) · 심화 과목: 수학, 지리, 독일어",
+        "org": "Bischöfliches Pius-Gymnasium Aachen",
+        "title": "Abitur 1,2 (Top 10 %) · Leistungskurse Mathematik, Erdkunde, Deutsch",
         "points": [
-          "조기 대학 수강: RWTH Aachen 고등수학",
-          "8~10학년을 위한 보충 과정 “Economy & Innovation”을 개설하고 2022년 10월부터 매주 2시간씩 진행: 경제학, 금융, AI, 발표",
-          "한 학년 동안 특별한 지원이 필요한 어린 학생을 위해 매주 수학 일대일 지도"
+          "MINT-EC-Zertifikat mit Auszeichnung (Top 5 % des Jahrgangs); Frühstudium Höhere Mathematik an der RWTH Aachen",
+          "Förderkurs „Economy & Innovation“ für Kl. 8–10 aufgebaut und ab 10.2022 wöchentlich geleitet: Wirtschaft, KI",
+          "Ein Schuljahr wöchentliche Mathe-Einzelförderung für einen jüngeren Schüler, „mit besonderem Erfolg“ bescheinigt"
         ],
         "extra": [
-          "저학년·중학년 숙제 지도; 2016년부터 빅밴드와 학교 오케스트라에서 트롬본 연주"
-        ]
+          "Posaune in Big Band und Schulorchester seit 2016; Hausaufgabenbetreuung für die Unter- und Mittelstufe"
+        ],
+        "link": 0
       }
     },
     {
@@ -549,9 +559,12 @@
         }
       ],
       "cv": {
+        "org": "AIXTRON SE",
+        "title": "Praktikum Personal und Kommunikation",
         "points": [
-          "직업교육생의 날 기획 참여, 채용 웹사이트의 학생용 페이지 개편, 보도자료 작성 지원"
+          "Azubi-Tag mitgeplant, Schülerseite der Karriere-Website überarbeitet und Pressemitteilungen mitbetreut"
         ],
+        "link": 0,
         "optional": true
       }
     },
@@ -584,9 +597,7 @@
         }
       ],
       "cv": {
-        "title": "Colegio Tajamar",
-        "org": "해외 교환 학기, 생명과학 중심 Bachillerato",
-        "points": []
+        "hide": true
       }
     },
     {
@@ -640,9 +651,7 @@
       ],
       "links": [],
       "cv": {
-        "title": "Precious Blood Primary School",
-        "org": "케냐 학교 제도에서의 트라이메스터",
-        "points": []
+        "hide": true
       }
     },
     {
@@ -668,8 +677,8 @@
         }
       ],
       "cv": {
-        "title": "Stiftung der Deutschen Wirtschaft (sdw)",
-        "org": "장학생, 독일 13개 영재 지원 재단 중 하나",
+        "org": "Stiftung der Deutschen Wirtschaft (sdw)",
+        "title": "Stipendium; eines von 13 Begabtenförderungswerken",
         "link": 0
       }
     },
@@ -689,8 +698,8 @@
       "points": [],
       "links": [],
       "cv": {
-        "title": "Hans Rudolf Stiftung",
-        "org": "장학생"
+        "org": "Hans Rudolf Stiftung",
+        "title": "Stipendium"
       }
     },
     {
@@ -716,8 +725,7 @@
         }
       ],
       "cv": {
-        "org": "세 단계 중 최고 등급, 학년 상위 5%",
-        "link": 0
+        "hide": true
       }
     },
     {
@@ -726,7 +734,6 @@
       "year": 2026,
       "date": "2026",
       "place": "중국 쑤저우 및 상하이",
-      "loc": "suzhou",
       "tags": [
         "수상",
         "해외"
@@ -746,7 +753,8 @@
       "points": [],
       "links": [],
       "cv": {
-        "org": "쑤저우와 상하이로 파견된 TU München 대표단, 선발률 5%"
+        "org": "German-Chinese Talent Exchange",
+        "title": "Delegation nach Suzhou und Shanghai; 5 % Aufnahmequote"
       }
     },
     {
@@ -772,7 +780,8 @@
         }
       ],
       "cv": {
-        "org": "학교의 추천, 1% 미만 선발",
+        "org": "Deutsche SchülerAkademie",
+        "title": "Von der Schule nominiert; unter 1 % ausgewählt",
         "link": 0
       }
     }

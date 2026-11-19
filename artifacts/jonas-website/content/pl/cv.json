@@ -38,13 +38,6 @@
       "lon": 37.01,
       "when": "2016 i 2018",
       "what": "Trymestr szkolny i wolontariat w Kenii"
-    },
-    "suzhou": {
-      "name": "Suzhou",
-      "lat": 31.3,
-      "lon": 120.6,
-      "when": "2026",
-      "what": "German-Chinese Talent Exchange"
     }
   },
   "entries": [
@@ -76,9 +69,10 @@
       ],
       "links": [],
       "cv": {
-        "org": "Współzałożyciel · Wstępna rozmowa z AI w rekrutacji",
+        "org": "Audition",
+        "title": "Mitgründer · KI-Vorinterview für Recruiting",
         "points": [
-          "Powstało podczas SF Tech Week Hackathon, zgłoszenie do akceleratora a16z speedrun"
+          "Beim SF Tech Week Hackathon gestartet und seitdem als Startup weiterentwickelt; Bewerbung beim Accelerator a16z speedrun"
         ]
       }
     },
@@ -125,9 +119,11 @@
         }
       ],
       "cv": {
+        "org": "Concentr8",
+        "title": "Mitgründer, Backend · Fokus-App für neurodivergente Studierende",
         "points": [
-          "Odpowiedzialność za backend: aplikacja na Maca blokująca rozpraszacze, połączenia o stałych porach nauki, planowanie z AI z Kalendarzem Google",
-          "Powstało podczas Cal Hacks 13.0, rozwijane na kursie Technology Entrepreneurship (ENGIN 183E)"
+          "Backend gebaut: Mac-App gegen Ablenkung, Anrufe zu festen Lernzeiten, KI-Planung mit Google Kalender",
+          "Bei Cal Hacks 13.0 gestartet, im Berkeley-Kurs Technology Entrepreneurship (ENGIN 183E) weiterentwickelt"
         ],
         "link": 0
       }
@@ -177,12 +173,12 @@
         }
       ],
       "cv": {
-        "title": "University of California, Berkeley",
-        "org": "Student wymiany · Berkeley International Study Program",
+        "org": "University of California, Berkeley",
+        "title": "Austauschsemester · Berkeley International Study Program",
         "points": [
-          "Sztuczna inteligencja (CS 188), kryptografia (CS 171), Technology Entrepreneurship (ENGIN 183E)",
-          "Wsparcie ze strony Stiftung der Deutschen Wirtschaft (sdw)"
-        ]
+          "Künstliche Intelligenz (CS 188), Kryptografie (CS 171), Technology Entrepreneurship (ENGIN 183E); sdw-gefördert"
+        ],
+        "link": 0
       }
     },
     {
@@ -215,13 +211,13 @@
         }
       ],
       "cv": {
-        "title": "Tutor, Operations Research and Decision Analysis",
         "org": "Technische Universität München",
+        "title": "Tutor, Operations Research and Decision Analysis",
         "points": [
-          "Wybrany na podstawie wyniku w kursie w gronie 5% najlepszych (ocena 1,3)",
-          "4 godziny tutorium tygodniowo dla około 25 studentów, samodzielnie opracowane zadania ćwiczeniowe",
-          "Simplex, przepływy w sieciach, optymalizacja całkowitoliczbowa, Gurobi"
-        ]
+          "Ausgewählt nach Kursleistung in den Top 5 % (Note 1,3); 4 Std. Tutorium pro Woche für rund 25 Studierende",
+          "Übungen zu Simplex, Netzwerkflüssen und ganzzahliger Optimierung (Gurobi) konzipiert; Einzelbetreuung"
+        ],
+        "link": 0
       }
     },
     {
@@ -258,10 +254,16 @@
         }
       ],
       "cv": {
+        "org": "ritzenhoefer & company",
+        "title": "Fellow, Strategie- und Transformationsberatung",
         "points": [
-          "Odpowiedzialność za runbook i ponad 70 change requestów w PMO, raportowanie częściowo zautomatyzowane makrami Excela",
-          "Opracowanie modelu job sharingu 60/60 dla Senior Consultants"
-        ]
+          "Runbook-Reporting im PMO des Transformationsprogramms einer Großbank verantwortet und teilautomatisiert",
+          "Change-Request-Prozess verbessert, über 70 Change Requests gesteuert; Vorlagen für den Lenkungsausschuss"
+        ],
+        "extra": [
+          "60/60-Jobsharing-Modell für Senior Consultants entwickelt"
+        ],
+        "link": 0
       }
     },
     {
@@ -299,15 +301,13 @@
         }
       ],
       "cv": {
-        "title": "Business Development, integracja łańcucha dostaw",
-        "org": "comstruct · oprogramowanie dla budownictwa, Series A · praktyka",
+        "org": "comstruct",
+        "title": "Business Development, Supply Chain Integration (Praktikum)",
         "points": [
-          "74 dostawców podłączonych w 9 tygodni, wraz z integracją techniczną",
-          "Przeanalizowany i usprawniony proces podłączania dostawców"
+          "74 Lieferanten in 9 Wochen an die Einkaufsplattform eines Series-A-Startups angebunden, einschließlich technischer Integration",
+          "Prozess der Lieferantenanbindung analysiert und verbessert; comstruct auf der Fachmesse BAUMA vertreten"
         ],
-        "extra": [
-          "Reprezentowanie comstruct na targach branżowych BAUMA"
-        ]
+        "link": 0
       }
     },
     {
@@ -343,11 +343,11 @@
         }
       ],
       "cv": {
-        "org": "Współzałożyciel · części zamienne z drukarki 3D, bez pliku CAD",
+        "org": "Shapely",
+        "title": "Mitgründer, Strategie und Finanzen · 3D-gedruckte Ersatzteile ohne CAD-Datei",
         "points": [
-          "Strategia, finanse i Go-to-Market w trzyosobowym zespole, TUM Startup Launchpad",
-          "Pierwsze zlecenia zrealizowane ręcznie (Fusion 360, druk 3D); prototyp skanowania na iPhone'a z ARKit i LiDAR",
-          "Model biznesowy zweryfikowany w wywiadach z pracownikami utrzymania ruchu i zakończony"
+          "Geschäftsmodell im Dreierteam im TUM Startup Launchpad aufgebaut; erste Aufträge selbst gedruckt und geliefert",
+          "Zahlungsbereitschaft in Interviews mit Instandhaltern geprüft, Modell auf Basis der Ergebnisse eingestellt"
         ],
         "link": 0
       }
@@ -385,11 +385,12 @@
         }
       ],
       "cv": {
-        "title": "Technische Universität München",
-        "org": "B.Sc. Management and Technology, specjalizacja Computer Engineering",
+        "org": "Technische Universität München",
+        "title": "B.Sc. Management and Technology, Vertiefung Computer Engineering",
         "points": [
-          "Średnia ocen 1,6 (top 10 %), kierunek ze wskaźnikiem przyjęć 9 %"
-        ]
+          "Notenschnitt 1,6 (Top 10 %) in einem Studiengang mit 9 % Aufnahmequote"
+        ],
+        "link": 0
       }
     },
     {
@@ -420,11 +421,19 @@
         "Programowanie obiektowe w Javie",
         "Wgląd w telefonię i VoIP"
       ],
-      "links": [],
+      "links": [
+        {
+          "label": "cycos.com",
+          "url": "https://www.cycos.com/"
+        }
+      ],
       "cv": {
+        "org": "cycos AG (Eviden, Atos)",
+        "title": "Praktikum Netzwerktechnik und Programmierung",
         "points": [
-          "Skonfigurowane serwery Linux i maszyny wirtualne (Proxmox), programowanie obiektowe w Javie"
+          "Linux-Server und virtuelle Maschinen mit Proxmox aufgesetzt; objektorientierte Programmierung in Java im Entwicklungsteam"
         ],
+        "link": 0,
         "optional": true
       }
     },
@@ -459,11 +468,11 @@
       ],
       "links": [],
       "cv": {
-        "title": "Future Founders Initiative e.V.",
-        "org": "Współzałożyciel i członek zarządu, od 08.2026 w radzie doradczej",
+        "org": "Future Founders Initiative e.V.",
+        "title": "Mitgründer und Vorstand · seit 08.2026 im Beirat",
         "points": [
-          "Rozbudowa od pięciu członków założycieli do inicjatywy w trzech miastach",
-          "Zorganizowane trzydniowe wydarzenia założycielskie dla ponad 110 studentów"
+          "Studentische Gründungsinitiative von fünf Gründungsmitgliedern auf drei Standorte aufgebaut; Vorstandsstruktur neu aufgesetzt",
+          "Dreitägige Gründungsveranstaltungen für jeweils über 110 Studierende organisiert"
         ]
       }
     },
@@ -508,16 +517,17 @@
         }
       ],
       "cv": {
-        "title": "Bischöfliches Pius-Gymnasium Aachen",
-        "org": "Abitur 1,2 (górne 10 %) · kursy rozszerzone: matematyka, geografia, język niemiecki",
+        "org": "Bischöfliches Pius-Gymnasium Aachen",
+        "title": "Abitur 1,2 (Top 10 %) · Leistungskurse Mathematik, Erdkunde, Deutsch",
         "points": [
-          "Studia wczesne: Höhere Mathematik na RWTH Aachen",
-          "Stworzyłem kurs dodatkowy „Economy & Innovation” dla klas 8–10 i od 10.2022 prowadziłem go dwie godziny tygodniowo: ekonomia, finanse, AI, prezentowanie",
-          "Przez rok szkolny cotygodniowe indywidualne zajęcia z matematyki dla młodszego ucznia ze specjalnymi potrzebami edukacyjnymi"
+          "MINT-EC-Zertifikat mit Auszeichnung (Top 5 % des Jahrgangs); Frühstudium Höhere Mathematik an der RWTH Aachen",
+          "Förderkurs „Economy & Innovation“ für Kl. 8–10 aufgebaut und ab 10.2022 wöchentlich geleitet: Wirtschaft, KI",
+          "Ein Schuljahr wöchentliche Mathe-Einzelförderung für einen jüngeren Schüler, „mit besonderem Erfolg“ bescheinigt"
         ],
         "extra": [
-          "Pomoc w odrabianiu lekcji dla młodszych i średnich klas; puzon w big bandzie i orkiestrze szkolnej od 2016 roku"
-        ]
+          "Posaune in Big Band und Schulorchester seit 2016; Hausaufgabenbetreuung für die Unter- und Mittelstufe"
+        ],
+        "link": 0
       }
     },
     {
@@ -549,9 +559,12 @@
         }
       ],
       "cv": {
+        "org": "AIXTRON SE",
+        "title": "Praktikum Personal und Kommunikation",
         "points": [
-          "Współorganizacja dnia dla praktykantów zawodowych, przeredagowanie strony dla uczniów w serwisie kariery, współudział w opracowywaniu komunikatów prasowych"
+          "Azubi-Tag mitgeplant, Schülerseite der Karriere-Website überarbeitet und Pressemitteilungen mitbetreut"
         ],
+        "link": 0,
         "optional": true
       }
     },
@@ -584,9 +597,7 @@
         }
       ],
       "cv": {
-        "title": "Colegio Tajamar",
-        "org": "Semestr za granicą, Bachillerato z naciskiem na nauki biologiczne",
-        "points": []
+        "hide": true
       }
     },
     {
@@ -640,9 +651,7 @@
       ],
       "links": [],
       "cv": {
-        "title": "Precious Blood Primary School",
-        "org": "Trymestr w kenijskim systemie szkolnym",
-        "points": []
+        "hide": true
       }
     },
     {
@@ -668,8 +677,8 @@
         }
       ],
       "cv": {
-        "title": "Stiftung der Deutschen Wirtschaft (sdw)",
-        "org": "Stypendysta, jedna z 13 niemieckich fundacji wspierających uzdolnionych studentów",
+        "org": "Stiftung der Deutschen Wirtschaft (sdw)",
+        "title": "Stipendium; eines von 13 Begabtenförderungswerken",
         "link": 0
       }
     },
@@ -689,8 +698,8 @@
       "points": [],
       "links": [],
       "cv": {
-        "title": "Hans Rudolf Stiftung",
-        "org": "Stypendysta"
+        "org": "Hans Rudolf Stiftung",
+        "title": "Stipendium"
       }
     },
     {
@@ -716,8 +725,7 @@
         }
       ],
       "cv": {
-        "org": "Najwyższy z trzech poziomów, top 5 % rocznika",
-        "link": 0
+        "hide": true
       }
     },
     {
@@ -726,7 +734,6 @@
       "year": 2026,
       "date": "2026",
       "place": "Suzhou i Szanghaj, Chiny",
-      "loc": "suzhou",
       "tags": [
         "Wyróżnienie",
         "Zagranica"
@@ -746,7 +753,8 @@
       "points": [],
       "links": [],
       "cv": {
-        "org": "Delegacja TU München do Suzhou i Szanghaju, wskaźnik przyjęć 5 %"
+        "org": "German-Chinese Talent Exchange",
+        "title": "Delegation nach Suzhou und Shanghai; 5 % Aufnahmequote"
       }
     },
     {
@@ -772,7 +780,8 @@
         }
       ],
       "cv": {
-        "org": "Nominowany przez szkołę, wybieranych jest mniej niż 1 %",
+        "org": "Deutsche SchülerAkademie",
+        "title": "Von der Schule nominiert; unter 1 % ausgewählt",
         "link": 0
       }
     }

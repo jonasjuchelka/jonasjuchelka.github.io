@@ -11,7 +11,9 @@
     "crumbsAria": "面包屑导航",
     "readingTime": "阅读约需 {n} 分钟",
     "badgeInfo": "提示",
-    "badgeWarning": "待处理"
+    "badgeWarning": "待处理",
+    "nextLabel": "下一页",
+    "nextHint": "继续向下滚动"
   },
   "nav": {
     "home": "首页",
@@ -52,7 +54,7 @@
     "mapAria": "标有我曾居住地点的世界地图",
     "blogTitle": "博客",
     "allPosts": "全部文章",
-    "projectsEyebrow": "项目",
+    "projectsEyebrow": "当前项目",
     "projectsPath": "近年来的经历",
     "allProjects": "全部项目与完整简历"
   },
@@ -64,8 +66,7 @@
     "lede": "上面是我目前正在做的事，下面是一路走来的经历。",
     "pdf": "简历（PDF）",
     "pinned": "置顶",
-    "pinnedTitle": "我目前在做的事",
-    "pinnedNote": "欢迎提出反馈。",
+    "pinnedTitle": "当前项目",
     "open": "查看",
     "feedback": "提供反馈",
     "pathTitle": "一路走来",

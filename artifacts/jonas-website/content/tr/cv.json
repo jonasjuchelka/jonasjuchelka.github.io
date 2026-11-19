@@ -38,13 +38,6 @@
       "lon": 37.01,
       "when": "2016 ve 2018",
       "what": "Okul trimesteri ve Kenya'da gönüllü çalışma"
-    },
-    "suzhou": {
-      "name": "Suzhou",
-      "lat": 31.3,
-      "lon": 120.6,
-      "when": "2026",
-      "what": "German-Chinese Talent Exchange"
     }
   },
   "entries": [
@@ -76,9 +69,10 @@
       ],
       "links": [],
       "cv": {
-        "org": "Kurucu ortak · İşe alım için yapay zekâ ön mülakatı",
+        "org": "Audition",
+        "title": "Mitgründer · KI-Vorinterview für Recruiting",
         "points": [
-          "SF Tech Week Hackathon'da ortaya çıktı, a16z speedrun hızlandırma programına başvuru yapıldı"
+          "Beim SF Tech Week Hackathon gestartet und seitdem als Startup weiterentwickelt; Bewerbung beim Accelerator a16z speedrun"
         ]
       }
     },
@@ -125,9 +119,11 @@
         }
       ],
       "cv": {
+        "org": "Concentr8",
+        "title": "Mitgründer, Backend · Fokus-App für neurodivergente Studierende",
         "points": [
-          "Backend sorumluluğu: dikkat dağıtıcıları engelleyen Mac uygulaması, sabit çalışma saatlerinde aramalar, Google Takvim ile yapay zekâ planlaması",
-          "Cal Hacks 13.0'da ortaya çıktı, Technology Entrepreneurship (ENGIN 183E) dersinde geliştirildi"
+          "Backend gebaut: Mac-App gegen Ablenkung, Anrufe zu festen Lernzeiten, KI-Planung mit Google Kalender",
+          "Bei Cal Hacks 13.0 gestartet, im Berkeley-Kurs Technology Entrepreneurship (ENGIN 183E) weiterentwickelt"
         ],
         "link": 0
       }
@@ -177,12 +173,12 @@
         }
       ],
       "cv": {
-        "title": "University of California, Berkeley",
-        "org": "Değişim öğrencisi · Berkeley International Study Program",
+        "org": "University of California, Berkeley",
+        "title": "Austauschsemester · Berkeley International Study Program",
         "points": [
-          "Yapay zekâ (CS 188), Kriptografi (CS 171), Technology Entrepreneurship (ENGIN 183E)",
-          "Stiftung der Deutschen Wirtschaft (sdw) tarafından destekleniyor"
-        ]
+          "Künstliche Intelligenz (CS 188), Kryptografie (CS 171), Technology Entrepreneurship (ENGIN 183E); sdw-gefördert"
+        ],
+        "link": 0
       }
     },
     {
@@ -215,13 +211,13 @@
         }
       ],
       "cv": {
-        "title": "Tutor, Operations Research and Decision Analysis",
         "org": "Technische Universität München",
+        "title": "Tutor, Operations Research and Decision Analysis",
         "points": [
-          "Bir ders başarısı nedeniyle en iyi %5 arasından seçildi (Not 1,3)",
-          "Haftada 4 saat tutoryal, yaklaşık 25 öğrenci için, alıştırma soruları kendi hazırladığım",
-          "Simpleks, ağ akışları, tam sayılı optimizasyon, Gurobi"
-        ]
+          "Ausgewählt nach Kursleistung in den Top 5 % (Note 1,3); 4 Std. Tutorium pro Woche für rund 25 Studierende",
+          "Übungen zu Simplex, Netzwerkflüssen und ganzzahliger Optimierung (Gurobi) konzipiert; Einzelbetreuung"
+        ],
+        "link": 0
       }
     },
     {
@@ -258,10 +254,16 @@
         }
       ],
       "cv": {
+        "org": "ritzenhoefer & company",
+        "title": "Fellow, Strategie- und Transformationsberatung",
         "points": [
-          "PMO'da runbook ve 70'ten fazla change request'in sorumluluğunu üstlendi, raporlamayı Excel makrolarıyla kısmen otomatikleştirdi",
-          "Kıdemli danışmanlar için 60/60 iş paylaşımı modeli geliştirdi"
-        ]
+          "Runbook-Reporting im PMO des Transformationsprogramms einer Großbank verantwortet und teilautomatisiert",
+          "Change-Request-Prozess verbessert, über 70 Change Requests gesteuert; Vorlagen für den Lenkungsausschuss"
+        ],
+        "extra": [
+          "60/60-Jobsharing-Modell für Senior Consultants entwickelt"
+        ],
+        "link": 0
       }
     },
     {
@@ -299,15 +301,13 @@
         }
       ],
       "cv": {
-        "title": "Business Development, Tedarik Zinciri Entegrasyonu",
-        "org": "comstruct · İnşaat yazılımı, Series A · Staj",
+        "org": "comstruct",
+        "title": "Business Development, Supply Chain Integration (Praktikum)",
         "points": [
-          "Teknik entegrasyon dahil, 9 haftada 74 tedarikçi sisteme bağlandı",
-          "Tedarikçi entegrasyon süreci analiz edilip iyileştirildi"
+          "74 Lieferanten in 9 Wochen an die Einkaufsplattform eines Series-A-Startups angebunden, einschließlich technischer Integration",
+          "Prozess der Lieferantenanbindung analysiert und verbessert; comstruct auf der Fachmesse BAUMA vertreten"
         ],
-        "extra": [
-          "comstruct, BAUMA fuarında temsil edildi"
-        ]
+        "link": 0
       }
     },
     {
@@ -343,11 +343,11 @@
         }
       ],
       "cv": {
-        "org": "Kurucu ortak · CAD dosyası olmadan 3D yazıcıdan yedek parça",
+        "org": "Shapely",
+        "title": "Mitgründer, Strategie und Finanzen · 3D-gedruckte Ersatzteile ohne CAD-Datei",
         "points": [
-          "Üç kişilik ekipte strateji, finans ve go-to-market, TUM Startup Launchpad",
-          "İlk siparişler elle gerçekleştirildi (Fusion 360, 3D baskı); ARKit ve LiDAR ile iPhone tarama prototipi",
-          "İş modeli, bakım teknisyenleriyle yapılan görüşmelerde test edildi ve sonlandırıldı"
+          "Geschäftsmodell im Dreierteam im TUM Startup Launchpad aufgebaut; erste Aufträge selbst gedruckt und geliefert",
+          "Zahlungsbereitschaft in Interviews mit Instandhaltern geprüft, Modell auf Basis der Ergebnisse eingestellt"
         ],
         "link": 0
       }
@@ -385,11 +385,12 @@
         }
       ],
       "cv": {
-        "title": "Technische Universität München",
-        "org": "B.Sc. Management and Technology, Computer Engineering uzmanlık alanı",
+        "org": "Technische Universität München",
+        "title": "B.Sc. Management and Technology, Vertiefung Computer Engineering",
         "points": [
-          "Not ortalaması 1,6 (ilk %10), kabul oranı %9 olan bir bölüm"
-        ]
+          "Notenschnitt 1,6 (Top 10 %) in einem Studiengang mit 9 % Aufnahmequote"
+        ],
+        "link": 0
       }
     },
     {
@@ -420,11 +421,19 @@
         "Java ile nesne yönelimli programlama",
         "Telefon teknolojisi ve VoIP'e giriş"
       ],
-      "links": [],
+      "links": [
+        {
+          "label": "cycos.com",
+          "url": "https://www.cycos.com/"
+        }
+      ],
       "cv": {
+        "org": "cycos AG (Eviden, Atos)",
+        "title": "Praktikum Netzwerktechnik und Programmierung",
         "points": [
-          "Linux sunucuları ve sanal makineler (Proxmox) kuruldu, Java ile nesne yönelimli programlama"
+          "Linux-Server und virtuelle Maschinen mit Proxmox aufgesetzt; objektorientierte Programmierung in Java im Entwicklungsteam"
         ],
+        "link": 0,
         "optional": true
       }
     },
@@ -459,11 +468,11 @@
       ],
       "links": [],
       "cv": {
-        "title": "Future Founders Initiative e.V.",
-        "org": "Kurucu ortak ve yönetim kurulu üyesi, 08.2026'dan beri danışma kurulunda",
+        "org": "Future Founders Initiative e.V.",
+        "title": "Mitgründer und Vorstand · seit 08.2026 im Beirat",
         "points": [
-          "Beş kurucu üyeden üç şehirde faaliyet gösteren bir inisiyatife büyütüldü",
-          "110'dan fazla öğrenci için üç günlük girişimcilik etkinlikleri organize edildi"
+          "Studentische Gründungsinitiative von fünf Gründungsmitgliedern auf drei Standorte aufgebaut; Vorstandsstruktur neu aufgesetzt",
+          "Dreitägige Gründungsveranstaltungen für jeweils über 110 Studierende organisiert"
         ]
       }
     },
@@ -508,16 +517,17 @@
         }
       ],
       "cv": {
-        "title": "Bischöfliches Pius-Gymnasium Aachen",
-        "org": "Abitur 1,2 (ilk %10) · İleri düzey dersler: Matematik, Coğrafya, Almanca",
+        "org": "Bischöfliches Pius-Gymnasium Aachen",
+        "title": "Abitur 1,2 (Top 10 %) · Leistungskurse Mathematik, Erdkunde, Deutsch",
         "points": [
-          "Erken üniversite öğrenimi: RWTH Aachen'de Yüksek Matematik",
-          "8. ile 10. sınıflar için „Economy & Innovation“ destek kursunu kurdum ve 10.2022'den itibaren haftada iki saat yürüttüm: ekonomi, finans, yapay zekâ, sunum yapma",
-          "Bir okul yılı boyunca, özel destek ihtiyacı olan daha genç bir öğrenciye haftalık birebir matematik desteği"
+          "MINT-EC-Zertifikat mit Auszeichnung (Top 5 % des Jahrgangs); Frühstudium Höhere Mathematik an der RWTH Aachen",
+          "Förderkurs „Economy & Innovation“ für Kl. 8–10 aufgebaut und ab 10.2022 wöchentlich geleitet: Wirtschaft, KI",
+          "Ein Schuljahr wöchentliche Mathe-Einzelförderung für einen jüngeren Schüler, „mit besonderem Erfolg“ bescheinigt"
         ],
         "extra": [
-          "Alt ve orta kademe için ödev desteği; 2016'dan beri Big Band'de ve okul orkestrasında trombon"
-        ]
+          "Posaune in Big Band und Schulorchester seit 2016; Hausaufgabenbetreuung für die Unter- und Mittelstufe"
+        ],
+        "link": 0
       }
     },
     {
@@ -549,9 +559,12 @@
         }
       ],
       "cv": {
+        "org": "AIXTRON SE",
+        "title": "Praktikum Personal und Kommunikation",
         "points": [
-          "Çırak günü planlamasına katkı, kariyer web sitesinin öğrenci sayfasının yenilenmesi, basın bültenlerinin hazırlanmasına katkı"
+          "Azubi-Tag mitgeplant, Schülerseite der Karriere-Website überarbeitet und Pressemitteilungen mitbetreut"
         ],
+        "link": 0,
         "optional": true
       }
     },
@@ -584,9 +597,7 @@
         }
       ],
       "cv": {
-        "title": "Colegio Tajamar",
-        "org": "Yurt dışı dönemi, yaşam bilimleri ağırlıklı Bachillerato",
-        "points": []
+        "hide": true
       }
     },
     {
@@ -640,9 +651,7 @@
       ],
       "links": [],
       "cv": {
-        "title": "Precious Blood Primary School",
-        "org": "Kenya okul sisteminde bir trimester",
-        "points": []
+        "hide": true
       }
     },
     {
@@ -668,8 +677,8 @@
         }
       ],
       "cv": {
-        "title": "Stiftung der Deutschen Wirtschaft (sdw)",
-        "org": "Burslu öğrenci, Almanya'daki 13 yetenek destek kuruluşundan biri",
+        "org": "Stiftung der Deutschen Wirtschaft (sdw)",
+        "title": "Stipendium; eines von 13 Begabtenförderungswerken",
         "link": 0
       }
     },
@@ -689,8 +698,8 @@
       "points": [],
       "links": [],
       "cv": {
-        "title": "Hans Rudolf Stiftung",
-        "org": "Burslu öğrenci"
+        "org": "Hans Rudolf Stiftung",
+        "title": "Stipendium"
       }
     },
     {
@@ -716,8 +725,7 @@
         }
       ],
       "cv": {
-        "org": "Üç dereceden en yükseği, sınıfın en iyi %5'i",
-        "link": 0
+        "hide": true
       }
     },
     {
@@ -726,7 +734,6 @@
       "year": 2026,
       "date": "2026",
       "place": "Suzhou ve Şanghay, Çin",
-      "loc": "suzhou",
       "tags": [
         "Ödül",
         "Yurt dışı"
@@ -746,7 +753,8 @@
       "points": [],
       "links": [],
       "cv": {
-        "org": "TU München heyetiyle Suzhou ve Şanghay'a, %5 kabul oranı"
+        "org": "German-Chinese Talent Exchange",
+        "title": "Delegation nach Suzhou und Shanghai; 5 % Aufnahmequote"
       }
     },
     {
@@ -772,7 +780,8 @@
         }
       ],
       "cv": {
-        "org": "Okul tarafından aday gösterildi, %1'den azı seçilir",
+        "org": "Deutsche SchülerAkademie",
+        "title": "Von der Schule nominiert; unter 1 % ausgewählt",
         "link": 0
       }
     }

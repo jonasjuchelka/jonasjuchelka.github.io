@@ -1,17 +1,62 @@
 {
   "places": {
-    "muenchen": { "name": "München", "lat": 48.14, "lon": 11.58, "when": "seit 2024", "what": "Studium an der TU München", "badge": "home" },
-    "berkeley": { "name": "Berkeley", "lat": 37.87, "lon": -122.27, "when": "Herbst 2026", "what": "Auslandssemester an der UC Berkeley", "badge": "now" },
-    "aachen": { "name": "Aachen", "lat": 50.78, "lon": 6.08, "when": "bis 2024", "what": "Schulzeit und Abitur", "label": "none" },
-    "madrid": { "name": "Madrid", "lat": 40.42, "lon": -3.7, "when": "Herbst 2021", "what": "Auslandsaufenthalt am Colegio Tajamar", "label": "left" },
-    "juja": { "name": "Juja", "lat": -1.1, "lon": 37.01, "when": "2016 und 2018", "what": "Schultrimester und Freiwilligenarbeit in Kenia" },
-    "suzhou": { "name": "Suzhou", "lat": 31.3, "lon": 120.6, "when": "2026", "what": "German-Chinese Talent Exchange" }
+    "muenchen": {
+      "name": "München",
+      "lat": 48.14,
+      "lon": 11.58,
+      "when": "seit 2024",
+      "what": "Studium an der TU München",
+      "badge": "home"
+    },
+    "berkeley": {
+      "name": "Berkeley",
+      "lat": 37.87,
+      "lon": -122.27,
+      "when": "Herbst 2026",
+      "what": "Auslandssemester an der UC Berkeley",
+      "badge": "now"
+    },
+    "aachen": {
+      "name": "Aachen",
+      "lat": 50.78,
+      "lon": 6.08,
+      "when": "bis 2024",
+      "what": "Schulzeit und Abitur",
+      "label": "none"
+    },
+    "madrid": {
+      "name": "Madrid",
+      "lat": 40.42,
+      "lon": -3.7,
+      "when": "Herbst 2021",
+      "what": "Auslandsaufenthalt am Colegio Tajamar",
+      "label": "left"
+    },
+    "juja": {
+      "name": "Juja",
+      "lat": -1.1,
+      "lon": 37.01,
+      "when": "2016 und 2018",
+      "what": "Schultrimester und Freiwilligenarbeit in Kenia"
+    }
   },
   "entries": [
     {
-      "id": "audition", "kind": "station", "pinned": true, "now": true, "year": 2026,
-      "date": "seit 10.2026", "place": "San Francisco", "loc": "berkeley", "tags": ["Gründen", "Projekt"],
-      "title": "Audition", "org": "Mitgründer · KI-gestütztes Vorinterview für Bewerbungsprozesse", "icon": "mic",
+      "id": "audition",
+      "kind": "station",
+      "pinned": true,
+      "now": true,
+      "year": 2026,
+      "date": "seit 10.2026",
+      "place": "San Francisco",
+      "loc": "berkeley",
+      "tags": [
+        "Gründen",
+        "Projekt"
+      ],
+      "title": "Audition",
+      "org": "Mitgründer · KI-gestütztes Vorinterview für Bewerbungsprozesse",
+      "icon": "mic",
       "why": "Ein KI-Vorinterview vor dem ersten Gespräch, damit Unternehmen früh sehen, wer die Anforderungen wirklich erfüllt.",
       "text": [
         "Audition ist beim SF Tech Week Hackathon entstanden. Seitdem entwickeln wir es als Startup weiter.",
@@ -24,15 +69,34 @@
       ],
       "links": [],
       "cv": {
-        "org": "Mitgründer · KI-Vorinterview für Recruiting",
-        "points": ["Entstanden beim SF Tech Week Hackathon, Bewerbung beim Accelerator a16z speedrun"]
+        "org": "Audition",
+        "title": "Mitgründer · KI-Vorinterview für Recruiting",
+        "points": [
+          "Beim SF Tech Week Hackathon gestartet und seitdem als Startup weiterentwickelt; Bewerbung beim Accelerator a16z speedrun"
+        ]
       }
     },
     {
-      "id": "concentr8", "kind": "station", "pinned": true, "now": true, "year": 2026,
-      "date": "seit 10.2026", "place": "Berkeley", "loc": "berkeley", "tags": ["Gründen", "Projekt"],
-      "title": "Concentr8", "org": "Mitgründer · Fokus-App für neurodivergente Studierende · Backend", "icon": "target",
-      "photo": { "file": "concentr8.jpg", "alt": "Ich mit dem Team von Concentr8", "focus": "50% 40%" },
+      "id": "concentr8",
+      "kind": "station",
+      "pinned": true,
+      "now": true,
+      "year": 2026,
+      "date": "seit 10.2026",
+      "place": "Berkeley",
+      "loc": "berkeley",
+      "tags": [
+        "Gründen",
+        "Projekt"
+      ],
+      "title": "Concentr8",
+      "org": "Mitgründer · Fokus-App für neurodivergente Studierende · Backend",
+      "icon": "target",
+      "photo": {
+        "file": "concentr8.jpg",
+        "alt": "Ich mit dem Team von Concentr8",
+        "focus": "50% 40%"
+      },
       "why": "Eine App, die Studierende beim Lernen zur Aufgabe zurückführt, bevor die Ablenkung gewinnt.",
       "text": [
         "Concentr8 ist bei Cal Hacks 13.0 in San Francisco entstanden. Anschließend haben wir es mit unserem Projekt aus dem Berkeley-Kurs Technology Entrepreneurship (ENGIN 183E) zusammengeführt.",
@@ -44,97 +108,222 @@
         "KI-Assistent, der zuerst Rückfragen stellt und dann einen Plan mit Lerneinheiten vorschlägt",
         "Anmeldung mit Google und Anbindung an den Google Kalender"
       ],
-      "links": [{ "label": "Download-Seite", "url": "https://concentr8.github.io/" }, { "label": "Cal Hacks", "url": "https://calhacks.io/" }],
+      "links": [
+        {
+          "label": "Download-Seite",
+          "url": "https://concentr8.github.io/"
+        },
+        {
+          "label": "Cal Hacks",
+          "url": "https://calhacks.io/"
+        }
+      ],
       "cv": {
+        "org": "Concentr8",
+        "title": "Mitgründer, Backend · Fokus-App für neurodivergente Studierende",
         "points": [
-          "Backend verantwortet: Mac-App, die Ablenkungen sperrt, Anrufe zu festen Lernzeiten, KI-Planung mit Google Kalender",
-          "Entstanden bei Cal Hacks 13.0, weiterentwickelt im Kurs Technology Entrepreneurship (ENGIN 183E)"
+          "Backend gebaut: Mac-App gegen Ablenkung, Anrufe zu festen Lernzeiten, KI-Planung mit Google Kalender",
+          "Bei Cal Hacks 13.0 gestartet, im Berkeley-Kurs Technology Entrepreneurship (ENGIN 183E) weiterentwickelt"
         ],
         "link": 0
       }
     },
     {
-      "id": "berkeley", "kind": "station", "now": true, "year": 2026,
-      "date": "08.2026 – 12.2026", "place": "Berkeley, USA", "loc": "berkeley", "tags": ["Studium", "Ausland"],
-      "title": "Auslandssemester", "org": "University of California, Berkeley · Berkeley International Study Program", "logo": "ucberkeley.svg",
-      "photo": { "file": "berkeley.jpg", "alt": "Ich an der Bucht von San Francisco", "focus": "60% 40%" },
+      "id": "berkeley",
+      "kind": "station",
+      "now": true,
+      "year": 2026,
+      "date": "08.2026 – 12.2026",
+      "place": "Berkeley, USA",
+      "loc": "berkeley",
+      "tags": [
+        "Studium",
+        "Ausland"
+      ],
+      "title": "Auslandssemester",
+      "org": "University of California, Berkeley · Berkeley International Study Program",
+      "logo": "ucberkeley.svg",
+      "photo": {
+        "file": "berkeley.jpg",
+        "alt": "Ich an der Bucht von San Francisco",
+        "focus": "60% 40%"
+      },
       "why": "Ein Semester an einer der führenden Universitäten für Informatik, mitten im Ökosystem der KI-Startups.",
-      "text": ["Über das Berkeley International Study Program studiere ich im Herbst 2026 an der UC Berkeley. Neben den Kursen nehme ich an Hackathons teil und arbeite an eigenen Gründungsprojekten."],
-      "points": ["Künstliche Intelligenz (CS 188)", "Kryptografie (CS 171)", "Technology Entrepreneurship (ENGIN 183E)", "Gefördert durch die Stiftung der Deutschen Wirtschaft"],
-      "links": [{ "label": "UC Berkeley", "url": "https://www.berkeley.edu/" }, { "label": "Berkeley International Study Program", "url": "https://bisp.berkeley.edu/" }, { "label": "CS 188", "url": "https://inst.eecs.berkeley.edu/~cs188/" }],
+      "text": [
+        "Über das Berkeley International Study Program studiere ich im Herbst 2026 an der UC Berkeley. Neben den Kursen nehme ich an Hackathons teil und arbeite an eigenen Gründungsprojekten."
+      ],
+      "points": [
+        "Künstliche Intelligenz (CS 188)",
+        "Kryptografie (CS 171)",
+        "Technology Entrepreneurship (ENGIN 183E)",
+        "Gefördert durch die Stiftung der Deutschen Wirtschaft"
+      ],
+      "links": [
+        {
+          "label": "UC Berkeley",
+          "url": "https://www.berkeley.edu/"
+        },
+        {
+          "label": "Berkeley International Study Program",
+          "url": "https://bisp.berkeley.edu/"
+        },
+        {
+          "label": "CS 188",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/"
+        }
+      ],
       "cv": {
-        "title": "University of California, Berkeley",
-        "org": "Austauschstudent · Berkeley International Study Program",
+        "org": "University of California, Berkeley",
+        "title": "Austauschsemester · Berkeley International Study Program",
         "points": [
-          "Künstliche Intelligenz (CS 188), Kryptografie (CS 171), Technology Entrepreneurship (ENGIN 183E)",
-          "Gefördert durch die Stiftung der Deutschen Wirtschaft (sdw)"
-        ]
+          "Künstliche Intelligenz (CS 188), Kryptografie (CS 171), Technology Entrepreneurship (ENGIN 183E); sdw-gefördert"
+        ],
+        "link": 0
       }
     },
     {
-      "id": "tutor", "kind": "station", "year": 2025,
-      "date": "08.2025 – 04.2026", "place": "München", "loc": "muenchen", "tags": ["Arbeit"],
-      "title": "Tutor für Operations Research", "org": "TU München · Lehrstuhl Prof. Kolisch", "logo": "tum.svg",
+      "id": "tutor",
+      "kind": "station",
+      "year": 2025,
+      "date": "08.2025 – 04.2026",
+      "place": "München",
+      "loc": "muenchen",
+      "tags": [
+        "Arbeit"
+      ],
+      "title": "Tutor für Operations Research",
+      "org": "TU München · Lehrstuhl Prof. Kolisch",
+      "logo": "tum.svg",
       "why": "Ausgewählt aufgrund einer Kursleistung unter den besten 5 %; anschließend habe ich den Kurs selbst als Tutor unterrichtet.",
-      "text": ["Im Wintersemester 2025/26 und im Sommersemester 2026 habe ich das Tutorium zu „Operations Research and Decision Analysis“ gehalten und Studierende zusätzlich einzeln betreut. Den Kurs selbst habe ich mit 1,3 abgeschlossen."],
-      "points": ["4 Stunden Tutorium pro Woche für rund 25 Studierende", "Übungsaufgaben selbst konzipiert", "Simplex, Netzwerkflüsse, ganzzahlige Optimierung", "Modellierung mit Gurobi"],
-      "links": [{ "label": "TU München", "url": "https://www.tum.de/" }],
+      "text": [
+        "Im Wintersemester 2025/26 und im Sommersemester 2026 habe ich das Tutorium zu „Operations Research and Decision Analysis“ gehalten und Studierende zusätzlich einzeln betreut. Den Kurs selbst habe ich mit 1,3 abgeschlossen."
+      ],
+      "points": [
+        "4 Stunden Tutorium pro Woche für rund 25 Studierende",
+        "Übungsaufgaben selbst konzipiert",
+        "Simplex, Netzwerkflüsse, ganzzahlige Optimierung",
+        "Modellierung mit Gurobi"
+      ],
+      "links": [
+        {
+          "label": "TU München",
+          "url": "https://www.tum.de/"
+        }
+      ],
       "cv": {
-        "title": "Tutor, Operations Research and Decision Analysis",
         "org": "Technische Universität München",
+        "title": "Tutor, Operations Research and Decision Analysis",
         "points": [
-          "Ausgewählt für eine Kursleistung unter den besten 5 % (Note 1,3)",
-          "4 Stunden Tutorium pro Woche für rund 25 Studierende, Übungsaufgaben selbst konzipiert",
-          "Simplex, Netzwerkflüsse, ganzzahlige Optimierung, Gurobi"
-        ]
+          "Ausgewählt nach Kursleistung in den Top 5 % (Note 1,3); 4 Std. Tutorium pro Woche für rund 25 Studierende",
+          "Übungen zu Simplex, Netzwerkflüssen und ganzzahliger Optimierung (Gurobi) konzipiert; Einzelbetreuung"
+        ],
+        "link": 0
       }
     },
     {
-      "id": "ritzenhoefer", "kind": "station", "year": 2025,
-      "date": "08.2025 – 10.2025", "place": "Düsseldorf", "tags": ["Arbeit"],
-      "title": "Fellow, Strategie- und Transformationsberatung", "org": "ritzenhoefer & company", "logo": "ritzenhoefer.png",
-      "photo": { "file": "ritzenhoefer.jpg", "alt": "Ich mit Laptop am Bahnhof auf dem Weg zum Kunden", "focus": "60% 35%" },
+      "id": "ritzenhoefer",
+      "kind": "station",
+      "year": 2025,
+      "date": "08.2025 – 10.2025",
+      "place": "Düsseldorf",
+      "tags": [
+        "Arbeit"
+      ],
+      "title": "Fellow, Strategie- und Transformationsberatung",
+      "org": "ritzenhoefer & company",
+      "logo": "ritzenhoefer.png",
+      "photo": {
+        "file": "ritzenhoefer.jpg",
+        "alt": "Ich mit Laptop am Bahnhof auf dem Weg zum Kunden",
+        "focus": "60% 35%"
+      },
       "why": "Mitarbeit an einem großen Transformationsprojekt einer deutschen Großbank, direkt beim Kunden.",
-      "text": ["ritzenhoefer & company berät Großbanken, Versicherungen und Industrieunternehmen bei umfassenden Transformationen. Ich war überwiegend beim Kunden vor Ort und habe das Projektmanagement-Office (PMO) unterstützt."],
+      "text": [
+        "ritzenhoefer & company berät Großbanken, Versicherungen und Industrieunternehmen bei umfassenden Transformationen. Ich war überwiegend beim Kunden vor Ort und habe das Projektmanagement-Office (PMO) unterstützt."
+      ],
       "points": [
         "Runbook-Berichtswesen technisch und organisatorisch verantwortet, Teile davon mit Excel-Makros automatisiert",
         "Change-Request-Prozess verbessert und über 70 Change Requests gesteuert",
         "Entscheidungsvorlagen bis zum Lenkungsausschuss erstellt",
         "Job-Sharing-Modell für Senior Consultants entwickelt"
       ],
-      "links": [{ "label": "ritzenhoefer & company", "url": "https://www.ritzenhoefer.com/" }],
+      "links": [
+        {
+          "label": "ritzenhoefer & company",
+          "url": "https://www.ritzenhoefer.com/"
+        }
+      ],
       "cv": {
+        "org": "ritzenhoefer & company",
+        "title": "Fellow, Strategie- und Transformationsberatung",
         "points": [
-          "Runbook und über 70 Change Requests im PMO verantwortet, Berichtswesen mit Excel-Makros teilautomatisiert",
+          "Runbook-Reporting im PMO des Transformationsprogramms einer Großbank verantwortet und teilautomatisiert",
+          "Change-Request-Prozess verbessert, über 70 Change Requests gesteuert; Vorlagen für den Lenkungsausschuss"
+        ],
+        "extra": [
           "60/60-Jobsharing-Modell für Senior Consultants entwickelt"
-        ]
+        ],
+        "link": 0
       }
     },
     {
-      "id": "comstruct", "kind": "station", "year": 2025,
-      "date": "03.2025 – 05.2025", "place": "München", "loc": "muenchen", "tags": ["Arbeit"],
-      "title": "Praktikum Business Development", "org": "comstruct · Software für den Materialeinkauf am Bau, Series A", "logo": "comstruct.svg",
-      "photo": { "file": "comstruct.jpg", "alt": "Ich mit einem Kollegen im Büro von comstruct", "focus": "50% 30%" },
+      "id": "comstruct",
+      "kind": "station",
+      "year": 2025,
+      "date": "03.2025 – 05.2025",
+      "place": "München",
+      "loc": "muenchen",
+      "tags": [
+        "Arbeit"
+      ],
+      "title": "Praktikum Business Development",
+      "org": "comstruct · Software für den Materialeinkauf am Bau, Series A",
+      "logo": "comstruct.svg",
+      "photo": {
+        "file": "comstruct.jpg",
+        "alt": "Ich mit einem Kollegen im Büro von comstruct",
+        "focus": "50% 30%"
+      },
       "why": "74 Lieferanten in neun Wochen angebunden, im Go-to-Market-Team eines Series-A-Startups.",
-      "text": ["comstruct digitalisiert den Materialeinkauf von Bauunternehmen: Bestellungen, Lieferscheine und Rechnungen laufen digital zwischen Bauunternehmen und Lieferanten. Ich war Teil des Go-to-Market-Teams."],
+      "text": [
+        "comstruct digitalisiert den Materialeinkauf von Bauunternehmen: Bestellungen, Lieferscheine und Rechnungen laufen digital zwischen Bauunternehmen und Lieferanten. Ich war Teil des Go-to-Market-Teams."
+      ],
       "points": [
         "74 Lieferanten in 9 Wochen angebunden, einschließlich technischer Integration",
         "Prozess der Lieferantenanbindung analysiert und verbessert",
         "comstruct auf der Fachmesse BAUMA vertreten",
         "Team-Events für das gesamte Unternehmen organisiert"
       ],
-      "links": [{ "label": "comstruct.com", "url": "https://www.comstruct.com/" }],
+      "links": [
+        {
+          "label": "comstruct.com",
+          "url": "https://www.comstruct.com/"
+        }
+      ],
       "cv": {
-        "title": "Business Development, Supply Chain Integration",
-        "org": "comstruct · Bausoftware, Series A · Praktikum",
-        "points": ["74 Lieferanten in 9 Wochen angebunden, einschließlich technischer Integration", "Prozess der Lieferantenanbindung analysiert und verbessert"],
-        "extra": ["comstruct auf der Fachmesse BAUMA vertreten"]
+        "org": "comstruct",
+        "title": "Business Development, Supply Chain Integration (Praktikum)",
+        "points": [
+          "74 Lieferanten in 9 Wochen an die Einkaufsplattform eines Series-A-Startups angebunden, einschließlich technischer Integration",
+          "Prozess der Lieferantenanbindung analysiert und verbessert; comstruct auf der Fachmesse BAUMA vertreten"
+        ],
+        "link": 0
       }
     },
     {
-      "id": "shapely", "kind": "station", "year": 2026,
-      "date": "03.2026 – 05.2026", "place": "München", "loc": "muenchen", "tags": ["Gründen", "Projekt"],
-      "title": "Shapely", "org": "Mitgründer · Ersatzteile aus dem 3D-Drucker", "logo": "shapely.png",
+      "id": "shapely",
+      "kind": "station",
+      "year": 2026,
+      "date": "03.2026 – 05.2026",
+      "place": "München",
+      "loc": "muenchen",
+      "tags": [
+        "Gründen",
+        "Projekt"
+      ],
+      "title": "Shapely",
+      "org": "Mitgründer · Ersatzteile aus dem 3D-Drucker",
+      "logo": "shapely.png",
       "why": "Ersatzteile drucken, für die es keine CAD-Datei gibt. Und lernen, wann man ein Geschäftsmodell aufgibt.",
       "text": [
         "Bricht ein Kunststoffteil, gibt es oft weder Ersatz noch eine Konstruktionsdatei. Shapely sollte genau diese Lücke schließen: Teil fotografieren oder scannen, daraus ein druckfertiges Modell erstellen, drucken und liefern.",
@@ -147,57 +336,130 @@
         "Interviews mit Instandhaltern und Konstrukteuren geführt, Wettbewerber wie Replique und 3YOURMIND analysiert",
         "Ergebnis der Tests: Das Modell trägt nicht, wir haben es eingestellt"
       ],
-      "links": [{ "label": "shapely.live", "url": "https://shapely.live/" }],
+      "links": [
+        {
+          "label": "shapely.live",
+          "url": "https://shapely.live/"
+        }
+      ],
       "cv": {
-        "org": "Mitgründer · Ersatzteile aus dem 3D-Drucker, ohne CAD-Datei",
+        "org": "Shapely",
+        "title": "Mitgründer, Strategie und Finanzen · 3D-gedruckte Ersatzteile ohne CAD-Datei",
         "points": [
-          "Strategie, Finanzen und Go-to-Market im Dreierteam, TUM Startup Launchpad",
-          "Erste Aufträge von Hand umgesetzt (Fusion 360, 3D-Druck); iPhone-Scan-Prototyp mit ARKit und LiDAR",
-          "Geschäftsmodell in Interviews mit Instandhaltern geprüft und eingestellt"
+          "Geschäftsmodell im Dreierteam im TUM Startup Launchpad aufgebaut; erste Aufträge selbst gedruckt und geliefert",
+          "Zahlungsbereitschaft in Interviews mit Instandhaltern geprüft, Modell auf Basis der Ergebnisse eingestellt"
         ],
         "link": 0
       }
     },
     {
-      "id": "tum", "kind": "station", "now": true, "year": 2024,
-      "date": "seit 10.2024", "place": "München", "loc": "muenchen", "tags": ["Studium"],
-      "title": "Bachelorstudium an der TU München", "org": "B.Sc. Management and Technology · Vertiefung Computer Engineering", "logo": "tum.svg",
+      "id": "tum",
+      "kind": "station",
+      "now": true,
+      "year": 2024,
+      "date": "seit 10.2024",
+      "place": "München",
+      "loc": "muenchen",
+      "tags": [
+        "Studium"
+      ],
+      "title": "Bachelorstudium an der TU München",
+      "org": "B.Sc. Management and Technology · Vertiefung Computer Engineering",
+      "logo": "tum.svg",
       "why": "Ein Studium an der Schnittstelle von Wirtschaft und Informatik, mit einer Aufnahmequote von 9 %.",
-      "text": ["Ich studiere seit dem Wintersemester 2024/25 an der Technischen Universität München, mit Vertiefung in Computer Engineering. Der Abschluss ist für 2027 geplant."],
-      "points": ["Notenschnitt 1,6 (Top 10 %)", "Vertiefung Computer Engineering"],
-      "links": [{ "label": "TU München", "url": "https://www.tum.de/" }, { "label": "Studiengang", "url": "https://www.mgt.tum.de/de/programs/bachelor-in-management-technology/muenchen" }],
+      "text": [
+        "Ich studiere seit dem Wintersemester 2024/25 an der Technischen Universität München, mit Vertiefung in Computer Engineering. Der Abschluss ist für 2027 geplant."
+      ],
+      "points": [
+        "Notenschnitt 1,6 (Top 10 %)",
+        "Vertiefung Computer Engineering"
+      ],
+      "links": [
+        {
+          "label": "TU München",
+          "url": "https://www.tum.de/"
+        },
+        {
+          "label": "Studiengang",
+          "url": "https://www.mgt.tum.de/de/programs/bachelor-in-management-technology/muenchen"
+        }
+      ],
       "cv": {
-        "title": "Technische Universität München",
-        "org": "B.Sc. Management and Technology, Vertiefung Computer Engineering",
-        "points": ["Notenschnitt 1,6 (Top 10 %), Studiengang mit 9 % Aufnahmequote"]
+        "org": "Technische Universität München",
+        "title": "B.Sc. Management and Technology, Vertiefung Computer Engineering",
+        "points": [
+          "Notenschnitt 1,6 (Top 10 %) in einem Studiengang mit 9 % Aufnahmequote"
+        ],
+        "link": 0
       }
     },
     {
-      "id": "cycos", "kind": "station", "year": 2024,
-      "date": "06.2024", "place": "Aachen", "loc": "aachen", "tags": ["Arbeit"],
-      "title": "Praktikum Netzwerktechnik und Programmierung", "org": "cycos AG · ein Unternehmen von Eviden (Atos)", "logo": "cy.svg",
-      "photo": { "file": "cycos.jpg", "alt": "Ich vor dem Logo von cycos", "focus": "70% 40%" },
+      "id": "cycos",
+      "kind": "station",
+      "year": 2024,
+      "date": "06.2024",
+      "place": "Aachen",
+      "loc": "aachen",
+      "tags": [
+        "Arbeit"
+      ],
+      "title": "Praktikum Netzwerktechnik und Programmierung",
+      "org": "cycos AG · ein Unternehmen von Eviden (Atos)",
+      "logo": "cy.svg",
+      "photo": {
+        "file": "cycos.jpg",
+        "alt": "Ich vor dem Logo von cycos",
+        "focus": "70% 40%"
+      },
       "why": "Erste praktische Erfahrung in Softwareentwicklung und Netzwerktechnik: Server, virtuelle Maschinen und Java.",
-      "text": ["cycos entwickelt seit über 30 Jahren Software für Telekommunikation, von analogen Systemen bis zu cloudbasierten Kollaborationslösungen. Ich war vier Wochen im Entwicklungsteam."],
+      "text": [
+        "cycos entwickelt seit über 30 Jahren Software für Telekommunikation, von analogen Systemen bis zu cloudbasierten Kollaborationslösungen. Ich war vier Wochen im Entwicklungsteam."
+      ],
       "points": [
         "Netzwerkgrundlagen: IP-Adressierung, Routing, Protokolle",
         "Linux-Server und virtuelle Maschinen mit Proxmox aufgesetzt",
         "Objektorientierte Programmierung in Java",
         "Einblick in Telefonie und VoIP"
       ],
-      "links": [],
+      "links": [
+        {
+          "label": "cycos.com",
+          "url": "https://www.cycos.com/"
+        }
+      ],
       "cv": {
-        "points": ["Linux-Server und virtuelle Maschinen (Proxmox) aufgesetzt, objektorientierte Programmierung in Java"],
+        "org": "cycos AG (Eviden, Atos)",
+        "title": "Praktikum Netzwerktechnik und Programmierung",
+        "points": [
+          "Linux-Server und virtuelle Maschinen mit Proxmox aufgesetzt; objektorientierte Programmierung in Java im Entwicklungsteam"
+        ],
+        "link": 0,
         "optional": true
       }
     },
     {
-      "id": "ffi", "kind": "station", "year": 2024,
-      "date": "04.2024 – 08.2026", "place": "München", "loc": "muenchen", "tags": ["Gründen", "Engagement"],
-      "title": "Mitgründer und Vorstand", "org": "Future Founders Initiative e.V. · seit 08.2026 im Beirat", "logo": "ffi.png",
-      "photo": { "file": "ffi.jpg", "alt": "Gruppenbild bei einer Veranstaltung der Future Founders Initiative", "focus": "50% 40%" },
+      "id": "ffi",
+      "kind": "station",
+      "year": 2024,
+      "date": "04.2024 – 08.2026",
+      "place": "München",
+      "loc": "muenchen",
+      "tags": [
+        "Gründen",
+        "Engagement"
+      ],
+      "title": "Mitgründer und Vorstand",
+      "org": "Future Founders Initiative e.V. · seit 08.2026 im Beirat",
+      "logo": "ffi.png",
+      "photo": {
+        "file": "ffi.jpg",
+        "alt": "Gruppenbild bei einer Veranstaltung der Future Founders Initiative",
+        "focus": "50% 40%"
+      },
       "why": "Mit fünf Gründungsmitgliedern gestartet, zu einer Initiative in drei Städten aufgebaut und anschließend bewusst übergeben.",
-      "text": ["Die Future Founders Initiative bringt Studierende zusammen, die gründen wollen, und bietet kostenlose Workshops von der ersten Idee bis zum Pitch. Ich habe den Verein mitgegründet, im Vorstand aufgebaut und bin 2026 in den Beirat gewechselt."],
+      "text": [
+        "Die Future Founders Initiative bringt Studierende zusammen, die gründen wollen, und bietet kostenlose Workshops von der ersten Idee bis zum Pitch. Ich habe den Verein mitgegründet, im Vorstand aufgebaut und bin 2026 in den Beirat gewechselt."
+      ],
       "points": [
         "Dreitägige Gründungsveranstaltungen für über 110 Studierende organisiert",
         "Standorte in München, Frankfurt und Stuttgart",
@@ -206,15 +468,27 @@
       ],
       "links": [],
       "cv": {
-        "title": "Future Founders Initiative e.V.",
-        "org": "Mitgründer und Vorstand, seit 08.2026 im Beirat",
-        "points": ["Von fünf Gründungsmitgliedern zu einer Initiative in drei Städten aufgebaut", "Dreitägige Gründungsveranstaltungen für über 110 Studierende organisiert"]
+        "org": "Future Founders Initiative e.V.",
+        "title": "Mitgründer und Vorstand · seit 08.2026 im Beirat",
+        "points": [
+          "Studentische Gründungsinitiative von fünf Gründungsmitgliedern auf drei Standorte aufgebaut; Vorstandsstruktur neu aufgesetzt",
+          "Dreitägige Gründungsveranstaltungen für jeweils über 110 Studierende organisiert"
+        ]
       }
     },
     {
-      "id": "abitur", "kind": "station", "year": 2024,
-      "date": "08.2016 – 06.2024", "place": "Aachen", "loc": "aachen", "tags": ["Schule"],
-      "title": "Abitur", "org": "Bischöfliches Pius-Gymnasium Aachen · Leistungskurse Mathematik, Erdkunde, Deutsch", "logo": "pius.png",
+      "id": "abitur",
+      "kind": "station",
+      "year": 2024,
+      "date": "08.2016 – 06.2024",
+      "place": "Aachen",
+      "loc": "aachen",
+      "tags": [
+        "Schule"
+      ],
+      "title": "Abitur",
+      "org": "Bischöfliches Pius-Gymnasium Aachen · Leistungskurse Mathematik, Erdkunde, Deutsch",
+      "logo": "pius.png",
       "why": "Abitur mit 1,2, MINT-EC-Zertifikat mit Auszeichnung und schon während der Schulzeit Mathematikvorlesungen an der RWTH Aachen.",
       "text": [
         "Am Pius-Gymnasium habe ich mich weit über den Unterricht hinaus engagiert: mit einem eigenen Förderkurs, in Nachhilfe und Hausaufgabenbetreuung und acht Jahre lang in der Big Band.",
@@ -228,120 +502,288 @@
         "Hausaufgabenbetreuung für die Unter- und Mittelstufe",
         "Posaune in der Big Band seit 2016 und im Schulorchester: Konzerte, Schulfeste, Gedenkveranstaltungen"
       ],
-      "links": [{ "label": "Pius-Gymnasium", "url": "https://www.pius-gymnasium.de/" }, { "label": "MINT-EC", "url": "https://www.mint-ec.de/" }, { "label": "RWTH Aachen", "url": "https://www.rwth-aachen.de/" }],
+      "links": [
+        {
+          "label": "Pius-Gymnasium",
+          "url": "https://www.pius-gymnasium.de/"
+        },
+        {
+          "label": "MINT-EC",
+          "url": "https://www.mint-ec.de/"
+        },
+        {
+          "label": "RWTH Aachen",
+          "url": "https://www.rwth-aachen.de/"
+        }
+      ],
       "cv": {
-        "title": "Bischöfliches Pius-Gymnasium Aachen",
-        "org": "Abitur 1,2 (Top 10 %) · Leistungskurse Mathematik, Erdkunde, Deutsch",
+        "org": "Bischöfliches Pius-Gymnasium Aachen",
+        "title": "Abitur 1,2 (Top 10 %) · Leistungskurse Mathematik, Erdkunde, Deutsch",
         "points": [
-          "Frühstudium: Höhere Mathematik an der RWTH Aachen",
-          "Förderkurs „Economy & Innovation“ für die Klassen 8 bis 10 aufgebaut und ab 10.2022 wöchentlich zwei Stunden geleitet: Volkswirtschaft, Finanzen, KI, Präsentieren",
-          "Ein Schuljahr wöchentliche Mathematik-Einzelförderung für einen jüngeren Schüler mit besonderem Förderbedarf"
+          "MINT-EC-Zertifikat mit Auszeichnung (Top 5 % des Jahrgangs); Frühstudium Höhere Mathematik an der RWTH Aachen",
+          "Förderkurs „Economy & Innovation“ für Kl. 8–10 aufgebaut und ab 10.2022 wöchentlich geleitet: Wirtschaft, KI",
+          "Ein Schuljahr wöchentliche Mathe-Einzelförderung für einen jüngeren Schüler, „mit besonderem Erfolg“ bescheinigt"
         ],
-        "extra": ["Hausaufgabenbetreuung für die Unter- und Mittelstufe; Posaune in Big Band und Schulorchester seit 2016"]
+        "extra": [
+          "Posaune in Big Band und Schulorchester seit 2016; Hausaufgabenbetreuung für die Unter- und Mittelstufe"
+        ],
+        "link": 0
       }
     },
     {
-      "id": "aixtron", "kind": "station", "year": 2023,
-      "date": "06.2023 – 07.2023", "place": "Herzogenrath", "loc": "aachen", "tags": ["Arbeit"],
-      "title": "Praktikum Personal und Kommunikation", "org": "AIXTRON SE", "logo": "aixtron.svg",
+      "id": "aixtron",
+      "kind": "station",
+      "year": 2023,
+      "date": "06.2023 – 07.2023",
+      "place": "Herzogenrath",
+      "loc": "aachen",
+      "tags": [
+        "Arbeit"
+      ],
+      "title": "Praktikum Personal und Kommunikation",
+      "org": "AIXTRON SE",
+      "logo": "aixtron.svg",
       "why": "Zwei Wochen bei einem Anlagenbauer für die Halbleiterindustrie, in Personalabteilung und Unternehmenskommunikation.",
-      "text": ["AIXTRON stellt Anlagen her, mit denen Verbindungshalbleiter für Displays, Laser und Solarzellen gefertigt werden. Ich habe in der Personalabteilung und in der Pressearbeit mitgearbeitet."],
+      "text": [
+        "AIXTRON stellt Anlagen her, mit denen Verbindungshalbleiter für Displays, Laser und Solarzellen gefertigt werden. Ich habe in der Personalabteilung und in der Pressearbeit mitgearbeitet."
+      ],
       "points": [
         "Azubi-Tag mitgeplant",
         "Schülerseite der Karriere-Website überarbeitet",
         "Pressemitteilungen mitbetreut"
       ],
-      "links": [{ "label": "AIXTRON", "url": "https://www.aixtron.com/" }],
+      "links": [
+        {
+          "label": "AIXTRON",
+          "url": "https://www.aixtron.com/"
+        }
+      ],
       "cv": {
-        "points": ["Azubi-Tag mitgeplant, Schülerseite der Karriere-Website überarbeitet, Pressemitteilungen mitbetreut"],
+        "org": "AIXTRON SE",
+        "title": "Praktikum Personal und Kommunikation",
+        "points": [
+          "Azubi-Tag mitgeplant, Schülerseite der Karriere-Website überarbeitet und Pressemitteilungen mitbetreut"
+        ],
+        "link": 0,
         "optional": true
       }
     },
     {
-      "id": "madrid", "kind": "station", "year": 2021,
-      "date": "09.2021 – 12.2021", "place": "Madrid, Spanien", "loc": "madrid", "tags": ["Schule", "Ausland"],
-      "title": "Auslandsaufenthalt in Madrid", "org": "Colegio Tajamar · Bachillerato, naturwissenschaftlicher Zweig", "logo": "tajamar.png",
+      "id": "madrid",
+      "kind": "station",
+      "year": 2021,
+      "date": "09.2021 – 12.2021",
+      "place": "Madrid, Spanien",
+      "loc": "madrid",
+      "tags": [
+        "Schule",
+        "Ausland"
+      ],
+      "title": "Auslandsaufenthalt in Madrid",
+      "org": "Colegio Tajamar · Bachillerato, naturwissenschaftlicher Zweig",
+      "logo": "tajamar.png",
       "why": "Vier Monate im spanischen Schulsystem: mit Grundkenntnissen angekommen, am Ende regulär am Unterricht und an den Prüfungen teilgenommen.",
-      "text": ["Im Herbst 2021 habe ich das erste Jahr des Bachillerato im naturwissenschaftlichen Zweig besucht, mit 37 Wochenstunden und denselben Prüfungen wie meine Klasse."],
-      "points": ["Schwerpunkt Biowissenschaften", "Spanischkenntnisse im Schulalltag ausgebaut"],
-      "links": [{ "label": "Colegio Tajamar", "url": "https://www.tajamar.es/" }],
+      "text": [
+        "Im Herbst 2021 habe ich das erste Jahr des Bachillerato im naturwissenschaftlichen Zweig besucht, mit 37 Wochenstunden und denselben Prüfungen wie meine Klasse."
+      ],
+      "points": [
+        "Schwerpunkt Biowissenschaften",
+        "Spanischkenntnisse im Schulalltag ausgebaut"
+      ],
+      "links": [
+        {
+          "label": "Colegio Tajamar",
+          "url": "https://www.tajamar.es/"
+        }
+      ],
       "cv": {
-        "title": "Colegio Tajamar",
-        "org": "Auslandssemester, Bachillerato mit Schwerpunkt Biowissenschaften",
-        "points": []
+        "hide": true
       }
     },
     {
-      "id": "kenia2018", "kind": "station", "year": 2018,
-      "date": "03.2018 – 04.2018", "place": "Juja, Kenia", "loc": "juja", "tags": ["Engagement", "Ausland"],
-      "title": "Freiwilligenarbeit in einem Kinderheim", "org": "Star of Hope Children’s Home", "icon": "heart",
+      "id": "kenia2018",
+      "kind": "station",
+      "year": 2018,
+      "date": "03.2018 – 04.2018",
+      "place": "Juja, Kenia",
+      "loc": "juja",
+      "tags": [
+        "Engagement",
+        "Ausland"
+      ],
+      "title": "Freiwilligenarbeit in einem Kinderheim",
+      "org": "Star of Hope Children’s Home",
+      "icon": "heart",
       "why": "Drei Wochen Mitarbeit in einem Kinderheim für Waisen und Kinder ohne familiären Rückhalt.",
-      "text": ["Ich habe die Einrichtung im Alltag dort unterstützt, wo Hilfe gebraucht wurde, und abends Englischunterricht erhalten."],
-      "points": ["Mitarbeit an Bau- und Instandhaltungsarbeiten auf dem Gelände", "Betreuung und Freizeitgestaltung mit den Kindern"],
-      "links": [],
-      "cv": { "hide": true }
-    },
-    {
-      "id": "kenia2016", "kind": "station", "year": 2016,
-      "date": "03.2016 – 05.2016", "place": "Juja, Kenia", "loc": "juja", "tags": ["Schule", "Ausland"],
-      "title": "Schultrimester in Kenia", "org": "Precious Blood Primary School · Juja bei Nairobi", "icon": "school",
-      "why": "Drei Monate Unterricht in einem anderen Schulsystem. Hier begann mein Interesse an internationalen Perspektiven.",
-      "text": ["Im Frühjahr 2016 habe ich ein Trimester an der Precious Blood Primary School verbracht und regulär am Unterricht der vierten Klasse teilgenommen."],
-      "points": ["Vollständiger Schulalltag in allen Fächern", "Schwerpunkte: Mathematik und Musik"],
+      "text": [
+        "Ich habe die Einrichtung im Alltag dort unterstützt, wo Hilfe gebraucht wurde, und abends Englischunterricht erhalten."
+      ],
+      "points": [
+        "Mitarbeit an Bau- und Instandhaltungsarbeiten auf dem Gelände",
+        "Betreuung und Freizeitgestaltung mit den Kindern"
+      ],
       "links": [],
       "cv": {
-        "title": "Precious Blood Primary School",
-        "org": "Trimester im kenianischen Schulsystem",
-        "points": []
+        "hide": true
       }
     },
     {
-      "id": "sdw", "kind": "award", "year": 2024,
-      "date": "seit 10.2024", "tags": ["Stipendium"],
-      "title": "Stipendium der Stiftung der Deutschen Wirtschaft", "org": "Studienförderwerk Klaus Murmann", "logo": "sdw.svg",
+      "id": "kenia2016",
+      "kind": "station",
+      "year": 2016,
+      "date": "03.2016 – 05.2016",
+      "place": "Juja, Kenia",
+      "loc": "juja",
+      "tags": [
+        "Schule",
+        "Ausland"
+      ],
+      "title": "Schultrimester in Kenia",
+      "org": "Precious Blood Primary School · Juja bei Nairobi",
+      "icon": "school",
+      "why": "Drei Monate Unterricht in einem anderen Schulsystem. Hier begann mein Interesse an internationalen Perspektiven.",
+      "text": [
+        "Im Frühjahr 2016 habe ich ein Trimester an der Precious Blood Primary School verbracht und regulär am Unterricht der vierten Klasse teilgenommen."
+      ],
+      "points": [
+        "Vollständiger Schulalltag in allen Fächern",
+        "Schwerpunkte: Mathematik und Musik"
+      ],
+      "links": [],
+      "cv": {
+        "hide": true
+      }
+    },
+    {
+      "id": "sdw",
+      "kind": "award",
+      "year": 2024,
+      "date": "seit 10.2024",
+      "tags": [
+        "Stipendium"
+      ],
+      "title": "Stipendium der Stiftung der Deutschen Wirtschaft",
+      "org": "Studienförderwerk Klaus Murmann",
+      "logo": "sdw.svg",
       "why": "Förderung für Studierende mit Gemeinsinn und Unternehmergeist.",
-      "text": ["Das Studienförderwerk Klaus Murmann ist eines der 13 Begabtenförderungswerke in Deutschland und fördert jedes Jahr rund 2.000 Studierende und Promovierende."],
+      "text": [
+        "Das Studienförderwerk Klaus Murmann ist eines der 13 Begabtenförderungswerke in Deutschland und fördert jedes Jahr rund 2.000 Studierende und Promovierende."
+      ],
       "points": [],
-      "links": [{ "label": "sdw.org", "url": "https://www.sdw.org/" }],
-      "cv": { "title": "Stiftung der Deutschen Wirtschaft (sdw)", "org": "Stipendiat, eines der 13 Begabtenförderungswerke in Deutschland", "link": 0 }
+      "links": [
+        {
+          "label": "sdw.org",
+          "url": "https://www.sdw.org/"
+        }
+      ],
+      "cv": {
+        "org": "Stiftung der Deutschen Wirtschaft (sdw)",
+        "title": "Stipendium; eines von 13 Begabtenförderungswerken",
+        "link": 0
+      }
     },
     {
-      "id": "hrs", "kind": "award", "year": 2026,
-      "date": "seit 10.2026", "tags": ["Stipendium"],
-      "title": "Stipendium der Hans Rudolf Stiftung", "org": "Hans Rudolf Stiftung, München", "logo": "hr-stiftung.png",
+      "id": "hrs",
+      "kind": "award",
+      "year": 2026,
+      "date": "seit 10.2026",
+      "tags": [
+        "Stipendium"
+      ],
+      "title": "Stipendium der Hans Rudolf Stiftung",
+      "org": "Hans Rudolf Stiftung, München",
+      "logo": "hr-stiftung.png",
       "why": "Stipendium für Studierende an Münchner Hochschulen.",
-      "text": [], "points": [], "links": [],
-      "cv": { "title": "Hans Rudolf Stiftung", "org": "Stipendiat" }
+      "text": [],
+      "points": [],
+      "links": [],
+      "cv": {
+        "org": "Hans Rudolf Stiftung",
+        "title": "Stipendium"
+      }
     },
     {
-      "id": "mintec", "kind": "award", "year": 2024,
-      "date": "06.2024", "tags": ["Auszeichnung"],
-      "title": "MINT-EC-Zertifikat mit Auszeichnung", "org": "MINT-EC, das nationale Excellence-Schulnetzwerk", "icon": "cap",
+      "id": "mintec",
+      "kind": "award",
+      "year": 2024,
+      "date": "06.2024",
+      "tags": [
+        "Auszeichnung"
+      ],
+      "title": "MINT-EC-Zertifikat mit Auszeichnung",
+      "org": "MINT-EC, das nationale Excellence-Schulnetzwerk",
+      "icon": "cap",
       "why": "Die höchste von drei Stufen, für herausragende Leistungen und Engagement in Mathematik, Informatik, Naturwissenschaften und Technik über die gesamte Schulzeit.",
-      "text": ["Das Zertifikat wird mit dem Abitur an Schulen des MINT-EC-Netzwerks vergeben und ist von Kultusministerkonferenz und Hochschulrektorenkonferenz anerkannt. Damit gehörte ich zu den besten 5 % meines Jahrgangs."],
+      "text": [
+        "Das Zertifikat wird mit dem Abitur an Schulen des MINT-EC-Netzwerks vergeben und ist von Kultusministerkonferenz und Hochschulrektorenkonferenz anerkannt. Damit gehörte ich zu den besten 5 % meines Jahrgangs."
+      ],
       "points": [],
-      "links": [{ "label": "MINT-EC", "url": "https://www.mint-ec.de/" }],
-      "cv": { "org": "Höchste von drei Stufen, Top 5 % des Jahrgangs", "link": 0 }
+      "links": [
+        {
+          "label": "MINT-EC",
+          "url": "https://www.mint-ec.de/"
+        }
+      ],
+      "cv": {
+        "hide": true
+      }
     },
     {
-      "id": "gcte", "kind": "award", "year": 2026,
-      "date": "2026", "place": "Suzhou und Shanghai, China", "loc": "suzhou", "tags": ["Auszeichnung", "Ausland"],
-      "title": "German-Chinese Talent Exchange", "org": "Delegation der TU München", "icon": "exchange",
-      "photo": { "file": "china.jpg", "alt": "Unsere Delegation in Suzhou", "focus": "50% 50%" },
+      "id": "gcte",
+      "kind": "award",
+      "year": 2026,
+      "date": "2026",
+      "place": "Suzhou und Shanghai, China",
+      "tags": [
+        "Auszeichnung",
+        "Ausland"
+      ],
+      "title": "German-Chinese Talent Exchange",
+      "org": "Delegation der TU München",
+      "icon": "exchange",
+      "photo": {
+        "file": "china.jpg",
+        "alt": "Unsere Delegation in Suzhou",
+        "focus": "50% 50%"
+      },
       "why": "Bei einer Aufnahmequote von 5 % als einer der besten Studierenden der TUM ausgewählt.",
-      "text": ["Mit einer Delegation der TU München in Suzhou und Shanghai."],
-      "points": [], "links": [],
-      "cv": { "org": "Delegation der TU München nach Suzhou und Shanghai, 5 % Aufnahmequote" }
+      "text": [
+        "Mit einer Delegation der TU München in Suzhou und Shanghai."
+      ],
+      "points": [],
+      "links": [],
+      "cv": {
+        "org": "German-Chinese Talent Exchange",
+        "title": "Delegation nach Suzhou und Shanghai; 5 % Aufnahmequote"
+      }
     },
     {
-      "id": "dsa", "kind": "award", "year": 2023,
-      "date": "2023", "tags": ["Auszeichnung"],
-      "title": "Deutsche SchülerAkademie", "org": "Von der Schule nominiert", "logo": "dsa.svg",
+      "id": "dsa",
+      "kind": "award",
+      "year": 2023,
+      "date": "2023",
+      "tags": [
+        "Auszeichnung"
+      ],
+      "title": "Deutsche SchülerAkademie",
+      "org": "Von der Schule nominiert",
+      "logo": "dsa.svg",
       "why": "Weniger als 1 % der Schülerinnen und Schüler in Deutschland werden ausgewählt.",
-      "text": ["Die Deutsche SchülerAkademie ist ein Sommerprogramm von Bildung & Begabung für besonders leistungsfähige und motivierte Schülerinnen und Schüler."],
+      "text": [
+        "Die Deutsche SchülerAkademie ist ein Sommerprogramm von Bildung & Begabung für besonders leistungsfähige und motivierte Schülerinnen und Schüler."
+      ],
       "points": [],
-      "links": [{ "label": "Deutsche SchülerAkademie", "url": "https://www.deutsche-schuelerakademie.de/" }],
-      "cv": { "org": "Von der Schule nominiert, weniger als 1 % werden ausgewählt", "link": 0 }
+      "links": [
+        {
+          "label": "Deutsche SchülerAkademie",
+          "url": "https://www.deutsche-schuelerakademie.de/"
+        }
+      ],
+      "cv": {
+        "org": "Deutsche SchülerAkademie",
+        "title": "Von der Schule nominiert; unter 1 % ausgewählt",
+        "link": 0
+      }
     }
   ]
 }

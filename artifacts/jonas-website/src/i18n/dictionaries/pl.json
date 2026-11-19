@@ -11,7 +11,9 @@
     "crumbsAria": "Ścieżka nawigacji",
     "readingTime": "{n} min czytania",
     "badgeInfo": "Informacja",
-    "badgeWarning": "Otwarte"
+    "badgeWarning": "Otwarte",
+    "nextLabel": "Dalej",
+    "nextHint": "Po prostu przewijaj dalej"
   },
   "nav": {
     "home": "Start",
@@ -52,7 +54,7 @@
     "mapAria": "Mapa świata z miejscami, w których mieszkałem",
     "blogTitle": "Blog",
     "allPosts": "Wszystkie wpisy",
-    "projectsEyebrow": "Projekty",
+    "projectsEyebrow": "Bieżące projekty",
     "projectsPath": "Etapy ostatnich lat",
     "allProjects": "Wszystkie projekty i pełne CV"
   },
@@ -64,8 +66,7 @@
     "lede": "U góry znajduje się to, nad czym teraz pracuję. Poniżej droga do tego miejsca.",
     "pdf": "CV jako PDF",
     "pinned": "Przypięte",
-    "pinnedTitle": "Nad tym teraz pracuję",
-    "pinnedNote": "Opinie są mile widziane.",
+    "pinnedTitle": "Bieżące projekty",
     "open": "Zobacz",
     "feedback": "Podziel się opinią",
     "pathTitle": "Droga do tego miejsca",

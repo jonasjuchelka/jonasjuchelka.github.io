@@ -7,6 +7,7 @@ import { fontVariables } from "../app/fonts";
 import type { ReactNode } from "react";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
+import { NextPage } from "./NextPage";
 import { getDict, isRtl } from "@/lib/i18n";
 
 const THEME_SCRIPT = `try{if(localStorage.getItem("theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}`;
@@ -23,7 +24,7 @@ export function SiteShell({ lang, children }: { lang: string; children: ReactNod
       <body>
         <a href="#inhalt" className="skip-link">{t.ui.skip}</a>
         <Header lang={lang} />
-        <main id="inhalt" tabIndex={-1}>{children}</main>
+        <main id="inhalt" tabIndex={-1}>{children}<NextPage lang={lang} labels={t.nav} label={t.ui.nextLabel} hint={t.ui.nextHint} /></main>
         <Footer lang={lang} />
       </body>
     </html>

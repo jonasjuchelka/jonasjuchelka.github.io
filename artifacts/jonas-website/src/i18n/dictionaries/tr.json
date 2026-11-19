@@ -11,7 +11,9 @@
     "crumbsAria": "Gezinti yolu",
     "readingTime": "{n} dk okuma",
     "badgeInfo": "Not",
-    "badgeWarning": "Açık"
+    "badgeWarning": "Açık",
+    "nextLabel": "Sıradaki",
+    "nextHint": "Kaydırmaya devam et"
   },
   "nav": {
     "home": "Ana sayfa",
@@ -52,7 +54,7 @@
     "mapAria": "Yaşadığım yerleri gösteren dünya haritası",
     "blogTitle": "Blog",
     "allPosts": "Tüm yazılar",
-    "projectsEyebrow": "Projeler",
+    "projectsEyebrow": "Güncel projeler",
     "projectsPath": "Son yılların durakları",
     "allProjects": "Tüm projeler ve özgeçmişin tamamı"
   },
@@ -64,8 +66,7 @@
     "lede": "Yukarıda şu an üzerinde çalıştığım işler var. Aşağıda buraya uzanan yol.",
     "pdf": "Özgeçmiş (PDF)",
     "pinned": "Sabitlendi",
-    "pinnedTitle": "Şu an üzerinde çalıştığım işler",
-    "pinnedNote": "Geri bildirim memnuniyetle karşılanır.",
+    "pinnedTitle": "Güncel projeler",
     "open": "Görüntüle",
     "feedback": "Geri bildirim ver",
     "pathTitle": "Buraya uzanan yol",
