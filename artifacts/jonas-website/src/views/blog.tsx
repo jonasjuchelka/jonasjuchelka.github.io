@@ -5,9 +5,10 @@ import { notFound } from "next/navigation";
 import { Markdown } from "@/components/Markdown";
 import { PageHead } from "@/components/PageHead";
 import { BlogIndex, type BlogItem, type BlogLabels } from "@/components/BlogIndex";
-import { getGedanken, getPost, getPosts, formatDate, formatMonthShort } from "@/lib/content";
+import { OriginalToggle } from "@/components/OriginalToggle";
+import { getGedanken, getOriginalPost, getPost, getPosts, formatDate, formatMonthShort, type Post } from "@/lib/content";
 import { pageMeta } from "@/lib/meta";
-import { fill, getDict, localePath } from "@/lib/i18n";
+import { LANGUAGES, fill, getDict, localePath } from "@/lib/i18n";
 
 export const blogMeta = (lang: string) => pageMeta(lang, getDict(lang).blog.metaTitle, getDict(lang).blog.metaDesc, "/blog/");
 
@@ -68,6 +69,22 @@ export function PostView({ lang, slug }: { lang: string; slug: string }) {
   const next = all.length > 1 ? all[(i + 1) % all.length] : null;
   // PDF nur anbieten, wenn der Workflow es erzeugt hat.
   const hasPdf = fs.existsSync(path.join(process.cwd(), "public", "blog", `${p.slug}.pdf`));
+  // Übersetzter Essay: Original zusätzlich ausliefern, ein Button schaltet um.
+  const orig = p.translated ? getOriginalPost(p.slug) : undefined;
+  const version = (x: Post) => (
+    <>
+      <header>
+        <div className="ameta">
+          {x.topic ? <span className="cat">{x.topic}</span> : null}
+          <time dateTime={x.date.toISOString()}>{formatDate(x.date, lang)}</time> &middot; {fill(d.ui.readingTime, { n: x.readingMinutes })}
+        </div>
+        <h1>{x.title}</h1>
+        <p className="ede">{x.summary}</p>
+      </header>
+      {x.image ? <figure className="ahero"><img src={x.image} alt="" /></figure> : null}
+      <div className="abody"><Markdown source={x.body} /></div>
+    </>
+  );
   return (
     <article className="article">
       <div className="abar">
@@ -77,16 +94,14 @@ export function PostView({ lang, slug }: { lang: string; slug: string }) {
         </Link>
         {hasPdf ? <a className="apdf" href={`/blog/${p.slug}.pdf`} download>{d.blog.pdf}</a> : null}
       </div>
-      <header>
-        <div className="ameta">
-          {p.topic ? <span className="cat">{p.topic}</span> : null}
-          <time dateTime={p.date.toISOString()}>{formatDate(p.date, lang)}</time> &middot; {fill(d.ui.readingTime, { n: p.readingMinutes })}
-        </div>
-        <h1>{p.title}</h1>
-        <p className="ede">{p.summary}</p>
-      </header>
-      {p.image ? <figure className="ahero"><img src={p.image} alt="" /></figure> : null}
-      <div className="abody"><Markdown source={p.body} /></div>
+      {orig ? (
+        <>
+          <OriginalToggle note={fill(d.blog.translatedNote, { lang: LANGUAGES[orig.original]?.name ?? orig.original })}
+            showOriginal={d.blog.readOriginal} showTranslation={d.blog.readTranslation} />
+          <div data-v="tr">{version(p)}</div>
+          <div data-v="orig" lang={orig.original} hidden>{version(orig)}</div>
+        </>
+      ) : version(p)}
       <footer className="afoot">
         {p.tags.length ? <div className="tags">{p.tags.map((x) => <span className="tag" key={x}>{x}</span>)}</div> : null}
         {next ? (

@@ -1,36 +1,56 @@
+import Link from "next/link";
 import { Notice } from "@workspace/site-ui";
-import { PageHead } from "@/components/PageHead";
+import { BrandLogo } from "@/components/BrandLogo";
 import { privateAppOrigin } from "@/lib/site";
 import { pageMeta } from "@/lib/meta";
-import { getDict } from "@/lib/i18n";
+import { getDict, localePath } from "@/lib/i18n";
 
 export const loginMeta = (lang: string) => ({ ...pageMeta(lang, getDict(lang).login.metaTitle, getDict(lang).login.metaDesc, "/login/"), robots: { index: false, follow: true } });
+
+// Login: eine ruhige Karte mit Logo, einem Satz, dem Passkey-Button (Hauptaktion) und dem Weg zurück zur Startseite.
+// Nur die Markenschriften, keine technische Adresse, kein Monospace. Die drei Fakten stehen klein darunter.
+const ICONS = {
+  key: "M14.5 9.5a4 4 0 1 1-3.1 3.9L4 20.8V17h3v-3h3l1.4-1.4A4 4 0 0 1 14.5 9.5zM16 7.5h.01",
+  mail: "M3.5 6.5h17v11h-17zM3.5 7.5l8.5 6 8.5-6",
+  shield: "M12 3.5 19 6v5.5c0 4.4-3 7.7-7 9-4-1.3-7-4.6-7-9V6z",
+};
 
 export function LoginView({ lang }: { lang: string }) {
   const d = getDict(lang);
   const t = d.login;
   const origin = privateAppOrigin();
+  const facts = [
+    { icon: ICONS.key, bold: t.fact1Bold, text: t.fact1 },
+    { icon: ICONS.mail, bold: t.fact2Bold, text: t.fact2 },
+    { icon: ICONS.shield, bold: t.fact3Bold, text: t.fact3 },
+  ];
   return (
-    <>
-      <PageHead eyebrow={t.eyebrow} title={t.title}><p>{t.lede}</p></PageHead>
-      <div className="wrap section section--tight gateway">
+    <div className="wrap login">
+      <section className="login__card" aria-labelledby="login-h">
+        <BrandLogo className="login__logo" />
+        <p className="cv-label">{t.eyebrow}</p>
+        <h1 id="login-h" className="h-bar">{t.title}</h1>
+        <p className="login__lede">{t.lede}</p>
         {origin ? (
-          <div className="gateway__card dark">
-            <p className="band__eyebrow">{t.continue}</p>
-            <p className="gateway__origin">{new URL(origin).host}</p>
+          <p className="login__act">
             <a href={`${origin}/login`} className="btn btn--primary" data-testid="link-private-login">{t.button}</a>
-          </div>
+            <Link href={localePath(lang, "/")} className="btn" data-testid="link-login-home">{t.backHome}</Link>
+          </p>
         ) : (
-          <Notice tone="warning" title={t.notReadyTitle} badge={d.ui.badgeWarning}>
-            <p>{t.notReady}</p>
-          </Notice>
+          <>
+            <Notice tone="warning" title={t.notReadyTitle} badge={d.ui.badgeWarning}><p>{t.notReady}</p></Notice>
+            <p className="login__act"><Link href={localePath(lang, "/")} className="btn">{t.backHome}</Link></p>
+          </>
         )}
-        <ul className="gateway__facts">
-          <li><span><strong>{t.fact1Bold}</strong> {t.fact1}</span></li>
-          <li><span><strong>{t.fact2Bold}</strong> {t.fact2}</span></li>
-          <li><span><strong>{t.fact3Bold}</strong> {t.fact3}</span></li>
-        </ul>
-      </div>
-    </>
+      </section>
+      <ul className="login__facts">
+        {facts.map((f) => (
+          <li key={f.bold}>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d={f.icon} /></svg>
+            <span><span className="login__fb">{f.bold}</span> {f.text}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

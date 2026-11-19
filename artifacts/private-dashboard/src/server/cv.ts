@@ -36,6 +36,12 @@ const entry = z.object({
   logo: file,
   icon: opt(20),
   links: z.array(z.object({ label: text(80), url: z.string().regex(/^https:\/\/[^\s"<>]+$/, "Links müssen mit https:// beginnen.") })).max(6),
+  // Eigene Formulierung für das PDF (scripts/cv-pdf.mjs). Ohne diesen Eintrag würde Speichern ihn verwerfen.
+  cv: z.object({
+    title: opt(120), org: opt(160),
+    points: z.array(text(300)).max(8).optional(), extra: z.array(text(300)).max(6).optional(),
+    link: z.number().int().min(0).max(5).optional(), optional: z.boolean().optional(), hide: z.boolean().optional(),
+  }).optional(),
 });
 const place = z.object({
   name: text(40), lat: z.number().min(-90).max(90), lon: z.number().min(-180).max(180), when: text(60), what: text(160),

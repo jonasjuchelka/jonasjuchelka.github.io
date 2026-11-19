@@ -22,6 +22,8 @@ export type CvEntry = {
   logo?: string;
   icon?: string;
   links: CvLink[];
+  /** Eigene Formulierung für das PDF (scripts/cv-pdf.mjs); auf der Website nicht sichtbar. */
+  cv?: { title?: string; org?: string; points?: string[]; extra?: string[]; link?: number; optional?: boolean; hide?: boolean };
 };
 export type CvPlace = { name: string; lat: number; lon: number; when: string; what: string; badge?: "home" | "now"; label?: "left" | "none" };
 export type Cv = { places: Record<string, CvPlace>; entries: CvEntry[] };

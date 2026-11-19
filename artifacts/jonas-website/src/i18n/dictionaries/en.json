@@ -1,6 +1,6 @@
 {
   "meta": {
-    "description": "Jonas Juchelka studies Management & Technology at TU Munich and builds startups. Projects, CV and thoughts."
+    "description": "Jonas Juchelka builds startups and studies at TU Munich, currently at UC Berkeley. Projects, CV and thoughts."
   },
   "ui": {
     "skip": "Skip to content",
@@ -18,7 +18,10 @@
     "projects": "Projects",
     "blog": "Blog",
     "contact": "Contact",
-    "private": "Login"
+    "private": "Login",
+    "menu": "Menu",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
   },
   "lang": {
     "label": "Language",
@@ -30,7 +33,7 @@
     "error": "Translation is currently unavailable. Please try again later."
   },
   "footer": {
-    "line": "Management & Technology, TU München · UC Berkeley.",
+    "line": "Curious how the world works. Driven to make it better.",
     "base": "Static website. No tracking, no cookies.",
     "rss": "RSS feed",
     "imprint": "Imprint",
@@ -48,7 +51,10 @@
     "mapTitle": "Places I have called home",
     "mapAria": "World map with the places I have lived",
     "blogTitle": "Blog",
-    "allPosts": "All posts"
+    "allPosts": "All posts",
+    "projectsEyebrow": "Projects",
+    "projectsPath": "Recent stations",
+    "allProjects": "All projects and the full CV"
   },
   "projects": {
     "metaTitle": "Projects and CV",
@@ -125,7 +131,10 @@
     "pdf": "PDF",
     "next": "Next post",
     "themeDark": "Dark theme",
-    "themeLight": "Light theme"
+    "themeLight": "Light theme",
+    "translatedNote": "Automatically translated. Original: {lang}.",
+    "readOriginal": "Read original",
+    "readTranslation": "Read translation"
   },
   "contact": {
     "metaTitle": "Contact",
@@ -141,12 +150,11 @@
     "backHome": "Back to home"
   },
   "login": {
-    "metaTitle": "Private area",
-    "metaDesc": "Entry to the private area protected by passkey.",
-    "eyebrow": "Access",
-    "title": "Private area",
-    "lede": "The private area is a separate application at its own address. This public site does not sign anyone in and stores nothing.",
-    "continue": "Continue to sign-in",
+    "metaTitle": "Login",
+    "metaDesc": "Login to the private area, protected by passkey.",
+    "eyebrow": "Private area",
+    "title": "Login",
+    "lede": "The private area is for invited people only. Sign-in works exclusively with passkeys.",
     "button": "Sign in with passkey",
     "notReadyTitle": "Not set up yet",
     "notReady": "The private application does not have a permanent production address yet. Once it does, this page will lead directly there.",
@@ -155,7 +163,8 @@
     "fact2Bold": "Invitation only.",
     "fact2": "There is no public registration.",
     "fact3Bold": "Separate.",
-    "fact3": "Sign-in and data exist solely on the private application, not on GitHub Pages."
+    "fact3": "Sign-in and data live only in the private application, not on this website.",
+    "backHome": "Back to home"
   },
   "legal": {
     "eyebrow": "Legal",

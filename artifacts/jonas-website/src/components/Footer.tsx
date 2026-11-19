@@ -11,7 +11,7 @@ export function Footer({ lang }: { lang: string }) {
         <div>
           <BrandLogo className="site-footer__logo" />
           <p className="site-footer__name">Jonas Juchelka</p>
-          <p className="site-footer__line">{t.footer.line}</p>
+          <p className="site-footer__line" lang="en">{t.footer.line}</p>
         </div>
         <ul className="site-footer__links" aria-label={t.ui.contactAria}>
           <li><Link href={localePath(lang, "/kontakt/")}>{t.footer.contact}</Link></li>

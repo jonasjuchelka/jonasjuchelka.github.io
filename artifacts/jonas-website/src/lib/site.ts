@@ -3,7 +3,7 @@ export const SITE_URL = "https://jonasjuchelka.github.io/";
 export const SITE_NAME = "Jonas Juchelka";
 // German source text, kept for the feed and root metadata. Other languages use meta.description from their dictionary.
 export const SITE_DESCRIPTION =
-  "Jonas Juchelka studiert Management & Technology an der TU München und gründet. Projekte, Lebenslauf und Gedanken.";
+  "Jonas Juchelka baut Startups und studiert an der TU München, derzeit an der UC Berkeley. Projekte, Lebenslauf und Gedanken.";
 export const EMAIL = "jonas.juchelka@gmail.com";
 export const GITHUB = "https://github.com/jonasjuchelka";
 export const LINKEDIN = "https://www.linkedin.com/in/jonasjuchelka/";

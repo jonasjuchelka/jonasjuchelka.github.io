@@ -24,14 +24,6 @@
       "what": "在此成长，完成中学学业并取得高中毕业证书（Abitur）",
       "label": "none"
     },
-    "saintbrieuc": {
-      "name": "圣布里厄",
-      "lat": 48.51,
-      "lon": -2.76,
-      "when": "2019年5月",
-      "what": "在布列塔尼参加中学生交换项目",
-      "label": "left"
-    },
     "madrid": {
       "name": "马德里",
       "lat": 40.42,
@@ -46,13 +38,6 @@
       "lon": 37.01,
       "when": "2016年和2018年",
       "what": "在肯尼亚的学校参与学习与社会服务工作"
-    },
-    "vae": {
-      "name": "阿联酋",
-      "lat": 24.45,
-      "lon": 54.38,
-      "when": "2013年至2016年",
-      "what": "与大学合作的考察活动"
     },
     "suzhou": {
       "name": "苏州",
@@ -89,7 +74,13 @@
         "录制内容包括屏幕、声音和人物",
         "已申请 a16z speedrun"
       ],
-      "links": []
+      "links": [],
+      "cv": {
+        "org": "Mitgründer · KI-Vorinterview für Recruiting",
+        "points": [
+          "Entstanden beim SF Tech Week Hackathon, Bewerbung beim Accelerator a16z speedrun"
+        ]
+      }
     },
     {
       "id": "concentr8",
@@ -127,8 +118,19 @@
         {
           "label": "下载页面",
           "url": "https://concentr8.github.io/"
+        },
+        {
+          "label": "Cal Hacks",
+          "url": "https://calhacks.io/"
         }
-      ]
+      ],
+      "cv": {
+        "points": [
+          "Backend verantwortet: Mac-App, die Ablenkungen sperrt, Anrufe zu festen Lernzeiten, KI-Planung mit Google Kalender",
+          "Entstanden bei Cal Hacks 13.0, weiterentwickelt im Kurs Technology Entrepreneurship (ENGIN 183E)"
+        ],
+        "link": 0
+      }
     },
     {
       "id": "berkeley",
@@ -155,9 +157,10 @@
         "我通过 Berkeley International Study Program 在 Berkeley 学习一个学期。除了上课，我也抓住每个机会参加黑客松。"
       ],
       "points": [
-        "人工智能（CS 188）",
-        "密码学（CS 171）",
-        "Technology Entrepreneurship（ENGIN 183E）"
+        "Künstliche Intelligenz (CS 188)",
+        "Kryptografie (CS 171)",
+        "Technology Entrepreneurship (ENGIN 183E)",
+        "Gefördert durch die Stiftung der Deutschen Wirtschaft"
       ],
       "links": [
         {
@@ -167,8 +170,20 @@
         {
           "label": "Berkeley International Study Program",
           "url": "https://bisp.berkeley.edu/"
+        },
+        {
+          "label": "CS 188",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/"
         }
-      ]
+      ],
+      "cv": {
+        "title": "University of California, Berkeley",
+        "org": "Austauschstudent · Berkeley International Study Program",
+        "points": [
+          "Künstliche Intelligenz (CS 188), Kryptografie (CS 171), Technology Entrepreneurship (ENGIN 183E)",
+          "Gefördert durch die Stiftung der Deutschen Wirtschaft (sdw)"
+        ]
+      }
     },
     {
       "id": "tutor",
@@ -188,11 +203,26 @@
         "我在 2025/26 冬季学期和 2026 夏季学期主持了“Operations Research and Decision Analysis”的习题课，并提供一对一辅导。我自己以 1.3 的成绩修完了这门课。"
       ],
       "points": [
-        "每周 4 小时习题课，面向约 25 名学生",
-        "单纯形法、网络流、整数优化",
-        "使用 Gurobi 建模"
+        "4 Stunden Tutorium pro Woche für rund 25 Studierende",
+        "Übungsaufgaben selbst konzipiert",
+        "Simplex, Netzwerkflüsse, ganzzahlige Optimierung",
+        "Modellierung mit Gurobi"
       ],
-      "links": []
+      "links": [
+        {
+          "label": "TU München",
+          "url": "https://www.tum.de/"
+        }
+      ],
+      "cv": {
+        "title": "Tutor, Operations Research and Decision Analysis",
+        "org": "Technische Universität München",
+        "points": [
+          "Ausgewählt für eine Kursleistung unter den besten 5 % (Note 1,3)",
+          "4 Stunden Tutorium pro Woche für rund 25 Studierende, Übungsaufgaben selbst konzipiert",
+          "Simplex, Netzwerkflüsse, ganzzahlige Optimierung, Gurobi"
+        ]
+      }
     },
     {
       "id": "ritzenhoefer",
@@ -226,7 +256,13 @@
           "label": "ritzenhoefer & company",
           "url": "https://www.ritzenhoefer.com/"
         }
-      ]
+      ],
+      "cv": {
+        "points": [
+          "Runbook und über 70 Change Requests im PMO verantwortet, Berichtswesen mit Excel-Makros teilautomatisiert",
+          "60/60-Jobsharing-Modell für Senior Consultants entwickelt"
+        ]
+      }
     },
     {
       "id": "comstruct",
@@ -261,15 +297,26 @@
           "label": "comstruct.com",
           "url": "https://www.comstruct.com/"
         }
-      ]
+      ],
+      "cv": {
+        "title": "Business Development, Supply Chain Integration",
+        "org": "comstruct · Bausoftware, Series A · Praktikum",
+        "points": [
+          "74 Lieferanten in 9 Wochen angebunden, einschließlich technischer Integration",
+          "Prozess der Lieferantenanbindung analysiert und verbessert"
+        ],
+        "extra": [
+          "comstruct auf der Fachmesse BAUMA vertreten"
+        ]
+      }
     },
     {
       "id": "shapely",
       "kind": "station",
       "year": 2026,
       "date": "03.2026 – 05.2026",
-      "place": "亚琛",
-      "loc": "aachen",
+      "place": "慕尼黑",
+      "loc": "muenchen",
       "tags": [
         "创业",
         "项目"
@@ -279,18 +326,31 @@
       "logo": "shapely.png",
       "why": "用手机扫描,打印好的成品送货到家。我学到的最重要的一点,是何时该放下一个想法。",
       "text": [
-        "一个用于下单的网页应用,以及一个 iPhone 应用:它通过 LiDAR 扫描仪采集零件,并生成可直接打印的文件。后来我放弃了“面向终端用户的应用”这一模式。"
+        "Bricht ein Kunststoffteil, gibt es oft weder Ersatz noch eine Konstruktionsdatei. Shapely sollte genau diese Lücke schließen: Teil fotografieren oder scannen, daraus ein druckfertiges Modell erstellen, drucken und liefern.",
+        "Wir waren zu dritt, alle von der TU München, und Teil des TUM Startup Launchpad. Ich habe Strategie, Finanzen und Go-to-Market verantwortet."
       ],
       "points": [
-        "使用 ARKit、LiDAR 和 Supabase 开发 iPhone 应用原型",
-        "对商业模式进行了严格审视,并最终否决"
+        "Erste Aufträge bewusst von Hand umgesetzt: in Fusion 360 modelliert, auf einem Bambu Lab X1 Carbon gedruckt und selbst ausgeliefert",
+        "Web-Plattform, die passende Teile auf Thingiverse und Printables findet",
+        "iPhone-Prototyp, der Teile mit dem LiDAR-Scanner erfasst (Swift, ARKit, Supabase)",
+        "Interviews mit Instandhaltern und Konstrukteuren geführt, Wettbewerber wie Replique und 3YOURMIND analysiert",
+        "Ergebnis der Tests: Das Modell trägt nicht, wir haben es eingestellt"
       ],
       "links": [
         {
           "label": "shapely.live",
           "url": "https://shapely.live/"
         }
-      ]
+      ],
+      "cv": {
+        "org": "Mitgründer · Ersatzteile aus dem 3D-Drucker, ohne CAD-Datei",
+        "points": [
+          "Strategie, Finanzen und Go-to-Market im Dreierteam, TUM Startup Launchpad",
+          "Erste Aufträge von Hand umgesetzt (Fusion 360, 3D-Druck); iPhone-Scan-Prototyp mit ARKit und LiDAR",
+          "Geschäftsmodell in Interviews mit Instandhaltern geprüft und eingestellt"
+        ],
+        "link": 0
+      }
     },
     {
       "id": "tum",
@@ -316,10 +376,21 @@
       ],
       "links": [
         {
+          "label": "TU München",
+          "url": "https://www.tum.de/"
+        },
+        {
           "label": "TUM 的专业介绍",
           "url": "https://www.mgt.tum.de/de/programs/bachelor-in-management-technology/muenchen"
         }
-      ]
+      ],
+      "cv": {
+        "title": "Technische Universität München",
+        "org": "B.Sc. Management and Technology, Vertiefung Computer Engineering",
+        "points": [
+          "Notenschnitt 1,6 (Top 10 %), Studiengang mit 9 % Aufnahmequote"
+        ]
+      }
     },
     {
       "id": "cycos",
@@ -349,7 +420,13 @@
         "Java 与面向对象编程",
         "了解电话通信和 VoIP"
       ],
-      "links": []
+      "links": [],
+      "cv": {
+        "points": [
+          "Linux-Server und virtuelle Maschinen (Proxmox) aufgesetzt, objektorientierte Programmierung in Java"
+        ],
+        "optional": true
+      }
     },
     {
       "id": "ffi",
@@ -380,7 +457,15 @@
         "重新搭建了理事会架构",
         "共同制定价值观:做行动者而非旁观者、彼此支持、留下些什么、不摆架子"
       ],
-      "links": []
+      "links": [],
+      "cv": {
+        "title": "Future Founders Initiative e.V.",
+        "org": "Mitgründer und Vorstand, seit 08.2026 im Beirat",
+        "points": [
+          "Von fünf Gründungsmitgliedern zu einer Initiative in drei Städten aufgebaut",
+          "Dreitägige Gründungsveranstaltungen für über 110 Studierende organisiert"
+        ]
+      }
     },
     {
       "id": "abitur",
@@ -397,18 +482,43 @@
       "logo": "pius.png",
       "why": "Abitur 成绩 1.2，同时已在 RWTH 听数学课程。",
       "text": [
-        "课余时间，我以提前修读的方式在 RWTH Aachen 旁听了高等数学。"
+        "Am Pius-Gymnasium habe ich mich weit über den Unterricht hinaus engagiert: mit einem eigenen Förderkurs, in Nachhilfe und Hausaufgabenbetreuung und acht Jahre lang in der Big Band.",
+        "Parallel zur Oberstufe habe ich im Frühstudium die Vorlesung Höhere Mathematik an der RWTH Aachen besucht."
       ],
       "points": [
-        "MINT 证书，获优异评价（年级前 5%）",
-        "在 RWTH Aachen 提前修读大学课程"
+        "Abiturnote 1,2 (Top 10 %)",
+        "MINT-EC-Zertifikat mit Auszeichnung, die höchste von drei Stufen (Top 5 % des Jahrgangs)",
+        "Förderkurs „Economy & Innovation“ für die Klassen 8 bis 10 aufgebaut und ab Oktober 2022 wöchentlich zwei Stunden geleitet: Volkswirtschaft, persönliche Finanzen, Steuern, internationale Politik, künstliche Intelligenz, Präsentieren und Websites",
+        "Ein Schuljahr lang wöchentliche Mathematik-Einzelförderung für einen Fünftklässler mit besonderem Förderbedarf",
+        "Hausaufgabenbetreuung für die Unter- und Mittelstufe",
+        "Posaune in der Big Band seit 2016 und im Schulorchester: Konzerte, Schulfeste, Gedenkveranstaltungen"
       ],
       "links": [
         {
           "label": "Pius-Gymnasium",
           "url": "https://www.pius-gymnasium.de/"
+        },
+        {
+          "label": "MINT-EC",
+          "url": "https://www.mint-ec.de/"
+        },
+        {
+          "label": "RWTH Aachen",
+          "url": "https://www.rwth-aachen.de/"
         }
-      ]
+      ],
+      "cv": {
+        "title": "Bischöfliches Pius-Gymnasium Aachen",
+        "org": "Abitur 1,2 (Top 10 %) · Leistungskurse Mathematik, Erdkunde, Deutsch",
+        "points": [
+          "Frühstudium: Höhere Mathematik an der RWTH Aachen",
+          "Förderkurs „Economy & Innovation“ für die Klassen 8 bis 10 aufgebaut und ab 10.2022 wöchentlich zwei Stunden geleitet: Volkswirtschaft, Finanzen, KI, Präsentieren",
+          "Ein Schuljahr wöchentliche Mathematik-Einzelförderung für einen jüngeren Schüler mit besonderem Förderbedarf"
+        ],
+        "extra": [
+          "Hausaufgabenbetreuung für die Unter- und Mittelstufe; Posaune in Big Band und Schulorchester seit 2016"
+        ]
+      }
     },
     {
       "id": "aixtron",
@@ -437,55 +547,13 @@
           "label": "AIXTRON",
           "url": "https://www.aixtron.com/"
         }
-      ]
-    },
-    {
-      "id": "schuelerpraktika",
-      "kind": "station",
-      "year": 2023,
-      "date": "2021 – 2023",
-      "place": "亚琛和科隆",
-      "loc": "aachen",
-      "tags": [
-        "工作"
       ],
-      "title": "中学期间的短期实习",
-      "org": "验光、化工、能源交易",
-      "icon": "briefcase",
-      "why": "在做决定之前，尽可能多地从内部了解不同的职业。",
-      "text": [
-        "在 ChemCologne 的活动“Meine Position ist spitze!”中，我两次申请领导岗位，并各担任了一天。"
-      ],
-      "points": [
-        "在 Chemiepark Knapsack 担任一天站点运营负责人（YNCORIS，2022）",
-        "在科隆的 Infineum 担任一天 Maintenance Manager（2023）",
-        "在 Trianel 体验两天能源交易：日前拍卖与日内拍卖（2023）",
-        "在验光店参加 Boys’ Day（2021）"
-      ],
-      "links": []
-    },
-    {
-      "id": "sozialpraktikum",
-      "kind": "station",
-      "year": 2022,
-      "date": "01.2022",
-      "place": "亚琛",
-      "loc": "aachen",
-      "tags": [
-        "社会参与"
-      ],
-      "title": "社会实习",
-      "org": "亚琛 Caritas 的 Café Plattform",
-      "icon": "heart",
-      "why": "在一处无家可归者的聚集场所实习两周。",
-      "text": [
-        "Café Plattform 是 Caritas 的一处开放式聚会场所。我在厨房和餐食发放处帮忙，并主动与来访者交谈。"
-      ],
-      "points": [
-        "参加晨会，在厨房和餐食发放处工作",
-        "了解街头社工和就业项目"
-      ],
-      "links": []
+      "cv": {
+        "points": [
+          "Azubi-Tag mitgeplant, Schülerseite der Karriere-Website überarbeitet, Pressemitteilungen mitbetreut"
+        ],
+        "optional": true
+      }
     },
     {
       "id": "madrid",
@@ -514,31 +582,12 @@
           "label": "Colegio Tajamar",
           "url": "https://www.tajamar.es/"
         }
-      ]
-    },
-    {
-      "id": "frankreich",
-      "kind": "station",
-      "year": 2019,
-      "date": "05.2019",
-      "place": "Saint-Brieuc，法国",
-      "loc": "saintbrieuc",
-      "tags": [
-        "学校",
-        "海外"
       ],
-      "title": "布列塔尼中学交换项目",
-      "org": "Pius-Gymnasium 与 Saint Charles – La Providence",
-      "icon": "globe",
-      "why": "为期两周的交换，用法语和德语写成旅行日记。",
-      "text": [
-        "2018年秋天，我的交换伙伴来到亚琛；2019年5月，我前往 Saint-Brieuc。"
-      ],
-      "points": [
-        "参观圣米歇尔山、圣马洛，并在当地上课",
-        "以优异成绩完成（欧洲学校护照）"
-      ],
-      "links": []
+      "cv": {
+        "title": "Colegio Tajamar",
+        "org": "Auslandssemester, Bachillerato mit Schwerpunkt Biowissenschaften",
+        "points": []
+      }
     },
     {
       "id": "kenia2018",
@@ -562,7 +611,10 @@
         "参与修建围栏，并维护院区",
         "和孩子们一起玩耍"
       ],
-      "links": []
+      "links": [],
+      "cv": {
+        "hide": true
+      }
     },
     {
       "id": "kenia2016",
@@ -583,32 +635,15 @@
         "我读四年级，完整参与了日常的学校生活。"
       ],
       "points": [
-        "最喜欢的是：数学和唱歌"
+        "Vollständiger Schulalltag in allen Fächern",
+        "Schwerpunkte: Mathematik und Musik"
       ],
-      "links": []
-    },
-    {
-      "id": "vae",
-      "kind": "station",
-      "year": 2016,
-      "date": "2013、2015 和 2016",
-      "place": "迪拜、阿布扎比、拉斯海马",
-      "loc": "vae",
-      "tags": [
-        "海外"
-      ],
-      "title": "阿联酋考察之旅",
-      "org": "杜伊斯堡-埃森大学与 UAE University",
-      "icon": "compass",
-      "why": "作为中学生，三次与大学生同行，了解结构转型。",
-      "text": [
-        "这些考察属于 DAAD 项目“与伊斯兰世界的高校对话”。主题是煤炭和石油时代之后的转型，比较鲁尔区与阿联酋。"
-      ],
-      "points": [
-        "每次十天的实地调研与交流",
-        "与两所大学的学生一起参加"
-      ],
-      "links": []
+      "links": [],
+      "cv": {
+        "title": "Precious Blood Primary School",
+        "org": "Trimester im kenianischen Schulsystem",
+        "points": []
+      }
     },
     {
       "id": "sdw",
@@ -631,7 +666,12 @@
           "label": "sdw.org",
           "url": "https://www.sdw.org/"
         }
-      ]
+      ],
+      "cv": {
+        "title": "Stiftung der Deutschen Wirtschaft (sdw)",
+        "org": "Stipendiat, eines der 13 Begabtenförderungswerke in Deutschland",
+        "link": 0
+      }
     },
     {
       "id": "hrs",
@@ -647,7 +687,38 @@
       "why": "面向目标明确的慕尼黑在读学生的奖学金。",
       "text": [],
       "points": [],
-      "links": []
+      "links": [],
+      "cv": {
+        "title": "Hans Rudolf Stiftung",
+        "org": "Stipendiat"
+      }
+    },
+    {
+      "id": "mintec",
+      "kind": "award",
+      "year": 2024,
+      "date": "06.2024",
+      "tags": [
+        "Auszeichnung"
+      ],
+      "title": "MINT-EC-Zertifikat mit Auszeichnung",
+      "org": "MINT-EC, das nationale Excellence-Schulnetzwerk",
+      "icon": "cap",
+      "why": "Die höchste von drei Stufen, für herausragende Leistungen und Engagement in Mathematik, Informatik, Naturwissenschaften und Technik über die gesamte Schulzeit.",
+      "text": [
+        "Das Zertifikat wird mit dem Abitur an Schulen des MINT-EC-Netzwerks vergeben und ist von Kultusministerkonferenz und Hochschulrektorenkonferenz anerkannt. Damit gehörte ich zu den besten 5 % meines Jahrgangs."
+      ],
+      "points": [],
+      "links": [
+        {
+          "label": "MINT-EC",
+          "url": "https://www.mint-ec.de/"
+        }
+      ],
+      "cv": {
+        "org": "Höchste von drei Stufen, Top 5 % des Jahrgangs",
+        "link": 0
+      }
     },
     {
       "id": "gcte",
@@ -673,7 +744,10 @@
         "随 TUM 代表团前往苏州和上海。"
       ],
       "points": [],
-      "links": []
+      "links": [],
+      "cv": {
+        "org": "Delegation der TU München nach Suzhou und Shanghai, 5 % Aufnahmequote"
+      }
     },
     {
       "id": "dsa",
@@ -696,7 +770,11 @@
           "label": "Deutsche SchülerAkademie",
           "url": "https://www.deutsche-schuelerakademie.de/"
         }
-      ]
+      ],
+      "cv": {
+        "org": "Von der Schule nominiert, weniger als 1 % werden ausgewählt",
+        "link": 0
+      }
     }
   ]
 }

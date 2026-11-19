@@ -3,6 +3,7 @@
 //   src/i18n/dictionaries/<lang>.json   (UI texts, translated from de.json)
 //   content/<lang>/{projects,blog}/*.md (content files, translated from content/{projects,blog})
 //   content/<lang>/cv.json              (CV texts, translated from content/cv.json; ids, years, links and files stay identical)
+//   content/de/blog/*.md                (essays written in another language, translated into German)
 // Usage: ANTHROPIC_API_KEY=... node scripts/translate.mjs [--langs es,fr] [--force] [--dry]
 // Unchanged sources are skipped via src/i18n/.translation-cache.json (hashes only, no text).
 import fs from "node:fs";
@@ -118,14 +119,34 @@ function splitFile(raw) {
   return { fm: parseYaml(m[1]), body: m[2] };
 }
 
-async function translateContent(lang) {
-  for (const dir of ["projects", "blog"]) {
+// Essays can be written in any language (often English). The original stays in content/blog/; every other language,
+// German included, gets a translation in content/<lang>/blog/. The site shows the translation with a button to the original.
+// Keep detectLang in sync with src/lib/content.ts.
+const LANG_NAMES = { de: "German", ...NAMES };
+function detectLang(text) {
+  const words = text.toLowerCase().match(/[a-zäöüß']+/g) ?? [];
+  const count = (list) => words.filter((w) => list.includes(w)).length;
+  const de = count(["der", "die", "das", "und", "ist", "nicht", "ich", "ein", "eine", "mit", "auf", "für", "zu", "wir", "sich", "auch", "dass"]);
+  const en = count(["the", "and", "is", "not", "i", "a", "an", "with", "on", "for", "to", "we", "it", "also", "that", "you", "of"]);
+  return en > de ? "en" : "de";
+}
+const origLang = (fm, body) => (typeof fm.lang === "string" && LANG_NAMES[fm.lang] ? fm.lang : detectLang(body));
+
+async function translateContent(lang, onlyBlog = false) {
+  for (const dir of onlyBlog ? ["blog"] : ["projects", "blog"]) {
     const srcDir = path.join(CONTENT, dir);
     if (!fs.existsSync(srcDir)) continue;
     for (const file of fs.readdirSync(srcDir).filter((f) => f.endsWith(".md") && !f.startsWith("_"))) {
       const raw = fs.readFileSync(path.join(srcDir, file), "utf8");
-      const { fm } = splitFile(raw);
+      const { fm, body } = splitFile(raw);
       if (dir === "blog" && fm.draft !== false) continue; // drafts are not published, so not translated either
+      const from = dir === "blog" ? origLang(fm, body) : "de";
+      if (from === lang) {
+        // Original language: the source itself is shown. Remove a stale copy so it cannot shadow the original.
+        const stale = path.join(CONTENT, lang, dir, file);
+        if (fs.existsSync(stale) && !flag("dry")) { fs.rmSync(stale); console.log(`  ${dir}/${file}: original language, removed copy`); }
+        continue;
+      }
       const key = `${dir}/${file}`;
       const h = sha(raw + MODEL);
       const outFile = path.join(CONTENT, lang, dir, file);
@@ -138,10 +159,10 @@ async function translateContent(lang) {
       }
       if (flag("dry")) { console.log(`  ${key}: would translate`); continue; }
       const text = await attempt(key, async () => {
-        const t = stripFence(await claude(NAMES[lang],
-          `Translate this Markdown file from German. Translate the frontmatter values of title, summary, role, context and every entry of tags, and the whole body. Keep all other frontmatter keys and values (slug, order, published, date, updated, draft) byte-identical. Return the complete file, starting with the --- frontmatter.\n\n${raw}`));
+        const t = stripFence(await claude(LANG_NAMES[lang],
+          `Translate this Markdown file from ${LANG_NAMES[from]}. Translate the frontmatter values of title, summary, role, context and every entry of tags, and the whole body. Keep all other frontmatter keys and values (slug, order, published, date, updated, draft, lang) byte-identical. Return the complete file, starting with the --- frontmatter.\n\n${raw}`));
         const { fm: out } = splitFile(t);
-        for (const k of ["slug", "order", "published", "date", "updated", "draft"]) {
+        for (const k of ["slug", "order", "published", "date", "updated", "draft", "lang"]) {
           if (JSON.stringify(out[k]) !== JSON.stringify(fm[k])) throw new Error(`${key}: frontmatter field "${k}" changed`);
         }
         return t;
@@ -158,6 +179,15 @@ async function translateContent(lang) {
 // CV: only human-readable fields are sent; everything else is copied from the German source unchanged.
 const CV_BATCH = 5;
 const CV_TEXT = { entry: ["date", "place", "title", "org", "why"], entryLists: ["tags", "text", "points"], place: ["name", "when", "what"] };
+// Optional "cv" block per entry: own wording for the PDF CV (title, org, points, extra). Only its texts are translated;
+// flags like link, optional and hide are copied unchanged. Lists are only sent when the source has them, so the shape stays identical.
+const CV_PDF = { text: ["title", "org"], lists: ["points", "extra"] };
+function cvPdfStrings(c) {
+  return {
+    ...Object.fromEntries(CV_PDF.text.filter((f) => typeof c[f] === "string" && c[f]).map((f) => [f, c[f]])),
+    ...Object.fromEntries(CV_PDF.lists.filter((f) => Array.isArray(c[f])).map((f) => [f, c[f]])),
+  };
+}
 function cvStrings(cv) {
   return {
     places: Object.fromEntries(Object.entries(cv.places).map(([k, p]) => [k, Object.fromEntries(CV_TEXT.place.map((f) => [f, p[f]]))])),
@@ -166,6 +196,7 @@ function cvStrings(cv) {
       ...Object.fromEntries(CV_TEXT.entryLists.map((f) => [f, e[f] ?? []])),
       ...(e.photo ? { photoAlt: e.photo.alt } : {}),
       links: (e.links ?? []).map((l) => l.label),
+      ...(e.cv ? { cv: cvPdfStrings(e.cv) } : {}),
     })),
   };
 }
@@ -178,6 +209,10 @@ function cvApply(cv, s) {
     for (const f of CV_TEXT.entryLists) e[f] = t[f];
     if (e.photo) e.photo.alt = t.photoAlt;
     e.links = (e.links ?? []).map((l, j) => ({ ...l, label: t.links[j] }));
+    if (e.cv && t.cv) {
+      for (const f of CV_PDF.text) if (typeof e.cv[f] === "string" && typeof t.cv[f] === "string") e.cv[f] = t.cv[f];
+      for (const f of CV_PDF.lists) if (Array.isArray(e.cv[f]) && Array.isArray(t.cv[f])) e.cv[f] = t.cv[f];
+    }
   });
   return out;
 }
@@ -211,5 +246,11 @@ async function translateCv(lang) {
 for (const lang of langs) {
   console.log(`${lang} (${NAMES[lang]})`);
   try { await translateDict(lang); await translateContent(lang); await translateCv(lang); }
+  catch (e) { console.error(`  FAILED: ${e.message}`); process.exitCode = 1; }
+}
+// German readers get essays that were written in another language as a translation, too.
+if (!opt("langs")) {
+  console.log("de (German, essays only)");
+  try { await translateContent("de", true); }
   catch (e) { console.error(`  FAILED: ${e.message}`); process.exitCode = 1; }
 }

@@ -1,0 +1,44 @@
+{
+  "de": {
+    "headline": "Curious how the world works. Driven to make it better.",
+    "place": "München · Berkeley",
+    "updated": "Stand",
+    "fileTitle": "Jonas Juchelka – Lebenslauf",
+    "kpis": [
+      ["1,6", "Notenschnitt TUM", "Top 10 %"],
+      ["1,2", "Abitur", "Top 10 %"],
+      ["74", "Lieferanten in", "9 Wochen angebunden"],
+      ["110+", "Studierende pro", "FFI-Veranstaltung"],
+      ["25", "Studierende pro Woche", "als Tutor"],
+      ["4", "Sprachen", ""]
+    ],
+    "sections": { "education": "Ausbildung", "experience": "Erfahrung", "founding": "Gründen", "engagement": "Engagement", "awards": "Stipendien und Auszeichnungen", "skills": "Kenntnisse", "places": "Wo ich gelebt und gelernt habe" },
+    "skills": [
+      ["Sprachen", "Deutsch (Muttersprache), Englisch (fließend), Spanisch (verhandlungssicher), Französisch (Grundkenntnisse)"],
+      ["Technik", "Python, R, Java, Swift, Gurobi, LaTeX, Supabase"],
+      ["Interessen", "Netzwerkstrategie von Airlines, Bahn- und Nahverkehrsplanung, Start-up-Ökosysteme"]
+    ],
+    "placesOrder": ["aachen", "juja", "madrid", "muenchen", "suzhou", "berkeley"]
+  },
+  "en": {
+    "headline": "Curious how the world works. Driven to make it better.",
+    "place": "Munich · Berkeley",
+    "updated": "As of",
+    "fileTitle": "Jonas Juchelka – CV",
+    "kpis": [
+      ["1.6", "GPA at TUM", "top 10 %"],
+      ["1.2", "Abitur", "top 10 %"],
+      ["74", "suppliers onboarded", "in 9 weeks"],
+      ["110+", "students per", "FFI event"],
+      ["25", "students taught", "weekly as TA"],
+      ["4", "languages", ""]
+    ],
+    "sections": { "education": "Education", "experience": "Experience", "founding": "Founding", "engagement": "Volunteering", "awards": "Scholarships and awards", "skills": "Skills", "places": "Where I have lived and learned" },
+    "skills": [
+      ["Languages", "German (native), English (fluent), Spanish (professional), French (basic)"],
+      ["Technical", "Python, R, Java, Swift, Gurobi, LaTeX, Supabase"],
+      ["Interests", "Airline network strategy, rail and public transport planning, startup ecosystems"]
+    ],
+    "placesOrder": ["aachen", "juja", "madrid", "muenchen", "suzhou", "berkeley"]
+  }
+}
