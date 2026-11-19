@@ -17,7 +17,12 @@ export function ProjectsView({ lang }: { lang: string }) {
           <p className="cv-label">{t.eyebrow}</p>
           <h1>{t.title}</h1>
           <p className="phead__lede">{t.lede}</p>
-          <p className="phead__act"><a className="btn btn--ondark" href="/media/lebenslauf.pdf" download="Jonas-Juchelka-Lebenslauf.pdf">{t.pdf}</a></p>
+          <p className="phead__act">
+            {/* Deutsch: deutscher Lebenslauf, alle anderen Sprachen: englischer (beide entstehen beim Bauen, scripts/cv-pdf.mjs). */}
+            {lang === "de"
+              ? <a className="btn btn--ondark" href="/media/lebenslauf.pdf" download="Jonas-Juchelka-Lebenslauf.pdf">{t.pdf}</a>
+              : <a className="btn btn--ondark" href="/media/cv-en.pdf" download="Jonas-Juchelka-CV.pdf">{t.pdf}</a>}
+          </p>
         </div>
       </header>
       <ProjectsApp entries={cv.entries} places={mapPlaces(cv)} t={t} lang={lang} />

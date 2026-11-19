@@ -31,11 +31,17 @@ const postSchema = z.object({
   topic: z.string().max(40).optional(),
   /** Optionales kleines Bild eines Essays, Pfad unter /public (z. B. /blog/mein-essay.jpg). */
   image: z.string().regex(/^\/[\w./-]+$/).optional(),
+  /** Sprache des Originals (z. B. "en"). Fehlt sie, wird sie aus dem Text erkannt (detectLang). */
+  lang: z.string().regex(/^[a-z]{2}$/).optional(),
 });
 
 export type Gedanke = { slug: string; date: Date; topic?: string; text: string };
 export type Project = z.infer<typeof projectSchema> & { body: string };
-export type Post = z.infer<typeof postSchema> & { body: string; readingMinutes: number; headings: { id: string; text: string }[] };
+export type Post = z.infer<typeof postSchema> & {
+  body: string; readingMinutes: number; headings: { id: string; text: string }[];
+  /** Sprache des Originals und ob diese Fassung eine Übersetzung davon ist. */
+  original: string; translated: boolean;
+};
 
 function readFiles(full: string) {
   if (!fs.existsSync(full)) return [];
@@ -47,12 +53,31 @@ function readFiles(full: string) {
   });
 }
 
-/** German files are the source. content/<lang>/<dir>/<same file> overrides them per file; missing files fall back to German. */
+/** Files in content/<dir> are the source. content/<lang>/<dir>/<same file> overrides them per file; missing files fall back
+ *  to the source. German can have overrides too: essays written in another language get a German translation in content/de/blog. */
 function readDir(dir: string, lang: string = DEFAULT_LOCALE) {
   const base = readFiles(path.join(ROOT, dir));
-  if (lang === DEFAULT_LOCALE) return base;
   const over = new Map(readFiles(path.join(ROOT, lang, dir)).map((d) => [d.file, d]));
-  return base.map((d) => over.get(d.file) ?? d);
+  return base.map((d) => ({ ...(over.get(d.file) ?? d), source: d, overridden: over.has(d.file) }));
+}
+
+/** Rough language guess for essays without `lang` in the frontmatter. Same rule as scripts/translate.mjs. */
+export function detectLang(text: string): string {
+  const words = text.toLowerCase().match(/[a-zäöüß']+/g) ?? [];
+  const count = (list: string[]) => words.filter((w) => list.includes(w)).length;
+  const de = count(["der", "die", "das", "und", "ist", "nicht", "ich", "ein", "eine", "mit", "auf", "für", "zu", "wir", "sich", "auch", "dass"]);
+  const en = count(["the", "and", "is", "not", "i", "a", "an", "with", "on", "for", "to", "we", "it", "also", "that", "you", "of"]);
+  return en > de ? "en" : "de";
+}
+
+/** Plain first sentences of a Markdown body, for posts whose summary only repeats the title. */
+function firstSentences(body: string, max = 220): string {
+  const para = body.split(/\n\s*\n/).map((p) => p.trim()).find((p) => p && !/^(#|>|-|\*|\d+\.|---)/.test(p)) ?? "";
+  const plain = para.replace(/\*\*|__|\*|_|`/g, "").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").replace(/\s+/g, " ").trim();
+  if (plain.length <= max) return plain;
+  const cut = plain.slice(0, max);
+  const end = Math.max(cut.lastIndexOf(". "), cut.lastIndexOf("! "), cut.lastIndexOf("? "));
+  return end > 60 ? cut.slice(0, end + 1) : cut.replace(/\s+\S*$/, "") + " …";
 }
 
 function parse<T extends z.ZodTypeAny>(schema: T, data: unknown, file: string): z.infer<T> {
@@ -76,16 +101,33 @@ export function getProject(slug: string, lang: string = DEFAULT_LOCALE) {
   return getProjects(lang).find((p) => p.slug === slug);
 }
 
+function toPost(d: { file: string; data: unknown; content: string }, original: string, translated: boolean): Post {
+  const meta = parse(postSchema, d.data, d.file);
+  const words = d.content.trim().split(/\s+/).filter(Boolean).length;
+  const headings = [...d.content.matchAll(/^##\s+(.+)$/gm)].map((m) => ({ text: m[1].trim(), id: slugify(m[1]) }));
+  // Eine Zusammenfassung, die nur den Titel wiederholt, ersetzen die ersten Sätze des Textes.
+  const summary = meta.summary.trim().toLowerCase() === meta.title.trim().toLowerCase() ? firstSentences(d.content) || meta.summary : meta.summary;
+  return { ...meta, summary, body: d.content, readingMinutes: Math.max(1, Math.round(words / 200)), headings, original, translated };
+}
+
 export function getPosts(lang: string = DEFAULT_LOCALE): Post[] {
   return readDir("blog", lang)
     .map((d) => {
-      const meta = parse(postSchema, d.data, d.file);
-      const words = d.content.trim().split(/\s+/).filter(Boolean).length;
-      const headings = [...d.content.matchAll(/^##\s+(.+)$/gm)].map((m) => ({ text: m[1].trim(), id: slugify(m[1]) }));
-      return { ...meta, body: d.content, readingMinutes: Math.max(1, Math.round(words / 200)), headings };
+      const src = parse(postSchema, d.source.data, d.source.file);
+      const original = src.lang ?? detectLang(d.source.content);
+      // Eine Übersetzung liegt vor, wenn die Seite nicht in der Originalsprache ist und eine eigene Fassung existiert.
+      const translated = d.overridden && lang !== original;
+      return toPost(translated ? d : d.source, original, translated);
     })
     .filter((p) => !p.draft && p.kind === "essay")
     .sort((a, b) => b.date.getTime() - a.date.getTime());
+}
+
+/** Das Original eines Essays (content/blog), unabhängig von der Seitensprache. */
+export function getOriginalPost(slug: string): Post | undefined {
+  return readFiles(path.join(ROOT, "blog"))
+    .map((d) => { const m = parse(postSchema, d.data, d.file); return toPost(d, m.lang ?? detectLang(d.content), false); })
+    .find((p) => p.slug === slug && !p.draft && p.kind === "essay");
 }
 /** Gedanken: kurze Texte aus content/gedanken (Upload oder Mail). Kein eigener Seitenpfad. */
 export function getGedanken(lang: string = DEFAULT_LOCALE): Gedanke[] {

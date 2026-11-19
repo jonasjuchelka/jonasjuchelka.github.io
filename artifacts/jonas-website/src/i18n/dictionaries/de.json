@@ -1,6 +1,6 @@
 {
   "meta": {
-    "description": "Jonas Juchelka studiert Management & Technology an der TU München und gründet. Projekte, Lebenslauf und Gedanken."
+    "description": "Jonas Juchelka baut Startups und studiert an der TU München, derzeit an der UC Berkeley. Projekte, Lebenslauf und Gedanken."
   },
   "ui": {
     "skip": "Zum Inhalt springen",
@@ -18,7 +18,10 @@
     "projects": "Projekte",
     "blog": "Blog",
     "contact": "Kontakt",
-    "private": "Login"
+    "private": "Login",
+    "menu": "Menü",
+    "menuOpen": "Menü öffnen",
+    "menuClose": "Menü schließen"
   },
   "lang": {
     "label": "Sprache",
@@ -30,7 +33,7 @@
     "error": "Übersetzung gerade nicht möglich. Bitte später erneut versuchen."
   },
   "footer": {
-    "line": "Management & Technology, TU München · UC Berkeley.",
+    "line": "Curious how the world works. Driven to make it better.",
     "base": "Statische Website. Kein Tracking, keine Cookies.",
     "rss": "RSS-Feed",
     "imprint": "Impressum",
@@ -48,7 +51,10 @@
     "mapTitle": "Hier war ich zu Hause",
     "mapAria": "Weltkarte mit den Orten, an denen ich gelebt habe",
     "blogTitle": "Blog",
-    "allPosts": "Alle Beiträge"
+    "allPosts": "Alle Beiträge",
+    "projectsEyebrow": "Projekte",
+    "projectsPath": "Stationen der letzten Jahre",
+    "allProjects": "Alle Projekte und der ganze Lebenslauf"
   },
   "projects": {
     "metaTitle": "Projekte und Lebenslauf",
@@ -125,7 +131,10 @@
     "pdf": "PDF",
     "next": "Nächster Beitrag",
     "themeDark": "Dunkles Design",
-    "themeLight": "Helles Design"
+    "themeLight": "Helles Design",
+    "translatedNote": "Automatisch übersetzt. Original: {lang}.",
+    "readOriginal": "Original lesen",
+    "readTranslation": "Übersetzung lesen"
   },
   "contact": {
     "metaTitle": "Kontakt",
@@ -141,12 +150,11 @@
     "backHome": "Zur Startseite"
   },
   "login": {
-    "metaTitle": "Privater Bereich",
-    "metaDesc": "Einstieg in den privaten, per Passkey geschützten Bereich.",
-    "eyebrow": "Zugang",
-    "title": "Privater Bereich",
-    "lede": "Der private Bereich ist eine eigene Anwendung unter einer eigenen Adresse. Diese öffentliche Seite meldet niemanden an und speichert nichts.",
-    "continue": "Weiter zur Anmeldung",
+    "metaTitle": "Login",
+    "metaDesc": "Login zum privaten, per Passkey geschützten Bereich.",
+    "eyebrow": "Privater Bereich",
+    "title": "Login",
+    "lede": "Der private Bereich ist nur für eingeladene Personen. Die Anmeldung läuft ausschließlich über Passkeys.",
     "button": "Mit Passkey anmelden",
     "notReadyTitle": "Noch nicht eingerichtet",
     "notReady": "Die private Anwendung hat noch keine feste Produktionsadresse. Sobald sie steht, führt diese Seite direkt dorthin.",
@@ -155,7 +163,8 @@
     "fact2Bold": "Nur mit Einladung.",
     "fact2": "Eine öffentliche Registrierung gibt es nicht.",
     "fact3Bold": "Getrennt.",
-    "fact3": "Anmeldung und Daten liegen ausschließlich auf der privaten Anwendung, nicht auf GitHub Pages."
+    "fact3": "Anmeldung und Daten liegen nur in der privaten Anwendung, nicht auf dieser Website.",
+    "backHome": "Zur Startseite"
   },
   "legal": {
     "eyebrow": "Rechtliches",

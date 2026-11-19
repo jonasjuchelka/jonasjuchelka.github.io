@@ -10,6 +10,7 @@ type Entry = {
   id: string; kind: "station" | "award"; pinned?: boolean; now?: boolean; year: number; date: string; place?: string; loc?: string;
   tags: string[]; title: string; org: string; why: string; text: string[]; points: string[];
   photo?: { file: string; alt: string; focus?: string }; logo?: string; icon?: string; links: Link[];
+  cv?: { title?: string; org?: string; points?: string[]; extra?: string[]; link?: number; optional?: boolean; hide?: boolean };
 };
 type Place = { name: string; lat: number; lon: number; when: string; what: string; badge?: "home" | "now"; label?: "left" | "none" };
 type Cv = { places: Record<string, Place>; entries: Entry[] };
@@ -19,12 +20,13 @@ const lines = (s: string) => s.split("\n").map((x) => x.trim()).filter(Boolean);
 const paras = (s: string) => s.split(/\n\s*\n/).map((x) => x.trim()).filter(Boolean);
 const slug = (s: string) => s.toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "").replace(/ß/g, "ss").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 40) || "station";
 
-type Form = { kind: Entry["kind"]; title: string; org: string; date: string; year: string; place: string; loc: string; tags: string; why: string; text: string; points: string; links: string; logo: string; icon: string; photo: string; photoAlt: string; pinned: boolean; now: boolean };
-const empty: Form = { kind: "station", title: "", org: "", date: "", year: String(new Date().getFullYear()), place: "", loc: "", tags: "", why: "", text: "", points: "", links: "", logo: "", icon: "", photo: "", photoAlt: "", pinned: false, now: false };
+type Form = { kind: Entry["kind"]; title: string; org: string; date: string; year: string; place: string; loc: string; tags: string; why: string; text: string; points: string; links: string; logo: string; icon: string; photo: string; photoAlt: string; pinned: boolean; now: boolean; cvPoints: string; cvHide: boolean };
+const empty: Form = { kind: "station", title: "", org: "", date: "", year: String(new Date().getFullYear()), place: "", loc: "", tags: "", why: "", text: "", points: "", links: "", logo: "", icon: "", photo: "", photoAlt: "", pinned: false, now: false, cvPoints: "", cvHide: false };
 const toForm = (e: Entry): Form => ({
   kind: e.kind, title: e.title, org: e.org, date: e.date, year: String(e.year), place: e.place ?? "", loc: e.loc ?? "", tags: e.tags.join(", "),
   why: e.why, text: e.text.join("\n\n"), points: e.points.join("\n"), links: e.links.map((l) => `${l.label} | ${l.url}`).join("\n"),
   logo: e.logo ?? "", icon: e.icon ?? "", photo: e.photo?.file ?? "", photoAlt: e.photo?.alt ?? "", pinned: !!e.pinned, now: !!e.now,
+  cvPoints: (e.cv?.points ?? []).join("\n"), cvHide: !!e.cv?.hide,
 });
 function fromForm(f: Form, id: string, old?: Entry): Entry {
   const e: Entry = {
@@ -38,6 +40,12 @@ function fromForm(f: Form, id: string, old?: Entry): Entry {
   if (f.loc) e.loc = f.loc;
   if (f.logo.trim()) e.logo = f.logo.trim(); else if (f.icon) e.icon = f.icon;
   if (f.photo.trim()) e.photo = { file: f.photo.trim(), alt: f.photoAlt.trim() || f.title.trim(), ...(old?.photo?.focus ? { focus: old.photo.focus } : {}) };
+  // PDF-Fassung: übrige Angaben (eigener Titel, Link, optional) bleiben erhalten, Punkte und Ausblenden kommen aus dem Formular.
+  const cv: NonNullable<Entry["cv"]> = { ...(old?.cv ?? {}) };
+  const cvPoints = lines(f.cvPoints);
+  if (cvPoints.length) cv.points = cvPoints; else delete cv.points;
+  if (f.cvHide) cv.hide = true; else delete cv.hide;
+  if (Object.keys(cv).length) e.cv = cv;
   return e;
 }
 
@@ -126,6 +134,8 @@ export default function StationenPage() {
         <Field id="cv-why" label="Das Wichtigste" hint="Ein Satz. Steht ganz oben im Blatt."><textarea id="cv-why" rows={2} maxLength={300} value={f.why} onChange={(e) => set("why", e.target.value)} required /></Field>
         <Field id="cv-text" label="Text" hint="Absätze mit einer Leerzeile trennen."><textarea id="cv-text" rows={4} value={f.text} onChange={(e) => set("text", e.target.value)} /></Field>
         <Field id="cv-points" label="Was ich gemacht habe" hint="Ein Punkt pro Zeile."><textarea id="cv-points" rows={4} value={f.points} onChange={(e) => set("points", e.target.value)} /></Field>
+        <Field id="cv-pdf" label="Im PDF-Lebenslauf" hint="Kürzer als auf der Website, ein Punkt pro Zeile. Ohne eigene Angaben nimmt das PDF die ersten zwei Punkte von oben."><textarea id="cv-pdf" rows={3} value={f.cvPoints} onChange={(e) => set("cvPoints", e.target.value)} /></Field>
+        <label className="row"><input type="checkbox" checked={f.cvHide} onChange={(e) => set("cvHide", e.target.checked)} /> Nicht im PDF-Lebenslauf zeigen</label>
         <Field id="cv-links" label="Links" hint="Ein Link pro Zeile: Name | https://…"><textarea id="cv-links" rows={2} value={f.links} onChange={(e) => set("links", e.target.value)} /></Field>
         <div className="row">
           <Field id="cv-logo" label="Logo-Datei" hint="Aus public/media/logos, z. B. tum.svg"><input id="cv-logo" value={f.logo} onChange={(e) => set("logo", e.target.value)} /></Field>

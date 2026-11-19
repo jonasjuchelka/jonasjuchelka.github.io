@@ -24,14 +24,6 @@
       "what": "Opgegroeid, school en eindexamen",
       "label": "none"
     },
-    "saintbrieuc": {
-      "name": "Saint-Brieuc",
-      "lat": 48.51,
-      "lon": -2.76,
-      "when": "mei 2019",
-      "what": "Schooluitwisseling in Bretagne",
-      "label": "left"
-    },
     "madrid": {
       "name": "Madrid",
       "lat": 40.42,
@@ -46,13 +38,6 @@
       "lon": 37.01,
       "when": "2016 en 2018",
       "what": "School en sociaal werk in Kenia"
-    },
-    "vae": {
-      "name": "VAE",
-      "lat": 24.45,
-      "lon": 54.38,
-      "when": "2013 tot 2016",
-      "what": "Excursies met universiteiten"
     },
     "suzhou": {
       "name": "Suzhou",
@@ -89,7 +74,13 @@
         "Scherm, stem en persoon worden opgenomen",
         "Aanmelding bij a16z speedrun"
       ],
-      "links": []
+      "links": [],
+      "cv": {
+        "org": "Mitgründer · KI-Vorinterview für Recruiting",
+        "points": [
+          "Entstanden beim SF Tech Week Hackathon, Bewerbung beim Accelerator a16z speedrun"
+        ]
+      }
     },
     {
       "id": "concentr8",
@@ -127,8 +118,19 @@
         {
           "label": "Downloadpagina",
           "url": "https://concentr8.github.io/"
+        },
+        {
+          "label": "Cal Hacks",
+          "url": "https://calhacks.io/"
         }
-      ]
+      ],
+      "cv": {
+        "points": [
+          "Backend verantwortet: Mac-App, die Ablenkungen sperrt, Anrufe zu festen Lernzeiten, KI-Planung mit Google Kalender",
+          "Entstanden bei Cal Hacks 13.0, weiterentwickelt im Kurs Technology Entrepreneurship (ENGIN 183E)"
+        ],
+        "link": 0
+      }
     },
     {
       "id": "berkeley",
@@ -155,9 +157,10 @@
         "Ik studeer een semester in Berkeley via het Berkeley International Study Program. Naast de vakken grijp ik elke kans voor hackathons aan."
       ],
       "points": [
-        "Kunstmatige intelligentie (CS 188)",
-        "Cryptografie (CS 171)",
-        "Technology Entrepreneurship (ENGIN 183E)"
+        "Künstliche Intelligenz (CS 188)",
+        "Kryptografie (CS 171)",
+        "Technology Entrepreneurship (ENGIN 183E)",
+        "Gefördert durch die Stiftung der Deutschen Wirtschaft"
       ],
       "links": [
         {
@@ -167,8 +170,20 @@
         {
           "label": "Berkeley International Study Program",
           "url": "https://bisp.berkeley.edu/"
+        },
+        {
+          "label": "CS 188",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/"
         }
-      ]
+      ],
+      "cv": {
+        "title": "University of California, Berkeley",
+        "org": "Austauschstudent · Berkeley International Study Program",
+        "points": [
+          "Künstliche Intelligenz (CS 188), Kryptografie (CS 171), Technology Entrepreneurship (ENGIN 183E)",
+          "Gefördert durch die Stiftung der Deutschen Wirtschaft (sdw)"
+        ]
+      }
     },
     {
       "id": "tutor",
@@ -188,11 +203,26 @@
         "Ik heb de tutorial bij „Operations Research and Decision Analysis“ gegeven in het wintersemester 2025/26 en het zomersemester 2026, aangevuld met individuele begeleiding. De cursus zelf heb ik afgerond met een 1,3."
       ],
       "points": [
-        "4 uur tutorial per week voor ongeveer 25 studenten",
-        "Simplex, netwerkstromen, geheeltallige optimalisatie",
-        "Modellering met Gurobi"
+        "4 Stunden Tutorium pro Woche für rund 25 Studierende",
+        "Übungsaufgaben selbst konzipiert",
+        "Simplex, Netzwerkflüsse, ganzzahlige Optimierung",
+        "Modellierung mit Gurobi"
       ],
-      "links": []
+      "links": [
+        {
+          "label": "TU München",
+          "url": "https://www.tum.de/"
+        }
+      ],
+      "cv": {
+        "title": "Tutor, Operations Research and Decision Analysis",
+        "org": "Technische Universität München",
+        "points": [
+          "Ausgewählt für eine Kursleistung unter den besten 5 % (Note 1,3)",
+          "4 Stunden Tutorium pro Woche für rund 25 Studierende, Übungsaufgaben selbst konzipiert",
+          "Simplex, Netzwerkflüsse, ganzzahlige Optimierung, Gurobi"
+        ]
+      }
     },
     {
       "id": "ritzenhoefer",
@@ -226,7 +256,13 @@
           "label": "ritzenhoefer & company",
           "url": "https://www.ritzenhoefer.com/"
         }
-      ]
+      ],
+      "cv": {
+        "points": [
+          "Runbook und über 70 Change Requests im PMO verantwortet, Berichtswesen mit Excel-Makros teilautomatisiert",
+          "60/60-Jobsharing-Modell für Senior Consultants entwickelt"
+        ]
+      }
     },
     {
       "id": "comstruct",
@@ -261,15 +297,26 @@
           "label": "comstruct.com",
           "url": "https://www.comstruct.com/"
         }
-      ]
+      ],
+      "cv": {
+        "title": "Business Development, Supply Chain Integration",
+        "org": "comstruct · Bausoftware, Series A · Praktikum",
+        "points": [
+          "74 Lieferanten in 9 Wochen angebunden, einschließlich technischer Integration",
+          "Prozess der Lieferantenanbindung analysiert und verbessert"
+        ],
+        "extra": [
+          "comstruct auf der Fachmesse BAUMA vertreten"
+        ]
+      }
     },
     {
       "id": "shapely",
       "kind": "station",
       "year": 2026,
       "date": "03.2026 – 05.2026",
-      "place": "Aken",
-      "loc": "aachen",
+      "place": "München",
+      "loc": "muenchen",
       "tags": [
         "Oprichten",
         "Project"
@@ -279,18 +326,31 @@
       "logo": "shapely.png",
       "why": "Scannen met je telefoon en het geprinte resultaat thuis ontvangen. Vooral geleerd wanneer je een idee loslaat.",
       "text": [
-        "Een webapp voor bestellingen en een iPhone-app die onderdelen met de LiDAR-scanner vastlegt en daar een printklaar bestand van maakt. Van het model „app voor eindklanten“ ben ik weer afgestapt."
+        "Bricht ein Kunststoffteil, gibt es oft weder Ersatz noch eine Konstruktionsdatei. Shapely sollte genau diese Lücke schließen: Teil fotografieren oder scannen, daraus ein druckfertiges Modell erstellen, drucken und liefern.",
+        "Wir waren zu dritt, alle von der TU München, und Teil des TUM Startup Launchpad. Ich habe Strategie, Finanzen und Go-to-Market verantwortet."
       ],
       "points": [
-        "Prototype van de iPhone-app met ARKit, LiDAR en Supabase",
-        "Businessmodel kritisch getoetst en verworpen"
+        "Erste Aufträge bewusst von Hand umgesetzt: in Fusion 360 modelliert, auf einem Bambu Lab X1 Carbon gedruckt und selbst ausgeliefert",
+        "Web-Plattform, die passende Teile auf Thingiverse und Printables findet",
+        "iPhone-Prototyp, der Teile mit dem LiDAR-Scanner erfasst (Swift, ARKit, Supabase)",
+        "Interviews mit Instandhaltern und Konstrukteuren geführt, Wettbewerber wie Replique und 3YOURMIND analysiert",
+        "Ergebnis der Tests: Das Modell trägt nicht, wir haben es eingestellt"
       ],
       "links": [
         {
           "label": "shapely.live",
           "url": "https://shapely.live/"
         }
-      ]
+      ],
+      "cv": {
+        "org": "Mitgründer · Ersatzteile aus dem 3D-Drucker, ohne CAD-Datei",
+        "points": [
+          "Strategie, Finanzen und Go-to-Market im Dreierteam, TUM Startup Launchpad",
+          "Erste Aufträge von Hand umgesetzt (Fusion 360, 3D-Druck); iPhone-Scan-Prototyp mit ARKit und LiDAR",
+          "Geschäftsmodell in Interviews mit Instandhaltern geprüft und eingestellt"
+        ],
+        "link": 0
+      }
     },
     {
       "id": "tum",
@@ -316,10 +376,21 @@
       ],
       "links": [
         {
+          "label": "TU München",
+          "url": "https://www.tum.de/"
+        },
+        {
           "label": "Opleiding aan de TUM",
           "url": "https://www.mgt.tum.de/de/programs/bachelor-in-management-technology/muenchen"
         }
-      ]
+      ],
+      "cv": {
+        "title": "Technische Universität München",
+        "org": "B.Sc. Management and Technology, Vertiefung Computer Engineering",
+        "points": [
+          "Notenschnitt 1,6 (Top 10 %), Studiengang mit 9 % Aufnahmequote"
+        ]
+      }
     },
     {
       "id": "cycos",
@@ -349,7 +420,13 @@
         "Java met objectgeoriënteerd programmeren",
         "Inkijk in telefonie en VoIP"
       ],
-      "links": []
+      "links": [],
+      "cv": {
+        "points": [
+          "Linux-Server und virtuelle Maschinen (Proxmox) aufgesetzt, objektorientierte Programmierung in Java"
+        ],
+        "optional": true
+      }
     },
     {
       "id": "ffi",
@@ -380,7 +457,15 @@
         "Bestuursstructuur opnieuw opgezet",
         "Waarden samen uitgewerkt: doeners in plaats van toeschouwers, er voor elkaar zijn, iets achterlaten, geen ego"
       ],
-      "links": []
+      "links": [],
+      "cv": {
+        "title": "Future Founders Initiative e.V.",
+        "org": "Mitgründer und Vorstand, seit 08.2026 im Beirat",
+        "points": [
+          "Von fünf Gründungsmitgliedern zu einer Initiative in drei Städten aufgebaut",
+          "Dreitägige Gründungsveranstaltungen für über 110 Studierende organisiert"
+        ]
+      }
     },
     {
       "id": "abitur",
@@ -397,18 +482,43 @@
       "logo": "pius.png",
       "why": "Abitur met een 1,2 en daarnaast al wiskundecolleges aan de RWTH.",
       "text": [
-        "Naast school volgde ik als vervroegd student Hogere Wiskunde aan de RWTH Aachen."
+        "Am Pius-Gymnasium habe ich mich weit über den Unterricht hinaus engagiert: mit einem eigenen Förderkurs, in Nachhilfe und Hausaufgabenbetreuung und acht Jahre lang in der Big Band.",
+        "Parallel zur Oberstufe habe ich im Frühstudium die Vorlesung Höhere Mathematik an der RWTH Aachen besucht."
       ],
       "points": [
-        "MINT-certificaat met onderscheiding (beste 5% van de jaargang)",
-        "Vervroegd studeren aan de RWTH Aachen"
+        "Abiturnote 1,2 (Top 10 %)",
+        "MINT-EC-Zertifikat mit Auszeichnung, die höchste von drei Stufen (Top 5 % des Jahrgangs)",
+        "Förderkurs „Economy & Innovation“ für die Klassen 8 bis 10 aufgebaut und ab Oktober 2022 wöchentlich zwei Stunden geleitet: Volkswirtschaft, persönliche Finanzen, Steuern, internationale Politik, künstliche Intelligenz, Präsentieren und Websites",
+        "Ein Schuljahr lang wöchentliche Mathematik-Einzelförderung für einen Fünftklässler mit besonderem Förderbedarf",
+        "Hausaufgabenbetreuung für die Unter- und Mittelstufe",
+        "Posaune in der Big Band seit 2016 und im Schulorchester: Konzerte, Schulfeste, Gedenkveranstaltungen"
       ],
       "links": [
         {
           "label": "Pius-Gymnasium",
           "url": "https://www.pius-gymnasium.de/"
+        },
+        {
+          "label": "MINT-EC",
+          "url": "https://www.mint-ec.de/"
+        },
+        {
+          "label": "RWTH Aachen",
+          "url": "https://www.rwth-aachen.de/"
         }
-      ]
+      ],
+      "cv": {
+        "title": "Bischöfliches Pius-Gymnasium Aachen",
+        "org": "Abitur 1,2 (Top 10 %) · Leistungskurse Mathematik, Erdkunde, Deutsch",
+        "points": [
+          "Frühstudium: Höhere Mathematik an der RWTH Aachen",
+          "Förderkurs „Economy & Innovation“ für die Klassen 8 bis 10 aufgebaut und ab 10.2022 wöchentlich zwei Stunden geleitet: Volkswirtschaft, Finanzen, KI, Präsentieren",
+          "Ein Schuljahr wöchentliche Mathematik-Einzelförderung für einen jüngeren Schüler mit besonderem Förderbedarf"
+        ],
+        "extra": [
+          "Hausaufgabenbetreuung für die Unter- und Mittelstufe; Posaune in Big Band und Schulorchester seit 2016"
+        ]
+      }
     },
     {
       "id": "aixtron",
@@ -437,55 +547,13 @@
           "label": "AIXTRON",
           "url": "https://www.aixtron.com/"
         }
-      ]
-    },
-    {
-      "id": "schuelerpraktika",
-      "kind": "station",
-      "year": 2023,
-      "date": "2021 – 2023",
-      "place": "Aken en Keulen",
-      "loc": "aachen",
-      "tags": [
-        "Werk"
       ],
-      "title": "Korte stages tijdens de schooltijd",
-      "org": "Optiek, chemie, energiehandel",
-      "icon": "briefcase",
-      "why": "Zoveel mogelijk beroepen van binnenuit zien voordat ik een keuze maak.",
-      "text": [
-        "Bij de actie „Meine Position ist spitze!“ van ChemCologne heb ik twee keer gesolliciteerd naar een leidinggevende functie en die een dag lang vervuld."
-      ],
-      "points": [
-        "Een dag hoofd locatiebedrijf in het Chemiepark Knapsack (YNCORIS, 2022)",
-        "Een dag Maintenance Manager bij Infineum in Keulen (2023)",
-        "Twee dagen energiehandel bij Trianel: day-ahead- en intraday-veiling (2023)",
-        "Boys’ Day bij een opticien (2021)"
-      ],
-      "links": []
-    },
-    {
-      "id": "sozialpraktikum",
-      "kind": "station",
-      "year": 2022,
-      "date": "01.2022",
-      "place": "Aken",
-      "loc": "aachen",
-      "tags": [
-        "Engagement"
-      ],
-      "title": "Sociale stage",
-      "org": "Café Plattform van de Caritas Aachen",
-      "icon": "heart",
-      "why": "Twee weken in een ontmoetingsplek voor dak- en thuisloze mensen.",
-      "text": [
-        "Café Plattform is een open ontmoetingsplek van de Caritas. Ik werkte mee in de keuken en bij de maaltijduitgifte en zocht het gesprek met de gasten."
-      ],
-      "points": [
-        "Ochtendbesprekingen, keuken en maaltijduitgifte",
-        "Inkijk in straathoekwerk en werkprojecten"
-      ],
-      "links": []
+      "cv": {
+        "points": [
+          "Azubi-Tag mitgeplant, Schülerseite der Karriere-Website überarbeitet, Pressemitteilungen mitbetreut"
+        ],
+        "optional": true
+      }
     },
     {
       "id": "madrid",
@@ -514,31 +582,12 @@
           "label": "Colegio Tajamar",
           "url": "https://www.tajamar.es/"
         }
-      ]
-    },
-    {
-      "id": "frankreich",
-      "kind": "station",
-      "year": 2019,
-      "date": "05.2019",
-      "place": "Saint-Brieuc, Frankrijk",
-      "loc": "saintbrieuc",
-      "tags": [
-        "School",
-        "Buitenland"
       ],
-      "title": "Schoolutwisseling in Bretagne",
-      "org": "Pius-Gymnasium en Saint Charles – La Providence",
-      "icon": "globe",
-      "why": "Twee weken uitwisseling, vastgelegd in een reisdagboek in het Frans en Duits.",
-      "text": [
-        "In het najaar van 2018 was mijn uitwisselingspartner bij ons in Aken, in mei 2019 was ik in Saint-Brieuc."
-      ],
-      "points": [
-        "Mont-Saint-Michel, Saint-Malo en lessen ter plaatse",
-        "Met bijzonder succes afgerond (Europaschulpass)"
-      ],
-      "links": []
+      "cv": {
+        "title": "Colegio Tajamar",
+        "org": "Auslandssemester, Bachillerato mit Schwerpunkt Biowissenschaften",
+        "points": []
+      }
     },
     {
       "id": "kenia2018",
@@ -562,7 +611,10 @@
         "Meegebouwd aan een hek en het terrein onderhouden",
         "Met de kinderen gespeeld"
       ],
-      "links": []
+      "links": [],
+      "cv": {
+        "hide": true
+      }
     },
     {
       "id": "kenia2016",
@@ -583,32 +635,15 @@
         "Ik zat in de vierde klas en maakte het hele schoolleven mee."
       ],
       "points": [
-        "Het leukst: wiskunde en zingen"
+        "Vollständiger Schulalltag in allen Fächern",
+        "Schwerpunkte: Mathematik und Musik"
       ],
-      "links": []
-    },
-    {
-      "id": "vae",
-      "kind": "station",
-      "year": 2016,
-      "date": "2013, 2015 en 2016",
-      "place": "Dubai, Abu Dhabi, Ras al-Khaimah",
-      "loc": "vae",
-      "tags": [
-        "Buitenland"
-      ],
-      "title": "Excursies naar de Emiraten",
-      "org": "Universiteit Duisburg-Essen en UAE University",
-      "icon": "compass",
-      "why": "Als scholier driemaal samen met studenten op pad om structuurverandering te begrijpen.",
-      "text": [
-        "De excursies maakten deel uit van het DAAD-programma „Hochschuldialog mit der islamischen Welt“. Het ging om de omslag na kolen en olie, in een vergelijking tussen het Ruhrgebied en de Emiraten."
-      ],
-      "points": [
-        "Telkens tien dagen veldonderzoek en ontmoetingen",
-        "Samen met studenten van beide universiteiten"
-      ],
-      "links": []
+      "links": [],
+      "cv": {
+        "title": "Precious Blood Primary School",
+        "org": "Trimester im kenianischen Schulsystem",
+        "points": []
+      }
     },
     {
       "id": "sdw",
@@ -631,7 +666,12 @@
           "label": "sdw.org",
           "url": "https://www.sdw.org/"
         }
-      ]
+      ],
+      "cv": {
+        "title": "Stiftung der Deutschen Wirtschaft (sdw)",
+        "org": "Stipendiat, eines der 13 Begabtenförderungswerke in Deutschland",
+        "link": 0
+      }
     },
     {
       "id": "hrs",
@@ -647,7 +687,38 @@
       "why": "Een beurs voor doelgerichte Münchense studenten.",
       "text": [],
       "points": [],
-      "links": []
+      "links": [],
+      "cv": {
+        "title": "Hans Rudolf Stiftung",
+        "org": "Stipendiat"
+      }
+    },
+    {
+      "id": "mintec",
+      "kind": "award",
+      "year": 2024,
+      "date": "06.2024",
+      "tags": [
+        "Auszeichnung"
+      ],
+      "title": "MINT-EC-Zertifikat mit Auszeichnung",
+      "org": "MINT-EC, das nationale Excellence-Schulnetzwerk",
+      "icon": "cap",
+      "why": "Die höchste von drei Stufen, für herausragende Leistungen und Engagement in Mathematik, Informatik, Naturwissenschaften und Technik über die gesamte Schulzeit.",
+      "text": [
+        "Das Zertifikat wird mit dem Abitur an Schulen des MINT-EC-Netzwerks vergeben und ist von Kultusministerkonferenz und Hochschulrektorenkonferenz anerkannt. Damit gehörte ich zu den besten 5 % meines Jahrgangs."
+      ],
+      "points": [],
+      "links": [
+        {
+          "label": "MINT-EC",
+          "url": "https://www.mint-ec.de/"
+        }
+      ],
+      "cv": {
+        "org": "Höchste von drei Stufen, Top 5 % des Jahrgangs",
+        "link": 0
+      }
     },
     {
       "id": "gcte",
@@ -673,7 +744,10 @@
         "Met de delegatie van de TUM naar Suzhou en Shanghai."
       ],
       "points": [],
-      "links": []
+      "links": [],
+      "cv": {
+        "org": "Delegation der TU München nach Suzhou und Shanghai, 5 % Aufnahmequote"
+      }
     },
     {
       "id": "dsa",
@@ -696,7 +770,11 @@
           "label": "Deutsche SchülerAkademie",
           "url": "https://www.deutsche-schuelerakademie.de/"
         }
-      ]
+      ],
+      "cv": {
+        "org": "Von der Schule nominiert, weniger als 1 % werden ausgewählt",
+        "link": 0
+      }
     }
   ]
 }

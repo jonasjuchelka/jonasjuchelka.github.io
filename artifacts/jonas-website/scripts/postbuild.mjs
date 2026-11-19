@@ -8,8 +8,10 @@ if (!fs.existsSync(path.join(out, "404.html")) && fs.existsSync(p404)) fs.copyFi
 fs.rmSync(path.join(out, "blog", "_none"), { recursive: true, force: true });
 fs.rmSync(path.join(out, "blog", "_none.txt"), { force: true });
 fs.writeFileSync(path.join(out, ".nojekyll"), "");
-// Lebenslauf als PDF bei jedem Build neu aus content/cv.json (ohne Telefon, Adresse, Geburtsdatum, E-Mail).
+// Lebenslauf als PDF bei jedem Build neu aus content/cv.json (ohne Telefon, Adresse, Geburtsdatum, E-Mail):
+// Deutsch für die deutsche Seite, Englisch für alle anderen Sprachen.
 execFileSync(process.execPath, [path.resolve("scripts/cv-pdf.mjs"), path.join(out, "media", "lebenslauf.pdf")], { stdio: "inherit" });
+execFileSync(process.execPath, [path.resolve("scripts/cv-pdf.mjs"), path.join(out, "media", "cv-en.pdf"), "--lang", "en"], { stdio: "inherit" });
 if (fs.existsSync(path.join(out, "CNAME"))) throw new Error("Unexpected CNAME in export");
 const bad = /DATABASE_URL|SESSION_SECRET|PRIVATE_KEY|jonasjuchelka\.com/;
 (function walk(d) { for (const e of fs.readdirSync(d, { withFileTypes: true })) { const f = path.join(d, e.name);

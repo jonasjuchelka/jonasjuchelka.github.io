@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Schriftzug } from "@/components/Schriftzug";
 import { MapSection } from "@/components/cv/MapSection";
+import { HomeProjects } from "@/components/cv/HomeProjects";
 import { getPosts, formatDate } from "@/lib/content";
 import { getCv, mapPlaces } from "@/lib/cv";
 import { SITE_NAME, abs } from "@/lib/site";
@@ -20,7 +21,8 @@ export function homeMeta(lang: string): Metadata {
   };
 }
 
-// Startseite: nur Foto und Schriftzug, darunter (nach der Leiste) die Aussage und zwei Buttons, dann Karte und Blog.
+// Startseite: nur Foto und Schriftzug, darunter (nach der Leiste) die Aussage und zwei Buttons, dann die Projekte
+// (wer weiterscrollt, landet dort), Karte und Blog.
 // Die Leiste sitzt hier unter dem Bild: das Bild liegt absolut oben, die Leiste bekommt per CSS (body:has(.home-hero)) Abstand.
 export function HomeView({ lang }: { lang: string }) {
   const d = getDict(lang);
@@ -48,6 +50,9 @@ export function HomeView({ lang }: { lang: string }) {
           <Link href={localePath(lang, "/kontakt/")} className="btn" data-testid="link-hero-contact">{t.ctaContact}</Link>
         </p>
       </section>
+
+      <HomeProjects entries={cv.entries} places={mapPlaces(cv)} t={d.projects} lang={lang}
+        labels={{ eyebrow: t.projectsEyebrow, title: d.projects.pinnedTitle, path: t.projectsPath, all: t.allProjects }} />
 
       <MapSection entries={cv.entries} places={mapPlaces(cv)} t={d.projects} lang={lang} world={world} title={t.mapTitle} aria={t.mapAria} />
 

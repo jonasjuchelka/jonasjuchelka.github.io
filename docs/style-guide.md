@@ -1,6 +1,6 @@
 # Style Guide
 
-Einzige Referenz für Aussehen und Verhalten der Website. Wird bei jeder Design-Änderung mitgepflegt (neue Komponente, geänderte Farbe, neuer Zustand). Quellen: `lib/design-tokens/src/tokens.css`, `docs/branding.md`. Stand: 17.11.2026, neue Startseite, Projekte (Lebenslauf) und Kontakt sind umgesetzt. Alle Kontrastwerte sind selbst berechnet (WCAG-Formel); eine vollständige Messung aller gerenderten Zustände steht weiter aus.
+Einzige Referenz für Aussehen und Verhalten der Website. Wird bei jeder Design-Änderung mitgepflegt (neue Komponente, geänderte Farbe, neuer Zustand). Quellen: `lib/design-tokens/src/tokens.css`, `docs/branding.md`. Stand: 19.11.2026: Hamburger-Menü auf dem Handy, Projekte auf der Startseite, neue Login-Seite, Übersetzungshinweis bei Essays, kompaktes CV-PDF. Alle Kontrastwerte sind selbst berechnet (WCAG-Formel); eine vollständige Messung aller gerenderten Zustände steht weiter aus.
 
 ## 1. Grundsätze
 
@@ -58,6 +58,8 @@ Form: Pille (`border-radius: 999px`), Höhe 44px (Chips 40px). `transition: none
 
 **Häkchen**: SVG als CSS-Maske (`currentColor`), 1em, `margin-right .4em`, `transform: translateY(-.06em)`. Catamaran hat Ascent 1,10 em, Descent 0,54 em, Versalhöhe 0,68 em; die Zeilenmitte liegt 0,06 em unter der Versalmitte, daher wirkt ein mittig gesetztes Symbol zu tief. Gemessen: vorher +1,75 px, nachher < 0,2 px bei 16 px. Gilt für jede neue Schrift: Metriken prüfen, Offset neu messen.
 
+Gewählt-Zustand gilt auch für den Standard-Button (`.btn[aria-pressed="true"]`): aktive Fläche plus 2px Königsblau-Rand.
+
 Varianten (nur diese): Standard-Button (Nav „Privater Bereich“ mit 2px Himmelblau-Rand, Menü, Lupe, Chips, Segment), Listenzeile (`.opt`, Abstand 4px), Icon-Schalter (`.tgl`), Text-Link-Button (`.reset`), Primär-CTA (`.btn--primary`, nur eine Hauptaktion pro Seite, nicht im Filter).
 
 Nicht verwenden: gefüllte Königsblau-Auswahl-Buttons, Ringe um Auswahl, harte Rechtecke, Hover mit Bewegung.
@@ -80,13 +82,15 @@ Suchfeld: Pille, 44px, 2px Himmelblau-Rand, Weiß-Hintergrund. Fokus: Rand Köni
 - **Eingeklappter Filter**: Format komplett, Mac erste 3 Kategorie-Zeilen, Handy erste Chip-Zeile; die letzte Zeile ausgegraut, **kein Verlauf**.
 - Auswahl umschalten: erneuter Klick hebt auf. Ansicht Vorschau | Liste; bei Filter/Suche automatisch Liste, Umschalter bleibt bedienbar.
 - Suchtreffer gelb. Laden: erste 3 Beiträge (Liste 10), weitere per Scroll.
+- **Vorschautext**: Wiederholt die Zusammenfassung nur den Titel, zeigt die Vorschau stattdessen die ersten Sätze des Textes.
+- **Übersetzte Essays**: Essays dürfen in jeder Sprache geschrieben sein (Original in `content/blog/`, Sprache aus `lang` im Frontmatter oder erkannt). Jede andere Sprache, auch Deutsch, bekommt eine Übersetzung (`content/<sprache>/blog/`, täglicher Übersetzungs-Workflow). Über dem Text steht dann eine Zeile zwischen zwei Hellgrau-Linien: „Automatisch übersetzt. Original: English.“ und rechts der Button **„Original lesen“** (Standard-Button, gewählt = aktive Fläche plus Königsblau-Rand, Text wechselt zu „Übersetzung lesen“). Beide Fassungen stehen im HTML, ohne JavaScript bleibt die Übersetzung.
 - **Nachtmodus**: Hintergrund Königsblau, **keine Verläufe oder Ausblendungen** (Hover-Fläche durchgehend gefüllt). Markenfarben: Babyblau für Labels, Gedanke-Balken, Hover-Titel und Zähler-Badge; Himmelblau für Tag-Ränder; Pillen mit Babyblau-Tönung.
 
 ### Navigation
 - Einträge: Home, Projekte, Blog, Kontakt, dazu „Login“ als Pille (2px Himmelblau, aktiv = aktive Fläche + Königsblau-Rand). „Privater Bereich“ heißt jetzt überall „Login“.
 - Aktuelle Seite: **5px Himmelblau-Strich** unter dem Wort. Hover: derselbe Strich in Babyblau, **keine Fläche** (die Verlaufspille im Menü sah unruhig aus). Ein Unterstreichungsstil für die ganze Seite.
 - Fokus: 3px Glow. Kein Übergang.
-- Handy (bis 820px): oben nur Logo, Mond und Sprache; unten eine feste Leiste mit fünf Icons (Home, Projekte, Blog, Kontakt, Login), aktive Seite mit Himmelblau-Strich oben. So sieht man sofort, wie es weitergeht.
+- Handy (bis 820px): oben nur Logo, Mond, Sprache und ein **Hamburger-Knopf** (44px, Surface-Fläche, rund). Das Menü ist anfangs nicht zu sehen (Wunsch 19.11.2026, ersetzt die feste Leiste unten). Der Knopf öffnet ein Blatt von oben (`<dialog>` modal, Seite abgedunkelt, unten 22px Radius): Home, Projekte, Blog, Kontakt als große Zeilen (Plus Jakarta 600, 60px hoch, Linien-Icon links), aktuelle Seite mit demselben 5px-Himmelblau-Strich unter dem Wort; darunter „Login“ als volle Pille. Schließen per X, Esc, Tippen auf die dunkle Fläche oder durch Navigieren; der Fokus kehrt zum Knopf zurück.
 
 ### Handy-Web (iPhone/Android)
 - **Filter-Auslöser**: ein beschrifteter Pillen-Button „Filter ⌄“ (Label + Pfeil + Zähler-Badge in einem), Optik 38px, Trefferfläche 44px. Kein separater runder Pfeil-Knopf. Eingeklappt ist vom Filter nichts sichtbar oder per Tab erreichbar. (Mac bleibt: Vorschau mit Pfeil.)
@@ -115,8 +119,13 @@ Suchfeld: Pille, 44px, 2px Himmelblau-Rand, Weiß-Hintergrund. Fokus: Rand Köni
 - **Kopf**: nur Foto und Schriftzug. Das Foto ist voll breit (Mac `clamp(27rem, 82vh, 46rem)` hoch), dunkler Verlauf von links; der Schriftzug steht links auf Kopfhöhe. Handy: Bild so hoch, dass Leiste und Überschrift beim Öffnen schon sichtbar sind (`100svh − 15,5rem`), Foto steht fest, der Schriftzug sitzt unten am Bild und wandert mit der Leiste über das Foto.
 - **Leiste unter dem Bild**: Die Kopfleiste klebt oben (`sticky`). Auf der Startseite liegt das Bild absolut oben und die Leiste bekommt per `body:has(.home-hero)` Abstand. Auf allen anderen Seiten steht die Leiste ganz oben.
 - **Aussage**: `h1` auf Englisch in allen Sprachen: „Curious how the world works. / Driven to make it better.“ „better“ mit Markierung in aktiver Fläche. Darunter zwei Buttons: „Mein CV“ (Hauptaktion) und „Kontakt“. Keine Werte, kein Einleitungssatz.
+- **Projekte** (wer runterscrollt, landet in den Projekten): Eyebrow „Projekte“, Überschrift „Daran arbeite ich gerade“, die Bühne der angepinnten Projekte wie auf /projects/. Darunter „Stationen der letzten Jahre“: die sechs neuesten Stationen als Karten (Surface, 22px Radius, Foto 16:10 oben, ohne Foto Babyblau-Fläche mit Logo-Feld; Meta, Titel, Organisation). Mac drei Spalten, Handy waagrecht wischen (Karte 78 % breit, Scroll-Snap). Karte öffnet dasselbe Blatt wie auf /projects/. Danach Button „Alle Projekte und der ganze Lebenslauf“ (Hauptaktion).
 - **Karte** „Hier war ich zu Hause“: Natural Earth (gemeinfrei), Winkel-Tripel-Projektion mit Gradnetz, Arktis und Antarktis vollständig. Land als CSS-Maske (`public/media/welt.svg`), damit es im Dunkelmodus umfärbbar ist. Punkte: Babyblau mit Königsblau-Rand (dunkel: weißer Rand), aktueller Ort mit Hof. Kein Hinweistext, keine Hand, kein Pulsieren. Unter der Karte dieselben Orte als Chips; München mit Haus-Icon („Zuhause“), Berkeley mit Standort-Icon („Aktuell“). Klick öffnet das Orts-Blatt.
 - **Blog**: die drei neuesten Essays als Liste (Monat, Titel, zwei Zeilen Vorschau).
+
+## 6a2. Fußzeile
+
+- Unter dem Namen steht der Leitsatz „Curious how the world works. Driven to make it better.“ (Englisch in allen Sprachen). Kein Studiengang: Die Seite wird nicht auf „Management & Technology“ gebrandet.
 
 ## 6b. Logo in der Kopfleiste
 
@@ -128,14 +137,22 @@ Suchfeld: Pille, 44px, 2px Himmelblau-Rand, Weiß-Hintergrund. Fokus: Rand Köni
 - **Daten**: `artifacts/jonas-website/content/cv.json` (Deutsch). Übersetzungen erzeugt `scripts/translate.mjs` nach `content/<lang>/cv.json`; nur Texte werden übersetzt, IDs, Jahre, Links und Dateien bleiben gleich. Bearbeiten im privaten Bereich unter „Stationen“ (ein Commit auf main, danach baut Pages neu).
 - **Kopf**: voll breite Königsblau-Fläche ohne Fotos (dunkel Schwarz), Eyebrow, „Projekte“, ein Satz, Button „Lebenslauf als PDF“ (Variante auf Dunkel: Rand Babyblau).
 - **Angepinnt** („Daran arbeite ich gerade“): Bühne mit großem Bild (4:3, 28px Radius) und Text rechts; Reiter für die angepinnten Projekte darunter. Handy: Reiter oben, gleich breit, aktiver Reiter mit Königsblau-Rand. Ohne Foto: ruhige Babyblau-Fläche mit Logo-Feld.
-- **Zeitstrahl** („Der Weg bis hierher“): Jahr als Himmelblau-Pille, Linie in Hellgrau, je Station Logo-Feld, Meta (Zeitraum · Ort), Titel, Organisation, Tags. Themen-Chips filtern (erneuter Klick hebt auf), Anzahl rechts. Ortsfilter kommt von der Karte (`?ort=muenchen`) und steht als eigener Chip mit ×.
+- **Zeitstrahl** („Der Weg bis hierher“): Jahr als **Königsblau-Pille mit weißer Schrift** (13,9:1; vorher Königsblau auf Himmelblau, zu schwach zu erkennen), dunkel Babyblau mit Schwarz, Linie in Hellgrau, je Station Logo-Feld, Meta (Zeitraum · Ort), Titel, Organisation, Tags; hat die Station ein Foto, steht es am Mac als kleines Bild (132×92, 18px Radius) vor dem Pfeil, auf dem Handy nicht. Themen-Chips filtern (erneuter Klick hebt auf), Anzahl rechts. Ortsfilter kommt von der Karte (`?ort=muenchen`) und steht als eigener Chip mit ×.
 - **Stipendien und Auszeichnungen**: eigene Liste unter dem Zeitstrahl, Himmelblau-Linie oben, Zeile mit Logo, Titel, Satz, Zeitraum.
 - **Logo-Felder**: gleicher weißer Rand für alle (Mac 132×92, Handy 76×60, Radius 18/14). Die Größe jedes Logos ist so gewählt, dass alle **gleich schwer** wirken: gleiche Fläche bei jedem Seitenverhältnis (Breite ∝ √Seitenverhältnis) und ausgeglichene Tintendeckung (dichte Logos wie TUM kleiner, dünne Schriftzüge größer, Faktor (0,28/Deckung)^0,45, begrenzt auf 0,8–1,2). Werte in `src/data/logos.json`; neue Logos ohne Eintrag nehmen 70 %. Logos immer als echte Datei (SVG, sonst PNG mit transparentem Hintergrund, ohne Rand und ohne weiße Schrift); lieber die Bildmarke als einen langen Schriftzug (wie auf LinkedIn).
 - **Icons** für Stationen ohne Logo: Linien-Icons im 24er Raster, 1,6px, runde Enden, Königsblau auf Surface (Mikrofon, Zielscheibe, Koffer, Herz, Globus, Schule, Kompass, Tausch, Doktorhut, Buch).
 - **Blatt** (Station oder Ort): `<dialog>`, am Mac von rechts (36rem), auf dem Handy von unten (bis 92 % Höhe, Griff oben). Oben ein Titelbild, auf dem man Jonas sieht (16:9); ohne Foto eine flache Babyblau-Fläche. Darunter klein das Logo, dann Meta, Titel, Organisation, Tags, „Das Wichtigste“ (Himmelblau-Balken links), Text, „Was ich gemacht habe“, „Weiterlesen“ (nur geprüfte Links). **Keine weiteren Bilder.** Unten immer ein klebender Zurück-Knopf. Orts-Blatt: Stationen dort und „Im Lebenslauf zeigen“.
-- **PDF**: entsteht bei jedem Build aus `cv.json` (`scripts/cv-pdf.mjs`, Markenschriften eingebettet). Ohne Telefonnummer, Adresse, Geburtsdatum und E-Mail.
+- **PDF**: entsteht bei jedem Build aus `cv.json` (`scripts/cv-pdf.mjs`, Markenschriften eingebettet), auf Deutsch (`/media/lebenslauf.pdf`) und Englisch (`/media/cv-en.pdf`, für alle anderen Sprachen). Ohne Telefonnummer, Adresse, Geburtsdatum und E-Mail. **Immer höchstens zwei Seiten**: erst fallen Stationen mit `cv.optional` und Zusatzpunkte (`cv.extra`) weg, dann wird alles schrittweise kleiner (bis 86 %).
+  - Aufbau: Kopfband in aktiver Fläche (#cfe5f7) mit Logo (Königsblau, Originalpfade), Name (Plus Jakarta 600), Leitsatz (Catamaran 300), klickbare Zeile Website · LinkedIn · GitHub (Pfeil ↗ als Linie gezeichnet) und Orten; rechts das Brustbild (`assets/cv/foto.jpg`, Hintergrund in Bandfarbe). Darunter sechs Kennzahlen (Himmelblau-Strich, Zahl Plus Jakarta 17pt). Dann Ausbildung, Erfahrung, Gründen, Stipendien und Auszeichnungen (eine Zeile je Eintrag), Kenntnisse und, wenn Platz ist, ein Band „Wo ich gelebt und gelernt habe“.
+  - Abschnitts-Überschrift mit Hellgrau-Linie und kurzem Himmelblau-Strich; Datum links in Mukta, Punkte mit kleinem Himmelblau-Quadrat. Nur Tokens: Königsblau, Schwarz, Dunkel-sekundär, Himmelblau, Hellgrau, aktive Fläche.
+  - Inhalt: pro Station der Block `cv` (eigener `title`, `org`, kürzere `points`, `extra`, `link` = Index eines Links, `optional`, `hide`). Website und PDF dürfen also unterschiedlich formuliert sein. Ohne `cv` nimmt das PDF die ersten zwei Punkte. Kennzahlen, Kenntnisse und Leitsatz stehen in `content/cv-extra.json`.
 
-## 6d. Kontakt
+## 6d. Login
+
+- Eine ruhige Karte in der Mitte (Surface, 28px Radius, max. 34rem): Logo, Eyebrow „Privater Bereich“, „Login“ mit Strich, ein Satz, dann **„Mit Passkey anmelden“** (Hauptaktion, volle Breite) und **„Zur Startseite“** (Standard-Button). Darunter drei kurze Fakten mit Linien-Icons (Schlüssel, Brief, Schild), Mac nebeneinander, Handy untereinander.
+- Nur die Markenschriften: keine Monospace-Adresse, keine technische Domain, kein fettes Catamaran (Hervorhebung in Plus Jakarta 600).
+
+## 6e. Kontakt
 
 - Links „Schreib mir.“ (mit Strich), darunter die Adresse **als Bild** in einer Surface-Fläche mit „Kopieren“ und „Mail schreiben“ (setzen die Adresse erst beim Klick zusammen, damit einfache Bots sie nicht im HTML finden), dann „Termin buchen“ (Reclaim) und Chips LinkedIn und GitHub. Rechts ein Foto (4:5, 28px), auf dem Handy oben (16:10). Kein weiterer Text. Im Dunkelmodus wird das Adressbild invertiert. Das Impressum nennt die Adresse weiter als Text (Pflichtangabe).
 

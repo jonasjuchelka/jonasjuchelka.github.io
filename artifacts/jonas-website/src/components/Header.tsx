@@ -1,7 +1,7 @@
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { LogoMark } from "./LogoMark";
 import { LogoPlayer } from "./LogoPlayer";
-import { NavLinks, TabBar, type NavItem } from "./NavLinks";
+import { MobileMenu, NavLinks, type NavItem } from "./NavLinks";
 import { ThemeToggle } from "./ThemeToggle";
 import { NAV_PATHS, translateEndpoint } from "@/lib/site";
 import { LANGUAGES, availableLocales, getDict, localePath } from "@/lib/i18n";
@@ -20,11 +20,11 @@ export function Header({ lang }: { lang: string }) {
               <NavLinks lang={lang} items={items} />
               <li><ThemeToggle darkLabel={t.blog.themeDark} lightLabel={t.blog.themeLight} /></li>
               <li><LanguageSwitcher lang={lang} locales={locales} t={t.lang} endpoint={translateEndpoint()} /></li>
+              <li className="nav__burger-li"><MobileMenu lang={lang} items={items} openLabel={t.nav.menuOpen} closeLabel={t.nav.menuClose} title={t.nav.menu} /></li>
             </ul>
           </nav>
         </div>
       </header>
-      <TabBar lang={lang} items={items} label={t.ui.mainNav} />
     </>
   );
 }

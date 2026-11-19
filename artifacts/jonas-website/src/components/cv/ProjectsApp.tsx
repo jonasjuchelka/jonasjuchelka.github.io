@@ -8,7 +8,7 @@ import { MEDIA, type CvEntry, type MapPlace } from "@/lib/cv-shared";
 import { Tags, useCvSheet, type SheetT } from "./CvSheet";
 import { LogoTile } from "./LogoTile";
 
-function Stage({ list, t, lang, onOpen }: { list: CvEntry[]; t: SheetT; lang: string; onOpen: (id: string) => void }) {
+export function Stage({ list, t, lang, onOpen }: { list: CvEntry[]; t: SheetT; lang: string; onOpen: (id: string) => void }) {
   const [i, setI] = useState(0);
   const e = list[Math.min(i, list.length - 1)];
   if (!e) return null;
@@ -73,6 +73,12 @@ export function ProjectsApp({ entries, places, t, lang }: { entries: CvEntry[]; 
         <span className="st__org">{e.org}</span>
         <Tags e={e} t={t} />
       </span>
+      {e.photo ? (
+        <span className="st__pic" aria-hidden="true">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={`${MEDIA}/fotos/${e.photo.file}`} alt="" loading="lazy" decoding="async" style={e.photo.focus ? { objectPosition: e.photo.focus } : undefined} />
+        </span>
+      ) : null}
       <span className="cv-go" aria-hidden="true">→</span>
     </a>
   );
