@@ -208,26 +208,30 @@ function entryData(id, level) {
 }
 
 function build(sz, level) {
-  const st = { body: sz, org: sz + 0.7, sec: sz + 1.6, lead: sz * 1.2 };
-  const words = [];
+  const st = { body: sz, org: sz + 0.7, sec: sz + 1.6, lead: sz * 1.19 };
+  const words = [], wrapped = [];
   const count = (...t) => t.forEach((x) => x && words.push(...String(x).split(/\s+/).filter(Boolean)));
   const blocks = [];
   const sectionHead = (title) => ({
-    h: st.sec + 9,
+    h: st.sec + 8,
     draw: (y) => {
       text(ML, y - st.sec - 1, title.toUpperCase(), "H", st.sec * 0.9, C.koenig);
       rect(ML, y - st.sec - 4, CW, 0.8, C.koenig);
     },
   });
+  // Zwei Spalten: links Inhalt, rechts Ort und Datum. Kein Text der linken Spalte ragt in die rechte (Wunsch 19.11.2026):
+  // Breite der rechten Spalte = längstes Datum bzw. längster Ort aller Stationen + Abstand.
+  const stations = SECTIONS.flatMap((k) => sorted.filter((e) => e.kind === "station" && sectionOf(e) === k).map((e) => entryData(e.id, level)).filter(Boolean));
+  const RCOL = Math.max(...stations.flatMap((e) => [width(e.date, "R", st.body), width(e.place, "R", st.body)])) + 14;
+  const TW = CW - RCOL;
   const entryBlock = (e) => {
     const lh = st.lead;
-    const placeW = width(e.place, "R", st.body);
-    const dateW = width(e.date, "R", st.body);
-    const orgLines = wrap(e.org, "H", st.org, CW - placeW - 24 - (e.url ? st.org : 0));
-    const roleLines = wrap(e.role, "R", st.body, CW - dateW - 16);
-    const pts = e.points.map((p) => wrap(p, "R", st.body, CW - 11));
+    const orgLines = wrap(e.org, "H", st.org, TW - (e.url ? st.org : 0));
+    const roleLines = wrap(e.role, "R", st.body, TW);
+    const pts = e.points.map((p) => wrap(p, "R", st.body, TW - 11));
+    pts.forEach((l, i) => { if (l.length > 1) wrapped.push(`${e.org}: ${e.points[i]}`); });
     count(e.org, e.role, e.place, e.date, ...e.points);
-    const h = orgLines.length * lh + roleLines.length * lh + pts.reduce((a, l) => a + l.length * lh, 0) + (pts.length ? 1 : 0) + sz * 0.3;
+    const h = orgLines.length * lh + roleLines.length * lh + pts.reduce((a, l) => a + l.length * lh, 0) + (pts.length ? 1 : 0) + sz * 0.24;
     return {
       h,
       draw: (y0) => {
@@ -308,7 +312,7 @@ function build(sz, level) {
       },
     });
   }
-  return { blocks, words: words.length };
+  return { blocks, words: words.length, wrapped };
 }
 
 const HEAD_H = 77;
@@ -329,12 +333,13 @@ outer: for (const sizes of [SIZES_A, SIZES_B]) {
     for (const sz of sizes) {
       const r = build(sz, level);
       const pages = paginate(r.blocks);
-      if (pages.length === 1) { chosen = { pages, sz, level, words: r.words }; break outer; }
+      if (pages.length === 1) { chosen = { pages, sz, level, words: r.words, wrapped: r.wrapped }; break outer; }
     }
   }
 }
-if (!chosen) { const r = build(9, 3); chosen = { pages: paginate(r.blocks), sz: 9, level: 3, words: r.words }; console.warn("cv-pdf: passt nicht auf eine Seite"); }
+if (!chosen) { const r = build(9, 3); chosen = { pages: paginate(r.blocks), sz: 9, level: 3, words: r.words, wrapped: r.wrapped }; console.warn("cv-pdf: passt nicht auf eine Seite"); }
 if (chosen.words > 700 || chosen.words < 400) console.warn(`cv-pdf: ${chosen.words} Wörter (Ziel 500 bis 700)`);
+for (const w of chosen.wrapped) console.warn(`cv-pdf: Punkt bricht um (Regel: eine Zeile je Punkt): ${w}`);
 
 // ---------- Kopf und Fußzeile ----------
 function drawHead() {

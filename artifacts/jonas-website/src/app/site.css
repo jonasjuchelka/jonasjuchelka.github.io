@@ -135,19 +135,20 @@ html[data-theme="dark"]{--cv-active:#3b5a72;--cv-hover:rgb(130 196 245/.24);--cv
 .lt--lg{width:132px;height:92px;border-radius:18px;font-size:1.15rem}
 
 /* ===== Startseite: Foto mit Schriftzug, Leiste darunter ===== */
-.home-hero{--hero-h:clamp(28rem,89vh,60rem);position:absolute;top:0;left:0;right:0;height:var(--hero-h);overflow:hidden;clip-path:inset(0);background:var(--brand-koenigsblau)}
+.home-hero{--hero-h:clamp(28rem,89vh,60rem);position:absolute;top:0;left:0;right:0;height:calc(var(--hero-h) + var(--hh));overflow:hidden;clip-path:inset(0);background:var(--brand-koenigsblau)}
 body:has(.home-hero) .site-header{margin-top:clamp(28rem,89vh,60rem)}
 .home-hero__bg,.home-hero__bg img{position:absolute;inset:0;width:100%;height:100%}
 .home-hero__bg img{object-fit:cover;object-position:50% 18%}
 @media (min-width:821px){
-  /* Mac: Foto rechts verankert und etwas herausgezoomt (138 % der Höhe), links läuft es in Königsblau aus.
-     Das Gesicht liegt so bei etwa 28 % der Höhe, auf einer Ebene mit dem Schriftzug. */
-  .home-hero__bg{inset:-5% 0 auto auto;width:auto;height:138%;aspect-ratio:1800/1664}
+  /* Mac: Foto rechts verankert, etwas herausgezoomt (138 % der Kopfhöhe) und 8vw über den rechten Rand geschoben,
+     damit zwischen Schriftzug und Gesicht viel Luft ist. Links läuft es in Königsblau aus.
+     Das Gesicht liegt bei etwa 28 % der Höhe, auf einer Ebene mit dem Schriftzug. */
+  .home-hero__bg{inset:calc(var(--hero-h)*-.05) -8vw auto auto;width:auto;height:calc(var(--hero-h)*1.38);aspect-ratio:1800/1664}
   .home-hero__bg img{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 32%);mask-image:linear-gradient(90deg,transparent 0,#000 32%)}
 }
 .home-hero__shade{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgb(28 43 54/.94) 0%,rgb(28 43 54/.8) 30%,rgb(28 43 54/.28) 56%,rgb(28 43 54/0) 72%)}
 .home-hero__in{position:relative;z-index:2;height:100%}
-.home-hero__sz{position:absolute;left:clamp(1.25rem,4vw,2.5rem);top:28%;transform:translateY(-50%);width:min(38vw,30rem);margin:0}
+.home-hero__sz{position:absolute;left:clamp(1.25rem,4vw,2.5rem);top:calc(var(--hero-h)*.28);transform:translateY(-50%);width:min(38vw,30rem);margin:0}
 .home-hero .schriftzug__ink--name,.home-hero .schriftzug__ink--sub{--sz-wet:var(--brand-weiss)}
 .home-say{padding-top:clamp(3rem,8vw,5.5rem)}
 .home-say h1{margin:0;font-size:clamp(2.1rem,5.2vw,3.9rem);line-height:1.04;letter-spacing:-.035em}
@@ -155,13 +156,30 @@ body:has(.home-hero) .site-header{margin-top:clamp(28rem,89vh,60rem)}
 @media (max-width:820px){
   .home-hero{--hero-h:calc(100svh - 15.5rem)}
   body:has(.home-hero) .site-header{margin-top:max(18rem,calc(100svh - 15.5rem))}
-  .home-hero{height:max(18rem,calc(100svh - 15.5rem))}
-  .home-hero__bg{position:fixed;inset:0 0 auto 0;height:max(18rem,calc(100svh - 15.5rem))}
+  .home-hero{height:calc(max(18rem,calc(100svh - 15.5rem)) + var(--hh))}
+  .home-hero__bg{position:fixed;inset:0 0 auto 0;height:calc(max(18rem,calc(100svh - 15.5rem)) + var(--hh))}
   .home-hero__bg img{object-position:50% 0}
   .home-hero__shade{background:linear-gradient(0deg,rgb(28 43 54/.97) 0%,rgb(28 43 54/.86) 20%,rgb(28 43 54/.3) 40%,rgb(28 43 54/0) 52%)}
-  .home-hero__sz{top:auto;bottom:.9rem;left:50%;transform:translateX(-50%);width:min(70%,19rem)}
+  .home-hero__sz{top:auto;bottom:calc(.9rem + var(--hh));left:50%;transform:translateX(-50%);width:min(70%,19rem)}
   .home-say{padding-top:1.75rem}
 }
+
+/* Startseite: die Leiste als zwei Inseln, links das Logo, rechts die Navigation. Beide kleben am Bildschirmrand und sind
+   zur Mitte rund (Pillenende). In der Lücke dazwischen sieht man das Foto, beim Scrollen den Inhalt darunter.
+   Fläche: Hintergrundfarbe zu 86 % mit Unschärfe (auf ::before, damit der feste Menü-Knopf nicht an der Fläche hängt).
+   Die linke Insel fährt erst mit dem Logo herein, sobald die Leiste oben angekommen ist. */
+body:has(.home-hero) .site-header{--edge:max(clamp(1.25rem,4vw,2.5rem),calc((100% - 72rem)/2 + clamp(1.25rem,4vw,2.5rem)));background:transparent;border-bottom:0}
+body:has(.home-hero) .site-header__inner{max-width:none;padding:0;gap:0}
+body:has(.home-hero) .site-header .logo,body:has(.home-hero) .site-header__nav{position:relative;z-index:0;display:flex;align-items:center;height:var(--hh)}
+body:has(.home-hero) .site-header .logo{padding:0 1.5rem 0 var(--edge);border-radius:0 999px 999px 0}
+body:has(.home-hero) .site-header__nav{padding:0 var(--edge) 0 1.1rem}
+body:has(.home-hero) .site-header .logo::before,body:has(.home-hero) .site-header__nav::before{content:"";position:absolute;inset:0;z-index:-1;background:color-mix(in srgb,var(--color-background) 86%,transparent);-webkit-backdrop-filter:blur(16px) saturate(1.3);backdrop-filter:blur(16px) saturate(1.3);box-shadow:0 10px 30px rgb(7 13 18/.16),inset 0 -1px 0 var(--cv-line);transition:transform .55s cubic-bezier(.2,.7,.2,1),opacity .3s}
+body:has(.home-hero) .site-header .logo::before{border-radius:0 999px 999px 0}
+body:has(.home-hero) .site-header__nav::before{border-radius:999px 0 0 999px}
+body:has(.home-hero) .site-header .logo.is-wait::before{transform:translateX(-105%);opacity:0}
+body:has(.home-hero) .site-header .logo:focus-visible{box-shadow:none}
+body:has(.home-hero) .site-header .logo:focus-visible::before{box-shadow:var(--cv-ring)}
+@media (prefers-reduced-motion:reduce){body:has(.home-hero) .site-header .logo::before{transition:none}}
 
 /* Projekte auf der Startseite: aktuelle Projekte nur als kompakte Knöpfe (führen auf /projects/), darunter Karten mit Foto.
    Handy: Karten kleiner, zwei nebeneinander, mit Rand zum Bildschirm. */
@@ -354,7 +372,7 @@ html.sheet-open{overflow:hidden}
 html[data-theme="dark"] .mail__img{filter:invert(1) brightness(1.7)}
 .kontakt .actions{margin-top:1rem}
 .kontakt__pic{margin:0;aspect-ratio:4/5;border-radius:28px;overflow:hidden;background:var(--color-surface)}
-.kontakt__pic img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+.kontakt__pic img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
 .kontakt__back{grid-column:1/-1;margin:clamp(1.5rem,4vw,3rem) 0 0;padding-top:1.5rem;border-top:1px solid var(--cv-line)}
 @media (max-width:820px){
   .kontakt{grid-template-columns:1fr}

@@ -21,7 +21,10 @@ export function LogoPlayer({ href, label, children }: { href: string; label: str
     };
     const hero = document.querySelector<HTMLElement>("[data-hero]");
     if (!hero) { play(); return () => window.clearTimeout(timer); }
-    const passed = () => hero.getBoundingClientRect().bottom < 6;
+    // Auf der Startseite reicht das Foto bis unter die Leiste (Lücke zwischen den beiden Leisten-Inseln). Das Logo spielt,
+    // sobald die Leiste oben angekommen ist.
+    const head = el.closest("header");
+    const passed = () => (head ? head.getBoundingClientRect().top : hero.getBoundingClientRect().bottom) < 6;
     if (passed()) { play(); return () => window.clearTimeout(timer); }
     el.classList.add("is-wait");
     const onScroll = () => { if (passed()) { window.removeEventListener("scroll", onScroll); play(); } };
