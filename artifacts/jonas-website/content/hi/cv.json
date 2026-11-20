@@ -72,7 +72,7 @@
         "org": "Audition",
         "title": "Mitgründer · KI-Vorinterview für Recruiting",
         "points": [
-          "Beim SF Tech Week Hackathon gestartet und seitdem als Startup weiterentwickelt; Bewerbung beim Accelerator a16z speedrun"
+          "Beim SF Tech Week Hackathon gestartet und als Startup weiterentwickelt; Bewerbung bei a16z speedrun"
         ]
       }
     },
@@ -153,9 +153,9 @@
         "Berkeley International Study Program के ज़रिए मैं 2026 की पतझड़ में UC Berkeley में पढ़ रहा हूँ। कोर्स के साथ-साथ मैं हैकथॉन में भाग लेता हूँ और अपने स्टार्टअप प्रोजेक्ट्स पर काम करता हूँ।"
       ],
       "points": [
-        "आर्टिफ़िशियल इंटेलिजेंस (CS 188)",
-        "क्रिप्टोग्राफ़ी (CS 171)",
-        "Technology Entrepreneurship (ENGIN 183E)",
+        "Introduction to Artificial Intelligence (CS 188)",
+        "Sex, Health and Data (Sociology 126)",
+        "Technology Entrepreneurship (ENGIN 183E), प्रशिक्षक Naeem Zafar",
         "Stiftung der Deutschen Wirtschaft से छात्रवृत्ति"
       ],
       "links": [
@@ -176,7 +176,8 @@
         "org": "University of California, Berkeley",
         "title": "Austauschsemester · Berkeley International Study Program",
         "points": [
-          "Künstliche Intelligenz (CS 188), Kryptografie (CS 171), Technology Entrepreneurship (ENGIN 183E); sdw-gefördert"
+          "Introduction to Artificial Intelligence (CS 188); Sex, Health and Data (Sociology 126)",
+          "Technology Entrepreneurship (ENGIN 183E) bei Naeem Zafar; gefördert durch die sdw"
         ],
         "link": 0
       }
@@ -214,8 +215,8 @@
         "org": "Technische Universität München",
         "title": "Tutor, Operations Research and Decision Analysis",
         "points": [
-          "Ausgewählt nach Kursleistung in den Top 5 % (Note 1,3); 4 Std. Tutorium pro Woche für rund 25 Studierende",
-          "Übungen zu Simplex, Netzwerkflüssen und ganzzahliger Optimierung (Gurobi) konzipiert; Einzelbetreuung"
+          "Nach Kursleistung (Top 5 %, Note 1,3) ausgewählt; 4 Std. Tutorium pro Woche für rund 25 Studierende",
+          "Übungen zu Simplex, Netzwerkflüssen und ganzzahliger Optimierung (Gurobi) erstellt; Einzelbetreuung"
         ],
         "link": 0
       }
@@ -257,8 +258,8 @@
         "org": "ritzenhoefer & company",
         "title": "Fellow, Strategie- und Transformationsberatung",
         "points": [
-          "Runbook-Reporting im PMO des Transformationsprogramms einer Großbank verantwortet und teilautomatisiert",
-          "Change-Request-Prozess verbessert, über 70 Change Requests gesteuert; Vorlagen für den Lenkungsausschuss"
+          "Runbook-Reporting im PMO der Transformation einer Großbank verantwortet und teilautomatisiert",
+          "Change-Request-Prozess verbessert, 70+ Change Requests gesteuert; Vorlagen für Lenkungsausschuss"
         ],
         "extra": [
           "60/60-Jobsharing-Modell für Senior Consultants entwickelt"
@@ -304,8 +305,8 @@
         "org": "comstruct",
         "title": "Business Development, Supply Chain Integration (Praktikum)",
         "points": [
-          "74 Lieferanten in 9 Wochen an die Einkaufsplattform eines Series-A-Startups angebunden, einschließlich technischer Integration",
-          "Prozess der Lieferantenanbindung analysiert und verbessert; comstruct auf der Fachmesse BAUMA vertreten"
+          "74 Lieferanten in 9 Wochen an die Plattform eines Series-A-Startups angebunden, inkl. Integration",
+          "Lieferantenanbindung analysiert und verbessert; comstruct auf der Fachmesse BAUMA vertreten"
         ],
         "link": 0
       }
@@ -346,7 +347,7 @@
         "org": "Shapely",
         "title": "Mitgründer, Strategie und Finanzen · 3D-gedruckte Ersatzteile ohne CAD-Datei",
         "points": [
-          "Geschäftsmodell im Dreierteam im TUM Startup Launchpad aufgebaut; erste Aufträge selbst gedruckt und geliefert",
+          "Geschäftsmodell im Dreierteam im TUM Startup Launchpad aufgebaut; erste Aufträge selbst geliefert",
           "Zahlungsbereitschaft in Interviews mit Instandhaltern geprüft, Modell auf Basis der Ergebnisse eingestellt"
         ],
         "link": 0
@@ -391,6 +392,11 @@
           "Notenschnitt 1,6 (Top 10 %) in einem Studiengang mit 9 % Aufnahmequote"
         ],
         "link": 0
+      },
+      "photo": {
+        "file": "tum.jpg",
+        "alt": "म्यूनिख तकनीकी विश्वविद्यालय के स्वागत कार्यक्रम में",
+        "focus": "50% 28%"
       }
     },
     {
@@ -431,7 +437,7 @@
         "org": "cycos AG (Eviden, Atos)",
         "title": "Praktikum Netzwerktechnik und Programmierung",
         "points": [
-          "Linux-Server und virtuelle Maschinen mit Proxmox aufgesetzt; objektorientierte Programmierung in Java im Entwicklungsteam"
+          "Linux-Server und VMs mit Proxmox aufgesetzt; objektorientiert in Java im Entwicklerteam programmiert"
         ],
         "link": 0,
         "optional": false
@@ -453,7 +459,7 @@
       "logo": "ffi.png",
       "photo": {
         "file": "ffi.jpg",
-        "alt": "Future Founders Initiative के एक कार्यक्रम में ग्रुप फ़ोटो",
+        "alt": "पहाड़ों के सामने Future Founders Initiative की समूह तस्वीर",
         "focus": "50% 40%"
       },
       "why": "पाँच संस्थापक सदस्यों के साथ शुरू किया, तीन शहरों में फैली पहल के रूप में खड़ा किया और फिर सोच-समझकर सौंप दिया।",
@@ -471,7 +477,7 @@
         "org": "Future Founders Initiative e.V.",
         "title": "Mitgründer und Vorstand · seit 08.2026 im Beirat",
         "points": [
-          "Studentische Gründungsinitiative von fünf Gründungsmitgliedern auf drei Standorte aufgebaut; Vorstandsstruktur neu aufgesetzt",
+          "Initiative von fünf Gründungsmitgliedern auf drei Standorte ausgebaut; Vorstandsstruktur neu aufgesetzt",
           "Dreitägige Gründungsveranstaltungen für jeweils über 110 Studierende organisiert"
         ]
       }
@@ -520,14 +526,19 @@
         "org": "Bischöfliches Pius-Gymnasium Aachen",
         "title": "Abitur 1,2 (Top 10 %) · Leistungskurse Mathematik, Erdkunde, Deutsch",
         "points": [
-          "MINT-EC-Zertifikat mit Auszeichnung (Top 5 % des Jahrgangs); Frühstudium Höhere Mathematik an der RWTH Aachen",
-          "Förderkurs „Economy & Innovation“ für Kl. 8–10 aufgebaut und ab 10.2022 wöchentlich geleitet: Wirtschaft, KI",
-          "Ein Schuljahr wöchentliche Mathe-Einzelförderung für einen jüngeren Schüler, „mit besonderem Erfolg“ bescheinigt"
+          "Frühstudium Höhere Mathematik an der RWTH Aachen parallel zur Oberstufe",
+          "Förderkurs „Economy & Innovation“ für Kl. 8–10 aufgebaut, ab 10.2022 wöchentlich geleitet: Wirtschaft, KI",
+          "Ein Schuljahr Mathe-Einzelförderung für einen jüngeren Schüler, „mit besonderem Erfolg“ bescheinigt"
         ],
         "extra": [
           "Posaune in Big Band und Schulorchester seit 2016; Hausaufgabenbetreuung für die Unter- und Mittelstufe"
         ],
         "link": 0
+      },
+      "photo": {
+        "file": "pius.jpg",
+        "alt": "अबितूर दीक्षांत समारोह में अपने प्रमाणपत्र के साथ",
+        "focus": "40% 40%"
       }
     },
     {
@@ -712,12 +723,13 @@
       ],
       "title": "विशिष्टता के साथ MINT-EC प्रमाणपत्र",
       "org": "MINT-EC, राष्ट्रीय उत्कृष्ट विद्यालय नेटवर्क",
-      "icon": "cap",
       "why": "तीन स्तरों में सर्वोच्च, पूरी स्कूली शिक्षा के दौरान गणित, सूचना विज्ञान, प्राकृतिक विज्ञान और प्रौद्योगिकी में उत्कृष्ट प्रदर्शन और सक्रिय भागीदारी के लिए।",
       "text": [
         "यह प्रमाणपत्र MINT-EC नेटवर्क के स्कूलों में Abitur के साथ दिया जाता है और शिक्षा मंत्रियों के सम्मेलन (Kultusministerkonferenz) तथा विश्वविद्यालय रेक्टर सम्मेलन (Hochschulrektorenkonferenz) द्वारा मान्यता प्राप्त है। इस तरह मैं अपने बैच के शीर्ष 5 % में शामिल था।"
       ],
-      "points": [],
+      "points": [
+        "Frankfurt School of Finance & Management में MINT-EC कैंप में भागीदारी"
+      ],
       "links": [
         {
           "label": "MINT-EC",
@@ -725,8 +737,16 @@
         }
       ],
       "cv": {
-        "hide": true
-      }
+        "org": "MINT-EC",
+        "title": "Zertifikat mit Auszeichnung; höchste von drei Stufen, Top 5 %",
+        "link": 0
+      },
+      "photo": {
+        "file": "mintec-camp.jpg",
+        "alt": "Frankfurt School में MINT-EC कैंप की समूह तस्वीर",
+        "focus": "50% 45%"
+      },
+      "logo": "mintec.png"
     },
     {
       "id": "gcte",
@@ -783,6 +803,11 @@
         "org": "Deutsche SchülerAkademie",
         "title": "Von der Schule nominiert; unter 1 % ausgewählt",
         "link": 0
+      },
+      "photo": {
+        "file": "dsa.jpg",
+        "alt": "धूप में Deutsche SchülerAkademie का हमारा समूह",
+        "focus": "50% 45%"
       }
     }
   ]

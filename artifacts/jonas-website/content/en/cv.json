@@ -72,7 +72,7 @@
         "org": "Audition",
         "title": "Co-founder · AI pre-interview for recruiting",
         "points": [
-          "Started at the SF Tech Week hackathon and developed further as a startup; applied to the a16z speedrun accelerator"
+          "Started at the SF Tech Week hackathon, then developed into a startup; applied to a16z speedrun"
         ]
       }
     },
@@ -122,8 +122,8 @@
         "org": "Concentr8",
         "title": "Co-founder, Backend · Focus app for neurodivergent students",
         "points": [
-          "Built the backend: Mac app against distraction, calls at fixed study times, AI planning with Google Calendar",
-          "Started at Cal Hacks 13.0; developed further in Berkeley’s Technology Entrepreneurship course (ENGIN 183E)"
+          "Built the backend: Mac app against distraction, calls at set study times, AI planning with Google Calendar",
+          "Started at Cal Hacks 13.0; developed in Berkeley’s Technology Entrepreneurship course (ENGIN 183E)"
         ],
         "link": 0
       }
@@ -153,9 +153,9 @@
         "Through the Berkeley International Study Program, I am studying at UC Berkeley in fall 2026. Alongside my courses, I take part in hackathons and work on my own startup projects."
       ],
       "points": [
-        "Artificial Intelligence (CS 188)",
-        "Cryptography (CS 171)",
-        "Technology Entrepreneurship (ENGIN 183E)",
+        "Introduction to Artificial Intelligence (CS 188)",
+        "Sex, Health and Data (Sociology 126)",
+        "Technology Entrepreneurship (ENGIN 183E) with Naeem Zafar",
         "Funded by the Foundation of German Business"
       ],
       "links": [
@@ -176,7 +176,8 @@
         "org": "University of California, Berkeley",
         "title": "Exchange semester · Berkeley International Study Program",
         "points": [
-          "Artificial Intelligence (CS 188), Cryptography (CS 171), Technology Entrepreneurship (ENGIN 183E); sdw-funded"
+          "Introduction to Artificial Intelligence (CS 188); Sex, Health and Data (Sociology 126)",
+          "Technology Entrepreneurship (ENGIN 183E) with Naeem Zafar; funded by the sdw"
         ],
         "link": 0
       }
@@ -214,8 +215,8 @@
         "org": "Technical University of Munich",
         "title": "Teaching Assistant, Operations Research and Decision Analysis",
         "points": [
-          "Selected as TA for top 5 % course performance (grade 1.3); 4 hours of tutorials per week for about 25 students",
-          "Designed exercises on simplex, network flows and integer programming (Gurobi); supported students one-to-one"
+          "Selected for top 5 % course performance (grade 1.3); 4 hours of tutorials per week for about 25 students",
+          "Designed exercises on simplex, network flows and integer programming (Gurobi); one-to-one support"
         ],
         "link": 0
       }
@@ -257,8 +258,8 @@
         "org": "ritzenhoefer & company",
         "title": "Fellow, Strategy and Transformation Consulting",
         "points": [
-          "Owned runbook reporting in the PMO of a major bank’s transformation programme and partly automated it",
-          "Improved the change request process and steered 70+ change requests; prepared steering committee papers"
+          "Owned runbook reporting in the PMO of a major bank’s transformation programme; partly automated it",
+          "Improved the change request process, steered 70+ change requests; drafted steering committee papers"
         ],
         "extra": [
           "Developed a 60/60 job-sharing model for senior consultants"
@@ -304,7 +305,7 @@
         "org": "comstruct",
         "title": "Business Development, Supply Chain Integration (Internship)",
         "points": [
-          "Onboarded 74 suppliers in 9 weeks to the procurement platform of a Series A startup, including technical integration",
+          "Onboarded 74 suppliers in 9 weeks to a Series A startup’s procurement platform, incl. tech integration",
           "Analysed and improved the supplier onboarding process; represented comstruct at the BAUMA trade fair"
         ],
         "link": 0
@@ -346,8 +347,8 @@
         "org": "Shapely",
         "title": "Co-founder, Strategy and Finance · 3D-printed spare parts without a CAD file",
         "points": [
-          "Built the business model in a team of three in the TUM Startup Launchpad; printed and delivered first orders",
-          "Tested willingness to pay in interviews with maintenance managers; discontinued the model based on the results"
+          "Built the business model in a team of three at TUM Startup Launchpad; printed and delivered first orders",
+          "Tested willingness to pay in interviews with maintenance managers; discontinued the model as a result"
         ],
         "link": 0
       }
@@ -391,6 +392,11 @@
           "GPA 1.6 (top 10 %) in a programme with a 9 % admission rate"
         ],
         "link": 0
+      },
+      "photo": {
+        "file": "tum.jpg",
+        "alt": "Me at the welcome event at TU Munich",
+        "focus": "50% 28%"
       }
     },
     {
@@ -431,7 +437,7 @@
         "org": "cycos AG (Eviden, Atos)",
         "title": "Intern, Network Engineering and Programming",
         "points": [
-          "Set up Linux servers and virtual machines with Proxmox; object-oriented programming in Java in the development team"
+          "Set up Linux servers and VMs with Proxmox; object-oriented programming in Java in the dev team"
         ],
         "link": 0,
         "optional": false
@@ -453,7 +459,7 @@
       "logo": "ffi.png",
       "photo": {
         "file": "ffi.jpg",
-        "alt": "Group photo at a Future Founders Initiative event",
+        "alt": "Future Founders Initiative group photo in front of the mountains",
         "focus": "50% 40%"
       },
       "why": "Started with five founding members, built it into an initiative in three cities, then handed over on purpose.",
@@ -520,14 +526,19 @@
         "org": "Bischöfliches Pius-Gymnasium Aachen",
         "title": "Abitur 1.2 (top 10 %) · Advanced courses in mathematics, geography, German",
         "points": [
-          "MINT-EC Certificate with Distinction (top 5 % of my year); early-entry student in Advanced Mathematics, RWTH Aachen",
-          "Built and led the “Economy & Innovation” course for grades 8–10, weekly from 10.2022: economics, finance, AI",
-          "One school year of weekly one-to-one maths support for a younger student, certified “with particular success”"
+          "Early-entry student in Advanced Mathematics at RWTH Aachen alongside upper school",
+          "Built and led the “Economy & Innovation” course for grades 8–10, weekly from 10.2022: economics, AI",
+          "One school year of weekly one-to-one maths support for a younger student, “with particular success”"
         ],
         "extra": [
-          "Trombone in the big band and school orchestra since 2016; homework supervision for lower and middle school"
+          "Trombone in the big band and school orchestra since 2016; homework supervision for younger students"
         ],
         "link": 0
+      },
+      "photo": {
+        "file": "pius.jpg",
+        "alt": "Me at my Abitur graduation with my certificate",
+        "focus": "40% 40%"
       }
     },
     {
@@ -712,12 +723,13 @@
       ],
       "title": "MINT-EC Certificate with Distinction",
       "org": "MINT-EC, Germany's national STEM excellence school network",
-      "icon": "cap",
       "why": "The highest of three levels, for outstanding achievement and commitment in mathematics, computer science, natural sciences and technology throughout school.",
       "text": [
         "The certificate is awarded with the Abitur at schools of the MINT-EC network and is recognised by the Standing Conference of Ministers of Education and the German Rectors' Conference. It placed me in the top 5 % of my year."
       ],
-      "points": [],
+      "points": [
+        "Took part in the MINT-EC camp at the Frankfurt School of Finance & Management"
+      ],
       "links": [
         {
           "label": "MINT-EC",
@@ -725,8 +737,16 @@
         }
       ],
       "cv": {
-        "hide": true
-      }
+        "org": "MINT-EC",
+        "title": "Certificate with Distinction; highest of three levels, top 5 %",
+        "link": 0
+      },
+      "photo": {
+        "file": "mintec-camp.jpg",
+        "alt": "Group photo at the MINT-EC camp at Frankfurt School",
+        "focus": "50% 45%"
+      },
+      "logo": "mintec.png"
     },
     {
       "id": "gcte",
@@ -783,6 +803,11 @@
         "org": "Deutsche SchülerAkademie",
         "title": "Nominated by my school; under 1 % selected",
         "link": 0
+      },
+      "photo": {
+        "file": "dsa.jpg",
+        "alt": "Our Deutsche SchülerAkademie group in the sunlight",
+        "focus": "50% 45%"
       }
     }
   ]

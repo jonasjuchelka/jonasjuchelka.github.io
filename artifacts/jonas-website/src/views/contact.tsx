@@ -28,7 +28,7 @@ export function ContactView({ lang }: { lang: string }) {
       </div>
       <figure className="kontakt__pic">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/media/fotos/jonas-kontakt.jpg" alt={t.photoAlt} />
+        <img src="/media/fotos/jonas-desktop.jpg" alt={t.photoAlt} />
       </figure>
       <p className="kontakt__back"><Link className="btn" href={localePath(lang, "/")}>‹ {t.backHome}</Link></p>
     </section>
